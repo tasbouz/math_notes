@@ -458,14 +458,14 @@ X_{\gamma,p}\cl \mathcal{C}^\infty(M) \xrightarrow{\sim} \R
 
 it's clear that it's an element of $\mathrm{Hom}(\mathcal{C}^\infty(M),R)$, i.e an element of the dual vector space of $\mathcal{C}^\infty(M)$. Which subsequently makes $T_pM$ a sub-vector space of the dual vector space of $\mathcal{C}^\infty(M)$. ($X_{\gamma,p}$ is a particular choice of a linear map, more specifically the derivative with respect to the parameter, and not \textbf{all} possible linear maps. This is why $T_pM$ is not the whole dual vector space of $\mathcal{C}^\infty(M)$) \\
 
-However, if we take the extra step and turn the tangent space from a vector space to an algebra (by defining an appropriate operation) then we can show that $X_{\gamma,p}$ is actually a derivation of the algebra.  \\
+However, if we take the extra step and turn the $\mathcal{C}^\infty(M)$ from a vector space to an algebra (by defining an appropriate operation) then we can show that $X_{\gamma,p}$ is actually a derivation of the algebra.  \\
 
 More specifically we will define a product on $\mathcal{C}^\infty(M)$ by
 \bi{rrCl}
 \bullet \cl & \mathcal{C}^\infty(M)\times \mathcal{C}^\infty(M) &\to& \mathcal{C}^\infty(M)\\
 & (f,g) & \mapsto & f \bullet g,
 \ei
-where $f \bullet g$ is defined pointwise. Then $(\mathcal{C}^\infty(M),+,\cdot,\bullet)$ is an associative, unital and commutative algebra over $\R$.
+where $f \bullet g$ is defined pointwise. Then $(\mathcal{C}^\infty(M),+,\cdot,\bullet)$ is an associative, unital and commutative algebra over $\R$. \\
 
 Now that we have an algebra, let us remind ourselves what a derivation is and also try to combine the definition with our case:
 
@@ -1170,7 +1170,7 @@ The reason of introducing the concept of a topological bundle, is because we nee
 
 \section{The Tangent Bundle}
 
-We would like to define a vector field on a manifold $M$ as a ``smooth'' map that assigns to each $p\in M$ a tangent vector in $T_pM$. However, since this would then be a ``map'' to a different space at each point, it is unclear how to define its smoothness. \\
+Up to this point, we have defined everything on the level of a point on the manifold. However, since we are interested in describing quantities as a whole in the entire manifold, we would like to define a vector field on a manifold $M$ as a ``smooth'' map that assigns to each $p\in M$ a tangent vector in $T_pM$. However, since this would then be a ``map'' to a different space at each point, it is unclear how to define its smoothness. \\
 
 The simplest solution is to merge all the tangent spaces into a unique set and equip it with a smooth structure, so that we can then define a vector field as a smooth map between smooth manifolds.
 
@@ -1248,9 +1248,9 @@ T^*M := \dot{\bigcup}_{p\in M} T^*_pM
 \ese
 and going through the above again, using the dual basis $\{(\d x^a)_p\}$ instead of $\{\tvb{x}{a}{p}\}$.
 
-\section{Vector Fields}
+\section{Vector, Covector And Tensor Fields}
 
-Now that we have defined the tangent bundle, we are ready to define vector fields.
+Now that we have defined the tangent and cotangent bundles, we are ready to define fields.
 
 \bd [Vector Field]
 Let $M$ be a smooth manifold, and let $TM\xrightarrow{\,\pi\,}M$ be its tangent bundle. A \textbf{vector field}\index{vector field} $\sigma$ on $M$ is a smooth section of the tangent bundle, i.e.\ a smooth map $\sigma\cl M \to TM$ such that $\pi \circ \sigma = \id_M$.
@@ -1347,9 +1347,11 @@ And this of course is of crucial importance since as we showed in previous chapt
 \sigma = \sigma^i X_i
 \ese
 
-where $\sigma^i $ would be functions acting as components of the vector field!
+where $\sigma^i $ would be functions acting as components of the vector field! \\
 
-\section{Tensor Fields}
+In a similar manner one can construct a covector field through the use of the cotangent bundle, and from there to define the set of all covector fields $\Gamma(T^*M)$ and subsequently a triple $(\Gamma(T^*M), \oplus, \odot)$.\\
+
+Finally using $\Gamma(TM)$  and $\Gamma(T^*M)$ we can define a tensor field.
 
 \bd [Tensor Field]
 Let $M$ be a smooth manifold. A smooth \textbf{$(r,s)$ tensor field}\index{tensor field} $\tau$ on $M$ is a $\mathcal{C}^\infty(M)$-multilinear map
@@ -1384,7 +1386,46 @@ analogously to what we had with tensors on a vector space, i.e.\
 \ei
 with $\omega_i\in \Gamma(T^*M)$ and $X_i\in \Gamma(TM)$. \\
 
-Therefore, we can think of tensor fields on $M$ either as sections of some tensor bundle on $M$, that is, as maps assigning to each $p\in M$ a tensor ($\R$-multilinear map) on the vector space $T_pM$, or as a $\mathcal{C}^\infty(M)$-multilinear map as above. We will always try to pick the most useful or easier to understand, based on the context.
+Therefore, we can think of tensor fields on $M$ either as sections of some tensor bundle on $M$, that is, as maps assigning to each $p\in M$ a tensor ($\R$-multilinear map) on the vector space $T_pM$, or as a $\mathcal{C}^\infty(M)$-multilinear map as above. We will always try to pick the most useful or easier to understand, based on the context. \\
+
+To summarize, fields are the generalization of the definitions of vectors, covectors and tensors at a specific point $p$ of $M$, to every possible point $p$ of manifold $M$, hence to the whole manifold $M$. In a similar way we can generalize the concept of the gradient of $f$ at $p\in M$ in the gradient of $f$ at $M$.\\
+
+Recall the definition of the gradient operator at a point $p\in M$. We can extend that definition to define the ($\R$-linear) operator:
+\bi{rrCl}
+\d \cl & \mathcal{C}^\infty(M) & \xrightarrow{\sim} & \Gamma(T^*M)\\
+& f & \mapsto & \d f
+\ei
+where, of course, $\d f \cl p \mapsto \d_pf$. Alternatively, we can think of $\d f$ as the $\R$-linear map
+\bi{rrCl}
+\d f \cl & \Gamma(TM) & \xrightarrow{\sim} & \mathcal{C}^\infty(M)\\
+& X &\mapsto & \d f (X) = X(f).
+\ei
+
+\br
+Locally on some chart $(U,x)$ on $M$, the covector field $\d f$ can be expressed as
+\bse
+\d f = \lambda_a\, \d x^a
+\ese
+for some smooth functions $\lambda_i\in\mathcal{C}^\infty(U)$. To determine what they are, we simply apply both sides to the vector fields induced by the chart. We have
+\bse
+\d f \biggl( \frac{\partial}{\partial x^b}\biggr) =  \frac{\partial}{\partial x^b}(f) = \partial_bf
+\ese
+and
+\bse
+\lambda_a\, \d x^a\biggl( \frac{\partial}{\partial x^b}\biggr) =\lambda_a\,  \frac{\partial}{\partial x^b}(x^a) = \lambda_a\,\delta^a_b = \lambda_b.
+\ese
+
+\vspace{8pt}
+
+Hence, the local expression of $\d f$ on $(U,x)$ is
+\bse
+\d f = \partial_a f \, \d x^a.
+\ese
+\er
+Note that the operator $\d$ satisfies the Leibniz rule
+\bse
+\d (fg) = g\, \d f + f\, \d g.
+\ese
 
 \section{Differential Forms}
 
@@ -1396,24 +1437,19 @@ Let $M$ be a smooth manifold. A \textbf{(differential) $n$-form}\index{different
 for any $\pi \in S_n$, with $X_i\in \Gamma(TM)$. We call $n$ the \emph{degree} of the form. 
 \ed
 
-Alternatively, we can define a differential form as a smooth section of the appropriate bundle on $M$, i.e.\ as a map assigning to each $p\in M$ an $n$-form on the vector space $T_pM$.
+Alternatively, we can define a differential form as a smooth section of the appropriate bundle on $M$, i.e.\ as a map assigning to each $p\in M$ an $n$-form on the vector space $T_pM$.\\
+
+Of course, by definition, differential forms are nothing more but a very specific kind of tensors, hence it's a subset of the tensor space.
 
 \be
-\ben[label=\alph*)]
-\item The electromagnetic field strength $F$ is a differential $2$-form built from the electric and magnetic fields, which are also taken to be forms. We will define these later in some detail.
-\item In classical mechanics, if $Q$ is a smooth manifold describing the possible system configurations, then the phase space is $T^*Q$. There exists a canonically defined $2$-form on $T^*Q$ known as a symplectic form, which we will define later.
-\een
+The electromagnetic field strength $F$ is a differential $2$-form built from the electric and magnetic fields, which are also taken to be forms. We will define these later in some detail.
 \ee
 
 \bd [$\Omega^n(M)$]
 We denote by $\Omega^n(M)$ the set of all differential $n$-forms on $M$, which then becomes a $\mathcal{C}^\infty(M)$-module by defining the addition and multiplication operations pointwise.
 \ed
 
-\be
-Of course, by definition, differential forms are nothing more but a very specific kind of tensors, hence it's a subset of the tensor space. We have $\Omega^0(M)\equiv \mathcal{C}^\infty(M)$ since they are $(0,0)$ tensors a.k.a functions  and $\Omega^1(M)\equiv \Gamma(T^0_1M)\equiv\Gamma(T^*M)$ sincey they are $(0,1)$ tensors a.k.a covectors.
-\ee
-
-Similarly to the case of forms on vector spaces, we have $\Omega^n(M)=\{0\}$ for $n>\dim M$, and otherwise $\dim \Omega^n(M)= {{\dim M}\choose{n}}$, as a $\mathcal{C}^\infty(M)$-module. \\
+We have $\Omega^0(M)\equiv \mathcal{C}^\infty(M)$ since they are $(0,0)$ tensors a.k.a functions  and $\Omega^1(M)\equiv \Gamma(T^0_1M)\equiv\Gamma(T^*M)$ sincey they are $(0,1)$ tensors a.k.a covectors.\\
 
 We can specialise the pull-back of tensors to differential forms.
 
@@ -1435,10 +1471,16 @@ The map $\Phi^*\cl\Omega^n(N)\to\Omega^n(M)$ is $\R$-linear, and its action on $
 &f &\mapsto &\Phi^*(f) := f\circ \phi.
 \ei
 This works for any smooth map $\phi$, and it leads to a slight modification of our mantra:
+
+\vspace{5pt}
+
 \begin{center}
 \textit{Vectors are pushed forward,}\\
 \textit{forms are pulled back.}
 \end{center}
+
+\vspace{5pt}
+
 The tensor product $\otimes$ does not interact well with forms, since the tensor product of two forms is not necessarily a form (it might be, for example, a symmetric $(0,n)$ tensor which, be definition, is not a form). Hence, we define the following.
 
 \bd [Wedge Product]
@@ -1595,46 +1637,21 @@ does not make sense in principle, because the different parts of $\varphi$ and $
 
 \subsection{The Exterior Derivative}
 
-Recall the definition of the gradient operator at a point $p\in M$. We can extend that definition to define the ($\R$-linear) operator:
+Recall the ``extended" definition of the gradient operator of a function $\d$ on the whole manifold $M$:
 \bi{rrCl}
 \d \cl & \mathcal{C}^\infty(M) & \xrightarrow{\sim} & \Gamma(T^*M)\\
 & f & \mapsto & \d f
 \ei
-where, of course, $\d f \cl p \mapsto \d_pf$. Alternatively, we can think of $\d f$ as the $\R$-linear map
-\bi{rrCl}
-\d f \cl & \Gamma(TM) & \xrightarrow{\sim} & \mathcal{C}^\infty(M)\\
-& X &\mapsto & \d f (X) = X(f).
-\ei
 
-\br
-Locally on some chart $(U,x)$ on $M$, the covector field (or $1$-form) $\d f$ can be expressed as
-\bse
-\d f = \lambda_a\, \d x^a
-\ese
-for some smooth functions $\lambda_i\in\mathcal{C}^\infty(U)$. To determine what they are, we simply apply both sides to the vector fields induced by the chart. We have
-\bse
-\d f \biggl( \frac{\partial}{\partial x^b}\biggr) =  \frac{\partial}{\partial x^b}(f) = \partial_bf
-\ese
-and
-\bse
-\lambda_a\, \d x^a\biggl( \frac{\partial}{\partial x^b}\biggr) =\lambda_a\,  \frac{\partial}{\partial x^b}(x^a) = \lambda_a\,\delta^a_b = \lambda_b.
-\ese
-Hence, the local expression of $\d f$ on $(U,x)$ is
-\bse
-\d f = \partial_a f \, \d x^a.
-\ese
-\er
-Note that the operator $\d$ satisfies the Leibniz rule
-\bse
-\d (fg) = g\, \d f + f\, \d g.
-\ese
-We can also understand this as an operator that takes in $0$-forms and outputs $1$-forms
+Since $\Omega^0(M)\equiv \mathcal{C}^\infty(M)$ and $\Omega^1(M)\equiv \Gamma(T^0_1M)\equiv\Gamma(T^*M)$, we can also understand this as an operator that takes in $0$-forms and outputs $1$-forms
 \bse
 \d \cl \Omega^0(M)\xrightarrow{\sim}\Omega^1(M).
 \ese
+
 This can then be extended to an operator which acts on any $n$-form. We will need the following definition.
-\bd
-Let $M$ be a smooth manifold and let $X,Y\in\Gamma(TM)$. The commutator (or Lie bracket\index{Lie bracket}) of $X$ and $Y$ is defined as
+
+\bd [Commutator]
+Let $M$ be a smooth manifold and let $X,Y\in\Gamma(TM)$. The \textbf{commutator} (or \textbf{Lie bracket}\index{Lie bracket}) of $X$ and $Y$ is defined as
 \bi{rrCl}
 [X,Y]\cl & \mathcal{C}^\infty(M) &\xrightarrow{\sim} &\mathcal{C}^\infty(M)\\ 
 & f & \mapsto & [X,Y](f):=X(Y(f))-Y(X(f)),
@@ -1642,8 +1659,10 @@ Let $M$ be a smooth manifold and let $X,Y\in\Gamma(TM)$. The commutator (or Lie 
 where we are using the definition of vector fields as $\R$-linear maps $\mathcal{C}^\infty(M) \xrightarrow{\sim} \mathcal{C}^\infty(M)$.
 \ed
 
-\bd
-The \emph{exterior derivative}\index{exterior derivative} on $M$ is the $\R$-linear operator
+Using this definition we can now extend the gradient as follows:
+
+\bd [Exterior Derivative]
+The \textbf{exterior derivative}\index{exterior derivative} on $M$ is the $\R$-linear operator
 \bi{rrCl}
 \d\cl &\Omega^n(M)&\xrightarrow{\sim} &\Omega^{n+1}(M)\\
 & \omega & \mapsto & \d \omega
@@ -1744,25 +1763,8 @@ Let $\phi\cl M\to N$ be smooth. For any $\omega\in\Omega^n(N)$, we have
 \ese
 \end{theorem}
 
-
-\bq[Proof (sketch)] 
-We first show that this holds for $0$-forms (i.e.\ smooth functions).
-
-Let $f\in\mathcal{C}^\infty(N)$, $p\in M$ and $X\in T_pM$. Then
-\bi{rCl"s}
-\Phi^*(\d f)(p)(X) & = & \d f (\phi(p)) (\phi_*(X)) & (definition of $\Phi^*$)\\
-& = & \phi_*(X) (f) & (definition of $\d f$)\\
-& = & X (f\circ \phi) & (definition of $\phi_*$)\\
-& = & \d (f\circ \phi) (p) (X) & (definition of $\d (f\circ\phi$))\\
-& = & \d (\Phi^*(f)) (p) (X) & (definition of $\Phi^*$),
-\ei
-so that we have $\Phi^*(\d f) = \d (\Phi^*(f))$.
-
-The general result follows from the linearity of $\Phi^*$ and the fact that the pull-back distributes over the wedge product.
-\eq
-
 \br
-Informally, we can write this result as $\Phi^*\d=\d\Phi^*$, and say that the exterior derivative ``commutes'' with the pull-back.
+Informally, we can write this result as $\Phi^*\d=\d\Phi^*$, and say that the exterior derivative ``commutes'' with the pull-back.\\
 
 However, you should bear in mind that the two $\d$'s appearing in the statement are two different operators. On the left hand side, it is $\d\cl\Omega^n(N)\to\Omega^{n+1}(N)$, while it is $\d\cl\Omega^n(M)\to\Omega^{n+1}(M)$ on the right hand side.
 \er
@@ -1775,113 +1777,21 @@ Of course, we could also combine the operators $\d$ into a single operator actin
 by linear continuation.
 \er
 
-\be
-In the modern formulation of Maxwell's electrodynamics, the electric and magnetic fields $E$ and $B$ are taken to be a $1$-form and a $2$-form on $\R^3$, respectively:
-\bi{c}
-E := E_x\d x + E_y \d y +E_z \d z\\
-B := B_x\d y \wedge \d z + B_y \d z \wedge \d x + B_z \d x \wedge \d y.  
-\ei
-The electromagnetic field strength $F$ is then defined as the $2$-form on $\R^4$
-\bse
-F:= B + E \wedge \d t.
-\ese
-In components, we can write
-\bse
-F = F_{\mu\nu} \, \d x^\mu \wedge \d x^\nu,
-\ese
-where $(\d x^0,\d x^1, \d x^2, \d x^3) \equiv (\d t, \d x,\d y,\d z)$ and
-\bse
-F_{\mu\nu} = 
-\left(
-\begin{matrix}
-0 & -E_x & -E_y & -E_z\\
-E_x & 0 & B_z & -B_y\\
-E_y & -B_z & 0 & B_x\\
-E_z & B_y & -B_x & 0
-\end{matrix}
-\right)
-\ese
-
-The field strength satisfies the equation
-\bse
-\d F = 0.
-\ese
-This is called the homogeneous Maxwell's equation and it is, in fact, equivalent to the two homogeneous Maxwell's (vectorial) equations
-\bse
-\nabla \cdot \mathbf{B} = 0
-\ese
-\bse
-\nabla \times \mathbf{E} + \frac{\partial \mathbf{B}}{\partial t} = \mathbf{0}.
-\ese
-In order to cast the remaining Maxwell's equations into the language of differential forms, we need a further operation on forms, called the Hodge star operator.
-
-Recall from the standard theory of electrodynamics that the two equations above imply the existence of the electric and vector potentials $\varphi$ and $\mathbf{A}=(A_x,A_y,A_z)$, satisfying
-\bse
-\mathbf{B} = \nabla \times \mathbf{A} 
-\ese
-\bse
-\mathbf{E} = -\nabla \varphi - \frac{\partial \mathbf{A}}{\partial t}.
-\ese
-Similarly, the equation $\d F =0$ on $\R^4$ implies the existence of an electromagnetic $4$-potential (or gauge potential) form $A\in\Omega^1(\R^4)$ such that
-\bse
-F = \d A.
-\ese
-Indeed, we can take
-\bse
-A := -\varphi \, \d t + A_x \d x + A_y \d y + A_z \d z.
-\ese
-\ee
-
-\bd
-Let $M$ be a smooth manifold. A $2$-form $\omega\in\Omega^2(M)$ is said to be a \emph{symplectic form}\index{symplectic form} on $M$ if $\d \omega = 0$ and if it is non-degenerate, i.e.\
-\bse
-(\forall \, Y\in \Gamma(TM) : \omega(X,Y) = 0) \Rightarrow X = 0.
-\ese
-A manifold equipped with a symplectic form is called a \emph{symplectic manifold}.
-\ed
-
-\be
-In the Hamiltonian formulation of classical mechanics one is especially interested in the cotangent bundle $T^*Q$ of some configuration space $Q$. Similarly to what we did when we introduced the tangent bundle, we can define (at least locally) a system of coordinates on $T^*Q$ by
-\bse
-(q^1,\ldots,q^{\dim Q},p_1,\ldots,p_{\dim Q}),
-\ese
-where the $p_i$'s are the generalised momenta on $Q$ and the $q^i$'s are the generalised coordinates on $Q$ (recall that $\dim T^*Q=2\dim Q$). We can then define a $1$-form $\theta\in\Omega^1(T^*Q)$ by
-\bse
-\theta := p_i \, \d q^i
-\ese
-called the symplectic potential. If we further define
-\bse
-\omega := \d \theta \in \Omega^2(T^*Q),
-\ese
-then we can calculate that
-\bse
-\d \omega = \d (\d \theta) =\cdots = 0.
-\ese
-Moreover, $\omega$ is non-degenerate and hence it is a symplectic form on $T^*Q$.
-\ee
-
 \subsection{De Rham Cohomology}
 
-The last two examples suggest two possible implications. In the electrodynamics example, we saw that
-\bse
-(\d F = 0 )\Rightarrow (\exists \, A : F =\d A),
-\ese
-while in the Hamiltonian mechanics example we saw that
-\bse
-(\exists\, \theta : \omega =\d \theta )\Rightarrow (\d \omega = 0).
-\ese
-\bd
+\bd [Closed / Exact Forms]
 Let $M$ be a smooth manifold and let $\omega \in \Omega^n(M)$. We say that $\omega$ is
 \begin{itemize}
-\item \emph{closed}\index{closed form} if $\d \omega = 0$;
-\item \emph{exact}\index{exact form} if $\exists \, \sigma \in \Omega^{n-1}(M): \omega = \d \sigma$.
+\item \textbf{closed}\index{closed form} if $\d \omega = 0$;
+\item \textbf{exact}\index{exact form} if $\exists \, \sigma \in \Omega^{n-1}(M): \omega = \d \sigma$.
 \end{itemize}
 \ed
+
 The question of whether every closed form is exact and vice versa, i.e.\ whether the implications 
 \bse
 (\d \omega =0) \Leftrightarrow (\exists \, \sigma : \omega =\d \sigma)
 \ese
-hold in general, belongs to the branch of mathematics called cohomology theory, to which we will now provide an introduction.
+hold in general, belongs to the branch of mathematics called cohomology theory, to which we will now provide an introduction. \\
 
 The answer for the $\Leftarrow$ direction is affirmative thanks to the following result.
 
@@ -1893,40 +1803,8 @@ Let $M$ be a smooth manifold. The operator
 is identically zero, i.e.\ $\d^2=0$.
 \end{theorem}
 
-For the proof, we will need the following concepts.
-
-\bd
-Given an object which carries some indices, say $T_{a_1,\ldots,a_n}$, we define the \emph{antisymmetrization} of $T_{a_1,\ldots,a_n}$ as
-\bse
-T_{[a_1\cdots a_n]}:=\frac{1}{n!}\sum_{\pi\in S_n}\sgn(\pi)\, T_{\pi(a_1)\cdots\pi(a_n)}.
-\ese
-Similarly, the \emph{symmetrization} of $T_{a_1,\ldots,a_n}$ is defined as
-\bse
-T_{(a_1\cdots a_n)}:=\frac{1}{n!}\sum_{\pi\in S_n} T_{\pi(a_1)\cdots\pi(a_n)}.
-\ese
-\ed
-Some special cases are
-\bi{C}
-T_{[ab]}=\frac{1}{2}(T_{ab}-T_{ba}), \qquad 
-T_{(ab)}=\frac{1}{2}(T_{ab}+T_{ba}) \\
-T_{[abc]} = \frac{1}{6} (T_{abc}+T_{bca}+T_{cab}-T_{bac}-T_{cba}-T_{acb})\\
-T_{(abc)} = \frac{1}{6} (T_{abc}+T_{bca}+T_{cab}+T_{bac}+T_{cba}+T_{acb})
-\ei
-Of course, we can (anti)symmetrize only some of the indices
-\bse
-T^{ab}_{\phantom{ab}[cd]e} = \frac{1}{2}(T^{ab}_{\phantom{ab}cde}-T^{ab}_{\phantom{ab}dce}).
-\ese
-It is easy to check that in a contraction (i.e.\ a sum), we have
-\bse
-T_{a_1\cdots a_n}S^{a_1\cdots [a_i \cdots a_j] \cdots a_n} = T_{a_1\cdots [a_i \cdots a_j] \cdots a_n}S^{a_1 \cdots a_n} 
-\ese
-and
-\bse
-T_{a_1\cdots (a_i \cdots a_j) \cdots a_n}S^{a_1\cdots [a_i \cdots a_j] \cdots a_n} = 0.
-\ese
-
 \bq
-This can be shown directly using the definition of $\d$. Here, we will instead show it by working in local coordinates.
+This can be shown directly using the definition of $\d$. Here, we will instead show it by working in local coordinates. \\
 
 Recall that, locally on a chart $(U,x)$, we can write any form $\omega\in\Omega^n(M)$ as
 \bse
@@ -1941,20 +1819,29 @@ and hence
 \bse
 \d^2\omega = \partial_c\partial_b\omega_{a_1\cdots a_n}\d x^c\wedge\d x^b\wedge\d x^{a_1}\wedge \cdots \wedge \d x^{a_n}.
 \ese
-Since $\d x^c\wedge\d x^b = - \, \d x^b\wedge\d x^c$, we have
+
+\vspace{5pt}
+
+We can perform a little ``trick" in the last equation and write it as twice the half expression
 \bse
-\d x^c\wedge\d x^b = \d x^{[c}\wedge\d x^{b]}.
+\d^2\omega = \frac{1}{2} \partial_c\partial_b\omega_{a_1\cdots a_n}\d x^c\wedge\d x^b\wedge\d x^{a_1}\wedge \cdots \wedge \d x^{a_n} + \frac{1}{2} \partial_c\partial_b\omega_{a_1\cdots a_n}\d x^c\wedge\d x^b\wedge\d x^{a_1}\wedge \cdots \wedge \d x^{a_n}
 \ese
-Moreover, by Schwarz's theorem, we have $\partial_c\partial_b\omega_{a_1\cdots a_n} = \partial_b\partial_c\omega_{a_1\cdots a_n}$ and hence
+
+Now we can inter-switch the $c$ and $b$ dummy indices in the second half part (we can do it since they are just dummy indices) and we get
 \bse
-\partial_c\partial_b\omega_{a_1\cdots a_n} = \partial_{(c}\partial_{b)}\omega_{a_1\cdots a_n}.
+\d^2\omega = \frac{1}{2} \partial_c\partial_b\omega_{a_1\cdots a_n}\d x^c\wedge\d x^b\wedge\d x^{a_1}\wedge \cdots \wedge \d x^{a_n} + \frac{1}{2} \partial_b\partial_c\omega_{a_1\cdots a_n}\d x^b\wedge\d x^c\wedge\d x^{a_1}\wedge \cdots \wedge \d x^{a_n}
 \ese
-Thus
-\bi{rCl}
-\d^2\omega & = & \partial_c\partial_b\omega_{a_1\cdots a_n}\d x^c\wedge\d x^b\wedge\d x^{a_1}\wedge \cdots \wedge \d x^{a_n}\\
-& = & \partial_{(c}\partial_{b)}\omega_{a_1\cdots a_n}\d x^{[c}\wedge\d x^{b]}\wedge\d x^{a_1}\wedge \cdots \wedge \d x^{a_n}\\
-& = & 0.
-\ei
+
+Since $\d x^b\wedge\d x^c = - \, \d x^c\wedge\d x^b$, and moreover, by Schwarz's theorem, we have $\partial_c\partial_b\omega_{a_1\cdots a_n} = \partial_b\partial_c\omega_{a_1\cdots a_n}$ we get
+\bse
+\d^2\omega =\frac{1}{2} \partial_c\partial_b\omega_{a_1\cdots a_n}\d x^c\wedge\d x^b\wedge\d x^{a_1}\wedge \cdots \wedge \d x^{a_n} - \frac{1}{2} \partial_c\partial_b\omega_{a_1\cdots a_n}\d x^c\wedge\d x^b\wedge\d x^{a_1}\wedge \cdots \wedge \d x^{a_n}
+\ese
+
+Hence
+\bse
+\d^2\omega = 0
+\ese
+
 Since this holds for any $\omega$, we have $\d^2=0$. 
 \eq
 
@@ -1963,31 +1850,29 @@ Every exact form is closed.
 \ec
 
 We can extend the action of $\d$ to the zero vector space $0:=\{0\}$ by mapping the zero in $0$ to the zero function in $\Omega^0(M)$. In this way, we obtain the chain of $\R$-linear maps
-% \bse
-% \begin{tikzcd}
-% 0 \ar[r,"\d"]& \Omega^0(M)\ar[r,"\d"]&\cdots\ar[r,"\d"]& \Omega^n(M)\ar[r,"\d"]& \Omega^{n+1}(M)\ar[r,"\d"]& \cdots \ar[r,"\d"]& \Omega^{\dim M}(M)\ar[r,"\d"] & 0
-% \end{tikzcd}
-% \ese
 \bse
 0 \xrightarrow{\ \d\ } \Omega^0(M)\xrightarrow{\ \d\ } \Omega^1(M)\xrightarrow{\ \d\ } \cdots \xrightarrow{\ \d\ } \Omega^{n}(M)\xrightarrow{\ \d\ } \Omega^{n+1}(M)\xrightarrow{\ \d\ } \cdots \xrightarrow{\ \d\ } \Omega^{\dim M}(M)\xrightarrow{\ \d\ } 0,
 \ese
-where we now think of the spaces $\Omega^n(M)$ as $\R$-vector spaces. Recall from linear algebra that, given a linear map $\phi \cl V \to W$, one can define the subspace of $V$
+where we now think of the spaces $\Omega^n(M)$ as $\R$-vector spaces.\\
+
+Recall from linear algebra section in the notes that, given a linear map $\phi \cl V \to W$, one can define the subspace of $V$
 \bse
 \ker(\phi) := \{v \in V \mid \phi(v)=0\},
 \ese
+
+\vspace{5pt}
+
 called the \emph{kernel} of $\phi$, and the subspace of $W$
 \bse
 \im (\phi) := \{\phi(v)\mid v \in V\},
 \ese
-called the \emph{image} of $\phi$.
+called the \emph{image} of $\phi$. \\
 
 Going back to our chain of maps, the equation $\d^2=0$ is equivalent to
 \bse
 \im(\d \cl \Omega^n(M)\to\Omega^{n+1}(M)) \se \ker(\d \cl \Omega^{n+1}(M)\to\Omega^{n+2}(M))
 \ese
-% \bse
-% \im(\Omega^n(M)\xrightarrow{\ \d \ }\Omega^{n+1}(M)) \se \ker(\d \cl \Omega^{n+1}(M)\xrightarrow{\ \d \ }\Omega^{n+2}(M))
-% \ese
+
 for all $0\leq n \leq \dim M-2$. Moreover, we have
 \bi{rCl}
 \omega \in \Omega^n(M) \text{ is closed } & \Leftrightarrow\ & \omega \in \ker(\d \cl \Omega^n(M)\to\Omega^{n+1}(M))\\
@@ -1998,7 +1883,7 @@ The traditional notation for the spaces on the right hand side above is
 Z^n & := & \ker(\d \cl \Omega^n(M)\to\Omega^{n+1}(M)),\\
 B^n & := & \im (\d \cl \Omega^{n-1}(M)\to\Omega^{n}(M)),
 \ei
-so that $Z^n$ is the space of closed $n$-forms and $B^n$ is the space of exact $n$-forms.
+so that $Z^n$ is the space of closed $n$-forms and $B^n$ is the space of exact $n$-forms. \\
 
 Our original question can be restated as: does $Z^n=B^n$ for all $n$? We have already seen that $\d^2=0$ implies that $B^n\se Z^n$ for all $n$ ($B^n$ is, in fact, a vector subspace of $Z^n$). Unfortunately the equality does not hold in general, but we do have the following result.
 
@@ -2011,24 +1896,28 @@ Z^n = B^n \, , \qquad \forall \, n > 0.
 
 In the cases where $Z^n\neq B^n$, we would like to quantify by how much the closed $n$-forms fail to be exact. The answer is provided by the cohomology group.
 
-\bd
-Let $M$ be a smooth manifold. The $n$-th \emph{de Rham cohomology group}\index{cohomology group} on $M$ is the quotient $\R$-vector space
+\bd [de Rham Cohomology Group]
+Let $M$ be a smooth manifold. The $n$-th \textbf{de Rham cohomology group}\index{cohomology group} on $M$ is the quotient $\R$-vector space
 \bse
 H^n(M):=Z^n/B^n.
 \ese
 \ed
+
 You can think of the above quotient as $Z^n/\!\sim$, where $\sim$ is the equivalence relation
 \bse
 \omega \sim \sigma\ :\Leftrightarrow\ \omega-\sigma \in B^n.
 \ese
+
 The answer to our question as it is addressed in cohomology theory is: every exact $n$-form on $M$ is also closed and vice versa if, only if,
 \bse
 H^n(M) \cong_\mathrm{vec} 0.
 \ese
-Of course, rather than an actual answer, this is yet another restatement of the question. However, if we are able to determine the spaces $H^n(M)$, then we do get an answer.
 
-A crucial theorem by de Rham states (in more technical terms) that $H^n(M)$ only depends on the global topology of $M$. In other words, the cohomology groups are topological invariants.
-This is remarkable because $H^n(M)$ is defined in terms of exterior derivatives, which have everything to do with the local differentiable structure of $M$, and a given topological space can be equipped with several inequivalent differentiable structures. 
+\vspace{5pt}
+
+Of course, rather than an actual answer, this is yet another restatement of the question. However, if we are able to determine the spaces $H^n(M)$, then we do get an answer. \\
+
+A crucial theorem by de Rham states (in more technical terms) that $H^n(M)$ only depends on the global topology of $M$. In other words, the cohomology groups are topological invariants. This is remarkable because $H^n(M)$ is defined in terms of exterior derivatives, which have everything to do with the local differentiable structure of $M$, and a given topological space can be equipped with several inequivalent differentiable structures. 
 
 \be
 Let $M$ be any smooth manifold. We have
@@ -2040,6 +1929,8 @@ since the closed $0$-forms are just the locally constant smooth functions on $M$
 H^0(\R) \cong_\mathrm{vec} H^0(S^1) \cong_\mathrm{vec} \R.
 \ese
 \ee
+
+\vspace{5pt}
 
 \be
 By Poincar\'e lemma, we have

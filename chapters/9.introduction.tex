@@ -1,22 +1,22 @@
-\begin{definition}[Machine Learning]
+\bd[Machine Learning]
 \textbf{Machine learning} is the field of study that gives computers the ability to learn without being explicitly programmed. (Arthur Samuel, 1969)
-\end{definition}
+\ed
 
-\begin{definition}[Machine Learning]
+\bd[Machine Learning]
 A computer program is said to learn from experience $E$ with respect to some task $T$ and some performance measure $P$, if its performance on $T$, as measured by $P$, improves with experience $E$. (Tom Mitchell)
-\end{definition}
+\ed
 
 The essence of machine learning is that a pattern exists and it can not be pined down mathematically, however we have data on it and we can treat it in a probabilistic way.\\
 
 In order to formalize it we will be using the following notation throughout the notes:
-\begin{itemize}
+\bit
 \item Input: $x \in X$
 \item Output: $y \in Y$
 \item Data:  $\{ x_{i}, y_{i} \}, \:\:\: i=1,2,3,\ldots, m$
 \item Target Function: $f: X \to Y$
 \item Hypothesis Function: $h: X \to Y$ with $ h \approx f$
 \item Hypothesis Set: $H = \{h\}$
-\end{itemize}
+\eit
 
 Informally, the goal of machine learning is, based on the data $\{ x_{i}, y_{i} \}$,  to discover a hypothesis function $h$ that behaves in a similar way with the target function $f$ which is, and always will be, unknown to us. 
 
@@ -25,25 +25,23 @@ Informally, the goal of machine learning is, based on the data $\{ x_{i}, y_{i} 
 \begin{figure}[H]
 \includegraphics[scale=0.4]{images/mlmodel.png}
 \centering
-\caption {Machine Learning}
 \end{figure}
 
 \vspace{10pt}
 
 The question is how can we learn an unknown function $f$ just based on the data we already have, when the unknown function $f$ in general can take any value outside the known data. The short answer is that we can not however, without proving it, the following relation holds:
-
-\begin{equation} \label{eq:learning}
+\bse
 P \Big[ | E_{\text{in}} (h) - E_{\text{out}} (h) |  > \epsilon \Big] \leq 2 \cdot M \cdot e^{2\epsilon^2m}
-\end{equation}
+\ese
 
 where $ E_{\text{in}} (h)$ is the error that we get for $h$ in the known data, $E_{\text{out}} (h)$ is the error that we will get when we use $h$ for new data, $M$ is the number of possible hypothesis function $h$ (i.e the cardinality of the hypothesis set $H = \{h\}$, $\epsilon$ is the tolerance that we have for errors, and $m$ is the number of data points. This equation tells us that no matter what, learning is possible only in a probabilist sense. We will always have an error, since the whole process carries a stochastic nature.\\
 
 So we can informally summarize what we are trying to do with machine learning as:
-\begin{itemize}
-\item From (\ref{eq:learning}): $E_{\text{in}} \approx E_{\text{out}}$
+\bit
+\item From aforementioned relation: $E_{\text{in}} \approx E_{\text{out}}$
 \item From learning algorithm:  $E_{\text{in}} \approx 0$
 \item From the combination of these 2: $E_{\text{out}} \approx 0$
-\end{itemize}
+\eit
 
 By having $E_{\text{out}} \approx 0$, that means that our hypothesis function $h$ generalizes well for out of sample data, so we can use it for predictions. That in a nutshell is how machine learning works. \\
 

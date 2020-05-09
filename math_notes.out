@@ -45,24 +45,12 @@
 \BOOKMARK [1][-]{section.4.7}{Immersions And Embeddings}{chapter.4}% 45
 \BOOKMARK [1][-]{section.4.8}{Topological Bundles}{chapter.4}% 46
 \BOOKMARK [1][-]{section.4.9}{The Tangent Bundle}{chapter.4}% 47
-\BOOKMARK [1][-]{section.4.10}{Vector Fields}{chapter.4}% 48
-\BOOKMARK [1][-]{section.4.11}{Tensor Fields}{chapter.4}% 49
-\BOOKMARK [1][-]{section.4.12}{Differential Forms}{chapter.4}% 50
-\BOOKMARK [2][-]{subsection.4.12.1}{The Grassmann Algebra}{section.4.12}% 51
-\BOOKMARK [2][-]{subsection.4.12.2}{The Exterior Derivative}{section.4.12}% 52
-\BOOKMARK [2][-]{subsection.4.12.3}{De Rham Cohomology}{section.4.12}% 53
-\BOOKMARK [-1][-]{part.2}{II Statistics \046 Probability Theory}{}% 54
-\BOOKMARK [0][-]{chapter.5}{Probability Theory}{part.2}% 55
-\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 56
-\BOOKMARK [2][-]{subsection.5.1.1}{Basic Terminology}{section.5.1}% 57
-\BOOKMARK [1][-]{section.5.2}{Sample Space \046 Events}{chapter.5}% 58
-\BOOKMARK [1][-]{section.5.3}{Probability Space}{chapter.5}% 59
-\BOOKMARK [1][-]{section.5.4}{Conditional Probability}{chapter.5}% 60
-\BOOKMARK [1][-]{section.5.5}{Random Variables}{chapter.5}% 61
-\BOOKMARK [2][-]{subsection.5.5.1}{Discrete Random Variables}{section.5.5}% 62
-\BOOKMARK [2][-]{subsection.5.5.2}{Discrete Probability Distributions}{section.5.5}% 63
-\BOOKMARK [2][-]{subsection.5.5.3}{Continuous Random Variables}{section.5.5}% 64
-\BOOKMARK [2][-]{subsection.5.5.4}{Continuous Probability Distributions}{section.5.5}% 65
-\BOOKMARK [2][-]{subsection.5.5.5}{Joint Probability Distribution}{section.5.5}% 66
-\BOOKMARK [2][-]{subsection.5.5.6}{Bivariate Joint Distribution}{section.5.5}% 67
-\BOOKMARK [2][-]{subsection.5.5.7}{Moments}{section.5.5}% 68
+\BOOKMARK [1][-]{section.4.10}{Vector, Covector And Tensor Fields}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.11}{Differential Forms}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.11.1}{The Grassmann Algebra}{section.4.11}% 50
+\BOOKMARK [2][-]{subsection.4.11.2}{The Exterior Derivative}{section.4.11}% 51
+\BOOKMARK [2][-]{subsection.4.11.3}{De Rham Cohomology}{section.4.11}% 52
+\BOOKMARK [0][-]{chapter.5}{Lie Theory}{part.1}% 53
+\BOOKMARK [1][-]{section.5.1}{Lie groups}{chapter.5}% 54
+\BOOKMARK [2][-]{subsection.5.1.1}{The left translation map}{section.5.1}% 55
+\BOOKMARK [2][-]{subsection.5.1.2}{The Lie algebra of a Lie group}{section.5.1}% 56

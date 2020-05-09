@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.28)  9 MAY 2020 09:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.28)  9 MAY 2020 20:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1214,8 +1214,7 @@ File: pgflibraryarrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \c@example=\count326
 \c@remark=\count327
 \symMnSyC=\mathgroup7
-)
-No file math_notes.aux.
+) (./math_notes.aux)
 \openout1 = `math_notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -1232,6 +1231,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 5.
+
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
@@ -1317,11 +1317,12 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 5.
 LaTeX Info: Redefining \pageref on input line 5.
 LaTeX Info: Redefining \nameref on input line 5.
+
+(./math_notes.out) (./math_notes.out)
 \@outlinefile=\write4
 \openout4 = `math_notes.out'.
 
-
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
@@ -1343,13 +1344,15 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 19.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./math
+_notes.toc
+[2
+
+])
 \tf@toc=\write5
 \openout5 = `math_notes.toc'.
 
- [2
-
-] [3
+ [3] [4
 
 ]
 Chapter 1.
@@ -1358,7 +1361,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--37
 
  []
 
-[4
+[5
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 131--133
@@ -1370,7 +1373,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--138
 
  []
 
-[5] [6]
+[6] [7]
 Overfull \hbox (23.47916pt too wide) in paragraph at lines 227--228
 [][]\OT1/cmr/bx/n/10 Definition 1.9 \OT1/cmr/m/n/10 (Ax-iomatic Sys-tem)\OT1/cm
 r/bx/n/10 . []\OT1/cmr/m/it/10 An \OT1/cmr/bx/it/10 ax-iomatic sys-tem \OT1/cmr
@@ -1388,27 +1391,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 291--297
 
  []
 
-[7]
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 355--357
 
  []
 
-[8]
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 366--371
 
  []
 
-[9]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 500--501
 
  []
 
-[10]
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 512--513
 
  []
 
-[11] [12]
+[12] [13]
 Underfull \hbox (badness 10000) in paragraph at lines 653--655
 
  []
@@ -1418,12 +1421,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 660--661
 
  []
 
-<./images/map.png, id=135, 615.29875pt x 445.665pt>
+<./images/map.png, id=415, 615.29875pt x 445.665pt>
 File: ./images/map.png Graphic file (type png)
 <use ./images/map.png>
 Package pdftex.def Info: ./images/map.png  used on input line 683.
 (pdftex.def)             Requested size: 215.35779pt x 155.98508pt.
-[13] [14 <./images/map.png>] [15] [16] [17] [18]
+[14] [15 <./images/map.png>] [16] [17] [18] [19]
 Underfull \hbox (badness 10000) in paragraph at lines 1030--1031
 
  []
@@ -1433,7 +1436,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1057--1058
 
  []
 
-[19]) [20]
+[20]) [21]
 Chapter 2.
 (./chapters/2.algebraic_structures.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
@@ -1450,24 +1453,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-[21
+[22
 
-] [22] [23] [24]
+] [23] [24] [25]
 Underfull \hbox (badness 10000) in paragraph at lines 280--282
 
  []
 
-[25] [26]
+[26] [27]
 Underfull \hbox (badness 10000) in paragraph at lines 357--359
 
  []
 
-[27]
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 429--430
 
  []
 
-[28]
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 498--500
 
  []
@@ -1487,21 +1490,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 521--522
 
  []
 
-[29]
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 526--528
 
  []
 
-[30]
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 637--638
 
  []
 
-[31] [32]) [33]
+[32] [33]) [34]
 Chapter 3.
-(./chapters/3.topology.tex [34
+(./chapters/3.topology.tex [35
 
-] [35] [36] [37] [38] [39]
+] [36] [37] [38] [39] [40]
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 424.
 
 
@@ -1513,21 +1516,21 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 424.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [40] [41]
-<images/sinoneoverx.pdf, id=473, 361.35pt x 234.8775pt>
+) [41] [42]
+<images/sinoneoverx.pdf, id=728, 361.35pt x 234.8775pt>
 File: images/sinoneoverx.pdf Graphic file (type pdf)
 <use images/sinoneoverx.pdf>
 Package pdftex.def Info: images/sinoneoverx.pdf  used on input line 610.
 (pdftex.def)             Requested size: 252.94327pt x 164.41312pt.
 
-[42 <./images/sinoneoverx.pdf>]
+[43 <./images/sinoneoverx.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 742--743
 
  []
 
-[43]) [44]
+[44]) [45]
 Chapter 4.
-(./chapters/4.topological_manifolds.tex [45
+(./chapters/4.topological_manifolds.tex [46
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 109--110
@@ -1539,7 +1542,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-[46]
+[47]
 Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
@@ -1557,12 +1560,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
-[47]
+[48]
 Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
-[48]
+[49]
 Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
@@ -1572,7 +1575,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 286--287
 
  []
 
-[49]
+[50]
 Underfull \hbox (badness 10000) in paragraph at lines 335--336
 
  []
@@ -1592,17 +1595,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
-[50] [51]
+[51] [52]
 Underfull \hbox (badness 10000) in paragraph at lines 459--460
 
  []
 
-[52]
+[53]
 Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
 
-[53]
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--469
+
+ []
+
+[54]
 Underfull \hbox (badness 10000) in paragraph at lines 520--521
 
  []
@@ -1622,7 +1630,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 572--574
 
  []
 
-[54]
+[55]
 Underfull \hbox (badness 10000) in paragraph at lines 591--592
 
  []
@@ -1632,7 +1640,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 606--607
 
  []
 
-[55]
+[56]
 Underfull \hbox (badness 10000) in paragraph at lines 646--647
 
  []
@@ -1642,18 +1650,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 663--664
 
  []
 
-[56]
+[57]
 Underfull \hbox (badness 10000) in paragraph at lines 717--718
 
  []
 
-[57]
+[58]
 Underfull \hbox (badness 10000) in paragraph at lines 778--779
 
  []
 
-[58]
-<images/immers.pdf, id=642, 361.35pt x 128.48pt>
+[59]
+<images/immers.pdf, id=883, 361.35pt x 128.48pt>
 File: images/immers.pdf Graphic file (type pdf)
 <use images/immers.pdf>
 Package pdftex.def Info: images/immers.pdf  used on input line 835.
@@ -1663,22 +1671,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 856--857
 
  []
 
-[59 <./images/immers.pdf>] [60] [61] [62]
+[60 <./images/immers.pdf>] [61] [62] [63]
 Underfull \hbox (badness 10000) in paragraph at lines 1173--1174
 
  []
 
-[63]
+[64]
 Underfull \hbox (badness 10000) in paragraph at lines 1190--1191
 
  []
 
-[64]
+[65]
 Underfull \hbox (badness 10000) in paragraph at lines 1236--1237
 
  []
 
-[65]
+[66]
 Underfull \hbox (badness 10000) in paragraph at lines 1299--1301
 
  []
@@ -1688,610 +1696,113 @@ Underfull \hbox (badness 10000) in paragraph at lines 1343--1344
 
  []
 
-[66]
-Underfull \hbox (badness 10000) in paragraph at lines 1370--1372
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1373--1374
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1384--1386
-
- []
-
 [67]
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1416.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1416--1417
+Underfull \hbox (badness 10000) in paragraph at lines 1350--1351
 
  []
 
-[68] [69]
-Underfull \hbox (badness 10000) in paragraph at lines 1541--1542
+
+Underfull \hbox (badness 10000) in paragraph at lines 1352--1353
 
  []
 
-[70] [71] [72] [73] [74] [75] [76]) [77] [78
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 1372--1374
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1375--1376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1386--1388
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1389--1390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1391--1392
+
+ []
+
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 1440--1441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1452--1453
+
+ []
+
+[69] [70]
+Underfull \hbox (badness 10000) in paragraph at lines 1583--1584
+
+ []
+
+[71] [72] [73]
+Underfull \hbox (badness 10000) in paragraph at lines 1767--1768
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1793--1795
+
+ []
+
+[74]
+Underfull \hbox (badness 10000) in paragraph at lines 1807--1808
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1855--1857
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1868--1870
+
+ []
+
+[75]
+Underfull \hbox (badness 10000) in paragraph at lines 1885--1887
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1918--1919
+
+ []
+
+) [76]
 Chapter 5.
-(./chapters/5.probability_theory.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-
- []
-
-[79
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
-
- []
-
-[80]
-<./images/event.png, id=1491, 332.24126pt x 328.22626pt>
-File: ./images/event.png Graphic file (type png)
-<use ./images/event.png>
-Package pdftex.def Info: ./images/event.png  used on input line 116.
-(pdftex.def)             Requested size: 132.89413pt x 131.28816pt.
-<images/complement.png, id=1492, 622.325pt x 540.0175pt>
-File: images/complement.png Graphic file (type png)
-<use images/complement.png>
-Package pdftex.def Info: images/complement.png  used on input line 133.
-(pdftex.def)             Requested size: 124.46278pt x 108.00157pt.
-<images/union.png, id=1493, 621.32124pt x 420.57124pt>
-File: images/union.png Graphic file (type png)
-<use images/union.png>
-Package pdftex.def Info: images/union.png  used on input line 146.
-(pdftex.def)             Requested size: 155.32993pt x 105.14255pt.
- [81 <./images/event.png> <./images/complement.png> <./images/union.png>]
-<images/intersection.png, id=1506, 680.5425pt x 420.57124pt>
-File: images/intersection.png Graphic file (type png)
-<use images/intersection.png>
-Package pdftex.def Info: images/intersection.png  used on input line 161.
-(pdftex.def)             Requested size: 170.13521pt x 105.14255pt.
-<images/mutually_exclusive.png, id=1507, 214.55156pt x 119.69719pt>
-File: images/mutually_exclusive.png Graphic file (type png)
-<use images/mutually_exclusive.png>
-Package pdftex.def Info: images/mutually_exclusive.png  used on input line 174.
-
-(pdftex.def)             Requested size: 160.91327pt x 89.77266pt.
-
-[82 <./images/intersection.png> <./images/mutually_exclusive.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
-
- []
-
-
-LaTeX Warning: Reference `lem:complement' on page 83 undefined on input line 25
-3.
-
-[83]
-<images/conditional2.png, id=1532, 823.075pt x 316.18124pt>
-File: images/conditional2.png Graphic file (type png)
-<use images/conditional2.png>
-Package pdftex.def Info: images/conditional2.png  used on input line 311.
-(pdftex.def)             Requested size: 329.22417pt x 126.47025pt.
- [84 <./images/conditional2.png>]
-<images/partition.png, id=1542, 687.56876pt x 463.7325pt>
-File: images/partition.png Graphic file (type png)
-<use images/partition.png>
-Package pdftex.def Info: images/partition.png  used on input line 365.
-(pdftex.def)             Requested size: 171.89177pt x 115.93283pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 390--391
-
- []
-
-[85 <./images/partition.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 392--393
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 412--413
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
-
- []
-
-[86]
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 464--465
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 474--475
-
- []
-
-[87]
-
-LaTeX Warning: Reference `eq:mass' on page 88 undefined on input line 498.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 507--508
-
- []
-
-[88]
-Underfull \hbox (badness 10000) in paragraph at lines 553--554
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 555--556
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 581--582
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 583--584
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
-
- []
-
-[89]
-Underfull \hbox (badness 10000) in paragraph at lines 601--602
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--609
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 619--620
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 633--634
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 637--638
-
- []
-
-[90]
-Underfull \hbox (badness 10000) in paragraph at lines 660--661
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 662--663
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 666--667
-
- []
-
-[91]
-Underfull \hbox (badness 10000) in paragraph at lines 680--681
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 694--695
-
- []
-
-[92]
-Underfull \hbox (badness 10000) in paragraph at lines 750--751
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 785--786
-
- []
-
-[93]
-Underfull \hbox (badness 10000) in paragraph at lines 792--793
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 809--810
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 815--816
-
- []
-
-
-LaTeX Warning: Reference `eq:density' on page 94 undefined on input line 831.
-
-[94]
-
-LaTeX Warning: Reference `eq:uniform_continuous' on page 95 undefined on input 
-line 841.
-
-<images/uniform.png, id=1616, 1927.2pt x 1377.145pt>
-File: images/uniform.png Graphic file (type png)
-<use images/uniform.png>
-Package pdftex.def Info: images/uniform.png  used on input line 860.
-(pdftex.def)             Requested size: 269.80617pt x 192.79898pt.
-
-LaTeX Warning: Reference `eq:expected_continuous' on page 95 undefined on input
- line 867.
-
-
-LaTeX Warning: Reference `eq:variance' on page 95 undefined on input line 874.
-
-
-Overfull \hbox (8.1324pt too wide) detected at line 877
-[]
- []
-
-
-LaTeX Warning: Reference `eq:variance' on page 95 undefined on input line 881.
-
-[95 <./images/uniform.png>]
-<images/normal.png, id=1623, 1445.4pt x 923.45pt>
-File: images/normal.png Graphic file (type png)
-<use images/normal.png>
-Package pdftex.def Info: images/normal.png  used on input line 902.
-(pdftex.def)             Requested size: 346.90309pt x 221.63252pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 907--908
-
- []
-
-
-LaTeX Warning: Reference `eq:expected_continuous' on page 96 undefined on input
- line 909.
-
-[96 <./images/normal.png>]
-
-LaTeX Warning: Reference `eq:variance' on page 97 undefined on input line 923.
-
-[97]
-
-LaTeX Warning: Reference `eq:variance' on page 98 undefined on input line 938.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 943--944
-
- []
-
-
-LaTeX Warning: Reference `eq:normal' on page 98 undefined on input line 954.
-
-
-LaTeX Warning: Reference `eq:pdf' on page 98 undefined on input line 962.
-
-[98]
-Underfull \hbox (badness 10000) in paragraph at lines 995--996
-
- []
-
-[99]
-<images/standardnormal.png, id=1646, 927.465pt x 504.88625pt>
-File: images/standardnormal.png Graphic file (type png)
-<use images/standardnormal.png>
-Package pdftex.def Info: images/standardnormal.png  used on input line 1038.
-(pdftex.def)             Requested size: 417.3554pt x 227.1967pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1051--1052
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1065--1066
-
- []
-
-[100 <./images/standardnormal.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1101--1102
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1103--1104
-
- []
-
-[101]
-<images/exponential.png, id=1661, 284.06125pt x 207.77625pt>
-File: images/exponential.png Graphic file (type png)
-<use images/exponential.png>
-Package pdftex.def Info: images/exponential.png  used on input line 1116.
-(pdftex.def)             Requested size: 369.27956pt x 270.10907pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1138--1139
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1140--1141
-
- []
-
-[102 <./images/exponential.png>]
-<images/chi.png, id=1669, 1204.5pt x 803.0pt>
-File: images/chi.png Graphic file (type png)
-<use images/chi.png>
-Package pdftex.def Info: images/chi.png  used on input line 1155.
-(pdftex.def)             Requested size: 361.35278pt x 240.90186pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1179--1180
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1181--1182
-
- []
-
-[103 <./images/chi.png>]
-<images/t.png, id=1678, 1927.2pt x 1541.76pt>
-File: images/t.png Graphic file (type png)
-<use images/t.png>
-Package pdftex.def Info: images/t.png  used on input line 1192.
-(pdftex.def)             Requested size: 327.61967pt x 262.09573pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1217
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1218--1219
-
- []
-
-[104 <./images/t.png>]
-<images/beta.png, id=1685, 652.4375pt x 521.95pt>
-File: images/beta.png Graphic file (type png)
-<use images/beta.png>
-Package pdftex.def Info: images/beta.png  used on input line 1227.
-(pdftex.def)             Requested size: 326.21794pt x 260.97435pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1234--1235
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1254--1255
-
- []
-
-<images/gamma.png, id=1686, 1927.2pt x 1445.4pt>
-File: images/gamma.png Graphic file (type png)
-<use images/gamma.png>
-Package pdftex.def Info: images/gamma.png  used on input line 1265.
-(pdftex.def)             Requested size: 385.43318pt x 289.07487pt.
-[105 <./images/beta.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1272--1273
-
- []
-
-[106 <./images/gamma.png>]
-Overfull \hbox (4.50314pt too wide) in paragraph at lines 1300--1301
-\OT1/cmr/m/it/10 are de-fined on a prob-a-bil-ity space $\OML/cmm/m/it/10 S$\OT
-1/cmr/m/it/10 , we de-fine the \OT1/cmr/bx/it/10 joint prob-a-bil-ity mass func
--tion $\OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; [] ; x[]\OT1/
-cmr/m/n/10 )$
- []
-
-
-LaTeX Warning: Reference `eq:independentjoint' on page 107 undefined on input l
-ine 1323.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1323--1324
-
- []
-
-
-Overfull \hbox (32.93141pt too wide) in paragraph at lines 1328--1329
-\OT1/cmr/m/it/10 that are de-fined on a prob-a-bil-ity space $\OML/cmm/m/it/10 
-S$\OT1/cmr/m/it/10 , we de-fine the \OT1/cmr/bx/it/10 joint prob-a-bil-ity den-
-sity func-tion $\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; [] ;
- x[]\OT1/cmr/m/n/10 )$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1353--1354
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1355--1356
-
- []
-
-[107]
-
-LaTeX Warning: Reference `eq:jointpmf' on page 108 undefined on input line 1357
-.
-
-
-LaTeX Warning: Reference `eq:independentjoint' on page 108 undefined on input l
-ine 1391.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1407--1408
-
- []
-
-[108]
-Underfull \hbox (badness 10000) in paragraph at lines 1435--1436
-
- []
-
-
-LaTeX Warning: Reference `eq:variance' on page 109 undefined on input line 1437
-.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1446--1447
-
- []
-
-
-LaTeX Warning: Reference `eq:independentexpected' on page 109 undefined on inpu
-t line 1448.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1459--1460
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1472--1473
-
- []
-
-[109]
-Underfull \hbox (badness 10000) in paragraph at lines 1497--1498
-
- []
-
-
-LaTeX Warning: Reference `eq:variance' on page 110 undefined on input line 1499
-.
-
-
-LaTeX Warning: Reference `eq:covariance' on page 110 undefined on input line 14
-99.
-
-
-LaTeX Warning: Reference `eq:variance_covariance' on page 110 undefined on inpu
-t line 1515.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1527--1528
-
- []
-
-[110]
-<images/correlation.png, id=1730, 575.14874pt x 210.7875pt>
-File: images/correlation.png Graphic file (type png)
-<use images/correlation.png>
-Package pdftex.def Info: images/correlation.png  used on input line 1532.
-(pdftex.def)             Requested size: 373.84225pt x 137.01025pt.
-
-
-LaTeX Warning: Reference `eq:jointpdf' on page 111 undefined on input line 1539
-.
-
-[111 <./images/correlation.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1616--1617
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1636--1637
-
- []
-
-
-LaTeX Warning: Reference `eq:independentexpected' on page 112 undefined on inpu
-t line 1638.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1643--1644
-
- []
-
-[112]
-<images/skewness.png, id=1744, 2890.8pt x 1030.85126pt>
-File: images/skewness.png Graphic file (type png)
-<use images/skewness.png>
-Package pdftex.def Info: images/skewness.png  used on input line 1673.
-(pdftex.def)             Requested size: 462.53746pt x 164.93956pt.
-
-Overfull \hbox (9.56956pt too wide) in paragraph at lines 1673--1675
- [][] 
- []
-
-<images/kurtosis.png, id=1745, 416.55624pt x 234.8775pt>
-File: images/kurtosis.png Graphic file (type png)
-<use images/kurtosis.png>
-Package pdftex.def Info: images/kurtosis.png  used on input line 1692.
-(pdftex.def)             Requested size: 274.92796pt x 155.01962pt.
-[113 <./images/skewness.png>] [114 <./images/kurtosis.png>]
-<images/moments.png, id=1764, 410.53375pt x 248.93pt>
-File: images/moments.png Graphic file (type png)
-<use images/moments.png>
-Package pdftex.def Info: images/moments.png  used on input line 1807.
-(pdftex.def)             Requested size: 266.84377pt x 161.80257pt.
- [115 <./images/moments.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1834--1835
-
- []
-
-[116]
-Overfull \hbox (27.05319pt too wide) detected at line 1918
-[]
- []
-
-[117]) [118]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
+(./chapters/5.lie_theory.tex [77
+
+] [78]
+Overfull \hbox (14.76665pt too wide) in paragraph at lines 132--134
+\OT1/cmr/m/n/10 A fur-ther re-for-mu-la-tion comes from con-sid-er-ing the vec-
+tor field $\OML/cmm/m/it/10 X \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^@(\OML/cmm/m
+/it/10 TG\OT1/cmr/m/n/10 )$ as an $\U/msb/m/n/10 R$\OT1/cmr/m/n/10 -linear map 
+$\OML/cmm/m/it/10 X [] [] \OMS/cmsy/m/n/10 C[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
+ G\OT1/cmr/m/n/10 ) []
+ []
+
+[79] [80] [81]) [82]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 65.
  (./math_notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 65.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 65.
+Package rerunfilecheck Info: File `math_notes.out' has not changed.
+(rerunfilecheck)             Checksum: 246D535EB25E312406213E8ABA8800F1;3988.
 
-
-Package rerunfilecheck Warning: File `math_notes.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `math_notes.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  A025DD353F6FDDC0471602324349F82B;4851.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 3.25pt have occurred.
@@ -2299,22 +1810,16 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 65.
  ) 
 Here is how much of TeX's memory you used:
- 43129 strings out of 492616
- 987177 string characters out of 6129480
- 1243737 words of memory out of 5000000
- 45747 multiletter control sequences out of 15000+600000
+ 42990 strings out of 492616
+ 985226 string characters out of 6129480
+ 1243863 words of memory out of 5000000
+ 45750 multiletter control sequences out of 15000+600000
  557301 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,16n,96p,1017b,2680s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,16n,96p,959b,2680s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
 exlive/2019/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/texli
 ve/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texliv
@@ -2349,10 +1854,10 @@ xmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2019
 ist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2019/texmf-dis
 t/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2019/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on math_notes.pdf (118 pages, 2488871 bytes).
+Output written on math_notes.pdf (82 pages, 965299 bytes).
 PDF statistics:
- 2026 PDF objects out of 2073 (max. 8388607)
- 1496 compressed objects within 15 object streams
- 658 named destinations out of 1000 (max. 500000)
- 2319 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1936 PDF objects out of 2073 (max. 8388607)
+ 1478 compressed objects within 15 object streams
+ 522 named destinations out of 1000 (max. 500000)
+ 2672 words of extra memory for PDF output out of 10000 (max. 10000000)
 
