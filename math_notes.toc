@@ -1,0 +1,85 @@
+\babel@toc {english}{}
+\contentsline {part}{I\hspace {1em}Basic Mathematics}{3}{part.1}% 
+\contentsline {chapter}{\numberline {1}Axiomatic Set Theory}{4}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Propositional Logic}{4}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Predicate Logic}{5}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Axiomatic Systems And Theory Of Proofs}{7}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}The $\in $-relation}{8}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}Zermelo-Fraenkel Axioms Of Set Theory}{9}{section.1.5}% 
+\contentsline {section}{\numberline {1.6}Maps Between Sets}{13}{section.1.6}% 
+\contentsline {section}{\numberline {1.7}Equivalence Relations}{16}{section.1.7}% 
+\contentsline {section}{\numberline {1.8}Construction Of $\mathbb {N}$, $\mathbb {Z}$, $\mathbb {Q}$ And $\mathbb {R}$}{18}{section.1.8}% 
+\contentsline {chapter}{\numberline {2}Algebraic Structures}{21}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Algebraic Structures}{21}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Groups}{21}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Fields}{22}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Vector Spaces}{22}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Linear Maps}{23}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}Basis Of Vector Spaces}{24}{subsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.4.3}Change Of Basis}{25}{subsection.2.4.3}% 
+\contentsline {subsection}{\numberline {2.4.4}Tensors}{26}{subsection.2.4.4}% 
+\contentsline {subsection}{\numberline {2.4.5}Notational Conventions}{28}{subsection.2.4.5}% 
+\contentsline {section}{\numberline {2.5}Rings}{30}{section.2.5}% 
+\contentsline {section}{\numberline {2.6}Modules}{31}{section.2.6}% 
+\contentsline {subsection}{\numberline {2.6.1}Basis Of Modules}{32}{subsection.2.6.1}% 
+\contentsline {section}{\numberline {2.7}Algebras}{32}{section.2.7}% 
+\contentsline {chapter}{\numberline {3}Topology}{34}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Topological Spaces}{34}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Construction Of New Topologies From Given Ones}{36}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Convergence \& Continuity}{38}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Invariant Topological Properties}{39}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Separation Properties}{39}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Connectedness And Path-Connectedness}{41}{subsection.3.4.2}% 
+\contentsline {subsection}{\numberline {3.4.3}Homotopic Curves And The Fundamental Group}{42}{subsection.3.4.3}% 
+\contentsline {chapter}{\numberline {4}Topological Manifolds}{45}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Topological Manifolds}{45}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Charts \& Atlases}{45}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Differentiable Manifolds}{48}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Classification Of Differentiable Structures}{50}{subsection.4.3.1}% 
+\contentsline {section}{\numberline {4.4}Tangent Spaces}{51}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Co-Ordinate Induced Basis For The Tangent Space}{53}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Change Of Vector Components Under A Change Of Chart}{55}{subsection.4.4.2}% 
+\contentsline {section}{\numberline {4.5}Cotangent Spaces}{56}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Dual Basis For The Cotangent Space}{56}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Change Of Covector Components Under A Change Of Chart}{57}{subsection.4.5.2}% 
+\contentsline {section}{\numberline {4.6}Push-Forward And Pull-Back}{58}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Immersions And Embeddings}{59}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Topological Bundles}{60}{section.4.8}% 
+\contentsline {section}{\numberline {4.9}The Tangent Bundle}{63}{section.4.9}% 
+\contentsline {section}{\numberline {4.10}Vector Fields}{65}{section.4.10}% 
+\contentsline {section}{\numberline {4.11}Tensor Fields}{67}{section.4.11}% 
+\contentsline {section}{\numberline {4.12}Differential Forms}{67}{section.4.12}% 
+\contentsline {subsection}{\numberline {4.12.1}The Grassmann Algebra}{69}{subsection.4.12.1}% 
+\contentsline {subsection}{\numberline {4.12.2}The Exterior Derivative}{71}{subsection.4.12.2}% 
+\contentsline {subsection}{\numberline {4.12.3}De Rham Cohomology}{75}{subsection.4.12.3}% 
+\contentsline {part}{II\hspace {1em}Statistics \& Probability Theory}{78}{part.2}% 
+\contentsline {chapter}{\numberline {5}Probability Theory}{79}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Introduction}{79}{section.5.1}% 
+\contentsline {subsection}{\numberline {5.1.1}Basic Terminology}{79}{subsection.5.1.1}% 
+\contentsline {section}{\numberline {5.2}Sample Space \& Events}{80}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Probability Space}{82}{section.5.3}% 
+\contentsline {section}{\numberline {5.4}Conditional Probability}{84}{section.5.4}% 
+\contentsline {section}{\numberline {5.5}Random Variables}{85}{section.5.5}% 
+\contentsline {subsection}{\numberline {5.5.1}Discrete Random Variables}{86}{subsection.5.5.1}% 
+\contentsline {subsection}{\numberline {5.5.2}Discrete Probability Distributions}{88}{subsection.5.5.2}% 
+\contentsline {subsubsection}{Discrete Uniform Distribution - Unif(n)}{88}{section*.2}% 
+\contentsline {subsubsection}{Bernoulli Distribution - Bern(p)}{88}{section*.3}% 
+\contentsline {subsubsection}{Binomial Distribution - B(n,p)}{89}{section*.4}% 
+\contentsline {subsubsection}{Poisson Distribution - Pois($\lambda $)}{90}{section*.5}% 
+\contentsline {subsubsection}{Geometric Distribution - Geo(p)}{92}{section*.6}% 
+\contentsline {subsubsection}{Hypergeometric Distribution - Hypergeometric(N, K, n)}{92}{section*.7}% 
+\contentsline {subsubsection}{Negative Binomial Distribution - NB(r,p)}{93}{section*.8}% 
+\contentsline {subsection}{\numberline {5.5.3}Continuous Random Variables}{93}{subsection.5.5.3}% 
+\contentsline {subsection}{\numberline {5.5.4}Continuous Probability Distributions}{94}{subsection.5.5.4}% 
+\contentsline {subsubsection}{Continuous Uniform Distribution - Unif(a,b)}{94}{section*.9}% 
+\contentsline {subsubsection}{Normal Distribution - N($\mu $, $\sigma ^2$)}{96}{section*.10}% 
+\contentsline {subsubsection}{Standard Normal Distribution - N(0,1)}{98}{section*.11}% 
+\contentsline {subsubsection}{Exponential Distribution - Expo($\lambda $)}{101}{section*.12}% 
+\contentsline {subsubsection}{Chi-Squared Distribution - $\chi ^2(k)$}{102}{section*.13}% 
+\contentsline {subsubsection}{Student's t-Distribution - $t(\nu )$}{103}{section*.14}% 
+\contentsline {subsubsection}{Beta Distribution - Beta($\alpha , \beta $)}{104}{section*.15}% 
+\contentsline {subsubsection}{Gamma Distribution - Gamma($\alpha $, $\beta $)}{105}{section*.16}% 
+\contentsline {subsection}{\numberline {5.5.5}Joint Probability Distribution}{106}{subsection.5.5.5}% 
+\contentsline {subsection}{\numberline {5.5.6}Bivariate Joint Distribution}{107}{subsection.5.5.6}% 
+\contentsline {subsubsection}{Application: Bivariate Bernoulli Distribution}{112}{section*.17}% 
+\contentsline {subsection}{\numberline {5.5.7}Moments}{113}{subsection.5.5.7}% 
