@@ -1,4 +1,4 @@
-\section{Lie groups}
+\section{Lie Groups}
 
 \bd [Lie Group]
 A \textbf{Lie group}\index{Lie group} is a group $(G,\bullet)$, where $G$ is a smooth manifold and the maps
@@ -14,8 +14,8 @@ i \cl & G & \to & G\\
 are both smooth. Note that $G\times G$ inherits a smooth atlas from the smooth atlas of $G$.
 \ed
 
-\bd
-The \emph{dimension} of a Lie group $(G,\bullet)$ is the dimension of $G$ as a manifold.
+\bd [Dimension Of Lie Group]
+The \textbf{dimension} of a Lie group $(G,\bullet)$ is the dimension of $G$ as a manifold.
 \ed
 
 \be
@@ -27,41 +27,28 @@ The \emph{dimension} of a Lie group $(G,\bullet)$ is the dimension of $G$ as a m
 \item Let $\mathrm{GL}(n,\R)=\{\phi\cl\R^n\xrightarrow{\sim}\R^n\mid \det \phi \neq 0\}$. This set can be endowed with the structure of a smooth $n^2$-dimensional manifold, by noting that there is a bijection between linear maps $\phi\cl\R^n\xrightarrow{\sim}\R^n$ and $\R^{2n}$. The condition $\det \phi\neq 0$ is a so-called \emph{open condition}, meaning that $\mathrm{GL}(n,\R)$ can be identified with an open subset of $\R^{2n}$, from which it then inherits a smooth structure.
 
 Then, $(\mathrm{GL}(n,\R),\circ)$ is a Lie group called the \emph{general linear group}.
-
-\item Let $V$ be an $n$-dimensional $\R$-vector space equipped with a pseudo inner product, i.e.\ an bilinear map $(-,-)\cl V\times V \to \R$ satisfying
-\ben
-\item[i)] symmetry: $\forall \, v,w\in V : \ (v,w)=(w,v)$;
-\item[ii)] non-degeneracy: $(\forall \, w\in V : (v,w)=0)\Rightarrow v = 0$.
-\een
-Ordinary inner products satisfy a stronger condition than non-degeneracy, called positive definiteness, which is $\forall \, v \in V : (v,v)\geq 0$ and $(v,v)=0 \Rightarrow v=0$.
-
-Given a symmetric bilinear map $(-,-)$ on $V$, there is always a basis $\{e_a\}$ of $V$ such that $(e_a,e_a)=\pm 1$ and zero otherwise. If we get $p$-many $1$s and $q$-many $-1$s (with $p+q=n$, of course), then the pair $(p,q)$ is called the \emph{signature}\index{signature} of the map. Positive definiteness is the requirement that the signature be $(n,0)$, although in relativity we require the signature to be $(n-1,1)$. A theorem states that there are (up to isomorphism) only as many pseudo inner products on $V$ as there are different signatures.
-
-We can define the set
-\bse
-\mathrm{O}(p,q):=\{\phi\cl V\xrightarrow{\sim} V \mid \forall \, v,w\in V : (\phi(v),\phi(w))=(v,w)\}.
-\ese
-The pair $(\mathrm{O}(p,q),\circ)$ is a Lie group called the \emph{orthogonal group}\index{orthogonal group} with respect to the pseudo inner product $(-,-)$. This is, in fact, a Lie subgroup of $\mathrm{GL}(p+q,\R)$. Some notable examples are $\mathrm{O}(3,1)$, which is known as the \emph{Lorentz group}\index{Lorentz group} in relativity, and $\mathrm{O}(3,0)$, which is the 3-dimensional rotation group.
 \een
 \ee
 
-\bd
-Let $(G,\bullet)$ and $(H,\circ)$ be Lie groups. A map $\phi\cl G \to H$ is \emph{Lie group homomorphism} if it is a group homomorphism and a smooth map.
-
-A \emph{Lie group isomorphism}\index{isomorphism!of Lie groups} is a group homomorphism which is also a diffeomorphism. 
+\bd [Lie Group Homomorphism]
+Let $(G,\bullet)$ and $(H,\circ)$ be Lie groups. A map $\phi\cl G \to H$ is \textbf{Lie group homomorphism} if it is a group homomorphism and a smooth map.
 \ed
 
-\subsection{The left translation map}
+\bd [Lie Group Isomorphism]
+A \textbf{Lie group isomorphism}\index{isomorphism!of Lie groups} is a Lie group homomorphism which is also a diffeomorphism of the underlying manifolds. 
+\ed
+
+\subsection{The Left Translation Map}
 
 To every element of a Lie group there is associated a special map. Note that everything we will do here can be done equivalently by using right translation maps. 
 
-\bd
+\bd [Left Translation]
 Let $(G,\bullet)$ be a Lie group and let $g\in G$. The map
 \bi{rrCl}
 \ell_g \cl & G & \to & G\\
 & h & \mapsto & \ell_g(h):=g\bullet h \equiv gh
 \ei
-is called the \emph{left translation}\index{left translation} by $g$.
+is called the \textbf{left translation}\index{left translation} by $g$.
 \ed
 If there is no danger of confusion, we usually suppress the $\bullet$ notation.  
 \bp
@@ -77,11 +64,13 @@ Moreover, for any $h\in G$, we have $g^{-1} h\in G$ and
 \bse
 \ell_g(g^{-1} h) = gg^{-1} h = h.
 \ese
-Therefore, $\ell_g$ is a bijection on $G$. Note that
+Therefore, $\ell_g$ is a bijection on $G$.\\
+
+Note that
 \bse
 \ell_g = \mu(g,-)
 \ese
-and since $\mu\cl G\times G \to G$ is smooth by definition, so is $\ell_g$. 
+and since $\mu\cl G\times G \to G$ is smooth by definition, so is $\ell_g$. \\
 
 The inverse map is $(\ell_g)^{-1}=\ell_{g^{-1}}$, since
 \bse
@@ -98,92 +87,74 @@ in general. However, as the final part of the previous proof suggests, we do hav
 \bse
 \ell_g \circ \ell_h = \ell_{gh}
 \ese
-for all $g,h\in G$. 
+for all $g,h\in G$. \\
 
-Since $\ell_g\cl G\to G$ is a diffeomorphism, we have a well-defined push-forward map
-\bi{rrCl}
-(L_g)_* \cl & \Gamma(TG) & \to &\Gamma(TG) \\
-& X & \mapsto & (L_g)_*(X) 
-\ei
-where
-\bi{rrCl}
-(L_g)_*(X) \cl & G & \to & TG \\
-& h & \mapsto & (L_g)_*(X)(h):= (\ell_g)_*(X(g^{-1}h)).
-\ei
-We can draw the diagram
+Recall from the previous chapter than once we have a diffeomorphism $\phi$ between two manifolds $M$ and $N$, we can define the push-forward of a vector field X as
 \bse
-\begin{tikzcd}
-TG \ar[rr,"(\ell_g)_*"] && TG\\
-&&\\
-G \ar[uu,"X"] \ar[rr,"\ell_g"]&& G\ar[uu,"(L_g)_*(X)"']
-\end{tikzcd}
+(\phi_* X)|_{\phi(p)} := \phi_* (X|_p)
 \ese
-Note that this is exactly the same as our previous
-\bse
-\Phi_*(\sigma):=\phi_*\circ\sigma\circ\phi^{-1}.
-\ese
-By introducing the notation $X|_h := X(h)$, so that $X|_h\in T_hG$, we can write
-\bse
-(L_g)_*(X)|_h := (\ell_g)_*(X|_{g^{-1}h}).
-\ese
-Alternatively, recalling that the map $\ell_g$ is a diffeomorphism and relabelling the elements of $G$, we can write this as
-\bse
-(L_g)_*(X)|_{gh} := (\ell_g)_*(X|_{h}).
-\ese
-A further reformulation comes from considering the vector field $X\in\Gamma(TG)$ as an $\R$-linear map $X\cl\mathcal{C}^\infty(G)\xrightarrow{\sim}\mathcal{C}^\infty(G)$. Then, for any $f\in \mathcal{C}^\infty(G)$
-\bse
-(L_g)_*(X)(f) := X(f\circ\ell_g).
-\ese
-\bp
-Let $G$ be a Lie group. For any $g,h\in G$, we have
-\bse
-(L_g)_*\circ(L_h)_* = (L_{gh})_*.
-\ese
-\ep
-\bq
-Let $f\in \mathcal{C}^\infty(G)$. Then, we have
-\bi{rCl}
-\bigl((L_g)_*\circ(L_h)_*\bigr)(X)(f) & = & (L_g)_*\bigl((L_h)_*(X)\bigr)(f)\\
-& = & (L_h)_*(X)(f\circ \ell_g)\\
-& = & X(f\circ \ell_g\circ \ell_h)\\
-& = & X(f\circ \ell_{gh})\\
-& =: & (L_{gh})_*(X)(f),
-\ei
-as we wanted to show.
-\eq
-The previous identity applies to the pointwise push-forward as well, i.e.\
-\bse
-\bigl((\ell_{g_1})_*\circ(\ell_{g2})_*\bigr)(X|_h) = (\ell_{g_1g_2})_*(X|_h)
-\ese
-for any $g_1,g_2,h\in G$ and $X|_h\in T_hG$.
 
-\subsection{The Lie algebra of a Lie group}
+where $X|_p$ is the vector created by the field $X$ on point $p$. \\
+
+Coming in our case, we just showed that the map $\ell_g\cl G\to G$ is a diffeomorphism so we can push-forward any vector field $X$ on $G$ to another vector field (again on $G$ since the maps is between the same manifold). So in our case $\phi_* (X) = (\ell_g)_* (X)$ and for any point $h$ in $G$: $\ell_g (h) = gh$ so the push-forward equation reads 
+\bse
+(\ell_{g*} X)|_{gh} := (\ell_g)_* (X|_h)
+\ese
+
+\subsection{The Lie Algebra Of A Lie Group}
 
 In Lie theory, we are typically not interested in general vector fields, but rather on special class of vector fields which are invariant under the induced push-forward of the left translation maps $\ell_g$.
-\bd
-Let $G$ be a Lie group. A vector field $X\in\Gamma(TG)$ is said to be \emph{left-invariant}\index{left-invariant vector field} if
+
+\bd [Left Invariant Vector Fields]
+Let $G$ be a Lie group. A vector field $X\in\Gamma(TG)$ is said to be \textbf{left-invariant}\index{left-invariant vector field} if
 \bse
-\forall \, g \in G  : \ (L_g)_*(X) = X.
+\forall \, g \in G  : \ (l_g)_*(X) = X.
 \ese
 Equivalently, we can require this to hold pointwise
 \bse
 \forall \, g,h \in G : \ (\ell_g)_*(X|_h) = X|_{gh}.
 \ese
 \ed
-By recalling the last reformulation of the push-forward, we have that $X\in\Gamma(TG)$ is left-invariant if, and only if
+
+We can manipulate a bit the pointwise formulation to yield another reformulation. Since both sides are vectors we can let them act on a function $f$ 
 \bse
-\forall \, f \in \mathcal{C}^\infty(G) : \ X (f \circ \ell_g) = X(f) \circ \ell_g.
+(\ell_g)_*(X|_h) f = X|_{gh} f
 \ese
-We denote the set of all left-invariant vector fields on $G$ as $\mathcal{L}(G)$. Of course,
+
+By using the definition of a push-forward of a vector $(\phi_*)_p (X) f := X(f \circ \phi)$ the left part of the equation reads
+\bse
+(\ell_g)_*(X|_h) f = X|_h (f \circ \ell_g) = \big(X (f \circ \ell_g) \big)|_h
+\ese
+
+\vspace{5pt}
+
+The right part can be manipulated as follows
+\bse
+X|_{gh} f = (Xf)|_{gh} = \Big( (Xf) \circ  \ell_g \Big)|_h
+\ese
+
+By substituting both final expressions back to the original one and discarding the point $h$ since they must be true for any $h$ we obtain the last reformulation of the push-forward
+\bse
+X (f \circ \ell_g) = X(f) \circ \ell_g.
+\ese
+
+\bd [$\mathcal{L}(G)$ (As A Set)]
+We denote the set of all left-invariant vector fields on $G$ as $\mathcal{L}(G)$. 
+\ed
+
+Of course,
 \bse
 \mathcal{L}(G)\se\Gamma(TG)
 \ese
+
+\vspace{3pt}
+
 but, in fact, more is true. One can check that $\mathcal{L}(G)$ is closed under 
 \bi{c}
 +\cl \mathcal{L}(G)\times \mathcal{L}(G) \to \mathcal{L}(G)\\
 \cdot  \cl \mathcal{C}^\infty(G)\times \mathcal{L}(G) \to \mathcal{L}(G),
 \ei
-only for the constant functions in $\mathcal{C}^\infty(G)$. Therefore, $\mathcal{L}(G)$ is not a $\mathcal{C}^\infty(G)$-submodule of $\Gamma(TG)$, but it is an $\R$-vector subspace of $\Gamma(TG)$.
+therefore, $\mathcal{L}(G)$ is a $\mathcal{C}^\infty(G)$-submodule of $\Gamma(TG)$, but it is also an $\R$-vector subspace of $\Gamma(TG)$. \\
 
 Recall that, up to now, we have refrained from thinking of $\Gamma(TG)$ as an $\R$-vector space since it is infinite-dimensional and, even worse, a basis is in general uncountable. A priori, this could be true for $\mathcal{L}(G)$ as well, but we will see that the situation is, in fact, much nicer as $\mathcal{L}(G)$ will turn out to be a finite-dimensional vector space over $\R$. 
 
@@ -197,11 +168,14 @@ We will construct a linear isomorphism $j\cl T_eG\xrightarrow{\sim}\mathcal{L}(G
 j \cl & T_eG& \to & \Gamma(TG)\\
 & A & \mapsto & j(A),
 \ei
-where
+where $j(A)$ is define as
 \bi{rrCl}
 j(A) \cl & G& \to & TG\\
 & g & \mapsto & j(A)|_g := (\ell_g)_*(A).
 \ei
+
+Now we have to prove that this is actually a linear isomorphism, and we will do it in steps.
+
 \ben[label=\roman*)]
 \item First, we show that for any $A\in T_eG$, $j(A)$ is a smooth vector field on $G$. It suffices to check that for any $f\in \mathcal{C}^\infty(G)$, we have $j(A)(f)\in \mathcal{C}^\infty(G)$. Indeed
 \bi{rCl}
@@ -221,21 +195,21 @@ is a composition of smooth maps, hence it is smooth. Then
 (j(A)(f))(g) = (\partial_1\varphi)(0,g)
 \ese
 depends smoothly on $g$ and thus $j(A)(f)\in \mathcal{C}^\infty(G)$.
-\item Let $g,h\in G$. Then, for every $A\in T_eG$, we have
+\item We proved that $j(A)$ is indeed a smooth vector field, however now we need to prove that it is a left invariant vector field since it is an element of $\Gamma(TG)$. Let $g,h\in G$. Then, for every $A\in T_eG$, we have
 \bi{rCl}
 (\ell_g)_*(j(A)|_h) & := & (\ell_g)_*((\ell_h)_*(A))\\
 & = & (\ell_{gh})_*(A)\\
 & = & j(A)|_{gh},
 \ei
 so $j(A)\in \mathcal{L}(G)$. Hence, the map $j$ is really $j\cl T_eG \to \mathcal{L}(G)$.
-\item Let $A,B\in T_eG$ and $\lambda \in \R$. Then, for any $g\in G$
+\item We also need to check the linearity. Let $A,B\in T_eG$ and $\lambda \in \R$. Then, for any $g\in G$
 \bi{rCl}
 j(\lambda A + B)|_g & = & (\ell_g)_* (\lambda A + B)\\
 & = & \lambda (\ell_g)_*( A) +  (\ell_g)_*(B)\\
 & = & \lambda j(A)|_g + j(B)|_g,
 \ei
 since the push-forward is an $\R$-linear map. Hence, we have $j\cl T_eG \xrightarrow{\sim} \mathcal{L}(G)$.
-\item Let $A,B\in T_eG$. Then
+\item We also need to check that the map is injective. Let $A,B\in T_eG$. Then
 \bi{rCl}
 j(A) = j(B) & \Leftrightarrow & \forall \, g \in G : j(A)|_g = j(B)|_g\\
 &\Rightarrow & j(A)|_e = j(B)|_e\\
@@ -243,7 +217,7 @@ j(A) = j(B) & \Leftrightarrow & \forall \, g \in G : j(A)|_g = j(B)|_g\\
 & \Leftrightarrow & A=B,
 \ei
 since $(\ell_e)_*=\id_{TG}$. Hence, the map $j$ is injective.
-\item Let $X\in \mathcal{L}(G)$. Define $A^X:=X|_e\in T_eG$. Then, we have
+\item Finally we nee to check that the map is surjective. Let $X\in \mathcal{L}(G)$. Define $A^X:=X|_e\in T_eG$. Then, we have
 \bse
 j(A^X)|_g = (\ell_g)_*(A^X)=(\ell_g)_*(X|_e) = X_{ge}=X_g,
 \ese
@@ -256,7 +230,7 @@ Therefore, $j\cl T_eG\xrightarrow{\sim}\mathcal{L}(G)$ is indeed a linear isomor
 The space $\mathcal{L}(G)$ is finite-dimensional and $\dim \mathcal{L}(G)=\dim G$.
 \ec
 
-We will soon see that the identification of $\mathcal{L}(G)$ and $T_eG$ goes beyond the level of linear isomorphism, as they are isomorphic as Lie algebras. Recall that a Lie algebra over an algebraic field $K$ is a vector space over $K$ equipped with a Lie bracket $[-,-]$, i.e.\ a $K$-bilinear, antisymmetric map which satisfies the Jacobi identity.
+We will soon see that the identification of $\mathcal{L}(G)$ and $T_eG$ goes beyond the level of linear isomorphism as vector spaces, as they are isomorphic as Lie algebras. Recall from the Lie algebra chapter in the notes, that a Lie algebra over an algebraic field $K$ is a vector space over $K$ equipped with a Lie bracket $[-,-]$, i.e.\ a $K$-bilinear, antisymmetric map which satisfies the Jacobi identity. \\
 
 Given $X,Y\in \Gamma(TM)$, we defined their Lie bracket, or commutator, as
 \bse
@@ -283,16 +257,23 @@ Let $X,Y \in \mathcal{L}(G)$. For any $g\in G$ and $f\in\mathcal{C}^\infty(G)$, 
 Hence, $[X,Y]$ is left-invariant.
 \eq
 
-\bd
-Let $G$ be a Lie group. The \emph{associated Lie algebra} of $G$ is $\mathcal{L}(G)$. 
+\bd [$\mathcal{L}(G)$ (As An Algebra)]
+Let $G$ be a Lie group. The \textbf{associated Lie algebra} of $G$ is $\mathcal{L}(G)$.
 \ed
-Note $\mathcal{L}(G)$ is a rather complicated object, since its elements are vector fields, hence we would like to work with $T_eG$ instead, whose elements are tangent vectors. Indeed, we can use the bracket on $L(G)$ to define a bracket on $T_eG$ such that they be isomorphic as Lie algebras. First, let us define the isomorphism of Lie algebras.
-\bd
-Let $(L_1,[-,-]_{L_1})$ and $(L_2,[-,-]_{L_2})$ be Lie algebras over the same field. A linear map $\phi\cl L_1 \xrightarrow{\sim}L_2$ is a \emph{Lie algebra homomorphism} if
+
+Notice that we began with $\mathcal{L}(G)$ as a set of all left invariant vector fields of $G$, which is a subset of $\Gamma(TG)$, then we inherited the $+$ and $\cdot$ of $\Gamma(TG)$ to $\mathcal{L}(G)$ and we showed that it is also a submodule and a subvector space of $\Gamma(TG)$, and finally we inherited the Lie bracket from $\Gamma(TG)$ and we showed that it is also a subalgebra of $\Gamma(TG)$. From now on when we will be referring to $\mathcal{L}(G)$, we will mean its algebra structure.\\
+
+Given the nature of $\mathcal{L}(G)$, it is a rather complicated object, since its elements are vector fields, hence we would like to work with $T_eG$ instead, whose elements are tangent vectors. We have already shown that $\mathcal{L}(G)$ and $T_eG$ are isomorphic as vector spaces, but we would like them to be also isomorphic as algebras. Indeed, we can use the bracket on $L(G)$ to define a bracket on $T_eG$ such that they be isomorphic as Lie algebras. First, let us define the isomorphism of Lie algebras.
+
+\bd [Lie Algebra Homomorphism]
+Let $(L_1,[-,-]_{L_1})$ and $(L_2,[-,-]_{L_2})$ be Lie algebras over the same field. A linear map $\phi\cl L_1 \xrightarrow{\sim}L_2$ is a \textbf{Lie algebra homomorphism} if
 \bse
 \forall \, x,y\in L_1 : \ \phi([x,y]_{L_1}) = [\phi(x),\phi(y)]_{L_2}.
 \ese
-If $\phi$ is bijective, then it is a \emph{Lie algebra isomorphism}\index{isomorphism!of Lie algebras} and we write $L_1\cong_\mathrm{Lie\, alg} L_2$.
+\ed
+
+\bd [Lie Algebra Isomorphism]
+A bijective Lie algebra homomorphism, is called a \textbf{Lie algebra isomorphism}\index{isomorphism!of Lie algebras} and we write $L_1\cong_\mathrm{Lie\, alg} L_2$.
 \ed
 
 By using the bracket $[-,-]_{\mathcal{L}(G)}$ on $\mathcal{L}(G)$ we can define, for any $A,B\in T_eG$
@@ -303,3 +284,260 @@ where $j^{-1}(X)=X|_e$. Equipped with these brackets, we have
 \bse
 \mathcal{L}(G)\cong_\mathrm{Lie\, alg}T_eG.
 \ese
+
+Hence, given a Lie group we have seen how we can construct a Lie algebra as the space of left-invariant vector fields and this algebra is isomorphic to the algebra of tangent vectors at the identity. We will later explore the opposite direction, i.e.\ given a Lie algebra, we will see how to construct a Lie group whose associated Lie algebra is the one we started from. 
+
+\section{Application - Part 2: $\SL(2,\C)$}
+
+In the first part of of the application in the previous chapter, we defined the set $\SL(2,\C)$ as a subset of $\C^4:=\C\times\C\times\C\times\C$. Then we showed that:
+\bit
+\item $\SL(2,\C)$ can be made into a group
+\item $\SL(2,\C)$ can be made into a topological space
+\item $\SL(2,\C)$ can be made into a topological manifold
+\item $\SL(2,\C)$ can be made into a complex differentiable manifold
+\eit
+
+Hence we have left with  $\SL(2,\C)$ as a 3-dimensional, complex differentiable manifold.
+
+\subsubsection{$\SL(2,\C)$ As A Lie Group}
+
+We equipped $\SL(2,\C)$ with both a group and a manifold structure. In order to obtain a Lie group structure, we have to check that these two structures are compatible, that is, we have to show that the two maps
+\bi{rrCl}
+\mu \cl & \SL(2,\C) \times \SL(2,\C) & \to & \SL(2,\C)\\[3pt]
+& (\biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr) ,\biggl(\begin{matrix} e & f \\ g & h\end{matrix}\biggr))  & \mapsto & \biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr) \bullet \biggl(\begin{matrix} e & f \\ g & h\end{matrix}\biggr)
+\ei
+and 
+\bi{rrCl}
+i \cl & \SL(2,\C) & \to & \SL(2,\C)\\[3pt]
+& \biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr)  & \mapsto &\biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr)^{-1} %= \biggl(\begin{matrix} d & -b \\ -c & a\end{matrix}\biggr)
+\ei
+are differentiable with respect to the differentiable structure on $\SL(2,\C)$. For instance, for the inverse map $i$, we have to show that the map $y\circ i \circ x^{-1}$ is differentiable in the usual for any pair of charts $(U,x),(V,y)\in \mathscr{A}$. 
+
+\bse
+\begin{tikzcd}
+U \se\SL(2,\C) \ar[dd,"x"]\ar[rr,"i"]&& V\se \SL(2,\C)\ar[dd,"y"]\\
+&&\\
+x(U) \se \C^3 \ar[rr,"y\circ i\circ x^{-1}"]&& y(V)\se \C^3
+\end{tikzcd}
+\ese
+
+\vspace{10pt}
+
+However, since $\SL(2,\C)$ is connected, the differentiability of the transition maps in $\mathscr{A}$ implies that if $y\circ i\circ x^{-1}$ is differentiable for any two given charts, then it is differentiable for all charts in $\mathscr{A}$. Hence, we can simply let $(U,x)$ and $(V,y)$ be the two charts on $\SL(2,\C)$ defined above. Then, we have
+\bse
+(y\circ i\circ x^{-1}) (a,b,c) = (y\circ i) ( \biggl(\begin{matrix} a & b \\ c & \frac{1+bc}{a}\end{matrix}\biggr) ) = y ( \biggl(\begin{matrix} \frac{1+bc}{a} & -b \\ -c & a\end{matrix}\biggr)) = (\tfrac{1+bc}{a},-b,a)
+\ese
+which is certainly complex differentiable as a map between open subsets of $\C^3$ (recall that $a\neq 0$ on $x(U)$). \\
+
+Checking that $\mu$ is complex differentiable is slightly more involved, since we first have to equip $\SL(2,\C) \times \SL(2,\C)$ with a suitable ``product differentiable structure'' and then proceed as above. Once that is done, we can finally conclude that $((\SL(2,\C),\mathcal{O},\mathscr{A}),\bullet)$ is a $3$-dimensional complex Lie group.
+
+\subsection{The Lie Algebra Of \texorpdfstring{$\SL(2,\C)$}{SL(2,C)}}
+
+Recall that to every Lie group $G$, there is an associated Lie algebra $\mathcal{L}(G)$, where
+\bse
+\mathcal{L}(G) := \{X\in \Gamma(TG)\mid \forall \, g,h\in G : (\ell_g)_*(X|_h)=X_{gh}\},
+\ese
+which we then proved to be isomorphic to the Lie algebra $T_eG$ with Lie bracket
+\bse
+[A,B]_{T_eG} := j^{-1} ([j(A),j(B)]_{\mathcal{L}(G)})
+\ese
+induced by the Lie bracket on $\mathcal{L}(G)$ via the isomorphism $j$
+\bse
+j(A)|_g := (\ell_g)_*(A).
+\ese
+In the case of $\SL(2,\C)$, the left translation map by $\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)$ is 
+\bi{rrCl}
+\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \cl & \SL(2,\C) &\to & \SL(2,\C)\\
+& \biggl(\begin{matrix}e & f \\ g  & h\end{matrix}\biggr) & \mapsto & \biggl(\begin{matrix}a & b \\ c & d\end{matrix}\biggr) \bullet \biggl(\begin{matrix}e & f \\ g  & h\end{matrix}\biggr) 
+\ei
+By using the standard notation $\sl(2,\C)\equiv \mathcal{L}(\SL(2,\C))$, we have
+\bse
+\sl(2,\C) \cong_{\mathrm{Lie \, alg}} T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C).
+\ese
+We would now like to explicitly determine the Lie bracket on $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$, and hence determine its structure constants.
+
+Recall that if $(U,x)$ is a chart on a manifold $M$ and $p\in U$, then the chart $(U,x)$ induces a basis of the tangent space $T_pM$. We shall use our previously defined chart $(U,x)$ on $\SL(2,\C)$, where $U:= \{ \left( \begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\right) \in \SL(2,\C) \mid a \neq 0 \}$ and 
+\bi{rrCl}
+x \cl & U & \to & x(U) \se \C^3\\
+& \biggl( \begin{matrix} a & b \\ c & d \end{matrix}\biggr) & \mapsto & (a,b,c).
+\ei
+Note that the $d$ appearing here is completely redundant, since the membership condition of $\SL(2,\C)$ forces $d=\frac{1+bc}{a}$. However, we will keep writing the $d$ to avoid having a fraction in a matrix in a subscript.
+
+The chart $(U,x)$ contains $\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)$ and hence we get an induced co-ordinate basis
+\bse
+\biggl\{\tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\in  T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C) \ \Big| \ 1\leq i \leq 3 \biggr\}
+\ese
+so that any $A\in  T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ can be written as
+\bse
+A = \alpha \tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + \beta \tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + \gamma \tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},
+\ese
+for some $\alpha,\beta,\gamma\in \C$. Since the Lie bracket is bilinear, its action on these basis vectors uniquely extends to the whole of $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ by linear continuation. Hence, we simply have to determine the action of the Lie bracket of $\sl(2,\C)$ on the images under the isomorphism $j$ of these basis vectors. 
+
+Let us now determine the image of these co-ordinate induced basis elements under the isomorphism $j$. The object
+\bse
+j\biggl(    \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \in \sl(2,\C) 
+\ese
+is a left-invariant vector field on $\SL(2,\C)$. It assigns to each point $\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)\in U\se \SL(2,\C)$ the tangent vector
+\bse
+j\biggl(    \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \bigg|_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} : =
+\Bigl(\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)_*     \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \in T_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}\SL(2,\C). 
+\ese
+This tangent vector is a $\C$-linear map $\mathcal{C}^\infty(\SL(2,\C))\xrightarrow{\sim}\C$, where $\mathcal{C}^\infty(\SL(2,\C))$ is the $\C$-vector space (in fact, the $\C$-algebra) of smooth complex-valued functions on $\SL(2,\C)$ although, to be precise, since we are working in a chart we should only consider functions defined on $U$. For (the restriction to $U$ of) any $f\in \mathcal{C}^\infty(\SL(2,\C))$ we have, explicitly,
+\bi{rCl}
+\Bigl(\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)_*     \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} (f) & = & \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \Bigl(f\circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)\\
+& = & \partial_i\Bigl(f\circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}\Bigr) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)),
+\ei
+where the argument of $\partial_i$ in the last line is a map $x(U)\se\C^3\to\C$, hence $\partial_i$ is simply the operation of complex differentiation with respect to the $i$-th (out of the 3) complex variable of the map $f\circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}$, which is then to be evaluated at $x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)\in \C^3$. By inserting an identity in the composition, we have
+\bi{rCl}
+& = &\partial_i\Bigl(f\circ {\id_U} \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}\Bigr) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)) \\
+& = & \partial_i\Bigl(f\circ ( x^{-1}\circ x) \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}\Bigr) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))\\
+& = & \partial_i\Bigl((f\circ  x^{-1})\circ (x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1})\Bigr) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)),
+\ei
+where $f\circ  x^{-1}\cl x(U)\se \C^3 \to \C$ and $(x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1})\cl x(U)\se \C^3 \to x(U)\se\C^3$ and hence, we can use the multi-dimensional chain rule to obtain
+\bi{rCl}
+& = & \Bigl(\partial_m(f\circ  x^{-1})\bigl((x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))\bigr)\Bigr)\Bigl( 
+\partial_i (x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))\Bigr),
+\ei
+with the summation going from $m=1$ to $m=3$. The first factor is simply
+\bi{rCl}
+\partial_m(f\circ  x^{-1})\bigl((x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}) \left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)\bigr) & =\phantom{:} & \partial_m(f\circ  x^{-1})(x\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right))\\
+& =: & \tvb{x}{m}{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} (f) .
+\ei
+To see what the second factor is, we first consider the map $x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}$. This map acts on the triple $(e,f,g)\in x(U)$ as
+\bi{rCl}
+(x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (e,f,g) & = & (x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} ) \biggl(\begin{matrix}e & f \\ g & \frac{1+fg}{e}\end{matrix}\biggr)\\
+& = & x^m (\biggl(\begin{matrix}a & b \\ c & d\end{matrix}\biggr) \bullet \biggl(\begin{matrix}e & f \\ g & \frac{1+fg}{e}\end{matrix}\biggr))\\
+& = & x^m (\left(\begin{matrix}ae+bg &\, af+ \frac{b(1+fg)}{e} \\ ce+dg &\, cf+\frac{d(1+fg)}{e}\end{matrix}\right) ),
+\ei
+and since $x^m := {\proj_m} \circ x$, with $m\in \{1,2,3\}$, we have 
+\bse
+(x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (e,f,g) = \proj_m (ae+bg, af+ \tfrac{b(1+fg)}{e}, ce+dg ),
+\ese
+the map $\proj_m$ simply picks the $m$-th component of the triple. We now have to apply $\partial_i$ to this map, with $i\in \{1,2,3\}$, i.e.\ we have to differentiate with respect to each of the three complex variables $e$, $f$, and $g$. We can write the result as
+\bse
+\partial_i(x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (e,f,g)= D(e,f,g)^m_{\phantom{m}i},
+\ese
+where $m$ labels the rows and $i$ the columns of the matrix
+\bse
+D(e,f,g)= \left(\begin{matrix}a & 0 & b\\ -\frac{b(1+fg)}{e^2} &\,a+\frac{bg}{e} &\frac{bf}{e}\\ c & 0 & d\end{matrix}\right).
+\ese
+Finally, by evaluating this at $(e,f,g)=x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right) = (1,0,0)$, we obtain
+\bse
+\partial_i(x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))= D^m_{\phantom{m}i},
+\ese
+where, by recalling that $d=\frac{1+bc}{a}$,
+\bse
+D:= D(1,0,0)= \left(\begin{matrix}a & 0 & b\ \\ -b & a & 0\\ c & 0 & \frac{1+bc}{a}\end{matrix}\right).
+\ese
+Putting the two factors back together yields
+\bse
+\Bigl(\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)_*     \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} (f) =  D^m_{\phantom{m}i} \tvb{x}{m}{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} (f) .
+\ese
+Since this holds for an arbitrary $f\in\mathcal{C}^\infty(\SL(2,\C))$, we have
+\bse
+j\biggl(    \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \bigg|_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} : =
+\Bigl(\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)_*     \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} = D^m_{\phantom{m}i} \tvb{x}{m}{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}, 
+\ese
+and since the point $\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)\in U\se\SL(2,\C)$ is also arbitrary, we have
+\bse
+j\biggl( \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) = D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} \in \sl(2,\C),
+\ese
+where $D$ is now the corresponding matrix of co-ordinate functions
+\bse
+D:=\left(\begin{matrix}x^1 & 0 & x^2\ \\ -x^2 & x^1 & 0\\ x^3 & 0 & \frac{1+x^2x^3}{x^1}\end{matrix}\right).
+\ese
+Note that while the three vector fields
+\bi{rrCl}
+\frac{\partial}{\partial x^m} \cl &  \SL(2,\C) & \to &  T\SL(2,\C)\\
+& \biggl(\begin{matrix}a & b \\ c & d\end{matrix}\biggr) & \mapsto & \tvb{x}{m}{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}
+\ei
+are not individually left-invariant, their linear combination with coefficients $D^m_{\phantom{m}i}$ is indeed left-invariant. Recall that these vector fields
+\ben[label=\roman*)]
+\item are $\C$-linear maps
+\bi{rrCl}
+\frac{\partial}{\partial x^m}\cl &\mathcal{C}^\infty(\SL(2,\C))&\xrightarrow{\sim} &\mathcal{C}^\infty(\SL(2,\C))\\
+& f & \mapsto & \partial_m(f\circ x^{-1})\circ x;
+\ei
+\item satisfy the Leibniz rule
+\bse
+\frac{\partial}{\partial x^m} (fg) = f\frac{\partial}{\partial x^m}(g)+g\frac{\partial}{\partial x^m}(f);
+\ese
+\item act on the coordinate functions $x^i\in \mathcal{C}^\infty(\SL(2,\C))$ as
+\bse
+\frac{\partial}{\partial x^m} (x^i) = \partial_m (x^i \circ x^{-1})\circ x = \partial_m ({\proj_i}\circ x \circ x^{-1}) \circ x =\delta^i_m\circ x= \delta^i_m,
+\ese
+since the composition of a constant function with any composable function is just the constant function.
+\een
+Hence, we have an expansion of the images of the basis of $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ under $j$:
+\bi{rCl}
+j\biggl( \tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) & = & x^1  \frac{\partial}{\partial x^1} - x^2\frac{\partial}{\partial x^2}  + x^3\frac{\partial}{\partial x^3} \\
+j\biggl( \tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) & = & x^1 \frac{\partial}{\partial x^2}  \\
+j\biggl( \tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) & = & x^2\, \frac{\partial}{\partial x^1} + \tfrac{1+x^2x^3}{x^1} \frac{\partial}{\partial x^3}  .
+\ei
+We now have to calculate the bracket (in $\sl(2,\C)$) of every pair of these. We can also do them all at once, which is a good exercise in index gymnastics. We have
+\bse
+\biggl[j\biggl( \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) ,j\biggl( \tvb{x}{k}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \biggr] =  \left[  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m}, D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n}\right].
+\ese
+Letting this act on an arbitrary $f\in \mathcal{C}^\infty(\SL(2,\C))$, by definition
+\bse
+\left[  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m}, D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n}\right](f) :=  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} \Bigl( D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} (f)\Bigr) -  D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} \Bigl(D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m}(f)\Bigr).
+\ese
+The first term gives
+\bi{rCl}
+ D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} \Bigl( D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} (f)\Bigr) & = &  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} ( D^n_{\phantom{n}k}\, \partial_n (f\circ x^{-1})\circ x)\\
+& = & D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k})\,(\partial_n (f\circ x^{-1})\circ x) +  D^m_{\phantom{m}i}D^n_{\phantom{n}k} \,\frac{\partial}{\partial x^m} (\partial_n (f\circ x^{-1})\circ x)\\
+& = & D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k})\,(\partial_n (f\circ x^{-1})\circ x) +  D^m_{\phantom{m}i}D^n_{\phantom{n}k} \,\partial_m(\partial_n (f\circ x^{-1})\circ x\circ x^{-1})\circ x\\
+& = & D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k})\,(\partial_n (f\circ x^{-1})\circ x) +  D^m_{\phantom{m}i}D^n_{\phantom{n}k} \,\partial_m\partial_n (f\circ x^{-1})\circ x.
+\ei
+Similarly, we have
+\bse
+D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} \Bigl(  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (f)\Bigr) = D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} (D^m_{\phantom{m}i})\,(\partial_m (f\circ x^{-1})\circ x) +  D^n_{\phantom{n}k}D^m_{\phantom{m}i}\,\partial_n\partial_m (f\circ x^{-1})\circ x.
+\ese
+Hence, recalling that $\partial_m\partial_n=\partial_n\partial_m$ by Schwarz's theorem, we have  
+\bi{rCl}
+\left[  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m}, D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n}\right](f) &=&  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k})\, (\partial_n (f\circ x^{-1})\circ x) +  \cancel[gray]{D^m_{\phantom{m}i}D^n_{\phantom{n}k} \,\partial_m\partial_n (f\circ x^{-1})\circ x}\\
+& & \negmedspace {} - D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} (D^m_{\phantom{m}i})\,(\partial_m (f\circ x^{-1})\circ x) - \cancel[gray]{D^n_{\phantom{n}k}D^m_{\phantom{m}i}\,\partial_n\partial_m (f\circ x^{-1})\circ x}\\
+& = & \Bigl( D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k}) - D^m_{\phantom{m}k}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}i})\Bigr)\partial_n (f\circ x^{-1})\circ x\\
+& = & \Bigl( D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k}) - D^m_{\phantom{m}k}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}i})\Bigr)\frac{\partial}{\partial x^n} (f),
+\ei
+where we relabelled some dummy indices. Since the $f\in\mathcal{C}^\infty(\SL(2,\C))$ was arbitrary,
+\bse
+\left[  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m}, D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n}\right] =  \Bigl( D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k}) - D^m_{\phantom{m}k}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}i})\Bigr)\frac{\partial}{\partial x^n} .
+\ese
+We can now evaluate this explicitly. For $i=1$ and $k=2$, we have
+\bi{rCl}
+\left[  D^m_{\phantom{m}1} \frac{\partial}{\partial x^m}, D^n_{\phantom{n}2} \frac{\partial}{\partial x^n}\right] &=&  \Bigl( \cancel[gray]{D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}2})} - D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}1})\Bigr)\frac{\partial}{\partial x^1}\\
+& &\negmedspace{}+  \Bigl( D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}2}) - D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}1})\Bigr)\frac{\partial}{\partial x^2}\\
+& & \negmedspace{}+ \Bigl( \cancel[gray]{D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}2})} - D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}1})\Bigr)\frac{\partial}{\partial x^3}\\
+& = & -D^1_{\phantom{1}2}\frac{\partial}{\partial x^1}+(D^1_{\phantom{1}1}+D^2_{\phantom{2}2})\frac{\partial}{\partial x^2}-D^3_{\phantom{3}2}\frac{\partial}{\partial x^3}\\
+& = & 2x^1 \frac{\partial}{\partial x^2}.
+\ei
+Similarly, we compute
+\bi{rCl}
+\left[  D^m_{\phantom{m}1} \frac{\partial}{\partial x^m}, D^n_{\phantom{n}3} \frac{\partial}{\partial x^n}\right] &=&  \Bigl( D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}3}) - D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}1})\Bigr)\frac{\partial}{\partial x^1}\\
+& &\negmedspace{}+  \Bigl( \cancel[gray]{D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}3})} - D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}1})\Bigr)\frac{\partial}{\partial x^2}\\
+& & \negmedspace{}+ \Bigl( D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}3}) - D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}1})\Bigr)\frac{\partial}{\partial x^3}\\
+& = & -2x^2\frac{\partial}{\partial x^1}-2(\tfrac{1+x^2x^3}{x^1})\frac{\partial}{\partial x^3}
+\ei
+and
+\bi{rCl}
+\left[  D^m_{\phantom{m}2} \frac{\partial}{\partial x^m}, D^n_{\phantom{n}3} \frac{\partial}{\partial x^n}\right] &=&  \Bigl( D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}3}) - \cancel[gray]{D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}2})}\Bigr)\frac{\partial}{\partial x^1}\\
+& &\negmedspace{}+  \Bigl( \cancel[gray]{D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}3})} - D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}2})\Bigr)\frac{\partial}{\partial x^2}\\
+& & \negmedspace{}+ \Bigl( D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}3}) - \cancel[gray]{D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}2})}\Bigr)\frac{\partial}{\partial x^3}\\
+& = & (D^2_{\phantom{2}1}-D^1_{\phantom{1}3})\frac{\partial}{\partial x^1}+D^2_{\phantom{2}3}\frac{\partial}{\partial x^2}-D^3_{\phantom{3}2}\frac{\partial}{\partial x^3}\\
+& = & x^1 \frac{\partial}{\partial x^1}- x^2\frac{\partial}{\partial x^2} + x^3\frac{\partial}{\partial x^3},
+\ei
+where the differentiation rules that we have used come from the definition of the vector field $\frac{\partial}{\partial x^m}$, the Leibniz rule, and the action on co-ordinate functions.
+
+By applying $j^{-1}$, which is just evaluation at the identity, to these vector fields, we finally see that the induced Lie bracket on $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ satisfies
+
+\bi{rCl}
+\biggl[\tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},\tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \biggr] & = & 2\tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\\[4pt]
+\biggl[\tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},\tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \biggr] & = & -2\tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\\[4pt]
+\biggl[\tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},\tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \biggr] & = & \tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}.
+\ei
+Hence, the structure constants of $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ with respect to the co-ordinate basis are
+\bse
+C^2_{\phantom{2}12} = 2, \qquad C^3_{\phantom{3}13}=-2,\qquad C^1_{\phantom{1}23}=1,
+\ese
+with all other being either zero or related to these by anti-symmetry.
