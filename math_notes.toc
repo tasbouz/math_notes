@@ -1,133 +1,70 @@
 \babel@toc {english}{}
-\contentsline {part}{I\hspace {1em}Basic Mathematics}{5}{part.1}% 
-\contentsline {chapter}{\numberline {1}Axiomatic Set Theory}{6}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}Propositional Logic}{6}{section.1.1}% 
+\contentsline {part}{I\hspace {1em}Basic Mathematics}{4}{part.1}% 
+\contentsline {chapter}{\numberline {1}Axiomatic Set Theory}{5}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Propositional Logic}{5}{section.1.1}% 
 \contentsline {section}{\numberline {1.2}Predicate Logic}{7}{section.1.2}% 
-\contentsline {section}{\numberline {1.3}Axiomatic Systems And Theory Of Proofs}{9}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}The $\in $-relation}{10}{section.1.4}% 
-\contentsline {section}{\numberline {1.5}Zermelo-Fraenkel Axioms Of Set Theory}{11}{section.1.5}% 
-\contentsline {section}{\numberline {1.6}Maps Between Sets}{15}{section.1.6}% 
-\contentsline {section}{\numberline {1.7}Equivalence Relations}{18}{section.1.7}% 
-\contentsline {section}{\numberline {1.8}Construction Of $\mathbb {N}$, $\mathbb {Z}$, $\mathbb {Q}$ And $\mathbb {R}$}{20}{section.1.8}% 
-\contentsline {chapter}{\numberline {2}Algebraic Structures}{23}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Algebraic Structures}{23}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Groups}{23}{section.2.2}% 
-\contentsline {section}{\numberline {2.3}Fields}{24}{section.2.3}% 
-\contentsline {section}{\numberline {2.4}Vector Spaces}{24}{section.2.4}% 
-\contentsline {subsection}{\numberline {2.4.1}Linear Maps}{25}{subsection.2.4.1}% 
-\contentsline {subsection}{\numberline {2.4.2}Basis Of Vector Spaces}{26}{subsection.2.4.2}% 
-\contentsline {subsection}{\numberline {2.4.3}Change Of Basis}{27}{subsection.2.4.3}% 
-\contentsline {subsection}{\numberline {2.4.4}Tensors}{28}{subsection.2.4.4}% 
-\contentsline {subsection}{\numberline {2.4.5}Notational Conventions}{30}{subsection.2.4.5}% 
-\contentsline {section}{\numberline {2.5}Rings}{32}{section.2.5}% 
-\contentsline {section}{\numberline {2.6}Modules}{33}{section.2.6}% 
-\contentsline {subsection}{\numberline {2.6.1}Basis Of Modules}{34}{subsection.2.6.1}% 
-\contentsline {section}{\numberline {2.7}Algebras}{34}{section.2.7}% 
-\contentsline {section}{\numberline {2.8}Lie Algebras}{35}{section.2.8}% 
-\contentsline {subsection}{\numberline {2.8.1}Classification Of Lie Algebras}{35}{subsection.2.8.1}% 
-\contentsline {subsection}{\numberline {2.8.2}The adjoint map and the Killing form}{37}{subsection.2.8.2}% 
-\contentsline {subsection}{\numberline {2.8.3}The fundamental roots and the Weyl group}{39}{subsection.2.8.3}% 
-\contentsline {subsection}{\numberline {2.8.4}Dynkin diagrams and the Cartan classification}{42}{subsection.2.8.4}% 
-\contentsline {chapter}{\numberline {3}Topology}{45}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Topological Spaces}{45}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Construction Of New Topologies From Given Ones}{47}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}Convergence \& Continuity}{49}{section.3.3}% 
-\contentsline {section}{\numberline {3.4}Invariant Topological Properties}{50}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}Separation Properties}{50}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Connectedness And Path-Connectedness}{52}{subsection.3.4.2}% 
-\contentsline {subsection}{\numberline {3.4.3}Homotopic Curves And The Fundamental Group}{53}{subsection.3.4.3}% 
-\contentsline {chapter}{\numberline {4}Topological Manifolds}{56}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Topological Manifolds}{56}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Charts \& Atlases}{56}{section.4.2}% 
-\contentsline {section}{\numberline {4.3}Differentiable Manifolds}{59}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Classification Of Differentiable Structures}{61}{subsection.4.3.1}% 
-\contentsline {section}{\numberline {4.4}Tangent Spaces}{62}{section.4.4}% 
-\contentsline {subsection}{\numberline {4.4.1}Co-Ordinate Induced Basis For The Tangent Space}{64}{subsection.4.4.1}% 
-\contentsline {subsection}{\numberline {4.4.2}Change Of Vector Components Under A Change Of Chart}{66}{subsection.4.4.2}% 
-\contentsline {section}{\numberline {4.5}Cotangent Spaces}{67}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Dual Basis For The Cotangent Space}{67}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Change Of Covector Components Under A Change Of Chart}{68}{subsection.4.5.2}% 
-\contentsline {section}{\numberline {4.6}Push-Forward And Pull-Back}{69}{section.4.6}% 
-\contentsline {section}{\numberline {4.7}Immersions And Embeddings}{70}{section.4.7}% 
-\contentsline {section}{\numberline {4.8}Topological Bundles}{71}{section.4.8}% 
-\contentsline {section}{\numberline {4.9}The Tangent Bundle}{75}{section.4.9}% 
-\contentsline {section}{\numberline {4.10}Vector, Covector And Tensor Fields}{76}{section.4.10}% 
-\contentsline {section}{\numberline {4.11}Differential Forms}{81}{section.4.11}% 
-\contentsline {subsection}{\numberline {4.11.1}The Grassmann Algebra}{83}{subsection.4.11.1}% 
-\contentsline {subsection}{\numberline {4.11.2}The Exterior Derivative}{84}{subsection.4.11.2}% 
-\contentsline {subsection}{\numberline {4.11.3}De Rham Cohomology}{86}{subsection.4.11.3}% 
-\contentsline {section}{\numberline {4.12}Application - Part 1: $\SL (2,\mathbb {C})$}{89}{section.4.12}% 
-\contentsline {subsubsection}{$\SL (2,\mathbb {C})$ As A Set}{89}{section*.2}% 
-\contentsline {subsubsection}{$\SL (2,\mathbb {C})$ As A Topological Space}{89}{section*.4}% 
-\contentsline {subsubsection}{$\SL (2,\mathbb {C})$ As A Topological Manifold}{90}{section*.5}% 
-\contentsline {subsubsection}{$\SL (2,\mathbb {C})$ As A Complex Differentiable Manifold}{91}{section*.6}% 
-\contentsline {chapter}{\numberline {5}Lie Theory}{92}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Lie Groups}{92}{section.5.1}% 
-\contentsline {subsection}{\numberline {5.1.1}The Left Translation Map}{92}{subsection.5.1.1}% 
-\contentsline {subsection}{\numberline {5.1.2}The Lie Algebra Of A Lie Group}{93}{subsection.5.1.2}% 
-\contentsline {section}{\numberline {5.2}Application - Part 2: $\SL (2,\mathbb {C})$}{96}{section.5.2}% 
-\contentsline {subsubsection}{$\SL (2,\mathbb {C})$ As A Lie Group}{97}{section*.7}% 
-\contentsline {subsection}{\numberline {5.2.1}The Lie Algebra Of $\SL (2,\mathbb {C})$}{97}{subsection.5.2.1}% 
-\contentsline {part}{II\hspace {1em}Statistics \& Probability Theory}{103}{part.2}% 
-\contentsline {chapter}{\numberline {6}Basic Concepts}{104}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Introduction}{104}{section.6.1}% 
-\contentsline {subsection}{\numberline {6.1.1}Basic Terminology}{104}{subsection.6.1.1}% 
-\contentsline {section}{\numberline {6.2}Sample Space \& Events}{105}{section.6.2}% 
-\contentsline {section}{\numberline {6.3}Probability Space}{107}{section.6.3}% 
-\contentsline {section}{\numberline {6.4}Conditional Probability}{109}{section.6.4}% 
-\contentsline {chapter}{\numberline {7}Random Variables}{111}{chapter.7}% 
-\contentsline {section}{\numberline {7.1}Random Variables}{111}{section.7.1}% 
-\contentsline {section}{\numberline {7.2}Discrete Random Variables}{111}{section.7.2}% 
-\contentsline {section}{\numberline {7.3}Discrete Probability Distributions}{113}{section.7.3}% 
-\contentsline {subsection}{\numberline {7.3.1}Discrete Uniform Distribution - Unif(n)}{113}{subsection.7.3.1}% 
-\contentsline {subsection}{\numberline {7.3.2}Bernoulli Distribution - Bern(p)}{114}{subsection.7.3.2}% 
-\contentsline {subsection}{\numberline {7.3.3}Binomial Distribution - B(n,p)}{115}{subsection.7.3.3}% 
-\contentsline {subsection}{\numberline {7.3.4}Poisson Distribution - Pois($\lambda $)}{116}{subsection.7.3.4}% 
-\contentsline {subsection}{\numberline {7.3.5}Geometric Distribution - Geo(p)}{117}{subsection.7.3.5}% 
-\contentsline {subsection}{\numberline {7.3.6}Hypergeometric Distribution - Hypergeometric(N, K, n)}{118}{subsection.7.3.6}% 
-\contentsline {subsection}{\numberline {7.3.7}Negative Binomial Distribution - NB(r,p)}{118}{subsection.7.3.7}% 
-\contentsline {section}{\numberline {7.4}Continuous Random Variables}{119}{section.7.4}% 
-\contentsline {section}{\numberline {7.5}Continuous Probability Distributions}{120}{section.7.5}% 
-\contentsline {subsection}{\numberline {7.5.1}Continuous Uniform Distribution - Unif(a,b)}{120}{subsection.7.5.1}% 
-\contentsline {subsection}{\numberline {7.5.2}Normal Distribution - N($\mu $, $\sigma ^2$)}{121}{subsection.7.5.2}% 
-\contentsline {subsection}{\numberline {7.5.3}Standard Normal Distribution - N(0,1)}{123}{subsection.7.5.3}% 
-\contentsline {subsection}{\numberline {7.5.4}Exponential Distribution - Expo($\lambda $)}{126}{subsection.7.5.4}% 
-\contentsline {subsection}{\numberline {7.5.5}Chi-Squared Distribution - $\chi ^2(k)$}{127}{subsection.7.5.5}% 
-\contentsline {subsection}{\numberline {7.5.6}Student's t-Distribution - $t(\nu )$}{128}{subsection.7.5.6}% 
-\contentsline {subsection}{\numberline {7.5.7}Beta Distribution - Beta($\alpha , \beta $)}{129}{subsection.7.5.7}% 
-\contentsline {subsection}{\numberline {7.5.8}Gamma Distribution - Gamma($\alpha $, $\beta $)}{130}{subsection.7.5.8}% 
-\contentsline {section}{\numberline {7.6}Joint Probability Distribution}{130}{section.7.6}% 
-\contentsline {subsection}{\numberline {7.6.1}Bivariate Joint Distribution}{131}{subsection.7.6.1}% 
-\contentsline {subsubsection}{Application: Bivariate Bernoulli Distribution}{135}{section*.8}% 
-\contentsline {section}{\numberline {7.7}Moments}{136}{section.7.7}% 
-\contentsline {chapter}{\numberline {8}Statistical Inference}{142}{chapter.8}% 
-\contentsline {section}{\numberline {8.1}Population VS Sample}{142}{section.8.1}% 
-\contentsline {chapter}{\numberline {9}Parametric Inference}{145}{chapter.9}% 
-\contentsline {section}{\numberline {9.1}Basic Definitions}{145}{section.9.1}% 
-\contentsline {section}{\numberline {9.2}Maximum Likelihood}{146}{section.9.2}% 
-\contentsline {subsubsection}{Application: Maximum Likelihood In Bernoulli Distribution}{149}{section*.9}% 
-\contentsline {part}{III\hspace {1em}Machine Learning}{152}{part.3}% 
-\contentsline {chapter}{\numberline {10}Introduction}{153}{chapter.10}% 
-\contentsline {chapter}{\numberline {11}Supervised Learning}{155}{chapter.11}% 
-\contentsline {section}{\numberline {11.1}Linear Regression}{155}{section.11.1}% 
-\contentsline {section}{\numberline {11.2}Optimization Techniques}{159}{section.11.2}% 
-\contentsline {subsection}{\numberline {11.2.1}Normal Equation}{159}{subsection.11.2.1}% 
-\contentsline {subsection}{\numberline {11.2.2}Gradient Descent}{160}{subsection.11.2.2}% 
-\contentsline {section}{\numberline {11.3}Logistic Regression}{161}{section.11.3}% 
-\contentsline {subsection}{\numberline {11.3.1}Normal Equation}{164}{subsection.11.3.1}% 
-\contentsline {subsection}{\numberline {11.3.2}Gradient Descent}{164}{subsection.11.3.2}% 
-\contentsline {section}{\numberline {11.4}Generalized Linear Model}{165}{section.11.4}% 
-\contentsline {section}{\numberline {11.5}Errors}{165}{section.11.5}% 
-\contentsline {subsection}{\numberline {11.5.1}Point-Wise, Overall, In-Sample \& Out-Of-Sample Error}{165}{subsection.11.5.1}% 
-\contentsline {subsection}{\numberline {11.5.2}Bias \& Variance}{166}{subsection.11.5.2}% 
-\contentsline {section}{\numberline {11.6}Evaluation}{169}{section.11.6}% 
-\contentsline {section}{\numberline {11.7}Regularization}{171}{section.11.7}% 
-\contentsline {subsection}{\numberline {11.7.1}Ridge Regression - L2 Regularization}{172}{subsection.11.7.1}% 
-\contentsline {subsection}{\numberline {11.7.2}Lasso Regression - L1 Regularization}{174}{subsection.11.7.2}% 
-\contentsline {section}{\numberline {11.8}Classification Error Metrics}{174}{section.11.8}% 
-\contentsline {chapter}{Appendices}{177}{section*.10}% 
-\contentsline {chapter}{\numberline {A}Constrained Optimization}{178}{Appendix.a.A}% 
-\contentsline {section}{\numberline {A.1}Equality Constrained Optimization}{178}{section.a.A.1}% 
-\contentsline {section}{\numberline {A.2}Equality \& Inequality Constrained Optimization}{179}{section.a.A.2}% 
-\contentsline {chapter}{\numberline {B}Kernels}{180}{Appendix.a.B}% 
-\contentsline {chapter}{\numberline {C}Convolution}{182}{Appendix.a.C}% 
+\contentsline {section}{\numberline {1.3}Axiomatic Systems And Theory Of Proofs}{8}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}The $\in $-relation}{9}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}Zermelo-Fraenkel Axioms Of Set Theory}{10}{section.1.5}% 
+\contentsline {section}{\numberline {1.6}Maps Between Sets}{14}{section.1.6}% 
+\contentsline {section}{\numberline {1.7}Equivalence Relations}{17}{section.1.7}% 
+\contentsline {section}{\numberline {1.8}Construction Of $\mathbb {N}$, $\mathbb {Z}$, $\mathbb {Q}$ And $\mathbb {R}$}{19}{section.1.8}% 
+\contentsline {chapter}{\numberline {2}Algebraic Structures}{22}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Groups}{22}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Fields}{23}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Vector Spaces}{23}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Linear Maps}{24}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}Basis Of Vector Spaces}{27}{subsection.2.3.2}% 
+\contentsline {subsubsection}{Notational Conventions}{28}{section*.2}% 
+\contentsline {subsubsection}{Matrix Representations}{29}{section*.3}% 
+\contentsline {subsection}{\numberline {2.3.3}Change Of Basis}{31}{subsection.2.3.3}% 
+\contentsline {subsection}{\numberline {2.3.4}Determinants}{32}{subsection.2.3.4}% 
+\contentsline {section}{\numberline {2.4}Rings}{34}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Modules}{34}{section.2.5}% 
+\contentsline {subsection}{\numberline {2.5.1}Basis Of Modules}{36}{subsection.2.5.1}% 
+\contentsline {section}{\numberline {2.6}Algebras}{36}{section.2.6}% 
+\contentsline {chapter}{\numberline {3}Lie Algebras}{37}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Lie Algebras}{37}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}The adjoint map and the Killing form}{39}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.2}The fundamental roots and the Weyl group}{42}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.1.3}Dynkin diagrams and the Cartan classification}{45}{subsection.3.1.3}% 
+\contentsline {chapter}{\numberline {4}Topology}{48}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Topological Spaces}{48}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Construction Of New Topologies From Given Ones}{50}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Convergence \& Continuity}{52}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Invariant Topological Properties}{53}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Separation Properties}{53}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Connectedness And Path-Connectedness}{55}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}Homotopic Curves And The Fundamental Group}{56}{subsection.4.4.3}% 
+\contentsline {chapter}{\numberline {5}Topological Manifolds}{59}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Topological Manifolds}{59}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Charts \& Atlases}{59}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Differentiable Manifolds}{62}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Classification Of Differentiable Structures}{64}{subsection.5.3.1}% 
+\contentsline {section}{\numberline {5.4}Tangent Spaces}{65}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}Co-Ordinate Induced Basis For The Tangent Space}{67}{subsection.5.4.1}% 
+\contentsline {subsection}{\numberline {5.4.2}Change Of Vector Components Under A Change Of Chart}{69}{subsection.5.4.2}% 
+\contentsline {section}{\numberline {5.5}Cotangent Spaces}{70}{section.5.5}% 
+\contentsline {subsection}{\numberline {5.5.1}Dual Basis For The Cotangent Space}{70}{subsection.5.5.1}% 
+\contentsline {subsection}{\numberline {5.5.2}Change Of Covector Components Under A Change Of Chart}{71}{subsection.5.5.2}% 
+\contentsline {section}{\numberline {5.6}Push-Forward And Pull-Back}{72}{section.5.6}% 
+\contentsline {section}{\numberline {5.7}Immersions And Embeddings}{73}{section.5.7}% 
+\contentsline {section}{\numberline {5.8}Topological Bundles}{74}{section.5.8}% 
+\contentsline {section}{\numberline {5.9}The Tangent Bundle}{78}{section.5.9}% 
+\contentsline {section}{\numberline {5.10}Vector, Covector And Tensor Fields}{79}{section.5.10}% 
+\contentsline {section}{\numberline {5.11}Differential Forms}{84}{section.5.11}% 
+\contentsline {subsection}{\numberline {5.11.1}The Grassmann Algebra}{86}{subsection.5.11.1}% 
+\contentsline {subsection}{\numberline {5.11.2}The Exterior Derivative}{87}{subsection.5.11.2}% 
+\contentsline {subsection}{\numberline {5.11.3}De Rham Cohomology}{89}{subsection.5.11.3}% 
+\contentsline {section}{\numberline {5.12}Application - Part 1: $\SL (2,\mathbb {C})$}{92}{section.5.12}% 
+\contentsline {subsubsection}{$\SL (2,\mathbb {C})$ As A Set}{92}{section*.4}% 
+\contentsline {subsubsection}{$\SL (2,\mathbb {C})$ As A Topological Space}{92}{section*.6}% 
+\contentsline {subsubsection}{$\SL (2,\mathbb {C})$ As A Topological Manifold}{93}{section*.7}% 
+\contentsline {subsubsection}{$\SL (2,\mathbb {C})$ As A Complex Differentiable Manifold}{94}{section*.8}% 
+\contentsline {chapter}{\numberline {6}Lie Groups}{95}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Lie Groups}{95}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}The Left Translation Map}{95}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}The Lie Algebra Of A Lie Group}{96}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Application - Part 2: $\SL (2,\mathbb {C})$}{100}{section.6.4}% 
+\contentsline {subsubsection}{$\SL (2,\mathbb {C})$ As A Lie Group}{100}{section*.9}% 
+\contentsline {subsubsection}{The Lie Algebra Of $\SL (2,\mathbb {C})$}{101}{section*.10}% 

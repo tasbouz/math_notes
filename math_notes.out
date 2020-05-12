@@ -9,117 +9,53 @@
 \BOOKMARK [1][-]{section.1.7}{Equivalence Relations}{chapter.1}% 9
 \BOOKMARK [1][-]{section.1.8}{Construction of N, Z, Q and R}{chapter.1}% 10
 \BOOKMARK [0][-]{chapter.2}{Algebraic Structures}{part.1}% 11
-\BOOKMARK [1][-]{section.2.1}{Algebraic Structures}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.2}{Groups}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.3}{Fields}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.4}{Vector Spaces}{chapter.2}% 15
-\BOOKMARK [2][-]{subsection.2.4.1}{Linear Maps}{section.2.4}% 16
-\BOOKMARK [2][-]{subsection.2.4.2}{Basis Of Vector Spaces}{section.2.4}% 17
-\BOOKMARK [2][-]{subsection.2.4.3}{Change Of Basis}{section.2.4}% 18
-\BOOKMARK [2][-]{subsection.2.4.4}{Tensors}{section.2.4}% 19
-\BOOKMARK [2][-]{subsection.2.4.5}{Notational Conventions}{section.2.4}% 20
-\BOOKMARK [1][-]{section.2.5}{Rings}{chapter.2}% 21
-\BOOKMARK [1][-]{section.2.6}{Modules}{chapter.2}% 22
-\BOOKMARK [2][-]{subsection.2.6.1}{Basis Of Modules}{section.2.6}% 23
-\BOOKMARK [1][-]{section.2.7}{Algebras}{chapter.2}% 24
-\BOOKMARK [1][-]{section.2.8}{Lie Algebras}{chapter.2}% 25
-\BOOKMARK [2][-]{subsection.2.8.1}{Classification Of Lie Algebras}{section.2.8}% 26
-\BOOKMARK [2][-]{subsection.2.8.2}{The adjoint map and the Killing form}{section.2.8}% 27
-\BOOKMARK [2][-]{subsection.2.8.3}{The fundamental roots and the Weyl group}{section.2.8}% 28
-\BOOKMARK [2][-]{subsection.2.8.4}{Dynkin diagrams and the Cartan classification}{section.2.8}% 29
-\BOOKMARK [0][-]{chapter.3}{Topology}{part.1}% 30
-\BOOKMARK [1][-]{section.3.1}{Topological Spaces}{chapter.3}% 31
-\BOOKMARK [1][-]{section.3.2}{Construction Of New Topologies From Given Ones}{chapter.3}% 32
-\BOOKMARK [1][-]{section.3.3}{Convergence \046 Continuity}{chapter.3}% 33
-\BOOKMARK [1][-]{section.3.4}{Invariant Topological Properties}{chapter.3}% 34
-\BOOKMARK [2][-]{subsection.3.4.1}{Separation Properties}{section.3.4}% 35
-\BOOKMARK [2][-]{subsection.3.4.2}{Connectedness And Path-Connectedness}{section.3.4}% 36
-\BOOKMARK [2][-]{subsection.3.4.3}{Homotopic Curves And The Fundamental Group}{section.3.4}% 37
-\BOOKMARK [0][-]{chapter.4}{Topological Manifolds}{part.1}% 38
-\BOOKMARK [1][-]{section.4.1}{Topological Manifolds}{chapter.4}% 39
-\BOOKMARK [1][-]{section.4.2}{Charts \046 Atlases}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.3}{Differentiable Manifolds}{chapter.4}% 41
-\BOOKMARK [2][-]{subsection.4.3.1}{Classification Of Differentiable Structures}{section.4.3}% 42
-\BOOKMARK [1][-]{section.4.4}{Tangent Spaces}{chapter.4}% 43
-\BOOKMARK [2][-]{subsection.4.4.1}{Co-Ordinate Induced Basis For The Tangent Space}{section.4.4}% 44
-\BOOKMARK [2][-]{subsection.4.4.2}{Change Of Vector Components Under A Change Of Chart}{section.4.4}% 45
-\BOOKMARK [1][-]{section.4.5}{Cotangent Spaces}{chapter.4}% 46
-\BOOKMARK [2][-]{subsection.4.5.1}{Dual Basis For The Cotangent Space}{section.4.5}% 47
-\BOOKMARK [2][-]{subsection.4.5.2}{Change Of Covector Components Under A Change Of Chart}{section.4.5}% 48
-\BOOKMARK [1][-]{section.4.6}{Push-Forward And Pull-Back}{chapter.4}% 49
-\BOOKMARK [1][-]{section.4.7}{Immersions And Embeddings}{chapter.4}% 50
-\BOOKMARK [1][-]{section.4.8}{Topological Bundles}{chapter.4}% 51
-\BOOKMARK [1][-]{section.4.9}{The Tangent Bundle}{chapter.4}% 52
-\BOOKMARK [1][-]{section.4.10}{Vector, Covector And Tensor Fields}{chapter.4}% 53
-\BOOKMARK [1][-]{section.4.11}{Differential Forms}{chapter.4}% 54
-\BOOKMARK [2][-]{subsection.4.11.1}{The Grassmann Algebra}{section.4.11}% 55
-\BOOKMARK [2][-]{subsection.4.11.2}{The Exterior Derivative}{section.4.11}% 56
-\BOOKMARK [2][-]{subsection.4.11.3}{De Rham Cohomology}{section.4.11}% 57
-\BOOKMARK [1][-]{section.4.12}{Application - Part 1: `39`42`"613A``45`47`"603ASL\(2,C\)}{chapter.4}% 58
-\BOOKMARK [0][-]{chapter.5}{Lie Theory}{part.1}% 59
-\BOOKMARK [1][-]{section.5.1}{Lie Groups}{chapter.5}% 60
-\BOOKMARK [2][-]{subsection.5.1.1}{The Left Translation Map}{section.5.1}% 61
-\BOOKMARK [2][-]{subsection.5.1.2}{The Lie Algebra Of A Lie Group}{section.5.1}% 62
-\BOOKMARK [1][-]{section.5.2}{Application - Part 2: `39`42`"613A``45`47`"603ASL\(2,C\)}{chapter.5}% 63
-\BOOKMARK [2][-]{subsection.5.2.1}{The Lie Algebra Of SL\(2,C\)}{section.5.2}% 64
-\BOOKMARK [-1][-]{part.2}{II Statistics \046 Probability Theory}{}% 65
-\BOOKMARK [0][-]{chapter.6}{Basic Concepts}{part.2}% 66
-\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 67
-\BOOKMARK [2][-]{subsection.6.1.1}{Basic Terminology}{section.6.1}% 68
-\BOOKMARK [1][-]{section.6.2}{Sample Space \046 Events}{chapter.6}% 69
-\BOOKMARK [1][-]{section.6.3}{Probability Space}{chapter.6}% 70
-\BOOKMARK [1][-]{section.6.4}{Conditional Probability}{chapter.6}% 71
-\BOOKMARK [0][-]{chapter.7}{Random Variables}{part.2}% 72
-\BOOKMARK [1][-]{section.7.1}{Random Variables}{chapter.7}% 73
-\BOOKMARK [1][-]{section.7.2}{Discrete Random Variables}{chapter.7}% 74
-\BOOKMARK [1][-]{section.7.3}{Discrete Probability Distributions}{chapter.7}% 75
-\BOOKMARK [2][-]{subsection.7.3.1}{Discrete Uniform Distribution - Unif\(n\)}{section.7.3}% 76
-\BOOKMARK [2][-]{subsection.7.3.2}{Bernoulli Distribution - Bern\(p\)}{section.7.3}% 77
-\BOOKMARK [2][-]{subsection.7.3.3}{Binomial Distribution - B\(n,p\)}{section.7.3}% 78
-\BOOKMARK [2][-]{subsection.7.3.4}{Poisson Distribution - Pois\(\)}{section.7.3}% 79
-\BOOKMARK [2][-]{subsection.7.3.5}{Geometric Distribution - Geo\(p\)}{section.7.3}% 80
-\BOOKMARK [2][-]{subsection.7.3.6}{Hypergeometric Distribution - Hypergeometric\(N, K, n\)}{section.7.3}% 81
-\BOOKMARK [2][-]{subsection.7.3.7}{Negative Binomial Distribution - NB\(r,p\)}{section.7.3}% 82
-\BOOKMARK [1][-]{section.7.4}{Continuous Random Variables}{chapter.7}% 83
-\BOOKMARK [1][-]{section.7.5}{Continuous Probability Distributions}{chapter.7}% 84
-\BOOKMARK [2][-]{subsection.7.5.1}{Continuous Uniform Distribution - Unif\(a,b\)}{section.7.5}% 85
-\BOOKMARK [2][-]{subsection.7.5.2}{Normal Distribution - N\(, 2\)}{section.7.5}% 86
-\BOOKMARK [2][-]{subsection.7.5.3}{Standard Normal Distribution - N\(0,1\)}{section.7.5}% 87
-\BOOKMARK [2][-]{subsection.7.5.4}{Exponential Distribution - Expo\(\)}{section.7.5}% 88
-\BOOKMARK [2][-]{subsection.7.5.5}{Chi-Squared Distribution - 2\(k\)}{section.7.5}% 89
-\BOOKMARK [2][-]{subsection.7.5.6}{Student's t-Distribution - t\(\)}{section.7.5}% 90
-\BOOKMARK [2][-]{subsection.7.5.7}{Beta Distribution - Beta\(, \)}{section.7.5}% 91
-\BOOKMARK [2][-]{subsection.7.5.8}{Gamma Distribution - Gamma\(, \)}{section.7.5}% 92
-\BOOKMARK [1][-]{section.7.6}{Joint Probability Distribution}{chapter.7}% 93
-\BOOKMARK [2][-]{subsection.7.6.1}{Bivariate Joint Distribution}{section.7.6}% 94
-\BOOKMARK [1][-]{section.7.7}{Moments}{chapter.7}% 95
-\BOOKMARK [0][-]{chapter.8}{Statistical Inference}{part.2}% 96
-\BOOKMARK [1][-]{section.8.1}{Population VS Sample}{chapter.8}% 97
-\BOOKMARK [0][-]{chapter.9}{Parametric Inference}{part.2}% 98
-\BOOKMARK [1][-]{section.9.1}{Basic Definitions}{chapter.9}% 99
-\BOOKMARK [1][-]{section.9.2}{Maximum Likelihood}{chapter.9}% 100
-\BOOKMARK [-1][-]{part.3}{III Machine Learning}{}% 101
-\BOOKMARK [0][-]{chapter.10}{Introduction}{part.3}% 102
-\BOOKMARK [0][-]{chapter.11}{Supervised Learning}{part.3}% 103
-\BOOKMARK [1][-]{section.11.1}{Linear Regression}{chapter.11}% 104
-\BOOKMARK [1][-]{section.11.2}{Optimization Techniques}{chapter.11}% 105
-\BOOKMARK [2][-]{subsection.11.2.1}{Normal Equation}{section.11.2}% 106
-\BOOKMARK [2][-]{subsection.11.2.2}{Gradient Descent}{section.11.2}% 107
-\BOOKMARK [1][-]{section.11.3}{Logistic Regression}{chapter.11}% 108
-\BOOKMARK [2][-]{subsection.11.3.1}{Normal Equation}{section.11.3}% 109
-\BOOKMARK [2][-]{subsection.11.3.2}{Gradient Descent}{section.11.3}% 110
-\BOOKMARK [1][-]{section.11.4}{Generalized Linear Model}{chapter.11}% 111
-\BOOKMARK [1][-]{section.11.5}{Errors}{chapter.11}% 112
-\BOOKMARK [2][-]{subsection.11.5.1}{Point-Wise, Overall, In-Sample \046 Out-Of-Sample Error}{section.11.5}% 113
-\BOOKMARK [2][-]{subsection.11.5.2}{Bias \046 Variance}{section.11.5}% 114
-\BOOKMARK [1][-]{section.11.6}{Evaluation}{chapter.11}% 115
-\BOOKMARK [1][-]{section.11.7}{Regularization}{chapter.11}% 116
-\BOOKMARK [2][-]{subsection.11.7.1}{Ridge Regression - L2 Regularization}{section.11.7}% 117
-\BOOKMARK [2][-]{subsection.11.7.2}{Lasso Regression - L1 Regularization}{section.11.7}% 118
-\BOOKMARK [1][-]{section.11.8}{Classification Error Metrics}{chapter.11}% 119
-\BOOKMARK [0][-]{section*.10}{Appendices}{part.3}% 120
-\BOOKMARK [0][-]{Appendix.a.A}{Constrained Optimization}{part.3}% 121
-\BOOKMARK [1][-]{section.a.A.1}{Equality Constrained Optimization}{Appendix.a.A}% 122
-\BOOKMARK [1][-]{section.a.A.2}{Equality \046 Inequality Constrained Optimization}{Appendix.a.A}% 123
-\BOOKMARK [0][-]{Appendix.a.B}{Kernels}{part.3}% 124
-\BOOKMARK [0][-]{Appendix.a.C}{Convolution}{part.3}% 125
+\BOOKMARK [1][-]{section.2.1}{Groups}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.2}{Fields}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.3}{Vector Spaces}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.3.1}{Linear Maps}{section.2.3}% 15
+\BOOKMARK [2][-]{subsection.2.3.2}{Basis Of Vector Spaces}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.3}{Change Of Basis}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.4}{Determinants}{section.2.3}% 18
+\BOOKMARK [1][-]{section.2.4}{Rings}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.5}{Modules}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.5.1}{Basis Of Modules}{section.2.5}% 21
+\BOOKMARK [1][-]{section.2.6}{Algebras}{chapter.2}% 22
+\BOOKMARK [0][-]{chapter.3}{Lie Algebras}{part.1}% 23
+\BOOKMARK [1][-]{section.3.1}{Lie Algebras}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.1.1}{The adjoint map and the Killing form}{section.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.1.2}{The fundamental roots and the Weyl group}{section.3.1}% 26
+\BOOKMARK [2][-]{subsection.3.1.3}{Dynkin diagrams and the Cartan classification}{section.3.1}% 27
+\BOOKMARK [0][-]{chapter.4}{Topology}{part.1}% 28
+\BOOKMARK [1][-]{section.4.1}{Topological Spaces}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{Construction Of New Topologies From Given Ones}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.3}{Convergence \046 Continuity}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.4}{Invariant Topological Properties}{chapter.4}% 32
+\BOOKMARK [2][-]{subsection.4.4.1}{Separation Properties}{section.4.4}% 33
+\BOOKMARK [2][-]{subsection.4.4.2}{Connectedness And Path-Connectedness}{section.4.4}% 34
+\BOOKMARK [2][-]{subsection.4.4.3}{Homotopic Curves And The Fundamental Group}{section.4.4}% 35
+\BOOKMARK [0][-]{chapter.5}{Topological Manifolds}{part.1}% 36
+\BOOKMARK [1][-]{section.5.1}{Topological Manifolds}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.2}{Charts \046 Atlases}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.3}{Differentiable Manifolds}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.3.1}{Classification Of Differentiable Structures}{section.5.3}% 40
+\BOOKMARK [1][-]{section.5.4}{Tangent Spaces}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.4.1}{Co-Ordinate Induced Basis For The Tangent Space}{section.5.4}% 42
+\BOOKMARK [2][-]{subsection.5.4.2}{Change Of Vector Components Under A Change Of Chart}{section.5.4}% 43
+\BOOKMARK [1][-]{section.5.5}{Cotangent Spaces}{chapter.5}% 44
+\BOOKMARK [2][-]{subsection.5.5.1}{Dual Basis For The Cotangent Space}{section.5.5}% 45
+\BOOKMARK [2][-]{subsection.5.5.2}{Change Of Covector Components Under A Change Of Chart}{section.5.5}% 46
+\BOOKMARK [1][-]{section.5.6}{Push-Forward And Pull-Back}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.7}{Immersions And Embeddings}{chapter.5}% 48
+\BOOKMARK [1][-]{section.5.8}{Topological Bundles}{chapter.5}% 49
+\BOOKMARK [1][-]{section.5.9}{The Tangent Bundle}{chapter.5}% 50
+\BOOKMARK [1][-]{section.5.10}{Vector, Covector And Tensor Fields}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.11}{Differential Forms}{chapter.5}% 52
+\BOOKMARK [2][-]{subsection.5.11.1}{The Grassmann Algebra}{section.5.11}% 53
+\BOOKMARK [2][-]{subsection.5.11.2}{The Exterior Derivative}{section.5.11}% 54
+\BOOKMARK [2][-]{subsection.5.11.3}{De Rham Cohomology}{section.5.11}% 55
+\BOOKMARK [1][-]{section.5.12}{Application - Part 1: `39`42`"613A``45`47`"603ASL\(2,C\)}{chapter.5}% 56
+\BOOKMARK [0][-]{chapter.6}{Lie Groups}{part.1}% 57
+\BOOKMARK [1][-]{section.6.1}{Lie Groups}{chapter.6}% 58
+\BOOKMARK [1][-]{section.6.2}{The Left Translation Map}{chapter.6}% 59
+\BOOKMARK [1][-]{section.6.3}{The Lie Algebra Of A Lie Group}{chapter.6}% 60
+\BOOKMARK [1][-]{section.6.4}{Application - Part 2: `39`42`"613A``45`47`"603ASL\(2,C\)}{chapter.6}% 61

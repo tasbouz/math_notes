@@ -38,7 +38,7 @@ Let $(G,\bullet)$ and $(H,\circ)$ be Lie groups. A map $\phi\cl G \to H$ is \tex
 A \textbf{Lie group isomorphism}\index{isomorphism!of Lie groups} is a Lie group homomorphism which is also a diffeomorphism of the underlying manifolds. 
 \ed
 
-\subsection{The Left Translation Map}
+\section{The Left Translation Map}
 
 To every element of a Lie group there is associated a special map. Note that everything we will do here can be done equivalently by using right translation maps. 
 
@@ -50,6 +50,9 @@ Let $(G,\bullet)$ be a Lie group and let $g\in G$. The map
 \ei
 is called the \textbf{left translation}\index{left translation} by $g$.
 \ed
+
+One might thing that this is an overkill of notation since we already had the operation between two element from the group structure. However the left translation map is different, since we first have to fix an element of the group $g$ (hence the index in $\ell_g$) and then apply this element to the whole group (a.k.a to each element of the group).\\ 
+
 If there is no danger of confusion, we usually suppress the $\bullet$ notation.  
 \bp
 Let $G$ be a Lie group. For any $g\in G$, the left translation map $\ell_g\cl G \to G$ is a diffeomorphism.
@@ -79,17 +82,13 @@ The inverse map is $(\ell_g)^{-1}=\ell_{g^{-1}}$, since
 Then, for the same reason as above with $g$ replaced by $g^{-1}$, the inverse map $(\ell_g)^{-1}$ is also smooth. Hence, the map $\ell_g$ is indeed a diffeomorphism.
 \eq
 
-Note that, in general, $\ell_g$ is not an isomorphism of groups, i.e.\ 
+Note that, $\ell_g$ is not an isomorphism of groups, i.e.\ 
 \bse
 \ell_g(hh') \neq \ell_g(h)\,\ell_g(h')
 \ese
-in general. However, as the final part of the previous proof suggests, we do have
-\bse
-\ell_g \circ \ell_h = \ell_{gh}
-\ese
-for all $g,h\in G$. \\
+in general. However that does not stop $\ell_g$ from being a diffeomorphism of the underlying manifolds.\\
 
-Recall from the previous chapter than once we have a diffeomorphism $\phi$ between two manifolds $M$ and $N$, we can define the push-forward of a vector field X as
+Since a lie group is a topological manifold, on top of being a group, this means that at any point $g$ we can define the tangent space, and by following the analysis we did in the previous chapter to define fields on $G$. Recall from the previous chapter than once we have a diffeomorphism $\phi$ between two manifolds $M$ and $N$, we can define the push-forward of a vector field X as
 \bse
 (\phi_* X)|_{\phi(p)} := \phi_* (X|_p)
 \ese
@@ -101,7 +100,7 @@ Coming in our case, we just showed that the map $\ell_g\cl G\to G$ is a diffeomo
 (\ell_{g*} X)|_{gh} := (\ell_g)_* (X|_h)
 \ese
 
-\subsection{The Lie Algebra Of A Lie Group}
+\section{The Lie Algebra Of A Lie Group}
 
 In Lie theory, we are typically not interested in general vector fields, but rather on special class of vector fields which are invariant under the induced push-forward of the left translation maps $\ell_g$.
 
@@ -149,14 +148,14 @@ Of course,
 
 \vspace{3pt}
 
-but, in fact, more is true. One can check that $\mathcal{L}(G)$ is closed under 
+but, in fact, more is true. Recall that we equipped $(\Gamma(TG)$ with two operations and we showed that $(\Gamma(TG),+,\cdot)$ is in fact a $\mathcal{C}^\infty(G)$-submodule. One can check that $\mathcal{L}(G)$ is closed under 
 \bi{c}
 +\cl \mathcal{L}(G)\times \mathcal{L}(G) \to \mathcal{L}(G)\\
 \cdot  \cl \mathcal{C}^\infty(G)\times \mathcal{L}(G) \to \mathcal{L}(G),
 \ei
-therefore, $\mathcal{L}(G)$ is a $\mathcal{C}^\infty(G)$-submodule of $\Gamma(TG)$, but it is also an $\R$-vector subspace of $\Gamma(TG)$. \\
+therefore, $\mathcal{L}(G)$ is a $\mathcal{C}^\infty(G)$-submodule of $\Gamma(TG)$. \\
 
-Recall that, up to now, we have refrained from thinking of $\Gamma(TG)$ as an $\R$-vector space since it is infinite-dimensional and, even worse, a basis is in general uncountable. A priori, this could be true for $\mathcal{L}(G)$ as well, but we will see that the situation is, in fact, much nicer as $\mathcal{L}(G)$ will turn out to be a finite-dimensional vector space over $\R$. 
+However, as we said, $(\Gamma(TG),+,\cdot)$ can also be seen as an $\R$-vector space. Up to now, we have refrained from thinking of $\Gamma(TG)$ as an $\R$-vector space since it is infinite-dimensional and, even worse, a basis is in general uncountable. A priori, this could be true for $\mathcal{L}(G)$ as well, but we will see that the situation is, in fact, much nicer as $\mathcal{L}(G)$ will turn out to be a finite-dimensional vector space over $\R$ (as an $\R$-vector subspace of $\Gamma(TG)$).
 
 \begin{theorem}
 Let $G$ be a Lie group with identity element $e\in G$. Then $\mathcal{L}(G)\cong_\mathrm{vec} T_eG$.
@@ -230,14 +229,16 @@ Therefore, $j\cl T_eG\xrightarrow{\sim}\mathcal{L}(G)$ is indeed a linear isomor
 The space $\mathcal{L}(G)$ is finite-dimensional and $\dim \mathcal{L}(G)=\dim G$.
 \ec
 
-We will soon see that the identification of $\mathcal{L}(G)$ and $T_eG$ goes beyond the level of linear isomorphism as vector spaces, as they are isomorphic as Lie algebras. Recall from the Lie algebra chapter in the notes, that a Lie algebra over an algebraic field $K$ is a vector space over $K$ equipped with a Lie bracket $[-,-]$, i.e.\ a $K$-bilinear, antisymmetric map which satisfies the Jacobi identity. \\
+We can go one step further now. Recall from the Lie algebra chapter in the notes, that a Lie algebra over an algebraic field $K$ is a vector space over $K$ equipped with a Lie bracket $[-,-]$, i.e.\ a $K$-bilinear, antisymmetric map which satisfies the Jacobi identity. \\
 
-Given $X,Y\in \Gamma(TM)$, we defined their Lie bracket, or commutator, as
+Considering $\Gamma(TM)$ as an infinite-dimensional $R$-vector space, for two vector fields $X,Y\in \Gamma(TM)$, we can define their Lie bracket, or commutator, as
 \bse
 [X,Y] (f):= X(Y(f))-Y(X(f))
 \ese
-for any $f\in \mathcal{C}^\infty(M)$. You can check that indeed $[X,Y]\in\Gamma(TM)$, and that the bracket is $\R$-bilinear, antisymmetric and satisfies the Jacobi identity. Thus, $(\Gamma(TM),+,\cdot,[-,-])$ is an infinite-dimensional Lie algebra over $\R$. We suppress the $+$ and $\cdot$ when they are clear from the context.
-In the case of a manifold that is also a Lie group, we have the following.
+for any $f\in \mathcal{C}^\infty(M)$. Now we can check that indeed $[X,Y]\in\Gamma(TM)$, and that the bracket is $\R$-bilinear, antisymmetric and satisfies the Jacobi identity. Thus, $(\Gamma(TM),+,\cdot,[-,-])$ is an infinite-dimensional Lie algebra over $\R$. We suppress the $+$ and $\cdot$ when they are clear from the context. \\
+
+By inheriting the commutator to the finite dimensional $R$-vector space $\mathcal{L}(G)$, we can then turn $(\mathcal{L}(G),+,\cdot,[-,-])$ to a subalgebra of $\Gamma(TG)$ (of course we need to show that $\mathcal{L}(G)$ is closed under the commutator).
+
 \begin{theorem}
 Let $G$ be a Lie group. Then $\mathcal{L}(G)$ is a Lie subalgebra of $\Gamma(TG)$.
 \end{theorem}
@@ -263,7 +264,7 @@ Let $G$ be a Lie group. The \textbf{associated Lie algebra} of $G$ is $\mathcal{
 
 Notice that we began with $\mathcal{L}(G)$ as a set of all left invariant vector fields of $G$, which is a subset of $\Gamma(TG)$, then we inherited the $+$ and $\cdot$ of $\Gamma(TG)$ to $\mathcal{L}(G)$ and we showed that it is also a submodule and a subvector space of $\Gamma(TG)$, and finally we inherited the Lie bracket from $\Gamma(TG)$ and we showed that it is also a subalgebra of $\Gamma(TG)$. From now on when we will be referring to $\mathcal{L}(G)$, we will mean its algebra structure.\\
 
-Given the nature of $\mathcal{L}(G)$, it is a rather complicated object, since its elements are vector fields, hence we would like to work with $T_eG$ instead, whose elements are tangent vectors. We have already shown that $\mathcal{L}(G)$ and $T_eG$ are isomorphic as vector spaces, but we would like them to be also isomorphic as algebras. Indeed, we can use the bracket on $L(G)$ to define a bracket on $T_eG$ such that they be isomorphic as Lie algebras. First, let us define the isomorphism of Lie algebras.
+Given the nature of $\mathcal{L}(G)$, it is a rather complicated object, since its elements are vector fields, hence we would like to work with $T_eG$ instead, whose elements are tangent vectors. We have already shown that $\mathcal{L}(G)$ and $T_eG$ are isomorphic as vector spaces, but we will now see that the identification of $\mathcal{L}(G)$ and $T_eG$ goes beyond the level of linear isomorphism as vector spaces, as they are isomorphic as Lie algebras. Indeed, we can use the bracket on $L(G)$ to define a bracket on $T_eG$ such that they be isomorphic as Lie algebras. First, let us define the isomorphism of Lie algebras.
 
 \bd [Lie Algebra Homomorphism]
 Let $(L_1,[-,-]_{L_1})$ and $(L_2,[-,-]_{L_2})$ be Lie algebras over the same field. A linear map $\phi\cl L_1 \xrightarrow{\sim}L_2$ is a \textbf{Lie algebra homomorphism} if
@@ -309,10 +310,9 @@ We equipped $\SL(2,\C)$ with both a group and a manifold structure. In order to 
 and 
 \bi{rrCl}
 i \cl & \SL(2,\C) & \to & \SL(2,\C)\\[3pt]
-& \biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr)  & \mapsto &\biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr)^{-1} %= \biggl(\begin{matrix} d & -b \\ -c & a\end{matrix}\biggr)
+& \biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr)  & \mapsto &\biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr)^{-1}
 \ei
 are differentiable with respect to the differentiable structure on $\SL(2,\C)$. For instance, for the inverse map $i$, we have to show that the map $y\circ i \circ x^{-1}$ is differentiable in the usual for any pair of charts $(U,x),(V,y)\in \mathscr{A}$. 
-
 \bse
 \begin{tikzcd}
 U \se\SL(2,\C) \ar[dd,"x"]\ar[rr,"i"]&& V\se \SL(2,\C)\ar[dd,"y"]\\
@@ -321,9 +321,23 @@ x(U) \se \C^3 \ar[rr,"y\circ i\circ x^{-1}"]&& y(V)\se \C^3
 \end{tikzcd}
 \ese
 
-\vspace{10pt}
+\vspace{5pt}
 
-However, since $\SL(2,\C)$ is connected, the differentiability of the transition maps in $\mathscr{A}$ implies that if $y\circ i\circ x^{-1}$ is differentiable for any two given charts, then it is differentiable for all charts in $\mathscr{A}$. Hence, we can simply let $(U,x)$ and $(V,y)$ be the two charts on $\SL(2,\C)$ defined above. Then, we have
+where we remind that
+\bi{rrCl}
+x^{-1} \cl & x(U) & \to & U\\
+& (a,b,c)& \mapsto & \biggl( \begin{matrix} a & b \\ c & \frac{1+bc}{a} \end{matrix}\biggr) .
+\ei
+
+and
+\bi{rrCl}
+y \cl & V & \to & x(V) \se \C\times \C^*\times \C\\
+& \biggl( \begin{matrix} a & b \\ c & d \end{matrix}\biggr) & \mapsto & (a,b,d).
+\ei
+
+\vspace{3pt}
+
+Since $\SL(2,\C)$ is connected, the differentiability of the transition maps in $\mathscr{A}$ implies that if $y\circ i\circ x^{-1}$ is differentiable for any two given charts, then it is differentiable for all charts in $\mathscr{A}$. Hence, we can simply let $(U,x)$ and $(V,y)$ be the two charts on $\SL(2,\C)$ defined above. Then, we have
 \bse
 (y\circ i\circ x^{-1}) (a,b,c) = (y\circ i) ( \biggl(\begin{matrix} a & b \\ c & \frac{1+bc}{a}\end{matrix}\biggr) ) = y ( \biggl(\begin{matrix} \frac{1+bc}{a} & -b \\ -c & a\end{matrix}\biggr)) = (\tfrac{1+bc}{a},-b,a)
 \ese
@@ -331,11 +345,11 @@ which is certainly complex differentiable as a map between open subsets of $\C^3
 
 Checking that $\mu$ is complex differentiable is slightly more involved, since we first have to equip $\SL(2,\C) \times \SL(2,\C)$ with a suitable ``product differentiable structure'' and then proceed as above. Once that is done, we can finally conclude that $((\SL(2,\C),\mathcal{O},\mathscr{A}),\bullet)$ is a $3$-dimensional complex Lie group.
 
-\subsection{The Lie Algebra Of \texorpdfstring{$\SL(2,\C)$}{SL(2,C)}}
+\subsubsection{The Lie Algebra Of \texorpdfstring{$\SL(2,\C)$}{SL(2,C)}}
 
 Recall that to every Lie group $G$, there is an associated Lie algebra $\mathcal{L}(G)$, where
 \bse
-\mathcal{L}(G) := \{X\in \Gamma(TG)\mid \forall \, g,h\in G : (\ell_g)_*(X|_h)=X_{gh}\},
+\mathcal{L}(G) := \{X\in \Gamma(TG)\mid \forall \, g,h\in G : (\ell_g)_*(X|_h)=X|_{gh}\},
 \ese
 which we then proved to be isomorphic to the Lie algebra $T_eG$ with Lie bracket
 \bse
@@ -354,34 +368,44 @@ By using the standard notation $\sl(2,\C)\equiv \mathcal{L}(\SL(2,\C))$, we have
 \bse
 \sl(2,\C) \cong_{\mathrm{Lie \, alg}} T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C).
 \ese
-We would now like to explicitly determine the Lie bracket on $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$, and hence determine its structure constants.
+We would now like to explicitly determine the Lie bracket on $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$, and hence determine its structure constants. \\
 
 Recall that if $(U,x)$ is a chart on a manifold $M$ and $p\in U$, then the chart $(U,x)$ induces a basis of the tangent space $T_pM$. We shall use our previously defined chart $(U,x)$ on $\SL(2,\C)$, where $U:= \{ \left( \begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\right) \in \SL(2,\C) \mid a \neq 0 \}$ and 
 \bi{rrCl}
 x \cl & U & \to & x(U) \se \C^3\\
 & \biggl( \begin{matrix} a & b \\ c & d \end{matrix}\biggr) & \mapsto & (a,b,c).
 \ei
-Note that the $d$ appearing here is completely redundant, since the membership condition of $\SL(2,\C)$ forces $d=\frac{1+bc}{a}$. However, we will keep writing the $d$ to avoid having a fraction in a matrix in a subscript.
+Note that the $d$ appearing here is completely redundant, since the membership condition of $\SL(2,\C)$ forces $d=\frac{1+bc}{a}$. However, we will keep writing the $d$ to avoid having a fraction in a matrix in a subscript. \\
 
-The chart $(U,x)$ contains $\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)$ and hence we get an induced co-ordinate basis
+The chart $(U,x)$ contains the identity $\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)$ (we must include the identity since we are interested in the tangent space at the identity $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$)  and hence we get an induced co-ordinate basis
+
 \bse
 \biggl\{\tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\in  T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C) \ \Big| \ 1\leq i \leq 3 \biggr\}
 \ese
+
+\vspace{5pt}
+
 so that any $A\in  T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ can be written as
 \bse
 A = \alpha \tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + \beta \tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + \gamma \tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},
 \ese
-for some $\alpha,\beta,\gamma\in \C$. Since the Lie bracket is bilinear, its action on these basis vectors uniquely extends to the whole of $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ by linear continuation. Hence, we simply have to determine the action of the Lie bracket of $\sl(2,\C)$ on the images under the isomorphism $j$ of these basis vectors. 
+for some $\alpha,\beta,\gamma\in \C$. Since the Lie bracket is bilinear, its action on these basis vectors uniquely extends to the whole of $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ by linear continuation. Hence, we simply have to determine the action of the Lie bracket of $\sl(2,\C)$ on the images under the isomorphism $j$ of these basis vectors. \\
 
 Let us now determine the image of these co-ordinate induced basis elements under the isomorphism $j$. The object
 \bse
 j\biggl(    \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \in \sl(2,\C) 
 \ese
+
+\vspace{5pt}
+
 is a left-invariant vector field on $\SL(2,\C)$. It assigns to each point $\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)\in U\se \SL(2,\C)$ the tangent vector
 \bse
 j\biggl(    \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \bigg|_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} : =
 \Bigl(\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)_*     \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \in T_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}\SL(2,\C). 
 \ese
+
+\vspace{5pt}
+
 This tangent vector is a $\C$-linear map $\mathcal{C}^\infty(\SL(2,\C))\xrightarrow{\sim}\C$, where $\mathcal{C}^\infty(\SL(2,\C))$ is the $\C$-vector space (in fact, the $\C$-algebra) of smooth complex-valued functions on $\SL(2,\C)$ although, to be precise, since we are working in a chart we should only consider functions defined on $U$. For (the restriction to $U$ of) any $f\in \mathcal{C}^\infty(\SL(2,\C))$ we have, explicitly,
 \bi{rCl}
 \Bigl(\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)_*     \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} (f) & = & \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \Bigl(f\circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)\\
