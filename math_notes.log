@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.28)  12 MAY 2020 18:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.28)  14 MAY 2020 06:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1165,7 +1165,11 @@ ks.code.tex
 File: pgflibraryplotmarks.code.tex 2019/04/04 v3.1.2 (3.1.2)
 ))) (/usr/local/texlive/2019/texmf-dist/tex/latex/bbding/bbding.sty
 Package: bbding 1999/04/15 v1.01 Dingbats symbols
-) (/usr/local/texlive/2019/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/titlepic/titlepic.sty
+Package: titlepic 2017/03/14 1.2 Package to display a picture on the title page
+
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
 Package: tikz-cd 2018/11/19 v0.9f Commutative diagrams with TikZ
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
@@ -1342,11 +1346,14 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 19.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [1
+)
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./math
-_notes.toc
-[2
+LaTeX Warning: No \author given.
+
+[1
+
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./math_notes.toc [2
 
 ])
 \tf@toc=\write5
@@ -1432,7 +1439,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 666--667
  []
 
 [14]
-<./images/map.png, id=446, 615.29875pt x 445.665pt>
+<./images/map.png, id=445, 615.29875pt x 445.665pt>
 File: ./images/map.png Graphic file (type png)
 <use ./images/map.png>
 Package pdftex.def Info: ./images/map.png  used on input line 689.
@@ -1472,87 +1479,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 [22
 
 ] [23] [24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 267--269
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
 
  []
 
 [26] [27] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 422--423
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 483--484
+Underfull \hbox (badness 10000) in paragraph at lines 487--488
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--500
+Underfull \hbox (badness 10000) in paragraph at lines 495--497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--506
+Underfull \hbox (badness 10000) in paragraph at lines 501--503
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 530--532
+Underfull \hbox (badness 10000) in paragraph at lines 527--529
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+Underfull \hbox (badness 10000) in paragraph at lines 556--557
 
  []
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 597--599
+Underfull \hbox (badness 10000) in paragraph at lines 594--596
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--605
+Underfull \hbox (badness 10000) in paragraph at lines 601--602
 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 652--654
+Underfull \hbox (badness 10000) in paragraph at lines 649--651
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 655--656
+Underfull \hbox (badness 10000) in paragraph at lines 652--653
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--658
+Underfull \hbox (badness 10000) in paragraph at lines 654--655
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 662--664
+Underfull \hbox (badness 10000) in paragraph at lines 659--661
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 668--670
+Underfull \hbox (badness 10000) in paragraph at lines 665--667
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--680
+Underfull \hbox (badness 10000) in paragraph at lines 675--677
 
  []
 
 [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 765--766
+Underfull \hbox (badness 10000) in paragraph at lines 762--763
 
  []
 
@@ -1571,15 +1578,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 [37
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 46--48
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
-[38] [39] [40] [41] [42] [43] [44] [45] [46]) [47]
-Chapter 4.
-(./chapters/4.topology.tex [48
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
-] [49] [50] [51] [52] [53]
+ []
+
+[39] [40]
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
+
+ []
+
+[42] [43] [44] [45]
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--593
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 619--620
+
+ []
+
+[47]) [48]
+Chapter 4.
+(./chapters/4.topology.tex [49
+
+] [50] [51] [52] [53] [54]
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 424.
 
 
@@ -1591,21 +1633,21 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 424.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [54] [55]
-<images/sinoneoverx.pdf, id=881, 361.35pt x 234.8775pt>
+) [55] [56]
+<images/sinoneoverx.pdf, id=892, 361.35pt x 234.8775pt>
 File: images/sinoneoverx.pdf Graphic file (type pdf)
 <use images/sinoneoverx.pdf>
 Package pdftex.def Info: images/sinoneoverx.pdf  used on input line 610.
 (pdftex.def)             Requested size: 252.94327pt x 164.41312pt.
 
-[56 <./images/sinoneoverx.pdf>]
+[57 <./images/sinoneoverx.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 742--743
 
  []
 
-[57]) [58]
+[58]) [59]
 Chapter 5.
-(./chapters/5.topological_manifolds.tex [59
+(./chapters/5.topological_manifolds.tex [60
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 109--110
@@ -1617,7 +1659,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-[60]
+[61]
 Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
@@ -1635,12 +1677,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
-[61]
+[62]
 Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
-[62]
+[63]
 Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
@@ -1650,7 +1692,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 286--287
 
  []
 
-[63]
+[64]
 Underfull \hbox (badness 10000) in paragraph at lines 335--336
 
  []
@@ -1670,12 +1712,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
-[64] [65]
+[65] [66]
 Underfull \hbox (badness 10000) in paragraph at lines 459--460
 
  []
 
-[66]
+[67]
 Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
@@ -1685,7 +1727,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 467--469
 
  []
 
-[67]
+[68]
 Underfull \hbox (badness 10000) in paragraph at lines 520--521
 
  []
@@ -1705,7 +1747,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 572--574
 
  []
 
-[68]
+[69]
 Underfull \hbox (badness 10000) in paragraph at lines 591--592
 
  []
@@ -1715,7 +1757,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 606--607
 
  []
 
-[69]
+[70]
 Underfull \hbox (badness 10000) in paragraph at lines 646--647
 
  []
@@ -1725,12 +1767,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 663--664
 
  []
 
-[70]
+[71]
 Underfull \hbox (badness 10000) in paragraph at lines 717--718
 
  []
 
-[71]
+[72]
 Underfull \hbox (badness 10000) in paragraph at lines 746--747
 
  []
@@ -1740,18 +1782,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 782--783
 
  []
 
-[72]
-<images/immers.pdf, id=1033, 361.35pt x 128.48pt>
+[73]
+<images/immers.pdf, id=1046, 361.35pt x 128.48pt>
 File: images/immers.pdf Graphic file (type pdf)
 <use images/immers.pdf>
 Package pdftex.def Info: images/immers.pdf  used on input line 839.
 (pdftex.def)             Requested size: 289.0804pt x 102.78412pt.
- [73 <./images/immers.pdf>]
+ [74 <./images/immers.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 860--861
 
  []
 
-[74] [75] [76] [77]
+[75] [76] [77] [78]
 Underfull \hbox (badness 10000) in paragraph at lines 1177--1178
 
  []
@@ -1761,17 +1803,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 1194--1195
 
  []
 
-[78]
+[79]
 Underfull \hbox (badness 10000) in paragraph at lines 1240--1241
 
  []
 
-[79]
+[80]
 Underfull \hbox (badness 10000) in paragraph at lines 1303--1305
 
  []
 
-[80]
+[81]
 Underfull \hbox (badness 10000) in paragraph at lines 1347--1348
 
  []
@@ -1806,7 +1848,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1393--1394
 
  []
 
-[81]
+[82]
 Underfull \hbox (badness 10000) in paragraph at lines 1395--1396
 
  []
@@ -1816,7 +1858,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1434--1435
 
  []
 
-[82]
+[83]
 Underfull \hbox (badness 10000) in paragraph at lines 1462--1463
 
  []
@@ -1846,7 +1888,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1472--1473
 
  []
 
-[83]
+[84]
 Underfull \hbox (badness 10000) in paragraph at lines 1511--1512
 
  []
@@ -1856,17 +1898,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 1523--1524
 
  []
 
-[84] [85]
+[85] [86]
 Underfull \hbox (badness 10000) in paragraph at lines 1654--1655
 
  []
 
-[86]
+[87]
 Underfull \hbox (badness 10000) in paragraph at lines 1726--1728
 
  []
 
-[87] [88]
+[88] [89]
 Underfull \hbox (badness 10000) in paragraph at lines 1834--1835
 
  []
@@ -1876,7 +1918,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1860--1862
 
  []
 
-[89]
+[90]
 Underfull \hbox (badness 10000) in paragraph at lines 1874--1875
 
  []
@@ -1891,7 +1933,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1935--1937
 
  []
 
-[90]
+[91]
 Underfull \hbox (badness 10000) in paragraph at lines 1952--1954
 
  []
@@ -1980,7 +2022,7 @@ Package hyperref Warning: Composite letter `\textdotaccent+"'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotaccent' on input line 2010.
 
-[91] [92]
+[92] [93]
 Underfull \hbox (badness 10000) in paragraph at lines 2105--2106
 
  []
@@ -1995,7 +2037,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2119--2120
 
  []
 
-[93]
+[94]
 Underfull \hbox (badness 10000) in paragraph at lines 2153--2154
 
  []
@@ -2005,9 +2047,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 2179--2180
 
  []
 
-) [94]
+) [95]
 Chapter 6.
-(./chapters/6.lie_groups.tex [95
+(./chapters/6.lie_groups.tex [96
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 54--55
@@ -2034,17 +2076,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-[96]
+[97]
 Underfull \hbox (badness 10000) in paragraph at lines 155--157
 
  []
 
-[97]
+[98]
 Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
-[98]
+[99]
 Underfull \hbox (badness 10000) in paragraph at lines 237--239
 
  []
@@ -2065,7 +2107,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
-[99]
+[100]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 291.
@@ -2145,7 +2187,7 @@ Package hyperref Warning: Composite letter `\textdotaccent+"'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotaccent' on input line 291.
 
-[100]
+[101]
 Underfull \hbox (badness 10000) in paragraph at lines 343--345
 
  []
@@ -2163,19 +2205,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 377--379
 
  []
 
-[101]
+[102]
 Underfull \hbox (badness 10000) in paragraph at lines 391--393
 
  []
 
-[102] [103] [104] [105]) [106]
+[103] [104] [105] [106]) [107]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 67.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 67.
  (./math_notes.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 67.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 67.
 Package rerunfilecheck Info: File `math_notes.out' has not changed.
-(rerunfilecheck)             Checksum: EA64EDD95D5288060954145E0EA1704A;4439.
+(rerunfilecheck)             Checksum: 85AB39A0B467BAC531FFFDEFA44BB4F3;4426.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2184,16 +2226,19 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 67.
  ) 
 Here is how much of TeX's memory you used:
- 43203 strings out of 492616
- 988347 string characters out of 6129480
- 1245615 words of memory out of 5000000
- 45840 multiletter control sequences out of 15000+600000
+ 43227 strings out of 492616
+ 988778 string characters out of 6129480
+ 1246740 words of memory out of 5000000
+ 45850 multiletter control sequences out of 15000+600000
  558009 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,16n,96p,959b,2680s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,16n,96p,1083b,2680s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
 exlive/2019/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/texli
 ve/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texliv
@@ -2230,10 +2275,10 @@ exmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/201
 dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2019/texmf-di
 st/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2019/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on math_notes.pdf (106 pages, 1072075 bytes).
+Output written on math_notes.pdf (107 pages, 1079491 bytes).
 PDF statistics:
- 2176 PDF objects out of 2487 (max. 8388607)
- 1690 compressed objects within 17 object streams
- 634 named destinations out of 1000 (max. 500000)
+ 2192 PDF objects out of 2487 (max. 8388607)
+ 1704 compressed objects within 18 object streams
+ 644 named destinations out of 1000 (max. 500000)
  2712 words of extra memory for PDF output out of 10000 (max. 10000000)
 

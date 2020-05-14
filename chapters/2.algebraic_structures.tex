@@ -102,7 +102,7 @@ The elements of a vector space are called \emph{vectors}, while the elements of 
 As usual by now, we will look at the structure-preserving maps between vector spaces.
 
 \bd [Linear Maps]
-Let $(V,\oplus,\odot)$, $(W,\boxplus,\boxdot)$ be vector spaces over the same field $K$ and let $f\cl V\to W$ be a map. We say that $f$ is a \textbf{linear map}\index{linear map}\index{map!linear}, and we denote it as $f\cl V\xrightarrow{\sim}W$, if for all $v_1,v_2\in V$ and all $\lambda \in K$
+Let $(V,\oplus,\odot)$, $(W,\boxplus,\boxdot)$ be vector spaces over the same field $K$ and let $f\cl V\to W$ be a map. We say that $f$ is a \textbf{linear map}\index{linear map}\index{map!linear}, or a \textbf{homomorphism} and we denote it as $f\cl V\xrightarrow{\sim}W$, if for all $v_1,v_2\in V$ and all $\lambda \in K$
 \bse
 f((\lambda\odot v_1)\oplus v_2) = (\lambda\boxdot f( v_1))\boxplus f(v_2).
 \ese
@@ -110,8 +110,18 @@ f((\lambda\odot v_1)\oplus v_2) = (\lambda\boxdot f( v_1))\boxplus f(v_2).
 
 From now on, we will drop the special notation for the vector space operations and suppress the dot for scalar multiplication. For instance, we will write the equation above as $f(\lambda v_1+v_2)=\lambda f(v_1)+f(v_2)$, hoping that this will not cause any confusion.
 
+\bd [Linear Isomorphism]
+A bijective linear map (or a bijective homomorphism) is called a \textbf{linear isomorphism}\index{isomorphism!of vector spaces} of vector spaces.
+\ed
+
+\bd [Isomorphic Vector Spaces]
+Two vector spaces are said to be \textbf{isomorphic} if there exists a linear isomorphism between them. We write $V\cong_\mathrm{vec}W$.
+\ed
+
+Based on the linear maps (a.k.a homomorphisms) and bijective linear maps (a.k.a isomorphisms) we can define three important notions of vector spaces: $\mathrm{Hom}(V,W)$, $\mathrm{End}(V)$ and $\mathrm{Aut}(V)$.
+
 \bd [$\mathrm{Hom}(V,W)$]
-Let $V$ and $W$ be vector spaces over the same field $K$. We define the set $\mathrm{Hom}(V,W)$ as the set of all linear maps between $V$ and $W$:
+Let $V$ and $W$ be vector spaces over the same field $K$. We define the set $\mathrm{Hom}(V,W)$ as the set of all linear maps (a.k.a all homomorphisms) between $V$ and $W$:
 \bse
 \mathrm{Hom}(V,W) := \{f \mid f\cl V\xrightarrow{\sim}W \}
 \ese
@@ -147,7 +157,7 @@ It is easy to check that both $f \diamondplus g$ and $\lambda \diamonddot f$ are
 so that $\lambda \diamonddot f\in \mathrm{Hom}(V,W)$. One should also check that $\diamondplus$ and $\diamonddot$ satisfy the vector space axioms.
 
 \bd [Endomorphisms]
-Let $V$ be a vector space. An \textbf{endomorphism}\index{endomorphism} of $V$ is a linear map $V\to V$. 
+Let $V$ be a vector space. An \textbf{endomorphism}\index{endomorphism} of $V$ is a linear map $V\to V$. In other words an endomorphism is a homomorphism whose domain equals the target.
 \ed
 
 \bd [$\mathrm{End}(V)$]
@@ -161,16 +171,8 @@ Let $V$ be a vector space. We define the set $\mathrm{End}(V)$ as the set of all
 
 It is easy to show that $\mathrm{End}(V)$ can again itself be made into a vector space over $K$.
 
-\bd [Linear Isomorphism]
-A bijective linear map is called a \textbf{linear isomorphism}\index{isomorphism!of vector spaces} of vector spaces.
-\ed
-
-\bd [Isomorphic Vector Spaces]
-Two vector spaces are said to be \textbf{isomorphic} if there exists a linear isomorphism between them. We write $V\cong_\mathrm{vec}W$.
-\ed
-
 \bd [Automorphism]
-Let $V$ be a vector space. An \textbf{automorphism}\index{automorphism} of $V$ is a linear isomorphism $V\to V$.
+Let $V$ be a vector space. An \textbf{automorphism}\index{automorphism} of $V$ is a linear isomorphism $V\to V$. In other words an automorphism is an endomorphism that is also an isomorphism.
 \ed
 
 \bd [$\mathrm{Aut}(V)$]
@@ -313,7 +315,16 @@ Other examples we would like to consider are
 
 \subsection{Basis Of Vector Spaces}
 
-Given a vector space without any additional structure, the only notion of basis that we can define is a so-called Hamel basis.
+Given a vector space without any additional structure, the only notion of basis that we can define is a so-called Hamel basis. In order to do so, we first need to define the notion of ``span".
+
+\bd [Span]
+Given a vector space $V$ over a field $K$, the span of a set $S$ of vectors $\{s_1,\ldots,s_N\}$ of $V$ is defined to be the set of all finite linear combinations of elements (vectors) of $S$
+\bse
+\lspan_K(\mathcal{S}) := \bigg\{\sum_{i=1}^n\lambda^is_i \ \Big| \ \lambda^i\in K, s_i\in S, n \geq 1\bigg\}
+\ese
+\ed
+
+Now we are ready to define the so called ``Hamel basis".
 
 \bd [Hamel Basis]
 Let $(V,+,\cdot)$ be a vector space over $K$. A subset $\mathcal{B}\se V$ is called a \textbf{Hamel basis}\index{Hamel basis}\index{vector space!basis} for $V$ if 
@@ -322,19 +333,12 @@ Let $(V,+,\cdot)$ be a vector space over $K$. A subset $\mathcal{B}\se V$ is cal
 \bse
 \sum_{i=1}^N \lambda^ib_i = 0 \ \imp \ \lambda^1 = \cdots = \lambda^N = 0;
 \ese
-\item $\mathcal{B}$ is a \emph{generating} or \emph{spanning set} of $V$, i.e.\
+\item the span of $\mathcal{B}$ can recreate the whole $V$, i.e.\
 \bse
-\forall \, v \in V : \exists \, v^1,\ldots,v^M\in K : \exists \, b_1,\ldots,b_M \in \mathcal{B}:v=\ds \sum_{i=1}^Mv^ib_i.
+V = \lspan_K(\mathcal{B}) \implies \forall \, v \in V : \exists \, v^1,\ldots,v^M\in K : \exists \, b_1,\ldots,b_M \in \mathcal{B}:v=\ds \sum_{i=1}^Mv^ib_i.
 \ese
 \end{itemize}
 \ed
-\br
-We can write the second condition more succinctly by defining
-\bse
-\lspan_K(\mathcal{B}) := \bigg\{\sum_{i=1}^n\lambda^ib_i \ \Big| \ \lambda^i\in K \land b_i\in \mathcal{B} \land n\geq 1\bigg\}
-\ese
-and thus writing $V = \lspan_K(\mathcal{B})$.
-\er
 
 \br 
 Once we have a basis $\mathcal{B}$, the expansion of $v\in V$ in terms of elements of $\mathcal{B}$ is, in fact, unique. Hence we can meaningfully speak of the \emph{components}\index{components} of $v$ in the basis $\mathcal{B}$. 
@@ -447,7 +451,7 @@ The Einstein's summation convention should only be used when dealing with linear
 Note that by suppressing the greyed out summation signs, the second and third term above are indistinguishable. But this is only true if $\phi$ is bilinear! Hence the summation convention should not be used (at least, not without extra care) in other areas of mathematics.
 \er
 
-\subsubsection{Matrix Representations}
+\subsubsection{Matrix Representation}
 
 Having chosen a basis for $V$ and the dual basis for $V^*$, it is very tempting to think of $v=v^ie_i\in V$ and $\omega=\omega_i\epsilon^i\in V^*$ as $d$-tuples of numbers. In order to distinguish them, one may choose to write vectors as \emph{columns} of numbers and covectors as \emph{rows} of numbers:
 \bse
@@ -482,14 +486,7 @@ Given $\phi\in\mathrm{End}(V)\cong_\mathrm{vec}T^1_1V$, recall that we can write
 
 The convention here is to think of the $i$ index on $\phi^i_{\phantom{i}j}$ as a \emph{row index}, and of $j$ as a \emph{column index} (we cannot stress enough that this is pure convention). Hence, once we start using the ``matrix representation`` (although technically it shouldn't be called representation since as we will see the word ``representation" means something else), we can then express all the linear maps $\phi$ of $V$ (a.k.a all the elements of $\mathrm{End}(V)$) as $n \times n$ matrices. This coincides with the usual picture we have in physics, where all the vectors are represented by a column vector of size $n$ and all the linear transformations are represented by $n \times n$ matrices that act on $v$ and produce another vector $w$ (hence the $\mathrm{End}(V)$). \\
 
-Going one step further, notice that not all matrices have an inverse. This coincides with the fact that not all linear maps have an inverse. Since $\mathrm{End}(V)$ contains all linear maps, it also contains maps that are not linear isomorphisms (a.k.a maps that are not bijections, a.k.a maps that do not have an inverse). However, if we restrict ourselves more, from linear maps to linear isomorphisms then we move from $\mathrm{End}(V)$ to $ \mathrm{Aut}(V):=\{f \in \mathrm{End}(V) \mid f \text{ is an isomorphism}\}$. And if we switch again to the ``matrix representation", now we are dealing with matrices that do have an inverse. We call the set of all these matrices ``General Linear Group" and we denote by $GL(V)$ (we can indeed equip this set with matrix multiplication and show that it is closed under the operation, hence the ``group" in the name). \\
-
-
-
-
-
-
-Its usefulness stems from the following example.
+Going one step further, notice that not all matrices have an inverse. This coincides with the fact that not all linear maps have an inverse. Since $\mathrm{End}(V)$ contains all linear maps, it also contains maps that are not linear isomorphisms (a.k.a maps that are not bijections, a.k.a maps that do not have an inverse). However, if we restrict ourselves more, from linear maps to linear isomorphisms then we move from $\mathrm{End}(V)$ to $ \mathrm{Aut}(V):=\{f \in \mathrm{End}(V) \mid f \text{ is an isomorphism}\}$. And if we switch again to the ``matrix representation", now we are dealing with matrices that do have an inverse. We call the set of all these matrices ``General Linear Group" and we denote by $GL(V)$ (we can indeed equip this set with matrix multiplication and show that it is closed under the operation, hence the ``group" in the name). From there we can then restrict our transformations even more and the we can get for example the ``Special Linear Group" denoted by $SL(V)$ etc... \\
 
 \be
 If $\dim V<\infty$, then we have $\mathrm{End}(V)\cong_\mathrm{vec}T^1_1V$. Explicitly, if $\phi \in \mathrm{End}(V)$, we can think of $\phi \in T^1_1V$, using the same symbol, as
@@ -788,7 +785,7 @@ Clearly, every free module is also projective.
 \ee
 
 \bd [R-Linear Maps]
-Let $M$ and $N$ be two $R$-modules. A map $f\cl M \to N$ is said to be an \textbf{$R$-linear map}, or an \textbf{$R$-module homomorphism}, if
+Let $M$ and $N$ be two $R$-modules. A map $f\cl M \to N$ is said to be an \textbf{$R$-linear map} if
 \bse
 \forall \, r\in R : \forall \, m_1,m_2\in M : \ f(rm_1 + m_2)=rf(m_1)+f(m_2),
 \ese
@@ -796,11 +793,11 @@ where it should be clear which operations are in $M$ and which in $N$.
 \ed
 
 \bd [Module Isomorphisms]
-A bijective module homomorphism is said to be a \textbf{module isomorphism}\index{isomorphism!of modules}.
+A bijective $R$-linear map is said to be a \textbf{module isomorphism}\index{isomorphism!of modules}.
 \ed
 
 \bd [Isomorphic Modules]
-Two modulesare said to be \textbf{isomorphic} if there exists a module isomorphism between them. We write $M\cong_{\mathrm{mod}}N$.
+Two modules are said to be \textbf{isomorphic} if there exists a module isomorphism between them. We write $M\cong_{\mathrm{mod}}N$.
 \ed
 
 \bp

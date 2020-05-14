@@ -4,10 +4,10 @@ Lie algebras are closely related to Lie groups, which are groups that are also s
 
 In physics, Lie groups appear as symmetry groups of physical systems, and their Lie algebras (tangent vectors near the identity) may be thought of as infinitesimal symmetry motions. Thus Lie algebras and their representations are used extensively in physics, notably in quantum mechanics and particle physics.
 
-\section{Lie Algebras}
+\section{Basic Definitions}
 
 \bd [Lie Algebra]
-A \textbf{Lie algebra}\index{Lie algebra} $A$ is an algebra whose product $[-,-]$, called \emph{Lie bracket}\index{Lie bracket}, satisfies
+A \textbf{Lie algebra}\index{Lie algebra} $A$ over a field $K$ is an algebra whose product $[-,-]$, called \emph{Lie bracket}\index{Lie bracket}, satisfies
 \ben[label=\roman*)]
 \item bilinearity: $A \times A \to A$: $[av+w,z]= a [v,w] + [v,z]$
 \item antisymmetry: $\ \forall\, v\in A : [v,v]=0$;
@@ -29,87 +29,111 @@ Notice that the Lie bracket is not defined as the usual commutator $[v,w]= vw - 
 \er
 
 \br
-Notice that we specifically defined the Lie algebra on top of a vector space $A$. One can construct an algebra over a ring, by imposing all the axioms on a module instead of a vector space. However, in this notes we will stick with Lie algebras on top of a vector space, and more specifically on top of a complex vector space (i.e where the $K$ field is the complex and to the real numbers), since they are more related to our purposes. In general, same definitions apply for an algebra over a ring with the appropriate changes when needed.
+Notice that we specifically defined the Lie algebra on top of a field $K$. One can construct an algebra over a ring, by imposing all the axioms on a module instead of a vector space. However, in this notes we will stick with Lie algebras on top of a vector space, and more specifically on top of a complex vector space (i.e where the $K$ field is the complex and to the real numbers), since they are more related to our purposes. In general, same definitions apply for an algebra over a ring with the appropriate changes when needed.
 \er
 
 Now let's give some examples of Lie algebras.
 
 \be 
-The usual cross product between vectors $u \times w$ in $\R^3$ can be shown that satisfies all the requirements for a Lie bracket, hence the vector space $\R^3$ equipped with the cross product is actually a Lie algebra. 
+The usual cross product between vectors $u \times w$ in $\R^3$ can be shown that satisfies all the requirements for a Lie bracket, hence the vector space $\R^3$ equipped with the cross product $[u,w] = u \times w$ is actually a Lie algebra. 
 \ee
 
 \be
-Let $V$ be a vector space. Recall that we defined the set $\mathrm{End}(V)$ as the set of all endomorphisms of $V$, i.e the set of all linear transformations that send $V$ back to itself. Now we define the following Lie bracket:
+Let $V$ be a vector space. Recall that we defined the set $\mathrm{End}(V)$ as the set of all endomorphisms of $V$, i.e the set of all linear maps that send $V$ back to itself. Now we define the following Lie bracket:
 \bi{rrCl}
 [-,-] \cl &\End(V)\times \End(V) &\to& \End(V)\\
 &(\phi,\psi) &\mapsto& [\phi,\psi] := \phi\circ\psi-\psi\circ\phi.
 \ei
-It is instructive to check that this is actually a Lie bracket. Hecne, $(\End(V),+,\cdot,[-,-])$ is a Lie algebra. In this case, the Lie bracket is typically called the \emph{commutator}\index{commutator}. \\
-
-An example of this algebra is the set of all $n \times n$ matrices over a field $K$, with their commutator $[v,w]= vw - wv$, (where here the composition is the usual matrix multiplication). Of course the set of $n \times n$ matrices can be seen as linear transformations of the vectors of $K$-vector space $V$ hence they belong to the $\End(V)$.
+It is instructive to check that this is actually a Lie bracket. Hecne, $(\End(V),+,\cdot,[-,-])$ is a Lie algebra. In this case, the Lie bracket is typically called the \emph{commutator}\index{commutator}. (Remember that after having chosen a basis then we can "represent" the elements of $\End(V)$ as $n \times n$ matrices over a field $K$, with their commutator $[v,w]= vw - wv$ where here the composition is the usual matrix multiplication).
 \ee
 
+As usual we can define the concept of homomorphism and isomorphism in the level of Lie algebras.
 
+\bd [Lie Algebra Homomorphism]
+A map $\phi$ between two Lie algebras that preserves both the vector space structure and the bracket structure is called a \textbf{Lie algebra homomorphism}.
+\ed
 
+\bd [Homomorphic Lie Algebras]
+Two Lie algebras over the same field $K$ are said to be \textbf{homomorphic} if there exists a lie algebra homomorphism between them.
+\ed
 
-One of the most important topics on Lie algebras is the classification of them. While it is possible to classify Lie algebras more generally, we will only consider the classification of finite-dimensional complex Lie algebras, i.e.\ Lie algebras $(L,[-,-])$ where $L$ is a finite-dimensional $\C$-vector space. 
+\bd [Lie Algebra Isomorphism]
+A bijective Lie algebra homomorphism is called a \textbf{Lie algebra isomorphism}.
+\ed
 
-If $A,B$ are Lie subalgebras of a Lie algebra $(L,[-,-])$ over $K$, then
+\bd [Isomorphic Lie Algebras]
+Two Lie algebras over the same field $K$ are said to be \textbf{isomorphic} if there exists a lie algebra isomorphism.
+\ed
+
+In what follows we will make heavy use of the following notation that we will give in a form of definition: 
+
+\bd [Bracket]
+Given two subsets $A,B$ of a Lie algebra $L$ we define the \textbf{bracket} of these two subsets $[A,B]$ as the subset defined by the span of all commutators $[x,y]$ where $x\in A$ and $y\in B$, i.e
 \bse
 [A,B] := \lspan_K\bigl(\{[x,y]\in L \mid x\in A \text{ and } y\in B\}\bigr)
 \ese
-is again a Lie subalgebra of $L$.
-
-\bd
-A Lie algebra $L$ is said to be \emph{abelian} if
-\bse
-\forall \, x,y \in L : \ [x,y] = 0.
-\ese
-Equivalently, $[L,L]=0$, where $0$ denotes the trivial Lie algebra $\{0\}$.
-\ed
-Abelian Lie algebras are highly non-interesting as Lie algebras: since the bracket is identically zero, it may as well not be there. Even from the classification point of view, the vanishing of the bracket implies that, given any two abelian Lie algebras, every linear isomorphism between their underlying vector spaces is automatically a Lie algebra isomorphism. Therefore, for each $n\in \N$, there is (up to isomorphism) only one abelian $n$-dimensional Lie algebra.
-\bd
-An \emph{ideal}\index{ideal} $I$ of a Lie algebra $L$ is a Lie subalgebra such that $[I,L]\se I$, i.e.\
-\bse
-\forall \, x\in I : \forall \, y\in L : \ [x,y]\in I.
-\ese
-The ideals $0$ and $L$ are called the \emph{trivial ideals} of $L$.
 \ed
 
-\bd
-A Lie algebra $L$ is said to be 
-\begin{itemize}
-\item \emph{simple} if it is non-abelian and it contains no non-trivial ideals;
-\item \emph{semi-simple} if it contains no non-trivial abelian ideals.
-\end{itemize}
+In other words is just the set of all commutators $[x,y]$ where $x \in A$ and $y \in B$.\\
+
+Now let's give some very basic definitions of Lie algebras.
+
+\bd [Abelian Lie Algebra]
+A Lie algebra $L$ is said to be \textbf{abelian} if $\forall \, x,y \in L : \ [x,y] = 0$ or equivalently  in bracket notation $[L,L]=0$, where $0$ denotes the trivial Lie algebra $\{0\}$.
+\ed
+
+Abelian Lie algebras are highly non-interesting as Lie algebras: since the bracket is identically zero, it may as well not be there. On top of that, the vanishing of the bracket implies that, given any two abelian Lie algebras, every linear isomorphism between their underlying vector spaces is automatically a Lie algebra isomorphism. Therefore, for each $n\in \N$, there is (up to isomorphism) only one abelian $n$-dimensional Lie algebra.
+
+\bd [Subalgebra]
+We say $L'$ is a \textbf{subalgebra} of $L$ if $L'$ is a vector subspace of $L$ and $\forall x,y \in L': [x,y] \in L'$ or equivalently in bracket notation $[L',L'] \in L'$.
+\ed
+
+One can prove that if $A,B$ are Lie subalgebras of a Lie algebra $L$ over $K$, then the bracket $[A,B]$ is again a Lie subalgebra of $L$.
+
+\bd [Ideal]
+An \textbf{ideal}\index{ideal} $I$ of a Lie algebra $L$ is a Lie subalgebra such that $\forall \, x\in I : \forall \, y\in L : \ [x,y]\in I$ or equivalently in bracket notation $[I,L]\se I$.
+\ed
+
+Note that no matter the Lie algebra, we can show that: $[0, L] = 0 \se 0$ and  $[L, L] \se L$ hence both $0$ and $L$ are always ideals of any Lie algebra.
+
+\br 
+Recall from the definition of an algebra (any algebra) that the operation (or product) of the algebra $\bullet \cl A\times A \to A$ is a bilinear map with no need to be surjective. This means that applying the operation to every possible element of the algebra does not guarantee that will give us back the whole algebra (but it does guarantee to give us back a subalgebra). In other words, $[L, L] \se L$ and not $[L, L] = L$.
+\er
+
+\bd [Trivial Ideals]
+The ideals $0$ and $L$ are called the \textbf{trivial ideals} of $L$.
+\ed
+
+\bd [Simple Lie Algebra]
+A Lie algebra $L$ is said to be \textbf{simple} if it is non-abelian and it contains no non-trivial ideals.
+\ed
+
+\bd [Semi-Simple Lie Algebra]
+A Lie algebra $L$ is said to be \textbf{semi-simple} if it contains no non-trivial abelian ideals.
 \ed
 
 \br
 Note that any simple Lie algebra is also semi-simple. The requirement that a simple Lie algebra be non-abelian is due to the $1$-dimensional abelian Lie algebra, which would otherwise be the only simple Lie algebra which is not semi-simple.
 \er
 
-\bd
-Let $L$ be a Lie algebra. The Lie subalgebra
-\bse
-L':=[L,L]
-\ese
-is called the \emph{derived subalgebra}\index{derived subalgebra} of $L$.
+\bd [Derived Subalgebra]
+Let $L$ be a Lie algebra. The Lie subalgebra $L':=[L,L]$ is called the \textbf{derived subalgebra}\index{derived subalgebra} of $L$.
 \ed
 
-We can form a sequence of Lie subalgebras
-\bse
-L \supseteq L' \supseteq L'' \supseteq \cdots \supseteq L^{(n)} \supseteq \cdots
-\ese
-called the \emph{derived series} of $L$.
+Hence, once we have a Lie algebra we can compute the derived subalgebra $L':=[L,L]$. However since $L'$ is by itself an algebra we can compute its own derived subalgebra $L'':=[L',L']$ (which is the derived subalgebra of the derived subalgebra of $L$). And of course we can go on forever.
 
-\bd
-A Lie algebra $L$ is \emph{solvable} if there exists $k\in \N$ such that $L^{(k)}=0$.
+\bd [Derived Series]
+The sequence $L \supseteq L' \supseteq L'' \supseteq \cdots \supseteq L^{(n)} \supseteq \cdots$ of Lie subalgebras is called the \textbf{derived series} of $L$ usually denoted by $L^{(n)}$.
+\ed
+
+\bd [Solvable Lie Algebra]
+A Lie algebra $L$ is \textbf{solvable} if there exists $k\in \N$ such that $L^{(k)}=0$.
 \ed
 
 Recall that the direct sum of vector spaces $V\oplus W$ has $V\times W$ as its underlying set and operations defined componentwise.
 
-\bd
-Let $L_1$ and $L_2$ be Lie algebras. The \emph{direct sum} $L_1\oplus_\mathrm{Lie}L_2$ has $L_1\oplus L_2$ as its underlying vector space and Lie bracket defined as
+\bd [Direct Sum Of Lie Algebras]
+Let $L_1$ and $L_2$ be Lie algebras. The \textbf{direct sum} $L_1\oplus_\mathrm{Lie}L_2$ has $L_1\oplus L_2$ as its underlying vector space and Lie bracket defined as
 \bse
 [x_1+x_2,y_1+y_2]_{L_1\oplus_\mathrm{Lie}L_2} := [x_1,y_1]_{L_1} + [x_2,y_2]_{L_2}
 \ese
@@ -119,9 +143,11 @@ for all $x_1,y_1\in L_1$ and $x_2,y_2\in L_2$. Alternatively, by identifying $L_
 \ese
 In the following, we will drop the ``Lie'' subscript and understand $\oplus$ to mean $\oplus_\mathrm{Lie}$ whenever the summands are Lie algebras.
 \ed
+
 There is a weaker notion than the direct sum, defined only for Lie algebras.
-\bd
-Let $R$ and $L$ be Lie algebras. The \emph{semi-direct sum} $R\oplus_s L$ has $R\oplus L$ as its underlying vector space and Lie bracket satisfying
+
+\bd[Semi-Direct Sum Of Lie Algebras]
+Let $R$ and $L$ be Lie algebras. The \textbf{semi-direct sum} $R\oplus_s L$ has $R\oplus L$ as its underlying vector space and Lie bracket satisfying
 \bse
 [R,L]_{R \oplus_s L} \se R,
 \ese
@@ -144,12 +170,35 @@ As of today, no general classification of solvable Lie algebras is known, except
 A Lie algebra is semi-simple if, and only if, it can be expressed as a direct sum of simple Lie algebras.
 \ep
 
-Hence, the simple Lie algebras are the basic building blocks from which one can build any semi-simple Lie algebra. Then, by Levi's theorem, the classification of simple Lie algebras easily extends to a classification of all semi-simple Lie algebras.
+Hence, the simple Lie algebras are the basic building blocks from which one can build any semi-simple Lie algebra. Then, by Levi's theorem, the classification of simple Lie algebras easily extends to a classification of all semi-simple Lie algebras. \\
 
-\subsection{The adjoint map and the Killing form}
+In order to do computations, it is useful to introduce a basis $\{e_i\}$ on $L$. Recall that an algebra is nothing else but a vector space with an extra operation. Hence, we can simply pick a basis $\{e_i\}$ on the vector space, and then examine how the Lie bracket behaves when we plug in, not any random element of algebra (i.e of the vector space) but specifically the elements of the basis.
 
-\bd
-Let $L$ be a Lie algebra over $k$ and let $x\in L$. The \emph{adjoint map}\index{adjoint map} with respect to $x$ is the $K$-linear map
+\bd [Structure Constants]
+Let $L$ be a Lie algebra over $K$ and let $\{e_i\}$ be a basis of the underlying vector space. Then, we have
+\bse
+[e_i,e_j] = C^{k}_{\phantom{k}ij}e_k
+\ese
+for some $C^{k}_{\phantom{k}ij}\in K$. The numbers $C^{k}_{\phantom{k}ij}$ are called the \textbf{structure constants}\index{structure constants} of $L$ with respect to the basis $\{e_i\}$.
+\ed
+
+\br 
+Since the operation of the algebra $\bullet \cl A\times A \to A$, sends two elements of the algebra to an element of the algebra, this can be translated as sending two elements of the vector space to an element of the vector space, i.e $[e_i,e_j] = v \in V$ for some fixed $i$ and $j$. However since the final result $v$ is again an element of the vector space it can also be expressed as a linear combination of the basis $v = v^k e_k$. This $v^k$ is actually the structure constants (again for some fixed $i$ and $j$, if we do not fix them we have to include them on the $v^k$ hence we obtain $v^k \rightarrow C^{k}_{\phantom{k}ij}$). This is why it is guaranteed that the structure constants $C^{k}_{\phantom{k}ij}\in K$ exist.
+\er
+
+In terms of the structure constants, the anti-symmetry of the Lie bracket reads
+\bse
+[e_i,e_j] = - [e_j,e_i] \implies C^{k}_{\phantom{k}ij}e_k = - C^{k}_{\phantom{k}ji}e_k \implies C^{k}_{\phantom{k}ij} = - C^{k}_{\phantom{k}ji}
+\ese
+while after some trivial calculations one can show that the Jacobi identity becomes
+\bse
+C^{n}_{\phantom{n}im}C^{m}_{\phantom{m}jk} +  C^{n}_{\phantom{n}jm}C^{m}_{\phantom{m}ki} + C^{n}_{\phantom{n}km}C^{m}_{\phantom{m}ij} = 0.
+\ese
+
+\section{The Adjoint Map \& The Killing Form}
+
+\bd [Adjoint Map]
+Let $L$ be a Lie algebra over $K$ and let $x\in L$. The \emph{adjoint map}\index{adjoint map} with respect to $x$ is the $K$-linear map
 \bi{rrCl}
 \ad_x\cl & L & \xrightarrow{\sim} & L\\
 & y & \mapsto & \ad_x(y):=[x,y].
@@ -182,8 +231,27 @@ It remains to check that $\ad$ preserves the brackets. Let $x,y,z\in L$. Then
 Hence, we have $\ad([x,y])=[\ad(x),\ad(y)]$.
 \eq
 
-\bd
-Let $L$ be a Lie algebra over $K$. The \emph{Killing form}\index{Killing form} on $L$ is the $K$-bilinear map
+By choosing a basis  for the vector space, we can express the adjoint map in terms of components with respect to the basis as follows. Start by noting that
+\bi{rrCl}
+\ad\cl & L & \xrightarrow{\sim} & \End(L)\\
+& x & \mapsto & \ad(x):=\ad_x.
+\ei
+
+which means that $\ad_x$ is an element of $\End(L)$ hence an endomorphism of $L$. Recall that for any vector space $V$: $\mathrm{End}(V)\cong_\mathrm{vec}T^1_1V$ which means that if $\phi \in \mathrm{End}(V)$, we can think of $\phi \in T^1_1V$, using the same symbol, as $\phi(\omega,v):=\omega(\phi(v))$ hence the components of $\phi\in\mathrm{End}(V)$ are $\phi^a_{\phantom{a}b}:=\epsilon^a(\phi(e_b))$. \\
+
+So, in our case, let $\{e_i\}$ and $\{\varepsilon^i\}$ be a basis and its dual basis of the underlying vector space of a Lie algebra $L$. Then
+\bi{rCl}
+(\ad_{e_i})^k_{\phantom{k}j} &:=& \varepsilon^k(\ad_{e_i}(e_j)) \\
+& = & \varepsilon^k ([e_i,e_j])\\
+& = & \varepsilon^k (C^{m}_{\phantom{\,m}ij}e_m)\\
+& = & C^{m}_{\phantom{m}ij}\varepsilon^k (e_m)\\
+&=& C^{k}_{\phantom{k}ij}.
+\ei
+
+In other words, the adjoint map represents the structure constants without the need of choosing a basis.
+
+\bd [Killing Form]
+Let $L$ be a Lie algebra over $K$. The \textbf{Killing form}\index{Killing form} on $L$ is the $K$-bilinear map
 \bi{rrCl}
 \kappa \cl & L\times L & \to & K \\
 & (x,y) & \mapsto & \kappa(x,y):= \tr(\ad_x\circ\ad_y),
@@ -217,6 +285,19 @@ This follows easily from the fact that $\ad$ is a homomorphism.
 where we used the cyclicity of the trace.
 \eq
 
+As we did for the adjoint map we can also express the Killing form in terms of components with respect to a basis.\\
+
+Recall from linear algebra that if $V$ is finite-dimensional, for any $\phi\in\End(V)$ we have $\tr(\phi)=\Phi^k_{\phantom{k}k}$, where $\Phi$ is the matrix representing the linear map in any basis. Also, recall that the matrix representing $\phi\circ\psi$ is the product $\Phi\Psi$. Using these, by letting $\{e_i\}$ and $\{\varepsilon^i\}$ be a basis and its dual basis of the underlying vector space of a Lie algebra $L$ we have
+\bi{rCl}
+\kappa_{ij} &:= & \kappa(e_i,e_j)\\
+& = & \tr(\ad_{e_i}\circ\ad_{e_j})\\
+& = & ( \ad_{e_i}\circ\ad_{e_j} )^k_{\phantom{k}k}\\
+& = & ( \ad_{e_i})^m_{\phantom{m}k}(\ad_{e_j} )^k_{\phantom{k}m}\\
+& = & C^m_{\phantom{m}ik}C^k_{\phantom{k}jm},
+\ei 
+
+where we used the same notation for the linear maps and their matrices. \\
+
 We can use $\kappa$ to give a further equivalent characterisation of semi-simplicity.
 
 \bp[Cartan's criterion]\index{Cartan's criterion}
@@ -236,6 +317,9 @@ If, instead, we have
 \bse
 \forall \, v,w\in V : \ B(\phi(v),w)=-B(v,\phi(w)),
 \ese
+
+\vspace{3pt}
+
 then $\phi$ is said to be \emph{anti-symmetric} with respect to $B$.
 \ed
 The associativity property of $\kappa$ with respect to the bracket can be restated by saying that, for any $z\in L$, the linear map $\ad_z$ is anti-symmetric with respect to $\kappa$, i.e.\
@@ -243,76 +327,26 @@ The associativity property of $\kappa$ with respect to the bracket can be restat
 \forall \, x,y\in L : \ \kappa(\ad_z(x),y) = - \kappa(x,\ad_z(y)). 
 \ese
 
-In order to do computations, it is useful to introduce a basis $\{E_i\}$ on $L$.
-\bd
-Let $L$ be a Lie algebra over $K$ and let $\{E_i\}$ be a basis. Then, we have
-\bse
-[E_i,E_j] = C^{k}_{\phantom{k}ij}E_k
-\ese
-for some $C^{k}_{\phantom{k}ij}\in K$. The numbers $C^{k}_{\phantom{k}ij}$ are called the \emph{structure constants}\index{structure constants} of $L$ with respect to the basis $\{E_i\}$.
-\ed
-In terms of the structure constants, the anti-symmetry of the Lie bracket reads
-\bse
- C^{k}_{\phantom{k}ij} = - C^{k}_{\phantom{k}ji}
-\ese
-while the Jacobi identity becomes
-\bse
-C^{n}_{\phantom{n}im}C^{m}_{\phantom{m}jk} +  C^{n}_{\phantom{n}jm}C^{m}_{\phantom{m}ki} + C^{n}_{\phantom{n}km}C^{m}_{\phantom{m}ij} = 0.
-\ese
-
-We can now express both the adjoint maps and the Killing form in terms of components with respect to a basis.
-\bp
-Let $L$ be a Lie algebra and let $\{E_i\}$ be a basis. Then
-\ben[label=\roman*)]
-\item $(\ad_{E_i})^k_{\phantom{k}j} = C^{k}_{\phantom{k}ij}$
-\item $\kappa_{ij}=C^m_{\phantom{m}ik}C^k_{\phantom{k}jm}$
-\een
-where $C^{k}_{\phantom{k}ij}$ are the structure constants of $L$ with respect to $\{E_i\}$.
-\ep
-\bq
-\ben[label=\roman*)]
-\item Denote by $\{\varepsilon^i\}$ the dual basis to $\{E_i\}$. Then, we have
-\bi{rCl}
-(\ad_{E_i})^k_{\phantom{k}j} &:=& \varepsilon^k(\ad_{E_i}(E_j)) \\
-& = & \varepsilon^k ([E_i,E_j])\\
-& = & \varepsilon^k (C^{m}_{\phantom{\,m}ij}E_m)\\
-& = & C^{m}_{\phantom{m}ij}\varepsilon^k (E_m)\\
-&=& C^{k}_{\phantom{k}ij},
-\ei
-since $\varepsilon^k(E_m)=\delta^k_m$.
-\item Recall from linear algebra that if $V$ is finite-dimensional, for any $\phi\in\End(V)$ we have $\tr(\phi)=\Phi^k_{\phantom{k}k}$, where $\Phi$ is the matrix representing the linear map in any basis. Also, recall that the matrix representing $\phi\circ\psi$ is the product $\Phi\Psi$. Using these, we have
-\bi{rCl}
-\kappa_{ij} &:= & \kappa(E_i,E_j)\\
-& = & \tr(\ad_{E_i}\circ\ad_{E_j})\\
-& = & ( \ad_{E_i}\circ\ad_{E_j} )^k_{\phantom{k}k}\\
-& = & ( \ad_{E_i})^m_{\phantom{m}k}(\ad_{E_j} )^k_{\phantom{k}m}\\
-& = & C^m_{\phantom{m}ik}C^k_{\phantom{k}jm},
-\ei 
-where we used the same notation for the linear maps and their matrices.\qedhere
-\een
-\eq
-
-\subsection{The fundamental roots and the Weyl group}
+\section{The Fundamental Roots \& The Weyl Group}
 
 We will now focus on finite-dimensional semi-simple complex Lie algebras, whose classification hinges on the existence of a special type of subalgebra.
 
-\bd
-Let $L$ be a $d$-dimensional Lie algebra. A \emph{Cartan subalgebra}\index{Cartan subalgebra} $H$ of $L$ is a maximal Lie subalgebra of $L$ with the following property: there exists a basis $\{h_1,\ldots,h_r\}$ of $H$ which can be extended to a basis $\{h_1,\ldots,h_r,e_1,\ldots,e_{d-r}\}$ of $L$ such that $e_1,\ldots,e_{d-r}$ are eigenvectors of $\ad(h)$ for any $h\in H$, i.e.\
+\bd [Cartan Subalgebra]
+Let $L$ be a $d$-dimensional Lie algebra. A \textbf{Cartan subalgebra}\index{Cartan subalgebra} $H$ of $L$ is a maximal Lie subalgebra of $L$ with the following property: there exists a basis $\{h_1,\ldots,h_r\}$ of $H$ which can be extended to a basis $\{h_1,\ldots,h_r,e_1,\ldots,e_{d-r}\}$ of $L$ such that $e_1,\ldots,e_{d-r}$ are eigenvectors of $\ad(h)$ for any $h\in H$, i.e.\
 \bse
 \forall \, h\in H : \exists \, \lambda_\alpha(h)\in \C : \ \ad(h)e_\alpha = \lambda_\alpha(h) e_\alpha,
 \ese
 for each $1\leq\alpha\leq d-r$.
 \ed
 
-The basis $\{h_1,\ldots,h_r,e_1,\ldots,e_{d-r}\}$ is known as a \emph{Cartan-Weyl basis}\index{Cartan-Weyl basis} of $L$.
-%Of course, we would like to know when we can find such a subalgebra.
+The basis $\{h_1,\ldots,h_r,e_1,\ldots,e_{d-r}\}$ is known as a \emph{Cartan-Weyl basis}\index{Cartan-Weyl basis} of $L$. Of course, we would like to know when we can find such a subalgebra.
 
 \begin{theorem}
 Let $L$ be a finite-dimensional semi-simple complex Lie algebra. Then
 \ben[label=\roman*)]
 \item $L$ possesses a Cartan subalgebra;
 \item all Cartan subalgebras of $L$ have the same dimension, called the \emph{rank} of $L$;
-\item any of Cartan subalgebra of $L$ is abelian.
+\item any of Cartan subalgebra $H$ of $L$ is abelian, i.e $[H,H] = 0$.
 \een
 \end{theorem}
 
@@ -326,12 +360,16 @@ Note that we can think of the $\lambda_\alpha$ appearing above as a map $\lambda
 \ei
 Hence $\lambda_\alpha$ is a $\C$-linear map $\lambda_\alpha\cl H \xrightarrow{\sim}\C$, and thus $\lambda_\alpha\in H^*$.
 
-\bd
-The maps $\lambda_1,\ldots,\lambda_{d-r}\in H^*$ are called the \emph{roots}\index{root} of $L$. The collection
+\bd [Roots]
+The maps $\lambda_1,\ldots,\lambda_{d-r}\in H^*$ are called the \textbf{roots}\index{root} of $L$.
+\ed
+
+\bd [Root Set]
+The collection of the roots of an algebra
 \bse
 \Phi := \{\lambda_\alpha \mid 1\leq \alpha \leq d-r\} \se H^*
 \ese
-is called the \emph{root set} of $L$.
+is called the \textbf{root set} of $L$.
 \ed
 
 One can show that if $\lambda_\alpha$ were the zero map, then we would have $e_\alpha\in H$. Thus, we must have $0\notin \Phi$. Note that a consequence of the anti-symmetry of each $\ad(h)$ with respect to the Killing form $\kappa$ is that
@@ -340,8 +378,8 @@ One can show that if $\lambda_\alpha$ were the zero map, then we would have $e_\
 \ese
 Hence $\Phi$ is not a linearly independent subset of $H^*$.
 
-\bd
-A set of \emph{fundamental roots}\index{fundamental root} $\Pi:=\{\pi_1,\ldots,\pi_f\}$ is a subset $\Pi\se\Phi$ such that 
+\bd [Fundamental Roots]
+A set of \textbf{fundamental roots}\index{fundamental root} $\Pi:=\{\pi_1,\ldots,\pi_f\}$ is a subset $\Pi\se\Phi$ such that 
 \ben[label=\alph*)]
 \item $\Pi$ is a linearly independent subset of $H^*$;
 \item for each $\lambda \in \Phi$, there exist $n_1,\ldots,n_f\in \N$ and $\varepsilon \in \{+1,-1\}$ such that
@@ -350,7 +388,8 @@ A set of \emph{fundamental roots}\index{fundamental root} $\Pi:=\{\pi_1,\ldots,\
 \ese
 \een
 \ed
-We can write the last equation more concisely as $\lambda \in \lspan_{\varepsilon,\N}(\Pi)$. Observe that, for any $\lambda\in \Phi$, the coefficients of $\pi_1,\ldots,\pi_f$ in the expansion above always have the same sign. Indeed, we have $\lspan_{\varepsilon,\N}(\Pi)\neq \lspan_{\Z}(\Pi)$. 
+
+Since $n_i \in \N$ this means that they are all positive numbers (as they should be by the definition of a basis).By also picking an $\varepsilon \in \{+1,-1\}$ to be either +1 or -1, we are able, no matter the choice of fundamental roots, to obtain the opposite signed ones. That way, observe that, for any $\lambda\in \Phi$, the coefficients of $\pi_1,\ldots,\pi_f$ in the expansion above always have the same sign. We can write the last equation more concisely as $\lambda \in \lspan_{\varepsilon,\N}(\Pi)$ where in general $\lspan_{\varepsilon,\N}(\Pi)\neq \lspan_{\Z}(\Pi)$. 
 
 \begin{theorem}
 Let $L$ be a finite-dimensional semi-simple complex Lie algebra. Then
@@ -433,6 +472,7 @@ Hence, we can write
 \ese
 where $\mu_i:=\mu(h_i)$.
 \er
+
 We now turn our attention to the real subalgebra $H^*_\R:=\lspan_\R(\Pi)$. Note that  we have the following chain of inclusions
 \bse
 \Pi\se\Phi\se\lspan_{\varepsilon,\N}(\Pi) \se \underbrace{\lspan_\R(\Pi)}_{H_\R^*} \se \underbrace{\lspan_\C(\Pi)}_{H^*}.
@@ -446,16 +486,20 @@ The restriction of $\kappa^*$ to $H_\R^*$ leads to a surprising result.
 \end{theorem}
 This is indeed a surprise! Upon restriction to $H_\R^*$, instead of being weakened, the non-degeneracy of $\kappa^*$ gets strengthened to positive definiteness. Now that we have a proper real inner product, we can define some familiar notions from basic linear algebra, such as lengths and angles.
 
-\bd
+\bd [Length \& Angle]
 Let $\alpha,\beta\in H_\R^*$. Then, we define
 \ben[label=\roman*)]
-\item the \emph{length} of $\alpha$ as $|\alpha|:=\sqrt{\kappa^*(\alpha,\alpha)}\,$;
-\item the \emph{angle} between $\alpha$ and $\beta$ as $\ds \varphi := \cos^{-1}\biggl(\frac{\kappa^*(\alpha,\beta)}{|\alpha||\beta|}\biggr) $.
+\item the \textbf{length} of $\alpha$ as $|\alpha|:=\sqrt{\kappa^*(\alpha,\alpha)}\,$;
+\item the \textbf{angle} between $\alpha$ and $\beta$ as $\ds \varphi := \cos^{-1}\biggl(\frac{\kappa^*(\alpha,\beta)}{|\alpha||\beta|}\biggr) $.
 \een
 \ed
+
+\vspace{5pt}
+
 We need one final ingredient for our classification result.
-\bd
-For any $\lambda\in \Phi\se H_\R^*$, define the linear map
+
+\bd [Weyl Transformation]
+For any $\lambda\in \Phi\se H_\R^*$, define the linear map $s_\lambda$ called a \textbf{Weyl transformation}
 \bi{rrCl}
 s_\lambda \cl & H_\R^* & \xrightarrow{\sim} & H_\R^*\\
 & \mu & \mapsto & s_\lambda(\mu),
@@ -464,11 +508,14 @@ where
 \bse
 s_\lambda(\mu):=\mu-2\frac{\kappa^*(\lambda,\mu)}{\kappa^*(\lambda,\lambda)}\,\lambda .
 \ese
-The map $s_\lambda$ is called a \emph{Weyl transformation} and the set
+\ed
+
+\bd [Weyl Group]
+The set
 \bse
 W:=\{s_\lambda \mid \lambda \in \Phi\}
 \ese
-is a group under composition of maps, called the \emph{Weyl group}\index{Weyl group}.
+is a group under composition of maps, an it is called the \textbf{Weyl group}\index{Weyl group}.
 \ed
 
 \begin{theorem}
@@ -488,30 +535,50 @@ is a group under composition of maps, called the \emph{Weyl group}\index{Weyl gr
 \een
 \end{theorem}
 
-\subsection{Dynkin diagrams and the Cartan classification}
+\section{Dynkin Diagrams \& The Cartan Classification}
 
 Consider, for any $\pi_i,\pi_j\in \Pi$, the action of the Weyl transformation
 \bse
 s_{\pi_i}(\pi_j) := \pi_j-2\frac{\kappa^*(\pi_i,\pi_j)}{\kappa^*(\pi_i,\pi_i)}\,\pi_i.
 \ese
-Since $s_{\pi_i}(\pi_j)\in\Phi$ and $\Phi\se\lspan_{\varepsilon,\N}(\Pi)$, for all $1\leq i\neq j\leq r$ we must have
+However, since $s_{\pi_i}(\pi_j)\in\Phi$ and $\Phi\se\lspan_{\varepsilon,\N}(\Pi)$ this means that it must be written in terms of the basis as:
+\bse
+s_{\pi_i}(\pi_j)\in\Phi = \left( \varepsilon \, \sum_{i=1}^f n_i \pi_i \right ) = C_1 \pi_j + C_2 \pi_i
+\ese
+
+\vspace{5pt}
+
+But it is already written in such from since
+\bse
+s_{\pi_i}(\pi_j) = \pi_j-2\frac{\kappa^*(\pi_i,\pi_j)}{\kappa^*(\pi_i,\pi_i)}\,\pi_i = 1\, \pi_j + \left( -2\frac{\kappa^*(\pi_i,\pi_j)}{\kappa^*(\pi_i,\pi_i)}\right)\,\pi_i 
+\ese
+
+and from the first coefficient (a.k.a the number 1) which is positive, we conclude that for all $1\leq i\neq j\leq r$ we must have
 \bse
 -2\frac{\kappa^*(\pi_i,\pi_j)}{\kappa^*(\pi_i,\pi_i)}\in \N.
 \ese
-\bd
-The \emph{Cartan matrix}\index{Cartan matrix} of a Lie algebra is the $r\times r$ matrix $C$ with entries
+
+\vspace{5pt}
+
+\bd [Cartan Matrix]
+The \textbf{Cartan matrix}\index{Cartan matrix} of a Lie algebra is the $r\times r$ matrix $C$ with entries
 \bse
-C_{ij} :=2\frac{\kappa^*(\pi_i,\pi_j)}{\kappa^*(\pi_i,\pi_i)},
+C_{ij} :=2\frac{\kappa^*(\pi_i,\pi_j)}{\kappa^*(\pi_i,\pi_i)}
 \ese
-where the $C_{ij}$ should not be confused with the structure constants $C^k_{\phantom{k}ij}$.
 \ed
+
+\br 
+The $C_{ij}$ should not be confused with the structure constants $C^k_{\phantom{k}ij}$
+\er
+
 \begin{theorem}To every simple finite-dimensional complex Lie algebra there corresponds a unique Cartan matrix and vice versa (up to relabelling of the basis elements).
 \end{theorem}
-Of course, not every matrix can be a Cartan matrix. For instance, since $C_{ii}=2$ (no summation implied), the diagonal entries of $C$ are all equal to $2$, while the off-diagonal entries are either zero or negative. In general, $C_{ij} \neq C_{ji}$, so the Cartan matrix is not symmetric, but if $C_{ij}=0$, then necessarily $C_{ji}=0$.
+Of course, not every matrix can be a Cartan matrix. For instance, since $C_{ii}=2$ (no summation implied), the diagonal entries of $C$ are all equal to $2$, while the off-diagonal entries are either zero or negative. In general, $C_{ij} \neq C_{ji}$, so the Cartan matrix is not symmetric, but if $C_{ij}=0$, then necessarily $C_{ji}=0$. \\
 
 We have thus reduced the problem of classifying the simple finite-dimensional complex Lie algebras to that of finding all the Cartan matrices. This can, in turn, be reduced to the problem of determining all the inequivalent Dynkin diagrams. 
-\bd
-Given a Cartan matrix $C$, the $ij$-th \emph{bond number} is
+
+\bd [Bond Number]
+Given a Cartan matrix $C$, the $ij$-th \textbf{bond number} is
 \bse
 n_{ij}:= C_{ij} C_{ji} \qquad \text{(no summation implied)}.
 \ese
@@ -522,14 +589,21 @@ n_{ij} & = & 4\,\frac{\kappa^*(\pi_i,\pi_j)}{\kappa^*(\pi_i,\pi_i)}\,\frac{\kapp
 & = & 4\, \biggl(\frac{\kappa^*(\pi_i,\pi_j)}{|\pi_i||\pi_j|}\biggr)^2\\
 & = & 4 \cos^2\varphi,
 \ei
-where $\varphi$ is the angle between $\pi_i$ and $\pi_j$. For $i\neq j$, the angle $\varphi$ is neither zero nor $180^\circ$, hence $0\leq \cos^2\varphi< 1$, and therefore
+where $\varphi$ is the angle between $\pi_i$ and $\pi_j$. \\
+
+
+For $i\neq j$, the angle $\varphi$ is neither zero nor $180^\circ$, hence $0\leq \cos^2\varphi< 1$, and therefore
 \bse
 n_{ij}\in \{0,1,2,3\}.
 \ese
+
+\vspace{5pt}
+
 Since $C_{ij}\leq 0$ for $i\neq j$, the only possibilities are
+
+\vspace{5pt}
+
 \begin{center}
-%\def\arraystretch{1}
-%\setlength\tabcolsep{10pt}
 \begin{tabular}{ cc | c}
 $C_{ij}$ & $C_{ji}$ & $n_{ij}$\\[2pt]
 \hline
@@ -540,7 +614,9 @@ $-1$ & $-3\ $ & 3
 \end{tabular}
 \end{center}
 
-Note that while the Cartan matrices are not symmetric, swapping any pair of $C_{ij}$ and $C_{ji}$ gives a Cartan matrix which represents the same Lie algebra as the original matrix, with two elements from the Cartan-Weyl basis swapped. This is why we have not included $(-2,-1)$ and $(-3,-1)$ in the table above.
+\vspace{5pt}
+
+Note that while the Cartan matrices are not symmetric, swapping any pair of $C_{ij}$ and $C_{ji}$ gives a Cartan matrix which represents the same Lie algebra as the original matrix, with two elements from the Cartan-Weyl basis swapped. This is why we have not included $(-2,-1)$ and $(-3,-1)$ in the table above. \\
 
 If $n_{ij}= 2$ or $3$, then the corresponding fundamental roots have different lengths, i.e.\ either $|\pi_i|<|\pi_j|$ or $|\pi_i|>|\pi_j|$. We also have the following result.
 
@@ -550,8 +626,8 @@ The roots of a simple Lie algebra have, at most, two distinct lengths.
 
 The redundancy of the Cartan matrices highlighted above is nicely taken care of by considering Dynkin diagrams.
 
-\bd
-A \emph{Dynkin diagram}\index{Dynkin diagram} associated to a Cartan matrix is constructed as follows.
+\bd [Dynkin Diagram]
+A \textbf{Dynkin diagram}\index{Dynkin diagram} associated to a Cartan matrix is constructed as follows.
 \ben
 \item Draw a circle for every fundamental root in $\pi_i\in\Pi$;
 \begin{center}
@@ -604,9 +680,7 @@ A \emph{Dynkin diagram}\index{Dynkin diagram} associated to a Cartan matrix is c
 \end{center}
 \een
 \ed
-Dynkin diagrams completely characterise any set of fundamental roots, from which we can reconstruct the entire root set by using the Weyl transformations. The root set can then be used to produce a Cartan-Weyl basis.
-
-We are now finally ready to state the much awaited classification theorem.
+Dynkin diagrams completely characterise any set of fundamental roots, from which we can reconstruct the entire root set by using the Weyl transformations. The root set can then be used to produce a Cartan-Weyl basis. We are now finally ready to state the much awaited classification theorem.
 \begin{theorem}[Killing, Cartan]\index{Cartan classification}
 Any simple finite-dimensional complex Lie algebra can be reconstructed from its set of fundamental roots $\Pi$, which only come in the following forms. 
 \ben[label=\roman*)]
