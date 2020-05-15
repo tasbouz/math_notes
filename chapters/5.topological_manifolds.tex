@@ -549,22 +549,21 @@ We now claim that
 
 is a basis of $T_pM$. First, we show that $\mathcal{B}$ spans $T_pM$. \\
 
-Let $X\in T_pM$. Then, by definition, there exists some smooth curve $\sigma$ through $p$ such that $X=X_{\sigma,p}$. For any $f\in \mathcal{C}^\infty(U)$, we have
+Let $X_{\gamma,p}\in T_pM$. For any $f\in \mathcal{C}^\infty(U)$, we have
 \bi{rCl}
-X(f) & = & X_{\sigma,p}(f)\\
-& := & (f\circ\sigma)'(0)\\
-& = &  (f\circ x^{-1}\circ x \circ \sigma)'(0)\\
-& = &  [\partial_b (f\circ x^{-1})(x(p))] \,  (x^b \circ \sigma)'(0)\\
-& = &  (x^b \circ \sigma)'(0) \tvb{x}{b}{p} (f).
+X_{\gamma,p}(f) & := & (f\circ\sigma)'(0)\\
+& = &  (f\circ x^{-1}\circ x \circ \gamma)'(0)\\
+& = &  [\partial_b (f\circ x^{-1})(x(p))] \,  (x^b \circ \gamma)'(0)\\
+& = &  (x^b \circ \gamma)'(0) \tvb{x}{b}{p} (f).
 \ei
-Since $(x^b \circ \sigma)'(0)=:X^b\in\R$, we have:
+Since $(x^b \circ \gamma)'(0)=:X^b\in\R$, we have:
 \bse
-X = X^b \tvb{x}{b}{p} ,
+X_{\gamma,p} = X^b \tvb{x}{b}{p} ,
 \ese
 
 \vspace{5pt}
 
-i.e.\ any $X\in T_pM$ is a linear combination of elements from $\mathcal{B}$. \\
+i.e.\ any $X_{\gamma,p}\in T_pM$ is a linear combination of elements from $\mathcal{B}$. \\
 
 To show linear independence, suppose that 
 \bse
@@ -594,36 +593,36 @@ This is not a cause of concern for our proof however, since every basis of a vec
 \er
 
 \bd [Co-Ordinate Induced Basis]
-Let $X\in T_pM$ be a tangent vector and let $(U,x)$ be a chart containing $p$. Then the basis $\{\tvb{x}{a}{p}\}$ created by the usage of the chart is called a \textbf{co-ordinate induced basis}. In this basis an element $X\in T_pM$ can be expressed as:
+Let $X_{\gamma,p}\in T_pM$ be a tangent vector and let $(U,x)$ be a chart containing $p$. Then the basis $\{\tvb{x}{a}{p}\}$ created by the usage of the chart is called a \textbf{co-ordinate induced basis}. In this basis an element $X_{\gamma,p}\in T_pM$ can be expressed as:
 \bse
-X = X^a \tvb{x}{a}{p} ,
+X_{\gamma,p} = X^a \tvb{x}{a}{p} ,
 \ese
-where the real numbers $X^1,\ldots,X^{\dim M}$ are called the \textbf{vector components}\index{components} of $X$ with respect to the co-ordinate induced basis by the chart $(U,x)$. 
+where the real numbers $X^1,\ldots,X^{\dim M}$ are called the \textbf{vector components}\index{components} of $X_{\gamma,p}$ with respect to the co-ordinate induced basis by the chart $(U,x)$. 
 \ed
 
 \subsection{Change Of Vector Components Under A Change Of Chart}
 
 One of the most heavily used concepts is the transformation of the components of a vector under different co-ordinate systems (i.e under a chart transition map that subsequently changes the co-ordinate induced basis). Let's find out the rule. \\
 
-Let $X\in T_pM$ and let $(U,x)$ and $(V,y)$ be two charts containing $p$. Then $X$ can be expressed in any of the two charts as:
+Let $X_{\gamma,p}\in T_pM$ and let $(U,x)$ and $(V,y)$ be two charts containing $p$. Then $X_{\gamma,p}$ can be expressed in any of the two charts as:
 \bse
-X{^a}_{(y)} \tvb{y}{a}{p} = X = X{^a}_{(x)} \tvb{x}{a}{p} 
+X{^a}_{(y)} \tvb{y}{a}{p} = X_{\gamma,p} = X{^a}_{(x)} \tvb{x}{a}{p} 
 \ese
 
 \vspace{5pt}
 
-Let us act with $X$ on some smooth function $f$ of $\mathcal{C}^\infty(M)$ by using first the components of $(U,x)$ chart:
+Let us act with $X_{\gamma,p}$ on some smooth function $f$ of $\mathcal{C}^\infty(M)$ by using first the components of $(U,x)$ chart:
 \bi{rCl}
-X (f) &=& X{^a}_{(x)} \tvb{x}{a}{p} (f)  \\
+X_{\gamma,p} (f) &=& X{^a}_{(x)} \tvb{x}{a}{p} (f)  \\
 &=& X{^a}_{(x)} \partial_a (f\circ x^{-1})(x(p))\\
 &=& X{^a}_{(x)} \partial_a (f\circ y^{-1} \circ y \circ x^{-1})(x(p))\\
 &=& X{^a}_{(x)} \partial_a (y^{b}\circ x^{-1})(x(p)) \: \partial_b (f\circ y^{-1})(y(p))\\
 &=& X{^a}_{(x)} \frac{\partial y^b}{\partial x^a}  \tvb{y}{b}{p} (f)
 \ei
 
-Similarly, let us now act with $X$ on the smooth function $f$ of $\mathcal{C}^\infty(M)$ by using the components of $(V,y)$ chart:
+Similarly, let us now act with $X_{\gamma,p}$ on the smooth function $f$ of $\mathcal{C}^\infty(M)$ by using the components of $(V,y)$ chart:
 \bi{rCl}
-X (f) &=& X{^a}_{(y)} \tvb{y}{a}{p} (f)
+X_{\gamma,p} (f) &=& X{^a}_{(y)} \tvb{y}{a}{p} (f)
 \ei
 
 These expressions are, of course, equal to each other so by suppressing now the action on the function f, we obtain:
@@ -683,12 +682,12 @@ Let $M$ be a manifold and let $f\cl M \to\R$ be smooth. The \textbf{gradient of 
 \ei
 with $p\in U\se M$, defined by
 \bi{rrCl}
-\d_pf(X) := X(f)
+\d_pf(X_{\gamma,p}) := X_{\gamma,p}(f)
 \ei
 \ed
 
 \br
-Note that since $\d_p$ is a map from $\mathcal{C}^\infty(M) \xrightarrow{\sim} T^*_pM$ that means that when it acts on a function of  $\mathcal{C}^\infty(M)$ the final result $\d_pf$ is an element of $T^*_pM$ hence a covector. By its turn, as an element of the dual space of $T_pM$ it maps elements of $T_pM$ to the real numbers (that's the definition of the dual space of a vector space). Hence the expression $\d_pf(X)$ must end up to a real number, which is indeed what $X(f)$ is. By writing $\d_pf(X) := X(f)$, we have committed a slight (but nonetheless real) abuse of notation, since $\d_pf(X)\in T_{f(p)}\R$ takes in a function and return a real number, but $X(f)$ is already a real number! However by doing so we can now talk about $\d_pf$ without providing the vector that it acts on. In other words we can talk about covectors without the need of their actions on vectors.
+Note that since $\d_p$ is a map from $\mathcal{C}^\infty(M) \xrightarrow{\sim} T^*_pM$ that means that when it acts on a function of  $\mathcal{C}^\infty(M)$ the final result $\d_pf$ is an element of $T^*_pM$ hence a covector. By its turn, as an element of the dual space of $T_pM$ it maps elements of $T_pM$ to the real numbers (that's the definition of the dual space of a vector space). Hence the expression $\d_pf(X)$ must end up to a real number, which is indeed what $X_{\gamma,p}(f)$ is. By writing $\d_pf(X) := X_{\gamma,p}(f)$, we have committed a slight (but nonetheless real) abuse of notation, since $\d_pf(X)\in T_{f(p)}\R$ takes in a function and return a real number, but $X_{\gamma,p}(f)$ is already a real number! However by doing so we can now talk about $\d_pf$ without providing the vector that it acts on. In other words we can talk about covectors without the need of their actions on vectors.
 \er
 
 \br 
@@ -716,9 +715,9 @@ Therefore, $\mathcal{B}$ is, in fact, the dual basis to $\{\tvb{x}{a}{p}\}$.
 
 Once again, as we did in the vector case with the vector components, one needs to find the transformation of the components of a covector under different co-ordinate systems. We will follow exactly the same procedure.\\
 
-Let $\omega \in T_p^*M$ and let $(U,x)$ and $(V,y)$ be two charts containing $p$. Then $\omega$ can be expressed in any of the two charts by using the dual basis as:
+Let $\omega_{p} \in T_p^*M$ and let $(U,x)$ and $(V,y)$ be two charts containing $p$. Then $\omega_{p}$ can be expressed in any of the two charts by using the dual basis as:
 \bse
-\omega_{(y)a}(dy^a)_p = \omega = \omega_{(x)a}(dx^a)_p
+\omega_{(y)a}(dy^a)_p = \omega_{p} = \omega_{(x)a}(dx^a)_p
 \ese
 
 \vspace{5pt}
@@ -734,16 +733,16 @@ By repeating the same process as we did for the vectors it is very easy to show 
 Let $\phi\cl M \to N$ be a smooth map between smooth manifolds. The \textbf{push-forward}\index{push-forward} (or \textbf{derivative}) of $\phi$ at $p\in M$ is the linear map $(\phi_*)_p$:
 \bi{rrCl}
 (\phi_*)_p \cl & T_pM & \xrightarrow{\sim} & T_{\phi(p)}N\\
-& X & \mapsto & (\phi_*)_p(X)
+& X_{\gamma,p} & \mapsto & (\phi_*)_p(X_{\gamma,p})
 \ei
-where $(\phi_*)_p(X)$ is defined as
+where $(\phi_*)_p(X_{\gamma,p})$ is defined as
 \bi{rrCl}
-(\phi_*)_p(X) \cl & \mathcal{C}^\infty(N) & \xrightarrow{\sim} & \R\\
-& f & \mapsto & (\phi_*)_p (X) f := X(f \circ \phi).
+(\phi_*)_p(X_{\gamma,p}) \cl & \mathcal{C}^\infty(N) & \xrightarrow{\sim} & \R\\
+& f & \mapsto & (\phi_*)_p (X_{\gamma,p}) f := X_{\gamma,p}(f \circ \phi).
 \ei
 \ed
 
-In other words, since $(\phi_*)_p$ is a map from one tangent space to another this means that it acts on a tangent vector and produces another one, hence $(\phi_*)_p (X)$ is again a tangent vector (but on $N$). As a tangent vector it can act on a smooth function (again on N) and produce a real number, hence the action of a push-forward on a function is simply the one we wrote above.\\
+In other words, since $(\phi_*)_p$ is a map from one tangent space to another this means that it acts on a tangent vector and produces another one, hence $(\phi_*)_p (X_{\gamma,p})$ is again a tangent vector (but on $N$). As a tangent vector it can act on a smooth function (again on N) and produce a real number, hence the action of a push-forward on a function is simply the one we wrote above.\\
 
 Note that one has to define a push-forward $(\phi_*)_p$ for every point $p$ of $M$. Although we have only one map $\phi$ we have many push-forward maps $(\phi_*)_p$.
 
@@ -771,15 +770,15 @@ Related to the push-forward, there is the notion of pull-back of a smooth map.
 Let $\phi\cl M \to N$ be a smooth map between smooth manifolds. The \textbf{pull-back}\index{pull-back} of $\phi$ at $p\in M$ is the linear map:
 \bi{rrCl}
 (\phi^*)_p \cl & T^*_{\phi(p)}N & \xrightarrow{\sim} & T^*_pM\\
-& \omega & \mapsto & (\phi^*)_p(\omega),
+& \omega_{\phi(p)} & \mapsto & (\phi^*)_p(\omega_{\phi(p)}),
 \ei
-where $(\phi^*)_p(\omega)$ is defined as
+where $(\phi^*)_p(\omega_{\phi(p)})$ is defined as
 \bi{rrCl}
-(\phi^*)_p(\omega) \cl & T_pM & \xrightarrow{\sim} & \R\\
-& X & \mapsto & (\phi^*)_p(\omega) (X) := \omega((\phi_*)_p(X)).
+(\phi^*)_p(\omega_{\phi(p)}) \cl & T_pM & \xrightarrow{\sim} & \R\\
+& X_{\gamma,p} & \mapsto & (\phi^*)_p(\omega_{\phi(p)}) (X_{\gamma,p}) := \omega_{\phi(p)}((\phi_*)_p(X_{\gamma,p})).
 \ei
 \ed
-In words, if $\omega$ is a covector on $N$, its pull-back $(\phi^*)_p(\omega)$ is a covector on $M$. It acts on tangent vectors on $M$ by first pushing them forward to tangent vectors on $N$, and then applying $\omega$ to them to produce a real number. \\
+In words, if $\omega_{\phi(p)}$ is a covector on $N$, its pull-back $(\phi^*)_p(\omega_{\phi(p)})$ is a covector on $M$. It acts on tangent vectors on $M$ by first pushing them forward to tangent vectors on $N$, and then applying $\omega_{\phi(p)}$ to them to produce a real number. \\
 
 Diagrammatically, what we've defined so far is the following
 
@@ -787,7 +786,7 @@ Diagrammatically, what we've defined so far is the following
 
 \bse
 \begin{tikzcd}
-\mathcal{C}^\infty(M) \ar[dd,"X"] && \mathcal{C}^\infty(N) \ar[ll,"-\circ\phi"']\ar[ddll,"(\phi_*)_p(X)"]   && T_pM \ar[rr,"(\phi_*)_p"] \ar[ddrr,"(\phi^*)_p(\omega)"'] && T_{\phi(p)}N \ar[dd,"\omega"]\\
+\mathcal{C}^\infty(M) \ar[dd,"X_{\gamma,p}"] && \mathcal{C}^\infty(N) \ar[ll,"-\circ\phi"']\ar[ddll,"(\phi_*)_p(X_{\gamma,p})"]   && T_pM \ar[rr,"(\phi_*)_p"] \ar[ddrr,"(\phi^*)_p(\omega_{\phi(p)})"'] && T_{\phi(p)}N \ar[dd,"\omega_{\phi(p)}"]\\
 && && &&\\
 \R&& && && \R
 \end{tikzcd}
@@ -800,10 +799,10 @@ It is quite easy to show that everything we have defined in this section is, in 
 \er
 
 \br
-We have seen that, given a smooth $\phi\cl M\to N$, we can push a vector $X\in T_pM$ forward to a vector $(\phi_*)_p(X)\in T_{\phi(p)}N$, and pull a covector $\omega \in T^*_{\phi(p)}N$ back to a covector $(\phi^*)_p(\omega)\in T_p^*M$. In other words both push-forward and pull-back work only in the direction of their definition. However, if $\phi\cl M\to N$ is a diffeomorphism (and only then), we can also pull a vector $Y\in T_{\phi(p)}N$ back to a vector $(\phi^*)_p(Y)\in T_pM$, and push a covector $\eta \in T^*_pM$ forward to a covector $(\phi_*)_p(\eta)\in T_{\phi(p)}^*N$, by using $\phi^{-1}$ as follows:
+We have seen that, given a smooth $\phi\cl M\to N$, we can push a vector $X_{\gamma,p}\in T_pM$ forward to a vector $(\phi_*)_p(X_{\gamma,p})\in T_{\phi(p)}N$, and pull a covector $\omega_{\phi(p)} \in T^*_{\phi(p)}N$ back to a covector $(\phi^*)_p(\omega_{\phi(p)})\in T_p^*M$. In other words both push-forward and pull-back work only in the direction of their definition. However, if $\phi\cl M\to N$ is a diffeomorphism (and only then), we can also pull a vector $Y_{\gamma,\phi(p)}\in T_{\phi(p)}N$ back to a vector $(\phi^*)_p(Y_{\gamma,\phi(p)})\in T_pM$, and push a covector $\eta_{p} \in T^*_pM$ forward to a covector $(\phi_*)_p(\eta_{p})\in T_{\phi(p)}^*N$, by using $\phi^{-1}$ as follows:
 \bi{rCl}
-(\phi^*)_p(Y) & := & ((\phi^{-1})_*)_{\phi(p)}(Y)\\
-(\phi_*)_p(\eta) & := & (({\phi^{-1}})^*)_{\phi(p)}(\eta).
+(\phi^*)_p(Y_{\gamma,\phi(p)}) & := & ((\phi^{-1})_*)_{\phi(p)}(Y_{\gamma,\phi(p)})\\
+(\phi_*)_p(\eta_{p}) & := & (({\phi^{-1}})^*)_{\phi(p)}(\eta_{p}).
 \ei
 \er
 
@@ -1186,16 +1185,18 @@ TM := \dot{\bigcup}_{p\in M}T_pM,
 equipped with the canonical projection map
 \bi{rrCl}
 \pi \cl & TM & \to & M\\
-& X & \mapsto & p,
+& X_{\gamma,p} & \mapsto & p,
 \ei
-where $p$ is the unique $p\in M$ such that $X\in T_pM$.
+where $p$ is the unique $p\in M$ such that $X_{\gamma,p} \in T_pM$.
 \ed
+
+In other word the projection map, takes a vector from $TM$ and spits out the point that it belongs $\pi(X_{\gamma,p}) = p$. \\
 
 Since $TM$ is simpy a set (and not a smooth manifold), up to here what we have is a set bundle. In order for this set bundle to turn to a topological bundle as we defined it previously, we need to equip $TM$ with the structure of a smooth manifold. We can achieve this by constructing a smooth atlas for $TM$ from a smooth atlas on $M$, as follows. \\
 
-Let $\mathscr{A}_M$ be a smooth atlas on $M$ and let $(U,x)\in \mathscr{A}_M$. If $X\in \preim_\pi(U)\se TM$, then $X\in T_{\pi(X)}M$, by definition of $\pi$. Moreover, since $\pi(X)\in U$, we can expand $X$ in terms of the basis induced by the chart $(U,x)$:
+Let $\mathscr{A}_M$ be a smooth atlas on $M$ and let $(U,x)\in \mathscr{A}_M$. If $X_{\gamma,p} \in \preim_\pi(U)\se TM$, then $X_{\gamma,p} \in T_{\pi(X_{\gamma,p})}M$, by definition of $\pi$. Moreover, since $\pi(X_{\gamma,p}) = p \in U$, we can expand $X_{\gamma,p}$ in terms of the basis induced by the chart $(U,x)$:
 \bse
-X = X^a \tvb{x}{a}{\pi(X)},
+X_{\gamma,p} = X^a \tvb{x}{a}{p} = X^a \tvb{x}{a}{\pi(X_{\gamma,p})}
 \ese
 
 \vspace{5pt}
@@ -1203,7 +1204,7 @@ X = X^a \tvb{x}{a}{\pi(X)},
 where $X^1,\ldots,X^{\dim M}\in \R$. We can then define the map
 \bi{rrCl}
 \xi \cl & \preim_\pi(U) & \to & x(U) \times \R^{\dim M} \cong_{\mathrm{set}}\R^{2\dim M}\\
-& X & \mapsto & (x(\pi(X)),X^1,\ldots,X^{\dim M}).
+& X_{\gamma,p} & \mapsto & (x(\pi(X_{\gamma,p})),X^1,\ldots,X^{\dim M}).
 \ei
 Assuming that $TM$ is equipped with a suitable topology, for instance the initial topology (i.e.\ the coarsest topology on $TM$ that makes $\pi$ continuous), we claim that the pair $(\preim_\pi(U),\xi)$ is a chart on $TM$ and 
 \bse
@@ -1232,7 +1233,7 @@ X^a \mapsto \widetilde X^a = \partial_b(y^a\circ x^{-1})(x(p))\, X^b.
 Hence, we have
 \bi{rrCl}
 \widetilde \xi \circ \xi^{-1} \cl & x(U\cap \widetilde U)\times \R^{\dim M} &\to &\widetilde x(U\cap\widetilde U)\times \R^{\dim M}\\
-& (x(\pi(X)),X^1,\ldots,X^{\dim M})& \mapsto & (\widetilde x(\pi(X)),\widetilde X^1,\ldots,\widetilde X^{\dim M}),
+& (x(\pi(X_{\gamma,p})),X^1,\ldots,X^{\dim M})& \mapsto & (\widetilde x(\pi(X_{\gamma,p})),\widetilde X^1,\ldots,\widetilde X^{\dim M}),
 \ei
 which is smooth in each component, and hence smooth.
 \eq
@@ -2014,7 +2015,7 @@ In this final chapter we will go through an application containing (almost) ever
 \subsubsection{$\SL(2,\C)$ As A Set}
 We define the following subset of $\C^4:=\C\times\C\times\C\times\C$
 \bse
-\SL(2,\C) := \biggl\{ \biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr) \in \C^4 \ \Big|\ ad-bc = 1 \biggr\},
+\SL(2,\C) := \biggl\{ \biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr) \in \C^4 \ \Big|\ ad-bc = 1 \biggr\} \se \C^4,
 \ese
 where the array is just an alternative notation for a quadruple $(a, b, c, d)$. It's this extra constraint $ad-bc = 1$ that removes one degree of freedom and makes it a subset and not the whole $\C^4$.
 
@@ -2102,7 +2103,9 @@ so that the pair $(\SL(2,\C),\mathcal{O})$ is a topological space. In fact, it i
 
 \subsubsection{$\SL(2,\C)$ As A Topological Manifold}
 
-Recall that a topological space $(M,\mathcal{O})$ is a complex topological manifold if each point $p\in M$ has an open neighbourhood $U(p)$ which is homeomorphic to an open subset of $\C^d$. Equivalently, there must exist a $\mathcal{C}^0$-atlas, i.e.\ a collection $\mathscr{A}$ of charts $(U_\alpha,x_\alpha)$, where the $U_\alpha$ are open and cover $M$ and each $x$ is a homeomorphism onto a subset of $\C^d$. \\
+Recall that a topological space $(M,\mathcal{O})$ is a complex topological manifold if each point $p\in M$ has an open neighbourhood $U(p)$ which is homeomorphic to an open subset of $\C^d$. Equivalently, there must exist a $\mathcal{C}^0$-atlas, i.e.\ a collection $\mathscr{A}$ of charts $(U_\alpha,x_\alpha)$, where the $U_\alpha$ are open and cover $M$ and each $x$ is a homeomorphism onto a subset of $\C^d$. In our case of $\SL(2,\C)$ we will map it locally to $\C^3$ because as we said in the beginning of this section, $\SL(2,\C)$ (as a set) is a subset of $\C^4:=\C\times\C\times\C\times\C$ due to the constraint $ad-bc = 1$ that removes one degree of freedom. This is why $\C^3$ suffices and we do not use $\C^4$. \\
+
+In general (but not in our case of $\SL(2,\C)$) nothing stops us from using just one chart $(U,x)$ and cover the whole topological space. However, as we will see, here we need two charts to cover the whole $\SL(2,\C)$ (in the same manner that a sphere cannot be covered with just one chart).  \\
 
 Let $U$ be the set
 \bse
@@ -2116,7 +2119,7 @@ x \cl & U & \to & x(U) \se \C^*\times\C\times \C\\
 \ei
 where $\C^*=\C\setminus\{0\}$. \\
 
-As we said in the beginning of this chapter, $\SL(2,\C)$ (as a set) is a subset of $\C^4:=\C\times\C\times\C\times\C$ due to the constraint $ad-bc = 1$ that removes one degree of freedom. This is why we map it (locally) to $\C^3$ and not $\C^4$. Because given the mapping $(a,b,c)$ one can reconstruct $d$ as $d=\frac{1+bc}{a}$.\\
+Notice that given the mapping $(a,b,c)$ one can reconstruct $d$ from the constraint on the degree of freedom $d=\frac{1+bc}{a}$, hence the mapping to $\C^3$. \\
 
 With a little more work on this direction, one can show that $U$ is an open subset of $(\SL(2,\C),\mathcal{O})$ and $x$ is a homeomorphism with inverse
 \bi{rrCl}
@@ -2124,7 +2127,9 @@ x^{-1} \cl & x(U) & \to & U\\
 & (a,b,c)& \mapsto & \biggl( \begin{matrix} a & b \\ c & \frac{1+bc}{a} \end{matrix}\biggr) .
 \ei
 
-This is the reason why we excluded the case $a=0$ when we defined the set $U$ of the chart $(U,x)$, since if we hadn't, we wouldn't be able to divide with $a$ and the map $x$ wouldn't have an inverse. However, this makes the chart $(U,x)$ to not cover the whole $\SL(2,\C)$ since $U$ as a set takes care only the elements of $\SL(2,\C)$ with $a \neq 0$.  Hence we need at least one more chart. We thus define the set
+This is the reason why we excluded the case $a=0$ when we defined the set $U$ of the chart $(U,x)$, since if we hadn't, we wouldn't be able to divide with $a$ and the map $x$ wouldn't have an inverse. \\
+
+However, this makes the chart $(U,x)$ to not cover the whole $\SL(2,\C)$ since $U$ as a set takes care only the elements of $\SL(2,\C)$ with $a \neq 0$.  Hence we need at least one more chart. We thus define the set
 
 \bse
 V:= \biggl\{ \biggl( \begin{matrix} a & b \\ c & d \end{matrix}\biggr) \in \SL(2,\C) \ \Big| \ b \neq 0 \biggr\}
@@ -2146,11 +2151,23 @@ y^{-1} \cl & x(V) & \to & V\\
 
 \vspace{3pt}
 
-An element of $\SL(2,\C)$ cannot have both $a$ and $b$ equal to zero, for otherwise $ad-bc=0\neq 1$. Hence $\mathscr{A}_{\mathrm{top}}:=\{(U,x),(V,y)\}$ is an atlas, and since every atlas is automatically a $\mathcal{C}^0$-atlas, the triple $(\SL(2,\C),\mathcal{O},\mathscr{A}_{\mathrm{top}})$ is a 3-dimensional, complex, topological manifold.
+An element of $\SL(2,\C)$ cannot have both $a$ and $b$ equal to zero, for otherwise $ad-bc=0\neq 1$. Hence $\mathscr{A}_{\mathrm{top}}:=\{(U,x),(V,y)\}$ is an atlas, and we showed that $x$ and $y$ are homeomorphisms hence continuous and invertible. Since every atlas is automatically a $\mathcal{C}^0$-atlas, the triple $(\SL(2,\C),\mathcal{O},\mathscr{A}_{\mathrm{top}})$ is a 3-dimensional, complex, topological manifold.
 
 \subsubsection{$\SL(2,\C)$ As A Complex Differentiable Manifold}
 
-Recall that to obtain a $\mathcal{C}^1$-differentiable manifold from a topological manifold with atlas $\mathscr{A}$, we have to check that every transition map between charts in $\mathscr{A}$ is differentiable in the usual sense. \\
+Recall that to obtain a $\mathcal{C}^1$-differentiable manifold from a topological manifold with atlas $\mathscr{A}$, we have to check that every transition map between charts in $\mathscr{A}$ is differentiable in the usual sense. Remember this picture:
+
+\vspace{-8pt}
+
+\bse
+\begin{tikzcd}
+& U\cap V \se \SL(2,\C) \ar[ldd,"x"'] \ar[rdd,"y"]&\\
+&&&\\
+x(U\cap V) \se \C^3 \ar[rr,"y\circ x^{-1}"']& & y(U\cap V)\se \C^3
+\end{tikzcd}
+\ese
+
+\vspace{15pt}
 
 In our case, we have the atlas $\mathscr{A}_{\mathrm{top}}:=\{(U,x),(V,y)\}$. We evaluate
 \bse

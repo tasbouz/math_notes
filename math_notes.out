@@ -1,61 +1,35 @@
 \BOOKMARK [-1][-]{part.1}{I Basic Mathematics}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Axiomatic Set Theory}{part.1}% 2
-\BOOKMARK [1][-]{section.1.1}{Propositional Logic}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Predicate Logic}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.3}{Axiomatic Systems And Theory Of Proofs}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.4}{The epsilon-relation}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.5}{Zermelo-Fraenkel Axioms Of Set Theory}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.6}{Maps Between Sets}{chapter.1}% 8
-\BOOKMARK [1][-]{section.1.7}{Equivalence Relations}{chapter.1}% 9
-\BOOKMARK [1][-]{section.1.8}{Construction of N, Z, Q and R}{chapter.1}% 10
-\BOOKMARK [0][-]{chapter.2}{Algebraic Structures}{part.1}% 11
-\BOOKMARK [1][-]{section.2.1}{Groups}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.2}{Fields}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.3}{Vector Spaces}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.3.1}{Linear Maps}{section.2.3}% 15
-\BOOKMARK [2][-]{subsection.2.3.2}{Basis Of Vector Spaces}{section.2.3}% 16
-\BOOKMARK [2][-]{subsection.2.3.3}{Change Of Basis}{section.2.3}% 17
-\BOOKMARK [2][-]{subsection.2.3.4}{Determinants}{section.2.3}% 18
-\BOOKMARK [1][-]{section.2.4}{Rings}{chapter.2}% 19
-\BOOKMARK [1][-]{section.2.5}{Modules}{chapter.2}% 20
-\BOOKMARK [2][-]{subsection.2.5.1}{Basis Of Modules}{section.2.5}% 21
-\BOOKMARK [1][-]{section.2.6}{Algebras}{chapter.2}% 22
-\BOOKMARK [0][-]{chapter.3}{Lie Algebras}{part.1}% 23
-\BOOKMARK [1][-]{section.3.1}{Basic Definitions}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.2}{The Adjoint Map \046 The Killing Form}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.3}{The Fundamental Roots \046 The Weyl Group}{chapter.3}% 26
-\BOOKMARK [1][-]{section.3.4}{Dynkin Diagrams \046 The Cartan Classification}{chapter.3}% 27
-\BOOKMARK [0][-]{chapter.4}{Topology}{part.1}% 28
-\BOOKMARK [1][-]{section.4.1}{Topological Spaces}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.2}{Construction Of New Topologies From Given Ones}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.3}{Convergence \046 Continuity}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.4}{Invariant Topological Properties}{chapter.4}% 32
-\BOOKMARK [2][-]{subsection.4.4.1}{Separation Properties}{section.4.4}% 33
-\BOOKMARK [2][-]{subsection.4.4.2}{Connectedness And Path-Connectedness}{section.4.4}% 34
-\BOOKMARK [2][-]{subsection.4.4.3}{Homotopic Curves And The Fundamental Group}{section.4.4}% 35
-\BOOKMARK [0][-]{chapter.5}{Topological Manifolds}{part.1}% 36
-\BOOKMARK [1][-]{section.5.1}{Topological Manifolds}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.2}{Charts \046 Atlases}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.3}{Differentiable Manifolds}{chapter.5}% 39
-\BOOKMARK [2][-]{subsection.5.3.1}{Classification Of Differentiable Structures}{section.5.3}% 40
-\BOOKMARK [1][-]{section.5.4}{Tangent Spaces}{chapter.5}% 41
-\BOOKMARK [2][-]{subsection.5.4.1}{Co-Ordinate Induced Basis For The Tangent Space}{section.5.4}% 42
-\BOOKMARK [2][-]{subsection.5.4.2}{Change Of Vector Components Under A Change Of Chart}{section.5.4}% 43
-\BOOKMARK [1][-]{section.5.5}{Cotangent Spaces}{chapter.5}% 44
-\BOOKMARK [2][-]{subsection.5.5.1}{Dual Basis For The Cotangent Space}{section.5.5}% 45
-\BOOKMARK [2][-]{subsection.5.5.2}{Change Of Covector Components Under A Change Of Chart}{section.5.5}% 46
-\BOOKMARK [1][-]{section.5.6}{Push-Forward And Pull-Back}{chapter.5}% 47
-\BOOKMARK [1][-]{section.5.7}{Immersions And Embeddings}{chapter.5}% 48
-\BOOKMARK [1][-]{section.5.8}{Topological Bundles}{chapter.5}% 49
-\BOOKMARK [1][-]{section.5.9}{The Tangent Bundle}{chapter.5}% 50
-\BOOKMARK [1][-]{section.5.10}{Vector, Covector And Tensor Fields}{chapter.5}% 51
-\BOOKMARK [1][-]{section.5.11}{Differential Forms}{chapter.5}% 52
-\BOOKMARK [2][-]{subsection.5.11.1}{The Grassmann Algebra}{section.5.11}% 53
-\BOOKMARK [2][-]{subsection.5.11.2}{The Exterior Derivative}{section.5.11}% 54
-\BOOKMARK [2][-]{subsection.5.11.3}{De Rham Cohomology}{section.5.11}% 55
-\BOOKMARK [1][-]{section.5.12}{Application - Part 1: `39`42`"613A``45`47`"603ASL\(2,C\)}{chapter.5}% 56
-\BOOKMARK [0][-]{chapter.6}{Lie Groups}{part.1}% 57
-\BOOKMARK [1][-]{section.6.1}{Lie Groups}{chapter.6}% 58
-\BOOKMARK [1][-]{section.6.2}{The Left Translation Map}{chapter.6}% 59
-\BOOKMARK [1][-]{section.6.3}{The Lie Algebra Of A Lie Group}{chapter.6}% 60
-\BOOKMARK [1][-]{section.6.4}{Application - Part 2: `39`42`"613A``45`47`"603ASL\(2,C\)}{chapter.6}% 61
+\BOOKMARK [0][-]{chapter.1}{Lie Algebras}{part.1}% 2
+\BOOKMARK [1][-]{section.1.1}{Basic Definitions}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{The Adjoint Map \046 The Killing Form}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{The Fundamental Roots \046 The Weyl Group}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Dynkin Diagrams \046 The Cartan Classification}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Topological Manifolds}{part.1}% 7
+\BOOKMARK [1][-]{section.2.1}{Topological Manifolds}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{Charts \046 Atlases}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Differentiable Manifolds}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.3.1}{Classification Of Differentiable Structures}{section.2.3}% 11
+\BOOKMARK [1][-]{section.2.4}{Tangent Spaces}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.4.1}{Co-Ordinate Induced Basis For The Tangent Space}{section.2.4}% 13
+\BOOKMARK [2][-]{subsection.2.4.2}{Change Of Vector Components Under A Change Of Chart}{section.2.4}% 14
+\BOOKMARK [1][-]{section.2.5}{Cotangent Spaces}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.5.1}{Dual Basis For The Cotangent Space}{section.2.5}% 16
+\BOOKMARK [2][-]{subsection.2.5.2}{Change Of Covector Components Under A Change Of Chart}{section.2.5}% 17
+\BOOKMARK [1][-]{section.2.6}{Push-Forward And Pull-Back}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.7}{Immersions And Embeddings}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.8}{Topological Bundles}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.9}{The Tangent Bundle}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.10}{Vector, Covector And Tensor Fields}{chapter.2}% 22
+\BOOKMARK [1][-]{section.2.11}{Differential Forms}{chapter.2}% 23
+\BOOKMARK [2][-]{subsection.2.11.1}{The Grassmann Algebra}{section.2.11}% 24
+\BOOKMARK [2][-]{subsection.2.11.2}{The Exterior Derivative}{section.2.11}% 25
+\BOOKMARK [2][-]{subsection.2.11.3}{De Rham Cohomology}{section.2.11}% 26
+\BOOKMARK [1][-]{section.2.12}{Application - Part 1: `39`42`"613A``45`47`"603ASL\(2,C\)}{chapter.2}% 27
+\BOOKMARK [0][-]{chapter.3}{Lie Groups}{part.1}% 28
+\BOOKMARK [1][-]{section.3.1}{Lie Groups}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.2}{The Left Translation Map}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.3}{The Lie Algebra Of A Lie Group}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.4}{Application - Part 2: `39`42`"613A``45`47`"603ASL\(2,C\)}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.4.1}{The simplicity of sl\(2,C\)}{section.3.4}% 33
+\BOOKMARK [2][-]{subsection.3.4.2}{The roots and Dynkin diagram of sl\(2,C\)}{section.3.4}% 34
+\BOOKMARK [2][-]{subsection.3.4.3}{Reconstruction of A2 from its Dynkin diagram}{section.3.4}% 35
