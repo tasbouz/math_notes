@@ -88,14 +88,14 @@ in general. However that does not stop $\ell_g$ from being an isomorphism, which
 
 Since a lie group is a topological manifold, on top of being a group, this means that at any point $g$ we can define the tangent space, and by following the analysis we did in the previous chapter to define fields on $G$. Recall from the previous chapter than once we have a diffeomorphism $\phi$ between two manifolds $M$ and $N$, we can define the push-forward of a vector field X as
 \bse
-(\phi_* X)|_{\phi(p)} := \phi_* (X|_p)
+\phi_* (X) (\phi(p)) := (\phi_*)_p (X_p)
 \ese
 
-where $X|_p$ is the vector created by the field $X$ on point $p$. \\
+where $X_p$ is the vector created by the field $X$ at point $p$. \\
 
 Coming in our case, we just showed that the map $\ell_g\cl G\to G$ is a diffeomorphism so we can push-forward any vector field $X$ on $G$ to another vector field (again on $G$ since the maps is between the same manifold). So in our case $\phi_* (X) = (\ell_g)_* (X)$ and for any point $h$ in $G$: $\ell_g (h) = gh$ so the push-forward equation reads 
 \bse
-(\ell_{g*} X)|_{gh} := (\ell_g)_* (X|_h)
+{\ell_{g}}_{*} (X) (gh):= ({\ell_{g}}_{*})_{h} (X_h)
 \ese
 
 \section{The Lie Algebra Of A Lie Group}
@@ -105,32 +105,34 @@ In Lie theory, we are typically not interested in general vector fields, but rat
 \bd [Left Invariant Vector Fields]
 Let $G$ be a Lie group. A vector field $X\in\Gamma(TG)$ is said to be \textbf{left-invariant}\index{left-invariant vector field} if
 \bse
-\forall \, g \in G  : \ (l_g)_*(X) = X.
+\forall \, g \in G  : \ {\ell_{g}}_{*} (X)= X.
 \ese
 
 \vspace{5pt}
 
 Equivalently, we can require this to hold pointwise
 \bse
-\forall \, g,h \in G : \ (\ell_g)_*(X|_h) = X|_{gh}.
+\forall \, g,h \in G : \ ({\ell_{g}}_{*})_{h} (X_h)= X_{gh}.
 \ese
+
+where basically what this means is that if we take the vector $X_h$ at $h$ and the vector $X_{gh}$ at $gh$, then by pushing forward $X_h$ with $({\ell_{g}}_{*})_{h}$ (hence bringing it to the point $gh$), the final result should be equal to the vector $X_{gh}$. 
 \ed
 
 We can manipulate a bit the pointwise formulation to yield another reformulation. Since both sides are vectors we can let them act on a function $f$ 
 \bse
-(\ell_g)_*(X|_h) f = X|_{gh} f
+({\ell_{g}}_{*})_{h} (X_h) f = X_{gh} f
 \ese
 
-By using the definition of a push-forward of a vector $(\phi_*)_p (X) f := X(f \circ \phi)$ the left part of the equation reads
+By using the definition of a push-forward of a vector $(\phi_*)_p (X_p) f := X_p(f \circ \phi)$ the left part of the equation reads
 \bse
-(\ell_g)_*(X|_h) f = X|_h (f \circ \ell_g) = \big(X (f \circ \ell_g) \big)|_h
+({\ell_{g}}_{*})_{h} (X_h) f = X_h (f \circ \ell_g) = X (h) (f \circ \ell_g)  = X (f \circ \ell_g) (h)
 \ese
 
 \vspace{5pt}
 
 The right part can be manipulated as follows
 \bse
-X|_{gh} f = (Xf)|_{gh} = \Big( (Xf) \circ  \ell_g \Big)|_h
+X_{gh} f = X(gh) f = (Xf) (gh) = (Xf)(\ell_g(h)) =(Xf) \circ \ell_g (h)
 \ese
 
 By substituting both final expressions back to the original one and discarding the point $h$ since they must be true for any $h$ we obtain the last reformulation of the push-forward
@@ -168,25 +170,36 @@ Let $G$ be a Lie group with identity element $e\in G$. Then $\mathcal{L}(G)\cong
 We will construct a linear isomorphism $j\cl T_eG\xrightarrow{\sim}\mathcal{L}(G)$. Define
 \bi{rrCl}
 j \cl & T_eG& \to & \Gamma(TG)\\
-& A & \mapsto & j(A),
+& X_{\gamma,e} & \mapsto & j(X_{\gamma,e}),
 \ei
-where $j(A)$ is define as
+where $j(X_{\gamma,e})$ is define as
 \bi{rrCl}
-j(A) \cl & G& \to & TG\\
-& g & \mapsto & j(A)|_g := (\ell_g)_*(A).
+j(X_{\gamma,e}) \cl & G& \to & TG\\
+& g & \mapsto & j(X_{\gamma,e}) (g) := ({\ell_{g*}})_e (X_{\gamma,e}) \, \forall g \in G
 \ei
+
+\br
+Recall that we dropped the curve $\gamma$ in the notation of a vector $X_p$ to save space on the notation. However since we are going to need the definition of a vector, that contains the curve, we will write it again as $X_{\gamma,p}$ for now.
+\er
 
 Now we have to prove that this is actually a linear isomorphism, and we will do it in steps.
 
 \ben[label=\roman*)]
-\item First, we show that for any $A\in T_eG$, $j(A)$ is a smooth vector field on $G$. It suffices to check that for any $f\in \mathcal{C}^\infty(G)$, we have $j(A)(f)\in \mathcal{C}^\infty(G)$. Indeed
-\bi{rCl}
-(j(A)(f))(g) & = & j(A)|_g(f)\\
-& := &  (\ell_g)_*(A)(f)\\
-& = &  A(f\circ\ell_g)\\
-& = &  (f\circ\ell_g\circ\gamma)'(0),
+
+\item First we need to check that the definition we provided is consistent. Focusing on the left side of the equation, $j(X_{\gamma,e})$ as a field associates to every point $g$ of the manifold $G$ a tangent vector, hence the first part of the definition $j(X_{\gamma,e})(g)$ is a tangent vector of the tangent space $T_gG$.\\
+
+Now we need to see if the second part of the equation is again a vector on  $T_gG$. Recall that under a push-forward a vector of $T_pM$ goes to a vector of $T_{\phi(p)}N$, hence in our case the vector  $X_{\gamma,e}$ of $T_eG$ goes to the vector $({\ell_{g*}})_e X_{\gamma,e}$ which lies on $T_{l_g(e)}G = T_{ge}G = T_gG$. \\
+
+Hence there is consistency in our definition.
+
+\item Second, we show that for any $X_{\gamma,e}\in T_eG$, $j(X_{\gamma,e})$ is a smooth vector field on $G$. It suffices to check that for any $f\in \mathcal{C}^\infty(G)$, we have $j(X_{\gamma,e})(f)\in \mathcal{C}^\infty(G)$. Indeed
+\bi{rCl"s}
+j(X_{\gamma,e})(g) & := & ({\ell_{g*}})_e (X_{\gamma,e})& (definition of $j$)\\
+j(X_{\gamma,e})(g)(f) & = & ({\ell_{g*}})_e (X_{\gamma,e})(f) & (act on  a function)\\
+& = &  X_{\gamma,e}(f\circ\ell_g) & (definition of push-forward) \\
+& = &  (f\circ\ell_g\circ\gamma)'(0) & (definition of tangent vector)
 \ei
-where $\gamma$ is a curve through $e\in G$ whose tangent vector at $e$ is $A$. The map
+The map
 \bi{rrClCl}
 \varphi \cl & \R\times G &\to & \R &&\\
 &(t,g)&\mapsto & \varphi(t,g) & := &(f\circ\ell_{g}\circ\gamma)(t) \\
@@ -194,39 +207,45 @@ where $\gamma$ is a curve through $e\in G$ whose tangent vector at $e$ is $A$. T
 \ei
 is a composition of smooth maps, hence it is smooth. Then
 \bse
-(j(A)(f))(g) = (\partial_1\varphi)(0,g)
+j(X_{\gamma,e})(g)(f) = (\partial_1\varphi)(0,g)
 \ese
-depends smoothly on $g$ and thus $j(A)(f)\in \mathcal{C}^\infty(G)$.
-\item We proved that $j(A)$ is indeed a smooth vector field, however now we need to prove that it is a left invariant vector field since it is an element of $\Gamma(TG)$. Let $g,h\in G$. Then, for every $A\in T_eG$, we have
-\bi{rCl}
-(\ell_g)_*(j(A)|_h) & := & (\ell_g)_*((\ell_h)_*(A))\\
-& = & (\ell_{gh})_*(A)\\
-& = & j(A)|_{gh},
+depends smoothly on $g$ and thus $j(X_{\gamma,e})(f)\in \mathcal{C}^\infty(G)$.
+
+\item We proved that $j(X_{\gamma,e})$ is indeed a smooth vector field, however now we need to prove that it is a left invariant vector field since it is an element of $\Gamma(TG)$. To prove that we need to shows that it's invariant under left translations. Let $g,h\in G$. Then, for every $X_{\gamma,e}\in T_eG$, we have
+\bi{rCl"s}
+j(X_{\gamma,e})(g) & := & ({\ell_{g*}})_e (X_{\gamma,e})& (definition of $j$)\\
+({\ell_{h*}})_e (j(X_{\gamma,e})(g)) & = & ({\ell_{h*}})_e(({\ell_{g*}})_e(X_{\gamma,e})) & (acting with $({\ell_{h*}})_e$)\\
+& = & ({\ell_{gh*}})_e (X_{\gamma,e}) & (one can show that)\\
+& = & j(X_{\gamma,e})(gh) & (definition of $j$),
 \ei
-so $j(A)\in \mathcal{L}(G)$. Hence, the map $j$ is really $j\cl T_eG \to \mathcal{L}(G)$.
-\item We also need to check the linearity. Let $A,B\in T_eG$ and $\lambda \in \R$. Then, for any $g\in G$
-\bi{rCl}
-j(\lambda A + B)|_g & = & (\ell_g)_* (\lambda A + B)\\
-& = & \lambda (\ell_g)_*( A) +  (\ell_g)_*(B)\\
-& = & \lambda j(A)|_g + j(B)|_g,
+so $j(X_{\gamma,e})\in \mathcal{L}(G)$. Hence, the map $j$ is really $j\cl T_eG \to \mathcal{L}(G)$.
+
+\item We also need to check the linearity. Let $X_{\gamma,e}, Y_{\gamma,e} \in T_eG$ and $\lambda \in \R$. Then, for any $g\in G$
+\bi{rCl"s}
+j(\lambda X_{\gamma,e} + Y_{\gamma,e})(g) & = & ({\ell_{g*}})_e (\lambda X_{\gamma,e} + Y_{\gamma,e}) & (definition of $j$)\\
+& = & \lambda ({\ell_{h*}})_e( X_{\gamma,e}) +  ({\ell_{h*}})_e (Y_{\gamma,e})\\
+& = & \lambda j(X_{\gamma,e})(g) + j(Y_{\gamma,e})(g),
 \ei
 since the push-forward is an $\R$-linear map. Hence, we have $j\cl T_eG \xrightarrow{\sim} \mathcal{L}(G)$.
-\item We also need to check that the map is injective. Let $A,B\in T_eG$. Then
-\bi{rCl}
-j(A) = j(B) & \Leftrightarrow & \forall \, g \in G : j(A)|_g = j(B)|_g\\
-&\Rightarrow & j(A)|_e = j(B)|_e\\
- & \Leftrightarrow & (\ell_e)_*(A) = (\ell_e)_*(B)\\
-& \Leftrightarrow & A=B,
+
+\item We also need to check that the map is injective. Let $X_{\gamma,e}, Y_{\gamma,e} \in T_eG$. Then
+\bi{rCl"s}
+j(X_{\gamma,e}) = j(Y_{\gamma,e}) & \Leftrightarrow & \forall \, g \in G : j(X_{\gamma,e})(g) = j(Y_{\gamma,e})(g)\\
+&\Rightarrow & j(X_{\gamma,e})(e) = j(Y_{\gamma,e})(e)\\
+ & \Leftrightarrow & ({\ell_{e*}})_e(X_{\gamma,e}) = ({\ell_{e*}})_e(Y_{\gamma,e}) & (definition of $j$)\\
+& \Leftrightarrow & X_{\gamma,e}=Y_{\gamma,e} & ($({\ell_{e*}})_e=\id_{TG}$)
 \ei
-since $(\ell_e)_*=\id_{TG}$. Hence, the map $j$ is injective.
-\item Finally we nee to check that the map is surjective. Let $X\in \mathcal{L}(G)$. Define $A^X:=X|_e\in T_eG$. Then, we have
-\bse
-j(A^X)|_g = (\ell_g)_*(A^X)=(\ell_g)_*(X|_e) = X_{ge}=X_g,
-\ese
+Hence, the map $j$ is injective.
 
-\vspace{5pt}
+\item Finally we need to check that the map is surjective. Let $X \in \mathcal{L}(G)$. Then, we have
+\bi{rCl"s}
+j(X_{\gamma,e})(g) & = & ({\ell_{g*}})_e (X_{\gamma,e}) & (definition of $j$)\\
+& = & ({\ell_{g*}})_e (X(e)) & ($X(e) = X_{\gamma,e}$)\\
+& = & X(ge) & ($X$ is left-invariant) \\
+& = & X(g),
+\ei
+Hence $X=j(X_{\gamma,e})$ and thus $j$ is surjective. 
 
-since $X$ is left-invariant. Hence $X=j(A^X)$ and thus $j$ is surjective. 
 \een
 Therefore, $j\cl T_eG\xrightarrow{\sim}\mathcal{L}(G)$ is indeed a linear isomorphism.
 \eq
@@ -237,15 +256,11 @@ It is $\dim \mathcal{L}(G)=\dim G$, hence $\mathcal{L}(G)$ turns out to be a fin
 
 So we proved that indeed $\mathcal{L}(G)$ is a finite-dimensional vector space, but as we said there is something more important here. Namely, since $j\cl T_eG\xrightarrow{\sim}\mathcal{L}(G)$ is a linear isomorphism this means that the spaces $\mathcal{L}(G)$ and $T_eG$ are isomorphic which with its turn it means that the map $j$, first of all has an inverse, and most importantly maps each element of $\mathcal{L}(G)$ to exactly one element of $T_eG$. In other words there are as many left invariant fields as there are tangent vectors to the Lie group at the identity, so instead of studying the (quite complicated) left invariant vector fields we can simply study the (quite simpler) tangent vectors at the identity. \\
 
-However, we can go one step further now. Recall from the Lie algebra chapter in the notes, that a Lie algebra over an algebraic field $K$ is a vector space over $K$ equipped with a Lie bracket $[-,-]$, i.e.\ a $K$-bilinear, antisymmetric map which satisfies the Jacobi identity. \\
-
-Considering $\Gamma(TM)$ as an infinite-dimensional $R$-vector space, for two vector fields $X,Y\in \Gamma(TM)$, we can define their Lie bracket, or commutator, as
+However, we can go one step further now. Recall from previous chapter that by considering $\Gamma(TM)$ as an infinite-dimensional $R$-vector space, for two vector fields $X,Y\in \Gamma(TM)$, we can define their Lie bracket to be the commutator of the fields
 \bse
 [X,Y] (f):= X(Y(f))-Y(X(f))
 \ese
-for any $f\in \mathcal{C}^\infty(M)$. Now we can check that indeed $[X,Y]\in\Gamma(TM)$, and that the bracket is $\R$-bilinear, antisymmetric and satisfies the Jacobi identity. Thus, $(\Gamma(TM),+,\cdot,[-,-])$ is an infinite-dimensional Lie algebra over $\R$. We suppress the $+$ and $\cdot$ when they are clear from the context. \\
-
-Since $\mathcal{L}(G)$ is a subvector space (and a submodule) of $\Gamma(TM)$ we can inherit the commutator to $\mathcal{L}(G)$ and ask if $\mathcal{L}(G)$ is closed under the commutator so $(\mathcal{L}(G),+,\cdot,[-,-])$ is a subalgebra of $(\Gamma(TG),+,\cdot,[-,-])$. Indeed, this is the case.
+for any $f\in \mathcal{C}^\infty(M)$. Then $(\Gamma(TG),+,\cdot,[-,-])$ is a Lie algebra. Coming to our case, since $\mathcal{L}(G)$ is a subvector space (and a submodule) of $\Gamma(TM)$ we can inherit the commutator to $\mathcal{L}(G)$ and ask if $\mathcal{L}(G)$ is closed under the commutator so $(\mathcal{L}(G),+,\cdot,[-,-])$ is a subalgebra of $(\Gamma(TG),+,\cdot,[-,-])$. Indeed, this is the case.
 
 \begin{theorem}
 Let $G$ be a Lie group. Then $\mathcal{L}(G)$ is a Lie subalgebra of $\Gamma(TG)$.
@@ -269,31 +284,33 @@ Hence, $[X,Y]$ is left-invariant.
 To summarise, we began with $\mathcal{L}(G)$ as a set of all left invariant vector fields of $G$, which is a subset of $\Gamma(TG)$, then we inherited the $+$ and $\cdot$ of $\Gamma(TG)$ to $\mathcal{L}(G)$ and we showed that it is also a submodule and a subvector space of $\Gamma(TG)$, and finally we inherited the Lie bracket from $\Gamma(TG)$ and we showed that it is also a subalgebra of $\Gamma(TG)$. From now on when we will be referring to $\mathcal{L}(G)$, we will mean its algebra structure.
 
 \bd [The Lie Algebra Of A Lie Group]
-Let $G$ be a Lie group. We call the algebra  $\mathcal{L}(G)$ of all left invariant vector fields of $G$ the \textbf{Lie algebra of the Lie group} $G$.
+Let $G$ be a Lie group. We call the Lie algebra  $\mathcal{L}(G)$ of all left invariant vector fields of $G$ the \textbf{Lie algebra of the Lie group} $G$.
 \ed
 
-We already showed that the underlying vector space of the Lie algebra of a Lie group $\mathcal{L}(G)$ is isomorphic to the tangent vector of the Lie group $G$ at the identity $T_eG$. We will now see that the identification of $\mathcal{L}(G)$ and $T_eG$ goes beyond the level of linear isomorphism as vector spaces, as they are isomorphic as algebras. Indeed, we can use the bracket on $L(G)$ to define a bracket on $T_eG$ such that they be isomorphic as algebras.\\
+We already showed that the underlying vector space of the Lie algebra of a Lie group $\mathcal{L}(G)$ is isomorphic to the tangent vector of the Lie group $G$ at the identity $T_eG$. We will now see that the identification of $\mathcal{L}(G)$ and $T_eG$ goes beyond the level of linear isomorphism as vector spaces, as they are isomorphic as algebras. Of course we cannot simply inherit the commutator form $\mathcal{L}(G)$ to $T_eG$ because the commutator is defined for fields and it works because one field can act on another. In the case of $T_eG$ we cannot act with a vector on another vector.  However, we can use the commutator from $\mathcal{L}(G)$ to construct an appropriate Lie bracket on $T_eG$ such that they be isomorphic as algebras.\\
 
 Recall from the Lie algebras chapter in the notes that two algebras are called isomorphic if there exists an isomorphism between them, a.k.a a bijective map $\phi$ such that
 \bse
 \forall \, x,y\in L_1 : \ \phi([x,y]_{L_1}) = [\phi(x),\phi(y)]_{L_2}.
 \ese
 
-Well, we already have a bijective map $j$ so by using the bracket $[-,-]_{\mathcal{L}(G)}$ on $\mathcal{L}(G)$ we can define, for any $A,B\in T_eG$
+Well, we already have a bijective map $j$ so by using the commutator $[-,-]_{\mathcal{L}(G)}$ on $\mathcal{L}(G)$ we can define a Lie bracket for any $X_e, Y_e \in T_eG$ as
 \bse
-[A,B]_{T_eG} := j^{-1} \bigl( [j(A),j(B)]_{\mathcal{L}(G)} \bigr),
+[X_e ,Y_e]_{T_eG} := j^{-1} \bigl( [j(X_e),j(Y_e)]_{\mathcal{L}(G)} \bigr),
 \ese
 
 \vspace{5pt}
 
-where $j^{-1}(X)=X|_e$. Equipped with these brackets, we have
+where $j^{-1} $ works the opposite way, i.e takes a vector field and produces a vector.\\
+
+Equipped with these Lie bracket, by definition, we have
 \bse
 \mathcal{L}(G)\cong_\mathrm{Lie\, alg}T_eG.
 \ese
 
 Hence, given a Lie group we have seen how we can construct its corresponding Lie algebra as the space of left-invariant vector fields and we also showed that this algebra is isomorphic to the algebra of tangent vectors at the identity. We will later explore the opposite direction, i.e.\ given a Lie algebra, we will see how to construct a Lie group whose associated Lie algebra is the one we started from. 
 
-\section{Application - Part 2: $\SL(2,\C)$}
+\section{Application: $\SL(2,\C)$ - Part 2}
 
 In the first part of of the application in the previous chapter, we defined the set $\SL(2,\C)$ as a subset of $\C^4:=\C\times\C\times\C\times\C$. Then we showed that:
 \bit
@@ -355,19 +372,21 @@ which is certainly complex differentiable as a map between open subsets of $\C^3
 
 Checking that $\mu$ is complex differentiable is slightly more involved, since we first have to equip $\SL(2,\C) \times \SL(2,\C)$ with a suitable ``product differentiable structure'' and then proceed as above. Once that is done, we can finally conclude that $((\SL(2,\C),\mathcal{O},\mathscr{A}),\bullet)$ is a $3$-dimensional complex Lie group.
 
-\subsubsection{The Lie Algebra Of The Lie Group \texorpdfstring{$\SL(2,\C)$}{SL(2,C)}}
+\subsubsection{The Lie Algebra $\sl(2,\C)$ Of The Lie Group \texorpdfstring{$\SL(2,\C)$}{SL(2,C)}}
 
 Recall that to every Lie group $G$, there is an associated Lie algebra $\mathcal{L}(G)$ of all left invariant vector fields of $G$ a.k.a
 \bse
 \mathcal{L}(G) := \{X\in \Gamma(TG)\mid \forall \, g,h\in G : (\ell_g)_*(X|_h)=X|_{gh}\},
 \ese
 
+\vspace{5pt}
+
 where the left translation map $\ell_g$ was given by
 \bse
 \ell_g(h):=g\bullet h \equiv gh
 \ese
 
-Coming to our case we have that $G = \SL(2,\C)$ hence the corresponding Lie algebra of $\SL(2,\C)$ usually denoted by small letters $sl(2,\C)$ is
+Coming to our case we have that $G = \SL(2,\C)$ hence the corresponding Lie algebra of $\SL(2,\C)$ usually denoted by small letters $\sl(2,\C)$ is
 \bse
 \sl(2,\C) := \mathcal{L}(\SL(2,\C)) := \{X\in \Gamma(T\SL(2,\C))\mid \forall \, g,h\in G : (\ell_g)_*(X|_h)=X|_{gh}\},
 \ese
@@ -379,42 +398,41 @@ where the left translation map at a point $g = \left(\begin{smallmatrix}a & b \\
 
 \vspace{5pt}
 
-Now, in order to find the Lie algebra $\sl(2,\C)$ we need to find its structure constants. One can do that by computing the commutator (Lie bracket) relations of the underlying vector space. In this case, considering two vector fields $X,Y\in \Gamma(T\SL(2,\C))$
+Now, our goal is to classify $\sl(2,\C)$ as a Lie algebra. The first step we need to do it to find its structure constants. This can be done by considering two vector fields $X,Y\in \Gamma(T\SL(2,\C))$ and computing the commutator
 \bse
 [X,Y]:= X(Y)-Y(X)
 \ese
 
+\vspace{3pt}
+
 However, as we proved earlier, we can always use the fact that the corresponding Lie algebra $\mathcal{L}(G)$ of a Lie group $G$ is isomorphic to the Lie algebra $T_eG$ with Lie bracket
 \bse
-[A,B]_{T_eG} := j^{-1} ([j(A),j(B)]_{\mathcal{L}(G)})
-\ese
-induced by the Lie bracket on $\mathcal{L}(G)$ via the isomorphism $j$
-\bse
-j(A)|_g := (\ell_g)_*(A).
+[X_e ,Y_e]_{T_eG} := j^{-1} \bigl( [j(X_e),j(Y_e)]_{\mathcal{L}(G)} \bigr),
 \ese
 
-Hence, in our case instead the commutator in the algebra $\sl(2,\C)$ we can instead calculate it on $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$, i.e 
+with
 \bse
-[A,B]_{T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)} := j^{-1} ([j(A),j(B)]_{\sl(2, \C)})
+ j(X_e) (g) := ({\ell_{g*}})_e (X_{e}) \, \forall g \in G
+\ese
+
+\vspace{5pt}
+
+Hence, in our case we can study the lie algebra $\sl(2,\C)$ by focusing on the tangent space $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ of $\SL(2,\C)$, and compute the Lie bracket there as
+\bse
+[X_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}, Y_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}]_{T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)} := j^{-1} ([j(X_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}),j(Y_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)})]_{\sl(2, \C)})
 \ese
 
 with 
 \bse
-j(A)|_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}  = \Bigl(\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)_* (A)
+j(X_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}) \left( {\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \right)  = 
+\Bigl( \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right) *} \Bigr)_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \Bigl( X_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \Bigr)
 \ese
 
 \vspace{10pt}
 
-First thing first, for any vector $A \in T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ we have to compute $j(A)$. \\
+So we need to compute this bracket. First thing first, for any vector $X_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \in T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ we have to compute $j(X_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)})$. \\
 
-Recall that if $(U,x)$ is a chart on a manifold $M$ and $p\in U$, then the chart $(U,x)$ induces a basis of the tangent space $T_pM$. We shall use our previously defined chart $(U,x)$ on $\SL(2,\C)$, where $U:= \{ \left( \begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\right) \in \SL(2,\C) \mid a \neq 0 \}$ and 
-\bi{rrCl}
-x \cl & U & \to & x(U) \se \C^3\\
-& \biggl( \begin{matrix} a & b \\ c & d \end{matrix}\biggr) & \mapsto & (a,b,c).
-\ei
-Note that the $d$ appearing here is completely redundant, since the membership condition of $\SL(2,\C)$ forces $d=\frac{1+bc}{a}$. However, we will keep writing the $d$ to avoid having a fraction in a matrix in a subscript. \\
-
-The chart $(U,x)$ contains the identity $\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)$ (we must include the identity since we are interested in the tangent space at the identity $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$)  and hence we get an induced co-ordinate basis
+Recall that if $(U,x)$ is a chart on a manifold $M$ and $p\in U$, then the chart $(U,x)$ induces the co-ordinate induced basis which is a basis of the tangent space $T_pM$. In our case we can use the chart $(U,x)$ that contains the identity $\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)$ (we must include the identity since we are interested in the tangent space at the identity $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$)  and hence we get an induced co-ordinate basis
 
 \bse
 \biggl\{\tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\in  T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C) \ \Big| \ 1\leq i \leq 3 \biggr\}
@@ -422,129 +440,181 @@ The chart $(U,x)$ contains the identity $\left(\begin{smallmatrix}1 & 0 \\ 0 & 1
 
 \vspace{5pt}
 
-so that any $A\in  T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ can be written as
+so that any $X_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \in  T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ can be written as
 \bse
-A =  A^i \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} = \alpha \tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + \beta \tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + \gamma \tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},
+X_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} =  X^i \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}, \,\,\,\,\, X^i \in \C
 \ese
-for some $\alpha,\beta,\gamma\in \C$. \\
+
+Hence it suffices to compute the bracket only for the basis, since every other vector can be reconstructed by using the basis.\\
 
 Let us now determine the image of these co-ordinate induced basis elements under the isomorphism $j$. The object
 \bse
-j\biggl(    \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \in \sl(2,\C) 
+j\biggl(\tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \in \sl(2,\C) 
 \ese
 
 \vspace{5pt}
 
 is a left-invariant vector field on $\SL(2,\C)$. It assigns to each point $\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)\in U\se \SL(2,\C)$ the tangent vector
 \bse
-j\biggl(    \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \bigg|_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} : =
-\Bigl(\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)_*     \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \in T_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}\SL(2,\C). 
+j\biggl( \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \biggl( {\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \biggr) : =
+\Bigl( \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right) *} \Bigr)_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}
 \ese
 
 \vspace{5pt}
 
-This tangent vector is a $\C$-linear map $\mathcal{C}^\infty(\SL(2,\C))\xrightarrow{\sim}\C$, where $\mathcal{C}^\infty(\SL(2,\C))$ is the $\C$-vector space (in fact, the $\C$-algebra) of smooth complex-valued functions on $\SL(2,\C)$ although, to be precise, since we are working in a chart we should only consider functions defined on $U$. For (the restriction to $U$ of) any $f\in \mathcal{C}^\infty(\SL(2,\C))$ by the definition of the push-forward we have, explicitly,
+By acting on a function $f$
 \bi{rCl}
-\Bigl(\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)_*     \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} (f) & = & \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \Bigl(f\circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)\\
-& = & \partial_i\Bigl(f\circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}\Bigr) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)),
+j\biggl( \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \biggl( {\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \biggr) (f) & := & \Bigl( \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right) *} \Bigr)_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} (f)
 \ei
-where the argument of $\partial_i$ in the last line is a map $x(U)\se\C^3\to\C$, hence $\partial_i$ is simply the operation of complex differentiation with respect to the $i$-th (out of the 3) complex variable of the map $f\circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}$, which is then to be evaluated at $x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)\in \C^3$.  \\
 
-By inserting an identity in the composition, we have
+\vspace{5pt}
+
+by using the definition of the push-forward
 \bi{rCl}
-& = &\partial_i\Bigl(f\circ {\id_U} \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}\Bigr) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)) \\
+j\biggl( \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \biggl( {\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \biggr) (f) & = &\tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \Bigl(f\circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}\Bigr),
+\ei
+
+\vspace{5pt}
+
+and by expanding the notation of $\tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}$ to its actual form we obtain
+\bi{rCl}
+j\biggl( \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \biggl( {\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \biggr) (f) & = & \partial_i\Bigl(f\circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}\Bigr) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)),
+\ei
+
+\vspace{5pt}
+
+We can now manipulate a bit the left part of the equation by inserting an identity in the composition and we obtain
+\bi{rCl}
+j\biggl( \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \biggl( {\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \biggr) (f) & = &\partial_i\Bigl(f\circ {\id_U} \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}\Bigr) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)) \\
 & = & \partial_i\Bigl(f\circ ( x^{-1}\circ x) \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}\Bigr) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))\\
 & = & \partial_i\Bigl((f\circ  x^{-1})\circ (x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1})\Bigr) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)),
 \ei
+
+\vspace{5pt}
+
 where $f\circ  x^{-1}\cl x(U)\se \C^3 \to \C$ and $(x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1})\cl x(U)\se \C^3 \to x(U)\se\C^3$ and hence, we can use the multi-dimensional chain rule to obtain
 \bi{rCl}
-& = & \Bigl(\partial_m(f\circ  x^{-1})\bigl((x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))\bigr)\Bigr)\Bigl( 
+\ldots & = & \Bigl(\partial_m(f\circ  x^{-1})\bigl((x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))\bigr)\Bigr)\Bigl( 
 \partial_i (x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))\Bigr),
 \ei
-with the summation going from $m=1$ to $m=3$. The first factor is simply
+
+\vspace{5pt}
+
+with the summation going from $m=1$ to $m=3$. \\
+
+The first factor is simply
 \bi{rCl}
-\partial_m(f\circ  x^{-1})\bigl((x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}) \left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)\bigr) & =\phantom{:} & \partial_m(f\circ  x^{-1})(x\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right))\\
-& =: & \tvb{x}{m}{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} (f) .
+(\partial_m(f\circ  x^{-1})\bigl((x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))\bigr) & =\phantom{:} & (\partial_m(f\circ  x^{-1})\bigl((x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}) x^{-1}(x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))\bigr)\\ 
+& =\phantom{:} & \partial_m(f\circ  x^{-1})\bigl((x \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}) \left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)\bigr) \\
+& =\phantom{:} & \partial_m(f\circ  x^{-1})(x\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right))\\
+& = & \tvb{x}{m}{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} (f).
 \ei
+
+\vspace{5pt}
+
 To see what the second factor is, we first consider the map $x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}$. This map acts on the triple $(e,f,g)\in x(U)$ as
 \bi{rCl}
 (x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (e,f,g) & = & (x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} ) \biggl(\begin{matrix}e & f \\ g & \frac{1+fg}{e}\end{matrix}\biggr)\\
 & = & x^m (\biggl(\begin{matrix}a & b \\ c & d\end{matrix}\biggr) \bullet \biggl(\begin{matrix}e & f \\ g & \frac{1+fg}{e}\end{matrix}\biggr))\\
-& = & x^m (\left(\begin{matrix}ae+bg &\, af+ \frac{b(1+fg)}{e} \\ ce+dg &\, cf+\frac{d(1+fg)}{e}\end{matrix}\right) ),
+& = & x^m (\left(\begin{matrix}ae+bg &\, af+ \frac{b(1+fg)}{e} \\ ce+dg &\, cf+\frac{d(1+fg)}{e}\end{matrix}\right) ) \\
+& = & (ae+bg, af+ \tfrac{b(1+fg)}{e}, ce+dg )
 \ei
-and since $x^m := {\proj_m} \circ x$, with $m\in \{1,2,3\}$, we have 
-\bse
-(x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (e,f,g) = \proj_m (ae+bg, af+ \tfrac{b(1+fg)}{e}, ce+dg ),
-\ese
-the map $\proj_m$ simply picks the $m$-th component of the triple. We now have to apply $\partial_i$ to this map, with $i\in \{1,2,3\}$, i.e.\ we have to differentiate with respect to each of the three complex variables $e$, $f$, and $g$. We can write the result as
+
+\vspace{5pt}
+
+We now have to apply $\partial_i$ to this map, with $i\in \{1,2,3\}$, i.e.\ we have to differentiate with respect to each of the three complex variables $e$, $f$, and $g$. Of course depending to which derivative we take, and to which slot we apply it we end up with $3 \times 3$ different results, that we will collect in one matrix just for notation purposes. More specifically we can write the result as
 \bse
 \partial_i(x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (e,f,g)= D(e,f,g)^m_{\phantom{m}i},
 \ese
-where $m$ labels the rows and $i$ the columns of the matrix
+
+\vspace{5pt}
+
+where $m$ labels the rows and $i$ the columns of the matrix. (So for example the first row of the first column means the derivative of the first component (a.k.a $ae+bg$) with respect to the first variable (a.k.a $e$) hence the result (a.k.a $a$). If we do that for all components and all derivatives we end up with
 \bse
 D(e,f,g)= \left(\begin{matrix}a & 0 & b\\ -\frac{b(1+fg)}{e^2} &\,a+\frac{bg}{e} &\frac{bf}{e}\\ c & 0 & d\end{matrix}\right).
 \ese
+
+\vspace{5pt}
+
 Finally, by evaluating this at $(e,f,g)=x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right) = (1,0,0)$, we obtain
 \bse
-\partial_i(x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))= D^m_{\phantom{m}i},
+\partial_i(x^m \circ \ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \circ x^{-1}) (x\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right))= D(1,0,0)^m_{\phantom{m}i},
 \ese
-where, by recalling that $d=\frac{1+bc}{a}$,
+
+\vspace{5pt}
+
+where, by recalling that $d=\frac{1+bc}{a}$ we simply get,
 \bse
-D:= D(1,0,0)= \left(\begin{matrix}a & 0 & b\ \\ -b & a & 0\\ c & 0 & \frac{1+bc}{a}\end{matrix}\right).
+D(1,0,0)= \left(\begin{matrix}a & 0 & b\ \\ -b & a & 0\\ c & 0 & \frac{1+bc}{a}\end{matrix}\right) := D^m_{\phantom{m}i}
 \ese
-Putting the two factors back together yields
+
+\vspace{5pt}
+
+Hence we computed the two parts of the equation above, so we can combine them and we get
 \bse
-\Bigl(\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)_*     \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} (f) =  D^m_{\phantom{m}i} \tvb{x}{m}{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} (f) .
+j\biggl( \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \biggl( {\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \biggr) (f) =  D^m_{\phantom{m}i} \tvb{x}{m}{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} (f)
 \ese
+
+\vspace{5pt}
+
 Since this holds for an arbitrary $f\in\mathcal{C}^\infty(\SL(2,\C))$, we have
 \bse
-j\biggl(    \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \bigg|_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} : =
-\Bigl(\ell_{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \Bigr)_*     \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} = D^m_{\phantom{m}i} \tvb{x}{m}{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}, 
+j\biggl( \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \biggl( {\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)} \biggr) =  D^m_{\phantom{m}i} \tvb{x}{m}{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}
 \ese
+
+\vspace{5pt}
+
 and since the point $\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)\in U\se\SL(2,\C)$ is also arbitrary, we have
 \bse
 j\biggl( \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) = D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} \in \sl(2,\C),
 \ese
+
+\vspace{5pt}
+
 where $D$ is now the corresponding matrix of co-ordinate functions
 \bse
 D:=\left(\begin{matrix}x^1 & 0 & x^2\ \\ -x^2 & x^1 & 0\\ x^3 & 0 & \frac{1+x^2x^3}{x^1}\end{matrix}\right).
 \ese
+
+\vspace{5pt}
+
+Hence, we have an expansion of the images of the basis of $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ under $j$:
+\bi{rCl}
+j\biggl( \tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) & = & x^1  \frac{\partial}{\partial x^1} - x^2\frac{\partial}{\partial x^2}  + x^3\frac{\partial}{\partial x^3} \\
+j\biggl( \tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) & = & x^1 \frac{\partial}{\partial x^2}  \\
+j\biggl( \tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) & = & x^2\, \frac{\partial}{\partial x^1} + \tfrac{1+x^2x^3}{x^1} \frac{\partial}{\partial x^3}
+\ei
+
+\vspace{5pt}
+
 Note that while the three vector fields
 \bi{rrCl}
 \frac{\partial}{\partial x^m} \cl &  \SL(2,\C) & \to &  T\SL(2,\C)\\
 & \biggl(\begin{matrix}a & b \\ c & d\end{matrix}\biggr) & \mapsto & \tvb{x}{m}{\left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)}
 \ei
-are not individually left-invariant, their linear combination with coefficients $D^m_{\phantom{m}i}$ is indeed left-invariant. Recall that these vector fields
-\ben[label=\roman*)]
-\item are $\C$-linear maps
-\bi{rrCl}
-\frac{\partial}{\partial x^m}\cl &\mathcal{C}^\infty(\SL(2,\C))&\xrightarrow{\sim} &\mathcal{C}^\infty(\SL(2,\C))\\
-& f & \mapsto & \partial_m(f\circ x^{-1})\circ x;
-\ei
-\item satisfy the Leibniz rule
+are not individually left-invariant, their linear combination with coefficients $D^m_{\phantom{m}i}$ is indeed left-invariant.\\ 
+
+Hence we found 
 \bse
-\frac{\partial}{\partial x^m} (fg) = f\frac{\partial}{\partial x^m}(g)+g\frac{\partial}{\partial x^m}(f);
+j\biggl(\tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \in \sl(2,\C) 
 \ese
-\item act on the coordinate functions $x^i\in \mathcal{C}^\infty(\SL(2,\C))$ as
-\bse
-\frac{\partial}{\partial x^m} (x^i) = \partial_m (x^i \circ x^{-1})\circ x = \partial_m ({\proj_i}\circ x \circ x^{-1}) \circ x =\delta^i_m\circ x= \delta^i_m,
-\ese
-since the composition of a constant function with any composable function is just the constant function.
-\een
-Hence, we have an expansion of the images of the basis of $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ under $j$:
-\bi{rCl}
-j\biggl( \tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) & = & x^1  \frac{\partial}{\partial x^1} - x^2\frac{\partial}{\partial x^2}  + x^3\frac{\partial}{\partial x^3} \\
-j\biggl( \tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) & = & x^1 \frac{\partial}{\partial x^2}  \\
-j\biggl( \tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) & = & x^2\, \frac{\partial}{\partial x^1} + \tfrac{1+x^2x^3}{x^1} \frac{\partial}{\partial x^3}  .
-\ei
+
+\vspace{5pt}
+
 We now have to calculate the bracket (in $\sl(2,\C)$) of every pair of these. We can also do them all at once, which is a good exercise in index gymnastics. We have
 \bse
 \biggl[j\biggl( \tvb{x}{i}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) ,j\biggl( \tvb{x}{k}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\biggr) \biggr] =  \left[  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m}, D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n}\right].
 \ese
+
+\vspace{5pt}
+
 Letting this act on an arbitrary $f\in \mathcal{C}^\infty(\SL(2,\C))$, by definition
 \bse
 \left[  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m}, D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n}\right](f) :=  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} \Bigl( D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} (f)\Bigr) -  D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} \Bigl(D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m}(f)\Bigr).
 \ese
+
+\vspace{5pt}
+
 The first term gives
 \bi{rCl}
  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} \Bigl( D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} (f)\Bigr) & = &  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} ( D^n_{\phantom{n}k}\, \partial_n (f\circ x^{-1})\circ x)\\
@@ -552,86 +622,148 @@ The first term gives
 & = & D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k})\,(\partial_n (f\circ x^{-1})\circ x) +  D^m_{\phantom{m}i}D^n_{\phantom{n}k} \,\partial_m(\partial_n (f\circ x^{-1})\circ x\circ x^{-1})\circ x\\
 & = & D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k})\,(\partial_n (f\circ x^{-1})\circ x) +  D^m_{\phantom{m}i}D^n_{\phantom{n}k} \,\partial_m\partial_n (f\circ x^{-1})\circ x.
 \ei
-Similarly, we have
+
+\vspace{5pt}
+
+Similarly, for the second term
 \bse
 D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} \Bigl(  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (f)\Bigr) = D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} (D^m_{\phantom{m}i})\,(\partial_m (f\circ x^{-1})\circ x) +  D^n_{\phantom{n}k}D^m_{\phantom{m}i}\,\partial_n\partial_m (f\circ x^{-1})\circ x.
 \ese
+
+\vspace{5pt}
+
 Hence, recalling that $\partial_m\partial_n=\partial_n\partial_m$ by Schwarz's theorem, we have  
 \bi{rCl}
-\left[  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m}, D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n}\right](f) &=&  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k})\, (\partial_n (f\circ x^{-1})\circ x) +  \cancel[gray]{D^m_{\phantom{m}i}D^n_{\phantom{n}k} \,\partial_m\partial_n (f\circ x^{-1})\circ x}\\
-& & \negmedspace {} - D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} (D^m_{\phantom{m}i})\,(\partial_m (f\circ x^{-1})\circ x) - \cancel[gray]{D^n_{\phantom{n}k}D^m_{\phantom{m}i}\,\partial_n\partial_m (f\circ x^{-1})\circ x}\\
+\left[  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m}, D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n}\right](f) &=&  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k})\, (\partial_n (f\circ x^{-1})\circ x) +  \cancel{D^m_{\phantom{m}i}D^n_{\phantom{n}k} \,\partial_m\partial_n (f\circ x^{-1})\circ x}\\
+& & \negmedspace {} - D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n} (D^m_{\phantom{m}i})\,(\partial_m (f\circ x^{-1})\circ x) - \cancel{D^n_{\phantom{n}k}D^m_{\phantom{m}i}\,\partial_n\partial_m (f\circ x^{-1})\circ x}\\
 & = & \Bigl( D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k}) - D^m_{\phantom{m}k}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}i})\Bigr)\partial_n (f\circ x^{-1})\circ x\\
 & = & \Bigl( D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k}) - D^m_{\phantom{m}k}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}i})\Bigr)\frac{\partial}{\partial x^n} (f),
 \ei
-where we relabelled some dummy indices. Since the $f\in\mathcal{C}^\infty(\SL(2,\C))$ was arbitrary,
+
+\vspace{5pt}
+
+where we relabelled some dummy indices. \\
+
+Since the $f\in\mathcal{C}^\infty(\SL(2,\C))$ was arbitrary,
 \bse
 \left[  D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m}, D^n_{\phantom{n}k}\, \frac{\partial}{\partial x^n}\right] =  \Bigl( D^m_{\phantom{m}i}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}k}) - D^m_{\phantom{m}k}\, \frac{\partial}{\partial x^m} (D^n_{\phantom{n}i})\Bigr)\frac{\partial}{\partial x^n} .
 \ese
-We can now evaluate this explicitly. For $i=1$ and $k=2$, we have
+
+\vspace{5pt}
+
+We can now evaluate this explicitly for each basis vector. \\
+
+For $i=1$ and $k=2$, we have
 \bi{rCl}
-\left[  D^m_{\phantom{m}1} \frac{\partial}{\partial x^m}, D^n_{\phantom{n}2} \frac{\partial}{\partial x^n}\right] &=&  \Bigl( \cancel[gray]{D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}2})} - D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}1})\Bigr)\frac{\partial}{\partial x^1}\\
+\left[  D^m_{\phantom{m}1} \frac{\partial}{\partial x^m}, D^n_{\phantom{n}2} \frac{\partial}{\partial x^n}\right] &=&  \Bigl( \cancel{D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}2})} - D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}1})\Bigr)\frac{\partial}{\partial x^1}\\
 & &\negmedspace{}+  \Bigl( D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}2}) - D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}1})\Bigr)\frac{\partial}{\partial x^2}\\
-& & \negmedspace{}+ \Bigl( \cancel[gray]{D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}2})} - D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}1})\Bigr)\frac{\partial}{\partial x^3}\\
+& & \negmedspace{}+ \Bigl( \cancel{D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}2})} - D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}1})\Bigr)\frac{\partial}{\partial x^3}\\
 & = & -D^1_{\phantom{1}2}\frac{\partial}{\partial x^1}+(D^1_{\phantom{1}1}+D^2_{\phantom{2}2})\frac{\partial}{\partial x^2}-D^3_{\phantom{3}2}\frac{\partial}{\partial x^3}\\
 & = & 2x^1 \frac{\partial}{\partial x^2}.
 \ei
+
+\vspace{5pt}
+
 Similarly, we compute
 \bi{rCl}
 \left[  D^m_{\phantom{m}1} \frac{\partial}{\partial x^m}, D^n_{\phantom{n}3} \frac{\partial}{\partial x^n}\right] &=&  \Bigl( D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}3}) - D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}1})\Bigr)\frac{\partial}{\partial x^1}\\
-& &\negmedspace{}+  \Bigl( \cancel[gray]{D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}3})} - D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}1})\Bigr)\frac{\partial}{\partial x^2}\\
+& &\negmedspace{}+  \Bigl( \cancel{D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}3})} - D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}1})\Bigr)\frac{\partial}{\partial x^2}\\
 & & \negmedspace{}+ \Bigl( D^m_{\phantom{m}1} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}3}) - D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}1})\Bigr)\frac{\partial}{\partial x^3}\\
 & = & -2x^2\frac{\partial}{\partial x^1}-2(\tfrac{1+x^2x^3}{x^1})\frac{\partial}{\partial x^3}
 \ei
+
+\vspace{5pt}
+
 and
 \bi{rCl}
-\left[  D^m_{\phantom{m}2} \frac{\partial}{\partial x^m}, D^n_{\phantom{n}3} \frac{\partial}{\partial x^n}\right] &=&  \Bigl( D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}3}) - \cancel[gray]{D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}2})}\Bigr)\frac{\partial}{\partial x^1}\\
-& &\negmedspace{}+  \Bigl( \cancel[gray]{D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}3})} - D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}2})\Bigr)\frac{\partial}{\partial x^2}\\
-& & \negmedspace{}+ \Bigl( D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}3}) - \cancel[gray]{D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}2})}\Bigr)\frac{\partial}{\partial x^3}\\
+\left[  D^m_{\phantom{m}2} \frac{\partial}{\partial x^m}, D^n_{\phantom{n}3} \frac{\partial}{\partial x^n}\right] &=&  \Bigl( D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}3}) - \cancel{D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^1_{\phantom{1}2})}\Bigr)\frac{\partial}{\partial x^1}\\
+& &\negmedspace{}+  \Bigl( \cancel{D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}3})} - D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^2_{\phantom{2}2})\Bigr)\frac{\partial}{\partial x^2}\\
+& & \negmedspace{}+ \Bigl( D^m_{\phantom{m}2} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}3}) - \cancel{D^m_{\phantom{m}3} \frac{\partial}{\partial x^m} (D^3_{\phantom{3}2})}\Bigr)\frac{\partial}{\partial x^3}\\
 & = & (D^2_{\phantom{2}1}-D^1_{\phantom{1}3})\frac{\partial}{\partial x^1}+D^2_{\phantom{2}3}\frac{\partial}{\partial x^2}-D^3_{\phantom{3}2}\frac{\partial}{\partial x^3}\\
 & = & x^1 \frac{\partial}{\partial x^1}- x^2\frac{\partial}{\partial x^2} + x^3\frac{\partial}{\partial x^3},
 \ei
-where the differentiation rules that we have used come from the definition of the vector field $\frac{\partial}{\partial x^m}$, the Leibniz rule, and the action on co-ordinate functions.
 
-By applying $j^{-1}$, which is just evaluation at the identity, to these vector fields, we finally see that the induced Lie bracket on $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ satisfies
+\vspace{5pt}
+
+where the deleted parts come from the zeros in $D^m_i$. \\
+
+So now we know the commutator in $\sl(2, \C)$.
+\bse
+[j(X_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}),j(Y_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)})]_{\sl(2, \C)}
+\ese
+
+\vspace{5pt}
+
+The only thing that remains in order to fully obtain the commutator back in $T_eG$ is simply to apply $j^{-1}$, since remember that
+\bse
+[X_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}, Y_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}]_{T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)} := j^{-1} ([j(X_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}),j(Y_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)})]_{\sl(2, \C)})
+\ese
+
+\vspace{5pt}
+
+Hence, by applying $j^{-1}$, which is just evaluation at the identity, to these vector fields, we finally see that the induced Lie bracket on $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ satisfies
 
 \bi{rCl}
 \biggl[\tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},\tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \biggr] & = & 2\tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\\[4pt]
 \biggl[\tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},\tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \biggr] & = & -2\tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\\[4pt]
 \biggl[\tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},\tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \biggr] & = & \tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}.
 \ei
+
+\vspace{5pt}
+
+which can be rewritten as
+\bi{rCl}
+\biggl[\tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},\tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \biggr] & = & 0\tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + 2\tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + 0\tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\\[4pt]
+\biggl[\tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},\tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \biggr] & = & 0\tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + 0\tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + (-2)\tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\\[4pt]
+\biggl[\tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)},\tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} \biggr] & = & 1\tvb{x}{1}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + 0\tvb{x}{2}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)} + 0\tvb{x}{3}{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}
+\ei
+
+\vspace{5pt}
+
 Hence, the structure constants of $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ with respect to the co-ordinate basis are
 \bse
 C^2_{\phantom{2}12} = 2, \qquad C^3_{\phantom{3}13}=-2,\qquad C^1_{\phantom{1}23}=1,
 \ese
 with all other being either zero or related to these by anti-symmetry.
 
-\subsection{The simplicity of \texorpdfstring{$\sl(2,\C)$}{sl(2,C)}}
-We have seen that the non-zero structure constants of $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ are
-\bse
-C^2_{\phantom{2}12} = 2, \qquad C^3_{\phantom{3}13}=-2,\qquad C^1_{\phantom{1}23}=1,
-\ese
-plus those related by anti-symmetry. 
-\bp
-Two Lie algebras $A$ and $B$ are isomorphic if, and only if, there exists a basis of $A$ and a basis of $B$ in which the structure constants of $A$ and $B$ are the same.
-\ep
-Since we have already proved that $T_eG\cong_{\mathrm{Lie \, alg}}\mathcal{L}(G)$ for any Lie group $G$, we can deduce the existence of a basis $\{X_1,X_2,X_2\}$ of $\sl(2,\C)$ with respect to which the structure constants are those listed above. In other words, we have
+However remember from the Lie algebra part of the notes that two Lie algebras $L$ and $L'$ are isomorphic if, and only if, there exists a basis of $L$ and a basis of $L'$ in which the structure constants of $L$ and $L'$ are the same.\\
+
+Since we have already proved that $T_eG\cong_{\mathrm{Lie \, alg}}\mathcal{L}(G)$ for any Lie group $G$, we can deduce the existence of a basis $\{X^{(1)},X^{(2)},X^{(3)}\}$ of $\sl(2,\C)$ with respect to which the structure constants are those listed above .\\
+
+\br
+From now on we will be writing $\{X^{(1)},X^{(2)},X^{(3)}\}$ as $\{X_1,X_2,X_3\}$ since this is the common notation. However, do not be confused by thinking that $\{X_1,X_2,X_3\}$ are tangent vectors at points $1$, $2$ and $3$.
+\er
+
+Hence, finally we induce from the basis and the structure constants of $T_{\left(\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}\right)}\SL(2,\C)$ a basis and structure constants of $\sl(2,\C)$ as
 \bi{rCl}
 [X_1,X_2] & = & 2X_2,\\
 {[X_1,X_3]} & = & -2X_3,\\
 {[X_2,X_3]} & = & X_1.
 \ei
-In this basis, the Killing form of $\sl(2,\C)$ has components
+
+\br 
+This is quite familiar since it coincides with our familiar commutation relations that the matrices of $\SL(2,\C)$ satisfy. However, we have to keep in mind that nothing has been mentioned regarding matrices. $\{X_1,X_2,X_3\}$ are abstract vector fields and not matrices. However, in the next chapter we will see the connection between those two when we will talk about representation theory.
+\er
+
+Now that we found the structure constants of $\sl(2,\C)$ we can use them in order to classify it. We will follow the steps we explained in the corresponding Lie algebra chapter of the notes.\\
+
+In the basis $\{X_1,X_2,X_3\}$, the Killing form of $\sl(2,\C)$ has components
 \bse
 \kappa_{ij} = C^{m}_{\phantom{m}in}C^{n}_{\phantom{n}jm},
 \ese
-with all indices ranging from $1$ to $3$. Explicitly, we have
+with all indices ranging from $1$ to $3$. \\
+
+As an example, for $i=j=1$ we have
 \bi{rCl}
 \kappa_{11} & = & C^{m}_{\phantom{m}1n}C^{n}_{\phantom{n}1m}\\
  & = & \cancel{C^{1}_{\phantom{1}1n}C^{n}_{\phantom{n}11}} + C^{2}_{\phantom{2}1n}C^{n}_{\phantom{n}12} + C^{3}_{\phantom{3}1n}C^{n}_{\phantom{n}13}\\
  & = & C^{2}_{\phantom{2}12}C^{2}_{\phantom{2}12} + C^{3}_{\phantom{3}13}C^{3}_{\phantom{3}13}\\
  & = & 8.
 \ei
-Since $\kappa$ is symmetric, we only need to determine $\kappa_{ij}$ for $i\leq j$. By writing the components in a $3\times 3$ array, we find
+
+Similarly we can compute all the other components. (Since $\kappa$ is symmetric, we only need to determine $\kappa_{ij}$ for $i\leq j$). \\
+
+After computing all the components we can write them in a $3\times 3$ array, i.e
 \bse
 [\kappa_{ij}] = \left(\begin{matrix}8 & 0 & 0 \\ 0 & -8 & 0 \\ 0 & 0 & 8\end{matrix}\right),
 \ese
@@ -639,9 +771,9 @@ which is just shorthand for
 \bse
 \kappa(X_1,X_1) = 8, \qquad 
 \kappa(X_2,X_2) = -8, \qquad 
-\kappa(X_3,X_3) = 8,
+\kappa(X_3,X_3) = 8, \qquad
+\kappa(X_i,X_j)=0, \forall i\neq j
 \ese
-and $\kappa(X_i,X_j)=0$ whenever $i\neq j$.
 
 \bp
 The Lie algebra $\sl(2,\C)$ is semi-simple.
@@ -652,21 +784,21 @@ Since the diagonal entries of $\kappa$ are all non-zero, the Killing form is non
 \eq
 
 \br
-There is one more thing that can be read off from the components of $\kappa$, namely, that it is an \emph{indefinite} form, i.e.\ the sign of $\kappa(X,X)$ can be positive or negative depending on which $X\in \sl(2,\C)$ we pick.
+There is one more thing that can be read off from the components of $\kappa$, namely, that it is an \emph{indefinite} form, i.e.\ the sign of $\kappa(X,X)$ can be positive or negative depending on which $X\in \sl(2,\C)$ we pick. \\
 
 A result from Lie theory states that the Killing form on the Lie algebra of a compact Lie group is always negative semi-definite, i.e.\ $\kappa(X,X)$ is always negative or zero, for all $X$ in the Lie algebra. Hence, we can conclude that $\SL(2,\C)$ is not a compact Lie group.
 \er
-In fact, $\sl(2,\C)$ is more than just semi-simple.
 
 \bp
 The Lie algebra $\sl(2,\C)$ is simple.
 \ep
+
+\bq
 Recall that a Lie algebra is said to be simple if it contains no non-trivial ideals, and that an ideal $I$ of a Lie algebra $L$ is a Lie subalgebra of $L$ such that
 \bse
 \forall \, x \in I : \forall \, y\in L : \ [x,y] \in I.
 \ese
 
-\bq
 Consider the ideal of $\sl(2,\C)$
 \bse
 I := \{\alpha X_1+\beta X_2 + \gamma X_3 \mid \alpha,\beta,\gamma \text{ restricted so that $I$ is an ideal}\}.
@@ -685,8 +817,6 @@ We need to choose $\alpha,\beta,\gamma$ so that the results always land back in 
 \een
 In all cases, we have $I=0$. Therefore, there are no non-trivial ideals of $\sl(2,\C)$.
 \eq
-
-\subsection{The roots and Dynkin diagram of \texorpdfstring{$\sl(2,\C)$}{sl(2,C)}}
 
 By observing the bracket relations of the basis elements of $\sl(2,\C)$, we can see that
 \bse
@@ -707,12 +837,16 @@ whereby
 \ad(h) X_2 & = &\lambda_2(h) X_2,\\
 \ad(h) X_3 & = & \lambda_3(h) X_3.
 \ei
-Then, $\lambda_2$ and $\lambda_3$ are called the roots of $\sl(2,\C)$, so that the root set is $\Phi=\{\lambda_2,\lambda_3\}$. Of course, we are mainly interested in a subset $\Pi\ss \Phi$ of fundamental roots, which satisfies
+Then, $\lambda_2$ and $\lambda_3$ are called the roots of $\sl(2,\C)$, so that the root set is $\Phi=\{\lambda_2,\lambda_3\}$. \\
+
+Of course, we are mainly interested in a subset $\Pi\ss \Phi$ of fundamental roots, which satisfies
 \ben[label=\roman*)]
 \item $\Pi$ is a linearly independent subset of $H^*$;
 \item for any $\lambda\in \Phi$, we have $\lambda \in \lspan_{\epsilon,\N}(\Pi)$.
 \een
-We can choose $\Pi:=\{\lambda_2\}$, even though $\Pi:=\{\lambda_3\}$ would work just as well. Since $|\Pi|=1$, the Weyl group is generated by the single Weyl transformation
+We can choose $\Pi:=\{\lambda_2\}$, even though $\Pi:=\{\lambda_3\}$ would work just as well.  \\
+
+Since $|\Pi|=1$, the Weyl group is generated by the single Weyl transformation
 \bi{rrCl}
 s_{\lambda_2}\cl & H^*_\R & \to & H^*_\R\\
 & \mu & \mapsto & \mu - 2\frac{\kappa^*(\lambda_2,\mu)}{\kappa^*(\lambda_2,\lambda_2)}\lambda_2 .
@@ -721,7 +855,9 @@ Recall that we can recover the entire root set $\Phi$ by acting on the fundament
 \bse
 s_{\lambda_2}(\lambda_2) = \lambda_2- 2\frac{\kappa^*(\lambda_2,\lambda_2)}{\kappa^*(\lambda_2,\lambda_2)}\lambda_2 = \lambda_2-2\lambda_2 = -\lambda_2 = \lambda_3,
 \ese
-as expected. Since there is only one fundamental root, the Cartan matrix is actually just a $1\times 1$ matrix. Its only entry is a diagonal entry, and since $\sl(2,\C)$ is simple,
+as expected. \\
+
+Since there is only one fundamental root, the Cartan matrix is actually just a $1\times 1$ matrix. Its only entry is a diagonal entry, and since $\sl(2,\C)$ is simple,
  we have
 \bse
 C = (2). 
@@ -732,148 +868,4 @@ The Dynkin diagram of $\sl(2,\C)$ is simply
 \draw[fill=white] (0,0) circle[radius=0.15];
 \end{tikzpicture}
 \end{center}
-Hence, with reference to the Cartan classification, we have $A_1 = \sl(2,\C)$.
-
-\subsection{Reconstruction of \texorpdfstring{$A_2$}{A2} from its Dynkin diagram}
-
-We have seen an example of how to construct the Dynkin diagram of a Lie algebra, albeit the simplest of this kind. Let us now consider the opposite direction. We will start from the  Dynkin diagram
-\begin{center}
-\begin{tikzpicture}
-\draw (0,0) -- (1.25,0);
-\draw[fill=white] (0,0) circle[radius=0.15];
-\draw[fill=white] (1.25,0) circle[radius=0.15];
-\end{tikzpicture}
-\end{center}
-We immediately see that we have two fundamental roots, i.e.\ $\Pi = \{\pi_1,\pi_2\}$, since there are two circles in the diagram. The bond number is $n_{12} = 1$, so the two fundamental roots have the same length. Moreover, by definition
-\bse
-1=n_{12} = C_{12}C_{21}
-\ese
-and since the off-diagonal entries of the Cartan matrix are non-positive integers, the only possibility is $C_{12}=C_{21}=-1$, so that we have
-\bse
-C = \biggl( \begin{matrix}2 & -1\\ -1 & 2\end{matrix}\biggr).
-\ese
-To determine the angle $\varphi$ between $\pi_1$ and $\pi_2$, recall that
-\bse
-1 = n_{12} = 4 \cos^2\varphi,
-\ese
-and hence $|\cos\varphi|=\frac{1}{2}$. There are two solutions, namely $\varphi=60^\circ$ and $\varphi=120^\circ$.
-\begin{center}
-\begin{tikzpicture}[xscale=0.8,yscale=1.6]
-\draw[->] (-1,0) -- (7.2,0) node[below] {$x$};
-\draw[->] (0,-1.5) -- (0,1.5) node[left] {$y$};
-\foreach \i/\j in {-2/-1,-1/-\frac{1}{2},1/\frac{1}{2},2/1} {
-\draw (-0.1,0.5*\i) -- (0.1,0.5*\i) node[left=3pt] {$\j$};
-}
-\draw (0,0) node[below left] {$0$};
-\draw[gray,dashed] (0,0.5) -| (pi/3,0);
-\draw (pi/3,0) node[below] {$60^\circ$};
-\draw[gray,dashed] (0,-0.5) -| (2*pi/3,0);
-\draw (2*pi/3,0) node[above] {$120^\circ$};
-\draw (pi,0.05) -- (pi,-0.05) node[below] {$180^\circ$};
-\draw (2*pi,-0.05) -- (2*pi,0.05) node[above] {$360^\circ$};
-\draw[thick,smooth,samples=100,variable=\x,domain=0:2*pi] plot(\x,{cos(deg(\x))}) node[right] {$\cos x$};
-\end{tikzpicture}
-\end{center}
-By definition, we have
-\bse
-\cos \varphi = \frac{\kappa^*(\pi_1,\pi_2)}{|\pi_1|\,|\pi_2|},
-\ese
-and therefore
-\bse
-0 > C_{12} = 2\frac{\kappa^*(\pi_1,\pi_2)}{\kappa^*(\pi_1,\pi_1)} = 2\frac{|\pi_1|\,|\pi_2|\cos\varphi}{\kappa^*(\pi_1,\pi_1)} = 2\frac{|\pi_2|}{|\pi_1|}\cos\varphi.
-\ese
-It follows that $\cos\varphi<0$, and hence $\varphi = 120^\circ$. We can thus plot the two fundamental roots in a plane as follows.
-\begin{center}
-\begin{tikzpicture}[scale=2]
-\draw[thin,lightgray] (-1.5,0) -- (1.5,0);
-\draw[thin,lightgray] (0,-1.25) -- (0,1.25);
-\draw[thick,->] (0,0) -- (1,0) node[above right] {$\pi_1$};
-\draw[thick,->] (0,0) -- (cos 120,sin 120) node[above left] {$\pi_2$};
-\end{tikzpicture}
-\end{center}
-We can determine all the other roots in $\Phi$ by repeated action of the Weyl group. For instance, we easily find that $s_{\pi_1}(\pi_1) = -\pi_1$ and $s_{\pi_2}(\pi_2) = -\pi_2$. We also have
-\bse
-s_{\pi_1}(\pi_2)  =  \pi_2-2\frac{\kappa^*(\pi_1,\pi_2)}{\kappa^*(\pi_1,\pi_1)}\pi_1 = \pi_2 -2 (-\tfrac{1}{2}) \pi_1 = \pi_1+\pi_2.
-\ese
-Finally, we have $s_{\pi_1+\pi_2}(\pi_1+\pi_2)=-(\pi_1+\pi_2)$.  Any further action by Weyl transformations simply permutes these roots. Hence, we have
-\bse
-\Phi=\{\pi_1,-\pi_1,\pi_2,-\pi_2,\pi_1+\pi_2,-(\pi_1+\pi_2)\}
-\ese
-and these are all the roots.
-\begin{center}
-\begin{tikzpicture}[scale=2]
-\draw[thin,lightgray] (-1.5,0) -- (1.5,0);
-\draw[thin,lightgray] (0,-1.25) -- (0,1.25);
-\draw[thick,->] (0,0) -- (1,0) node[above right] {$\pi_1$};
-\draw[thick,->] (0,0) -- (cos 120,sin 120) node[above left] {$\pi_2$};
-\draw[thick,->] (0,0) -- (-1,0) node[above left] {$-\pi_1$};
-\draw[thick,->] (0,0) -- (-cos 120,-sin 120) node[below right] {$-\pi_2$};
-\draw[thick,->] (0,0) -- (cos 60,sin 60) node[above right] {$\pi_1+\pi_2$};
-\draw[thick,->] (0,0) -- (-cos 60,-sin 60) node[below left] {$-(\pi_1+\pi_2)$};
-\end{tikzpicture}
-\end{center}
-Since $H^*=\lspan_\C(\Pi)$, we have $\dim H^*=2$, thus the dimension of the Cartan  subalgebra is also $2$. Since $|\Phi|=6$, we know that any Cartan-Weyl basis of the Lie algebra $A_2$ must have $2+6=8$ elements. Hence, the dimension of $A_2$ is 8. 
-
-To complete our reconstruction of $A_2$, we would now like to understand how its bracket behaves. This amounts to finding its structure constants. Note that since $\dim A_2 = 8$, the structure constants $C^k_{\phantom{h}ij}$ consist of $8^3=512$ complex numbers (not all unrelated, of course).
-
-Denote by $\{h_1,h_2,e_3,\ldots,e_8\}$ a Cartan-Weyl basis of $A_2$, so that $H=\lspan_\C(\{h_1,h_2\})$ and the $e_\alpha$ are eigenvectors of every $h\in H$.
-Since $A_2$ is simple, $H$ is abelian and hence
-\bse
-[h_1,h_2] = 0 \quad \Rightarrow \quad C^k_{\phantom{k}12}=C^k_{\phantom{k}21} = 0, \quad \forall \, 1\leq k \leq 8.
-\ese
-To each $e_\alpha$, for $3\leq \alpha \leq 8$, there is an associated $\lambda_\alpha\in\Phi$ such that
-\bse
-\forall \, h \in H : \ \ad(h)e_\alpha = \lambda_\alpha(h) e_\alpha.
-\ese
-In particular, for the basis elements $h_1,h_2$,
-\bi{rCl}
-[h_1,e_\alpha] & = & \ad(h_1)e_\alpha = \lambda_\alpha(h_1) e_\alpha,\\
-{[h_2,e_\alpha]} & = & \ad(h_2)e_\alpha = \lambda_\alpha(h_2) e_\alpha,
-\ei
-so that we have
-\bi{rCl}
-C^1_{\phantom{1}1\alpha}=C^2_{\phantom{2}1\alpha}=0, &\quad & C^\alpha_{\phantom{\alpha}1\alpha} = \lambda_\alpha(h_1) , \quad \forall \, 3\leq \alpha \leq 8,\\
-C^1_{\phantom{1}2\alpha}=C^2_{\phantom{2}2\alpha}=0, &\quad & C^\alpha_{\phantom{\alpha}2\alpha} = \lambda_\alpha(h_2) , \quad \forall \, 3\leq \alpha \leq 8.
-\ei
-Finally, we need to determine $[e_\alpha,e_\beta]$. By using the Jacobi identity, we have
-\bi{rCl}
-[h_i,[e_\alpha,e_\beta]] & = & - [e_\alpha,[e_\beta,h_i]] -[e_\beta,[h_i,e_\alpha]] \\
-& = & - [e_\alpha,-\lambda_\beta(h_i)e_\beta] -[e_\beta,\lambda_\alpha(h_i)e_\alpha] \\
-& = & \lambda_\beta(h_i) [e_\alpha,e_\beta] +\lambda_\alpha(h_i)[e_\alpha,e_\beta]\\
-& = & (\lambda_\alpha(h_i)+\lambda_\beta(h_i) )[e_\alpha,e_\beta]  ,
-\ei
-that is,
-\bse
-\ad(h_i)[e_\alpha,e_\beta] =  (\lambda_\alpha(h_i)+\lambda_\beta(h_i) )[e_\alpha,e_\beta].
-\ese
-
-If $\lambda_\alpha+\lambda_\beta\in\Phi$, we have $[e_\alpha,e_\beta]=\xi e_\gamma$ for some $3\leq \gamma \leq 8$ and $\xi \in \C$. Let us label the roots in our previous plot as
-\begin{center}
-\def\arraystretch{1.25}
-\setlength\tabcolsep{10pt}
-\begin{tabular}{c|c|c|c|c|c}
-$\lambda_3$ & $\lambda_4$ & $\lambda_5$ & $\lambda_6$ & $\lambda_7$ & $\lambda_8$\\
-\hline
-$\pi_1$ & $\pi_2$ & $\pi_1+\pi_2$ & $-\pi_1$ & $-\pi_2$ & $-(\pi_1+\pi_2)$ 
-\end{tabular}
-\end{center}
-Then, for example
-\bse
-\ad(h)[e_3,e_4] = (\pi_1+\pi_2)(h) [e_3,e_4],
-\ese
-and hence $[e_3,e_4]$ is an eigenvector of $\ad(h)$ with eigenvalues $(\pi_1+\pi_2)(h)$. But so is $e_5$! Hence, we must have $[e_3,e_4]=\xi e_5$ for some $\xi \in \C$. Similarly, $[e_5,e_7]=\xi e_3$, and so on.
-
-If $\lambda_\alpha+\lambda_\beta\notin\Phi$, then in order for the equation above to hold, we must have either $[e_\alpha,e_\beta]=0$ (so both sides are zero), or $\lambda_\alpha(h)+\lambda_\beta(h)=0$ for all $h$, i.e.\ $\lambda_\alpha+\lambda_\beta=0$ as a functional. In the latter case, we must have $[e_\alpha,e_\beta]\in H$. This follows from a stronger version of the maximality property of the Cartan subalgebra $H$ of a simple Lie algebra $L$, namely that
-\bse
-\big(\forall \, h \in H : [h,x] = 0 \big)  \Rightarrow x\in H.
-\ese
-Summarising, we have
-\bse
-[e_\alpha,e_\beta] =
-\begin{cases}
-\xi e_\gamma & \text{if } \lambda_\alpha+\lambda_\beta\in\Phi\\
-\in H & \text{if } \lambda_\alpha+\lambda_\beta=0\\
-0 & \text{otherwise }
-\end{cases}
-\ese
-and these relations con be used to determine the remaining structure constants of $A_2$.
+Hence, with reference to the Cartan classification, we have $ \sl(2,\C) = A_1$.

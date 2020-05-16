@@ -1258,71 +1258,90 @@ and going through the above again, using the dual basis $\{(\d x^a)_p\}$ instead
 Now that we have defined the tangent and cotangent bundles, we are ready to define fields.
 
 \bd [Vector Field]
-Let $M$ be a smooth manifold, and let $TM\xrightarrow{\,\pi\,}M$ be its tangent bundle. A \textbf{vector field}\index{vector field} $\sigma$ on $M$ is a smooth section of the tangent bundle, i.e.\ a smooth map $\sigma\cl M \to TM$ such that $\pi \circ \sigma = \id_M$.
+Let $M$ be a smooth manifold, and let $TM\xrightarrow{\,\pi\,}M$ be its tangent bundle. A \textbf{vector field}\index{vector field} $X$ on $M$ is a smooth section of the tangent bundle, i.e.\ a smooth map $X \cl M \to TM$ such that $\pi \circ X = \id_M$.
 \bse
 \begin{tikzcd}
 TM \ar[dd,shift left,"\pi"] \\
 \\
-M \ar[uu,shift left,"\sigma"]
+M \ar[uu,shift left,"X"]
 \end{tikzcd}
 \ese
 \ed
 
+This might seem as an abuse of notation since we already use the symbol ``$X$" to denote the tangent vectors $X_{\gamma, p}$. However, there is a good reason for that since the two are very closely related. Namely, a vector field $X$ can act on a point $p$ of a manifold $M$ and produce the corresponding vector $X_{\gamma, p}$ in the sense that
+\bse
+X(p) = X_{\gamma, p}
+\ese
+
+From now on, we will drop the curve $\gamma$ from the notation of the vectors $X_{\gamma, p}$ and we will simply write a vector as $X_p$. We do that for two reason: first in order to reduce the complexity of the equations (although one has to remember that there is a curve $\gamma$ associated to every $X_p$) and second in order to have a consistency with the way we denote covectors (i.e $\omega_p$) where we do not denote the curve $\gamma$. Hence from now on the notation that we will be using is
+\bse
+X(p) = X_p  \implies X(p) f =  X_p f 
+\ese
+
+where $X$ is a vector field and when acted on a point $p$ produces the corresponding vector $X_p$. (From time to time, when we will need to apply the definition of a vector, we will remind ourselves that $X_p$ actually means $X_{\gamma, p}$ so we are not confused from the $\gamma$ in the definition).
+
 \bd [$\Gamma(TM)$]
 We denote the set of all vector fields on $M$ by $\Gamma(TM)$\index{$\Gamma(TM)$}, i.e.\
 \bse
-\Gamma(TM) := \{\sigma \cl M \to TM \mid \sigma \text{ is smooth and }\pi\circ\sigma=\id_M\}.
+\Gamma(TM) := \{X \cl M \to TM \mid X \text{ is smooth and }\pi\circ X =\id_M\}.
 \ese
 \ed
 
 This is, in fact, the standard notation for the set of all sections on a bundle.
 
 \br
-An equivalent definition is that a vector field $\sigma$ on $M$ is a derivation on the algebra $\mathcal{C}^\infty(M)$, i.e.\ an $\R$-linear map
+An equivalent definition is that a vector field $X$ on $M$ is a derivation on the algebra $\mathcal{C}^\infty(M)$, i.e.\ an $\R$-linear map
 \bse
-\sigma\cl \mathcal{C}^\infty(M) \xrightarrow{\sim} \mathcal{C}^\infty(M)
+X \cl \mathcal{C}^\infty(M) \xrightarrow{\sim} \mathcal{C}^\infty(M)
 \ese
 
 \vspace{5pt}
 
 satisfying the Leibniz rule (with respect to pointwise multiplication on $\mathcal{C}^\infty(M)$) 
 \bse
-\sigma (fg) = g\, \sigma(f) + f \, \sigma(g).
+X (fg) = g\, X(f) + f \, X(g).
 \ese
-This definition is better suited for some purposes, and later on we will switch from one to the other without making any notational distinction between them.
+
+This definition is better suited for some purposes, and later on we will switch from one to the other without making any notational distinction between them. It also implies that a field $X$ instead of acting on a point $p$ of the manifold, it can act directly to a function $f$ (and then evaluate at point $p$)
+\bse
+(Xf)(p)  = X(p) f = X_p f
+\ese
 \er
 
+\vspace{3pt}
+
 We can equip the set $\Gamma(TM)$ with the following operations. The first is our, by now familiar, pointwise addition:
+
 \bi{rrCl}
 \oplus \cl & \Gamma(TM) \times \Gamma(TM) & \to & \Gamma(TM)\\
-& (\sigma,\tau) & \mapsto & \sigma \oplus \tau,
+& (X,Y) & \mapsto & X \oplus Y,
 \ei
 where
 \bi{rrCl}
-\sigma \oplus \tau \cl & M & \to & \Gamma(TM)\\
-& p & \mapsto & (\sigma \oplus \tau)(p) := \sigma(p) + \tau(p).
+X \oplus Y \cl & M & \to & \Gamma(TM)\\
+& p & \mapsto & (X \oplus Y)(p) := X(p) + Y(p) = X_p + Y_p.
 \ei
 Note that the $+$ on the right hand side above is the addition in $T_pM$. \\
 
 More interestingly, we can define a multiplication operation not by a simple number (i.e an element of $\R$) but with a whole function (i.e an element of $ \mathcal{C}^\infty(M)$) as follows:
 \bi{rrCl}
 \odot \cl & \mathcal{C}^\infty(M) \times \Gamma(TM) & \to & \Gamma(TM)\\
-& (f,\sigma) & \mapsto & f\odot\sigma,
+& (f,X) & \mapsto & f \odot X,
 \ei
 where
 \bi{rrCl}
-f \odot \sigma \cl & M & \to & \Gamma(TM)\\
-& p & \mapsto & (f\odot \sigma)(p) := f(p) \sigma(p).
+f \odot X \cl & M & \to & \Gamma(TM)\\
+& p & \mapsto & (f\odot X)(p) := f(p) X(p) = f(p) X_p.
 \ei
 Note that since $f\in \mathcal{C}^\infty(M)$, we have $f(p)\in \R$ and hence the multiplication above is the scalar multiplication on $T_pM$.
 
 \br
-Of course, we could have defined $\odot$ simply as pointwise \emph{global} scaling, using the reals $\R$ instead of the real functions $\mathcal{C}^\infty(M)$. Then, since $(\R,+,\cdot)$ is an algebraic field, we would then have the obvious $\R$-vector space structure on $\Gamma(TM)$. There are two reasons why we don't do that:
+Of course, we could have defined $\odot$ simply as pointwise \emph{global} scaling, using the reals $\R$ instead of the real functions $\mathcal{C}^\infty(M)$. Then, since $(\R,+,\cdot)$ is an algebraic field, we would then have the obvious $\R$-vector space structure on $\Gamma(TM)$, that we will also be using when needed. Let us make two comment regarding this $\R$-vector space: 
 
 \begin{itemize}
-\item Since the vector field acts on the whole manifold $M$ (it assigns a value $f(p)$ on every point $p$ of the manifold) we want to be able to assign different values to different points. Otherwise we would only be able to assign the same value to every point (i.e having a constant vector field)
+\item In the case of a function instead of a number, a function $f$ acts on the whole manifold $M$ (it assigns a value $f(p)$ on every point $p$ of the manifold) and thus we are able to assign different values to different points. In the case of $\R$-vector space we can only assign the same value to every point (i.e having a constant vector field)
 
-\item A basis for the corresponding vector space would be necessarily uncountably infinite, and hence it would not provide a very useful decomposition for our vector fields. Instead, the operation $\odot$ that we have defined allows for \emph{local} scaling, i.e.\ we can scale a vector field by a different value at each point, and a much more useful decomposition of vector fields.
+\item A basis for this corresponding $\R$-vector space is necessarily uncountably infinite, and hence it does not provide a very useful decomposition for our vector fields. On the other hand the operation $\odot$ allows for \emph{local} scaling, i.e.\ we can scale a vector field by a different value at each point, and a much more useful decomposition of vector fields.
 \end{itemize}
 \er
 
@@ -1337,22 +1356,31 @@ The first view is of no use since if the triple is seen as a vector space over t
 \item $(\Gamma(TM),\oplus)$ is an abelian group, with $0\in \Gamma(TM)$ being the section that maps each $p\in M$ to the zero tangent vector in $T_pM$;
 \item $\Gamma(TM)\sm\{0\}$ satisfies:
 \ben[label=\roman*)]
-\item $\forall \, f \in \mathcal{C}^\infty(M) : \forall \, \sigma,\tau \in \Gamma(TM) \sm\{0\}: f\odot(\sigma\oplus \tau)=(f\odot \sigma)\oplus (f\odot \tau)$;
-\item $\forall \, f,g \in \mathcal{C}^\infty(M) : \forall \,  \sigma \in \Gamma(TM)\sm\{0\}: (f+g)\odot \sigma= (f \odot \sigma) \oplus (g \odot \sigma)$;
-\item $\forall \, f,g \in \mathcal{C}^\infty(M) :  \sigma \in \Gamma(TM)\sm\{0\} : (f\bullet g)\odot \sigma= f \odot (g \odot \sigma)$;
-\item $\forall \, \sigma \in \Gamma(TM) \sm\{0\} : 1 \odot \sigma = \sigma$,
+\item $\forall \, f \in \mathcal{C}^\infty(M) : \forall \, X,Y \in \Gamma(TM) \sm\{0\}: f\odot(X\oplus Y)=(f\odot X)\oplus (f\odot Y)$;
+\item $\forall \, f,g \in \mathcal{C}^\infty(M) : \forall \,  X \in \Gamma(TM)\sm\{0\}: (f+g)\odot X= (f \odot X) \oplus (g \odot X)$;
+\item $\forall \, f,g \in \mathcal{C}^\infty(M) :  X \in \Gamma(TM)\sm\{0\} : (f\bullet g)\odot X= f \odot (g \odot X)$;
+\item $\forall \, X \in \Gamma(TM) \sm\{0\} : 1 \odot X = X$,
 \een
 where $1\in \mathcal{C}^\infty(M)$ maps every $p\in M$ to $1\in \R$.
 \end{itemize}
 
 which are precisely the axioms for a vector space! Hence given that the triple $(\mathcal{C}^\infty(M),+,\bullet)$ is a ring, that turns the triple $(\Gamma(TM),\oplus,\odot)$ to a $\mathcal{C}^\infty(M)$-module. \\
 
-And this of course is of crucial importance since as we showed in previous chapters, if a ring $R$ is not a division ring, then a $R$-module does not need to have a basis. And since as we already said $(\mathcal{C}^\infty(M),+,\bullet)$ is not a division ring, the vector fields as $\mathcal{C}^\infty(M)$-modules  do not need to have a basis! And this is a shame, since if they would have a basis (let's say $X_i$) we would be able to write a vector field $\sigma$ as:
+And this of course is of crucial importance since as we showed in previous chapters, if a ring $R$ is not a division ring, then a $R$-module does not need to have a basis. And since as we already said $(\mathcal{C}^\infty(M),+,\bullet)$ is not a division ring, the vector fields as $\mathcal{C}^\infty(M)$-modules  do not need to have a basis! And this is a shame, since if they would have a basis (let's say $E_i$) we would be able to write a vector field $X$ as:
 \bse
-\sigma = \sigma^i X_i
+X = X^i  E_i
 \ese
 
-where $\sigma^i $ would be functions acting as components of the vector field! \\
+where $X^i$ would be functions acting as components of the vector field! \\
+
+Let us mention one final thing that will be useful later. Recall from the Lie algebra chapter in the notes, that a Lie algebra over an algebraic field $K$ is a vector space over $K$ equipped with a Lie bracket $[-,-]$, i.e.\ a $K$-bilinear, antisymmetric map which satisfies the Jacobi identity. \\
+
+Considering $\Gamma(TM)$ as an infinite-dimensional $R$-vector space, for two vector fields $X,Y\in \Gamma(TM)$, we can define their Lie bracket to be the commutator of the fields
+\bse
+[X,Y] (f):= X(Y(f))-Y(X(f))
+\ese
+
+for any $f\in \mathcal{C}^\infty(M)$. Now we can check that indeed $[X,Y]\in\Gamma(TM)$, and that the bracket is $\R$-bilinear, antisymmetric and satisfies the Jacobi identity. Thus, $(\Gamma(TM),+,\cdot,[-,-])$ is an infinite-dimensional Lie algebra over $\R$. (We usually suppress the $+$ and $\cdot$ when they are clear from the context). \\
 
 In a similar manner one can construct a covector field through the use of the cotangent bundle, and from there to define the set of all covector fields $\Gamma(T^*M)$ and subsequently a triple $(\Gamma(T^*M), \oplus, \odot)$.\\
 
@@ -1361,12 +1389,12 @@ Finally using $\Gamma(TM)$  and $\Gamma(T^*M)$ we can define a tensor field.
 \bd [Tensor Field]
 Let $M$ be a smooth manifold. A smooth \textbf{$(r,s)$ tensor field}\index{tensor field} $\tau$ on $M$ is a $\mathcal{C}^\infty(M)$-multilinear map
 \bse
-\tau\cl \underbrace{\Gamma(T^*M)\times \cdots \times \Gamma(T^*M)}_{r \text{ copies}} \times \underbrace{\Gamma(TM)\times \cdots \times \Gamma(TM)}_{s \text{ copies}} \to \mathcal{C}^\infty(M).
+\tau \cl \underbrace{\Gamma(T^*M)\times \cdots \times \Gamma(T^*M)}_{r \text{ copies}} \times \underbrace{\Gamma(TM)\times \cdots \times \Gamma(TM)}_{s \text{ copies}} \to \mathcal{C}^\infty(M).
 \ese
 \ed
-The equivalence of this to the bundle definition is due to the pointwise nature of tensors. For instance, a covector field $\omega\in \Gamma(T^*M)$ can act on a vector field $X\in\Gamma(TM)$ to yield a smooth function $\omega(X)\in\mathcal{C}^\infty(M)$ by
+The equivalence of this to the bundle definition is due to the pointwise nature of tensors. For instance, a covector field $\omega\in \Gamma(T^*M)$ can act on a vector field $X\in\Gamma(TM)$ to yield a smooth function $\omega(X)\in\mathcal{C}^\infty(M)$ which if it is evaluated at a specific point $p$ will yield a specific number
 \bse
-(\omega(X))(p) := \omega(p)(X(p)).
+(\omega(X))(p) := \omega(p)(X(p)) = \omega_p (X_p)
 \ese
 
 \vspace{5pt}
@@ -1386,14 +1414,17 @@ We can also define the tensor product of tensor fields
 \ei
 analogously to what we had with tensors on a vector space, i.e.\
 \bi{rl}
-(\tau\otimes \sigma)(\omega_1,\ldots,\omega_p,\omega_{p+1},\ldots,\omega_{p+r},X_1,&\ldots,X_q,X_{q+1},\ldots,X_{q+s})\\
-:=\tau(\omega_1,\ldots,\omega_p,X_1,&\ldots,X_q)\,\sigma(\omega_{p+1},\ldots,\omega_{p+r},X_{q+1},\ldots,X_{q+s}),
+(\tau \otimes \sigma)(\omega^{(1)},\ldots,\omega^{(p)},\omega^{(p+1)},\ldots,\omega^{(p+r)},X^{(1)},&\ldots,X^{(q)} , X^{(q+1)},\ldots, X^{(q+s)})\\
+:=\tau(\omega^{(1)},\ldots,\omega^{(p)}, X^{(1)},&\ldots,X^{(q)})\,\sigma(\omega^{(p+1)},\ldots,\omega^{(p+r)},X^{(q+1)},\ldots, X^{(q+s)}),
 \ei
-with $\omega_i\in \Gamma(T^*M)$ and $X_i\in \Gamma(TM)$. \\
+
+where the upper indices with the parenthesis count different vector and covector fields i.e $\omega^{(i)}\in \Gamma(T^*M)$ and $X^{(i)}\in \Gamma(TM)$. \\
 
 Therefore, we can think of tensor fields on $M$ either as sections of some tensor bundle on $M$, that is, as maps assigning to each $p\in M$ a tensor ($\R$-multilinear map) on the vector space $T_pM$, or as a $\mathcal{C}^\infty(M)$-multilinear map as above. We will always try to pick the most useful or easier to understand, based on the context. \\
 
-To summarize, fields are the generalization of the definitions of vectors, covectors and tensors at a specific point $p$ of $M$, to every possible point $p$ of manifold $M$, hence to the whole manifold $M$. In a similar way we can generalize the concept of the gradient of $f$ at $p\in M$ in the gradient of $f$ at $M$.\\
+To summarize, fields are the generalization of the definitions of vectors, covectors and tensors at a specific point $p$ of $M$, to every possible point $p$ of manifold $M$, hence to the whole manifold $M$. In a similar way we can generalize the concept of the gradient of $f$ at $p\in M$ in the gradient of $f$ at $M$.
+
+\subsubsection{Generalize (Gradient At A Point) To (Gradient Of The Manifold)}
 
 Recall the definition of the gradient operator at a point $p\in M$. We can extend that definition to define the ($\R$-linear) operator:
 \bi{rrCl}
@@ -1432,35 +1463,32 @@ Note that the operator $\d$ satisfies the Leibniz rule
 \d (fg) = g\, \d f + f\, \d g.
 \ese
 
+\subsubsection{Generalize (Push-Forward \& Pull-Back At A Point) To (Push-Forward \& Pull-Back Of A Manifold)}
+
 Finally, we want to generalize the concepts of push-forward and pull-back from a point to the whole manifold (a.k.a from a vector/covector to a vector/covector field). For a good reason we will first start with the pull-back. \\
 
-To avoid confusion, for this part we will denote a covector as $W$ and a covector field as $\omega$. Recall that given a smooth map $\phi\cl M \to N$ the definition of a pull-back for a covector was
+Recall that given a map $\phi\cl M \to N$ between smooth manifolds we defined the pull-back of $\phi$ at $p\in M$ as the linear map:
 \bi{rrCl}
 (\phi^*)_p \cl & T^*_{\phi(p)}N & \xrightarrow{\sim} & T^*_pM\\
-& W & \mapsto & (\phi^*)_p(W),
+& \omega_{\phi(p)} & \mapsto & (\phi^*)_p(\omega_{\phi(p)}),
 \ei
-where $(\phi^*)_p(W)$ is defined as
+where $(\phi^*)_p(\omega_{\phi(p)})$ is defined as
 \bi{rrCl}
-(\phi^*)_p(W) \cl & T_pM & \xrightarrow{\sim} & \R\\
-& X & \mapsto & (\phi^*)_p(W) (X) := W((\phi_*)_p(X)).
+(\phi^*)_p(\omega_{\phi(p)}) \cl & T_pM & \xrightarrow{\sim} & \R\\
+& X_{\gamma,p} & \mapsto & (\phi^*)_p(\omega_{\phi(p)}) (X_{\gamma,p}) := \omega_{\phi(p)}((\phi_*)_p(X_{\gamma,p})).
 \ei
 
 Now we can simply extend the definition of a pull-back for a covector at point $p$ denoted $(\phi^*)_p$, to this of a pull-back for a covector field on a manifold $M$ denoted $\phi^*$, by simpy acting with $(\phi^*)_p$ at every point $p$ of the manifold $M$
 \bi{rrCl}
-\phi^* \cl & T^*N & \to & T^*M\\
+\phi^* \cl & \Gamma(T^*N )& \to & \Gamma(T^*M)\\
 & \omega & \mapsto & \phi^*(\omega)
 \ei
-where  now $\omega$ is a covector field and not just a covector, and $ \phi^*(\omega)$ is defined for every point $p$ of $M$ as
+where $ \phi^*(\omega)$ evaluated at a point $p$ of $M$ is
 \bse
-\phi^* (\omega) (p) := (\phi^*)_p(W)
+\phi^* (\omega)(p) := (\phi^*)_p (\omega_{\phi(p)})
 \ese
 
-where $W$ is the the corresponding covector that the covector field $\sigma$ produces at point $p$. It is a common thing to this point to drop the $p$ from the pull-back of covectors and simply write: 
-\bse
-(\phi^* \omega)|_p := \phi^* (W|_p)
-\ese
-
-which actually means that the pull-back of a covector field evaluated at point $p$ is equal to the pull-back of the covector $W|_p$ generated by the covector field $\omega$ at point $p$ (a.k.a $W|_p = \omega(p)$) . From now on we will be using this equation to switch from covector field to covector equations, although practically it's the same thing from a different perspective. \\
+Hence, the pull-back of a covector field evaluated at point $p$ is equal to the pull-back of the covector $\omega_{\phi(p)}$ generated by the covector field $\omega$ at point $\omega_{\phi(p)}$.\\
 
 While the pull-back can be extended from covectros to covector fields without problems, the push-forward of a vector cannot be generalized to the push-forward of a vector field unless the underlying map $\phi$ is a diffeomorphism between the manifold $M$ and $N$. Let's see why. \\
 
@@ -1470,34 +1498,32 @@ On the other hand, in the case of a push forward we get two problems coming from
 
 Of course, if the map $\phi$ is both surjective and injective, hence bijective, hence has an inverse, then none of this problems exist any more, since then the case is similar to the case of pull-backs (both directions of the map behave similarly). But recall that a bijection between topological spaces is called a ``homeomorphism", and moreover if the map is smooth (which in the case of smooth manifolds by definition always is) then the smooth ``homeomorphism" is called  a``diffeomorphism".\\
 
-So we ended up to our initial conclusion that the push-forward of a vector can be generalized to the push-forward of a vector field only if the underlying map $\phi$ is a diffeomorphism between the manifold $M$ and $N$.\\
+So we ended up to our initial conclusion that the push-forward of a vector can be generalized to the push-forward of a vector field only if the underlying map $\phi$ is a diffeomorphism between the manifold $M$ and $N$. Then we can simply follow the same procedure as with the pull-back and define the push-forward of a vector field by simply acting with the push-forward at every point $\phi(p)$ on the manifold $N$. \\
 
-Then we can simply follow the same procedure as with the pull-back and define the push-forward of a vector field by simpy acting with the push-forward at every point $\phi(p)$ on the manifold $N$. Recall that the push-forward of $\phi$ at $p\in M$ is the linear map:
+
+More specifically, recall that given a map $\phi\cl M \to N$ between smooth manifolds we defined the push-forward of $\phi$ at $p\in M$ as the linear map
 \bi{rrCl}
 (\phi_*)_p \cl & T_pM & \xrightarrow{\sim} & T_{\phi(p)}N\\
-& X & \mapsto & (\phi_*)_p(X)
+& X_{\gamma,p} & \mapsto & (\phi_*)_p(X_{\gamma,p})
 \ei
-where $(\phi_*)_p(X)$ is defined as
+where $(\phi_*)_p(X_{\gamma,p})$ is defined as
 \bi{rrCl}
-(\phi_*)_p(X) \cl & \mathcal{C}^\infty(N) & \xrightarrow{\sim} & \R\\
-& f & \mapsto & (\phi_*)_p (X) f := X(f \circ \phi).
+(\phi_*)_p(X_{\gamma,p}) \cl & \mathcal{C}^\infty(N) & \xrightarrow{\sim} & \R\\
+& f & \mapsto & (\phi_*)_p (X_{\gamma,p}) f := X_{\gamma,p}(f \circ \phi).
 \ei
-Now we can simply extend this definition to a push-forward for a vector field by simpy acting with the push-forward at every point $p$ of the manifold $M$
+
+Now we can simply extend the definition of a push-forward for a vector at point $p$ denoted $(\phi_*)_p$, to this of a push-forward for a vector field on a manifold $M$ denoted $\phi*$, by simpy acting with the push-forward at every point $p$ of the manifold $M$
 \bi{rrCl}
-\phi_* \cl & TM & \to & TN\\
-& \sigma & \mapsto & \phi_*(\sigma)
+\phi_* \cl & \Gamma(TM) & \to & \Gamma(TN)\\
+& X & \mapsto & \phi_*(X)
 \ei
-where $\phi_*(\sigma)$ is defined for every point $\phi(p)$ of $N$ as
+
+where $\phi_*(X)$ evaluated at a point $\phi(p)$ of $N$ is
 \bse
-\phi_* (\sigma) (\phi(p)) := (\phi_*)_p (X)
+\phi_* (X) (\phi(p)) := (\phi_*)_p (X_p)
 \ese
 
-As with covectors, it is a common thing to this point to drop the $p$ from the equation and simply write: 
-\bse
-(\phi_* \sigma)|_{\phi(p)} := \phi_* (X|_p)
-\ese
-
-which actually means that the push-forward of a vector field evaluated at point $\phi(p)$ is equal to the push-forward of the vector $X|_p$ generated by the vector field $\sigma$ at point $p$ (a.k.a $X|_p = X(p)$). From now on we will be using this equation to switch from vector field to vector equations, although practically it's the same thing from a different perspective. 
+Hence the push-forward of a vector field evaluated at point $\phi(p)$ is equal to the push-forward of the vector $X|_p$ generated by the vector field $X$ at point $p$.
 
 \section{Differential Forms}
 
@@ -1528,14 +1554,19 @@ We can specialise the pull-back of tensors to differential forms.
 \bd [Pull-Back On Differential Forms]
 Let $\phi\cl M \to N$ be a smooth map and let $\omega\in \Omega^n(N)$. Then we define the \textbf{pull-back} $\Phi^*(\omega)\in \Omega^n(M)$ of $\omega$ as
 \bi{rrCl}
-\Phi^*(\omega)\cl & M &\to & T^*M\\
-& p & \mapsto & \Phi^*(\omega) (p), 
+\Phi^*\cl & \Gamma(T^*N) &\to & \Gamma(T^*M)\\
+& \omega & \mapsto & \Phi^*(\omega), 
+\ei
+or equivalently 
+\bi{rrCl}
+\Phi^*\cl & \Omega^1(N) &\to & \Omega^1(M)\\
+& \omega & \mapsto & \Phi^*(\omega), 
 \ei
 where
 \bse
-\Phi^*(\omega)(p)(X_1,\ldots,X_n):=\omega (\phi(p))\bigl( \phi_*(X_1),\ldots,\phi_*(X_n) \bigr),
+\Phi^*(\omega)(X^{(1)}\ldots,X^{(n)}):=\omega \bigl( \phi_*(X^{(1)}),\ldots,\phi_*(X^{(n)}) \bigr),
 \ese
-for $X_i\in T_pM$.
+for vector fields $X^{(i)} \in \Gamma(TM)$ where $\phi_*(X^{(i)})$ is the push-forward of each vector field.
 \ed
 The map $\Phi^*\cl\Omega^n(N)\to\Omega^n(M)$ is $\R$-linear, and its action on $\Omega^0(M)$ is simply
 \bi{rrCl}
@@ -1737,10 +1768,10 @@ The \textbf{exterior derivative}\index{exterior derivative} on $M$ is the $\R$-l
 \ei
 with $\d \omega$ being defined as
 \bi{rCl}
-\d \omega (X_1,\ldots,X_{n+1}) & := & \sum_{i=1}^{n+1} (-1)^{i+1}\, X_i \bigl(\omega(X_1,\ldots,\widehat{X_i},\ldots,X_{n+1})\bigr)\\
-& & {} \negmedspace + \sum_{i<j} (-1)^{i+j}\,\omega\bigl([X_i,X_j],X_1,\ldots,\widehat{X_i},\ldots,\widehat{X_j},\ldots,X_{n+1}\bigr),
+\d \omega (X^{(1)},\ldots,X^{(n+1)}) & := & \sum_{i=1}^{n+1} (-1)^{i+1}\, X^{(i)} \bigl(\omega(X^{(1)},\ldots,\widehat{X^{(i)}},\ldots,X^{(n+1)})\bigr)\\
+& & {} \negmedspace + \sum_{i<j} (-1)^{i+j}\,\omega\bigl([X^{(i)},X^{(j)}],X^{(1)},\ldots,\widehat{X^{(i)}},\ldots,\widehat{X^{(j)}},\ldots,X^{(n+1)}\bigr),
 \ei
-where $X_i\in \Gamma(TM)$ and the hat denotes omissions.
+where $X^{(i)}\in \Gamma(TM)$ and the hat denotes omissions.
 \ed
 
 \br
@@ -1762,10 +1793,10 @@ By using the antisymmetry of the Lie bracket, we immediately get
 \ese
 Moreover, thanks to this identity, it suffices to check $\mathcal{C}^\infty(M)$-linearity in the first argument only. Additivity is easily checked
 \bi{rCl}
-\d\omega(X_1+X_2,Y) & = & (X_1+X_2)(\omega(Y))-Y(\omega(X_1+X_2))-\omega([X_1+X_2,Y])\\
-& = & X_1(\omega(Y))+X_2(\omega(Y))-Y(\omega(X_1)+\omega(X_2))-\omega([X_1,Y]+[X_2,Y])\\
-& = & X_1(\omega(Y))+X_2(\omega(Y))-Y(\omega(X_1))-Y(\omega(X_2))-\omega([X_1,Y])-\omega([X_2,Y])\\
-&=& \d\omega(X_1,Y) +\d\omega(X_2,Y).
+\d\omega(X+Y,Z) & = & (X+Y)(\omega(Z))-Z(\omega(X+Y))-\omega([X+Y,Z])\\
+& = & X(\omega(Z))+Y(\omega(Z))-Z(\omega(X)+\omega(Y))-\omega([X,Z]+[Y,Z])\\
+& = & X(\omega(Z))+Y(\omega(Z))-Z(\omega(X))-Z(\omega(Y))-\omega([X,Z])-\omega([Y,Z])\\
+&=& \d\omega(X,Z) +\d\omega(Y,Z).
 \ei
 For $\mathcal{C}^\infty(M)$-scaling, first we calculate $[fX,Y]$. Let $g\in\mathcal{C}^\infty(M)$. Then
 \bi{rCl}
@@ -2008,7 +2039,7 @@ H^n(M) \cong_\mathrm{vec} 0
 for any simply connected $M\se\R^d$.
 \ee
 
-\section{Application - Part 1: $\SL(2,\C)$}
+\section{Application: $\SL(2,\C)$ - Part 1}
 
 In this final chapter we will go through an application containing (almost) everything we have mentioned so far. More specifically, we we will examine in detail the special linear group of degree $2$ over $\C$, also known as the relativistic spin group.
 
