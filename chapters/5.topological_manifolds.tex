@@ -1268,12 +1268,43 @@ M \ar[uu,shift left,"X"]
 \ese
 \ed
 
-This might seem as an abuse of notation since we already use the symbol ``$X$" to denote the tangent vectors $X_{\gamma, p}$. However, there is a good reason for that since the two are very closely related. Namely, a vector field $X$ can act on a point $p$ of a manifold $M$ and produce the corresponding vector $X_{\gamma, p}$ in the sense that
+\vspace{5pt}
+
+This might seem as an abuse of notation since we already use the symbol ``$X$" to denote the tangent vectors $X_{\gamma, p}$. However, there is a good reason for that since the two are very closely related, as we will see right now. \\
+
+We have already defined a smooth curve on a manifold M as a smooth map $\gamma\cl \R \to M$, where $\R$ is understood as a $1$-dimensional manifold. We will now introduce the concept of the integral curve.
+
+\bd [Integral Curve]
+Let $M$ be a smooth manifold and let $X$ be a vector field on $M$. An \textbf{integral curve}\index{integral curve} of $X$ is smooth curve $\gamma\cl(-\varepsilon,\varepsilon)\to M$, with $\varepsilon > 0$, such that
+\bse
+\forall \, \lambda \in (-\varepsilon,\varepsilon) : \ X_{\gamma,\gamma(\lambda)} = X(\gamma(\lambda))
+\ese
+\ed
+
+It follows from the local existence and uniqueness of solutions to ordinary differential equations that, given any vector field $X$ and any point $p\in M$, there exist $\varepsilon >0$ and a smooth curve $\gamma\cl (-\varepsilon,\varepsilon) \to M$ with $\gamma(0)=p$ which is an integral curve of $X$. \\
+
+Moreover, integral curves are locally unique. By this we mean that if $\gamma_1$ and $\gamma_2$ are both integral curves of $Y$ through $p$, i.e.\ $\gamma_1(0)=\gamma_2(0) = p$, then $\gamma_1=\gamma_2$ on the intersection of their domains of definition.
+
+\bd [Complete Vector Field]
+A vector field is called \textbf{complete} if given an integral curve $\gamma\cl(-\varepsilon,\varepsilon)\to M$, the domain of the integral curve $(-\varepsilon,\varepsilon)$ can be extended to $\R$ and still have
+\bse
+\forall \, \lambda \in \R : \ X_{\gamma,\gamma(\lambda)} = X(\gamma(\lambda))
+\ese
+\ed
+
+We have the following result.
+\begin{theorem}
+On a compact manifold, every vector field is complete.
+\end{theorem}
+
+Since we are only dealing with compact manifolds, we can draw the following conclusion. Every (complete) vector field $X$ can act on a point $p$ of a manifold $M$ and produce the corresponding vector $X_{\gamma, p}$ in the sense that
 \bse
 X(p) = X_{\gamma, p}
 \ese
 
-From now on, we will drop the curve $\gamma$ from the notation of the vectors $X_{\gamma, p}$ and we will simply write a vector as $X_p$. We do that for two reason: first in order to reduce the complexity of the equations (although one has to remember that there is a curve $\gamma$ associated to every $X_p$) and second in order to have a consistency with the way we denote covectors (i.e $\omega_p$) where we do not denote the curve $\gamma$. Hence from now on the notation that we will be using is
+\vspace{5pt}
+
+and this is the reason why ``$X$" and $X_{\gamma, p}$ are closely related. From now on, we will drop the curve $\gamma$ from the notation of the vectors $X_{\gamma, p}$ and we will simply write a vector as $X_p$. We do that for two reason: first in order to reduce the complexity of the equations (although one has to remember that there is a curve $\gamma$ associated to every $X_p$) and second in order to have a consistency with the way we denote covectors (i.e $\omega_p$) where we do not denote the curve $\gamma$. Hence from now on the notation that we will be using is
 \bse
 X(p) = X_p  \implies X(p) f =  X_p f 
 \ese

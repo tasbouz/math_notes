@@ -869,3 +869,318 @@ The Dynkin diagram of $\sl(2,\C)$ is simply
 \end{tikzpicture}
 \end{center}
 Hence, with reference to the Cartan classification, we have $ \sl(2,\C) = A_1$.
+
+\section{Representations Of Lie Groups}
+
+Lie groups (and the associated Lie algebras) are used in physics mostly in terms of what are called representations. Very often they are even defined in terms of their concrete representations. In this chapter we took a more abstract approach by defining a Lie group as a smooth manifold with a compatible group structure, and its associated Lie algebra as the space of left-invariant vector fields, which we then showed to be isomorphic to the tangent space at the identity. However, as we defined the notion of representations for Lie algebras in the chapter of Lie algebras, we can define a similar notion of representations of lie groups. \\
+
+Given a vector space $V$, recall that the subset of $\End(V)$ consisting of the invertible endomorphisms and denoted
+\bse
+\GL(V) \equiv \Aut(V):= \{\phi\in \End(V)\mid \det \phi \neq 0\},
+\ese
+
+\vspace{5pt}
+
+forms a group under composition, called the automorphism group (or general linear group) of $V$. Moreover, if $V$ is a finite-dimensional $K$-vector space, then $V\cong_{\mathrm{vec}}K^{\dim V}$ and hence the group $\GL(V)$ can be given the structure of a Lie group via
+\bse
+\GL(V)\cong_{\mathrm{Lie \, grp}}\GL(K^{\dim V}):=\GL(\dim V,K).
+\ese
+This is, of course, if we have established a topology and a differentiable structure on $K^d$, as is the case for $\R^d$ and $\C^d$.
+
+\bd [Representation Of Lie Group]
+A \textbf{representation}\index{representation} of a Lie group $(G,\bullet)$ is a Lie group homomorphism
+\bse
+R\cl G \to \GL(V)
+\ese
+for some finite-dimensional vector space $V$.
+\ed
+Recall that $R\cl G \to \GL(V)$ is a Lie group homomorphism if it is smooth and
+\bse
+\forall \, g_1,g_2\in G : R(g_1\bullet g_2) = R(g_1)\circ R( g_2).
+\ese
+Note that, as is the case with any group homomorphism, we have
+\bse
+R(e) = \id_V \qquad \text{and}\qquad R(g^{-1}) = R(g)^{-1}.
+\ese
+\be
+Consider the Lie group $\SO(2,\R)$. As a smooth manifold, $\SO(2,\R)$ is isomorphic to the circle $S^1$. Let $U=S^1\sm\{p_0\}$, where $p$ is any point of $S^1$, so that we can define a chart $\theta\cl U \to [0,2\pi)\se\R$ on $S^1$ by mapping each point in $U$ to an ``angle'' in $[0,2\pi)$. \\
+
+\bse
+\begin{tikzpicture}[scale=0.9]
+\draw[thick] (0,0) circle [radius=2];
+\draw (0,0) -- (2,0);
+\draw (0,0) -- (2*cos 60, 2* sin 60) node[above right=-1pt] {$p$};
+\filldraw[fill=gray] (0,0) -- (0.6,0) arc (0:60:0.6) -- cycle;
+\draw (1,0.5) node {$\theta(p)$};
+\draw (-1.8,1.8) node {$U$};
+\draw[thick,fill=white] (2,0) circle [radius=0.11] node[right=3pt] {$p_0$};
+\end{tikzpicture}
+\ese
+
+\vspace{5pt}
+
+The operation
+\bse
+p_1\bullet p_2:=(\theta(p_1)+\theta(p_2))\! \mod 2\pi
+\ese
+endows $S^1\cong_{\mathrm{diff}}\SO(2,\R)$ with the structure of a Lie group. Then, a representation of $\SO(2,\R)$ is given by
+\bi{rrCl}
+R\cl & \SO(2,\R) & \to & \GL(\R^2)\\
+&  p & \mapsto & \biggl( \begin{matrix} \cos \theta(p) & \sin \theta(p) \\ -\sin \theta(p) & \cos \theta(p) \end{matrix}\biggr).
+\ei
+Indeed, the addition formula for sine and cosine imply that
+\bse
+R(p_1\bullet p_2) = R(p_1)\circ R(p_2).   
+\ese
+\ee
+
+\be
+Let $G$ be a Lie group (we suppress the $\bullet$ in this example). For each $g\in G$, define the Adjoint map
+\bi{rrCl}
+\Ad_g \cl & G & \to & G\\
+& h & \mapsto & g h g^{-1}.
+\ei
+Note the capital ``A'' to distinguish this from the adjoint map on Lie algebras. Since $\Ad_g$ is a composition of the Lie group multiplication and inverse map, it is a smooth map. Moreover, we have
+\bse
+\Ad_g(e) = geg^{-1} = gg^{-1} = e.
+\ese
+Hence, the push-forward of $\Ad_g$ at the identity is the map
+\bse
+({\Ad_g}_*)_e \cl  T_eG  \xrightarrow{\sim}   T_{\Ad_g(e)}G=T_eG.
+\ese
+Thus, we have $\Ad_g\in\End(T_eG)$. In fact, you can check that
+\bse
+({\Ad_{g^{-1}}}_*)_e\circ ({\Ad_g}_*)_e = ({\Ad_g}_*)_e\circ ({\Ad_{g^{-1}}}_*)_e = \id_{T_eG},
+\ese
+and hence we have, in particular, $\Ad_g\in\GL(T_eG)\cong_{\mathrm{Lie\,grp}}\GL(\mathcal{L}(G))$. \\
+
+\noindent We can therefore construct a map
+\bi{rrCl}
+\Ad \cl & G & \to & \GL(T_eG)\\
+& g & \mapsto & {\Ad_g}_*
+\ei
+which, as you can check, is a representation of $G$ on its Lie algebra.
+\ee
+
+\br
+Since a representation $R$ of a Lie group $G$ is required to be smooth, we can always consider its differential or push-forward at the identity
+\bse
+(R_*)_e \cl T_eG \xrightarrow{\sim} T_{\id_V}\!\GL(V).
+\ese
+Since for any $A,B\in T_eG$ we have
+\bse
+(R_*)_e[A,B] =[(R_*)_eA,(R_*)_eB],
+\ese
+the map $(R_*)_e$ is a representation of the Lie algebra of $G$ on the vector space $\GL(V)$. In fact, in the previous example we have 
+\bse
+(\Ad_*)_e = \ad,
+\ese
+where $\ad$ is the adjoint representation of $T_eG$.
+\er
+
+\section{Reconstruction Of A Lie group From Its Lie Algebra}
+
+We have seen in detail how to construct a Lie algebra from a given Lie group. We would now like to consider the inverse question, i.e.\ whether, given a Lie algebra, we can construct a Lie group whose associated Lie algebra is the given one and, if this is the case, whether this correspondence is bijective. \\
+
+We will find that the answer to the first question is affirmative. Given a Lie algebra, we will construct a Lie group via something called the exponential map. However, we can already answer in the negative the second question, since there examples of Lie groups which are not isomorphic but give rise to the same Lie algebra. Hence, the correspondence between Lie groups and Lie algebras cannot be bijective.\\
+
+Recall that in the chapter of topological manifolds we defined the integral curve $\gamma\cl(-\varepsilon,\varepsilon)\to M$ on a smooth manifold $M$ as
+\bse
+\forall \, \lambda \in (-\varepsilon,\varepsilon) : \ X_{\gamma,\gamma(\lambda)} = Y|_{\gamma(\lambda)}.
+\ese
+
+and based on that we defined a complete vector field as the vector field where the integral $(-\varepsilon,\varepsilon)$ of $\gamma$ can be extended to the whole $R$ which from there followed that for any $p$ on $M$ it is $X(p) = X_p$. \\
+
+Finally we gave a theorem that stated that on a compact manifold, every vector field is complete, and given that we only work with compact manifolds we have been using the fact that $X(p) = X_p$. \\
+
+However, on a Lie group, even if non-compact, there are always complete vector fields.
+\begin{theorem}
+Every left-invariant vector field on a Lie group is complete.
+\end{theorem}
+
+The integral curves of left-invariant vector fields are crucial in the construction of the map that allows us to go from a Lie algebra to a Lie group.
+
+\subsection{The Exponential Map}
+
+Let $G$ be a Lie group. Recall that given any $A\in T_eG$, we can define the uniquely determined left-invariant vector field $X^A:=j(A)$ via the isomorphism $j\cl T_eG \xrightarrow{\sim}\mathcal{L}(G)$ as
+\bse
+X^A|_g := (\ell_g)_* (A).
+\ese
+Then let $\gamma^A\cl \R \to G$ be the maximal integral curve of $X^A$ through $e\in G$.
+\bd
+Let $G$ be a Lie group. The \emph{exponential map}\index{exponential map} is defined as
+\bi{rrCl}
+\exp \cl & T_eG & \to & G\\
+& A & \mapsto & \exp(A):=\gamma^A(1)
+\ei
+\ed
+\begin{theorem}
+\ben[label=\roman*)]
+\item The map $\exp$ is smooth and a local diffeomorphism around $0\in T_eG$, i.e.\ there exists an open $V\se T_eG$ containing $0$ such that the restriction
+\bse
+\exp|_V\cl V \to \exp(V) \se G
+\ese
+is bijective and both $\exp|_V$ and $(\exp|_V)^{-1}$ are smooth.
+\item If $G$ is compact, then $\exp$ is surjective.
+\een
+\end{theorem}
+Note that the maximal integral curve of $X^0$ is the constant curve $\gamma^0(\lambda)\equiv e$, and hence we have $\exp(0)=e$. Then first part of the theorem then says that we can recover a neighbourhood of the identity of $G$ from a neighbourhood of the identity of $T_eG$.
+
+Since $T_eG$ is a vector space, it is non-compact (intuitively, it extends infinitely far away in every direction) and hence, if $G$ is compact, $\exp$ cannot be injective. This is because, by the second part of the theorem, it would then be a diffeomorphism $T_eG\to G$. But as $G$ is compact and $T_eG$ is not, they are not diffeomorphic.
+
+\bp
+Let $G$ be a Lie group. The image of $\exp\cl T_eG\to G$ is the connected component of $G$ containing the identity.
+\ep
+Therefore, if $G$ itself is connected, then $\exp$ is again surjective. Note that, in general, there is no relation between connected and compact topological spaces, i.e.\ a topological space can be either, both, or neither.
+
+\be
+Let $B\cl V\times V$ be a pseudo inner product on $V$. Then
+\bse
+\Ort(V) := \{\phi\in \GL(V)\mid \forall \, v,w\in V : B(\phi(v),\phi(w))=B(v,w)\}
+\ese
+is called the \emph{orthogonal group} of $V$ with respect to $B$. Of course, if $B$ or the base field of $V$ need to be emphasised, they can be included in the notation. Every $\phi\in \Ort(V)$ has determinant $1$ or $-1$. Since $\det$ is multiplicative, we have a subgroup
+\bse
+\SO(V) := \{\phi\in \Ort(V)\mid \det\phi = 1\}.
+\ese
+These are, in fact, Lie subgroups of $\GL(V)$. The Lie group $\SO(V)$ is connected while
+\bse
+\Ort(V)=\SO(V)\cup \{\phi\in \Ort(V)\mid \det \phi = -1\}
+\ese
+is disconnected. Since $\SO(V)$ contains $\id_V$, we have
+\bse
+\so(V) := T_{\id_V}\!\SO(V) = T_{\id_V}\!\Ort(V) =: \ort(V)
+\ese
+and
+\bse
+\exp(\so(V))=\exp(\ort(V))=\SO(V).
+\ese
+\ee
+
+\be
+Choosing a basis $A_1,\ldots,A_{\dim G}$ of $T_eG$ often provides a convenient co-ordinatisation of $G$ near $e$. Consider, for example, the Lorentz group
+\bse
+\Ort(3,1) \equiv \Ort(\R^4) = \{\Lambda\in \GL(\R^4)\mid \forall \, x,y\in \R^4 :  B(\Lambda(x),\Lambda(y))=B(x,y) \},
+\ese
+where $B(x,y):=\eta_{\mu\nu}x^\mu y^\nu$, with $0\leq \mu,\nu\leq 3$ and
+\bse
+[\eta^{\mu\nu}] = [\eta_{\mu\nu}] := \left( 
+  \begin{matrix}
+   -1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1
+  \end{matrix}\right).
+\ese
+The Lorentz group $\Ort(3,1)$ is $6$-dimensional, hence so is the Lorentz algebra $\ort(3,1)$. For convenience, instead of denoting a basis of $\ort(3,1)$ as $\{M^i\mid i=1,\ldots,6\}$, we will denote it as $\{M^{\mu\nu}\mid 0\leq \mu,\nu\leq 3\}$ and require that the indices $\mu,\nu$ be anti-symmetric, i.e.\
+\bse
+M^{\mu\nu} = -M^{\nu\mu }.
+\ese
+Then $M^{\mu\nu}=0$ when $\rho=\sigma$, and the set $\{M^{\mu\nu}\mid 0\leq \mu,\nu\leq 3\}$, while technically not linearly independent, contains the 6 independent elements that we want to consider as a basis. These basis elements satisfy the following bracket relation
+\bse
+[M^{\mu\nu},M^{\rho\sigma}] =\eta^{\nu\sigma} M^{\mu\rho} +\eta^{\mu\rho} M^{\nu\sigma} -\eta^{\nu\rho} M^{\mu\sigma} -\eta^{\mu\sigma} M^{\nu\rho} . 
+\ese
+Any element $\lambda\in \ort(3,1)$ can be expressed as linear combination of the $M^{\mu\nu}$,
+\bse
+\lambda = \tfrac{1}{2}\omega_{\mu\nu}M^{\mu\nu}
+\ese
+where the indices on the coefficients $\omega_{\mu\nu}$ are also anti-symmetric, and the factor of $\tfrac{1}{2}$ ensures that the sum over all $\mu,\nu$ counts each anti-symmetric pair only once. Then, we have
+\bse
+\Lambda = \exp(\lambda) = \exp(\tfrac{1}{2}\omega_{\mu\nu}M^{\mu\nu}) \in \Ort(3,1).
+\ese
+The subgroup of $\Ort(3,1)$ consisting of the the space-orientation preserving Lorentz transformations, or \emph{proper} Lorentz transformations, is denoted by $\SO(3,1)$. The subgroup consisting of the time-orientation preserving, or \emph{orthochronous}, Lorentz transformations is denoted by $\Ort^+(3,1)$. The Lie group $\Ort(3,1)$ is disconnected: its four connected components are
+\ben[label=\roman*)]
+\item $\SO^+(3,1):=\SO(3,1)\cap\Ort^+(3,1)$, also called the \emph{restricted Lorentz group}, consisting of the proper orthochronous Lorentz transformations;
+\item $\SO(3,1)\sm \Ort^+(3,1)$, the proper non-orthochronous transformations;
+\item $\Ort^+(3,1)\sm\SO(3,1)$, the improper orthochronous transformations;
+\item $\Ort(3,1)\sm (\SO(3,1)\cup\Ort^+(3,1))$, the improper non-orthochronous transformations.
+\een
+Since $\id_{\R^4}\in \SO^+(3,1)$, we have $\exp(\ort(3,1))=\SO^+(3,1)$. Then $\{M^{\mu\nu}\}$ provides a nice co-ordinatisation of $\SO^+(3,1)$ since, if we choose
+\bse
+[\omega_{\mu\nu}] = \left(
+  \begin{matrix}
+        0   &   \psi_1   &   \psi_2   &   \psi_3   \\
+    -\psi_1 &      0     &  \varphi_3 & -\varphi_2 \\
+    -\psi_2 & -\varphi_3 &      0     &  \varphi_1 \\
+    -\psi_3 &  \varphi_2 & -\varphi_1 &      0
+  \end{matrix}
+\right)
+\ese
+then the Lorentz transformation $\exp(\tfrac{1}{2}\omega_{\mu\nu}M^{\mu\nu})\in \SO^+(3,1)$ corresponds to a boost in the $(\psi_1,\psi_2,\psi_3)$ direction and a space rotation by $(\varphi_1,\varphi_2,\varphi_3)$. Indeed, in physics one often thinks of the Lie group $\SO^+(3,1)$ as being generated by $\{M^{\mu\nu}\}$.
+
+A representation $\rho\cl T_{\id_{\R^4}}\!\SO^+(3,1)\xrightarrow{\sim} \End(\R^4)$ is given by
+\bse
+\rho(M^{\mu\nu})^a_{\phantom{a}b} := \eta^{\nu a}\delta^{\mu}_b - \eta^{\mu a}\delta^{\nu}_b 
+\ese
+which is probably how you have seen the $M^{\mu\nu}$ themselves defined in some previous course on relativity theory. Using this representation, we get a corresponding representation
+\bi{rrCl}
+R\cl & \SO^+(3,1) \to \GL(\R^4)
+\ei
+via the exponential map by defining
+\bse
+R(\Lambda) = \exp(\tfrac{1}{2}\omega_{\mu\nu}\rho(M^{\mu\nu})).
+\ese
+Then, the map $\exp$ becomes the usual exponential (series) of matrices.
+\ee
+
+
+
+
+\bd
+A \emph{one-parameter subgroup}\index{one-parameter subgroup} of a Lie group $G$ is a Lie group homomorphism
+\bse
+\xi \cl \R \to G,
+\ese
+with $\R$ understood as a Lie group under ordinary addition.
+\ed
+
+\be
+Let $M$ be a smooth manifold and let $Y\in\Gamma(TM)$ be a complete vector field. The \emph{flow} of $Y$ is the smooth map
+\bi{rrCl}
+\Theta \cl & \R\times M & \to & M\\
+& (\lambda,p) & \mapsto & \Theta_\lambda(p):= \gamma_p(\lambda),
+\ei
+where $\lambda_p$ is the maximal integral curve of $Y$ through $p$. For a fixed $p$, we have
+\bse
+\Theta_{0} = \id_M, \qquad \Theta_{\lambda_1}\circ \Theta_{\lambda_2} = \Theta_{\lambda_1+\lambda_2}, \qquad \Theta_{-\lambda} = \Theta_{\lambda}^{-1}.
+\ese
+For each $\lambda\in \R$, the map $\Theta_\lambda$ is a diffeomorphism $M\to M$. Denoting by $\mathrm{Diff}(M)$ the group (under composition) of the diffeomorphisms $M\to M$, we have that the map 
+\bi{rrCl}
+\xi \cl & \R & \to & \mathrm{Diff}(M)\\
+& \lambda & \mapsto & \Theta_\lambda
+\ei
+is a one-parameter subgroup of $\mathrm{Diff}(M)$.
+\ee
+
+\begin{theorem}
+Let $G$ be a Lie group.
+\ben[label=\roman*)]
+\item Let $A\in T_eG$. The map
+\bi{rrCl}
+\xi^A\cl & \R & \to & G\\
+& \lambda & \mapsto & \xi^A(\lambda):=\exp(\lambda A)
+\ei
+is a one-parameter subgroup.
+\item Every one-parameter subgroup of $G$ has the form $\xi^A$ for some $A\in T_eG$.
+\een
+\end{theorem}
+
+Therefore, the Lie algebra allows us to study all the one-parameter subgroups of the Lie group. 
+
+\begin{theorem}
+Let $G$ and $H$ be Lie groups and let $\phi\cl G \to H$ be a Lie group homomorphism. Then, for all $A\in T_{e_G}G$, we have
+\bse
+\phi (\exp (A))= \exp ((\phi_*)_{{\scriptstyle e}_G}A).
+\ese
+Equivalently, the following diagram commutes.
+\bse
+\begin{tikzcd}
+T_{e_G}G \ar[dd,"\exp"'] \ar[rr,"(\phi_*)_{{\scriptstyle e}_G}"]&& T_{e_H}H\ar[dd,"\exp"]\\
+&&\\
+G\ar[rr,"\phi"] && H
+\end{tikzcd}
+\ese
+\end{theorem}
+In particular, for $\phi\equiv \Ad_g\cl G\to G$, we have
+\bse
+\Ad_g (\exp(A)) = \exp(({\Ad_g}_*)_eA).
+\ese
