@@ -9,9 +9,9 @@ In physics, Lie groups appear as symmetry groups of physical systems, and their 
 \bd [Lie Algebra]
 A \textbf{Lie algebra}\index{Lie algebra} $A$ over a field $K$ is an algebra whose product $[-,-]$, called \emph{Lie bracket}\index{Lie bracket}, satisfies:
 \ben[label=\roman*)]
-\item Bilinearity: $A \times A \to A$: $[av+w,z]= a [v,w] + [v,z]$
-\item Antisymmetry: $\ \forall\, v\in A : [v,v]=0$
-\item The Jacobi identity\index{Jacobi identity}: $\ \forall\, v,w,z\in A : [v,[w,z]] + [w,[z,v]] + [z,[v,w]] = 0$
+\item Bilinearity: $A \times A \to A$: $[av+w,z]= a [v,w] + [v,z]$.
+\item Antisymmetry: $\ \forall\, v\in A : [v,v]=0.$
+\item The Jacobi identity\index{Jacobi identity}: $\ \forall\, v,w,z\in A : [v,[w,z]] + [w,[z,v]] + [z,[v,w]] = 0.$
 \een
 Note that the zeros above represent the additive identity element in $A$, not the zero scalar.
 \ed
@@ -198,7 +198,7 @@ C^{n}_{\phantom{n}im}C^{m}_{\phantom{m}jk} +  C^{n}_{\phantom{n}jm}C^{m}_{\phant
 \section{The Adjoint Map \& The Killing Form}
 
 \bd [Adjoint Map]
-Let $L$ be a Lie algebra over $K$ and let $x\in L$. The \emph{adjoint map}\index{adjoint map} with respect to $x$ is the $K$-linear map:
+Let $L$ be a Lie algebra over $K$ and let $x\in L$. The \textbf{adjoint map}\index{adjoint map} with respect to $x$ is the $K$-linear map:
 \bi{rrCl}
 \ad_x\cl & L & \xrightarrow{\sim} & L\\
 & y & \mapsto & \ad_x(y):=[x,y]
@@ -345,8 +345,8 @@ The basis $\{h_1,\ldots,h_r,e_1,\ldots,e_{d-r}\}$ is known as a \emph{Cartan-Wey
 Let $L$ be a finite-dimensional semi-simple complex Lie algebra. Then:
 \ben[label=\roman*)]
 \item $L$ possesses a Cartan subalgebra.
-\item all Cartan subalgebras of $L$ have the same dimension, called the \emph{rank} of $L$.
-\item any of Cartan subalgebra $H$ of $L$ is abelian, i.e $[H,H] = 0$.
+\item All Cartan subalgebras of $L$ have the same dimension, called the \emph{rank} of $L$.
+\item Any of Cartan subalgebra $H$ of $L$ is abelian, i.e $[H,H] = 0$.
 \een
 \end{theorem}
 
@@ -421,8 +421,6 @@ The restriction of $\kappa$ to $H$ is a pseudo inner product on $H$.
 \bq
 Bilinearity and symmetry are automatically satisfied. It remains to show that $\kappa$ is non-degenerate on $H$. 
 \ben[label=\roman*)]
-\leftskip=1cm
-\rightskip=1cm
 \item Let $\{h_1,\ldots,h_r,e_{r+1},\ldots,e_{d}\}$ be a Cartan-Weyl basis of $L$ and let $\lambda_\alpha\in \Phi$. Then:
 \bi{rCl}
 \lambda_\alpha(h_j) \kappa(h_i,e_\alpha)& = & \kappa(h_i,\lambda_\alpha(h_j)e_\alpha)\\
@@ -494,8 +492,8 @@ This is indeed a surprise! Upon restriction to $H_\R^*$, instead of being weaken
 \bd [Length \& Angle]
 Let $\alpha,\beta\in H_\R^*$. Then, we define:
 \ben[label=\roman*)]
-\item The \textbf{length} of $\alpha$ as $|\alpha|:=\sqrt{\kappa^*(\alpha,\alpha)}\,$
-\item The \textbf{angle} between $\alpha$ and $\beta$ as $\ds \varphi := \cos^{-1}\biggl(\frac{\kappa^*(\alpha,\beta)}{|\alpha||\beta|}\biggr)$
+\item The \textbf{length} of $\alpha$ as $|\alpha|:=\sqrt{\kappa^*(\alpha,\alpha)}\,$.
+\item The \textbf{angle} between $\alpha$ and $\beta$ as $\ds \varphi := \cos^{-1}\biggl(\frac{\kappa^*(\alpha,\beta)}{|\alpha||\beta|}\biggr).$
 \een
 \ed
 
@@ -509,7 +507,7 @@ For any $\lambda\in \Phi\se H_\R^*$, define the linear map $s_\lambda$ called a 
 s_\lambda \cl & H_\R^* & \xrightarrow{\sim} & H_\R^*\\
 & \mu & \mapsto & s_\lambda(\mu)
 \ei
-where
+where:
 \bse
 s_\lambda(\mu):=\mu-2\frac{\kappa^*(\lambda,\mu)}{\kappa^*(\lambda,\lambda)}\,\lambda
 \ese
@@ -574,13 +572,15 @@ C_{ij} :=2\frac{\kappa^*(\pi_i,\pi_j)}{\kappa^*(\pi_i,\pi_i)}
 \ese
 \ed
 
+\vspace{2pt}
+
 \br 
 The $C_{ij}$ should not be confused with the structure constants $C^k_{\phantom{k}ij}$.
 \er
 
 \begin{theorem}To every simple finite-dimensional complex Lie algebra there corresponds a unique Cartan matrix and vice versa (up to relabelling of the basis elements).
 \end{theorem}
-Of course, not every matrix can be a Cartan matrix. For instance, since $C_{ii}=2$ (no summation implied), the diagonal entries of $C$ are all equal to $2$, while the off-diagonal entries are either zero or negative. In general, $C_{ij} \neq C_{ji}$, so the Cartan matrix is not symmetric, but if $C_{ij}=0$, then necessarily $C_{ji}=0$. \\
+Of course, not every matrix can be a Cartan matrix. For instance, since $C_{ii}=2$ (no summation implied), the diagonal entries of $C$ are all equal to $2$, while the off-diagonal entries are either zero or negative. In general, $C_{ij} \neq C_{ji}$, so the Cartan matrix is not symmetric, but if $C_{ij}=0$, then necessarily $C_{ji}=0$. \v
 
 We have thus reduced the problem of classifying the simple finite-dimensional complex Lie algebras to that of finding all the Cartan matrices. This can, in turn, be reduced to the problem of determining all the inequivalent Dynkin diagrams. 
 
@@ -592,8 +592,8 @@ n_{ij}:= C_{ij} C_{ji}
 \ed
 Note that we have:
 \bi{rCl}
-n_{ij} & = & 4\,\frac{\kappa^*(\pi_i,\pi_j)}{\kappa^*(\pi_i,\pi_i)}\,\frac{\kappa^*(\pi_j,\pi_i)}{\kappa^*(\pi_j,\pi_j)}\\
-& = & 4\, \biggl(\frac{\kappa^*(\pi_i,\pi_j)}{|\pi_i||\pi_j|}\biggr)^2\\
+n_{ij} & = & 4\,\frac{\kappa^*(\pi_i,\pi_j)}{\kappa^*(\pi_i,\pi_i)}\,\frac{\kappa^*(\pi_j,\pi_i)}{\kappa^*(\pi_j,\pi_j)}\\[5pt]
+& = & 4\, \biggl(\frac{\kappa^*(\pi_i,\pi_j)}{|\pi_i||\pi_j|}\biggr)^2\\[5pt]
 & = & 4 \cos^2\varphi
 \ei
 where $\varphi$ is the angle between $\pi_i$ and $\pi_j$. \v
@@ -622,9 +622,7 @@ $-1$ & $-3\ $ & 3
 
 \v
 
-Note that while the Cartan matrices are not symmetric, swapping any pair of $C_{ij}$ and $C_{ji}$ gives a Cartan matrix which represents the same Lie algebra as the original matrix, with two elements from the Cartan-Weyl basis swapped. This is why we have not included $(-2,-1)$ and $(-3,-1)$ in the table above. \v
-
-If $n_{ij}= 2$ or $3$, then the corresponding fundamental roots have different lengths, i.e.\ either $|\pi_i|<|\pi_j|$ or $|\pi_i|>|\pi_j|$. We also have the following result.
+Note that while the Cartan matrices are not symmetric, swapping any pair of $C_{ij}$ and $C_{ji}$ gives a Cartan matrix which represents the same Lie algebra as the original matrix, with two elements from the Cartan-Weyl basis swapped. This is why we have not included $(-2,-1)$ and $(-3,-1)$ in the table above. If $n_{ij}= 2$ or $3$, then the corresponding fundamental roots have different lengths, i.e.\ either $|\pi_i|<|\pi_j|$ or $|\pi_i|>|\pi_j|$. We also have the following result.
 
 \bp
 The roots of a simple Lie algebra have, at most, two distinct lengths.
@@ -635,14 +633,14 @@ The redundancy of the Cartan matrices highlighted above is nicely taken care of 
 \bd [Dynkin Diagram]
 A \textbf{Dynkin diagram}\index{Dynkin diagram} associated to a Cartan matrix is constructed as follows:
 \ben
-\item Draw a circle for every fundamental root in $\pi_i\in\Pi$;
+\item Draw a circle for every fundamental root in $\pi_i\in\Pi$:
 \begin{center}
 \begin{tikzpicture}
 \draw[fill=white] (0,0) circle[radius=0.15];
 \draw (0,-0.45) node {$\pi_i$};
 \end{tikzpicture}
 \end{center}
-\item Draw $n_{ij}$ lines between the circles representing the roots $\pi_i$ and $\pi_j$;
+\item Draw $n_{ij}$ lines between the circles representing the roots $\pi_i$ and $\pi_j$:
 \begin{center}
 \begin{tikzpicture}
 \draw (3.2,0) -- (3.2+1.25,0);
@@ -660,7 +658,7 @@ A \textbf{Dynkin diagram}\index{Dynkin diagram} associated to a Cartan matrix is
 }
 \end{tikzpicture}
 \end{center}
-\item If $n_{ij}=2$ or $3$, draw an arrow on the lines from the longer root to the shorter root.
+\item If $n_{ij}=2$ or $3$, draw an arrow on the lines from the longer root to the shorter root:
 \begin{center}
 \begin{tikzpicture}
 \foreach \x in {0,1} {
@@ -740,6 +738,9 @@ $D_n$ & $n \geq 4$ &
 \end{tikzpicture}
 \end{tabular}
 \end{center}
+
+\v
+
 where the restrictions on $n$ ensure that we don't get repeated diagrams (the diagram $D_2$ is excluded since it is disconnected and does not correspond to a simple Lie algebra)
 
 \item Five exceptional cases:
@@ -821,6 +822,9 @@ We immediately see that we have two fundamental roots, i.e.\ $\Pi = \{\pi_1,\pi_
 \bse
 1=n_{12} = C_{12}C_{21}
 \ese
+
+\v
+
 and since the off-diagonal entries of the Cartan matrix are non-positive integers, the only possibility is $C_{12}=C_{21}=-1$, so that we have:
 \bse
 C = \biggl( \begin{matrix}2 & -1\\ -1 & 2\end{matrix}\biggr)
@@ -1043,7 +1047,7 @@ C_{kij}:= \varepsilon_{ijk} := \begin{cases}\ 1 & \text{ if $(i\, j\, k)$ is an 
 -1 & \text{ if $(i\, j\, k)$ is an odd permutation of $(1\, 2\, 3)$}\\
 \ 0 & \text{ otherwise}.\end{cases}
 \ese
-By evaluating these, we find
+By evaluating these, we find:
 \bi{rCl}
 [J_1,J_2] & = & J_3\\
 {[J_2,J_3]} & = & J_1\\
@@ -1161,8 +1165,6 @@ A representation is \textbf{irreducible} if it is not reducible.
 \ed
 \be
 \ben[label=\roman*)]
-\leftskip=1cm
-\rightskip=1cm
 \item The representation $\rho_{\mathrm{vec}}\oplus \rho_{\mathrm{spin}}\cl \so(3,\R)\xrightarrow{\sim}\End(\R^3\oplus\C^2)$ is reducible since, for example, we have a subspace $\R^3\oplus 0$ such that:
 \bse
 \forall \, x \in \so(3,\R): \forall \, u\in \R^3\oplus 0 : \ (\rho_{\mathrm{vec}}\oplus \rho_{\mathrm{spin}}) (x)u\in\R^3\oplus 0
@@ -1180,51 +1182,51 @@ Just like the simple Lie algebras are the building blocks of all semi-simple Lie
 To every representation $\rho$ of a compact Lie algebra (i.e.\ the Lie algebra of a compact Lie group) there is associated an operator $\Omega_\rho$, called the Casimir operator. We will need some preparation in order to define it.
 
 \bd [$\rho$-Killing Form]
-Let $\rho\cl L \xrightarrow{\sim} \End(V)$ be a representation of a complex Lie algebra $L$. We define the \textbf{$\rho$-Killing form}\index{Killing form} on $L$ as 
+Let $\rho\cl L \xrightarrow{\sim} \End(V)$ be a representation of a complex Lie algebra $L$. We define the \textbf{$\rho$-Killing form}\index{Killing form} on $L$ as:
 \bi{rrCl}
 \kappa_\rho \cl & L \times L & \xrightarrow{\sim} & \C\\
-& (x,y) & \mapsto & \kappa_\rho(x,y) := \tr(\rho(x)\circ\rho(y)).
+& (x,y) & \mapsto & \kappa_\rho(x,y) := \tr(\rho(x)\circ\rho(y))
 \ei
 \ed
 Of course, the Killing form we have considered so far is just $\kappa_{\ad}$. Similarly to $\kappa_{\ad}$, every $\kappa_\rho$ is symmetric and associative with respect to the Lie bracket of $L$. 
 \bp
 Let $\rho\cl L \xrightarrow{\sim} \End(V)$ be a faithful representation of a complex semi-simple Lie algebra $L$. Then, $\kappa_\rho$ is non-degenerate.
 \ep
-Hence, $\kappa_\rho$ induces an isomorphism $L\xrightarrow{\sim}L^*$ via
+Hence, $\kappa_\rho$ induces an isomorphism $L\xrightarrow{\sim}L^*$ via:
 \bse
-L \ni x \mapsto \kappa_\rho(x,-) \in L^*.
+L \ni x \mapsto \kappa_\rho(x,-) \in L^*
 \ese
-Recall that if $\{X_1,\ldots,X_{\dim L}\}$ is a basis of $L$, then the dual basis $\{\widetilde X^1,\ldots,\widetilde X^{\dim L}\}$ of $L^*$ is defined by
+Recall that if $\{X_1,\ldots,X_{\dim L}\}$ is a basis of $L$, then the dual basis $\{\widetilde X^1,\ldots,\widetilde X^{\dim L}\}$ of $L^*$ is defined by:
 \bse
-\widetilde X^i(X_j) = \delta_j^i.
+\widetilde X^i(X_j) = \delta_j^i
 \ese
-By using the isomorphism induced by $\kappa_\rho$, we can find some $\xi_1,\ldots,\xi_{\dim L}\in L$ such that we have $\kappa(\xi_i,-)=\widetilde X^i$ or, equivalently,
+By using the isomorphism induced by $\kappa_\rho$, we can find some $\xi_1,\ldots,\xi_{\dim L}\in L$ such that we have $\kappa(\xi_i,-)=\widetilde X^i$ or, equivalently:
 \bse
-\forall \, x\in L : \ \kappa_{\rho}(x,\xi_i) = \widetilde X^i(x).
+\forall \, x\in L : \ \kappa_{\rho}(x,\xi_i) = \widetilde X^i(x)
 \ese
-We thus have
+We thus have:
 \bse
-\kappa_\rho(X_i,\xi_j) = \delta_{ij} := \begin{cases}1 & \text{if }i\neq j\\ 0 & \text{otherwise.}\end{cases}
+\kappa_\rho(X_i,\xi_j) = \delta_{ij} := \begin{cases}1 & \text{if }i\neq j\\ 0 & \text{otherwise}\end{cases}
 \ese
 
 \bp
-Let $\{X_i\}$ and $\{\xi_j\}$ be defined as above. Then
+Let $\{X_i\}$ and $\{\xi_j\}$ be defined as above. Then:
 \bse
-[X_j,\xi_k] = \sum_{m = 1}^{\dim L} C^{k}_{\phantom{k}mj}\xi_m, 
+[X_j,\xi_k] = \sum_{m = 1}^{\dim L} C^{k}_{\phantom{k}mj}\xi_m
 \ese
 where $C^{k}_{\phantom{k}mj}$ are the structure constants with respect to $\{X_i\}$.
 \ep
 
 \bq
-By using the associativity of $\kappa_\rho$, we have
+By using the associativity of $\kappa_\rho$, we have:
 \bse
-\kappa_\rho(X_i,[X_j,\xi_k]) = \kappa_\rho([X_i,X_j],\xi_k) = C^{m}_{\phantom{m}ij} \kappa_\rho(X_m,\xi_k) = C^{m}_{\phantom{m}ij} \delta_{mk} = C^{k}_{\phantom{k}ij}.
+\kappa_\rho(X_i,[X_j,\xi_k]) = \kappa_\rho([X_i,X_j],\xi_k) = C^{m}_{\phantom{m}ij} \kappa_\rho(X_m,\xi_k) = C^{m}_{\phantom{m}ij} \delta_{mk} = C^{k}_{\phantom{k}ij}
 \ese
-But we also have
+But we also have:
 \bse
-\kappa_\rho\Bigl(X_i,\sum_{m=1}^{\dim L}C^{k}_{\phantom{k}mj} \xi_m \Bigr) = \sum_{m=1}^{\dim L}C^{k}_{\phantom{k}mj} \kappa_\rho(X_i,\xi_m)  = \sum_{m=1}^{\dim L}C^{k}_{\phantom{k}mj} \delta_{im} = C^{k}_{\phantom{k}ij}.
+\kappa_\rho\Bigl(X_i,\sum_{m=1}^{\dim L}C^{k}_{\phantom{k}mj} \xi_m \Bigr) = \sum_{m=1}^{\dim L}C^{k}_{\phantom{k}mj} \kappa_\rho(X_i,\xi_m)  = \sum_{m=1}^{\dim L}C^{k}_{\phantom{k}mj} \delta_{im} = C^{k}_{\phantom{k}ij}
 \ese
-Therefore
+Therefore:
 \bse
 \forall \, 1\leq i \leq \dim L : \ \kappa_\rho\Bigl(X_i,[X_j,\xi_k]-\sum_{m=1}^{\dim L}C^{k}_{\phantom{k}mj} \xi_m \Bigr) = 0
 \ese
@@ -1232,138 +1234,144 @@ and hence, the result follows from the non-degeneracy of $\kappa_{\rho}$.
 \eq
 We are now ready to define the Casimir operator and prove the subsequent theorem.
 \bd
-Let $\rho\cl L \xrightarrow{\sim} \End(V)$ be a faithful representation of a complex (compact) Lie algebra $L$  and let $\{X_1,\ldots,X_{\dim L}\}$ be a basis of $L$. The \emph{Casimir operator}\index{Casimir operator} associated to the representation $\rho$ is the endomorphism $\Omega_\rho\cl V \xrightarrow{\sim} V$
+Let $\rho\cl L \xrightarrow{\sim} \End(V)$ be a faithful representation of a complex (compact) Lie algebra $L$  and let $\{X_1,\ldots,X_{\dim L}\}$ be a basis of $L$. The \textbf{Casimir operator}\index{Casimir operator} associated to the representation $\rho$ is the endomorphism $\Omega_\rho\cl V \xrightarrow{\sim} V$:
 \bse
-\Omega_\rho := \sum_{i=1}^{\dim L} \rho(X_i) \circ \rho(\xi_i).
+\Omega_\rho := \sum_{i=1}^{\dim L} \rho(X_i) \circ \rho(\xi_i)
 \ese
 \ed
 
 \begin{theorem}
-Let $\Omega_\rho$ the Casimir operator of a representation $\rho\cl L \xrightarrow{\sim} \End(V)$. Then
+Let $\Omega_\rho$ the Casimir operator of a representation $\rho\cl L \xrightarrow{\sim} \End(V)$. Then:
 \bse
-\forall \, x \in L : \ [\Omega_\rho,\rho(x)] = 0,
+\forall \, x \in L : \ [\Omega_\rho,\rho(x)] = 0
 \ese
 that is, $\Omega_\rho$ commutes with every endomorphism in $\im_\rho(L)$.
 \end{theorem}
 
 \bq
-Note that the bracket above is that on $\End(V)$. Let $x=x^kX_k\in L$. Then
+Note that the bracket above is that on $\End(V)$. Let $x=x^kX_k\in L$. Then:
 \bi{rCl}
 [\Omega_\rho,\rho(x)] & = &  \biggl[\, \sum_{i=1}^{\dim L} \rho(X_i) \circ \rho(\xi_i), \rho(x^kX_k)\biggr]\\
-& = & \sum_{i,k=1}^{\dim L} x^k [\rho(X_i) \circ \rho(\xi_i), \rho(X_k)].
+& = & \sum_{i,k=1}^{\dim L} x^k [\rho(X_i) \circ \rho(\xi_i), \rho(X_k)]
 \ei
-Observe that if the Lie bracket as the commutator with respect to an associative product, as is the case for $\End(V)$, we have
+Observe that if the Lie bracket as the commutator with respect to an associative product, as is the case for $\End(V)$, we have:
 \bi{rCl}
 [AB,C] & = & ABC - CBA \\
 & = & ABC - CBA -ACB +ACB \\
-& = & A[B,C] + [A,C]B. 
+& = & A[B,C] + [A,C]B
 \ei
-Hence, by applying this, we obtain
+Hence, by applying this, we obtain:
 \bi{rCl}
 \sum_{i,k=1}^{\dim L} x^k [\rho(X_i) \circ \rho(\xi_i), \rho(X_k)] & = & \sum_{i,k=1}^{\dim L} x^k \bigl(\rho(X_i) \circ [\rho(\xi_i), \rho(X_k)]+[\rho(X_i) , \rho(X_k)]\circ \rho(\xi_i)\bigr)\\
- & = & \sum_{i,k=1}^{\dim L} x^k \bigl(\rho(X_i) \circ \rho([\xi_i, X_k])+\rho([X_i,X_k])\circ \rho(\xi_i)\bigr)\\
- & = & \sum_{i,k,m=1}^{\dim L} x^k \bigl(\rho(X_i) \circ \rho(-C^{i}_{\phantom{i}mk}\xi_m)+\rho(C^{m}_{\phantom{m}ik}X_m)\circ \rho(\xi_i)\bigr)\\
- & = & \sum_{i,k,m=1}^{\dim L} x^k \bigl(-C^{i}_{\phantom{i}mk}\rho(X_i) \circ \rho(\xi_m)+C^{m}_{\phantom{m}ik}\rho(X_m)\circ \rho(\xi_i)\bigr)\\
- & = & \sum_{i,k,m=1}^{\dim L} x^k \bigl(-C^{i}_{\phantom{i}mk}\rho(X_i) \circ \rho(\xi_m)+C^{i}_{\phantom{i}mk}\rho(X_i)\circ \rho(\xi_m)\bigr)\\
-& = & 0,
+ & = & \sum_{i,k=1}^{\dim L} x^k \bigl(\rho(X_i) \circ \rho([\xi_i, X_k])+\rho([X_i,X_k])\circ \rho(\xi_i)\bigr)\\ [5pt]
+ & = & \sum_{i,k,m=1}^{\dim L} x^k \bigl(\rho(X_i) \circ \rho(-C^{i}_{\phantom{i}mk}\xi_m)+\rho(C^{m}_{\phantom{m}ik}X_m)\circ \rho(\xi_i)\bigr)\\ [5pt]
+ & = & \sum_{i,k,m=1}^{\dim L} x^k \bigl(-C^{i}_{\phantom{i}mk}\rho(X_i) \circ \rho(\xi_m)+C^{m}_{\phantom{m}ik}\rho(X_m)\circ \rho(\xi_i)\bigr)\\ [5pt]
+ & = & \sum_{i,k,m=1}^{\dim L} x^k \bigl(-C^{i}_{\phantom{i}mk}\rho(X_i) \circ \rho(\xi_m)+C^{i}_{\phantom{i}mk}\rho(X_i)\circ \rho(\xi_m)\bigr)\\ [5pt]
+& = & 0
 \ei
 where we have swapped the dummy summation indices $i$ and $m$ in the second term.
 \eq
 
 \begin{lemma}[Schur]
-If $\rho\cl L \xrightarrow{\sim} \End(V)$ is irreducible, then any operator $S$ which commutes with every endomorphism in $\im_\rho(L)$ has the form
+If $\rho\cl L \xrightarrow{\sim} \End(V)$ is irreducible, then any operator $S$ which commutes with every endomorphism in $\im_\rho(L)$ has the form:
 \bse
 S = c_\rho \id_V
 \ese
+
+\v
+
 for some constant $c_\rho\in \C$ (or $\R$, if $L$ is a real Lie algebra).
 \end{lemma}
 It follows immediately that $\Omega_\rho = c_\rho \id_V$ for some $c_\rho$ but, in fact, we can say more.
 \bp
-The Casimir operator of $\rho\cl L \xrightarrow{\sim} \End(V)$ is $\Omega_\rho = c_\rho \id_V$, where
+The Casimir operator of $\rho\cl L \xrightarrow{\sim} \End(V)$ is $\Omega_\rho = c_\rho \id_V$, where:
 \bse
-c_\rho = \frac{\dim L}{\dim V}.
+c_\rho = \frac{\dim L}{\dim V}
 \ese
 \ep
 \bq
-We have
+We have:
 \bse
 \tr(\Omega_\rho) = \tr(c_\rho\id_V) = c_\rho \dim V
 \ese
-and
+and:
 \bi{rCl}
-\tr(\Omega_\rho) & = & \tr \biggl(\, \sum_{i=1}^{\dim L} \rho(X_i) \circ \rho(\xi_i) \biggr)\\
- & = &  \sum_{i=1}^{\dim L} \tr(\rho(X_i) \circ \rho(\xi_i) )\\
- & = &  \sum_{i=1}^{\dim L} \kappa_\rho(X_i,\xi_i)\\
- & = &  \sum_{i=1}^{\dim L} \delta_{ii}\\
- & = &  \dim L ,
+\tr(\Omega_\rho) & = & \tr \biggl(\, \sum_{i=1}^{\dim L} \rho(X_i) \circ \rho(\xi_i) \biggr)\\[5pt]
+ & = &  \sum_{i=1}^{\dim L} \tr(\rho(X_i) \circ \rho(\xi_i) )\\[5pt]
+ & = &  \sum_{i=1}^{\dim L} \kappa_\rho(X_i,\xi_i)\\[5pt]
+ & = &  \sum_{i=1}^{\dim L} \delta_{ii}\\[5pt]
+ & = &  \dim L
 \ei
 which is what we wanted.
 \eq
 
 \be
-Consider the Lie algebra $\so(3,\R)$ with basis $\{J_1,J_2,J_3\}$ satisfying
+Consider the Lie algebra $\so(3,\R)$ with basis $\{J_1,J_2,J_3\}$ satisfying:
 \bse
-[J_i,J_j] = \varepsilon_{ijk}J_k,
+[J_i,J_j] = \varepsilon_{ijk}J_k
 \ese
-where we assume the summation convention on the lower index $k$. Recall that the representation $\rho_{\mathrm{vec}}\cl\so(3,\R)\xrightarrow{\sim}\End(\R^3)$ is defined by
+where we assume the summation convention on the lower index $k$. Recall that the representation $\rho_{\mathrm{vec}}\cl\so(3,\R)\xrightarrow{\sim}\End(\R^3)$ is defined by:
 \bse
 \rho_{\mathrm{vec}}(J_1) := \begin{pmatrix}0 & 0 & 0\\ 0 & 0 & -1\\ 0 & 1 & 0\end{pmatrix}, \qquad \rho_{\mathrm{vec}}(J_2) := \begin{pmatrix}0 & 0 & 1\\ 0 & 0 & 0\\ -1 & 0 & 0\end{pmatrix}, \qquad \rho_{\mathrm{vec}}(J_3) :=\begin{pmatrix}0 & -1 & 0\\ 1 & 0 & 0\\ 0 & 0 & 0\end{pmatrix}.
 \ese
-Let us first evaluate the components of $\kappa_{\rho_{\mathrm{vec}}}$. We have
+Let us first evaluate the components of $\kappa_{\rho_{\mathrm{vec}}}$. We have:
 \bi{rCl}
-(\kappa_{\rho_{\mathrm{vec}}})_{11} := \kappa_{\rho_{\mathrm{vec}}}(J_1,J_1) & = & \tr(\rho_{\mathrm{vec}}(J_1)\circ \rho_{\mathrm{vec}}(J_1)) \\
-& = & \tr((\rho_{\mathrm{vec}}(J_1))^2)\\
-& = & \tr\begin{pmatrix}0 & 0 & 0\\ 0 & 0 & -1\\ 0 & 1 & 0\end{pmatrix}^{\negmedspace 2}\\
-& = & \tr\begin{pmatrix}0 & 0 & 0\\ 0 & -1 & 0\\ 0 & 0 & -1\end{pmatrix}\\
-& = & -2.
+(\kappa_{\rho_{\mathrm{vec}}})_{11} := \kappa_{\rho_{\mathrm{vec}}}(J_1,J_1) & = & \tr(\rho_{\mathrm{vec}}(J_1)\circ \rho_{\mathrm{vec}}(J_1)) \\[5pt]
+& = & \tr((\rho_{\mathrm{vec}}(J_1))^2)\\[5pt]
+& = & \tr\begin{pmatrix}0 & 0 & 0\\ 0 & 0 & -1\\ 0 & 1 & 0\end{pmatrix}^{\negmedspace 2}\\[5pt]
+& = & \tr\begin{pmatrix}0 & 0 & 0\\ 0 & -1 & 0\\ 0 & 0 & -1\end{pmatrix}\\[5pt]
+& = & -2
 \ei
-After calculating the other components similarly, we find
+After calculating the other components similarly, we find:
 \bse
-[(\kappa_{\rho_{\mathrm{vec}}})_{ij}] = \begin{pmatrix}-2 & 0 & 0\\ 0 & -2 & 0\\ 0 & 0 & -2\end{pmatrix}.
+[(\kappa_{\rho_{\mathrm{vec}}})_{ij}] = \begin{pmatrix}-2 & 0 & 0\\ 0 & -2 & 0\\ 0 & 0 & -2\end{pmatrix}
 \ese
-Thus, $\kappa_{\rho_{\mathrm{vec}}}(J_i,\xi_j)=\delta_{ij}$ requires that we define $\xi_i := -\tfrac{1}{2} J_i$. Then, we have
+Thus, $\kappa_{\rho_{\mathrm{vec}}}(J_i,\xi_j)=\delta_{ij}$ requires that we define $\xi_i := -\tfrac{1}{2} J_i$. Then, we have:
 \bi{rCl}
-\Omega_{\rho_{\mathrm{vec}}} & := & \sum_{i=1}^{3} \rho_{\mathrm{vec}}(J_i) \circ \rho_{\mathrm{vec}}(\xi_i)\\
-& = & \sum_{i=1}^{3} \rho_{\mathrm{vec}}(J_i) \circ \rho_{\mathrm{vec}}(-\tfrac{1}{2} J_i)\\
-& = & -\frac{1}{2} \sum_{i=1}^{3} (\rho_{\mathrm{vec}}(J_i))^2\\
-& = & -\frac{1}{2} \left( \begin{pmatrix}0 & 0 & 0\\ 0 & 0 & -1\\ 0 & 1 & 0\end{pmatrix}^{\negmedspace 2}+ \begin{pmatrix}0 & 0 & 1\\ 0 & 0 & 0\\ -1 & 0 & 0\end{pmatrix}^{\negmedspace 2} +\begin{pmatrix}0 & -1 & 0\\ 1 & 0 & 0\\ 0 & 0 & 0\end{pmatrix}^{\negmedspace 2}\ \right)\\
-& = & -\frac{1}{2} \left( \begin{pmatrix}0 & 0 & 0\\ 0 & -1 & 0\\ 0 & 0 & -1\end{pmatrix}+ \begin{pmatrix}-1 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & -1\end{pmatrix} +\begin{pmatrix}-1 & 0 & 0\\ 0 & -1 & 0\\ 0 & 0 & 0\end{pmatrix} \right)\\
-& = & \begin{pmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & 1\end{pmatrix}.
+\Omega_{\rho_{\mathrm{vec}}} & := & \sum_{i=1}^{3} \rho_{\mathrm{vec}}(J_i) \circ \rho_{\mathrm{vec}}(\xi_i)\\[5pt]
+& = & \sum_{i=1}^{3} \rho_{\mathrm{vec}}(J_i) \circ \rho_{\mathrm{vec}}(-\tfrac{1}{2} J_i)\\[5pt]
+& = & -\frac{1}{2} \sum_{i=1}^{3} (\rho_{\mathrm{vec}}(J_i))^2\\[5pt]
+& = & -\frac{1}{2} \left( \begin{pmatrix}0 & 0 & 0\\ 0 & 0 & -1\\ 0 & 1 & 0\end{pmatrix}^{\negmedspace 2}+ \begin{pmatrix}0 & 0 & 1\\ 0 & 0 & 0\\ -1 & 0 & 0\end{pmatrix}^{\negmedspace 2} +\begin{pmatrix}0 & -1 & 0\\ 1 & 0 & 0\\ 0 & 0 & 0\end{pmatrix}^{\negmedspace 2}\ \right)\\[5pt]
+& = & -\frac{1}{2} \left( \begin{pmatrix}0 & 0 & 0\\ 0 & -1 & 0\\ 0 & 0 & -1\end{pmatrix}+ \begin{pmatrix}-1 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & -1\end{pmatrix} +\begin{pmatrix}-1 & 0 & 0\\ 0 & -1 & 0\\ 0 & 0 & 0\end{pmatrix} \right)\\[5pt]
+& = & \begin{pmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & 1\end{pmatrix}
 \ei
-Hence $\Omega_{\rho_{\mathrm{vec}}}=c_{\rho_{\mathrm{vec}}}\id_{\R^3}$ with $c_{\rho_{\mathrm{vec}}} = 1$, which agrees with our previous theorem since
+Hence $\Omega_{\rho_{\mathrm{vec}}}=c_{\rho_{\mathrm{vec}}}\id_{\R^3}$ with $c_{\rho_{\mathrm{vec}}} = 1$, which agrees with our previous theorem since:
 \bse
-\frac{\dim \so(3,\R)}{\dim \R^3} = \frac{3}{3} = 1.
+\frac{\dim \so(3,\R)}{\dim \R^3} = \frac{3}{3} = 1
 \ese
 \ee
 
 \be
-Let us consider the Lie algebra $\so(3,\R)$ again, but this time with representation $\rho_{\mathrm{spin}}$. Recall that this is given by
+Let us consider the Lie algebra $\so(3,\R)$ again, but this time with representation $\rho_{\mathrm{spin}}$. Recall that this is given by:
 \bse
-\rho_{\mathrm{spin}}(J_1) := -\frac{\mathrm{i}}{2}\, \sigma_1, \qquad \rho_{\mathrm{spin}}(J_2) := -\frac{\mathrm{i}}{2}\, \sigma_2, \qquad \rho_{\mathrm{spin}}(J_3) := -\frac{\mathrm{i}}{2}\, \sigma_3,
+\rho_{\mathrm{spin}}(J_1) := -\frac{\mathrm{i}}{2}\, \sigma_1, \qquad \rho_{\mathrm{spin}}(J_2) := -\frac{\mathrm{i}}{2}\, \sigma_2, \qquad \rho_{\mathrm{spin}}(J_3) := -\frac{\mathrm{i}}{2}\, \sigma_3
 \ese
-where $\sigma_1,\sigma_2,\sigma_3$ are the Pauli matrices. Recalling that $\sigma_1^2=\sigma_2^2=\sigma_3^2=\id_{\C^2}$, we calculate
+
+\v
+
+where $\sigma_1,\sigma_2,\sigma_3$ are the Pauli matrices. Recalling that $\sigma_1^2=\sigma_2^2=\sigma_3^2=\id_{\C^2}$, we calculate:
 \bi{rCl}
-(\kappa_{\rho_{\mathrm{spin}}})_{11} := \kappa_{\rho_{\mathrm{spin}}}(J_1,J_1) & = & \tr(\rho_{\mathrm{spin}}(J_1)\circ \rho_{\mathrm{spin}}(J_1)) \\
-& = & \tr((\rho_{\mathrm{spin}}(J_1))^2)\\
-& = &(-\tfrac{\mathrm{i}}{2})^2 \tr(\sigma_1^{2})\\
-& = & -\tfrac{1}{4} \tr(\id_{\C^2})\\
-& = & -1.
+(\kappa_{\rho_{\mathrm{spin}}})_{11} := \kappa_{\rho_{\mathrm{spin}}}(J_1,J_1) & = & \tr(\rho_{\mathrm{spin}}(J_1)\circ \rho_{\mathrm{spin}}(J_1)) \\[5pt]
+& = & \tr((\rho_{\mathrm{spin}}(J_1))^2)\\[5pt]
+& = &(-\tfrac{\mathrm{i}}{2})^2 \tr(\sigma_1^{2})\\[5pt]
+& = & -\tfrac{1}{4} \tr(\id_{\C^2})\\[5pt]
+& = & -1
 \ei
-Note that $\tr(\id_{\C^2})=4$, since $\tr(\id_V)=\dim V$ and here $\C^2$ is considered as a $4$-dimensional vector space over $\R$. Proceeding similarly, we find that the components of $\kappa_{\rho_{\mathrm{spin}}}$ are
+Note that $\tr(\id_{\C^2})=4$, since $\tr(\id_V)=\dim V$ and here $\C^2$ is considered as a $4$-dimensional vector space over $\R$. Proceeding similarly, we find that the components of $\kappa_{\rho_{\mathrm{spin}}}$ are:
 \bse
-[(\kappa_{\rho_{\mathrm{spin}}})_{ij}] = \begin{pmatrix}-1 & 0 & 0\\ 0 & -1 & 0\\ 0 & 0 & -1\end{pmatrix}.
+[(\kappa_{\rho_{\mathrm{spin}}})_{ij}] = \begin{pmatrix}-1 & 0 & 0\\ 0 & -1 & 0\\ 0 & 0 & -1\end{pmatrix}
 \ese
-Hence, we define $\xi_i := - J_i$. Then, we have
+Hence, we define $\xi_i := - J_i$. Then, we have:
 \bi{rCl}
-\Omega_{\rho_{\mathrm{spin}}} & := & \sum_{i=1}^{3} \rho_{\mathrm{spin}}(J_i) \circ \rho_{\mathrm{spin}}(\xi_i)\\
-& = & \sum_{i=1}^{3} \rho_{\mathrm{spin}}(J_i) \circ \rho_{\mathrm{spin}}(-J_i)\\
-& = & - \sum_{i=1}^{3} (\rho_{\mathrm{spin}}(J_i))^2\\
-& = & - \Bigl(-\frac{\mathrm{i}}{2}\Bigr)^2\, \sum_{i=1}^{3} \sigma_i^2\\
-& = & \frac{1}{4} \sum_{i=1}^{3} \id_{\C^2}\\
-& = & \frac{3}{4}\id_{\C^2},
+\Omega_{\rho_{\mathrm{spin}}} & := & \sum_{i=1}^{3} \rho_{\mathrm{spin}}(J_i) \circ \rho_{\mathrm{spin}}(\xi_i)\\[5pt]
+& = & \sum_{i=1}^{3} \rho_{\mathrm{spin}}(J_i) \circ \rho_{\mathrm{spin}}(-J_i)\\[5pt]
+& = & - \sum_{i=1}^{3} (\rho_{\mathrm{spin}}(J_i))^2\\[5pt]
+& = & - \Bigl(-\frac{\mathrm{i}}{2}\Bigr)^2\, \sum_{i=1}^{3} \sigma_i^2\\[5pt]
+& = & \frac{1}{4} \sum_{i=1}^{3} \id_{\C^2}\\[5pt]
+& = & \frac{3}{4}\id_{\C^2}
 \ei
-in accordance with the fact that
+in accordance with the fact that:
 \bse
-\frac{\dim \so(3,\R)}{\dim \C^2} = \frac{3}{4}.
+\frac{\dim \so(3,\R)}{\dim \C^2} = \frac{3}{4}
 \ese
 \ee

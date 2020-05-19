@@ -1,12 +1,18 @@
+Topology is concerned with the properties of a geometric object that are preserved under continuous deformations, such as stretching, twisting, crumpling and bending, but not tearing or gluing. \v
+
+A topological space is a set endowed with a structure, called a topology, which allows defining continuous deformation of subspaces, and, more generally, all kinds of continuity. Euclidean spaces, and, more generally, metric spaces are examples of a topological space, as any distance or metric defines a topology. The deformations that are considered in topology are homeomorphisms and homotopies. A property that is invariant under such deformations is a topological property. Basic examples of topological properties are: the dimension, which allows distinguishing between a line and a surface; compactness, which allows distinguishing between a line and a circle; connectedness, which allows distinguishing a circle from two non-intersecting circles. \v
+
+The ideas underlying topology go back to Gottfried Leibniz, who in the 17th century envisioned the geometria situs and analysis situs. Leonhard Euler's Seven Bridges of Königsberg problem and polyhedron formula are arguably the field's first theorems. The term topology was introduced by Johann Benedict Listing in the 19th century, although it was not until the first decades of the 20th century that the idea of a topological space was developed.
+
 \section{Topological Spaces}
 
-We will now discuss topological spaces based on our previous development of set theory. As we will see, a topology on a set provides the weakest structure in order to define the two very important notions of convergence of sequences to points in a set, and of continuity of maps between two sets. The definition of topology on a set is, at first sight, rather abstract. But on the upside it is also extremely simple. This definition is the result of a historical development, it is the simplest definition of topology that mathematician found to be useful.
+We will now discuss topological spaces based on our previous development of axiomatic set theory. As we will see, a topology on a set provides the weakest structure in order to define the two very important notions of convergence of sequences to points in a set, and of continuity of maps between two sets. The definition of topology on a set is, at first sight, rather abstract. But on the upside it is also extremely simple. This definition is the result of a historical development, it is the simplest definition of topology that mathematician found to be useful.
 
 \bd [Topology]
 Let $M$ be a set. A \textbf{topology}\index{topology} on $M$ is a set $\cO \se \cP(M)$ such that:
 \ben
-\item[i)] $\vn \in \cO$ and $M \in \cO$;
-\item[ii)] $\{U,V\}\se \cO \imp \bigcap\, \{U,V\} \in \cO$;
+\item[i)] $\vn \in \cO$ and $M \in \cO$.
+\item[ii)] $\{U,V\}\se \cO \imp \bigcap\, \{U,V\} \in \cO$.
 \item[iii)] $C \se \cO \imp \bigcup C \in \cO$.
 \een
 \ed
@@ -16,7 +22,7 @@ Let $M$ be a set and $\cO$ a topology on the set $M$. The pair $(M,\cO)$ is call
 \ed
 
 \br
-Unless $|M|=1$, there are (usually many) different topologies $\cO$ that one can choose on the set $M$.
+Unless $|M|=1$, there are (usually many) different topologies $\cO$ that one can choose on the set $M$. The following table summarizes the number of possible topologies (some of them might not satisfy the axioms so they fail to be topologies) given the cardinality of a set.
 \btab[H]
 \centering
 \btb{c|c}
@@ -36,8 +42,8 @@ $|M|$ & \btb{@{}c@{}}Number of\\topologies\etb\\
 \be
 Let $M = \{a,b,c\}$. Then $\cO=\{\vn,\{a\},\{b\},\{a,b\},\{a,b,c\}\}$ is a topology on $M$ since:
 \ben
-\item[i)] $\vn \in \cO$ and $M \in \cO$;
-\item[ii)] Clearly, for any $S \in \cO$, $\bigcap\,\{\vn,S\}=\vn\in\cO$ and $\bigcap\,\{S,M\}=S\in\cO$. Moreover, $\{a\}\cap\{b\}=\vn\in\cO$, $\ \{a\}\cap\{a,b\} =\{a\}\in \cO$, and $\{b\}\cap\{a,b\} =\{b\}\in \cO$;
+\item[i)] $\vn \in \cO$ and $M \in \cO$.
+\item[ii)] Clearly, for any $S \in \cO$, $\bigcap\,\{\vn,S\}=\vn\in\cO$ and $\bigcap\,\{S,M\}=S\in\cO$. Moreover, $\{a\}\cap\{b\}=\vn\in\cO$, $\ \{a\}\cap\{a,b\} =\{a\}\in \cO$, and $\{b\}\cap\{a,b\} =\{b\}\in \cO$.
 \item[iii)] Let $C\se\cO$. If $M \in C$, then $\bigcup C = M\in \cO$. If $\{a,b\} \in C$ (or $\{a\},\{b\}\in C$) but $M \notin C$, then $\bigcup C = \{a,b\}\in \cO$. If either $\{a\}\in C$ or $\{b\}\in C$, but $\{a,b\} \notin C$ and $M \notin C$, then $\bigcup C = \{a\}\in \cO$ or $\bigcup C = \{b\}\in \cO$, respectively. Finally, if none of the above hold, then $\bigcup C = \vn \in \cO$.
 \een
 \ee
@@ -45,8 +51,8 @@ Let $M = \{a,b,c\}$. Then $\cO=\{\vn,\{a\},\{b\},\{a,b\},\{a,b,c\}\}$ is a topol
 \be
 Let $M$ be a set. Then $\cO=\{\vn , M\}$ is a topology on $M$. Indeed, we have:
 \ben
-\item[i)] $\vn \in \cO$ and $M \in \cO$;
-\item[ii)] $\bigcap\, \{\vn,\vn\} = \vn \in \cO$, $\ \bigcap\, \{\vn,M\} = \vn \in \cO$, and $\bigcap\, \{M,M\} = M \in \cO$;
+\item[i)] $\vn \in \cO$ and $M \in \cO$.
+\item[ii)] $\bigcap\, \{\vn,\vn\} = \vn \in \cO$, $\ \bigcap\, \{\vn,M\} = \vn \in \cO$, and $\bigcap\, \{M,M\} = M \in \cO$.
 \item[iii)] If $M \in C$, then $\bigcup C = M \in \cO$, otherwise $\bigcup C = \vn \in \cO$.
 \een
 This is called the \emph{chaotic topology}\index{topology!chaotic} and can be defined on any set.
@@ -55,8 +61,8 @@ This is called the \emph{chaotic topology}\index{topology!chaotic} and can be de
 \be
 Let $M$ be a set. Then $\cO=\cP(M)$ is a topology on $M$. Indeed, we have:
 \ben
-\item[i)] $\vn \in \cP(M)$ and $M \in \cP(M)$;
-\item[ii)] If $U,V \in \cP(M)$, then $\bigcap\, \{U,V\} \se M$ and hence $\bigcap\, \{U,V\} \in \cP(M)$;
+\item[i)] $\vn \in \cP(M)$ and $M \in \cP(M)$.
+\item[ii)] If $U,V \in \cP(M)$, then $\bigcap\, \{U,V\} \se M$ and hence $\bigcap\, \{U,V\} \in \cP(M)$.
 \item[iii)] If $C\se\cP(M)$, then $\bigcup C \se M$, and hence $\bigcup C \in \cP(M)$.
 \een
 This is called the \emph{discrete topology}\index{topology!discrete} and can be defined on any set.
@@ -81,17 +87,17 @@ Let $M = \{a,b,c\}$ and let $\cO=\{\vn,\{a\},\{a,b\},\{a,b,c\}\}$. Then $\{a\}$ 
 
 We will now define what is called the standard topology on $\R^d$, where:
 \bse
-\R^d:=\underbrace{\R\times\R\times\cdots\times\R}_\text{$d$ times}.
+\R^d:=\underbrace{\R\times\R\times\cdots\times\R}_\text{$d$ times}
 \ese
 We will need the following auxiliary definition.
 
 \bd [Open Balls]
 For any $x\in\R^d$ and any $r \in \R^+:=\{s\in\R\mid s>0\}$, we define the \textbf{open ball} of radius $r$ around the point $x$:
 \bse
-B_r(x) := \bigl\{y\in \R^d \mid \textstyle\sqrt{\sum_{i=1}^d (y_i-x_i)^2} <r \bigr\},
+B_r(x) := \bigl\{y\in \R^d \mid \textstyle\sqrt{\sum_{i=1}^d (y_i-x_i)^2} <r \bigr\}
 \ese
 
-\vspace{5pt}
+\v
 
 where $x:=(x_1,x_2,\ldots,x_d)$ and $y:=(y_1,y_2,\ldots,y_d)$, with $x_i,y_i\in\R$.
 \ed
@@ -103,7 +109,7 @@ The quantity $\sqrt{\sum_{i=1}^d (y_i-x_i)^2}$ is usually denoted by $\|y-x\|_2$
 \bd [Standard Topology]
 The \textbf{standard topology}\index{standard topology}\index{topology!standard} on $\R^d$, denoted $\cO_\mathrm{std}$\index{$\cO_\mathrm{std}$}, is defined by:
 \bse
-U \in \cO_\mathrm{std} :\eqv \forall \, p \in U : \exists \, r \in \R^+ : B_r(p) \se U.
+U \in \cO_\mathrm{std} :\eqv \forall \, p \in U : \exists \, r \in \R^+ : B_r(p) \se U
 \ese
 \ed
 
@@ -121,9 +127,9 @@ The pair $(\R^d,\cO_\mathrm{std})$ is a topological space.
 \ese
 This proposition is of the form $\forall \, p \in \vn : Q(p)$, which was defined as being equivalent to:
 \bse
-\forall \, p : p \in \vn \imp Q(p).
+\forall \, p : p \in \vn \imp Q(p)
 \ese
-However, since $p\in\vn$ is false, the implication is true independent of $p$. Hence the initial proposition is true and thus $\vn \in \cO_\mathrm{std}$.
+However, since $p\in\vn$ is false, the implication is true independent of $p$. Hence the initial proposition is true and thus $\vn \in \cO_\mathrm{std}$. \v
 
 Second, by definition, we have $B_r(x)\se\R^d$ independent of $x$ and $r$, hence:
 \bse
@@ -136,7 +142,7 @@ p \in U \cap V :\eqv p \in U \land p \in V
 \ese
 and hence, since $U,V \in \cO_\mathrm{std}$, we have:
 \bse
-\exists \, r_1 \in \R^+ : B_{r_1}(p) \se U \quad \land \quad \exists \, r_2 \in \R^+ : B_{r_2}(p) \se V.
+\exists \, r_1 \in \R^+ : B_{r_1}(p) \se U \quad \land \quad \exists \, r_2 \in \R^+ : B_{r_2}(p) \se V
 \ese
 Let $r=\min\{r_1,r_2\}$. Then:
 \bse
@@ -145,7 +151,7 @@ B_r(p)\se B_{r_1}(p)\se U \quad \land \quad B_r(p)\se B_{r_2}(p)\se V
 and hence $B_r(p)\se U \cap V$. Therefore $U\cap V \in \cO_\mathrm{std}$.
 \item[iii)] Let $C \se \cO_\mathrm{std}$ and let $p \in \bigcup C$. Then, $p \in U$ for some $U \in C$ and, since $U \in \cO_\mathrm{std}$, we have:
 \bse
-\exists \, r \in \R^+ : B_r(p)\se U \se \bigcup C .
+\exists \, r \in \R^+ : B_r(p)\se U \se \bigcup C
 \ese
 \een
 Therefore, $\cO_\mathrm{std}$ is indeed a topology on $\R^d$.
@@ -168,16 +174,19 @@ Of course we need to prove that this is indeed a topology.
 \item[i)] Since $\vn \in \cO$ and $\vn = \vn \cap N$, we have $\vn \in \cO|_N$. Similarly, we have $M \in \cO$ and $N = M \cap N$, and thus $N \in \cO|_N$.
 \item[ii)] Let $U,V \in \cO|_N$. Then, by definition:
 \bse
-\exists \, S \in \cO : U = S \cap N \quad \land \quad \exists \, T \in \cO : V = T \cap N .
+\exists \, S \in \cO : U = S \cap N \quad \land \quad \exists \, T \in \cO : V = T \cap N
 \ese
 We thus have:
 \bse
-U \cap V = (S\cap N) \cap (T \cap N) = (S\cap T) \cap N.
+U \cap V = (S\cap N) \cap (T \cap N) = (S\cap T) \cap N
 \ese
+
+\v
+
 Since $S,T\in \cO$ and $\cO$ is a topology, we have $S\cap T \in \cO$ and hence $U\cap V \in \cO|_N$.
 \item[iii)] Let $C:=\{S_\a\mid \a \in \cA\} \se \cO|_N$. By definition, we have:
 \bse
-\forall \, \a \in \cA : \exists \, U_\a \in \cO : S_\a = U_\a \cap N.
+\forall \, \a \in \cA : \exists \, U_\a \in \cO : S_\a = U_\a \cap N
 \ese
 Then, using the notation:
 \bse
@@ -185,9 +194,9 @@ Then, using the notation:
 \ese
 and De Morgan's law, we have:
 \bse
-\bigcup_{\a\in\cA}S_\a = \bigcup_{\a\in\cA}(U_\a \cap N) = \bigg( \bigcup_{\a\in\cA}U_\a\biggr) \cap N.
+\bigcup_{\a\in\cA}S_\a = \bigcup_{\a\in\cA}(U_\a \cap N) = \bigg( \bigcup_{\a\in\cA}U_\a\biggr) \cap N
 \ese
-Since $\cO$ is a topology, we have $\bigcup_{\a\in\cA}U_\a \in \cO$ and hence $\bigcup C \in \cO|_N$.
+Since $\cO$ is a topology, we have $\bigcup_{\a\in\cA}U_\a \in \cO$ and hence $\bigcup C \in \cO|_N$. \v
 
 Thus $\cO|_N$ is a topology on $N$.
 \een
@@ -197,14 +206,14 @@ Thus $\cO|_N$ is a topology on $N$.
 \be
 Consider $(\R,\cO_\mathrm{std})$ and let:
 \bse
-N =[-1,1]:=\{x\in\R\mid -1 \leq x \leq 1\}.
+N =[-1,1]:=\{x\in\R\mid -1 \leq x \leq 1\}
 \ese
 Then $(N,\cO_\mathrm{std}|_N)$ is a topological space. The set $(0,1]$ is clearly not open in $(\R,\cO_\mathrm{std})$ since $(0,1]\notin\cO_\mathrm{std}$. However, we have:
 \bse
 (0,1] = (0,2)\cap[-1,1]
 \ese
 
-\vspace{5pt}
+\v
 
 where $(0,2) \in \cO_\mathrm{std}$ and hence $(0,1]\in\cO_\mathrm{std}|_N$, i.e.\ the set $(0,1]$ is open in $(N,\cO_\mathrm{std}|_N)$.
 \ee
@@ -215,11 +224,11 @@ Let $(M,\cO)$ be a topological space and let $\sim$ be an equivalence relation o
 M/\!\sim \ = \{[m]\in \cP(M) \mid m \in M\}
 \ese
 
-\vspace{5pt}
+\v
 
 can be equipped with the \textbf{quotient topology}\index{quotient topology}\index{topology!quotient} $\cO_{M/\sim}$ defined by:
 \bse
-\cO_{M/\sim} := \{U \in M/\!\sim \ \mid \bigcup U = \bigcup_{[a]\in U}[a] \in \cO \}.
+\cO_{M/\sim} := \{U \in M/\!\sim \ \mid \bigcup U = \bigcup_{[a]\in U}[a] \in \cO \}
 \ese
 \ed
 
@@ -230,20 +239,20 @@ q \cl & M & \to & M/\!\sim \\
 \ei
 Then we have:
 \bse
-\cO_{M/\!\sim} := \{U \in M/\!\sim \ \mid \mathrm{preim}_q(U) \in \cO \}.
+\cO_{M/\!\sim} := \{U \in M/\!\sim \ \mid \mathrm{preim}_q(U) \in \cO \}
 \ese
 
-\vspace{5pt}
+\v
 
 \be
-The \emph{circle} (or 1-sphere) is defined as the set $S^1:= \{(x,y)\in \R^2\mid x^2+y^2=1\}$ equipped with the subset topology inherited from $\R^2$. The open sets of the circle are (unions of) open arcs, i.e.\ arcs without the endpoints. Individual points on the circle are clearly not open since there is no open set of $\R^2$ whose intersection with the circle is a single point. However, an individual point on the circle is a closed set since its complement is an open arc.
+The \emph{circle} (or 1-sphere) is defined as the set $S^1:= \{(x,y)\in \R^2\mid x^2+y^2=1\}$ equipped with the subset topology inherited from $\R^2$. The open sets of the circle are (unions of) open arcs, i.e.\ arcs without the endpoints. Individual points on the circle are clearly not open since there is no open set of $\R^2$ whose intersection with the circle is a single point. However, an individual point on the circle is a closed set since its complement is an open arc. \v
 
 An alternative definition of the circle is the following. Let $\sim$ be the equivalence relation on $\R$ defined by:
 \bse
-x\sim y :\eqv \exists \, n \in \Z : x = y + 2\pi n. 
+x\sim y :\eqv \exists \, n \in \Z : x = y + 2\pi n
 \ese
 
-\vspace{5pt}
+\v
 
 Then the circle can be defined as the set $S^1:=\R/\!\sim$ equipped with the quotient topology.
 \ee
@@ -258,14 +267,14 @@ U \in \cO_{A\times B} :\eqv \forall \, p \in U : \exists \, (S,T) \in \cO_A\time
 \br
 This definition can easily be extended to $n$-fold cartesian products:
 \bse
-U \in \cO_{A_1\times \cdots \times A_n} :\eqv \forall \, p \in U : \exists \, (S_1,\ldots,S_n) \in \cO_{A_1}\times \cdots \times \cO_{A_n} : S_1\times \cdots\times S_n \se U.
+U \in \cO_{A_1\times \cdots \times A_n} :\eqv \forall \, p \in U : \exists \, (S_1,\ldots,S_n) \in \cO_{A_1}\times \cdots \times \cO_{A_n} : S_1\times \cdots\times S_n \se U
 \ese
 \er
 
 \br
 Using the previous definition, one can check that the standard topology on $\R^d$ satisfies:
 \bse
-\cO_\mathrm{std} = \cO_{\underbrace{\scriptstyle \R\times\R\times\cdots\times\R}_\text{ $d$ times}}.
+\cO_\mathrm{std} = \cO_{\underbrace{\scriptstyle \R\times\R\times\cdots\times\R}_\text{ $d$ times}}
 \ese
 Therefore, a more minimalistic definition of the standard topology on $\R^d$ would consist in defining $\cO_\mathrm{std}$ only for $\R$ (i.e.\ $d=1$) and then extending it to $\R^d$ by the product topology.
 \er
@@ -280,37 +289,37 @@ Let $M$ be a set. A \textbf{sequence}\index{sequence} (of points) in $M$ is a fu
 \bd [Convergence]
 Let $(M,\cO)$ be a topological space. A sequence $q$ in $M$ is said to \textbf{converge}\index{convergence} against a \emph{limit point}\index{limit point} $a\in M$ if:
 \bse
-\forall \, U \in \cO : a \in U \imp \exists \, N \in \N : \forall \, n > N : q(n) \in U.
+\forall \, U \in \cO : a \in U \imp \exists \, N \in \N : \forall \, n > N : q(n) \in U
 \ese
 \ed
 \br
 An open set $U$ of $M$ such that $a\in U$ is called an \emph{open neighbourhood}\index{neighbourhood} of $a$. If we denote this by $U(a)$, then the previous definition of convergence can be rewritten as:
 \bse
-\forall \, U(a): \exists \, N \in \N : \forall \, n > N : q(n) \in U.
+\forall \, U(a): \exists \, N \in \N : \forall \, n > N : q(n) \in U
 \ese
 \er
 \be
 Consider the topological space $(M,\{\vn,M\})$. Then every sequence in $M$ converges to every point in $M$. Indeed, let $q$ be any sequence and let $a \in M$. Then, $q$ converges against $a$ if:
 \bse
-\forall \, U \in \{\vn,M\} : a \in U \imp \exists \, N \in \N : \forall \, n > N : q(n) \in U.
+\forall \, U \in \{\vn,M\} : a \in U \imp \exists \, N \in \N : \forall \, n > N : q(n) \in U
 \ese
 This proposition is vacuously true for $U=\vn$, while for $U=M$ we have $q(n)\in M$ independent of $n$. Therefore, the (arbitrary) sequence $q$ converges to the (arbitrary) point $a\in M$. 
 \ee
 \be
 Consider the topological space $(M,\cP(M))$. Then only definitely constant sequences converge, where a sequence is \emph{definitely constant} with value $c\in M$ if:
 \bse
-\exists \, N \in \N : \forall \, n > N : q(n) = c.
+\exists \, N \in \N : \forall \, n > N : q(n) = c
 \ese
 This is immediate from the definition of convergence since in the discrete topology all singleton sets (i.e.\ one-element sets) are open. 
 \ee
 \be
 Consider the topological space $(\R^d,\cO_\mathrm{std})$. Then, a sequence $q\cl \N \to \R^d$ converges against $a\in \R^d$ if:
 \bse
-\forall\, \ve >0 : \exists \, N \in \N : \forall \, n > N : \|q(n)-a\|_2<\ve.
+\forall\, \ve >0 : \exists \, N \in \N : \forall \, n > N : \|q(n)-a\|_2<\ve
 \ese
 \ee
 
-\vspace{5pt}
+\v
 
 \be
 Let $M=\R$ and let $q=1-\frac{1}{n+1}$. Then, since $q$ is not definitely constant, it is not convergent in $(\R,\cP(\R))$, but it is convergent in $(\R,\cO_\mathrm{std})$.
@@ -319,7 +328,7 @@ Let $M=\R$ and let $q=1-\frac{1}{n+1}$. Then, since $q$ is not definitely consta
 \bd [Continuity]
 Let $(M,\cO_M)$ and $(N,\cO_N)$ be topological spaces and let $\phi\cl M\to N$ be a map. Then, $\phi$ is said to be \textbf{continuous}\index{continuity}\index{map!continuous} (with respect to the topologies $\cO_M$ and $\cO_N$) if:
 \bse
-\forall \, S \in \cO_N \, , \ \mathrm{preim}_\phi(S) \in \cO_M ,
+\forall \, S \in \cO_N \, , \ \mathrm{preim}_\phi(S) \in \cO_M
 \ese
 where $\mathrm{preim}_\phi(S) := \{m \in M : \phi(m) \in S\}$ is the pre-image of $S$ under the map $\phi$.
 \ed
@@ -327,36 +336,36 @@ Informally, one says that $\phi$ is continuous if the pre-images of open sets ar
 \be
 If $M$ is equipped with the discrete topology, or $N$ with the chaotic topology, then any map $\phi\cl M \to N$ is continuous. Indeed, let $S \in \cO_N$. If $\cO_M=\cP(M)$ (and $\cO_N$ is any topology), then we have:
 \bse
-\mathrm{preim}_\phi(S) = \{m \in M : \phi(m) \in S\} \se M \in \cP(M) = \cO_M.
+\mathrm{preim}_\phi(S) = \{m \in M : \phi(m) \in S\} \se M \in \cP(M) = \cO_M
 \ese
 
-\vspace{5pt}
+\v
 
 If instead $\cO_N=\{\vn,N\}$ (and $\cO_M$ is any topology), then either $S=\vn$ or $S=N$ and thus, we have:
 \bse
-\mathrm{preim}_\phi(\vn) = \vn \in \cO_M \quad \t{and} \quad \mathrm{preim}_\phi(N) = M \in \cO_M.
+\mathrm{preim}_\phi(\vn) = \vn \in \cO_M \quad \t{and} \quad \mathrm{preim}_\phi(N) = M \in \cO_M
 \ese
 \ee
 \be
 Let $M = \{a,b,c\}$ and $N=\{1,2,3\}$, with respective topologies:
 \bse
-\cO_M=\{\vn,\{b\},\{a,c\},\{a,b,c\}\} \quad \t{and} \quad \cO_N=\{\vn,\{2\},\{3\},\{1,3\},\{2,3\},\{1,2,3\}\},
+\cO_M=\{\vn,\{b\},\{a,c\},\{a,b,c\}\} \quad \t{and} \quad \cO_N=\{\vn,\{2\},\{3\},\{1,3\},\{2,3\},\{1,2,3\}\}
 \ese
 and let $\phi\cl M \to N$ by defined by:
 \bse
-\phi(a) = 2, \quad \phi(b)=1, \quad \phi(c)=2.
+\phi(a) = 2, \quad \phi(b)=1, \quad \phi(c)=2
 \ese
 Then $\phi$ is continuous. Indeed, we have:
 \begin{align*}
-\mathrm{preim}_\phi(\vn) &= \vn, & \mathrm{preim}_\phi(\{2\}) &= \{a,c\}, & \mathrm{preim}_\phi(\{3\}) &= \vn,\\ 
-\mathrm{preim}_\phi(\{1,3\}) &= \{b\}, & \mathrm{preim}_\phi(\{2,3\}) &= \{a,c\}, & \mathrm{preim}_\phi(\{1,2,3\}) &= \{a,b,c\},
+\mathrm{preim}_\phi(\vn) &= \vn, & \mathrm{preim}_\phi(\{2\}) &= \{a,c\}, & \mathrm{preim}_\phi(\{3\}) &= \vn\\ 
+\mathrm{preim}_\phi(\{1,3\}) &= \{b\}, & \mathrm{preim}_\phi(\{2,3\}) &= \{a,c\}, & \mathrm{preim}_\phi(\{1,2,3\}) &= \{a,b,c\}
 \end{align*}
 and hence $\mathrm{preim}_\phi(S) \in \cO_M$ for all $S \in \cO_N$.
 \ee
 \be
 Consider $(\R^d,\cO_\mathrm{std})$ and $(\R^s,\cO_\mathrm{std})$. Then $\phi \cl \R^d\to\R^s$ is continuous with respect to the standard topologies if it satisfies the usual $\ve$-$\delta$ definition of continuity:
 \bse
-\forall \, a \in \R^d: \forall \, \ve >0 :\exists \, \delta >0 : \forall \, 0<\|x-a\|_2<\delta:\|\phi(x)-\phi(a)\|_2<\ve.
+\forall \, a \in \R^d: \forall \, \ve >0 :\exists \, \delta >0 : \forall \, 0<\|x-a\|_2<\delta:\|\phi(x)-\phi(a)\|_2<\ve
 \ese
 \ee
 
@@ -368,7 +377,7 @@ Let $(M,\cO_M)$ and $(N,\cO_N)$ be topological spaces. A bijection $\phi\cl M\to
 Homeo(morphism)s are  the structure-preserving maps in topology.
 \er
 
-If there exists a homeomorphism $\phi$ between $(M,\cO_M)$ and $(N,\cO_N)$,
+If there exists a homeomorphism $\phi$ between $(M,\cO_M)$ and $(N,\cO_N)$:
 
 \bse
 \begin{tikzcd}
@@ -397,14 +406,14 @@ In this section we will mention some of the (almost uncountable) invariant topol
 \bd [T1 Topological Space]
 A topological space $(M,\cO)$ is said to be \textbf{T1}\index{topological space!T1 property} if for any two distinct points $p,q\in M$, $p\neq q$:
 \bse
-\exists \, U(p) \in \cO : q \notin U(p).
+\exists \, U(p) \in \cO : q \notin U(p)
 \ese
 \ed
 
 \bd [T2 or Hausdorff Topological Space]
 A topological space $(M,\cO)$ is said to be \textbf{T2} or \textbf{Hausdorff}\index{topological space!Hausdorff} if, for any two distinct points, there exist non-intersecting open neighbourhoods of these two points:
 \bse
-\forall \, p,q\in M : p\neq q \imp \exists \, U(p),V(q)\in \cO : U(p)\cap V(q) = \vn.
+\forall \, p,q\in M : p\neq q \imp \exists \, U(p),V(q)\in \cO : U(p)\cap V(q) = \vn
 \ese
 \ed
 
@@ -427,10 +436,10 @@ There are many other ``T'' properties, including a \emph{T2\sfrac{1}{2}} propert
 \bd [Cover]
 Let $(M,\cO)$ be a topological space. A set $C \se \cP(M)$ is called a \textbf{cover}\index{cover}\index{topological space!(open) cover} (of $M$) if:
 \bse
-\bigcup C = M.
+\bigcup C = M
 \ese
 
-\vspace{5pt}
+\v
 
 Additionally, it is said to an \emph{open} cover if $C \se \cO$.
 \ed
@@ -459,7 +468,7 @@ Let $\R^d$ be equipped with the standard topology $\cO_\mathrm{std}$. Then, a su
 
 A subset $S$ of $\R^d$ is said to be \emph{bounded}\index{boundedness} if:
 \bse
-\exists \, r \in \R^+ : S \se B_r(0). 
+\exists \, r \in \R^+ : S \se B_r(0)
 \ese
 
 \be
@@ -469,12 +478,12 @@ The interval $[0,1]$ is compact in $(\R,\cO_\mathrm{std})$. The one-element set 
 \be
 The set $\R$ is not compact in $(\R,\cO_\mathrm{std})$. To prove this, it suffices to show that there exists a cover of $\R$ that does not have a finite subcover. To this end, let:
 \bse
-C := \{(n,n+1)\mid n \in \Z\} \cup \{(n+\tfrac{1}{2},n+\tfrac{3}{2})\mid n \in \Z\} .
+C := \{(n,n+1)\mid n \in \Z\} \cup \{(n+\tfrac{1}{2},n+\tfrac{3}{2})\mid n \in \Z\}
 \ese
 
 This corresponds to the following picture.
 
-\vspace{5pt}
+\v
 
 \begin{figure}[H]
 \centering
@@ -509,7 +518,7 @@ This corresponds to the following picture.
 \end{tikzpicture}
 \end{figure}
 
-\vspace{5pt}
+\v
 
 It is clear that removing even one element from $C$ will cause $C$ to fail to be an open cover of $\R$. Therefore, there is no finite subcover of $C$ and hence, $\R$ is not compact.
 \ee
@@ -523,13 +532,13 @@ The above theorem easily extends to finite cartesian products.
 \bd [Refinement]
 Let $(M,\cO)$ be a topological space and let $C$ be a cover. A \textbf{refinement}\index{refinement} of $C$ is a cover $R$ such that:
 \bse
-\forall \, U \in R : \exists \, V \in C : U \se V .
+\forall \, U \in R : \exists \, V \in C : U \se V
 \ese
 \ed
 Any subcover of a cover is a refinement of that cover, but the converse is not true in general. A refinement $R$ is said to be:
 \bit
-\item \emph{open} if $R\se \cO$;
-\item \emph{locally finite} if for any $p\in M$ there exists a neighbourhood $U(p)$ such that the set:
+\item \emph{Open} if $R\se \cO$.
+\item \emph{Locally finite} if for any $p\in M$ there exists a neighbourhood $U(p)$ such that the set:
 \bse
 \{U \in R \mid U \cap U(p) \neq \vn\}
 \ese
@@ -561,12 +570,12 @@ Let $(M,\cO_M)$ be a paracompact space and let $(N_i,\cO_{N_i})$ be compact spac
 \bd [Partition Of Unity]
 Let $(M,\cO_M)$ be a topological space. A \textbf{partition of unity}\index{partition of unity}  of $M$ is a set $\cF$ of continuous maps from $M$ to the interval $[0,1]$ such that for each $p\in M$ the following conditions hold:
 \ben
-\item[i)] there exists $U(p)$ such that the set $\{f \in \cF \mid \forall \, x \in U(p):f(x)\neq 0\}$ is finite;
+\item[i)] There exists $U(p)$ such that the set $\{f \in \cF \mid \forall \, x \in U(p):f(x)\neq 0\}$ is finite.
 \item[ii)] $\sum_{f\in \cF}f(p)=1$.
 \een
 If $C$ is an open cover, then $\cF$ is said to be \emph{subordinate} to the cover $C$ if:
 \bse
-\forall \, f \in \cF : \exists \, U \in C : f(x) \neq 0 \imp x \in U .
+\forall \, f \in \cF : \exists \, U \in C : f(x) \neq 0 \imp x \in U
 \ese
 \ed
 
@@ -574,7 +583,7 @@ If $C$ is an open cover, then $\cF$ is said to be \emph{subordinate} to the cove
 Let $(M,\cO_M)$ be a Hausdorff topological space. Then $(M,\cO_M)$ is paracompact if, and only if, every open cover admits a partition of unity subordinate to that cover.
 \et
 
-\subsection{Connectedness And Path-Connectedness}
+\subsection{Connectedness \& Path-Connectedness}
 
 \bd [Connected Topological Space]
 A topological space $(M,\cO)$ is said to be \textbf{connected}\index{connectedness}\index{topological space!connected} unless there exist two non-empty, non-intersecting open sets $A$ and $B$ such that $M=A\cup B$.
@@ -599,7 +608,7 @@ A topological space $(M,\cO)$ is said to be \textbf{path-connected}\index{path-c
 \be
 The space $(\R^d,\cO_\mathrm{std})$ is path-connected. Indeed, let $p,q\in\R^d$ and let:
 \bse
-\g(\l):=p+\l(q-p).
+\g(\l):=p+\l(q-p)
 \ese
 Then $\g$ is continuous and satisfies $\g(0)=p$ and $\g(1)=q$.
 \ee
@@ -616,22 +625,25 @@ The space $(S,\cO_\mathrm{std}|_S)$ is connected but not path-connected.
 If a topological space is path-connected, then it is also connected.
 \et
 
-\subsection{Homotopic Curves And The Fundamental Group}
+\subsection{Homotopic Curves \& The Fundamental Group}
 
 \bd [Homotopic Curves]
 Let $(M,\cO)$ be a topological space. Two curves $\g,\delta\cl[0,1]\to M$ such that:
 \bse
 \g(0)=\delta(0) \quad \t{and} \quad \g(1)=\delta(1)
 \ese
+
+\v
+
 are said to be \textbf{homotopic}\index{homotopic curves} if there exists a continuous map $h \cl [0,1]\times[0,1]\to M$ such that for all $\l \in [0,1]$:
 \bse
-h(0,\l) = \g(\l) \quad \t{and} \quad h(1,\l)=\delta(\l).
+h(0,\l) = \g(\l) \quad \t{and} \quad h(1,\l)=\delta(\l)
 \ese
 \ed
 
 Pictorially, two curves are homotopic if they can be continuously deformed into one another.
 
-\vspace{5pt}
+\v
 
 \begin{figure}[H]
 \centering
@@ -657,7 +669,7 @@ Pictorially, two curves are homotopic if they can be continuously deformed into 
 \end{tikzpicture}
 \end{figure}
 
-\vspace{5pt}
+\v
 
 \bp
 Let $\g \sim \delta :\eqv$ ``$\g$ and $\delta$ are homotopic''. Then, $\sim$ is an equivalence relation.
@@ -666,7 +678,7 @@ Let $\g \sim \delta :\eqv$ ``$\g$ and $\delta$ are homotopic''. Then, $\sim$ is 
 \bd [Space Of Loops]
 Let $(M,\cO)$ be a topological space. Then, for every $p\in M$, we define the \textbf{space of loops} at $p$ by:
 \bse
-\mathscr{L}_p := \{\g\cl[0,1]\to M \mid \g \t{ is continuous and } \g(0)=\g(1)\}.
+\mathscr{L}_p := \{\g\cl[0,1]\to M \mid \g \t{ is continuous and } \g(0)=\g(1)\}
 \ese
 \ed
 
@@ -682,12 +694,12 @@ Let $\mathscr{L}_p$ be the space of loops at $p\in M$. We define the \textbf{con
 \bd [Fundamental Group]
 Let $(M,\cO)$ be a topological space. The \textbf{fundamental group}\index{fundamental group} $\pi_1(p)$\index{$\pi_1(p)$} of $(M,\cO)$ at $p\in M$ is the set:
 \bse
-\pi_1(p) := \mathscr{L}_p/\!\sim\ = \{[\g] \mid \g \in \mathscr{L}_p\},
+\pi_1(p) := \mathscr{L}_p/\!\sim\ = \{[\g] \mid \g \in \mathscr{L}_p\}
 \ese
-where $\sim$ is the homotopy equivalence relation, together with the map 
+where $\sim$ is the homotopy equivalence relation, together with the map :
 \bi{rrCl}
 \bullet \cl & \pi_1(p)\times \pi_1(p) &\to &\pi_1(p)\\
-&(\g,\delta)&\mapsto & [\g]\bullet[\delta]:=[\g*\delta] .
+&(\g,\delta)&\mapsto & [\g]\bullet[\delta]:=[\g*\delta]
 \ei
 \ed
 
@@ -714,7 +726,7 @@ equipped with the subset topology inherited from $\R^3$.
 
 The sphere has the property that all the loops at any point are homotopic, hence the fundamental group (at every point) of the sphere is the trivial group:
 \bse
-\forall \, p \in S^2 : \pi_1(p) = 1:=\{[\g_e]\}.
+\forall \, p \in S^2 : \pi_1(p) = 1:=\{[\g_e]\}
 \ese
 \ee
 
@@ -743,7 +755,7 @@ A loop in $C$ can either go around the cylinder (i.e.\ around its central axis) 
 
 Moreover, loops with different \emph{orientations} are also not homotopic and hence we have:
 \bse
-\forall \, p \in C : (\pi_1(p),\bullet) \cong_\mathrm{grp}(\Z,+).
+\forall \, p \in C : (\pi_1(p),\bullet) \cong_\mathrm{grp}(\Z,+)
 \ese
 \ee
 
@@ -768,7 +780,7 @@ The 2-torus is defined as the set $T^2:=S^1\times S^1$ equipped with the product
 
 A loop in $T^2$ can intuitively wind around the cylinder-like part of the torus as well as around the hole of the torus. That is, there are two independent winding numbers and hence:
 \bse
-\forall \, p \in T^2 : \pi_1(p) \cong_\mathrm{grp}\Z\times \Z,
+\forall \, p \in T^2 : \pi_1(p) \cong_\mathrm{grp}\Z\times \Z
 \ese
 where $\Z\times \Z$ is understood as a group under pairwise addition.
 \ee

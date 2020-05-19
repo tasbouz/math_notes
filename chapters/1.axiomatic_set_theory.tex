@@ -68,7 +68,7 @@ Then $(p\imp q) \eqv ((\neg q)\imp (\neg p))$.
 \et
 
 \bq
-We simply construct the truth tables for $p\imp q$ and $ (\neg q)\imp (\neg p)$.
+We simply construct the truth tables for $p\imp q$ and $ (\neg q)\imp (\neg p)$:
 \btab[H]
 \centering
 \btb{c|c||c|c|c|c}
@@ -229,8 +229,8 @@ An \textbf{axiomatic system} is a finite sequence of propositions $a_1,a_2,\ldot
 \bd [Proof]
 A \textbf{proof}\index{proof} of a proposition $p$ within an axiomatic system $a_1,a_2,\ldots,a_N$ is a finite sequence of propositions $q_1,q_2,\ldots,q_M$ such that $q_M=p$ and for any $1\leq j \leq M$ one of the following is satisfied:
 \ben
-\item[(A)] $q_j$ is a proposition from the list of axioms;
-\item[(T)] $q_j$ is a tautology;
+\item[(A)] $q_j$ is a proposition from the list of axioms.
+\item[(T)] $q_j$ is a tautology.
 \item[(M)] $\exists \, 1\leq m,n <j : (q_m\land q_n \imp q_j)$ is true.
 \een
 \ed
@@ -304,10 +304,10 @@ An example of an undecidable proposition is the Continuum hypothesis within the 
 
 Set\index{set} theory is built on the postulate that there is a fundamental relation (i.e.\ a predicate of two variables) denoted $\in$\index{$\in$} and read as ``epsilon''. There will be no definition of what $\in$ is, or of what a set is. Instead, we will have nine axioms concerning $\in$ and sets, and it is only in terms of these nine axioms that $\in$ and sets are defined at all. Here is an overview of the axioms. We will have:
 \bit
-\item 2 basic existence axioms, one about the $\in$ relation and the other about the existence of the empty set;
+\item 2 basic existence axioms, one about the $\in$ relation and the other about the existence of the empty set.
 \item 4 construction axioms, which establish rules for building new sets from given ones.
-They are the pair set axiom, the union set axiom, the replacement axiom and the power set axiom; 
-\item 2 further existence/construction axioms, these are slightly more advanced and newer compared to the others;
+They are the pair set axiom, the union set axiom, the replacement axiom and the power set axiom.
+\item 2 further existence/construction axioms, these are slightly more advanced and newer compared to the others.
 \item 1 axiom of foundation, excluding some constructions as not being sets.
 \eit
 
@@ -355,6 +355,8 @@ However, we will show that his is not the case. Suppose first that $u\in u$ is t
 \bse
 u \in u \imp \neg(u \in u)
 \ese
+
+\v
 
 and this is a contradiction. Therefore, $u\in u$ cannot be true. Then, if it is a proposition, it must be false. However, if $u \notin u$, then $u$ satisfies the condition for being a member of $u$ and thus:
 \bse
@@ -404,7 +406,9 @@ Conversely, by the same argument, we have:
 \forall \, y : (y \in x') \imp (y \in x)
 \ese
 
-and thus $x' \se x$. Hence $(x \se x') \land (x' \se x)$ and therefore $x = x'$.
+and thus $x' \se x$. \v
+
+Hence $(x \se x') \land (x' \se x)$ and therefore $x = x'$.
 \eq
 
 \textbf{Axiom on pair sets.}\index{set!pair}\index{axiom!on pair sets} \emph{Let $x$ and $y$ be sets. Then there exists a set that contains as its elements precisely $x$ and $y$. In symbols:}
@@ -521,8 +525,6 @@ The principle of restricted comprehension is a consequence of the axiom of repla
 \bq
 We have two cases:
 \ben
-\leftskip=1cm 
-\rightskip=1cm
 \item If $\neg ( \exists \, y \in m : P(y))$, then we define: $\{y \in m \mid P(y)\} := \vn$.
 \item If $\exists \, \hat y \in m : P(\hat y)$, then let $R$ be the functional relation:
 \bse
@@ -604,6 +606,9 @@ The version of the axiom of infinity tat we stated is the one that was first put
 \bse
 x \cup y := \bigcup \, \{x,y\}
 \ese
+
+\v
+
 With this formulation, the natural numbers look like:
 \bse
 \N := \{\vn, \{\vn\}, \{\vn,\{\vn\}\}, \{\vn,\{\vn\},\{\vn,\{\vn\}\}\}, \ldots \}
@@ -619,8 +624,8 @@ where $P(x) \eqv (\exists \,a : a \in x) \land (\forall \, a : \forall \, b : (a
 \br
 The axiom of choice is independent of the other 8 axioms, which means that one could have set theory with or without the axiom of choice. However, standard mathematics uses the axiom of choice and hence so will we. There is a number of theorems that can only be proved by using the axiom of choice. Amongst these we have:
 \bit
-\item every vector space has a basis;
-\item there exists a complete system of representatives of an equivalence relation.
+\item Every vector space has a basis.
+\item There exists a complete system of representatives of an equivalence relation.
 \eit
 \er
 
@@ -768,8 +773,6 @@ Let $\phi \cl A \to B$ be a map, let $U,V \se B$ and $C=\{C_j \mid j \in J\} \se
 
 \bq
 \ben
-\leftskip=1cm
-\rightskip=1cm
 \item[i)] By definition, we have:
 \bse
 \mathrm{preim}_\phi(B) = \{a\in A : \phi(a) \in B\} = A
@@ -811,8 +814,6 @@ Then $\sim$ is called an \textbf{equivalence relation}\index{equivalence relatio
 \be
 Consider the following wordy examples.
 \ben[label=\alph*)]
-\leftskip=1cm
-\rightskip=1cm
 \item $p\sim q :\Leftrightarrow $ $p$ is of the same opinion as $q$. This relation is reflexive, symmetric and transitive. Hence, it is an equivalence relation.
 \item $p\sim q :\Leftrightarrow $ $p$ is a sibling of $q$. This relation is symmetric and transitive but not reflexive and hence, it is not an equivalence relation.
 \item $p\sim q :\Leftrightarrow $ $p$ is taller $q$. This relation is transitive, but neither reflexive nor symmetric and hence, it is not an equivalence relation.
@@ -841,8 +842,6 @@ Let $\sim$ be an equivalence relation on $M$. Then:
 
 \bq
 \ben
-\leftskip=1cm
-\rightskip=1cm
 \item[i)] Since $a\in[m]$, we have $a\sim m$. Let $x \in [a]$. Then $x \sim a$ and hence $x \sim m$ by transitivity. Therefore $x \in [m]$ and hence $[a]\se[m]$. Similarly, we have $[m]\se[a]$ and hence $[a]=[m]$.
 \item[ii)] Suppose that $[m]\cap[n]\neq\vn$. That is:
 \bse
@@ -1031,7 +1030,7 @@ hence $m+q+p+s=p+n+r+q$, and thus $m+s=r+n$.
 By equipping this relation we can define the set of integers in the following way.
 
 \bd [Integers]
-We define the set of \emph{integers} by:
+We define the set of \textbf{integers} by:
 \bse
 \Z\index{$\Z$}:=(\N\times\N)/\!\sim
 \ese
@@ -1051,13 +1050,13 @@ and it is in this sense that $\N$ is included in $\Z$.
 \er
 
 \bd [Inverse Of Integer]
-Let $n := [(n,0)] \in \Z$. Then we define the \emph{inverse} of $n$ to be $-n:=[(0,n)]$. 
+Let $n := [(n,0)] \in \Z$. Then we define the \textbf{inverse} of $n$ to be $-n:=[(0,n)]$. 
 \ed
 
 We would now like to inherit the $+$ operation from $\N$.
 
 \bd [Addition Of Integers]
-We define the \emph{addition of integers} $+_\Z\cl\Z\times\Z\to\Z$ by:
+We define the \textbf{addition of integers} $+_\Z\cl\Z\times\Z\to\Z$ by:
 \bse
 [(m,n)] +_\Z [(p,q)] := [(m+p,n+q)]
 \ese
