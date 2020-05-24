@@ -1,7 +1,7 @@
 % load packages
 \usepackage[english]{babel}
 \usepackage[toc, page]{appendix}
-\usepackage{geometry, mathtools, amsthm, amsmath, enumitem, float, dirtytalk, graphicx, textcomp, amssymb, cancel, hyperref, IEEEtrantools, mathrsfs, xfrac, pgfplots, bbding, titlepic}
+\usepackage{geometry, mathtools, amsthm, amsmath, enumitem, float, dirtytalk, graphicx, textcomp, amssymb, cancel, hyperref, IEEEtrantools, mathrsfs, xfrac, pgfplots, bbding, titlepic, cleveref, bm, stmaryrd}
 
 % layout
 \geometry{margin=1in}
@@ -9,12 +9,20 @@
 % paths
 \graphicspath{ {./images/} }
 
-% tikz 
+% tikz  from first notes
 \usepackage{tikz, tikz-cd}
 \usetikzlibrary{matrix, calc, positioning, decorations.markings, decorations.pathmorphing, decorations.pathreplacing}
 \usetikzlibrary{arrows,cd}
 \usetikzlibrary{positioning}
 \tikzset{>=stealth}
+
+% tikz from second notes
+\usetikzlibrary{matrix,positioning,arrows,calc,decorations.pathmorphing,shapes}
+\tikzset{snake it/.style={-stealth,
+decoration={snake, 
+    amplitude = .4mm,
+    segment length = 2mm,
+    post length=0.9mm},decorate}}
 
 % extras
 \theoremstyle{plain}
@@ -177,3 +185,5 @@
  <9-10> MnSymbolC9
 <10-12> MnSymbolC10
 <12->   MnSymbolC12}{}
+
+

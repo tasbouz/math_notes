@@ -52,17 +52,104 @@
 \BOOKMARK [1][-]{section.5.8}{Topological Bundles}{chapter.5}% 52
 \BOOKMARK [1][-]{section.5.9}{The Tangent Bundle}{chapter.5}% 53
 \BOOKMARK [1][-]{section.5.10}{Vector, Covector \046 Tensor Fields}{chapter.5}% 54
-\BOOKMARK [1][-]{section.5.11}{Differential Forms}{chapter.5}% 55
-\BOOKMARK [2][-]{subsection.5.11.1}{The Grassmann Algebra}{section.5.11}% 56
-\BOOKMARK [2][-]{subsection.5.11.2}{The Exterior Derivative}{section.5.11}% 57
-\BOOKMARK [2][-]{subsection.5.11.3}{De Rham Cohomology}{section.5.11}% 58
-\BOOKMARK [1][-]{section.5.12}{Application: `39`42`"613A``45`47`"603ASL\(2,C\) - Part 1}{chapter.5}% 59
-\BOOKMARK [0][-]{chapter.6}{Lie Groups}{part.1}% 60
-\BOOKMARK [1][-]{section.6.1}{Lie Groups}{chapter.6}% 61
-\BOOKMARK [1][-]{section.6.2}{The Left Translation Map}{chapter.6}% 62
-\BOOKMARK [1][-]{section.6.3}{The Lie Algebra Of A Lie Group}{chapter.6}% 63
-\BOOKMARK [1][-]{section.6.4}{Application: `39`42`"613A``45`47`"603ASL\(2,C\) - Part 2}{chapter.6}% 64
-\BOOKMARK [1][-]{section.6.5}{Representations Of Lie Groups}{chapter.6}% 65
-\BOOKMARK [1][-]{section.6.6}{Reconstruction Of A Lie group From Its Lie Algebra}{chapter.6}% 66
-\BOOKMARK [2][-]{subsection.6.6.1}{The Exponential Map}{section.6.6}% 67
-\BOOKMARK [1][-]{section.6.7}{Lie Group Actions On A Manifold}{chapter.6}% 68
+\BOOKMARK [1][-]{section.5.11}{Connection / Covariant Derivative On A Manifold}{chapter.5}% 55
+\BOOKMARK [2][-]{subsection.5.11.1}{Connection / Covariant Derivative}{section.5.11}% 56
+\BOOKMARK [2][-]{subsection.5.11.2}{Parallel Transport \046 Curvature}{section.5.11}% 57
+\BOOKMARK [1][-]{section.5.12}{Torsion}{chapter.5}% 58
+\BOOKMARK [2][-]{subsection.5.12.1}{Curvature}{section.5.12}% 59
+\BOOKMARK [1][-]{section.5.13}{Differential Forms}{chapter.5}% 60
+\BOOKMARK [2][-]{subsection.5.13.1}{The Grassmann Algebra}{section.5.13}% 61
+\BOOKMARK [2][-]{subsection.5.13.2}{The Exterior Derivative}{section.5.13}% 62
+\BOOKMARK [2][-]{subsection.5.13.3}{De Rham Cohomology}{section.5.13}% 63
+\BOOKMARK [1][-]{section.5.14}{Application: `39`42`"613A``45`47`"603ASL\(2,C\) - Part 1}{chapter.5}% 64
+\BOOKMARK [0][-]{chapter.6}{Lie Groups}{part.1}% 65
+\BOOKMARK [1][-]{section.6.1}{Lie Groups}{chapter.6}% 66
+\BOOKMARK [1][-]{section.6.2}{The Left Translation Map}{chapter.6}% 67
+\BOOKMARK [1][-]{section.6.3}{The Lie Algebra Of A Lie Group}{chapter.6}% 68
+\BOOKMARK [1][-]{section.6.4}{Application: `39`42`"613A``45`47`"603ASL\(2,C\) - Part 2}{chapter.6}% 69
+\BOOKMARK [1][-]{section.6.5}{Representations Of Lie Groups}{chapter.6}% 70
+\BOOKMARK [1][-]{section.6.6}{Reconstruction Of A Lie group From Its Lie Algebra}{chapter.6}% 71
+\BOOKMARK [2][-]{subsection.6.6.1}{The Exponential Map}{section.6.6}% 72
+\BOOKMARK [1][-]{section.6.7}{Lie Group Actions On A Manifold}{chapter.6}% 73
+\BOOKMARK [0][-]{chapter.7}{Principal Fiber Bundles}{part.1}% 74
+\BOOKMARK [1][-]{section.7.1}{Principal Bundles}{chapter.7}% 75
+\BOOKMARK [2][-]{subsection.7.1.1}{Principal Bundle Maps}{section.7.1}% 76
+\BOOKMARK [1][-]{section.7.2}{Associated Bundles}{chapter.7}% 77
+\BOOKMARK [2][-]{subsection.7.2.1}{Associated Bundle Maps}{section.7.2}% 78
+\BOOKMARK [1][-]{section.7.3}{Application: Principal Frame Bundle}{chapter.7}% 79
+\BOOKMARK [1][-]{section.7.4}{Connections On A Principal G-Bundle}{chapter.7}% 80
+\BOOKMARK [2][-]{subsection.7.4.1}{Connection One-Forms}{section.7.4}% 81
+\BOOKMARK [1][-]{section.7.5}{Yang-Mills Fields \046 Local Representations}{chapter.7}% 82
+\BOOKMARK [2][-]{subsection.7.5.1}{The Maurer-Cartan Form}{section.7.5}% 83
+\BOOKMARK [2][-]{subsection.7.5.2}{The Gauge Map}{section.7.5}% 84
+\BOOKMARK [1][-]{section.7.6}{Parallel Transport}{chapter.7}% 85
+\BOOKMARK [2][-]{subsection.7.6.1}{Horizontal Lifts To the principal bundle}{section.7.6}% 86
+\BOOKMARK [2][-]{subsection.7.6.2}{Solution of the horizontal lift ODE by a path-ordered exponential}{section.7.6}% 87
+\BOOKMARK [2][-]{subsection.7.6.3}{Horizontal lifts to the associated bundle}{section.7.6}% 88
+\BOOKMARK [1][-]{section.7.7}{Covariant exterior derivative and curvature}{chapter.7}% 89
+\BOOKMARK [2][-]{subsection.7.7.1}{Torsion}{section.7.7}% 90
+\BOOKMARK [1][-]{section.7.8}{Covariant Derivatives}{chapter.7}% 91
+\BOOKMARK [2][-]{subsection.7.8.1}{Equivalence of local sections and equivariant functions}{section.7.8}% 92
+\BOOKMARK [2][-]{subsection.7.8.2}{Linear actions on associated vector fiber bundles}{section.7.8}% 93
+\BOOKMARK [2][-]{subsection.7.8.3}{Construction of the covariant derivative}{section.7.8}% 94
+\BOOKMARK [-1][-]{part.2}{II Statistics \046 Probability Theory}{}% 95
+\BOOKMARK [0][-]{chapter.8}{Basic Concepts}{part.2}% 96
+\BOOKMARK [1][-]{section.8.1}{Basic Terminology}{chapter.8}% 97
+\BOOKMARK [1][-]{section.8.2}{Sample Space \046 Events}{chapter.8}% 98
+\BOOKMARK [1][-]{section.8.3}{Probability Space}{chapter.8}% 99
+\BOOKMARK [1][-]{section.8.4}{Conditional Probability}{chapter.8}% 100
+\BOOKMARK [0][-]{chapter.9}{Random Variables}{part.2}% 101
+\BOOKMARK [1][-]{section.9.1}{Random Variables}{chapter.9}% 102
+\BOOKMARK [1][-]{section.9.2}{Discrete Random Variables}{chapter.9}% 103
+\BOOKMARK [1][-]{section.9.3}{Discrete Probability Distributions}{chapter.9}% 104
+\BOOKMARK [2][-]{subsection.9.3.1}{Discrete Uniform Distribution - Unif\(n\)}{section.9.3}% 105
+\BOOKMARK [2][-]{subsection.9.3.2}{Bernoulli Distribution - Bern\(p\)}{section.9.3}% 106
+\BOOKMARK [2][-]{subsection.9.3.3}{Binomial Distribution - B\(n,p\)}{section.9.3}% 107
+\BOOKMARK [2][-]{subsection.9.3.4}{Poisson Distribution - Pois\(\)}{section.9.3}% 108
+\BOOKMARK [2][-]{subsection.9.3.5}{Geometric Distribution - Geo\(p\)}{section.9.3}% 109
+\BOOKMARK [2][-]{subsection.9.3.6}{Hypergeometric Distribution - Hypergeometric\(N, K, n\)}{section.9.3}% 110
+\BOOKMARK [2][-]{subsection.9.3.7}{Negative Binomial Distribution - NB\(r,p\)}{section.9.3}% 111
+\BOOKMARK [1][-]{section.9.4}{Continuous Random Variables}{chapter.9}% 112
+\BOOKMARK [1][-]{section.9.5}{Continuous Probability Distributions}{chapter.9}% 113
+\BOOKMARK [2][-]{subsection.9.5.1}{Continuous Uniform Distribution - Unif\(a,b\)}{section.9.5}% 114
+\BOOKMARK [2][-]{subsection.9.5.2}{Normal Distribution - N\(, 2\)}{section.9.5}% 115
+\BOOKMARK [2][-]{subsection.9.5.3}{Standard Normal Distribution - N\(0,1\)}{section.9.5}% 116
+\BOOKMARK [2][-]{subsection.9.5.4}{Exponential Distribution - Expo\(\)}{section.9.5}% 117
+\BOOKMARK [2][-]{subsection.9.5.5}{Chi-Squared Distribution - 2\(k\)}{section.9.5}% 118
+\BOOKMARK [2][-]{subsection.9.5.6}{Student's t-Distribution - t\(\)}{section.9.5}% 119
+\BOOKMARK [2][-]{subsection.9.5.7}{Beta Distribution - Beta\(, \)}{section.9.5}% 120
+\BOOKMARK [2][-]{subsection.9.5.8}{Gamma Distribution - Gamma\(, \)}{section.9.5}% 121
+\BOOKMARK [1][-]{section.9.6}{Joint Probability Distribution}{chapter.9}% 122
+\BOOKMARK [2][-]{subsection.9.6.1}{Bivariate Joint Distribution}{section.9.6}% 123
+\BOOKMARK [1][-]{section.9.7}{Moments}{chapter.9}% 124
+\BOOKMARK [0][-]{chapter.10}{Statistical Inference}{part.2}% 125
+\BOOKMARK [1][-]{section.10.1}{Population VS Sample}{chapter.10}% 126
+\BOOKMARK [0][-]{chapter.11}{Parametric Inference}{part.2}% 127
+\BOOKMARK [1][-]{section.11.1}{Basic Definitions}{chapter.11}% 128
+\BOOKMARK [1][-]{section.11.2}{Maximum Likelihood}{chapter.11}% 129
+\BOOKMARK [-1][-]{part.3}{III Machine Learning}{}% 130
+\BOOKMARK [0][-]{chapter.12}{Introduction}{part.3}% 131
+\BOOKMARK [0][-]{chapter.13}{Supervised Learning}{part.3}% 132
+\BOOKMARK [1][-]{section.13.1}{Linear Regression}{chapter.13}% 133
+\BOOKMARK [1][-]{section.13.2}{Optimization Techniques}{chapter.13}% 134
+\BOOKMARK [2][-]{subsection.13.2.1}{Normal Equation}{section.13.2}% 135
+\BOOKMARK [2][-]{subsection.13.2.2}{Gradient Descent}{section.13.2}% 136
+\BOOKMARK [1][-]{section.13.3}{Logistic Regression}{chapter.13}% 137
+\BOOKMARK [2][-]{subsection.13.3.1}{Normal Equation}{section.13.3}% 138
+\BOOKMARK [2][-]{subsection.13.3.2}{Gradient Descent}{section.13.3}% 139
+\BOOKMARK [1][-]{section.13.4}{Generalized Linear Model}{chapter.13}% 140
+\BOOKMARK [1][-]{section.13.5}{Errors}{chapter.13}% 141
+\BOOKMARK [2][-]{subsection.13.5.1}{Point-Wise, Overall, In-Sample \046 Out-Of-Sample Error}{section.13.5}% 142
+\BOOKMARK [2][-]{subsection.13.5.2}{Bias \046 Variance}{section.13.5}% 143
+\BOOKMARK [1][-]{section.13.6}{Evaluation}{chapter.13}% 144
+\BOOKMARK [1][-]{section.13.7}{Regularization}{chapter.13}% 145
+\BOOKMARK [2][-]{subsection.13.7.1}{Ridge Regression - L2 Regularization}{section.13.7}% 146
+\BOOKMARK [2][-]{subsection.13.7.2}{Lasso Regression - L1 Regularization}{section.13.7}% 147
+\BOOKMARK [1][-]{section.13.8}{Classification Error Metrics}{chapter.13}% 148
+\BOOKMARK [1][-]{section.13.9}{Support Vector Machine}{chapter.13}% 149
+\BOOKMARK [0][-]{section*.20}{Appendices}{part.3}% 150
+\BOOKMARK [0][-]{Appendix.a.A}{Constrained Optimization}{part.3}% 151
+\BOOKMARK [1][-]{section.a.A.1}{Equality Constrained Optimization}{Appendix.a.A}% 152
+\BOOKMARK [1][-]{section.a.A.2}{Equality \046 Inequality Constrained Optimization}{Appendix.a.A}% 153
+\BOOKMARK [0][-]{Appendix.a.B}{Kernels}{part.3}% 154
+\BOOKMARK [0][-]{Appendix.a.C}{Convolution}{part.3}% 155

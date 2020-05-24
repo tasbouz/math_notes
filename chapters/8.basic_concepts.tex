@@ -1,0 +1,372 @@
+Probability theory is the branch of mathematics concerned with probability. Although there are several different probability interpretations, probability theory treats the concept in a rigorous mathematical manner by expressing it through a set of axioms. Typically these axioms formalise probability in terms of a probability space, which assigns a measure taking values between 0 and 1, termed the probability measure, to a set of outcomes called the sample space. Any specified subset of these outcomes is called an event. \v
+
+Central subjects in probability theory include discrete and continuous random variables, probability distributions, and stochastic processes, which provide mathematical abstractions of non-deterministic or uncertain processes or measured quantities that may either be single occurrences or evolve over time in a random fashion. \v
+
+Although it is not possible to perfectly predict random events, much can be said about their behaviour. Two major results in probability theory describing such behaviour are the law of large numbers and the central limit theorem. \v
+
+As a mathematical foundation for statistics, probability theory is essential to many human activities that involve quantitative analysis of data. Methods of probability theory also apply to descriptions of complex systems given only partial knowledge of their state, as in statistical mechanics. A great discovery of twentieth-century physics was the probabilistic nature of physical phenomena at atomic scales, described in quantum mechanics.
+
+\section{Basic Terminology}
+
+In this section we will provide some basic and heavily used terminology in probability theory and statistics that we will be using through this part.
+\bd[Data]
+\textbf{Data} are individual units of information that have been collected.
+\ed
+
+Based on the nature of the data, we have two fundamental distinctions: qualitative and quantitative data.
+\bd[Qualitative/Categorical Data]
+\textbf{Qualitative (or categorical) data} are non - numerical data, on which mathematical operations are meaningless.
+\ed
+\bd[Quantitative Data]
+\textbf{Quantitative data} are numerical data, on which mathematical operations are meaningful.
+\ed
+
+More specifically, quantitative data can be divided into two categories: discrete and continuous data.
+\bd[Discrete Data]
+\textbf{Discrete data} are finite and countable data.
+\ed
+
+\bd[Continuous Data]
+\textbf{Continuous data} are infinite and uncountable data.
+\ed
+
+Regarding the scale that data are measured on we have different levels of levels of measurement. 
+
+\bd[Levels/Scales Of Measurement]
+\textbf{Level of measurement or scale of measure} is a classification that describes the nature of data within the values assigned to variables.
+\ed
+
+Levels of measurement consist of four levels, or scales: nominal, ordinal, interval, and ratio.
+
+\bd[Nominal]
+\textbf{Nominal} level differentiates between items or subjects based only on their names or other qualitative classifications they belong to. No ranking or mathematical operation have meaning.
+\ed
+
+Examples of nominal scaled data are gender, nationality, ethnicity, language, genre, style, biological species, etc.
+
+\bd[Ordinal]
+\textbf{Ordinal} level allows for rank order (1st, 2nd, 3rd, etc.) by which data can be sorted, but still does not allow for relative degree of difference between them. No mathematical operation have meaning.
+\ed
+
+Examples of ordinal scaled data include data as \say{sick} vs \say{healthy} when measuring health, \say{guilty} vs. \say{not-guilty} when making judgments in courts, or clothing size: Small, Medium, Large, Extra Large etc.
+
+\bd[Interval]
+\textbf{Interval} level allows for the degree of difference between items, but not the ratio between them. Both ranking and some mathematical operations are valid but there is no meaningful zero.
+\ed
+
+An example of interval scaled data is temperature with the Celsius scale, which has two defined points (the freezing and boiling point of water at specific conditions) and then separated into 100 intervals. Ratios are not meaningful since 20 \textdegree{}C cannot be said to be "twice as hot" as 10 \textdegree{}C, nor can multiplication/division be carried out between any two dates directly.
+
+\bd[Ratio]
+\textbf{Ratio} level takes its name from the fact that measurement is the estimation of the ratio between a magnitude of a continuous quantity and a unit magnitude of the same kind. A ratio scale possesses a meaningful (unique and non-arbitrary) zero value. 
+\ed
+
+Examples of ratio scaled data include mass, length, duration, plane angle, energy and electric charge. In contrast to interval scales, ratios are now meaningful because having a non-arbitrary zero point makes it meaningful to say, for example, that one object has "twice the length". \v
+
+Now that we have given the basic definitions of data, let's move on defining the science of studying data.
+
+\bd[Statistics]
+\textbf{Statistics} is the science of collecting, analysing, summarizing, interpreting, and drawing conclusion out of data.
+\ed
+
+The general definition of statistics can be split into two parts: descriptive and inferential statistics.
+
+\bd[Descriptive Statistics]
+\textbf{Descriptive statistics} is the process that quantitatively describes or summarizes features of a collection of data.
+\ed
+
+\bd[Inferential Statistics]
+\textbf{Inferential statistics} is the process of using data analysis to deduce properties of an underlying probability distribution.
+\ed
+
+Now let's start developing the theory of probability.
+
+\section{Sample Space \& Events}
+
+\bd[Random Experiment]
+A \textbf{random experiment} is an experiment, trial, or observation with the following properties:
+\bit
+\item It can be repeated numerous times under the same conditions.
+\item The experiment can have more than one outcome.
+\item Each possible outcome can be specified in advance.
+\item The outcome of the experiment depends on chance.
+\eit
+\ed
+
+\bd[Outcome]
+An \textbf{outcome} is a possible result of a random experiment or trial. Each possible outcome of a particular experiment is unique, and different outcomes are mutually exclusive (only one outcome will occur on each trial of the experiment).
+\ed
+
+Given a random experiment and its possible outcomes, we can define the concept of a sample space and an event as follows.
+
+\bd[Sample Space]
+\textbf{Sample space} $S$ of a random experiment or random trial is the set of all possible outcomes or results of that experiment.
+\ed
+
+\bd[Event]
+An \textbf{event} $A$ is a subset of the sample space.
+\ed
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{event}
+\centering
+\end{figure}
+
+Now that we have attached a set representation to events, we can use the usual set theory to define basic operations on events.
+
+\bd[Complement Event]
+The \textbf{complement} of an event $A$ denoted by $A^{C}$ is the set of elements not in A, within the sample space $S$:
+\bse
+A^{C} = \{x:x\in S \mid x \notin A \}
+\ese
+\ed
+
+\vspace{-5pt}
+
+\begin{figure}[H]
+\includegraphics[scale=0.2]{images/complement.png}
+\centering
+\end{figure}
+
+\bd[Union]
+The \textbf{union} of two events A and B is the event containing elements which are in A, in B, or in both A and B.
+
+\bse
+A\cup B=\{x:x\in A{\text{ or }}x\in B\}
+\ese
+\ed
+
+\begin{figure}[H]
+\includegraphics[scale=0.25]{images/union.png}
+\centering
+\end{figure}
+
+\bd[Intersection]
+The \textbf{intersection} of two events A and B, is the event containing all elements of A that also belong to B (or equivalently, all elements of B that also belong to A).
+
+\bse
+A\cap B=\{x:x\in A{\text{ and }}x\in B\}
+\ese
+\ed
+
+\vspace{-5pt}
+
+\begin{figure}[H]
+\includegraphics[scale=0.25]{images/intersection.png}
+\centering
+\end{figure}
+
+\bd[Mutually Exclusive Events]
+Two events A and B are called \textbf{mutually exclusive} if the intersection of the events is equal to the empty set.
+
+\bse
+A\cap B= \emptyset
+\ese
+\ed
+
+\begin{figure}[H]
+\includegraphics[scale=0.75]{images/mutually_exclusive.png}
+\centering
+\end{figure}
+
+Based on the set nature of events we can give a first naive definition of probability as follows.
+
+\bd[Naive Probability]
+\textbf{Naive probability} of an event $A$ is defined as the fraction of favorable outcomes over all possible outcomes.
+
+\bse
+P(A) = \frac{\text{number of favorable outcomes}}{\text{number of total outcomes}}
+\ese
+\ed
+
+\vspace{5pt}
+
+The naive definition of probability assumes that all favorable events are equally likely to be picked and that we are dealing with a finite sample space.
+
+\section{Probability Space}
+
+Both assumptions of the definition of naive probability add some limitations to the theory, hence we need to give a more formal and mathematical definition of probability. In order to do show we need to give some more definitions on top of sample space and events in order to be able to combine everything into the notion of probability space.
+
+\bd[$\sigma$-algebra]
+A \textbf{$\sigma$-algebra} $\mathcal{F}$ on a sample space $S$ is a collection of subsets of $S$ that includes $S$ itself, is closed under complement, and is closed under countable unions.
+\ed
+
+For example if $S = \{a, b, c, d\}$ is a sample space, one possible $\sigma$-algebra on sample space $S$ is $\mathcal{F} = \{\emptyset, \{a, b\}, \{c, d\}, \{a, b, c, d\} \}$, where $\emptyset$ is the empty set.
+
+\bd[Borel Space]
+Given a sample space $S$ and a $\sigma$-algebra $\mathcal{F}$ on the sample space $S$, we define the \textbf{Borel space} as the tuple $(S, \mathcal{F})$.
+\ed
+
+\bd[Probability Measure/Distribution]
+A \textbf{probability measure} (or probability distribution) $P$ on a Borel space $(S, \mathcal{F})$ is a real-valued function that maps elements of $\mathcal{F}$ to the real numbers and satisfies the following axioms:
+
+\begin{enumerate}
+\item The probability of an event A is a non-negative real number:
+\bse
+P(A)\geq 0 \qquad \forall A\in S
+\ese
+\item The probability that at least one of the events in the entire sample space will occur is 1:
+\bse
+P(S)=1
+\ese
+\item Any countable sequence of mutually exclusive events  $(A_{1}, A_{2},\ldots)$ satisfies:
+\bse
+P\left(\bigcup _{i=1}^{\infty }A_{i}\right)=\sum _{i=1}^{\infty }P(A_{i})
+\ese
+\end{enumerate}
+\ed
+
+This is the formal definition of probability, free of the constraints of naive probability. Finally, we have all the ingredients to define the concept of a probability space.
+
+\bd[Probability Space]
+Given a sample space $S$, a $\sigma$-algebra $\mathcal{F}$ and a probability distribution $P$ on the sample space $S$, we define the \textbf{probability space} as the tuple $(S, \mathcal{F}, P)$.
+\ed
+
+A probability space models a real-world process consisting of states that occur randomly. Subsequently, an outcome is the result of a single execution of the model. Since individual outcomes might be of little practical use, more complex events are used to characterize groups of outcomes. The collection of all such events is a $\sigma$-algebra $\mathcal{F}$. Finally, probability measure P specifies each event's likelihood of happening. \\
+
+Using the definition of probability space and the three axioms we can prove various relation between probabilities of events.
+
+\begin{lemma} \label{lem:complement}
+$P(A^{C}) = 1 - P(A)$
+\end{lemma}
+\begin{proof}
+Since the union any event A with its complement $A^C$ gives back the whole sample space, it is:
+\begin{align*}
+& S = A \cup A^{C} \Rightarrow \\
+& P(S) = P(A \cup A^{C}) \Rightarrow \\
+& P(S) = P(A) + P(A^{C}) \Rightarrow \\
+& P(A^{C}) = P(S) - P(A) \Rightarrow \\
+& P(A^{C}) = 1 - P(A)
+\end{align*}
+\end{proof}
+
+\begin{lemma}
+$P(\emptyset) = 0$
+\end{lemma}
+\begin{proof}
+Since $S \cup \emptyset = S$ we can set $A = S$ and $A^{C} = \emptyset$ in lemma (\ref{lem:complement}) and we obtain:
+\begin{align*}
+& P(A^{C}) = 1 - P(A) \Rightarrow  \\
+& P(\emptyset) = 1 - P(S) \Rightarrow  \\
+& P(\emptyset) = 1 - 1 \Rightarrow \\
+& P(\emptyset) = 0
+\end{align*}
+\end{proof}
+
+\begin{lemma}
+$P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+\end{lemma}
+\begin{proof}
+For any events $A$ and $B$, we have the disjoint union:
+\begin{align*}
+A \cup B &= (A-B) \cup (A \cap B) \cup (B-A) \Rightarrow  \\
+P(A \cup B) &= P((A-B) \cup (A \cap B) \cup (B-A)) \\
+&= P(A - B) + P(A \cap B) + P(B - A) \\
+&= P(A) - P(A \cap B) + P(A \cap B) + P(B)- P(A \cap B) \\
+&= P(A) + P(B) - P(A \cap B)
+\end{align*}
+\end{proof}
+
+\section{Conditional Probability}
+
+\bd[Independent Events]
+Two events A and B are called \textbf{independent} if and only if their joint probability equals the product of their probabilities.
+
+\bse
+P(A \cap B) = P(A) P(B)
+\ese
+\ed
+
+\vspace{5pt}
+
+Subsequently for the union of two independent events by using the lemma we proved previously:
+
+\bse
+P(A \cup B) = P(A) + P(B) - P(A) P(B)
+\ese
+
+\vspace{5pt}
+
+We can now move on, on defining conditional probability.
+
+\bd[Conditional Probability]
+Given two events A and B, the \textbf{conditional probability} of A given B is defined as the quotient of the probability of the joint of events A and B, and the probability of B.
+
+\bse
+P(A\mid B)={\frac {P(A\cap B)}{P(B)}}
+\ese
+\ed
+
+\vspace{5pt}
+
+This may be visualized as restricting the sample space to situations in which B occurs.
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{images/conditional2.png}
+\centering
+\end{figure}
+
+Given conditional probability, similarly to independent events we can also define conditionally independent events as follows.
+
+\bd[Conditionally Independent Events]
+Two events A and B are called \textbf{conditionally independent} if and only if. given an event C, their joint conditional probability equals the product of their conditional probabilities.
+
+\bse
+P(A \cap B \mid C) = P(A \mid C) P(B \mid C)
+\ese
+\ed
+
+\vspace{5pt}
+
+Conditional probability is very important in probability theory and its applications since based on the definition we can prove some very useful theorems that we will be using throughout the notes. 
+
+\begin{theorem}[\textbf{Multiplication Rule}] 
+\bse
+P(B\cap A) = P(A) P(B\mid A)
+\ese
+
+\begin{proof}
+Straight forward by multiplying by $P(B)$ both sides the definition of conditional probability.
+\end{proof}
+\end{theorem}
+
+\begin{theorem}[\textbf{Bayes Rule}]
+\bse
+P(A\mid B) =  \frac{P(B\mid A) P(A)}{P(B)} 
+\ese
+
+\begin{proof}
+From multiplication rule by interchanging A with B we get:
+\begin{align*}
+   P(A\cap B) = P(B) P(A\mid B)
+\end{align*}
+But since $P(A\cap B)$ =  $P(B\cap A)$ we end up having:
+\begin{align*}
+   P(B) P(A\mid B) = P(A) P(B\mid A)
+\end{align*}
+By solving with respect to $ P(A\mid B)$ we get Bayes rule.
+\end{proof}
+\end{theorem}
+
+\begin{theorem}[\textbf{Law Of Total Probability}]
+Given a finite or countably infinite partition of a sample space S, $\{B_{n}:n=1,2,3,\ldots\}$ (in other words, a set of pairwise disjoint events whose union is the entire sample space) then for any event $A$ of the same probability space:
+
+\bse \label{eq:lawoftotalprobabiliy}
+   P(A) = \sum_{n} P(A \mid B_{n}) P(B_{n})
+\ese
+
+\begin{figure}[H]
+\includegraphics[scale=0.25]{images/partition.png}
+\centering
+\end{figure}
+
+\begin{proof}
+From the partition follows:
+\begin{align*}
+A &= (A \cap B_{1}) \cup (A \cap B_{2}) \cap \ldots \cap (A \cap B_{n}) \Rightarrow \\
+P(A) &= P((A \cap B_{1}) \cup (A \cap B_{2}) \cap \ldots \cap (A \cap B_{n}))\\
+&= P(A \cap B_{1}) + P(A \cap B_{2}) + \ldots + P(A \cap B_{n}) \\
+&= P(A \mid B_{1}) P(B_{1}) + P(A \mid B_{2}) P(B_{2}) + \ldots + P(A \mid B_{n}) P(B_{n}) \\
+&= \sum_{n} P(A \mid B_{n}) P(B_{n})
+\end{align*}
+\end{proof}
+\end{theorem}
