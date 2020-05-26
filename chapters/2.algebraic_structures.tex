@@ -600,7 +600,19 @@ In linear algebra, you may have seen the two different transformation laws for t
 \ese
 where $A$ is the change of basis matrix. However, once we fix a basis, the matrix representations of these two objects are indistinguishable. It is then very tempting to think that what we can do with a matrix, we can just as easily do with another matrix.\v
 
-For instance, if we have a rule to calculate the determinant of a square matrix, we should be able to apply it to both of the above matrices. However, the notion of determinant is \emph{only} defined for endomorphisms. The only way to see this is to give a basis-independent definition, i.e.\ a definition that does not involve the ``components of a matrix''.  Let's do that! 
+For instance, the eigenvector equation reads:
+\bse
+A^{a}_{m} v^m = \lambda v^a
+\ese
+
+It is clear from the indices that $A^{a}_{m}$ is the components of an endomorphism. If we attempt to write a similar equation for a bilinear from we will simply fail:
+\bse
+g_{m n} v^m = \lambda \underbrace{v_n}_{\textit{(?)}}
+\ese
+
+Indeed, the eigenvectors equation holds only for endomorphisms, while bilinear forms carry the so called ``signature". \v
+
+Another example: if we have a rule to calculate the determinant of a square matrix, we should be able to apply it to both of the above matrices. However, the notion of determinant is \emph{only} defined for endomorphisms. The only way to see this is to give a basis-independent definition, i.e.\ a definition that does not involve the ``components of a matrix''.  Let's do that! 
 
 \subsection{Determinants}
 

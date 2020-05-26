@@ -255,7 +255,7 @@ This proof shows the significance of restricting to $\mathcal{C}^k$-atlases. Suc
 The same definition and proof work for smooth ($\mathcal{C}^\infty$) manifolds, in which case we talk about \emph{smooth maps}. As we said before, this is the case we will be most interested in.
 
 \be
-Consider the smooth manifolds $(\R^d,\cO_\mathrm{std},\mathscr{A}_d)$ and $(\R^{d'},\cO_\mathrm{std},\mathscr{A}_{_d'})$, where $\mathscr{A}_d)$ and $\mathscr{A}_{_d'})$ are the maximal atlases containing the charts $(\R^d,\id_{\R^d})$ and $(\R^{d'},\id_{\R^{d'}})$ respectively, and let $f\cl \R^{d}\to \R^{d'}$ be a map. The diagram defining the differentiability of $f$ with respect to these charts is:
+Consider the smooth manifolds $(\R^d,\cO_\mathrm{std}, \mathscr{A}_d)$ and $(\R^{d'},\cO_\mathrm{std},\mathscr{A}_{_d'})$, where $\mathscr{A}_d)$ and $\mathscr{A}_{_d'})$ are the maximal atlases containing the charts $(\R^d,\id_{\R^d})$ and $(\R^{d'},\id_{\R^{d'}})$ respectively, and let $f\cl \R^{d}\to \R^{d'}$ be a map. The diagram defining the differentiability of $f$ with respect to these charts is:
 
 \bse
 \begin{tikzcd}
@@ -340,7 +340,7 @@ While finding all the differentiable structures may be difficult for any given m
 
 We now turn to the special case $\dim M = 4$. The result is that if $M$ is a non-compact topological manifold, then there are uncountably many non-diffeomorphic smooth structures that we can equip $M$ with. In particular, this applies to $(\R^4,\cO_\mathrm{std})$.
 
-\section{Tangent Spaces}
+\section{Tangent Space}
 
 In this section, whenever we say ``manifold'', we mean a (real) $d$-dimensional differentiable manifold, unless we explicitly say otherwise. We will also suppress the differentiable structure in the notation.
 
@@ -655,7 +655,7 @@ This equation shows as how the components of a vector transform under a chart tr
 
 The function $y^a = y^a(x^1,\ldots,x^{\dim M})$ expresses the new co-ordinates\index{co-ordinates} in terms of the old ones, and $A^{b}_{\phantom{b}a}$ is the \emph{Jacobian}\index{Jacobian matrix} matrix of this map, evaluated at $x(p)$. Note that no matter how non-linear the transformations of the co-ordinates are, the vectors always transform in a linear fashion. In a way, ``vectors do not care about the non-linearity of co-ordinate transformations".
 
-\section{Cotangent Spaces}
+\section{Cotangent Space}
 
 Since the tangent space is a vector space, we can do all the constructions we saw previously in the abstract vector space setting.
 
@@ -753,7 +753,56 @@ where $(\phi_*)_p(X_{\gamma,p})$ is defined as:
 
 In other words, since $(\phi_*)_p$ is a map from one tangent space to another this means that it acts on a tangent vector and produces another one, hence $(\phi_*)_p (X_{\gamma,p})$ is again a tangent vector (but on $N$). As a tangent vector it can act on a smooth function (again on N) and produce a real number, hence the action of a push-forward on a function is simply the one we wrote above.\v
 
-Note that one has to define a push-forward $(\phi_*)_p$ for every point $p$ of $M$. Although we have only one map $\phi$ we have many push-forward maps $(\phi_*)_p$.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes, row sep=4em, column sep=6em, minimum width=2em]
+{
+T^pM	&	T_{\phi(p)}N	& \\
+M	&	N	& \mathbb{R} \\
+};
+\path[->]  
+(m-1-1) edge node [auto] {$(\phi_*)_p$} (m-1-2)
+edge node [auto] {} (m-2-1)
+(m-1-2) edge node [auto] {} (m-2-2)
+(m-2-2) edge node [auto] {$f$} (m-2-3)
+(m-2-1) edge node [auto] {$\phi$} (m-2-2)
+edge [bend right=30] node [auto] {$f \circ \phi$} (m-2-3);
+\end{tikzpicture}
+\caption{$(\phi_*)_p$ takes a vector $X_p \in T_pM$ in the tangent space at the point $p \in M$ to the vector $(\phi_*)_p (X_{\gamma,p}) \in T_{\phi(p)}N$ in the tangent space at the point $\phi(p) \in N$, such that the action of $(\phi_*)_p (X_{\gamma,p}) $ on any smooth function $f \in C^\infty(N)$ results in the same value as the action of $X_p$ on the function $(f \circ \phi)$.}
+\end{figure}
+
+\vspace{-5pt}
+
+Note that one has to define a push-forward $(\phi_*)_p$ for every point $p$ of $M$. Although we have only one map $\phi$ we have many push-forward maps $(\phi_*)_p$. \v
+
+One can compute the components of a push-forward $(\phi_*)_p$ w.r.t charts $(U,x) \in \mathscr{A}_M$ and $(V,y) \in \mathscr{A}_N$. Let $p \in U$ and $\phi(p) \in V$. Since $(\cibasis{x^i})_p$ is a vector in $M$, we have $(\phi_*)_p ((\cibasis{x^i})_p)$ as a vector in $N$. Then we can select a component of this vector by using $dy^a$ as follows:
+\bi{rCl}
+{((\phi_*)_p)}^a_i  & = & dy^a\left((\phi_*)_p \left(\left(\cibasis{x^i}\right)_p\right)\right)\\[5pt]
+& = & (\phi_*)_p \left(\left(\cibasis{x^i}\right)_p\right)y^a \\[5pt]
+& = & \left(\cibasis{x^i}\right)_p (y^a \circ \phi)\\[5pt]
+& = &\left(\cibasis{x^i}\right)_p (y \circ \phi)^a\\[5pt]
+& = &  \left(\cibasis[\hat{\phi}^a]{x^i}\right)_p
+\ei
+
+Diagrammatically:
+\vspace{-10pt}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes, row sep=4em, column sep=6em, minimum width=2em]
+{
+M \supseteq U	&	V \subseteq N \\
+\underbrace{x(U)}_{\subseteq \mathbb{R}^{\text{dim }M}}		&	\underbrace{y(V)}_{\subseteq \mathbb{R}^{\text{dim }N}}\\
+};
+\path[->]  
+(m-1-1) edge node [auto] {$\phi$} (m-1-2)
+edge node [auto] {$x$} (m-2-1)
+edge node [sloped, anchor=center, above] {$y \circ \phi =: \hat{\phi}$} (m-2-2)
+(m-1-2) edge node [auto] {$y$} (m-2-2)
+(m-2-1) edge node [below] {$y \circ \phi \circ x^{-1}$} (m-2-2);
+\end{tikzpicture}
+\end{figure}
 
 \bp
 Let $\phi\cl M\to N$ be smooth. The tangent vector $X_{\gamma,p}\in T_pM$ is pushed forward to the tangent vector $X_{\phi\circ\gamma,\phi(p)}\in T_{\phi(p)}N$, i.e:
@@ -789,6 +838,20 @@ where $(\phi^*)_p(\omega_{\phi(p)})$ is defined as:
 \ed
 In words, if $\omega_{\phi(p)}$ is a covector on $N$, its pull-back $(\phi^*)_p(\omega_{\phi(p)})$ is a covector on $M$. It acts on tangent vectors on $M$ by first pushing them forward to tangent vectors on $N$, and then applying $\omega_{\phi(p)}$ to them to produce a real number. \v
 
+As before, one can compute the components of a pull-back $(\phi^*)_p $ w.r.t charts $(U,x) \in \mathscr{A}_M$ and $(V,y) \in \mathscr{A}_N$. Let $p \in U$ and $\phi(p) \in V$. Since $\left(dy^a\right)_{\phi(p)}$ is a covector in $N$, we have $(\phi^*)_p (dy^a_{\phi(p)})$ as a covector in $M$. Then we can select a component of this covector by using $(\cibasis{x^i})_p$ as follows:
+\bi{rCl}
+((\phi^*)_p)_a  & = &  (\phi^*)_p \left(\left(dy^a\right)_{\phi(p)}\right) \left(\left(\cibasis{x^i}\right)_p\right)\\[5pt]
+& = & \left(dy^a\right)_{\phi(p)} (\phi_*)_p \left(\left(\cibasis{x^i}\right)_p\right)\\[5pt]
+& = & \left(\cibasis[\hat{\phi}^a]{x^i}\right)_p \\[5pt]
+& = & {((\phi_*)_p)}^a_i
+\ei
+
+Thus, the components of the push-forward and pull-back maps are exactly the same:
+\begin{align*}
+\left( (\phi_*)_p \left(X\right)\right)^a & = {((\phi_*)_p)}^a_i \, X^i \\
+\left( (\phi^*)_p \left(\omega\right)\right)_i & = {((\phi_*)_p)}^a_i \, \omega_a
+\end{align*}
+
 Diagrammatically, what we've defined so far is the following:
 
 \v
@@ -821,7 +884,7 @@ In general, we should keep in mind that:
 \emph{Vectors are pushed forward,\\ covectors are pulled back.}
 \end{center}
 
-\section{Immersions \& Embeddings}
+\subsection{Immersions \& Embeddings}
 
 We will now consider the question of under which circumstances a smooth manifold can ``sit'' in $\R^d$, for some $d\in \N$. There are, in fact, two notions of sitting inside another manifold, called immersion and embedding.
 
@@ -881,7 +944,15 @@ Any smooth manifold $M$ can be:
 The Klein bottle can be embedded in $\R^4$ but not in $\R^3$. It can, however, be immersed in $\R^3$.
 \ee
 
-\section{Topological Bundles}
+\section{The Tangent Bundle}
+
+Up to this point, we have defined everything on the level of a point on the manifold. However, since we are interested in describing quantities as a whole in the entire manifold, we would like to define a vector field on a manifold $M$ as a ``smooth'' map that assigns to each $p\in M$ a tangent vector in $T_pM$. However, since this would then be a ``map'' to a different space at each point, it is unclear how to define its smoothness. \v
+
+The simplest solution is to merge all the tangent spaces into a unique set and equip it with a smooth structure, so that we can then define a vector field as a smooth map between smooth manifolds. \v
+
+In order to do so, we will need something called ``topological bundles". We will start by defining them more generally and then we will use them for topological manifolds.
+
+\subsection{Topological Bundles}
 
 While topological products are very useful, very often one intuitively thinks of the product of two manifolds as attaching a copy of the second manifold to each point of the first.  However, not all interesting manifolds can be understood as products of manifolds. A classic example of this is the \emph{M\"obius strip}\index{M\"obius strip}.
 
@@ -1178,13 +1249,11 @@ and hence the map:
 satisfies $\pi'\circ\s'=\id_{M'}$ and it is thus a section on the pull-back bundle $E'\xrightarrow{\,\pi'\,}M'$.
 \er
 
-The reason of introducing the concept of a topological bundle, is because we need it in order to construct the so called ``tangent bundle".
+\subsection{Tangent Bundle}
 
-\section{The Tangent Bundle}
+The reason of introducing the concept of a topological bundle, is because we need it in order to construct the so called ``tangent bundle". \v
 
-Up to this point, we have defined everything on the level of a point on the manifold. However, since we are interested in describing quantities as a whole in the entire manifold, we would like to define a vector field on a manifold $M$ as a ``smooth'' map that assigns to each $p\in M$ a tangent vector in $T_pM$. However, since this would then be a ``map'' to a different space at each point, it is unclear how to define its smoothness. \v
-
-The simplest solution is to merge all the tangent spaces into a unique set and equip it with a smooth structure, so that we can then define a vector field as a smooth map between smooth manifolds.
+As we said before, we want to define a vector field on a manifold $M$ as a ``smooth'' map that assigns to each $p\in M$ a tangent vector in $T_pM$. The idea was to merge all the tangent spaces into a unique set and equip it with a smooth structure, so that we can then define a vector field as a smooth map between smooth manifolds. We can do that through the tangent bundle.
 
 \bd [Tangent Bundle]
 Given a smooth manifold $M$, the \textbf{tangent bundle} of $M$ is the disjoint union of all the tangent spaces to $M$, i.e:
@@ -1262,7 +1331,7 @@ T^*M := \dot{\bigcup}_{p\in M} T^*_pM
 \ese
 and going through the above again, using the dual basis $\{(\d x^a)_p\}$ instead of $\{\tvb{x}{a}{p}\}$.
 
-\section{Vector, Covector \& Tensor Fields}
+\subsection{Vector, Covector \& Tensor Fields}
 
 Now that we have defined the tangent and cotangent bundles, we are ready to define fields.
 
@@ -1579,379 +1648,6 @@ where $\phi_*(X)$ evaluated at a point $\phi(p)$ of $N$ is:
 \ese
 
 Hence the push-forward of a vector field evaluated at point $\phi(p)$ is equal to the push-forward of the vector $X|_p$ generated by the vector field $X$ at point $p$.
-
-\section{Connection / Covariant Derivative On A Manifold}
-
-In this section we will introduce a very important concept called ``connection" or ``covariant derivative" on a differentiable topological manifold. However, we need to make something very clear. ``Connection" and ``covariant derivative" are not actually the same thing. In elementary courses on differential geometry or general relativity, the notions of connection and covariant derivative are often confused with one another and, sometimes, the terms are even used as synonyms. This happens because one is not in a position to properly define these concepts before introducing the so-called ``principal fiber bundles" that we will do in a later chapter. \v
-
-So for now, in this section, we will make a kind of ``naive" introduction to these concepts, which however, most of the times, this is how they are introduced in many courses and on top of that they will give us a very first understanding of the concepts. Later in the notes, once we introduce ``principal fiber bundles" we will revisit these terms in a more systematic way and we will gain a better understanding of what they are exactly and how they generalize. \v 
-
-Having said that, for now we will introduce ``connection" and ``covariant derivative" as identical concepts which , again, even though they are different, for the purposes of this section we shall not distinguish the two and we will also introduce ``parallel transport"  within this framework (later we will also revisit parallel transport). \v
-
-\subsection{Connection / Covariant Derivative}
-
-So far, we saw that a vector field $X$ can be used to provide a directional derivative of a function $f \in C^{\infty}(M)$ in the direction $X$ as $Xf(p) = X_p f$. Recall that once we introduced the $(p,q)$ tensor field, we saw that a function $f \in C^{\infty}(M)$ is nothing else but a $(0,0)$ tensor field. Hence the equation $Xf$ can be seen as the directional derivative acting on a $(0,0)$ tensor field, which leads to the natural question: can we apply the directional derivative to any $(p,q)$ tensor field? \v
-
-The short answer is no, and the reason is that we do not know how the field $X$ can act on anything else other than a function (this is how we defined it). However, one could try to generalize the action of $X$ to any $(p,q)$ tensor field by defining a new object $\nabla_X$, called ``connection" or ``covariant derivative", able to act on any $(p,q)$ tensor field (for this section we will stick with the term ``connection").
-
-\v
-
-\begin{center}
-\begin{tikzpicture}
-\matrix (m) [matrix of nodes, row sep=3em, column sep=3em, minimum width=1em]
-{
-$X : C^{\infty}(M)$ & $C^{\infty}(M)$ \\
-$\nabla_X : (p,q)$-tensor field & $(p,q)$-tensor field \\ };
-\path[->]
-  (m-1-1) edge (m-1-2);
-\path[->]
-  (m-2-1) edge (m-2-2);
-\path[->]
-  (m-1-1) edge[snake it] node[left] {$\vdots$} (m-2-1);
-\path[->]
-  (m-1-2) edge[snake it] node[left] {$\vdots$} (m-2-2);
-\end{tikzpicture}
-\end{center}
-
-\v
-
-The question is how to define such an object? Since it is closely related to $X$ it must be consistent with it, so we will define $\nabla_X$ through some ``consistency" conditions that it must satisfy.
-
-\bd [Connection / Covariant Derivative]
-A \textbf{connection} (or \textbf{covariant derivative}) $\nabla_X$ on a smooth manifold $M$ is a map that takes a pair consisting of a vector field $X$ and a $(p,q)$-tensor field $T$ and sends them to a $(p,q)$-tensor field $\nabla_X T$ satisfying:
-\bit
-\item[1.] $\nabla_X f = Xf, \, \forall f \in C^{\infty}M.$ 
-
-(in order to be consistent with the already defined action of $Xf$)
-\item[2.] $\nabla_X (T + S) = \nabla_X T + \nabla_X S.$
-
-(due to linearity of $X$)
-\item[3.] Since it's a notion of derivative, for any $(p,q)$ tensor field $T$ the Leibnitz rule must be satisfied:
-\bi{rCl}
-\nabla_X T(\omega_1,\dotsc,\omega_p,Y_1,\dotsc,Y_q) &=& (\nabla_X T)(\omega_1,\dotsc,\omega_p,Y_1,\dotsc,Y_q) \\
-& + & T(\nabla_X \omega_1,\dotsc,\omega_p,Y_1,\dotsc,Y_q) + \dotsb + T(\omega_1,\dotsc,\nabla_X \omega_p,Y_1,\dotsc,Y_q) \\
-& + & T(\omega_1,\dotsc,\omega_p,\nabla_X Y_1,\dotsc,Y_q) + \dotsb + T(\omega_1,\dotsc,\omega_p,Y_1,\dotsc,\nabla_X Y_q)
-\ei
-\item[4.] $\nabla_{fX+Z} T = f\nabla_X T + \nabla_Z T, \, \forall f \in C^{\infty}(M).$
-
-(This is $C^{\infty}$-linearity, which means that no matter how the function $f$ scales the vectors at different points of the manifold, the effect of the scaling at any point is independent of scaling in the neighbourhood and depends only on how the scaling happens at that point) \v
-\eit
-\ed
-
-After formulating this ``wish list" of properties which $\nabla_X$ acting on a tensor field should have, in general there may be many structures that satisfy these conditions. Any remaining freedom in choosing such a $\nabla_X$, will need to be provided as additional structure beyond the structure we already have, as we did for example with the topology and the atlases. 
-
-\bd [Topological Manifold With A Connection]
-A \textbf{topological manifold with a connection} $\nabla_X$ is a quadruple $(M, \mathcal{O}, \mathscr{A}, \nabla_X)$, where $M$ is a set, $\mathcal{O}$ is a chosen topology on the set, $\mathscr{A}$ is a chosen smooth atlas and $\nabla_X$ is a chosen connection.
-\ed
-
-The question now is, how much freedom do we have in choosing a connection? In order to answer that we will let it act in ``all" possible $(p,q)$ tensor fields and see what we get. \v
-
-Starting with the simplest case of a $(0,0)$ tensor field, i.e a function $f$, by the first condition we simply have:
-\bse
-\nabla_X f = Xf
-\ese
-
-\v
-
-So far so good. Let as consider now the next simplest case of an $(1,0)$ tensor field, i.e a vector field $Y$:
-\bi{rCl"s}
-\nabla_X Y & = & \nabla_{\left(X^i \cibasis{x^i}\right)} \left(Y^m \cibasis{x^m}\right) & (expressed in chart (U,x))\\[5pt]
-& =&  X^i \cdot \nabla_{\left(\cibasis{x^i}\right)} \left(Y^m \cibasis{x^m}\right) & (fourth condition)\\[5pt]
-& =& X^i \left(\nabla_{\left(\cibasis{x^i}\right)} Y^m\right) \cibasis{x^m} + X^i \cdot Y^m \cdot \left(\nabla_{\left(\cibasis{x^i}\right)} \cibasis{x^m}\right) & (third condition) \\[5pt]
-& = & X^i \cibasis{x^i} Y^m \cibasis{x^m} + X^i \cdot Y^m \cdot \left(\nabla_{\left(\cibasis{x^i}\right)} \cibasis{x^m}\right)& (first condition)
-\ei
-
-\v
-
-Regarding the last term $\nabla_{\left(\cibasis{x^i}\right)} \cibasis{x^m}$, note that it simply is of the form $\nabla_X X$ where $X$ is the co-ordinate induced basis vector. There isn't something more we can do on that, however since $\cibasis{x^m}$ is a basis vector, i.e a $(1,0)$ tensor field, the result of the action of $\nabla_{\left(\cibasis{x^i}\right)}$ on it must by definition, yield again a $(1,0)$ tensor field i.e a vector that we can express in the co-ordinate induced basis also as:
-\bse
-\nabla_{\left(\cibasis{x^i}\right)} \cibasis{x^m} = \Gamma^{q}_{mi} \cibasis{x^q}
-\ese
-
-Hence:
-\bse
-\nabla_X Y = X^i \left(\cibasis{x^i} Y^m\right) \cibasis{x^m} + X^i \cdot Y^m \cdot \Gamma^{q}_{mi} \cibasis{x^q}
-\ese
-
-\v
-
-Thus, by rearranging the indices and the terms and by discarding the basis vectors:
-\bse
-\left(\nabla_X Y\right)^i = X^m \left(\cibasis{x^m} Y^i\right) + \Gamma^{i}_{nm} \cdot X^m \cdot Y^n = X (Y^i) + \Gamma^{i}_{nm} \cdot X^m \cdot Y^n
-\ese
-
-This last equation tells us the freedom we have left with on choosing a structure, after imposing the conditions on $\nabla_X$ acting on an $(1,0)$ tensor field, i.e a vector field. Namely, we need to define all the components of $\Gamma^{i}_{nm}$ i.e  $(dim\,M)^3$-many functions in order to define a directional derivative of a vector field. \v
-
-Now we move on to consider the action of $\nabla_X$ in the case of a $(0,1)$ tensor field, i.e a covector field $\omega$. 
-\bi{rCl"s}
-\nabla_X \omega & = & \nabla_{\left(X^i \cibasis{x^i}\right)} \left(\omega_m dx^m\right) & (expressed in chart (U,x))\\[5pt]
-& =&  X^i \cdot \nabla_{\left(\cibasis{x^i}\right)} \left(\omega_m dx^m\right) & (fourth condition)\\[5pt]
-& =& X^i \left(\nabla_{\left(\cibasis{x^i}\right)} \omega_m\right) dx^m + X^i \cdot \omega_m \cdot \left(\nabla_{\left(\cibasis{x^i}\right)} dx^m\right) & (third condition) \\[5pt]
-& = & X^i \cibasis{x^i} \omega_m dx^m + X^i \cdot \omega_m \cdot \left(\nabla_{\left(\cibasis{x^i}\right)} dx^m\right) & (first condition)
-\ei
-
-\v
-
-Once again we have left with the term $\nabla_{\cibasis{x^i}}\left(dx^m\right)$ which with similar reasoning as before, it must be again a covector field that can be expressed in term of the dual co-ordinate induced basis i.e:
-\bse
-\nabla_{\cibasis{x^i}}\left(dx^m\right) = \Sigma^{m}_{ji} dx^j
-\ese
-
-
-The question now is, are these $\Sigma$'s independent of $\Gamma$'s? We just showed that, on a chart domain $U$, the choice of the $(dim\,M)^3$-many functions $\Gamma$'s suffices to fix the action of $\nabla_X$ on a vector field. Do we need another $(dim\,M)^3$-many functions $\Sigma$'s to fix the action on a covector field? And if it so, will we have to provide more and more coefficients for all individual cases of $(p,q)$ tensor field? \v
-
-Fortunately the answer is no! The same $(dim\,M)^3$-many functions $\Gamma$'s fix the action of $\nabla$ on any tensor field. Let's first show that the $\Sigma$'s are actually related to $\Gamma$'s. \v  
-
-Consider the following:
-\bse
-\nabla_{\cibasis{x^i}} \left(dx^m \left(\cibasis{x^j}\right)\right) dx^j = \left( \nabla_{\cibasis{x^i}} \delta^m_j \right) dx^j =\left( \cibasis{x^i}(\delta^m_j) \right) dx^j = 0
-\ese
-
-However it also is:
-\bi{rCl}
-\nabla_{\cibasis{x^i}} \left(dx^m \left(\cibasis{x^j}\right)\right) dx^j   & = & \left(\nabla_{\cibasis{x^i}} dx^m \right)\left(\cibasis{x^j}\right) dx^j  + dx^m \left(\nabla_{\cibasis{x^i}} \cibasis{x^j}\right) dx^j  \\ [5pt]
-& = & \left(\nabla_{\cibasis{x^i}} dx^m \right)\left(\cibasis{x^j}\right) dx^j  + dx^m \left( \Gamma^{q}_{ji} \cibasis{x^q} \right) dx^j  \\ [5pt]
-& = & \left(\nabla_{\cibasis{x^i}} dx^m \right) \left(\cibasis{x^j} dx^j \right)  + \Gamma^{q}_{ji} \left( dx^m \cibasis{x^q} \right) dx^j  \\ [5pt]
-& = & \left(\nabla_{\cibasis{x^i}} dx^m \right) \delta^j_j  + \Gamma^{q}_{ji} \cdot \delta^m_q \cdot dx^j  \\ [5pt]
-& = & \left(\nabla_{\cibasis{x^i}} dx^m \right) + \Gamma^{m}_{ji} \cdot dx^j \\ [5pt]
-& = & \Sigma^{m}_{ji} dx^j + \Gamma^{m}_{ji} \cdot dx^j \\ [5pt]
-& = & \left( \Sigma^{m}_{ji} + \Gamma^{m}_{ji} \right) dx^j 
-\ei
-
-But since, as we showed, this is equal to zero we end up with:
-\bse
-\left( \Sigma^{m}_{ji} + \Gamma^{m}_{ji} \right)  = 0 \implies \Sigma^{m}_{ji} + \Gamma^{m}_{ji}= 0 \implies \Sigma^{m}_{ji} = - \Gamma^{m}_{ji}
-\ese
-
-Hence:
-\bse
-\nabla_x \omega = X^i \left(\cibasis{x^i} \omega_m \right) dx^m - X^i \cdot \omega_m \cdot \Gamma^{m}_{qi} \cdot dx^q
-\ese
-
-\v
-
-Thus, by rearranging the indices and the terms and by discarding the basis vectors:
-\bse
-(\nabla_x \omega)_i = X^m\left(\cibasis{x^m} \omega_i \right) -\Gamma^{n}_{im} \cdot X^m \cdot \omega_n = X (\omega_i)  -\Gamma^{n}_{im} \cdot X^m \cdot \omega_n
-\ese
-
-To sum up:
-\bi{rCl}
-\left(\nabla_X Y\right)^i = X (Y^i) + \Gamma^{i}_{nm} \cdot X^m \cdot Y^n \\[5pt]
-(\nabla_x \omega)_i = X (\omega_i)  -\Gamma^{n}_{im} \cdot X^m \cdot \omega_n
-\ei
-
-On top of that, by making use of the Leibnitz rule we can find the action of $\nabla_X$ on any $(p,q)$-tensor field. For example for a $(1,2)$-tensor field $T$:
-\bi{rCl}
-\left(\nabla_X T\right)^{i}_{jk} = X\left(T^{i}_{jk} \right) + \Gamma^{i}_{sm} T^{s}_{jk} X^m - \Gamma^{s}_{jm} T^{i}_{sk} X^m - \Gamma^{s}_{km} T^{i}_{js} X^m
-\ei
-
-Hence, we showed that these $(dim\,M)^3$-many functions $\Gamma$'s suffices to fix the action of $\nabla_X$ on any $(p,q)$-vector field and thus this is all we need to chose in order to completely define the structure of the connection. 
-
-\bd [Connection Coefficient Functions]
-Given a manifold with a connection $(M, \mathcal{O}, \mathscr{A}, \nabla_X)$ and a chart $(U,x) \in \mathscr{A}$, then the \textbf{connection coefficient functions} $\Gamma$'s on $M$ of $\nabla_X$ w.r.t $(U,x)$ are $(dim\,M)^3$-many functions given by:
-\bi{rCl}
-\Gamma_{i}^{jk} : \quad U & \to & \R \\
-p & \mapsto & \Gamma^{i}_{jk}(p) := \left(dx^i \left(\nabla_{\left(\cibasis{x^k}\right)} \cibasis{x^j}\right)\right)(p)
-\ei
-\ed
-
-One important aspect of the connection coefficient functions is their transformation law under a change of coordinates. Namely, let $(U,x)$, $(V,y) \in \mathscr{A}$ and $U \cap V \neq \emptyset$. Then for the  connection coefficient functions in $(V,y)$ holds:
-\bi{rCl}
-{\Gamma^{i}_{jk}}_{(y)} & := & dy^i \left(\nabla_{\cibasis{y^k}} \cibasis{y^j} \right) \\[5pt]
-& = & \cibasis[y^i]{x^q} dx^q \left(\nabla_{\cibasis[x^p]{y^k} \cibasis{x^p}} \cibasis[x^s]{y^j} \cibasis{x^s} \right) \\[5pt]
-& = & \cibasis[y^i]{x^q} dx^q \left(\cibasis[x^p]{y^k} \left[ \left(\nabla_{\cibasis{x^p}} \cibasis[x^s]{y^j} \right) \cibasis{x^s} + \cibasis[x^s]{y^j} \left(\nabla_{\cibasis{x^p}} \cibasis{x^s} \right) \right] \right) \\[5pt]
-& = & \cibasis[y^i]{x^q} \cibasis[x^p]{y^k} \cibasis{x^p} \cibasis[x^s]{y^j} \delta^q_s + \cibasis[y^i]{x^q} \cibasis[x^p]{y^k} \cibasis[x^s]{y^j} {\Gamma^{q}_{sp}}_{(x)} \\[5pt]
-&=& \cibasis[y^i]{x^q} \cibasis[x^p]{y^k} \cibasis[x^s]{y^j} {\Gamma^{q}_{sp}}_{(x)} + \cibasis[y^i]{x^q} \cibasis{y^k} \cibasis[x^q]{y^j}\\[5pt]
-&=& \cibasis[y^i]{x^q} \cibasis[x^p]{y^k} \cibasis[x^s]{y^j} {\Gamma^{q}_{sp}}_{(x)} + \cibasis[y^i]{x^q}{\frac{\partial^2 x^q}{\partial y^k \partial y^j}}
-\ei
-
-\v
-
-Notice that the change of connection coefficient function under the change of chart $(U\cap V,x) \to (U\cap V,y)$ do not follow the usual transformation law of a tensor due to the second term of the equation. If that part was missing then $\Gamma$'s would be the components of a tensor. Notice also that this extra term carries a second derivative hence for linear transformation between coordinates in two charts, the term $\frac{\partial^2 x^q}{\partial y^k \partial y^j}$ always vanishes and then the transformation law resembles the one of a tensor (without meaning that $Gamma$'s became the components of a tensor suddenly). \v
-
-$\Gamma$'s transformation law has another great impact. Since the second term, the one destroying the tensor components transformation law, does not carry and $\Gamma$'s, that means that even if $\Gamma$'s are zero in one chart, they might be non zero in the other charts (unless the chart transition maps are all linear, however, there is no reason not to select a coordinate which is not a linear transformation of another one). In other words just the change of coordinate system can suddenly give non-vanishing $\Gamma$'s even if we didn't have them in the fist coordinate system. \v
-
-That leads us to the following definition/theorem that we will not prove.
-\bd [Normal Coordinates]
-Let $(M, \mathcal{O},  \mathscr{A}, \nabla_X)$ be a manifold with a connection. Having chosen a point $p$, one can construct a chart $(U,x)$ with $p \in U$ such that the symmetric part of $\Gamma$'s vanish at the point $p$ (not necessarily in any neighbourhood). That is:
-\bse
-\forall \, p \in M, \, \exists \, (U,x) \in \mathscr{A} \, : \, p \in U : {\Gamma^{i}_{(jk)}}_{(x)}(p) = 0
-\ese
-Such $(U,x)$ is called a \textbf{normal coordinate chart} of $\nabla_X$ at $p \in M$.
-\ed
-
-\subsection{Parallel Transport \& Curvature}
-
-Parallel transport is a way of transporting geometrical data along smooth curves in a manifold. If the manifold is equipped with a connection (a covariant derivative or connection on the tangent bundle), then this connection allows one to transport vectors of the manifold along curves so that they stay parallel with respect to the connection. \v
-
-The parallel transport for a connection thus supplies a way of, in some sense, moving the local geometry of a manifold along a curve: that is, of connecting the geometries of nearby points. There may be many notions of parallel transport available, but a specification of one, one way of connecting up the geometries of points on a curve, is tantamount to providing a connection. In fact, the usual notion of connection is the infinitesimal analog of parallel transport. Or, vice versa, parallel transport is the local realization of a connection. \v
-
-As parallel transport supplies a local realization of the connection, it also supplies a local realization of the curvature that we will see in a while.
-
-\bd [Parallel Transport]
-Let $(M, \mathcal{O},  \mathscr{A}, \nabla_X)$ be a smooth manifold with connection. A vector field $Y$ on $M$ is said to be \textbf{parallely transported} along a smooth curve $\gamma: \mathbb{R} \to M$ if :
-\bse
-\nabla_X Y = 0
-\ese
-
-where $X$ is a vector field along this curve $\gamma$, i.e $X(p) = X_{\gamma,p}, \, \forall p \in M$.
-\ed
-
-\br
-Even though parallely transported sounds like an action, it is really a property.
-\er
-
-A slightly weaker condition is the notion of ``parallel''.
-
-\bd [Parallel]
-Let $(M, \mathcal{O},  \mathscr{A}, \nabla_X)$ be a smooth manifold with connection. A vector field $Y$ on $M$ is said to be \textbf{parallel} along a smooth curve $\gamma: \mathbb{R} \to M$ if :
-\bse
-\nabla_X Y = \mu Y
-\ese
-
-where $\mu$ is a function $\mu : \mathbb{R} \to \mathbb{R}$.
-\ed
-
-Finally we also introduce the crucial concept of autoparallel transport.
-\bd [Autoparallel Transport]
-Let $(M, \mathcal{O},  \mathscr{A}, \nabla_X)$ be a smooth manifold with connection. A vector field $X$ on $M$ is said to be \textbf{autoparallely transported} along a smooth curve $\gamma: \mathbb{R} \to M$ if :
-\bse
-\nabla_X X = 0
-\ese
-\ed
-
-We can manipulate the autoparallel transport equation by invoking a co-ordinate induced basis and get one of the most heavily used equation in physics as follows:
-\bi{rCl}
-\left(\nabla_X X\right)^i &=&  X (X^i) + \Gamma^{i}_{nm} \cdot X^m \cdot X^n \\[5pt]
-&=& X^m \left(\cibasis{x^m} X^i\right) + \Gamma^{i}_{nm} \cdot X^m \cdot X^n \\[5pt]
-&=& \ddot{\gamma}^i + \Gamma^{i}_{nm} \cdot \dot{\gamma}^m  \cdot \dot{\gamma}^n
-\ei
-
-where in the last line we used a different notation for the directional derivative, namely:
-\bi{rrCl}
-X^m \cl & \mathcal{C}^\infty(M) & \xrightarrow{\sim} & \mathcal{C}^\infty(M) \\
-& f & \mapsto & ((f\circ\gamma)'(0))^m := \dot{\gamma}^m
-\ei
-
-and we also used a fact that we can show (but we won't):
-\bse
-X^m \left(\cibasis{x^m} X^i\right) =  \ddot{\gamma}^i
-\ese
-
-Hence the autoparallel transport equations reads:
-\bse
-\ddot{\gamma}^i + \Gamma^{i}_{nm} \cdot \dot{\gamma}^m  \cdot \dot{\gamma}^n = 0
-\ese
-
-which is the chart expression of the condition that $\gamma$ be autoparallely transported.
-
-\be
-In Euclidean plane having a chart:
-\bse
-(U = \mathbb{R}^2, x = id_{\mathbb{R}^2}), \Gamma^{i}_{jk}{(x)} = 0
-\ese
-
-leads to the following autoparallely transported equation:
-\bse
-\ddot{\gamma}_{(x)}^m = 0 \implies \gamma_{(x)}^m (\lambda) = a^m \lambda + b^m
-\ese
-
-where $a,b \in \mathbb{R}^d$, which is the uniform motion.
-\ee
-
-\be
-Consider the round sphere $(S^2, \mathcal{O}, \mathscr{A}, \nabla_{round}$). Consider the chart $x(p) = (\theta, \phi)$ where $\theta \in (0,\pi)$ and $\phi \in (0, 2\pi)$. In this chart $\nabla_{round}$ is given by:
-\bi{rCl}
-\Gamma^{1}_{22}{(x)}\left(x^{-1}(\theta,\phi)\right) &  := &  - \sin\theta \cos\theta \\[5pt]
-\Gamma^{2}_{12}{(x)}\left(x^{-1}(\theta,\phi)\right) =  \Gamma^{2}_{21}{(x)}\left(x^{-1}(\theta,\phi)\right) &  := &  \cot\theta
-\ei
-and all other $\Gamma$'s vanish. \v
-
-Then, by using the sloppy notation (familiar to us from classical mechanics) i.e $x^1(p) = \theta(p)$ and $x^2(p) = \phi(p)$, the autoparallel transport equation reads:
-\bi{rCl}
-\ddot{\theta} + \Gamma^{1}_{22} \dot{\phi}\dot{\phi} &= 0 \\[5pt] 
-\ddot{\phi} + 2 \Gamma^{2}_{12} \dot{\theta}\dot{\phi} &= 0
-\ei
-
-or:
-\bi{rCl}
-\ddot{\theta} - \sin\theta \cos\theta \dot{\phi}\dot{\phi} &= 0 \\[5pt] 
-\ddot{\phi} + 2 \cot\theta \dot{\theta}\dot{\phi} &= 0
-\ei
-
-which is exactly what one would obtain by the Lagrange equations. It can be seen that the above equations are satisfied at the equator where $\theta(\lambda) = \pi/2$, and $\phi(\lambda) = \omega\lambda + \phi_0$ (running around the equator at constant speed $\omega$). Thus, this curve is autoparallel. However, $\phi(\lambda) = \omega\lambda^2 + \phi_0$ wouldn't be autoparallel.
-\ee
-
-\section{Torsion}
-Can we use $\nabla_{X}$ to define tensors on $(M,\mathcal{O}, \mathscr{A},\nabla_{X})$?
-
-\bd [Torsion]
-The \textbf{torsion} of a connection $\nabla_X$ is the $(1,2)$-tensor field:
-\bse
-T(\omega,X,Y) := \omega(\nabla_X Y - \nabla_Y X - [X,Y])
-\ese
-where $[X,Y]$, called the commutator of $X$ and $Y$ is a vector field defined by $[X,Y]f:= X(Yf) - Y(Xf)$.
-\ed
-
-\bp
-We shall check that $T$ is $C^{\infty}$-linear in each entry.
-\begin{align*}
-T(f\omega, X, Y) & = f\omega(\nabla_{X} Y - \nabla_Y (X) - [X,Y]) \\
-& = fT(\omega, X, Y) \\
-T(\omega + \psi, X, Y) & = (\omega + \psi)(\nabla_{X} Y - \nabla_Y (X) - [X,Y]) \\
-& = T(\omega, X, Y) + T(\psi, X, Y) \\
-T(\omega, fX, Y) & = \omega(\nabla_{fX} Y - \nabla_Y (fX) - [fX,Y]) \\
-& = \omega(f\nabla_{X} Y - (\nabla_Y (f))X - f(\nabla_Y X) - [fX,Y]) \\
-& = \omega(f\nabla_{X} Y - (Yf)X - f(\nabla_Y X) - [fX,Y]) \\
-\text{But } [fX,Y]g & = fX(Yg) - Y(fX)g = fX(Yg) - (Yf)(Xg) - fY(Xg) \implies [fX,Y] = f[X,Y] - (Yf)X \\
-\therefore T(\omega, fX, Y) & = \omega(f\nabla_{X} Y - (Yf)X - f(\nabla_Y X) - f[X,Y] + (Yf)X) \\
-& = \omega(f\nabla_{X} Y - f(\nabla_Y X) - f[X,Y]) \\
-& = f\omega(\nabla_{X} Y - (\nabla_Y X) - [X,Y]) = fT(\omega,X,Y) \\
-\text{Further, } T(\omega,X,Y) & = - T(\omega,Y,X), \text{ which means scaling in the last factor need not be checked separately.} \\
-\end{align*}
-Additivity in the last two factors can also be checked.
-\ep
-
-\bd [Torsion-Free]
-A $(M,\mathcal{O}, \mathscr{A},\nabla_X)$ is called \textbf{torsion-free} if the torsion of its connection is zero. That is, $T = 0$.
-\end{definition}
-
-In a chart:
-\bse
-T^{i}_{ab} := T\left(dx^i, \cibasis{x^a}, \cibasis{x^b}\right) = dx^i (\dots) = \Gamma^{i}_{ab} - \Gamma^{i}_{ba} = 2 \Gamma^{i}_{[ab]}
-\ese
-
-From now on, in these lectures, we only use torsion-free connections. 
-
-\subsection{Curvature}
-
-\bd
-\textbf{Riemann curvature} of a connection $\nabla$ is the $(1,3)$-tensor field
-\bse
-Riem(\omega,Z,X,Y) := \omega(\nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X,Y]} Z)
-\ese
-
-where it can be shown that it is $C^{\infty}$-linear in each slot. 
-\ed
-
-\textbf{Algebraic relevance of $Riem$:} We ask whether there is difference in applying the two directional derivatives in different order, i.e. \\
-
-$\nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z = Riem(\cdot,Z,X,Y) + \nabla_{[X,Y]} Z$ \\
-
-In one chart $(U,x)$, denoting $\nabla_{\cibasis{x^a}}$ by $\nabla_a$, \\
-$\left(\nabla_a \nabla_b Z \right)^m - \left(\nabla_b \nabla_a Z \right)^m = Riem^{m}_{nab} Z^n + \nabla_{\underbrace{\left[\cibasis{x^a},\cibasis{x^b}\right]}_{=0,\text{ since they commute}}} Z$ \\
-
-As the last term vanishes, we can see how the $Riem$ tensor components contain all the information about how the $\nabla_a$ and $\nabla_b$ fail to commute if they act on a vector field. If they act on a tensor field, there are several terms on RHS like the one term above; if they act on a function, of course they commute. Being a tensor, $Riem$ vanishes in all coordinate systems if it vanishes in one coordinate system, as it does in flat spaces.
-
-\begin{figure}[H]
-\includegraphics[scale=0.7]{riem}
-\centering
-\end{figure}
-
-If we parallel transport a vector $u$ at p to q along two different paths $vw$ and $wv$, the resulting vectors at q are different in general. If, however, we parallel transport a vector in a Euclidean space, where the parallel transport is defined in our usual sense, the resulting vector does not depend on the path along which it has been parallel transported. We expect that this non-integrability of parallel transport characterizes the intrinsic notion of curvature, which does not depend on the special coordinates chosen.
-
-For small $v$ and $w$, if $T = 0$, $(\delta u)^m = Riem^{m}_{nab} v^a w^b u^n + \mathit{O}(v^2w,vw^2)$.
 
 \section{Differential Forms}
 
@@ -2470,7 +2166,7 @@ for any simply connected $M\se\R^d$.
 
 \section{Application: $\SL(2,\C)$ - Part 1}
 
-In this final chapter we will go through an application containing (almost) everything we have mentioned so far. More specifically, we we will examine in detail the special linear group of degree $2$ over $\C$, also known as the relativistic spin group.
+In this chapter we will go through an application containing (almost) everything we have mentioned so far. More specifically, we we will examine in detail the special linear group of degree $2$ over $\C$, also known as the relativistic spin group.
 
 \subsubsection{$\SL(2,\C)$ As A Set}
 We define the following subset of $\C^4:=\C\times\C\times\C\times\C$:
