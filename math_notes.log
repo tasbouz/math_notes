@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.28)  26 MAY 2020 07:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.28)  6 JUN 2020 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1454,128 +1454,1657 @@ LaTeX Warning: No \author given.
 [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./math_notes.toc)
+(./math_notes.toc [2
+
+])
 \tf@toc=\write5
 \openout5 = `math_notes.toc'.
 
- [2
-
-] [3
+ [3] [4
 
 ]
 Chapter 1.
-(./chapters/6.extra_structures_on_topological_manifolds.tex [4
+(./chapters/1.axiomatic_set_theory.tex [5
 
-] [5pdfTeX warning (ext4): destination with the same identifier (name{equation.
-1.1.1}) has been already used, duplicate ignored
+] [6] [7]
+Overfull \hbox (23.47916pt too wide) in paragraph at lines 226--227
+[]\OT1/cmr/bx/n/10 Definition 1.9 \OT1/cmr/m/n/10 (Ax-iomatic Sys-tem)\OT1/cmr/
+bx/n/10 . []\OT1/cmr/m/it/10 An \OT1/cmr/bx/it/10 ax-iomatic sys-tem \OT1/cmr/m
+/it/10 is a fi-nite se-quence of propo-si-tions $\OML/cmm/m/it/10 a[]; a[]; [] 
+; a[]$\OT1/cmr/m/it/10 ,
+ []
+
+[8] [9] [10] [11] [12] [13] [14]
+<./images/map.png, id=626, 612.2875pt x 461.725pt>
+File: ./images/map.png Graphic file (type png)
+<use ./images/map.png>
+Package pdftex.def Info: ./images/map.png  used on input line 667.
+(pdftex.def)             Requested size: 214.30383pt x 161.60617pt.
+ [15pdfTeX warning (ext4): destination with the same identifier (name{equation.
+1.6.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.680 \item A
+              map $\phi$  is called \textbf{surjective}\index{surjective} or...
+ <./images/map.png>]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.1.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.706 \bi{rcCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.1.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.725 \bi{rcCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.1.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.730 \bi{rcCl}
+                [16] [17] [18] [19] [20pdfTeX warning (ext4): destination with 
+the same identifier (name{equation.1.8.1}) has been already used, duplicate ign
+ored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1026 \ese
+           pdfTeX warning (ext4): destination with the same identifier (name{eq
+uation.1.8.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1026 \ese
+           pdfTeX warning (ext4): destination with the same identifier (name{eq
+uation.1.8.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1026 \ese
+           ]pdfTeX warning (ext4): destination with the same identifier (name{e
+quation.1.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1045 \bi{rcCl}
+                ) [21]
+Chapter 2.
+(./chapters/2.algebraic_structures.tex [22
+
+] [23]pdfTeX warning (ext4): destination with the same identifier (name{equatio
+n.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.130 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.135 \bi{rcCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.140 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.145 \bi{rcCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.153 \bi{rCl"s}
+                 [24] [25]pdfTeX warning (ext4): destination with the same iden
+tifier (name{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.264 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.269 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.279 \bi{rl}
+             pdfTeX warning (ext4): destination with the same identifier (name{
+equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.292 \bi{rrCl}
+                [26]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.297 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.302 \bi{rrCl}
+                [27]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.417 \bi{rcl}
+               [28]pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.421 \bi{rcl}
+               [29]pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.511 \bi{rCl}
+               [30]pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.2.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.549 \bi{rClcrCl}
+                   [31] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 679--681
+
+ []
+
+[33] [34] [35]) [36]
+Chapter 3.
+(./chapters/3.lie_algebras.tex [37
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+
+ []
+
+[38] [39] [40pdfTeX warning (ext4): destination with the same identifier (name{
+equation.3.2.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.230 \ei
+         ]pdfTeX warning (ext4): destination with the same identifier (name{equ
+ation.3.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.235 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.3.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.243 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.3.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.255 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.3.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.274 \bi{rCl}
+               [41pdfTeX warning (ext4): destination with the same identifier (
+name{equation.3.2.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.284 \ei
+         ]pdfTeX warning (ext4): destination with the same identifier (name{equ
+ation.3.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.291 \bi{rCl}
+               [42] [43]pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.3.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.408 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.3.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.413 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.3.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.425 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.3.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.458 \bi{rrCl}
+                [44]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.3.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.506 \bi{rrCl}
+                [45] [46] [47] [48] [49] [50pdfTeX warning (ext4): destination 
+with the same identifier (name{equation.3.5.1}) has been already used, duplicat
+e ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.950 \end{center}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{equation.3.5.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.950 \end{center}
+                  ]
+LaTeX Font Info:    Try loading font information for U+euf on input line 1008.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [51]pdfTeX warning (ext4): destination with the same identifier (name{equatio
+n.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1027 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1032 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1051 \bi{rCl}
+                [52pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.3.6.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1076 \ese
+           ]pdfTeX warning (ext4): destination with the same identifier (name{e
+quation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1089 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1103 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1120 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1132 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1137 \bi{rrCl}
+                 [53]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1186 \bi{rrCl}
+                 [54]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1253 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1258 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1264 \bi{rCl}
+                [55]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1298 \bi{rCl}
+                [56]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1318 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1330 \bi{rCl}
+                [57]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1353 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.3.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1365 \bi{rCl}
+               ) [58]
+Chapter 4.
+(./chapters/4.topology.tex [59
+
+] [60] [61] [62] [63] [64]
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 433.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 433.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [65] [66]
+<images/sinoneoverx.pdf, id=1152, 361.35pt x 234.8775pt>
+File: images/sinoneoverx.pdf Graphic file (type pdf)
+<use images/sinoneoverx.pdf>
+Package pdftex.def Info: images/sinoneoverx.pdf  used on input line 619.
+(pdftex.def)             Requested size: 252.94327pt x 164.41312pt.
+
+[67] [68 <./images/sinoneoverx.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 754--755
+
+ []
+
+[69]) [70]
+Chapter 5.
+(./chapters/5.topological_manifolds.tex [71
+
+] [72]
+LaTeX Font Info:    Try loading font information for U+ding on input line 143.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/bbding/Uding.fd
+File: Uding.fd 1996/02/01 v1.0 BBding font definitions
+)
+
+LaTeX Font Warning: Font shape `U/ding/m/it' undefined
+(Font)              using `U/ding/m/n' instead on input line 144.
+
+[73] [74] [75] [76] [77pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.5.4.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.376 I
+       n differential geometry, $X_{\gamma,p}$ is called the \emph{tangent v...
+]pdfTeX warning (ext4): destination with the same identifier (name{equation.5.4
+.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.389 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.394 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.399 \bi{rCl}
+              
+<./images/tangent.png, id=1276, 220.825pt x 142.5325pt>
+File: ./images/tangent.png Graphic file (type png)
+<use ./images/tangent.png>
+Package pdftex.def Info: ./images/tangent.png  used on input line 410.
+(pdftex.def)             Requested size: 154.57643pt x 99.77205pt.
+ [78 <./images/tangent.png>]pdfTeX warning (ext4): destination with the same id
+entifier (name{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.465 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.474 \bi{rrCl}
+                [79]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.509 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.514 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.525 \bi{rCl}
+              
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
+
+ []
+
+[80]pdfTeX warning (ext4): destination with the same identifier (name{equation.
+5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.543 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.548 \bi{rCl}
+              
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.4.
+1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.562 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.584 \bi{rCl}
+               [81]
+Underfull \hbox (badness 10000) in paragraph at lines 599--600
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.4.
+1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.624 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.633 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.638 \bi{rCl}
+               [82]pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.645 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.5.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.650 \bi{rCl}
+              
+Underfull \hbox (badness 10000) in paragraph at lines 671--672
+
+ []
+
+[83]pdfTeX warning (ext4): destination with the same identifier (name{equation.
+5.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.714 \bi{rCl"s}
+                 [84pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.5.5.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.751 \ei
+         ]pdfTeX warning (ext4): destination with the same identifier (name{equ
+ation.5.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.780 \bi{rCl}
+               [85pdfTeX warning (ext4): destination with the same identifier (
+name{equation.5.6.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.811 \ese
+          ]pdfTeX warning (ext4): destination with the same identifier (name{eq
+uation.5.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.816 \bi{rCl"s}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.829 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.5.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.834 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.5.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.842 \bi{rCl}
+               [86]pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.5.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.875 \bi{rCl}
+              
+<images/immers.pdf, id=1343, 361.35pt x 128.48pt>
+File: images/immers.pdf Graphic file (type pdf)
+<use images/immers.pdf>
+Package pdftex.def Info: images/immers.pdf  used on input line 910.
+(pdftex.def)             Requested size: 289.0804pt x 102.78412pt.
+ [87 <./images/immers.pdf>] [88] [89]pdfTeX warning (ext4): destination with th
+e same identifier (name{equation.5.7.1}) has been already used, duplicate ignor
+ed
+<to be read again> 
+                   \relax 
+l.1106 \bi{rrCl}
+                 [90]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1204 \bi{rcCl}
+                 [91]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1245 \bi{rcCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1264 \bi{rrCl}
+                 [92]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1283 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1303 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1312 \bi{rrCl}
+                 [93] [94]pdfTeX warning (ext4): destination with the same iden
+tifier (name{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1438 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1443 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1450 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1455 \bi{rrCl}
+                 [95] [96]pdfTeX warning (ext4): destination with the same iden
+tifier (name{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1536 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1541 \bi{rl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1555 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1560 \bi{rrCl}
+                 [97]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1596 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1601 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1607 \bi{rrCl}
+                 [98]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1629 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1634 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1640 \bi{rrCl}
+                 [99] [100pdfTeX warning (ext4): destination with the same iden
+tifier (name{equation.5.8.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1745 \ese
+           pdfTeX warning (ext4): destination with the same identifier (name{eq
+uation.5.8.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1745 \ese
+           pdfTeX warning (ext4): destination with the same identifier (name{eq
+uation.5.8.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1745 \ese
+           pdfTeX warning (ext4): destination with the same identifier (name{eq
+uation.5.8.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1745 \ese
+           ]pdfTeX warning (ext4): destination with the same identifier (name{e
+quation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1780 \bi{rCl}
+                [101]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1843 \bi{C}
+             pdfTeX warning (ext4): destination with the same identifier (name{
+equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1848 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1870 \bi{rrCl}
+                 [102]pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1881 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1890 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1895 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1920 \bi{rCl}
+                [103]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1927 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1939 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1960 \bi{C}
+             pdfTeX warning (ext4): destination with the same identifier (name{
+equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1969 \bi{rCl}
+                [104]
+Underfull \hbox (badness 10000) in paragraph at lines 2031--2032
+
+ []
+
+[105]pdfTeX warning (ext4): destination with the same identifier (name{equation
+.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2038 \bi{rCl}
+               
+Underfull \hbox (badness 10000) in paragraph at lines 2092--2094
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.8.
+1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2101 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.5.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2106 \bi{rCl}
+                [106]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathop' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchardef' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\std@minus' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 2.22198pt
+(hyperref)                removed on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathgroup' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\symoperators' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 2167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2167.
+
+
+Package hyperref Warning: Composite letter `\textacute+3'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 2167.
+
+
+Package hyperref Warning: Composite letter `\textdotaccent+"'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotaccent' on input line 2167.
+
+[107] [108]pdfTeX warning (ext4): destination with the same identifier (name{eq
+uation.5.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2272 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2281 \bi{rrCl}
+                 [109]pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2294 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2302 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2332 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.5.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2344 \bi{rrCl}
+                
+Underfull \hbox (badness 10000) in paragraph at lines 2351--2352
+
+ []
+
+[110]) [111]
+Chapter 6.
+(./chapters/6.extra_structures_on_topological_manifolds.tex [112
+
+] [113pdfTeX warning (ext4): destination with the same identifier (name{equatio
+n.6.1.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.90 \ese
          ]pdfTeX warning (ext4): destination with the same identifier (name{equ
-ation.1.1.1}) has been already used, duplicate ignored
+ation.6.1.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.102 \bi{rCl"s}
                 pdfTeX warning (ext4): destination with the same identifier (na
-me{equation.1.1.1}) has been already used, duplicate ignored
+me{equation.6.1.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.127 \bi{rCl}
-               [6]pdfTeX warning (ext4): destination with the same identifier (
-name{equation.1.1.1}) has been already used, duplicate ignored
+               [114]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.6.1.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.155 \bi{rCl}
               pdfTeX warning (ext4): destination with the same identifier (name
-{equation.1.1.1}) has been already used, duplicate ignored
+{equation.6.1.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.161 \bi{rCl}
               pdfTeX warning (ext4): destination with the same identifier (name
-{equation.1.1.1}) has been already used, duplicate ignored
+{equation.6.1.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.169 \bi{rCl}
               pdfTeX warning (ext4): destination with the same identifier (name
-{equation.1.1.1}) has been already used, duplicate ignored
+{equation.6.1.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.176 \bi{rCl}
-               [7]pdfTeX warning (ext4): destination with the same identifier (
-name{equation.1.1.1}) has been already used, duplicate ignored
+               [115]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.6.1.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.241 \bi{rCl}
-               [8]pdfTeX warning (ext4): destination with the same identifier (
-name{equation.1.1.1}) has been already used, duplicate ignored
+               [116]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.6.1.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.248 \bi{rrCl}
                pdfTeX warning (ext4): destination with the same identifier (nam
-e{equation.1.1.1}) has been already used, duplicate ignored
+e{equation.6.1.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.281 \bi{rCl}
               pdfTeX warning (ext4): destination with the same identifier (name
-{equation.1.1.1}) has been already used, duplicate ignored
+{equation.6.1.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.288 \bi{rCl}
               pdfTeX warning (ext4): destination with the same identifier (name
-{equation.1.1.1}) has been already used, duplicate ignored
+{equation.6.1.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.294 \bi{rCl}
-               [9] [10]
-<./images/riem.png, id=120, 377.41pt x 312.16624pt>
+               [117] [118]
+<./images/riem.png, id=2228, 377.41pt x 312.16624pt>
 File: ./images/riem.png Graphic file (type png)
 <use ./images/riem.png>
 Package pdftex.def Info: ./images/riem.png  used on input line 371.
 (pdftex.def)             Requested size: 188.70453pt x 156.08273pt.
- [11 <./images/riem.png>] [12] [13] [14] [15]) [16]
+ [119 <./images/riem.png>] [120] [121] [122] [123])
+[124]
+Chapter 7.
+(./chapters/7.lie_groups.tex [125
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.32 \een
+         ] [126] [127] [128pdfTeX warning (ext4): destination with the same ide
+ntifier (name{equation.7.3.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.217 \item W
+             e proved that $j(X_{\gamma,e})$ is indeed a smooth vector field...
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.3.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.217 \item W
+             e proved that $j(X_{\gamma,e})$ is indeed a smooth vector field...
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.3.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.217 \item W
+             e proved that $j(X_{\gamma,e})$ is indeed a smooth vector field...
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.3.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.217 \item W
+             e proved that $j(X_{\gamma,e})$ is indeed a smooth vector field...
+]pdfTeX warning (ext4): destination with the same identifier (name{equation.7.3
+.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.218 \bi{rCl"s}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.7.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.227 \bi{rCl"s}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.7.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.235 \bi{rCl"s}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.7.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.244 \bi{rCl"s}
+                 [129]pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.7.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.277 \bi{rCl}
+               [130]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathop' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathchardef' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\std@minus' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathcode' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 2.22198pt
+(hyperref)                removed on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathgroup' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\symoperators' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 316.
+
+
+Package hyperref Warning: Composite letter `\textacute+3'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 316.
+
+
+Package hyperref Warning: Composite letter `\textdotaccent+"'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotaccent' on input line 316.
+
+[131pdfTeX warning (ext4): destination with the same identifier (name{equation.
+7.4.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.371 \bse
+          pdfTeX warning (ext4): destination with the same identifier (name{equ
+ation.7.4.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.371 \bse
+          pdfTeX warning (ext4): destination with the same identifier (name{equ
+ation.7.4.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.371 \bse
+          ] [132]pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.472 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.479 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.486 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.493 \bi{rCl}
+               [133]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.515 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.525 \bi{rCl}
+               [134]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.591 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.600 \bi{rrCl}
+                [135]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.628 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.645 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.666 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.677 \bi{rCl}
+               [136]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.687 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.715 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.724 \bi{rCl}
+               [137]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.747 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.766 \bi{rCl}
+               [138]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.816 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.835 \bi{rCl}
+               [139]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.840 \bi{rrClrrCl}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.845 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.7.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.859 \bi{rrCl}
+                [140] [141]pdfTeX warning (ext4): destination with the same ide
+ntifier (name{equation.7.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.966 \bi{rrCl}
+                [142pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.7.5.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1005 
+       ] [143] [144]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.7.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1126 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.7.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1146 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.7.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1155 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.7.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1166 \bi{rrCl}
+                 [145] [146pdfTeX warning (ext4): destination with the same ide
+ntifier (name{equation.7.7.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1256 \ep
+          pdfTeX warning (ext4): destination with the same identifier (name{equ
+ation.7.7.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1256 \ep
+          pdfTeX warning (ext4): destination with the same identifier (name{equ
+ation.7.7.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1256 \ep
+          pdfTeX warning (ext4): destination with the same identifier (name{equ
+ation.7.7.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1256 \ep
+          ]pdfTeX warning (ext4): destination with the same identifier (name{eq
+uation.7.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1260 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.7.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1291 \bi{l}
+              [147] [148]pdfTeX warning (ext4): destination with the same ident
+ifier (name{equation.7.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1429 \bi{rCl}
+               ) [149]
+Chapter 8.
+(./chapters/8.principal_fiber_bundles.tex [150
+
+] [151pdfTeX warning (ext4): destination with the same identifier (name{equatio
+n.8.1.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.104 \ese
+          ]pdfTeX warning (ext4): destination with the same identifier (name{eq
+uation.8.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.138 \bi{rrCl}
+                [152]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.8.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.177 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.195 \bi{rrCl}
+                [153]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.8.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.225 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.248 \bi{rCl}
+               [154]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.8.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.289 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.8.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.302 \bi{rCl}
+               [155] [156] [157]pdfTeX warning (ext4): destination with the sam
+e identifier (name{equation.8.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.499 \bi{rrCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.523 \bi{rcCl}
+                [158pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.8.3.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.543 
+      ] [159]
+Overfull \hbox (5.20618pt too wide) in paragraph at lines 604--605
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 LS[]= []\OT1/cmr/m/n/10 (1\OML/cmm/m/it/10 ; 
+\OT1/cmr/m/n/10 1)\OML/cmm/m/it/10 ; ^^Y; S[]\OT1/cmr/m/n/10 )$ does not ad-mit
+ any sec-tion, and hence we can-not re-strict $(\OML/cmm/m/it/10 LS[]= []\OT1/c
+mr/m/n/10 (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1)\OML/cmm/m/it/10 ; ^^Y; S[]\OT
+1/cmr/m/n/10 )$
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 610.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 610.
+
+[160pdfTeX warning (ext4): destination with the same identifier (name{equation.
+8.4.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.656 \ei
+         pdfTeX warning (ext4): destination with the same identifier (name{equa
+tion.8.4.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.656 \ei
+         ]pdfTeX warning (ext4): destination with the same identifier (name{equ
+ation.8.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.665 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.8.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.700 \bi{rrCl}
+                [161pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.8.4.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.717 
+      ]pdfTeX warning (ext4): destination with the same identifier (name{equati
+on.8.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.727 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.8.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.771 \bi{rCl}
+               [162]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.8.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.784 \bi{rCl}
+               [163] [164pdfTeX warning (ext4): destination with the same ident
+ifier (name{equation.8.5.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.878 \begin{theorem}\label
+                           {thm:maurer-cartan}]pdfTeX warning (ext4): destinati
+on with the same identifier (name{equation.8.5.1}) has been already used, dupli
+cate ignored
+<to be read again> 
+                   \relax 
+l.884 \bi{rrCl}
+                [165]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.8.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.961 \bi{rCl}
+              pdfTeX warning (ext4): destination with the same identifier (name
+{equation.8.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.980 \bi{rCl}
+               [166]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.8.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1022 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1030 \bi{rCl}
+                [167]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.8.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1035 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.8.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1044 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1052 \bi{rCl}
+                [168] [169]
+Missing character: There is no ; in font nullfont!
+ [170pdfTeX warning (ext4): destination with the same identifier (name{equation
+.8.6.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1176 \end{center}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.8.6.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1176 \end{center}
+                   ]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.8.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1190 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1210 \bi{rrCl}
+                 [171]pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.8.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1225 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1252 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.8.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1260 \bi{rrCl}
+                 [172] [173]pdfTeX warning (ext4): destination with the same id
+entifier (name{equation.8.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1334 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1343 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.8.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1366 \bi{rCl}
+                [174pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.8.7.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1382 \bse
+           ]pdfTeX warning (ext4): destination with the same identifier (name{e
+quation.8.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1390 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1435 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.8.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1440 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.8.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1445 \bi{rrCl}
+                 [175] [176]pdfTeX warning (ext4): destination with the same id
+entifier (name{equation.8.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1516 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.8.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1521 \bi{rrCl}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{equation.8.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1530 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1543 \bi{rCl}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1551 \bi{rCl}
+                [177]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.8.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1586 \bi{rCl}
+                [178]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.8.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1643 \bi{CCC}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{equation.8.8.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1650 \bi{rCl}
+               ) [179]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
-
-(./math_notes.aux)
+ (./math_notes.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `math_notes.out' has not changed.
-(rerunfilecheck)             Checksum: 62A3218CF25A042F93F1C78F21AB399E;530.
+(rerunfilecheck)             Checksum: B8A7AEEFC1D7E81AFDB3D4DA196452F5;7290.
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 3.25pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
  ) 
 Here is how much of TeX's memory you used:
- 44557 strings out of 492616
- 1034026 string characters out of 6129480
- 1201447 words of memory out of 5000000
- 47748 multiletter control sequences out of 15000+600000
- 552671 words of font info for 99 fonts, out of 8000000 for 9000
+ 48761 strings out of 492616
+ 1122769 string characters out of 6129480
+ 1357060 words of memory out of 5000000
+ 50899 multiletter control sequences out of 15000+600000
+ 565994 words of font info for 148 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,18n,96p,819b,948s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
-r/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/201
-9/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on math_notes.pdf (16 pages, 284186 bytes).
+ 64i,23n,96p,1089b,2678s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
+exlive/2019/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/texli
+ve/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/niceframe-type1/bbding10.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/
+texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2019/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/
+type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2019/texmf-dist/fonts
+/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2019/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2019/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2019/texm
+f-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/stmaryrd/stmary7.pfb></usr/local/texlive/2019/texmf-dist/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on math_notes.pdf (179 pages, 1457187 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
- 199 compressed objects within 2 object streams
- 53 named destinations out of 1000 (max. 500000)
- 82 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3081 PDF objects out of 3580 (max. 8388607)
+ 2504 compressed objects within 26 object streams
+ 1045 named destinations out of 1200 (max. 500000)
+ 3010 words of extra memory for PDF output out of 10000 (max. 10000000)
 

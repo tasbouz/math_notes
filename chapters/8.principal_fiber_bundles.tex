@@ -522,6 +522,7 @@ M \ar[rr,"\id_M"] && M
 where $(TM,\pi,M)$ is the tangent bundle of $M$, and $u$ is defined as:
 \bi{rcCl}
 u \cl & LM_{\R^d} & \to & TM\\
+\v
 & [(e_1,\ldots,e_d),x] & \mapsto & x^ae_a
 \ei
 
@@ -536,7 +537,7 @@ The map $u^{-1}$ is well-defined since, while the pair $((e_1,\ldots,e_d),x)\in 
 \bse
 [(e_1,\ldots,e_d),x]\in LM_{\R^d}:=(LM\times \R^d)/{\sim_G}
 \ese
-does not. It includes all pairs $((e_1,\ldots,e_d)\racts g,g^{-1}\lacts x)$ for every $g\in \GL(d,\R)$, i.e.\ every choice of basis together with the ``right'' components $x\in \R^d$.
+does not. It includes all pairs $((e_1,\ldots,e_d)\racts g,g^{-1}\lacts x)$ for every $g\in \GL(d,\R)$, i.e.\ every choice of basis together with the ``right'' components $x\in \R^d$. \v
 
 Even though the associated bundle $(LM_{\R^d},\pi_{\R^d},\R^d)$ is isomorphic to the tangent bundle $(TM,\pi,M)$, note a subtle difference between the two. On the tangent bundle, the transformation law for a change of basis and the related transformation law for components are \emph{deduced} from the definitions by undergraduate linear algebra. \v
 
@@ -606,13 +607,13 @@ Coming to our case:
 
 This concludes our application of principle fibre bundles to the very useful case of principle frame bundles. Now we switch to the concept of connections on principle fibre bundles.
 
-\section{Connections On A Principal $G$-Bundle}
+\section{Connections On A Principal Bundle}
 
 In elementary courses on differential geometry or general relativity, the notions of connection, parallel transport and covariant derivative are often confused with one another. Sometimes, the terms are even used as synonyms. If you have seen any of that before, it is probably best to forget about it for the time being. \v
 
 What a connection really is, is just additional structure on a principal bundle consisting is a ``smooth'' assignment of a particular vector space at each point of the base manifold compatible with the right action of the Lie group on the principal bundle. Such an assignment is, in fact, equivalent to a certain Lie-algebra-valued one-form on the principal bundle, as we will discuss below. Later, we will see that a connection on a principal bundle induces a parallel transport map on the principal bundle, which in turn induces a parallel transport map on any of its associated bundles. If the fibers of the associated bundle carry a vector space structure, then the parallel transport can be used to define a covariant derivative on the associated bundle. \v
 
-Hence the conceptual sequence ``connection, parallel transport covariant derivative'' is in decreasing order of generality, and it should be clear that treating these terms as synonyms will inevitably lead to confusion. We will now discuss the first of these in some detail. \v
+Hence the conceptual sequence ``connection, parallel transport, covariant derivative'' is in decreasing order of generality, and it should be clear that treating these terms as synonyms will inevitably lead to confusion. We will now discuss the first of these in some detail. \v
 
 Let $(P,\pi,M)$ be a principal $G$-bundle. Recall that every element of $X_e \in T_eG$ gives rise to a left invariant vector field on $G$ which we denoted by $X = j(X_e) = ({\ell_{g*}})_e (X_{e})$. At this point we will change our notation a bit since we will invoke vectors from different space. Namely, we will denote the element $X_e$ as $A_e$ hence $A_e \in T_eG$. \v
 
@@ -682,7 +683,7 @@ A \textbf{connection}\index{connection} on a principal $G$-bundle $(P,\pi,M)$ is
 where $(\racts g_*)_p$ is the push-forward of the map $(-\racts g)\cl P \to P$ and it is a bijection.
 \item For every smooth vector field $X\in \Gamma(TP)$, the two summands in the unique decomposition:
 \bse
-X(p) = \hor(X(p))+\ver(X(p))
+X_p = \hor(X_p)+\ver(X_p)
 \ese
 at each $p\in P$, extend to smooth $\hor(X),\ver(X)\in\Gamma(TM)$.
 \een
