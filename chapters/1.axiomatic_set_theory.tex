@@ -313,10 +313,10 @@ They are the pair set axiom, the union set axiom, the replacement axiom and the 
 
 Using the $\in$-relation we can immediately define the following relations:
 \bit
-\item $x\notin y :\eqv \neg(x\in y)$
-\item $x\se y :\eqv \forall \, a : (a\in x \imp a\in y)$
-\item $x = y :\eqv (x\se y) \land (y\se x)$
-\item $x \ss y :\eqv (x \se y) \land \neg (x = y)$
+\item $x\notin y :\eqv \neg(x\in y)$.
+\item $x\se y :\eqv \forall \, a : (a\in x \imp a\in y)$.
+\item $x = y :\eqv (x\se y) \land (y\se x)$.
+\item $x \ss y :\eqv (x \se y) \land \neg (x = y)$.
 \eit
 \br
 
@@ -464,7 +464,7 @@ is a set by the union set axiom. This time the union set axiom was really necess
 \ee
 The previous example easily generalises to a definition.
 \bd [Union Of Sets]
-Let $a_1,a_2,\ldots,a_N$ be sets. We define recursively for all $N\geq 2$:
+Let $a_1,a_2,\ldots,a_N$ be sets. We define recursively for all $N\geq 2$ the \textbf{union of sets} as:
 \bse
 \{a_1,a_2,\ldots,a_{N+1}\} := \bigcup \left\{\{a_1,a_2,\ldots,a_{N}\},\{a_{N+1}\} \right\}
 \ese
@@ -694,12 +694,12 @@ Bijections are the ``structure-preserving'' maps for sets. Intuitively, they pai
 \bd[Infinite/Finite Sets]
 A set $A$ is called:
 \bit
-\item \emph{Infinite}\index{set!infinite} if there exists a proper subset $B\ss A$ such that $B \iset A$. In particular, if $A$ is infinite, we further define $A$ to be:
+\item \textbf{Infinite}\index{set!infinite} if there exists a proper subset $B\ss A$ such that $B \iset A$. In particular, if $A$ is infinite, we further define $A$ to be:
 \bit
-\item[$*$] \emph{Countably} infinite if $A \iset \N$.
-\item[$*$] \emph{Uncountably} infinite otherwise.
+\item[$*$] \textbf{Countably infinite} if $A \iset \N$.
+\item[$*$] \textbf{Uncountably infinite} otherwise.
 \eit
-\item \emph{Finite} if it is not infinite. In this case, we have $A \iset \{1,2,\ldots,N\}$ for some $N \in \N$ and we say that the \emph{cardinality} of $A$, denoted by $|A|$, is $N$.
+\item \textbf{Finite} if it is not infinite. In this case, we have $A \iset \{1,2,\ldots,N\}$ for some $N \in \N$ and we say that the \emph{cardinality} of $A$, denoted by $|A|$, is $N$.
 \eit
 \ed
 Given two maps $\phi \cl A \to B$ and $\psi \cl B \to C$, we can construct a third map, called the \emph{composition} of $\phi$ and $\psi$, denoted by $\psi \circ \phi$ (read ``psi after phi''), defined by:

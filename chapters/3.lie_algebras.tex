@@ -308,8 +308,8 @@ A Lie algebra $L$ is semi-simple if, and only if, the Killing form $\kappa$ is n
 \ep
 Hence, if $L$ is semi-simple, then $\kappa$ is a pseudo inner product on $L$. Recall the following definition from linear algebra.
 
-\bd
-A linear map $\phi\cl V\xrightarrow{\sim}V$ is said to be \emph{symmetric} with respect to the pseudo inner product $B(-,-)$ on $V$ if:
+\bd [Symmetric Linear Map]
+A linear map $\phi\cl V\xrightarrow{\sim}V$ is said to be \textbf{symmetric} with respect to the pseudo inner product $B(-,-)$ on $V$ if:
 \bse
 \forall \, v,w\in V : \ B(\phi(v),w)=B(v,\phi(w))
 \ese
@@ -462,7 +462,7 @@ We can now define:
 where $i\cl H \xrightarrow{\sim} H^*$ is the linear isomorphism induced by $\kappa$. 
 
 \br
-If $\{h_i\}$ is a basis of $H$, the components of $\kappa^*$ with respect to the dual basis satisfy :
+If $\{h_i\}$ is a basis of $H$, the components of $\kappa^*$ with respect to the dual basis satisfy:
 \bse
 (\kappa^*)^{ij}\kappa_{jk}=\delta^i_k
 \ese
@@ -1001,7 +1001,7 @@ Let $\rho\cl L \xrightarrow{\sim}\End(V)$ be a representation of $L$. The vector
 \ed
 
 \bd [Dimension Of Representation]
-Let $\rho\cl L \xrightarrow{\sim}\End(V)$ be a representation of $L$. The \textbf{dimension}\index{dimension!representation} of the representation $\rho$ is $\dim V$.
+Let $\rho\cl L \xrightarrow{\sim}\End(V)$ be a representation of $L$. The \textbf{dimension of the representation}\index{dimension!representation} $\rho$ is $\dim V$.
 \ed
 
 \be
@@ -1045,7 +1045,7 @@ where the structure constants $C^{k}_{\phantom{k}ij}$ are defined by first ``pul
 \bse
 C_{kij}:= \varepsilon_{ijk} := \begin{cases}\ 1 & \text{ if $(i\, j\, k)$ is an even permutation of $(1\, 2\, 3)$} \\
 -1 & \text{ if $(i\, j\, k)$ is an odd permutation of $(1\, 2\, 3)$}\\
-\ 0 & \text{ otherwise}.\end{cases}
+\ 0 & \text{ otherwise}\end{cases}
 \ese
 By evaluating these, we find:
 \bi{rCl}
@@ -1233,7 +1233,8 @@ Therefore:
 and hence, the result follows from the non-degeneracy of $\kappa_{\rho}$.
 \eq
 We are now ready to define the Casimir operator and prove the subsequent theorem.
-\bd
+
+\bd [Casimir Operator]
 Let $\rho\cl L \xrightarrow{\sim} \End(V)$ be a faithful representation of a complex (compact) Lie algebra $L$  and let $\{X_1,\ldots,X_{\dim L}\}$ be a basis of $L$. The \textbf{Casimir operator}\index{Casimir operator} associated to the representation $\rho$ is the endomorphism $\Omega_\rho\cl V \xrightarrow{\sim} V$:
 \bse
 \Omega_\rho := \sum_{i=1}^{\dim L} \rho(X_i) \circ \rho(\xi_i)

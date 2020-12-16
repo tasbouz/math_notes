@@ -209,7 +209,7 @@ p\racts g = \sigma(\pi(p\racts g))\racts \chi_\sigma(p\racts g) = \sigma(\pi(p))
 \ese
 where the second equality follows from the fact that the fibers of $P$ are precisely the orbits under the action of $G$. \v
 
-On the other hand, we can act on the right with an arbitrary $g\in G$ directly to obtain :
+On the other hand, we can act on the right with an arbitrary $g\in G$ directly to obtain:
 \bse
 p\racts g = (\sigma(\pi(p))\racts \chi_\sigma(p))\racts g = \sigma(\pi(p))\racts (\chi_\sigma(p)\bullet g)
 \ese
@@ -375,7 +375,7 @@ A trivial associated bundle is a trivial fiber bundle.
 Note that the converse does not hold. An associated bundle can be trivial as a fiber bundle but not as an associated bundle, i.e.\ the underlying principal fiber bundle need not be trivial simply because the associated bundle is trivial as a fiber bundle.
 
 \bd [$H$-Restriction / $G$-Extension]
-Let $H$ be a closed Lie subgroup of $G$. Let $(P,\pi,M)$ be a principal $H$-bundle and $(P',\pi',M)$ a principal $G$-bundle. If there exists a principal bundle map from $(P,\pi,M)$ to $(P',\pi',M)$, i.e.\ a smooth bundle map which is equivariant with respect to the inclusion of $H$ into $G$, then $(P,\pi,M)$ is called an \emph{$H$-restriction} of $(P',\pi',M)$, while $(P',\pi',M)$ is called a \emph{$G$-extension} of $(P,\pi,M)$.  
+Let $H$ be a closed Lie subgroup of $G$. Let $(P,\pi,M)$ be a principal $H$-bundle and $(P',\pi',M)$ a principal $G$-bundle. If there exists a principal bundle map from $(P,\pi,M)$ to $(P',\pi',M)$, i.e.\ a smooth bundle map which is equivariant with respect to the inclusion of $H$ into $G$, then $(P,\pi,M)$ is called an$H$ \textbf{-restriction} of $(P',\pi',M)$, while $(P',\pi',M)$ is called a $G$\textbf{-extension} of $(P,\pi,M)$.  
 \ed
 
 \bt
@@ -576,7 +576,7 @@ Some special cases include the following:
 (g\lacts f) = (\det g^{-1})^\omega\, f
 \ese
 which is the transformation law for a \emph{scalar density of weight $\omega$}.
-\item If $\GL(d,\R)$ is restricted in such a way that we always have $(\det g^{-1})=1$, then tensor densities are indistinguishable from ordinary tensor fields. This is why you probably haven't met tensor densities in your special relativity course.
+\item If $\GL(d,\R)$ is restricted in such a way that we always have $(\det g^{-1})=1$, then tensor densities are indistinguishable from ordinary tensor fields. 
 \een
 \er
 
@@ -609,9 +609,9 @@ This concludes our application of principle fibre bundles to the very useful cas
 
 \section{Connections On A Principal Bundle}
 
-In elementary courses on differential geometry or general relativity, the notions of connection, parallel transport and covariant derivative are often confused with one another. Sometimes, the terms are even used as synonyms. If you have seen any of that before, it is probably best to forget about it for the time being. \v
+Before proceeding with this chapter we need to make a very important statement that makes connection with the previous chapter called ``Extra Structures On Topological Manifolds'' where we introduced (among others) the concept of ``connection" (or ``covariant derivative") on a differentiable topological manifold.  We said back in the chapter that: ``connection and covariant derivative are not actually the same thing.  In elementary courses on differential geometry the notions of connection and covariant derivative are often confused with one another and,  sometimes,  the terms are even used as synonyms.  This happens because one is not in a position to properly define these concepts before introducing the so-called ``principal fiber bundles" that we will do in a later chapter".  And we moved on by using a ``naive" way to  introduce the concept.  \v
 
-What a connection really is, is just additional structure on a principal bundle consisting is a ``smooth'' assignment of a particular vector space at each point of the base manifold compatible with the right action of the Lie group on the principal bundle. Such an assignment is, in fact, equivalent to a certain Lie-algebra-valued one-form on the principal bundle, as we will discuss below. Later, we will see that a connection on a principal bundle induces a parallel transport map on the principal bundle, which in turn induces a parallel transport map on any of its associated bundles. If the fibers of the associated bundle carry a vector space structure, then the parallel transport can be used to define a covariant derivative on the associated bundle. \v
+However,  now we are in a position to properly define those terms.  In reality what a connection really is, is just additional structure on a principal bundle consisting of a ``smooth'' assignment of a particular vector space at each point of the base manifold compatible with the right action of the Lie group on the principal bundle. Such an assignment is, in fact, equivalent to a certain Lie-algebra-valued one-form on the principal bundle, as we will discuss below. Later, we will see that a connection on a principal bundle induces a parallel transport map on the principal bundle, which in turn induces a parallel transport map on any of its associated bundles. If the fibers of the associated bundle carry a vector space structure, then the parallel transport can be used to define a covariant derivative on the associated bundle. \v
 
 Hence the conceptual sequence ``connection, parallel transport, covariant derivative'' is in decreasing order of generality, and it should be clear that treating these terms as synonyms will inevitably lead to confusion. We will now discuss the first of these in some detail. \v
 
@@ -747,7 +747,7 @@ T_eG \ar[rr,"i_p"] \ar[ddrr,"\id_{T_eG}"']&& V_pP \ar[dd,"\omega_p|_{V_pP}\phant
 && T_eG
 \end{tikzcd}
 \ese
-\item $((\racts g)^*\omega)|_p (X_p)= (\Ad_{g^{-1}})_*(\omega_p(X_p))$
+\item $((\racts g)^*\omega)|_p (X_p)= (\Ad_{g^{-1}})_*(\omega_p(X_p))$.
 \bse
 \begin{tikzcd}
 T_pP \ar[rr,"\omega_p"] \ar[ddrr,"((\racts g)^*\omega)|_p "']&& T_eG \ar[dd,"(\Ad_{g^{-1}})_*"]\\
@@ -761,26 +761,28 @@ T_pP \ar[rr,"\omega_p"] \ar[ddrr,"((\racts g)^*\omega)|_p "']&& T_eG \ar[dd,"(\A
 
 \bq
 \ben[label=\alph*)]
-\item Since $X^A_p\in V_pP$, by definition of $\omega$ we have
+\item Since $X^A_p\in V_pP$, by definition of $\omega$ we have:
 \bse
-\omega_p(X^A_p):=i_p^{-1}(\ver(X^A_p))=i_p^{-1}(X^A_p)=A.
+\omega_p(X^A_p):=i_p^{-1}(\ver(X^A_p))=i_p^{-1}(X^A_p)=A
 \ese
-\item First observe that the left hand side is linear in $X_p$. Consider the two cases
+\item First observe that the left hand side is linear in $X_p$. Consider the two cases:
 \ben[label=b.\arabic*)]
-\item Suppose that $X_p\in V_pP$. Then $X_p=X_p^A$ for some $A\in T_eG$. Hence
+\item Suppose that $X_p\in V_pP$. Then $X_p=X_p^A$ for some $A\in T_eG$. Hence:
 \bi{rCl}
 ((\racts g)^*\omega)|_p (X^A_p) & = & \omega_{p\racts g}((\racts g)_*X^A_p)\\
 & = & \omega_{p\racts g}\Bigl(X^{(\Ad_{g^{-1}})_*A}_{p\racts g}\Bigr)\\
 & = & (\Ad_{g^{-1}})_*A\\
 & = & (\Ad_{g^{-1}})_*(\omega_p(X^A_p))
 \ei
-\item Suppose now that $X_p\in H_pP=\ker(\omega_p)$. Then
+\item Suppose now that $X_p\in H_pP=\ker(\omega_p)$. Then:
 \begin{equation*}
 ((\racts g)^*\omega)|_p (X_p) =  \omega_{p\racts g}((\racts g)_*X_p) = 0
 \end{equation*}
+
 since $(\racts g)_*X_p\in H_{p\racts g}P=\ker(\omega_{p\racts g})$. 
 \een
-Let $X_p\in T_pP$. We have
+
+Let $X_p\in T_pP$. We have:
 \bi{rCl}
 ((\racts g)^*\omega)|_p (X_p) & = & ((\racts g)^*\omega)|_p (\ver(X_p)+\hor(X_p)) \\
 & = & ((\racts g)^*\omega)|_p (\ver(X_p)) +((\racts g)^*\omega)|_p (\hor(X_p)) \\
@@ -797,16 +799,18 @@ Let $X_p\in T_pP$. We have
 
 We have seen how to associate a connection one-form to a connection, i.e.\ a certain Lie-algebra-valued one-form to a smooth choice of horizontal spaces on the principal bundle. We will now study how we can express this connection one-form locally on the base manifold of the principal bundle. \v
 
-Recall that a connection one-form on a principal bundle $(P,\pi,M)$ is a smooth Lie-algebra-valued one-form, i.e.\ a smooth map
+Recall that a connection one-form on a principal bundle $(P,\pi,M)$ is a smooth Lie-algebra-valued one-form, i.e.\ a smooth map:
 \bse
 \omega\cl \Gamma(TP) \xrightarrow{\sim} T_eG
 \ese
-which ``behaves like a one-form'', in the sense that it is $\R$-linear and satisfies the Leibniz rule, and such that, in addition, for all $A\in T_eG$, $g\in G$ and $X\in \Gamma(TP)$, we have
+
+which ``behaves like a one-form'', in the sense that it is $\R$-linear and satisfies the Leibniz rule, and such that, in addition, for all $A\in T_eG$, $g\in G$ and $X\in \Gamma(TP)$, we have:
 \ben[label=\roman*)]
-\item $\omega(X^A)=A$;
+\item $\omega(X^A)=A$.
 \item $((\racts g)^*\omega)(X)=(\Ad_{g^{-1}})_*(\omega(X))$.
 \een
-If the pair $(u,f)$ is a principal bundle automorphism of $(P,\pi,M)$, i.e.\ if the diagram
+
+If the pair $(u,f)$ is a principal bundle automorphism of $(P,\pi,M)$, i.e.\ if the diagram:
 \bse
 \begin{tikzcd}
 P \ar[rr,"u"]&& P \\
@@ -816,6 +820,7 @@ P\ar[rr,"u"] \ar[dd,"\pi"'] \ar[uu,"\racts G"] && P\ar[dd,"\pi"] \ar[uu,"\racts 
 M \ar[rr,"f"]&& M
 \end{tikzcd}
 \ese
+
 commutes, we should be able to pull a connection one-form $\omega$ on $P$ back to another connection one-form $u^*\omega$ on $P$.
 \bse
 \begin{tikzcd}
@@ -824,16 +829,19 @@ commutes, we should be able to pull a connection one-form $\omega$ on $P$ back t
 \Gamma(TP) \ar[uu,"u"] \ar[rruu,"u^*\omega"']&&
 \end{tikzcd}
 \ese
-Recall that for a one-form $\omega\cl \Gamma(TN)\xrightarrow{\sim}\mathcal{C}^\infty(N)$, we defined
+
+Recall that for a one-form $\omega\cl \Gamma(TN)\xrightarrow{\sim}\mathcal{C}^\infty(N)$, we defined:
 \bi{rrCl}
 \Phi^*(\omega)\cl & \Gamma(TM) & \xrightarrow{\sim} & \mathcal{C}^\infty(M)\\
 & X & \mapsto & \omega(\Phi_*(X))\circ \phi
 \ei
-for any diffeomorphism $\phi\cl M \to N$. One might be worried about whether this and similar definitions apply to Lie-algebra-valued one-forms but, in fact, they do. In our case, even though $\omega$ lands in $T_eG$, its domain is still $\Gamma(TP)$ and if $u\cl P\to P$ is a diffeomorphism of $P$, then $u_*X\in \Gamma(TP)$ and so
+
+for any diffeomorphism $\phi\cl M \to N$. One might be worried about whether this and similar definitions apply to Lie-algebra-valued one-forms but, in fact, they do. In our case, even though $\omega$ lands in $T_eG$, its domain is still $\Gamma(TP)$ and if $u\cl P\to P$ is a diffeomorphism of $P$, then $u_*X\in \Gamma(TP)$ and so:
 \bse
 u^*\omega\cl X \mapsto (u^*\omega)(X):=\omega(u_*(X))\circ u
 \ese
-is again a Lie-algebra-valued one-form. Note that we will no longer distinguish notationally between the push-forward of tangent vectors and of vector fields.
+
+is again a Lie-algebra-valued one-form. Note that we will no longer distinguish notationally between the push-forward of tangent vectors and of vector fields. \v
 
 In practice, e.g. for calculational purposes, one may wish to restrict attention to some open subset $U\se M$. Let $\sigma\cl U\to P$ be a local section of $P$, i.e.\ $\pi\circ \sigma = \id_U$.
 \bse
@@ -845,28 +853,31 @@ P\ar[dd,"\pi"']\ar[uu,"\racts G"]\\
 U\ar[uu,bend right=60,"\sigma"']
 \end{tikzcd}
 \ese
-\bd
-Given a connection one-form $\omega$ on $P$, such a local section $\sigma$ induces
+
+\bd [Yang-Mills Field / Local Trivialisation / Local Representation]
+Given a connection one-form $\omega$ on $P$, such a local section $\sigma$ induces:
 \ben[label=\roman*)]
-\item a \emph{Yang-Mills field} $\omega^U\cl \Gamma(TU) \xrightarrow{\sim} T_eG$ given by
+\item A \textbf{Yang-Mills field} $\omega^U\cl \Gamma(TU) \xrightarrow{\sim} T_eG$ given by:
 \bse
-\omega^U:= \sigma^* \omega;
+\omega^U:= \sigma^* \omega
 \ese
-\item a \emph{local trivialisation} of the principal bundle $P$, i.e.\ a map
+\item A \textbf{local trivialisation} of the principal bundle $P$, i.e.\ a map:
 \bi{rrCl}
 h\cl & U\times G & \to & P\\
-& (m,g)& \mapsto & \sigma(m)\racts g;
+& (m,g)& \mapsto & \sigma(m)\racts g
 \ei
-\item a \emph{local representation}\index{connection!local representation} of $\omega$ on $U$ by
+\item A \textbf{local representation}\index{connection!local representation} of $\omega$ on $U$ by:
 \bse
-h^* \omega \cl \Gamma(T(U\times G))  \xrightarrow{\sim} T_eG.
+h^* \omega \cl \Gamma(T(U\times G))  \xrightarrow{\sim} T_eG
 \ese
 \een
 \ed
-Note that, at each point $(m,g)\in U\times G$, we have
+
+Note that, at each point $(m,g)\in U\times G$, we have:
 \bse
-T_{(m,g)}(U\times G) \cong_{\mathrm{Lie \, alg}} T_mU\oplus T_gG.
+T_{(m,g)}(U\times G) \cong_{\mathrm{Lie \, alg}} T_mU\oplus T_gG
 \ese
+
 \br
 Both the Yang-Mills field $\omega^U$ and the local representation $h^*\omega$ encode the information carried by $\omega$ locally on $U$. Since $h^*\omega$ involves $U\times G$ while $\omega^U$ doesn't, one might guess that $h^*\omega$ gives a more ``accurate'' picture of $\omega$ on $U$ than the Yang-Mills field. But in fact, this is not the case. They both contain the same amount of local information about the connection one-form $\omega$.
 \er
@@ -876,11 +887,11 @@ Both the Yang-Mills field $\omega^U$ and the local representation $h^*\omega$ en
 Th relation between the Yang-Mills field and the local representation is provided by the following result.
 
 \begin{theorem}\label{thm:maurer-cartan}
-For all $v\in T_mU$ and $\gamma \in T_gG$, we have
+For all $v\in T_mU$ and $\gamma \in T_gG$, we have:
 \bse
-(h^*\omega)_{(m,g)}(v,\gamma) = (\Ad_{g^{-1}})_*(\omega^U(v))+\Xi_g(\gamma),
+(h^*\omega)_{(m,g)}(v,\gamma) = (\Ad_{g^{-1}})_*(\omega^U(v))+\Xi_g(\gamma)
 \ese
-where $\Xi_g$ is the Maurer-Cartan form\index{Maurer-Cartan form}
+where $\Xi_g$ is the Maurer-Cartan form\index{Maurer-Cartan form}:
 \bi{rrCl}
 \Xi_g \cl & T_gG & \xrightarrow{\sim} & T_eG\\
 & L^A_g &\mapsto & A.
@@ -888,11 +899,12 @@ where $\Xi_g$ is the Maurer-Cartan form\index{Maurer-Cartan form}
 \end{theorem}
 
 \br
-Note that we have represented a generic element of $T_gG$ as $L^A_g$. This is due to the following. Recall that the left translation map $\ell_g\cl G \to G$ is a diffeomorphism of $G$. As such, its push-forward at any point is a linear isomorphism. In particular, we have
+Note that we have represented a generic element of $T_gG$ as $L^A_g$. This is due to the following. Recall that the left translation map $\ell_g\cl G \to G$ is a diffeomorphism of $G$. As such, its push-forward at any point is a linear isomorphism. In particular, we have:
 \bse
-((\ell_g)_*)_e \cl T_eG \xrightarrow{\sim} T_gG,
+((\ell_g)_*)_e \cl T_eG \xrightarrow{\sim} T_gG
 \ese
-that is, the tangent space at any point $g\in G$ can be canonically identified with the tangent space at the identity. Hence, we can write any element of $T_gG$ as
+
+that is, the tangent space at any point $g\in G$ can be canonically identified with the tangent space at the identity. Hence, we can write any element of $T_gG$ as:
 \bse
 L^A_g := ((\ell_g)_*)_e (A)
 \ese
@@ -902,46 +914,54 @@ for some $A\in T_eG$.
 Let us consider some specific examples.
 
 \be
-Any chart $(U,x)$ of a smooth manifold $M$ induces a local section $\sigma\cl U\to LM$ of the frame bundle of $M$ by
+Any chart $(U,x)$ of a smooth manifold $M$ induces a local section $\sigma\cl U\to LM$ of the frame bundle of $M$ by:
 \bse
-\sigma(m):=\biggl(\tvb{x}{1}{m},\ldots,\tvb{x}{\dim M}{m\,} \biggr)\in L_mM.
+\sigma(m):=\biggl(\tvb{x}{1}{m},\ldots,\tvb{x}{\dim M}{m\,} \biggr)\in L_mM
 \ese
-Since $\GL(\dim M,\R)$ can be identified with an open subset of $\R^{(\dim M)^2}$, we have
+
+Since $\GL(\dim M,\R)$ can be identified with an open subset of $\R^{(\dim M)^2}$, we have:
 \bse
-T_e\GL(\dim M,\R)\cong_{\mathrm{Lie\, alg}} \R^{(\dim M)^2},
+T_e\GL(\dim M,\R)\cong_{\mathrm{Lie\, alg}} \R^{(\dim M)^2}
 \ese
+
 where $\R^{(\dim M)^2}$ is understood as the algebra of $\dim M \times \dim M$ square matrices, with bracket induced by matrix multiplication. 
-In fact, this holds for any open subset of a vector space, when considered as a smooth manifold. A connection one-form 
+In fact, this holds for any open subset of a vector space, when considered as a smooth manifold. A connection one-form:
 \bse
 \omega\cl \Gamma(LM)\xrightarrow{\sim}T_e\GL(\dim M,\R)
 \ese
-can thus be given in terms of $(\dim M)^2$ functions 
+can thus be given in terms of $(\dim M)^2$ functions:
 \bse
-\omega^i_{\phantom{i}j}\cl \Gamma(LM)\xrightarrow{\sim}\R, \qquad 1\leq i,j\leq \dim M.
+\omega^i_{\phantom{i}j}\cl \Gamma(LM)\xrightarrow{\sim}\R, \qquad 1\leq i,j\leq \dim M
 \ese
-The associated Yang-Mills field $\omega^U:=\sigma^*\omega$ is, at each point $m\in U$, a Lie-algebra-valued one-form on the vector space $T_mU$. By using the co-ordinate induced basis and its dual basis, we can express $(\omega^U)_m$ in terms of components as
+
+The associated Yang-Mills field $\omega^U:=\sigma^*\omega$ is, at each point $m\in U$, a Lie-algebra-valued one-form on the vector space $T_mU$. By using the co-ordinate induced basis and its dual basis, we can express $(\omega^U)_m$ in terms of components as:
 \bse
-(\omega^U)_m=\omega^U_\mu(m)\,(\d x^\mu)_m,
+(\omega^U)_m=\omega^U_\mu(m)\,(\d x^\mu)_m
 \ese
-where $1\leq \mu \leq \dim M$ and
+
+where $1\leq \mu \leq \dim M$ and:
 \bse
-\omega^U_\mu(m):=(\omega^U)_m\biggl(\tvb{x}{\mu}{m}\biggr).
+\omega^U_\mu(m):=(\omega^U)_m\biggl(\tvb{x}{\mu}{m}\biggr)
 \ese
-Since $(\omega^U)_m\cl T_mU\xrightarrow{\sim}T_eG$, we have $\omega^U_\mu\cl U \to T_eG$. Hence, by employing he same isomorphism as above, we can identify each $\omega^U_\mu(m)$ with a square $\dim M \times \dim M$ matrix and define the symbol
+
+Since $(\omega^U)_m\cl T_mU\xrightarrow{\sim}T_eG$, we have $\omega^U_\mu\cl U \to T_eG$. Hence, by employing he same isomorphism as above, we can identify each $\omega^U_\mu(m)$ with a square $\dim M \times \dim M$ matrix and define the symbol:
+
 \bse
-\Gamma^i_{\phantom{i}j\mu} (m):= (\omega^U(m))^i_{\phantom{i}j\mu}:= (\omega^U_\mu(m))^i_{\phantom{i}j},
+\Gamma^i_{\phantom{i}j\mu} (m):= (\omega^U(m))^i_{\phantom{i}j\mu}:= (\omega^U_\mu(m))^i_{\phantom{i}j}
 \ese
-usually referred to as the \emph{Christoffel symbol}\index{Christoffel symbol}. The middle term is just an alternative notation for the right-most side. Note that, even though all three indices $i$, $j$, $\mu$ run from $1$ to $\dim M$, the numbers $\Gamma^i_{\phantom{i}j\mu} (m)$ do not constitute the components of a $(1,2)$-tensor on $U$. Only the $\mu$ index transforms as a one-form component index, i.e.\
+
+usually referred to as the \emph{Christoffel symbol}\index{Christoffel symbol}. The middle term is just an alternative notation for the right-most side. Note that, even though all three indices $i$, $j$, $\mu$ run from $1$ to $\dim M$, the numbers $\Gamma^i_{\phantom{i}j\mu} (m)$ do not constitute the components of a $(1,2)$-tensor on $U$. Only the $\mu$ index transforms as a one-form component index, i.e: \
 \bse
 ((g\lacts \omega^U(m))^i_{\phantom{i}j})_\mu = (g^{-1})^{\nu}_{\phantom{\mu}}(\omega^U(m))^i_{\phantom{i}j_\nu}
 \ese
+
 for $g\in \GL(\dim M,\R)$, while the $i$, $j$ indices simply label different one-forms, $(\dim M)^2$ in total. 
 \ee
 
 Note that the Maurer-Cartan form appearing in \Cref{thm:maurer-cartan} only depends on the Lie group (and its Lie algebra), not on the principal bundle $P$ or the restriction $U\se M$. In the following example, we will go through the explicit calculation of the Maurer-Cartan form of the Lie group $\GL(d,\R)$.
 
 \be
-Let $(\GL^+(d,\R),x)$ be a chart on $\GL(d,\R)$, where $\GL^+(d,\R)$ denotes an open subset of $\GL(d,\R)$ containing the identity $\id_{\R^d}$, and let $x^i_{\phantom{i}j}\cl \GL^+(d,\R)\to \R$ denote the corresponding co-ordinate functions
+Let $(\GL^+(d,\R),x)$ be a chart on $\GL(d,\R)$, where $\GL^+(d,\R)$ denotes an open subset of $\GL(d,\R)$ containing the identity $\id_{\R^d}$, and let $x^i_{\phantom{i}j}\cl \GL^+(d,\R)\to \R$ denote the corresponding co-ordinate functions:
 \bse
 \begin{tikzcd}
 \GL^+(d,\R) \ar[ddrr,"x^i_{\phantom{i}j}"']\ar[rr,"x"]&& x(\GL^+(d,\R))\se \R^{d^2} \ar[dd,"\proj^i_{\phantom{i}j}"]\\
@@ -949,40 +969,46 @@ Let $(\GL^+(d,\R),x)$ be a chart on $\GL(d,\R)$, where $\GL^+(d,\R)$ denotes an 
 && \R
 \end{tikzcd}
 \ese
-so that $x^i_{\phantom{i}j}(g):=g^i_{\phantom{i}j}$. Recall that the co-ordinate functions are smooth maps on the chart domain, i.e.\ we have $x^i_{\phantom{i}j}\in \mathcal{C}^\infty(\GL^+(d,\R))$. Also recall that to each $A\in T_{\id_{\R^d}}\GL(d,\R)$ there is associated a left-invariant vector field
+
+so that $x^i_{\phantom{i}j}(g):=g^i_{\phantom{i}j}$. Recall that the co-ordinate functions are smooth maps on the chart domain, i.e.\ we have $x^i_{\phantom{i}j}\in \mathcal{C}^\infty(\GL^+(d,\R))$. Also recall that to each $A\in T_{\id_{\R^d}}\GL(d,\R)$ there is associated a left-invariant vector field:
 \bse
 L^A\cl \mathcal{C}^\infty(\GL^+(d,\R))\xrightarrow{\sim} \mathcal{C}^\infty(\GL^+(d,\R))
 \ese
-which, at each point $g\in \GL(d,\R)$, is the tangent vector to the curve
+
+which, at each point $g\in \GL(d,\R)$, is the tangent vector to the curve:
 \bse
-\gamma^A(t) := g\bullet \exp(tA).
+\gamma^A(t) := g\bullet \exp(tA)
 \ese
+
 Consider the action of $L^A$ on the co-ordinate functions:
 \bi{rCl}
 (L^Ax^i_{\phantom{i}j})(g) & = & [x^i_{\phantom{i}j}(g\bullet \exp(tA))]'(0)\\
 & = & [x^i_{\phantom{i}j}(g\bullet\e^{tA})]'(0)\\
 & = & (g^i_{\phantom{i}k}(\e^{tA})^k_{\phantom{k}j})'(0)\\
-& = & g^i_{\phantom{i}k}A^k_{\phantom{k}j},
+& = & g^i_{\phantom{i}k}A^k_{\phantom{k}j}
 \ei
-where we have used the fact that for a matrix Lie group, the exponential map is just the ordinary exponential 
+
+where we have used the fact that for a matrix Lie group, the exponential map is just the ordinary exponential:
 \bse
-\exp(A) = \e^A := \sum_{n=0}^\infty \frac{1}{n!}A^n.
+\exp(A) = \e^A := \sum_{n=0}^\infty \frac{1}{n!}A^n
 \ese
-Hence, we can write
+
+Hence, we can write:
 \bse
 L^A|_g = g^i_{\phantom{i}k}A^k_{\phantom{k}j} \tvb{x^i_{\phantom{i}j}}{}{g}
 \ese
-from which we can read-off the Maurer-Cartan form of $\GL(d,\R)$
+from which we can read-off the Maurer-Cartan form of $\GL(d,\R)$:
 \bse
-(\Xi_g)^i_{\phantom{i}j}:= (g^{-1})^i_{\phantom{i}k} (\d x^k_{\phantom{k}j})_g.
+(\Xi_g)^i_{\phantom{i}j}:= (g^{-1})^i_{\phantom{i}k} (\d x^k_{\phantom{k}j})_g
 \ese
-Indeed, we can quickly check that
+
+Indeed, we can quickly check that:
 \bi{rCl}
 (\Xi_g)^i_{\phantom{i}j}(L^A) & = & (g^{-1})^i_{\phantom{i}k} (\d x^k_{\phantom{k}j})_g\biggl(  g^p_{\phantom{p}r}A^r_{\phantom{r}q} \tvb{x^p_{\phantom{p}q}}{}{g\,}\biggr) \\
 & = & (g^{-1})^i_{\phantom{i}k}g^p_{\phantom{p}r}A^r_{\phantom{r}q}\delta^k_p\delta^q_j\\
 & = & (g^{-1})^i_{\phantom{i}p}g^p_{\phantom{p}r}A^r_{\phantom{r}j}\\
 & = & \delta^i_r A^r_{\phantom{r}j}\\
-& = &  A^i_{\phantom{i}j}.
+& = &  A^i_{\phantom{i}j}
 \ei
 \ee
 
@@ -998,66 +1024,75 @@ U_1 \ar[uur,bend left=80,"\sigma_1"]&& U_2 \ar[uul,bend right=80,"\sigma_2"']
 \ese
 Suppose, for instance, that we have two open subsets $U_1,U_2\se M$ and consider the Yang-Mills fields associated to two local connections $\sigma_1,\sigma_2$. If $\omega^{U_1}$ and $\omega^{U_2}$ are both local versions of a unique connection one-form, then is $U_1\cap U_2\neq \varnothing$, the Yang-Mills fields $\omega^{U_1}$ and $\omega^{U_2}$ should satisfy some compatibility condition on $U_1\cap U_2$.
 
-\bd
-Within the above set-up, the \emph{gauge map}\index{gauge map} is the map
+\bd [Gauge Map]
+Within the above set-up, the \textbf{gauge map}\index{gauge map} is the map:
 \bse
 \Omega \cl U_1\cap U_2 \to G
 \ese
-where, for each $m\in U_1\cap U_2$, the Lie group element $\Omega(m)\in G$ satisfies
+
+where, for each $m\in U_1\cap U_2$, the Lie group element $\Omega(m)\in G$ satisfies:
 \bse
-\sigma_2(m) = \sigma_1(m)\racts \Omega(m).
+\sigma_2(m) = \sigma_1(m)\racts \Omega(m)
 \ese
 \ed
+
 Note that since the $G$-action $\racts$ on $P$ is free, for each $m$ there exists a unique $\Omega(m)$ satisfying the above condition, and hence the gauge map $\Omega$ is well-defined.
 
 \begin{theorem}
-Under the above assumptions, we have
+Under the above assumptions, we have:
 \bse
-(\omega^{U_2})_m = (\Ad_{\Omega^{-1}(m)})_*( \omega^{U_1})+(\Omega^*\Xi_g)_m.
+(\omega^{U_2})_m = (\Ad_{\Omega^{-1}(m)})_*( \omega^{U_1})+(\Omega^*\Xi_g)_m
 \ese
 \end{theorem}
 
 \be
-Consider again the frame bundle $LM$ of some manifold $M$. Let us evaluate explicitly the pull-back along $\Omega$ of the Maurer-Cartan form. Since $\Xi_g\cl T_gG \to T_eG$ and $\Omega\cl U_1\cap U_2\to T_eG$, we have $\Omega^*\Xi_g\cl T(U_1\cap U_2)\to T_eG$. Let $x$ be a chart map near the point $m\in U_1\cap U_2$. We have
+Consider again the frame bundle $LM$ of some manifold $M$. Let us evaluate explicitly the pull-back along $\Omega$ of the Maurer-Cartan form. Since $\Xi_g\cl T_gG \to T_eG$ and $\Omega\cl U_1\cap U_2\to T_eG$, we have $\Omega^*\Xi_g\cl T(U_1\cap U_2)\to T_eG$. Let $x$ be a chart map near the point $m\in U_1\cap U_2$. We have:
 \bi{rCl}
 ((\Omega^*\Xi_g)_m)^i_{\phantom{i}j} \biggl(\tvb{x}{\mu}{m\,}\biggr) & = & (\Xi_{\Omega(m)})^i_{\phantom{i}j} \biggl(\Omega_*\tvb{x}{\mu}{m\,}\biggr) \\
  & = & (\Omega(m)^{-1})^i_{\phantom{i}k} (\d \widetilde x^k_{\phantom{k}j})_{\Omega(m)}\biggl(\Omega_*\tvb{x}{\mu}{m\,}\biggr) \\
  & = & (\Omega(m)^{-1})^i_{\phantom{i}k} \biggl(\Omega_*\tvb{x}{\mu}{m\,}\biggr) (\widetilde x^k_{\phantom{k}j})  \\
  & = & (\Omega(m)^{-1})^i_{\phantom{i}k} \tvb{x}{\mu}{m} (\widetilde x^k_{\phantom{k}j}\circ \Omega)  \\
- & = & (\Omega(m)^{-1})^i_{\phantom{i}k} \tvb{x}{\mu}{m} (\Omega(m))^k_{\phantom{k}j} .
+ & = & (\Omega(m)^{-1})^i_{\phantom{i}k} \tvb{x}{\mu}{m} (\Omega(m))^k_{\phantom{k}j}
 \ei
-hence, we can write
+
+hence, we can write:
 \bi{rCl}
 ((\Omega^*\Xi_g)_m)^i_{\phantom{i}j} & = & (\Omega(m)^{-1})^i_{\phantom{i}k} \tvb{x}{\mu}{m} (\Omega(m))^k_{\phantom{k}j} \d x^\mu \\
-&=:& (\bm{\Omega}^{-1}\d \bm{\Omega})^i_{\phantom{i}j}.
+&=:& (\bm{\Omega}^{-1}\d \bm{\Omega})^i_{\phantom{i}j}
 \ei
-Let us now compute the other summand. Recall that $\Ad_g$ is the map
+Let us now compute the other summand. Recall that $\Ad_g$ is the map:
 \bi{rrCl}
 \Ad_g \cl & G & \to & G \\
 & h & \mapsto & g\bullet h \bullet g^{-1}
 \ei
-and since $\Ad_g(e)=e$, the push-forward $((\Ad_g)_*)_e\cl T_eG \xrightarrow{\sim} T_eG$ is a linear endomorphism of $T_eG$. Moreover, since here $G=\GL(d,\R)$ is a matrix Lie group, we have
+
+and since $\Ad_g(e)=e$, the push-forward $((\Ad_g)_*)_e\cl T_eG \xrightarrow{\sim} T_eG$ is a linear endomorphism of $T_eG$. Moreover, since here $G=\GL(d,\R)$ is a matrix Lie group, we have:
 \bse
-((\Ad_g)_*A)^i_{\phantom{i}j} = g^i_{\phantom{i}k}A^k_{\phantom{k}l}(g^{-1})^l_{\phantom{l}j} =: (\bm{gAg}^{-1})^i_{\phantom{i}j}.
+((\Ad_g)_*A)^i_{\phantom{i}j} = g^i_{\phantom{i}k}A^k_{\phantom{k}l}(g^{-1})^l_{\phantom{l}j} =: (\bm{gAg}^{-1})^i_{\phantom{i}j}
 \ese
-Hence, we have
+
+Hence, we have:
 \bi{rCl}
 (\Ad_{\Omega^{-1}(m)})_*( \omega^{U_1}) & = & (\Omega(m)^{-1})^i_{\phantom{i}k}(\omega^{U_1})_m)^k_{\phantom{k}l}(\Omega(m))^l_{\phantom{l}j}
 \ei
-Altogether, we find that the transition rule for the Yang-Mills fields on the intersection of $U_1$ and $U_2$ is given by
+
+Altogether, we find that the transition rule for the Yang-Mills fields on the intersection of $U_1$ and $U_2$ is given by:
 \bse
-(\omega^{U_2})^i_{\phantom{i}j\mu} = (\Omega^{-1})^i_{\phantom{i}k}(\omega^{U_1})^k_{\phantom{k}l\mu}\Omega^l_{\phantom{l}j}+  (\Omega^{-1})^i_{\phantom{i}k}\partial_\mu  (\Omega^{-1})^k_{\phantom{k}j}.
+(\omega^{U_2})^i_{\phantom{i}j\mu} = (\Omega^{-1})^i_{\phantom{i}k}(\omega^{U_1})^k_{\phantom{k}l\mu}\Omega^l_{\phantom{l}j}+  (\Omega^{-1})^i_{\phantom{i}k}\partial_\mu  (\Omega^{-1})^k_{\phantom{k}j}
 \ese
-As an application, consider the spacial case in which the sections $\sigma_1,\sigma_2$ are induced by co-ordinate charts $(U_1,x)$ and $(U_2,y)$. Then we have
+
+As an application, consider the spacial case in which the sections $\sigma_1,\sigma_2$ are induced by co-ordinate charts $(U_1,x)$ and $(U_2,y)$. Then we have:
 \bi{rCl}
 \Omega^i_{\phantom{i}j} & = & \frac{\partial y^i}{\partial x^j} := \partial_j(y^i\circ x^{-1})\circ x\\
 (\Omega^{-1})^i_{\phantom{i}j} & = & \frac{\partial x^i}{\partial y^j} := \partial_j(x^i\circ y^{-1})\circ y
 \ei
-and hence
+
+and hence:
 \bse
-(\omega^{U_2})^i_{\phantom{i}j\nu} = \frac{\partial y^\mu}{\partial x^\nu} \biggl( \frac{\partial x^i}{\partial y^k} (\omega^{U_1})^k_{\phantom{k}l\mu}  \frac{\partial y^l}{\partial x^j} + \frac{\partial x^i}{\partial y^k}  \frac{\partial^2 y^k}{\partial x^\mu\partial x^j} \biggr).
+(\omega^{U_2})^i_{\phantom{i}j\nu} = \frac{\partial y^\mu}{\partial x^\nu} \biggl( \frac{\partial x^i}{\partial y^k} (\omega^{U_1})^k_{\phantom{k}l\mu}  \frac{\partial y^l}{\partial x^j} + \frac{\partial x^i}{\partial y^k}  \frac{\partial^2 y^k}{\partial x^\mu\partial x^j} \biggr)
 \ese
-You may recognise this as the transformation law for the Christoffel symbols from general relativity.
+
+You may recognise this as the transformation law for the Christoffel symbols from previous chapter.
 \ee
 
 \section{Parallel Transport}
@@ -1066,18 +1101,20 @@ We now come to the second term in the sequence ``connection, parallel transport,
 
 \subsection{Horizontal Lifts To the principal bundle}
 
-\bd
-Let $(P,\pi,M)$ be a principal $G$-bundle equipped with a connection and let $\gamma\cl[0,1]\to M$ be a curve on $M$. The \emph{horizontal lift of $\gamma$ through $p_0\in P$}\index{horizontal lift} is the unique curve
+\bd [Horizontal Lift (Principle Bundle)]
+Let $(P,\pi,M)$ be a principal $G$-bundle equipped with a connection and let $\gamma\cl[0,1]\to M$ be a curve on $M$. The \textbf{horizontal lift of $\gamma$ through $p_0\in P$}\index{horizontal lift} is the unique curve:
 \bse
 \gamma^{\uparrow}\cl [0,1] \to P
 \ese
-with $\gamma^\uparrow(0)=p_0\in \preim_\pi(\{\gamma(0)\})$ satisfying
+
+with $\gamma^\uparrow(0)=p_0\in \preim_\pi(\{\gamma(0)\})$ satisfying:
 \ben[label=\roman*)]
-\item $\pi \circ \gamma^{\uparrow} = \gamma$;
-\item $\forall \, \lambda\in [0,1] : \ \ver(X_{\gamma^{\uparrow},\gamma^{\uparrow}(\lambda)})=0$;
+\item $\pi \circ \gamma^{\uparrow} = \gamma$.
+\item $\forall \, \lambda\in [0,1] : \ \ver(X_{\gamma^{\uparrow},\gamma^{\uparrow}(\lambda)})=0$.
 \item $\forall \, \lambda\in [0,1] : \ \pi_*(X_{\gamma^{\uparrow},\gamma^{\uparrow}(\lambda)})=X_{\gamma,\gamma(\lambda)}$.
 \een
 \ed
+
 Intuitively, a horizontal lift of a curve $\gamma$ on $M$ is a curve $\gamma^\uparrow$ on $P$ such that each point $\gamma^\uparrow(\lambda)\in P$ belongs to the fiber of $\gamma(\lambda)$ (condition i), the tangent vectors to the curve $\gamma^\uparrow$ have no vertical component (condition ii), i.e.\ they lie entirely in the horizontal spaces at each point, and finally the projection of the tangent vector to $\gamma^\uparrow$ at $\gamma^\uparrow(\lambda)$ coincides with the tangent vector to the curve $\gamma$ at $\pi(\gamma^\uparrow(\lambda))=\gamma(\lambda)$.
 
 \br
@@ -1086,47 +1123,54 @@ Note that the uniqueness in the above definition only stems from the choice of $
 
 Our strategy to write down an explicit expression for the horizontal lift through $p_0\in P$ of a curve $\gamma\cl [0,1]\to M$ is to proceed in two steps:
 \ben[label=\roman*)]
-\item ``Generate'' the horizontal lift by starting from some arbitrary curve $\delta\cl [0,1]\to P$ such that $\pi\circ \delta = \gamma$ by action of a suitable curve $g\cl (0,1)\to G$ so that
+\item ``Generate'' the horizontal lift by starting from some arbitrary curve $\delta\cl [0,1]\to P$ such that $\pi\circ \delta = \gamma$ by action of a suitable curve $g\cl (0,1)\to G$ so that:
 \bse
-\gamma^\uparrow(\lambda) = \delta(\lambda)\racts g(\lambda).
+\gamma^\uparrow(\lambda) = \delta(\lambda)\racts g(\lambda)
 \ese
-The suitable curve $g$ will be the solution to an ordinary differential equation with initial condition $g(0)=g_0$, where $g_0$ is the unique element in $G$ such that
+
+The suitable curve $g$ will be the solution to an ordinary differential equation with initial condition $g(0)=g_0$, where $g_0$ is the unique element in $G$ such that:
 \bse
-\delta(0)\racts g_0 = p_0\in P.
+\delta(0)\racts g_0 = p_0\in P
 \ese
+
 \item We will explicitly solve (locally) this differential equation for $g\cl [0,1]\to P$ by a path-ordered integral over the local Yang-Mills field.
 \een
 
 We have the following result characterising the curve $g$ appearing above.
 
 \bt
-The (first order) ODE satisfied by the curve $g\cl[0,1]\to G$ is
+The (first order) ODE satisfied by the curve $g\cl[0,1]\to G$ is:
 \bse
 (\Ad_{g(\lambda)^{-1}})_*(\omega_{\delta(\lambda)}(X_{\delta,\delta(\lambda)}))+\Xi_{g(\lambda)}(X_{g,g(\lambda)}) = 0
 \ese
+
 with the initial condition $g(0)=g_0$.
 \et
 
 \bc
-If $G$ is a matrix group, then the above ODE takes the form
+If $G$ is a matrix group, then the above ODE takes the form:
 \bse
 g(\lambda)^{-1}(\omega_{\delta(\lambda)}(X_{\delta,\delta(\lambda)}))g(\lambda)+g(\lambda)^{-1}\dot{g}(\lambda)=0
 \ese
-where we denoted matrix multiplication by juxtaposition and $\dot g(\lambda)$ denotes the derivative with respect to $\lambda$ of the matrix entries of $g$. Equivalently, by multiplying both sides on the left by $g(\lambda)$,
+
+where we denoted matrix multiplication by juxtaposition and $\dot g(\lambda)$ denotes the derivative with respect to $\lambda$ of the matrix entries of $g$. Equivalently, by multiplying both sides on the left by $g(\lambda)$:
 \bse
 \dot{g}(\lambda) = -(\omega_{\delta(\lambda)}(X_{\delta,\delta(\lambda)}))g(\lambda).
 \ese
 \ec
-In order to further massage this ODE, let us consider a chart $(U,x)$ on the base manifold $M$, such that the image of $\gamma$ is entirely contained in $U$. A local section $\sigma\cl U \to P$ induces 
+
+In order to further massage this ODE, let us consider a chart $(U,x)$ on the base manifold $M$, such that the image of $\gamma$ is entirely contained in $U$. A local section $\sigma\cl U \to P$ induces:
 \ben[label=\roman*)]
-\item a Yang-Mills field $\omega^U$;
-\item a curve on $P$ by $\delta:=\sigma \circ \gamma$.
+\item A Yang-Mills field $\omega^U$.
+\item A curve on $P$ by $\delta:=\sigma \circ \gamma$
 \een
-In fact, since the only condition imposed on $\delta$ is that $\pi\circ \delta = \gamma$, choosing a such a curve $\delta$ is equivalent to choosing a local section $\sigma$. Note that we have
+
+In fact, since the only condition imposed on $\delta$ is that $\pi\circ \delta = \gamma$, choosing a such a curve $\delta$ is equivalent to choosing a local section $\sigma$. Note that we have:
 \bse
-\sigma_*(X_{\gamma,\gamma(\lambda)}) = X_{\delta,\delta(\lambda)},
+\sigma_*(X_{\gamma,\gamma(\lambda)}) = X_{\delta,\delta(\lambda)}
 \ese
-and hence
+
+and hence:
 \bi{rCl}
 \omega_{\delta(\lambda)}(X_{\delta,\delta(\lambda)}) & = & \omega_{\delta(\lambda)}(\sigma_*(X_{\gamma,\gamma(\lambda)}))\\
 & = &  (\sigma^*\omega)_{\gamma(\lambda)}(X_{\gamma,\gamma(\lambda)})\\
@@ -1134,32 +1178,38 @@ and hence
 & = & \omega^U_\mu(\gamma(\lambda))(\d x^\mu)_{\gamma(\lambda)} \biggl(X_{\gamma}^\nu(\gamma(\lambda))\tvb{x}{\nu}{\gamma(\lambda)\,}\biggr)\\
 & = & \omega^U_\mu(\gamma(\lambda))X_{\gamma}^\nu(\gamma(\lambda))(\d x^\mu)_{\gamma(\lambda)} \biggl(\tvb{x}{\nu}{\gamma(\lambda)\,}\biggr)\\
 & = & \omega^U_\mu(\gamma(\lambda))X_{\gamma}^\nu(\gamma(\lambda))\,\delta^\mu_\nu\\
-& = & \omega^U_\mu(\gamma(\lambda))X_{\gamma}^\mu(\gamma(\lambda)).
+& = & \omega^U_\mu(\gamma(\lambda))X_{\gamma}^\mu(\gamma(\lambda))
 \ei
-Thus, in the special case of a matrix Lie group, the ODE reads
+
+Thus, in the special case of a matrix Lie group, the ODE reads:
 \bse
-\dot{g}(\lambda) = -\Gamma_\mu(\gamma(\lambda))\, \dot{\gamma}^\mu(\lambda),
+\dot{g}(\lambda) = -\Gamma_\mu(\gamma(\lambda))\, \dot{\gamma}^\mu(\lambda)
 \ese
+
 where $\Gamma_\mu:=\omega^U_\mu$ and $\dot{\gamma}^\mu(\lambda):=X^\mu_{\gamma}(\gamma(\lambda))$, together with the initial condition $g(0)=g_0$.
 
 \subsection{Solution of the horizontal lift ODE by a path-ordered exponential}
-As a first step towards the solution of our ODE, consider
+As a first step towards the solution of our ODE, consider:
 \bse
-g(t) := g_0 -\int_0^t \d \lambda \, \Gamma_\mu(\gamma(\lambda))\, \dot{\gamma}^\mu(\lambda)g(\lambda).
+g(t) := g_0 -\int_0^t \d \lambda \, \Gamma_\mu(\gamma(\lambda))\, \dot{\gamma}^\mu(\lambda)g(\lambda)
 \ese
-This doesn't seem to have brought us far since the function $g$ that we would like to determine appears again on the right hand side. However, we can now iterate this definition to obtain
+
+This doesn't seem to have brought us far since the function $g$ that we would like to determine appears again on the right hand side. However, we can now iterate this definition to obtain:
 \bi{rCl}
 g(t) & = & g_0 -\int_0^t \d \lambda_1 \, \Gamma_\mu(\gamma(\lambda_1)) \dot{\gamma}^\mu(\lambda_1) \biggl(g_0 -\int_0^{\lambda_1} \d \lambda_2 \, \Gamma_\nu(\gamma(\lambda_2)) \dot{\gamma}^\nu(\lambda_2) \biggr)\\
-& = & g_0 -\int_0^t \d \lambda_1 \, \Gamma_\mu(\gamma(\lambda_1)) \dot{\gamma}^\mu(\lambda_1)g_0+\int_0^t \d \lambda_1\int_0^{\lambda_1} \d \lambda_2 \, \Gamma_\mu(\gamma(\lambda_1)) \dot{\gamma}^\mu(\lambda_1)\Gamma_\nu(\gamma(\lambda_2)) \dot{\gamma}^\nu(\lambda_2)g(\lambda_2).
+& = & g_0 -\int_0^t \d \lambda_1 \, \Gamma_\mu(\gamma(\lambda_1)) \dot{\gamma}^\mu(\lambda_1)g_0+\int_0^t \d \lambda_1\int_0^{\lambda_1} \d \lambda_2 \, \Gamma_\mu(\gamma(\lambda_1)) \dot{\gamma}^\mu(\lambda_1)\Gamma_\nu(\gamma(\lambda_2)) \dot{\gamma}^\nu(\lambda_2)g(\lambda_2)
 \ei
-Matters seem to only get worse, until one realises that the first integral no longer contains the unknown function $g$. Hence, the above expression provides a ``first-order'' approximation to $g$. It is clear that we can get higher-order approximations by iterating this process
+
+Matters seem to only get worse, until one realises that the first integral no longer contains the unknown function $g$. Hence, the above expression provides a ``first-order'' approximation to $g$. It is clear that we can get higher-order approximations by iterating this process:
 \bi{rCl}
 g(t) & = & g_0-\int_0^t \d \lambda_1 \, \Gamma_\mu(\gamma(\lambda_1)) \dot{\gamma}^\mu(\lambda_1)g_0\\
 & & \phantom{g_0}+ \int_0^t \d \lambda_1\int_0^{\lambda_1} \d \lambda_2\, \Gamma_\mu(\gamma(\lambda_1)) \dot{\gamma}^\mu(\lambda_1)\Gamma_\nu(\gamma(\lambda_2)) \dot{\gamma}^\nu(\lambda_2) g_0\\
 & & \phantom{g_0\,}\ \vdots\\
-& & \phantom{g_0}+ (-1)^{n} \int_0^t \d \lambda_1\int_0^{\lambda_1} \d \lambda_2\, \cdots \int_0^{\lambda_{n-1}}\d\lambda_n\,   \Gamma_\mu(\gamma(\lambda_1)) \dot{\gamma}^\mu(\lambda_1)\cdots  \Gamma_\nu(\gamma(\lambda_n)) \dot{\gamma}^\nu(\lambda_n) \, g(\lambda_n).
+& & \phantom{g_0}+ (-1)^{n} \int_0^t \d \lambda_1\int_0^{\lambda_1} \d \lambda_2\, \cdots \int_0^{\lambda_{n-1}}\d\lambda_n\,   \Gamma_\mu(\gamma(\lambda_1)) \dot{\gamma}^\mu(\lambda_1)\cdots  \Gamma_\nu(\gamma(\lambda_n)) \dot{\gamma}^\nu(\lambda_n) \, g(\lambda_n)
 \ei
-Note how the range of each integral depends on the integration variable of the previous integral. It would much nicer if we could have the same range in each integral. In fact, there is a standard trick to achieve this. The region of integration in the double integral is
+
+Note how the range of each integral depends on the integration variable of the previous integral. It would much nicer if we could have the same range in each integral. In fact, there is a standard trick to achieve this. The region of integration in the double integral is:
+
 \begin{center}
 \begin{tikzpicture}
 \draw (0,0) node[below left] {$0$};
@@ -1174,242 +1224,275 @@ Note how the range of each integral depends on the integration variable of the p
 \draw[->] (0,-0.5)--(0,4) node[left] {$\lambda_2$};
 \end{tikzpicture}
 \end{center}
-and if the integrand $f(\lambda_1,\lambda_2)$ is invariant under the exchange $\lambda_1\leftrightarrow \lambda_2$, we have 
+
+and if the integrand $f(\lambda_1,\lambda_2)$ is invariant under the exchange $\lambda_1\leftrightarrow \lambda_2$, we have:
 \bse
-\int_0^t \d \lambda_1\int_0^{\lambda_1} \d \lambda_2\, f(\lambda_1,\lambda_2) = \frac{1}{2}\int_0^t \d \lambda_1\int_0^t \d \lambda_2\, f(\lambda_1,\lambda_2).
+\int_0^t \d \lambda_1\int_0^{\lambda_1} \d \lambda_2\, f(\lambda_1,\lambda_2) = \frac{1}{2}\int_0^t \d \lambda_1\int_0^t \d \lambda_2\, f(\lambda_1,\lambda_2)
 \ese
-Generalising to $n$ dimensions, we have
+
+Generalising to $n$ dimensions, we have:
 \bse
 \int_0^t \d \lambda_1\,\cdots\int_0^{\lambda_{n-1}} \d \lambda_n\, f(\lambda_1,\ldots,\lambda_n) = \frac{1}{n!}\int_0^t \d \lambda_1\,\cdots\int_0^t \d \lambda_n\, f(\lambda_1,\ldots,\lambda_n)
 \ese
-if $f$ is invariant under any permutation of its arguments. Moreover, since each term in our integrands only depends on one integration variable at a time, we can use
+
+if $f$ is invariant under any permutation of its arguments. Moreover, since each term in our integrands only depends on one integration variable at a time, we can use:
 \bse
 \int_0^t \d \lambda_1\,\cdots\int_0^{t} \d \lambda_n\, f_1(\lambda_1)\cdots f_n(\lambda_n) = \biggl(\int_0^t \d \lambda_1\,f(\lambda_1)\biggr)\cdots\biggl(\int_0^t \d \lambda_n\, f(\lambda_n)\biggr)
 \ese
-so that, in our case, we would have
+
+so that, in our case, we would have:
 \bi{rCl}
 g(t) & = & \biggl(\,\sum_{n=0}^\infty \frac{(-1)^n}{n!}\biggl(\int_0^t \d \lambda  \, \Gamma_\mu(\gamma(\lambda))\dot{\gamma}^\mu(\lambda)\biggr)^{\negmedspace n\,} \biggr)g_0\\
-& = & \exp\biggl(-\int_0^t \d \lambda  \, \Gamma_\mu(\gamma(\lambda))\dot{\gamma}^\mu(\lambda)\biggr) g_0.
+& = & \exp\biggl(-\int_0^t \d \lambda  \, \Gamma_\mu(\gamma(\lambda))\dot{\gamma}^\mu(\lambda)\biggr) g_0
 \ei
-However, our integrands are Lie-algebra-valued (that is, matrix valued), and since the factors therein need not commute, they are not invariant under permutations of the independent variables. Hence, the above formula doesn't work. Instead, we write
+
+However, our integrands are Lie-algebra-valued (that is, matrix valued), and since the factors therein need not commute, they are not invariant under permutations of the independent variables. Hence, the above formula doesn't work. Instead, we write:
 \bse
-g(t)= \mathrm{P}\exp\biggl(-\int_0^t \d \lambda  \, \Gamma_\mu(\gamma(\lambda))\dot{\gamma}^\mu(\lambda)\biggr) g_0,
+g(t)= \mathrm{P}\exp\biggl(-\int_0^t \d \lambda  \, \Gamma_\mu(\gamma(\lambda))\dot{\gamma}^\mu(\lambda)\biggr) g_0
 \ese
-where the \emph{path-ordered exponential}\index{path-ordered exponential} $\mathrm{P}\exp$ is defined to yield the correct expression for $g(t)$.
+
+where the \emph{path-ordered exponential}\index{path-ordered exponential} $\mathrm{P}\exp$ is defined to yield the correct expression for $g(t)$. \v
 
 Summarising, we have the following.
 \bp
-For a principal $G$-bundle $(P,\pi,M)$, where $G$ is a matrix Lie group, the horizontal lift of a curve $\gamma\cl [0,1]\to U$ through $p_p\in \preim_\pi(\{U\})$, where $(U,x)$ is a chart on $M$, is given in terms of a local section $\sigma\cl U \to P$ by the explicit expression
+For a principal $G$-bundle $(P,\pi,M)$, where $G$ is a matrix Lie group, the horizontal lift of a curve $\gamma\cl [0,1]\to U$ through $p_p\in \preim_\pi(\{U\})$, where $(U,x)$ is a chart on $M$, is given in terms of a local section $\sigma\cl U \to P$ by the explicit expression:
 \bse
-\gamma^\uparrow(\lambda) = (\sigma\circ\gamma)(\lambda)\racts\biggl(\mathrm{P}\exp\biggl(-\int_0^\lambda \d \widetilde\lambda  \, \Gamma_\mu(\gamma(\widetilde\lambda))\dot{\gamma}^\mu(\widetilde\lambda)\biggr) g_0\biggr).
+\gamma^\uparrow(\lambda) = (\sigma\circ\gamma)(\lambda)\racts\biggl(\mathrm{P}\exp\biggl(-\int_0^\lambda \d \widetilde\lambda  \, \Gamma_\mu(\gamma(\widetilde\lambda))\dot{\gamma}^\mu(\widetilde\lambda)\biggr) g_0\biggr)
 \ese
 \ep
 
-\bd
-Let $\gamma^\uparrow_p\cl[0,1]\to P$ be the horizontal lift through $p\in\preim_\pi(\{\gamma(0)\})$ of the curve $\gamma\cl[0,1]\to M$ . The \emph{parallel transport map along $\gamma$}\index{parallel transport map} is the map
+\bd [Parallel Transport Map (Principle Bundle)]
+Let $\gamma^\uparrow_p\cl[0,1]\to P$ be the horizontal lift through $p\in\preim_\pi(\{\gamma(0)\})$ of the curve $\gamma\cl[0,1]\to M$ . The \textbf{parallel transport map along $\gamma$}\index{parallel transport map} is the map:
 \bi{rrCl}
 T_\gamma \cl & \preim_\pi(\{\gamma(0)\}) & \to & \preim_\pi(\{\gamma(1)\}) \\
-& p & \mapsto & \gamma^\uparrow_p(1).
+& p & \mapsto & \gamma^\uparrow_p(1)
 \ei
 \ed
+
 \br
-The parallel transport is, in fact, a bijection between the fibers $\preim_\pi(\{\gamma(0)\})$  and $\preim_\pi(\{\gamma(1)\})$. It is injective since there is a unique horizontal lift of $\gamma$ through each point $p\in\preim_\pi(\{\gamma(0)\})$, and horizontal lifts through different points do not intersect.  It is surjective since for each $q\in \preim_\pi(\{\gamma(1)\})$ we can find a $p$ such that $q=\gamma^\uparrow_p(1)$ as follows. Let $\widetilde p\in\preim_\pi(\{\gamma(0)\})$. Then $\gamma^\uparrow_{\widetilde p}(1)$ belongs to the same fiber as $q$ and hence there exists a unique $g\in G$ such that $q = \gamma^\uparrow_{\widetilde p}(1) \racts g$. Recall that 
+The parallel transport is, in fact, a bijection between the fibers $\preim_\pi(\{\gamma(0)\})$  and $\preim_\pi(\{\gamma(1)\})$. It is injective since there is a unique horizontal lift of $\gamma$ through each point $p\in\preim_\pi(\{\gamma(0)\})$, and horizontal lifts through different points do not intersect.  It is surjective since for each $q\in \preim_\pi(\{\gamma(1)\})$ we can find a $p$ such that $q=\gamma^\uparrow_p(1)$ as follows. Let $\widetilde p\in\preim_\pi(\{\gamma(0)\})$. Then $\gamma^\uparrow_{\widetilde p}(1)$ belongs to the same fiber as $q$ and hence there exists a unique $g\in G$ such that $q = \gamma^\uparrow_{\widetilde p}(1) \racts g$. Recall that:
 \bse
 \gamma^\uparrow_{\widetilde p}(\lambda) = (\sigma\circ\gamma)(\lambda)\racts (\mathrm{P}\exp (\cdots ) g_0)
 \ese
-where $g_0$ is the unique $g_0\in G$ such that $\widetilde p = (\sigma\circ\gamma)(0)\racts g_0$. Define $p\in\preim_\pi(\{\gamma(0)\})$ by
+
+where $g_0$ is the unique $g_0\in G$ such that $\widetilde p = (\sigma\circ\gamma)(0)\racts g_0$. Define $p\in\preim_\pi(\{\gamma(0)\})$ by:
 \bse
-p:=\widetilde p \racts g = (\sigma\circ\gamma)(0)\racts (g_0\bullet g).
+p:=\widetilde p \racts g = (\sigma\circ\gamma)(0)\racts (g_0\bullet g)
 \ese
-Then we have
+
+Then we have:
 \bi{rCl}
 \gamma^\uparrow_{p}(1) & = & (\sigma\circ\gamma)(1)\racts (\mathrm{P}\exp (\cdots ) g_0\bullet g)\\
 & = & (\sigma\circ\gamma)(1)\racts (\mathrm{P}\exp (\cdots ) g_0)\racts g\\
 & = & \gamma^\uparrow_{\widetilde p}(1) \racts g\\
-& = & q.
+& = & q
 \ei
 \er
 
 \subsubsection*{Loops and holonomy groups}
-Consider the case of loops, i.e.\ curves $\gamma\cl[0,1]\to M$ for which $\gamma(0)=\gamma(1)$. Fix some $p\in \preim_\pi(\{\gamma(0)\})$. The condition that $\pi\circ\gamma_p^\uparrow=\gamma$ then implies that $\gamma_p^\uparrow(0)$ and $\gamma_p^\uparrow(1)$ belong to the same fiber. Hence, there exists a unique $g_\gamma\in G$ such that
+Consider the case of loops, i.e.\ curves $\gamma\cl[0,1]\to M$ for which $\gamma(0)=\gamma(1)$. Fix some $p\in \preim_\pi(\{\gamma(0)\})$. The condition that $\pi\circ\gamma_p^\uparrow=\gamma$ then implies that $\gamma_p^\uparrow(0)$ and $\gamma_p^\uparrow(1)$ belong to the same fiber. Hence, there exists a unique $g_\gamma\in G$ such that:
 \bse
-\gamma_p^\uparrow(1) = \gamma_p^\uparrow(0) \racts g_\gamma=p\racts g_\gamma.
+\gamma_p^\uparrow(1) = \gamma_p^\uparrow(0) \racts g_\gamma=p\racts g_\gamma
 \ese
-\bd
-Let $\omega$ be a connection one-form on the principal $G$-bundle $(P,\pi,M)$. Let $\gamma\cl[0,1]\to M$ be a loop with base-point $a\in M$, i.e.\ $\gamma(0)=\gamma(1)=a$. The subgroup of $G$
+
+\bd [Holonomy Group]
+Let $\omega$ be a connection one-form on the principal $G$-bundle $(P,\pi,M)$. Let $\gamma\cl[0,1]\to M$ be a loop with base-point $a\in M$, i.e.\ $\gamma(0)=\gamma(1)=a$. The subgroup of $G$:
 \bse
 \Hol_a(\omega) := \{g_\gamma \mid \gamma_p^\uparrow(1) =p\racts g_\gamma \text{ for some loop $\gamma$}\}
 \ese
-is called the \emph{holonomy group}\index{holonomy group} of $\omega$ on $P$ at the base-point $a$.
+
+is called the \textbf{holonomy group}\index{holonomy group} of $\omega$ on $P$ at the base-point $a$.
 \ed
 
 \subsection{Horizontal lifts to the associated bundle}
 
 Almost everything that we have done so far transfers with ease to an associated bundle via the following definition.
 
-\bd
-Let $(P,\pi,M)$ be a principal $G$-bundle and $\omega$ a connection one-form on $P$. Let $(P_F,\pi_F,M)$ be an associated fiber bundle of $P$ on whose typical fiber $F$ the Lie group $G$ acts on the left by $\lacts$. Let $\gamma\cl [0,1]\to M$ be a curve on $M$ and let $\gamma^\uparrow_p$ be its horizontal lift to $P$ through $p\in \preim_\pi(\{\gamma(0)\})$. Then the \emph{horizontal lift} of $\gamma$ to the associated bundle $P_F$ through the point $[p,f]\in P_F$ is the curve
+\bd [Horizontal Lift (Associated Bundle)]
+Let $(P,\pi,M)$ be a principal $G$-bundle and $\omega$ a connection one-form on $P$. Let $(P_F,\pi_F,M)$ be an associated fiber bundle of $P$ on whose typical fiber $F$ the Lie group $G$ acts on the left by $\lacts$. Let $\gamma\cl [0,1]\to M$ be a curve on $M$ and let $\gamma^\uparrow_p$ be its horizontal lift to $P$ through $p\in \preim_\pi(\{\gamma(0)\})$. Then the \textbf{horizontal lift} of $\gamma$ to the associated bundle $P_F$ through the point $[p,f]\in P_F$ is the curve:
 \bi{rrCl}
 \gamma^{\negmedspace \stackrel{P_F}{\uparrow}}_{[p,f]} \cl & [0,1] & \to & P_F\\
 & \lambda & \mapsto & [\gamma^\uparrow_p(\lambda),f]
 \ei
 \ed
+
 For instance, we have the obvious parallel transport map.
-\bd
-The \emph{parallel transport map} on the associated bundle is given by
+
+\bd [Parallel Transport Map (Associated Bundle)]
+The \textbf{parallel transport map} on the associated bundle is given by:
 \bi{rrCl}
 T^{P_F}_\gamma \cl & \preim_{\pi_F}(\{\gamma(0)\}) & \to & \preim_{\pi_F}(\{\gamma(1)\}) \\
-& [p,f] & \mapsto & \gamma^{\negmedspace\stackrel{P_F}{\uparrow}}_{[p,f]}(1).
+& [p,f] & \mapsto & \gamma^{\negmedspace\stackrel{P_F}{\uparrow}}_{[p,f]}(1)
 \ei
 \ed
 
 \br
-If $F$ is a vector space and $\lacts \cl G\times F \to F$ is fiber-wise linear, i.e.\ for each fixed $g\in G$, the map $(g\lacts -)\cl F \to F$ is linear, then $(P_F,\pi_F,M)$ is called a \emph{vector bundle}. The basic idea of a covariant derivative is as follows. Let $\sigma\cl U \to P_F$ be a local section of the associated bundle. We would like to define the derivative of $\sigma$ at the point $m\in U\se M$ in the direction $X\in T_mM$. By definition, there exists a curve $\gamma\cl(-\varepsilon,\varepsilon)\to M$ with $\gamma(0)=m$ such that $X=X_{\gamma,m}$. Then for any $0\leq t <\varepsilon$, the points $\gamma^{\negmedspace\stackrel{P_F}{\uparrow}}_{[\sigma(m),f]}(t)$ and $\sigma(\gamma(t))$ lie in the same fiber of $P_F$. But since the fibers are vector spaces, we can write the differential quotient
+If $F$ is a vector space and $\lacts \cl G\times F \to F$ is fiber-wise linear, i.e.\ for each fixed $g\in G$, the map $(g\lacts -)\cl F \to F$ is linear, then $(P_F,\pi_F,M)$ is called a \emph{vector bundle}. The basic idea of a covariant derivative is as follows. Let $\sigma\cl U \to P_F$ be a local section of the associated bundle. We would like to define the derivative of $\sigma$ at the point $m\in U\se M$ in the direction $X\in T_mM$. By definition, there exists a curve $\gamma\cl(-\varepsilon,\varepsilon)\to M$ with $\gamma(0)=m$ such that $X=X_{\gamma,m}$. Then for any $0\leq t <\varepsilon$, the points $\gamma^{\negmedspace\stackrel{P_F}{\uparrow}}_{[\sigma(m),f]}(t)$ and $\sigma(\gamma(t))$ lie in the same fiber of $P_F$. But since the fibers are vector spaces, we can write the differential quotient:
 \bse
-\frac{\sigma(\gamma(t))-\gamma^{\negmedspace\stackrel{P_F}{\uparrow}}_{[\sigma(m),f]}(t)}{t},
+\frac{\sigma(\gamma(t))-\gamma^{\negmedspace\stackrel{P_F}{\uparrow}}_{[\sigma(m),f]}(t)}{t}
 \ese
-where the minus sign denotes the additive inverse in the vector space $\preim_{\pi_F}(\{\gamma(t)\})$ and hence define the derivative of $\sigma$ at the point $m$ in the direction $X$, or the derivative of $\sigma$ along $\gamma$ at $\gamma(0)=m$, by 
+
+where the minus sign denotes the additive inverse in the vector space $\preim_{\pi_F}(\{\gamma(t)\})$ and hence define the derivative of $\sigma$ at the point $m$ in the direction $X$, or the derivative of $\sigma$ along $\gamma$ at $\gamma(0)=m$, by:
 \bse
 \lim_{t\to 0} \frac{\sigma(\gamma(t))-\gamma^{\negmedspace\stackrel{P_F}{\uparrow}}_{[\sigma(m),f]}(t)}{t}
 \ese
-(of course, this makes sense as soon as we have a topology on the fibers). We will soon present a more abstract approach.
+(of course, this m
+akes sense as soon as we have a topology on the fibers). We will soon present a more abstract approach.
 \er
 
 \section{Covariant exterior derivative and curvature}
 
-Usually, in more elementary treatments of differential geometry or general relativity, curvature and torsion are mentioned together as properties of a covariant derivative over the tangent or the frame bundle. Since we will soon define the notion of curvature on a general principal bundle equipped with a connection, one might expect that there be a general definition of torsion on a principal bundle with a connection. However, this is not the case. Torsion requires additional structure beyond that induced by a connection. The reason why curvature and torsion are sometimes presented together is that frame bundles are already equipped, in a canonical way, with the extra structure required to define torsion.
+Usually, in more elementary treatments of differential geometry curvature and torsion are mentioned together as properties of a covariant derivative over the tangent or the frame bundle. Since we will soon define the notion of curvature on a general principal bundle equipped with a connection, one might expect that there be a general definition of torsion on a principal bundle with a connection. However, this is not the case. Torsion requires additional structure beyond that induced by a connection. The reason why curvature and torsion are sometimes presented together is that frame bundles are already equipped, in a canonical way, with the extra structure required to define torsion.
 
-\bd
-Let $(P,\pi,M)$ be a principal $G$-bundle with connection one-form $\omega$. Let $\phi$ be a $k$-form (i.e. an anti-symmetric, $\mathcal{C}^\infty(P)$-multilinear map) with values in some module $V$. Then then \emph{exterior covariant derivative}\index{exterior covariant derivative} of $\phi$ is
+\bd [Exterior Covariant Derivative]
+Let $(P,\pi,M)$ be a principal $G$-bundle with connection one-form $\omega$. Let $\phi$ be a $k$-form (i.e. an anti-symmetric, $\mathcal{C}^\infty(P)$-multilinear map) with values in some module $V$. Then then \textbf{exterior covariant derivative}\index{exterior covariant derivative} of $\phi$ is:
 \bi{rrCl}
 \D\phi\cl & \Gamma(TP)^{\times (k+1)} & \to & V\\
 & (X_1,\ldots,X_{k+1}) & \mapsto & \d \phi (\hor(X_1),\ldots,\hor(X_{k+1})).
 \ei
 \ed
 
-\bd
-Let $(P,\pi,M)$ be a principal $G$-bundle with connection one-form $\omega$. The \emph{curvature}\index{curvature} of the connection one-form $\omega$ is the Lie-algebra-valued $2$-form on $P$
+\bd [Curvature]
+Let $(P,\pi,M)$ be a principal $G$-bundle with connection one-form $\omega$. The \textbf{curvature}\index{curvature} of the connection one-form $\omega$ is the Lie-algebra-valued $2$-form on $P$:
 \bse
 \Omega\cl \Gamma(TP)\times \Gamma(TP) \to T_eG
 \ese
-defined by 
+
+defined by:
 \bse
-\Omega:=\D \omega.
+\Omega:=\D \omega
 \ese
 \ed
 
 For calculational purposes, we would like to make this definition a bit more explicit.
 
 \bp
-Let $\omega$ be a connection one-form and $\Omega$ its curvature. Then
+Let $\omega$ be a connection one-form and $\Omega$ its curvature. Then:
 \bse
 \tag{$\star$}
 \Omega = \d \omega + \omega \Wedge \omega
 \ese
-with the second term on the right hand side defined as
+
+with the second term on the right hand side defined as:
 \bse
 (\omega\Wedge\omega )(X,Y) := \llbracket\omega(X),\omega(Y) \rrbracket
 \ese
+
 where $X,Y\in \Gamma(TP)$ and the double bracket denotes the Lie bracket on $T_eG$.
 \ep
 
 \br
-If $G$ is a matrix Lie group, and hence $T_eG$ is an algebra of matrices of the same size as those of $G$, then we can write
+If $G$ is a matrix Lie group, and hence $T_eG$ is an algebra of matrices of the same size as those of $G$, then we can write:
 \bse
-\Omega^i_{\phantom{i}j} = \d \omega^i_{\phantom{i}j} + \omega^i_{\phantom{i}k}\wedge \omega^k_{\phantom{k}j}.
+\Omega^i_{\phantom{i}j} = \d \omega^i_{\phantom{i}j} + \omega^i_{\phantom{i}k}\wedge \omega^k_{\phantom{k}j}
 \ese
 \er
 
 \bq
-Since $\Omega$ is $\mathcal{C}^\infty$-bilinear, it suffices to consider the following three cases.
+Since $\Omega$ is $\mathcal{C}^\infty$-bilinear, it suffices to consider the following three cases:
 \ben[label=\alph*)]
-\item Suppose that $X,Y\in \Gamma(TP)$ are both vertical, that is, there exist $A,B\in T_eG$ such that $X=X^A$ and $Y=X^B$. Then the left hand side of our equation reads
+\item Suppose that $X,Y\in \Gamma(TP)$ are both vertical, that is, there exist $A,B\in T_eG$ such that $X=X^A$ and $Y=X^B$. Then the left hand side of our equation reads:
 \bi{rCl}
 \Omega(X^A,X^B) & := & \D\omega(X^A,X^B) \\
 & = & \d \omega(\hor(X^A),\hor(X^B))\\
 & = & \d \omega(0,0)\\
 & = & 0
 \ei
-while the right hand side is
+
+while the right hand side is:
 \bi{rCl}
 \d \omega(X^A,X^B) + (\omega\Wedge\omega )(X^A,X^B) & = & X^A(\omega(X^B))-X^B(\omega(X^A))\\
 && {}-\omega([X^A,X^B])+ \left\llbracket \omega(X^A),\omega(X^B)\right\rrbracket\\
 & = & X^A(B)-X^B(A)\\
 && {}-\omega(X^{\llbracket A,B\rrbracket} )+ \left\llbracket A,B\right\rrbracket\\
 & = & -\left\llbracket A,B\right\rrbracket +\left\llbracket A,B\right\rrbracket\\
-& = & 0.
+& = & 0
 \ei
-Note that we have used the fact that the map
+
+Note that we have used the fact that the map:
 \bi{rrCl}
 i\cl & T_eG & \to & \Gamma(TP)\\
 & A \mapsto & X^A
 \ei
-is a Lie algebra homomorphism, and hence 
+
+is a Lie algebra homomorphism, and hence:
+
 \bse
-X^{\llbracket A,B\rrbracket}= i(\llbracket A,B\rrbracket) = [i(A),i(B)]=[X^A,X^B],
+X^{\llbracket A,B\rrbracket}= i(\llbracket A,B\rrbracket) = [i(A),i(B)]=[X^A,X^B]
 \ese
+
 where the single square brackets denote the Lie bracket on $\Gamma(TP)$. 
-\item Suppose that $X,Y\in \Gamma(TP)$ are both horizontal. Then we have
+
+\item Suppose that $X,Y\in \Gamma(TP)$ are both horizontal. Then we have:
 \bse
 \Omega(X,Y) := \D\omega(X,Y) = \d\omega(\hor(X),\hor(Y))=\d\omega(X,Y)
 \ese
-and 
+
+and:
 \bse
-(\omega\Wedge\omega )(X,Y)  =  \left\llbracket \omega(X),\omega(Y)\right\rrbracket = \left\llbracket 0,0\right\rrbracket = 0.
+(\omega\Wedge\omega )(X,Y)  =  \left\llbracket \omega(X),\omega(Y)\right\rrbracket = \left\llbracket 0,0\right\rrbracket = 0
 \ese
+
 Hence the equation holds in this case.
-\item W.l.o.g suppose that $X\in \Gamma(TP)$ is horizontal while $Y=X^A\in\Gamma(TP)$ is vertical. Then the left hand side is
+
+\item W.l.o.g suppose that $X\in \Gamma(TP)$ is horizontal while $Y=X^A\in\Gamma(TP)$ is vertical. Then the left hand side is:
 \bse
-\Omega(X,X^A) := \D \omega (X,X^A) = \d \omega(\hor(X),\hor(X^A)) = \d \omega(\hor(X),0) = 0.
+\Omega(X,X^A) := \D \omega (X,X^A) = \d \omega(\hor(X),\hor(X^A)) = \d \omega(\hor(X),0) = 0
 \ese
-while the right hand side gives
+
+while the right hand side gives:
 \bi{rCl}
 \d \omega(X,X^A) + (\omega\Wedge\omega )(X,X^A) & = & X(\omega(X^A))-X^A(\omega(X))\\
 && {}-\omega([X,X^A])+ \left\llbracket \omega(X),\omega(X^A)\right\rrbracket\\
 & = & X(A)-X^A(0)\\
 && {}-\omega(X^{\llbracket A,B\rrbracket} )+ \left\llbracket 0,A\right\rrbracket\\
 & = & -\omega([X,X^A])\\
-& = & 0,
+& = & 0
 \ei
+
 where the only non-trivial step, which is left as an exercise, is to show that if $X$ is horizontal and $Y$ is vertical, then $[X,Y]$ is again horizontal.\qedhere
 \een
 \eq
 
 We would now like to relate the curvature on a principal bundle to (local) objects on the base manifold, just like we have done for the connection one-form. Recall that a connection one-form on a principal $G$-bundle $(P,\pi,M)$ is a $T_eG$-valued one-form $\omega$ on $P$. By using the notation $\Omega^1(P)\otimes T_eG$ for the collection (in fact, bundle) of all $T_eG$-valued one-forms, we have $\omega\in\Omega^1(P)\otimes T_eG$. If $\sigma\in\Gamma(TU)$ is a local section on $M$, we defined the Yang-Mills field $\omega^U\in\Omega^1(U)\otimes T_eG$ by pulling $\omega$ back along $\sigma$. 
 
-\bd
-Let $(P,\pi,M)$ be a principal $G$-bundle and let $\Omega$ be the curvature associated to a connection one-form on $P$. Let $\sigma\in\Gamma(TU)$ be a local section on $M$. Then, the two-form
+\bd [Yang-Mills Field Strength]
+Let $(P,\pi,M)$ be a principal $G$-bundle and let $\Omega$ be the curvature associated to a connection one-form on $P$. Let $\sigma\in\Gamma(TU)$ be a local section on $M$. Then, the two-form:
 \bse
 \Riem\equiv F:= \sigma^*\Omega \in \Omega^2(U)\otimes T_eG
 \ese
-is called the \emph{Yang-Mills field strength}\index{Yang-Mills field strength}.
+
+is called the \textbf{Yang-Mills field strength}\index{Yang-Mills field strength}.
 \ed
 
 \br
-Observe that the equation $\Omega = \d \omega + \omega \Wedge \omega$ on $P$ immediately gives
+Observe that the equation $\Omega = \d \omega + \omega \Wedge \omega$ on $P$ immediately gives:
 \bi{rCl}
 \sigma^*\Omega & = & \sigma^*(\d \omega + \omega \Wedge \omega)\\
 & = & \sigma^*(\d \omega) + \sigma^*(\omega \Wedge \omega)\\
-& = & \d(\sigma^* \omega) + \sigma^*\omega \Wedge \sigma^*\omega.
+& = & \d(\sigma^* \omega) + \sigma^*\omega \Wedge \sigma^*\omega
 \ei
-Since $\Riem$ is a two-form, we can write 
+
+Since $\Riem$ is a two-form, we can write:
 \bse
-\Riem_{\mu\nu} = (\d \omega^U)_{\mu\nu} + \omega^U_{\mu} \Wedge \omega^U_{\nu}.
+\Riem_{\mu\nu} = (\d \omega^U)_{\mu\nu} + \omega^U_{\mu} \Wedge \omega^U_{\nu}
 \ese
-In the case of a matrix Lie group, by writing $\Gamma^i_{\phantom{i}j\mu}:=(\omega^U)^i_{\phantom{i}j\mu}$, we can further express this in components as
+
+In the case of a matrix Lie group, by writing $\Gamma^i_{\phantom{i}j\mu}:=(\omega^U)^i_{\phantom{i}j\mu}$, we can further express this in components as:
 \bse
 \Riem^i_{\phantom{i}j\mu\nu} = \partial_\nu\Gamma^i_{\phantom{i}j\mu}-\partial_\mu\Gamma^i_{\phantom{i}j\nu} + \Gamma^i_{\phantom{i}k\mu}\Gamma^k_{\phantom{k}j\nu}-\Gamma^i_{\phantom{i}k\nu}\Gamma^k_{\phantom{k}j\mu}
 \ese
-from which we immediately observe that $\Riem$ is symmetric in the last two indices, i.e.\
+
+from which we immediately observe that $\Riem$ is symmetric in the last two indices, i.e:\
 \bse
-\Riem^i_{\phantom{i}j[\mu\nu]}=0.
+\Riem^i_{\phantom{i}j[\mu\nu]}=0
 \ese
 \er
 
 \bt[First Bianchi identity]
-Let $\Omega$ be the curvature two-form associated to a connection one-form $\omega$ on a principal bundle. Then
+Let $\Omega$ be the curvature two-form associated to a connection one-form $\omega$ on a principal bundle. Then:
 \bse
-\D \Omega = 0.
+\D \Omega = 0
 \ese
 \et
 
@@ -1419,11 +1502,11 @@ Note that since $\Omega = \D\omega$, Bianchi's identity can be rewritten as $\D^
 
 \subsection{Torsion}
 
-\bd
-Let $(P,\pi,M)$ be a principal $G$-bundle and let $V$ be the representation space of a linear $(\dim M)$-dimensional representation of the Lie group $G$. A \emph{solder(ing) form} on $P$ is a one-form $\theta\in\Omega^1(P)\otimes V$ such that
+\bd [Solder Form]
+Let $(P,\pi,M)$ be a principal $G$-bundle and let $V$ be the representation space of a linear $(\dim M)$-dimensional representation of the Lie group $G$. A \textbf{solder form} on $P$ is a one-form $\theta\in\Omega^1(P)\otimes V$ such that:
 \ben[label=(\roman*)]
-\item $\forall \, X\in \Gamma(TP):\ \theta(\ver(X))=0$;
-\item $\forall \,g\in G:\ g\lacts ((\racts g)^*\theta) = \theta$;
+\item $\forall \, X\in \Gamma(TP):\ \theta(\ver(X))=0$.
+\item $\forall \,g\in G:\ g\lacts ((\racts g)^*\theta) = \theta$.
 \item $TM$ and $P_V$ are isomorphic as associated bundles. 
 \een
 \ed
@@ -1431,115 +1514,128 @@ Let $(P,\pi,M)$ be a principal $G$-bundle and let $V$ be the representation spac
 A solder form provides an identification of $V$ with each tangent space of $M$.
 
 \be
-Consider the frame bundle $(LM,\pi,M)$ and define
+Consider the frame bundle $(LM,\pi,M)$ and define:
 \bi{rrCl}
 \theta \cl & \Gamma(T(LM)) & \to & \R^{\dim M}\\
 & X & \mapsto & (u^{-1}_{\pi(X)}\circ \pi_*)(X)
 \ei
-where for each $e:=(e_1,\ldots,e_{\dim M}) \in LM$, $u_e$ is defined as
+
+where for each $e:=(e_1,\ldots,e_{\dim M}) \in LM$, $u_e$ is defined as:
 \bi{rrCl}
 u_e\cl & \R^{\dim M} & \xrightarrow{\sim} & T_{\pi(e)}M\\
-& (x^1,\ldots,x^{\dim M}) & \mapsto & x^ie_i.
+& (x^1,\ldots,x^{\dim M}) & \mapsto & x^ie_i
 \ei
-To describe the inverse map $u_e^{-1}$ explicitly, note that to every frame $(e_1,\ldots,e_{\dim M}) \in LM$, there exists a co-frame $(f^1,\ldots,f^{\dim M}) \in L^*M$ such that
+
+To describe the inverse map $u_e^{-1}$ explicitly, note that to every frame $(e_1,\ldots,e_{\dim M}) \in LM$, there exists a co-frame $(f^1,\ldots,f^{\dim M}) \in L^*M$ such that:
 \bi{rrCl}
 u_e^{-1}\cl &   T_{\pi(e)}M & \xrightarrow{\sim} & \R^{\dim M}\\
-& Z& \mapsto & (f^1(Z),\ldots,f^{\dim M}(Z)) .
+& Z& \mapsto & (f^1(Z),\ldots,f^{\dim M}(Z))
 \ei
 \ee
 
-\bd
-Let $(P,\pi,M)$ be a principal $G$-bundle with connection one-form $\omega$ and let $\theta\in\Omega^1(P)\otimes V$ be a solder form on $P$. Then
+\bd [Torsion]
+Let $(P,\pi,M)$ be a principal $G$-bundle with connection one-form $\omega$ and let $\theta\in\Omega^1(P)\otimes V$ be a solder form on $P$. Then:
 \bse
 \Theta := \D \theta \in\Omega^2(P)\otimes V
 \ese
-is the \emph{torsion}\index{torsion} of $\omega$ with respect to $\theta$.
+
+is the \textbf{torsion}\index{torsion} of $\omega$ with respect to $\theta$.
 \ed
 
 \br
 You can now see that the ``extra structure'' required to define the torsion is a choice of solder form. The previous example shows that there a canonical choice of such a form on any frame bundle bundle. 
 \er
 
-We would like to have a similar formula for $\Theta$ as we had for $\Omega$. However, since $\Theta$ and $\theta$ are both $V$-valued but $\omega$ is $T_eG$-valued, the term $\omega\Wedge\theta$ would be meaningless. What we have, instead, is the following
+We would like to have a similar formula for $\Theta$ as we had for $\Omega$. However, since $\Theta$ and $\theta$ are both $V$-valued but $\omega$ is $T_eG$-valued, the term $\omega\Wedge\theta$ would be meaningless. What we have, instead, is the following:
 \bse
-\Theta = \d \theta + \omega \halfWedge \theta,
+\Theta = \d \theta + \omega \halfWedge \theta
 \ese
-where the half-double wedge symbol intuitively indicates that we let $\omega$ act on $\theta$. More precisely, in the case of a matrix Lie group, recalling that $\dim G = \dim T_eG = \dim V$, we have
+
+where the half-double wedge symbol intuitively indicates that we let $\omega$ act on $\theta$. More precisely, in the case of a matrix Lie group, recalling that $\dim G = \dim T_eG = \dim V$, we have:
 \bse
-\Theta^i = \d \theta^i + \omega^i_{\phantom{i}k} \halfWedge \theta^k.
+\Theta^i = \d \theta^i + \omega^i_{\phantom{i}k} \halfWedge \theta^k
 \ese
 
 \bt[Second Bianchi identity]
-Let $\Theta$ be the torsion of a connection one-form $\omega$ with respect to a solder form $\theta$ on a principal bundle. Then
+Let $\Theta$ be the torsion of a connection one-form $\omega$ with respect to a solder form $\theta$ on a principal bundle. Then:
 \bse
-\D \Theta = \Omega \halfWedge \theta.
+\D \Theta = \Omega \halfWedge \theta
 \ese
 \et
 
 \br
-Like connection one-forms and curvatures two-forms, a torsion two-form $\Theta$ can also be pulled back to the base manifold along a local section $\sigma$ as $T:=\sigma^*\Theta$. In fact, \emph{this} is the torsion that one typically meets in general relativity.
+Like connection one-forms and curvatures two-forms, a torsion two-form $\Theta$ can also be pulled back to the base manifold along a local section $\sigma$ as $T:=\sigma^*\Theta$.  (In fact, \emph{this} is the torsion that one typically meets in general relativity)
 \er
 
 \section{Covariant Derivatives}
 
 \subsection{Equivalence of local sections and equivariant functions}
 
-Recall that if $F$ is a vector space and $(P,\pi,M)$ a principal $G$-bundle equipped with a connection, we can use the parallel transport on the associated bundle $(P_F,\pi_F,M)$ and the vector space structure of $F$ to define the differential quotient of a local section $\sigma \cl U\to P_F$ along an integral curve of some tangent vector $X\in TU$. This then allowed us to define the covariant derivative of $\sigma$ at the point $\pi(X)\in U$ in the direction of $X\in TU$.
+Recall that if $F$ is a vector space and $(P,\pi,M)$ a principal $G$-bundle equipped with a connection, we can use the parallel transport on the associated bundle $(P_F,\pi_F,M)$ and the vector space structure of $F$ to define the differential quotient of a local section $\sigma \cl U\to P_F$ along an integral curve of some tangent vector $X\in TU$. This then allowed us to define the covariant derivative of $\sigma$ at the point $\pi(X)\in U$ in the direction of $X\in TU$. \v
 
 This approach to the concept of covariant derivative is very intuitive and geometric, but it is a disaster from a technical point of view as it is quite difficult to implement. There is, in fact, a neater approach to covariant differentiation, which will now discuss.
 
 \bt
-Let $(P,\pi,M)$ be a principal $G$-bundle and $(P_F,\pi_F,M)$ be an associated bundle. Let $(U,x)$ be a chart on $M$. The local sections $\sigma\cl U \to P_F$ are in bijective correspondence with $G$-equivariant functions $\phi\cl\preim_{\pi}(U)\subseteq P \to F$, where the $G$-equivariance condition is
+Let $(P,\pi,M)$ be a principal $G$-bundle and $(P_F,\pi_F,M)$ be an associated bundle. Let $(U,x)$ be a chart on $M$. The local sections $\sigma\cl U \to P_F$ are in bijective correspondence with $G$-equivariant functions $\phi\cl\preim_{\pi}(U)\subseteq P \to F$, where the $G$-equivariance condition is:
 \bse
-\forall \, g \in G : \forall \, p\in \preim_{\pi}(U) : \  \phi(g\racts p) = g^{-1}\lacts \phi(p).
+\forall \, g \in G : \forall \, p\in \preim_{\pi}(U) : \  \phi(g\racts p) = g^{-1}\lacts \phi(p)
 \ese
 \et
 
 \bq
 \ben[label=(\alph*)]
-\item Let $\phi\preim_{\pi}(U) \to F$ be $G$-equivariant. Define
+\item Let $\phi\preim_{\pi}(U) \to F$ be $G$-equivariant. Define:
 \bi{rrCl}
 \sigma_{\phi}\cl & U & \to & P_F\\
 & m & \mapsto & [p,\phi(p)]
 \ei
-where $p$ is any point in $\preim_{\pi}(\{m\})$. First, we should check that $\sigma_{\phi}$ is well-defined. Let $p,\widetilde p\in \preim_{\pi}(\{m\})$. Then, there exists a unique $g\in G$ such that $\widetilde p = p\racts g$. Then, by the $G$-equivariance of $\phi$, we have
+
+where $p$ is any point in $\preim_{\pi}(\{m\})$. First, we should check that $\sigma_{\phi}$ is well-defined. Let $p,\widetilde p\in \preim_{\pi}(\{m\})$. Then, there exists a unique $g\in G$ such that $\widetilde p = p\racts g$. Then, by the $G$-equivariance of $\phi$, we have:
 \bse
 [\widetilde p,\phi(\widetilde p)] = [p\racts g,\phi(p\racts g)] = [p\racts g,g^{-1}\lacts \phi(p)] = [p,\phi(p)]
 \ese
-and hence, $\sigma_{\phi}$ is well-defined. Moreover, since for all $g\in G$
+
+and hence, $\sigma_{\phi}$ is well-defined. Moreover, since for all $g\in G$:
 \bse
-\pi_F([p,\phi(p)]) = \pi(p) =\pi(p\racts g)= \pi_F([p\racts g,g^{-1}\lacts \phi(p)]),
+\pi_F([p,\phi(p)]) = \pi(p) =\pi(p\racts g)= \pi_F([p\racts g,g^{-1}\lacts \phi(p)])
 \ese
+
 we have $\pi_F\circ\sigma_{\phi}=\id_U$ and thus, $\sigma_{\phi}$ is a local section.
 
-\item Let $\sigma\cl U\to P_F$ be a local section. Define 
+\item Let $\sigma\cl U\to P_F$ be a local section. Define:
 \bi{rrCl}
 \phi_{\sigma}\cl & \preim_{\pi}(U) & \to & F\\
 & p & \mapsto & i^{-1}_p(\sigma(\pi(p)))
 \ei
-where $i^{-1}_p$ is the inverse of the map
+
+where $i^{-1}_p$ is the inverse of the map:
 \bi{rrCl}
 i_p\cl & F & \to & \preim_{\pi_F}(\{\pi(p)\})\subseteq P_F\\
-& f & \mapsto & [p,f].
+& f & \mapsto & [p,f]
 \ei
-Observe that, for all $g\in G$, we have
+
+Observe that, for all $g\in G$, we have:
 \bse
-i_p(f):=[p,f]=[p\racts g,g^{-1}\lacts f] =: i_{p\racts g}(g^{-1}\lacts f). 
+i_p(f):=[p,f]=[p\racts g,g^{-1}\lacts f] =: i_{p\racts g}(g^{-1}\lacts f)
 \ese
-Let us now show that $\phi_{\sigma}$ is $G$-equivariant. We have
+
+Let us now show that $\phi_{\sigma}$ is $G$-equivariant. We have:
 \bi{rCl}
 \phi_{\sigma}(p\racts g) & = & i^{-1}_{p\racts g}(\sigma(\pi(p\racts g)))\\
 & = & i^{-1}_{p\racts g}(\sigma(\pi(p)))\\
 & = & i^{-1}_{p\racts g}(i_p(\phi_{\sigma}(p)))\\
 & = & i^{-1}_{p\racts g}(i_{p\racts g}(g^{-1}\lacts\phi_{\sigma}(p)))\\
-& = & g^{-1}\lacts\phi_{\sigma}(p),
+& = & g^{-1}\lacts\phi_{\sigma}(p)
 \ei
+
 which is what we wanted.
-\item We now show that these constructions are the inverses of each other, i.e.\
+
+\item We now show that these constructions are the inverses of each other, i.e:\
 \bse
-\sigma_{\phi_{\sigma}} = \sigma, \qquad \quad \phi_{\sigma_{\phi}} = \phi.
+\sigma_{\phi_{\sigma}} = \sigma, \qquad \quad \phi_{\sigma_{\phi}} = \phi
 \ese
-Let $m\in U$. Then, we have
+
+Let $m\in U$. Then, we have:
 \bi{rCl}
 \sigma_{\phi_{\sigma}}(m) & = & [p,\phi_{\sigma}(p)]\\
 & = &  [p,i^{-1}_p(\sigma(\pi(p)))]\\
@@ -1547,14 +1643,16 @@ Let $m\in U$. Then, we have
 & = &  \sigma(\pi(p))\\
 & = &  \sigma(m)
 \ei
-and hence $\sigma_{\phi_{\sigma}} = \sigma$. Now let $p\in \preim_{\pi}(U)$. Then, we have
+
+and hence $\sigma_{\phi_{\sigma}} = \sigma$. Now let $p\in \preim_{\pi}(U)$. Then, we have:
 \bi{rCl}
 \phi_{\sigma_{\phi}}(p) & = & i^{-1}_p(\sigma_{\phi}(\pi(p)))\\
 & = & i^{-1}_p([p,\phi(p)])\\
 & = & i^{-1}_p(i_p(\phi(p)))\\
 & = & \phi(p)
 \ei
-and hence, $\phi_{\sigma_{\phi}} = \phi$. \qedhere
+
+and hence,  $\phi_{\sigma_{\phi}} = \phi$. \qedhere
 \een
 \eq
 
@@ -1563,53 +1661,58 @@ and hence, $\phi_{\sigma_{\phi}} = \phi$. \qedhere
 We now specialise to the case where $F$ is a vector space, and hence we can require the left action $G\!\lacts \cl F\xrightarrow{\sim} F$ to be linear. 
 
 \bp
-Let $(P,\pi,M)$ be a principal $G$-bundle, and let $(P_F,\pi_F,M)$ be an associated bundle, where $G$ is a matrix Lie group, $F$ is a vector space, and the left $G$-action on $F$ is linear. Let $\phi\cl P\to F$ be $G$-equivariant. Then
+Let $(P,\pi,M)$ be a principal $G$-bundle, and let $(P_F,\pi_F,M)$ be an associated bundle, where $G$ is a matrix Lie group, $F$ is a vector space, and the left $G$-action on $F$ is linear. Let $\phi\cl P\to F$ be $G$-equivariant. Then:
 \bse
-\phi(p\racts \exp(At)) = \exp(-At)\lacts \phi(p),
+\phi(p\racts \exp(At)) = \exp(-At)\lacts \phi(p)
 \ese
+
 where $p\in P$ and $A\in T_eG$.
 \ep
 
 \bc
-With the same assumptions as above, let $A\in T_eG$ and let $\omega$ be a connection one-form on $(P,\pi,M)$. Then
+With the same assumptions as above, let $A\in T_eG$ and let $\omega$ be a connection one-form on $(P,\pi,M)$. Then:
 \bse
-\d \phi(X^A) + \omega(X^A)\lacts \phi = 0.
+\d \phi(X^A) + \omega(X^A)\lacts \phi = 0
 \ese
 \ec
 
 \bq
-Since $\phi$ is $G$-equivariant, by applying the previous proposition, we have
+Since $\phi$ is $G$-equivariant, by applying the previous proposition, we have:
 \bse
 \phi(p\racts \exp(At)) = \exp(-At)\lacts \phi(p)
 \ese
-for any $p\in P$. Hence, differentiating with respect to $t$ yields
+
+for any $p\in P$. Hence, differentiating with respect to $t$ yields:
 \bi{rCl}
 (\phi(p\racts \exp(At)))'(0) & = & (\exp(-At)\lacts \phi(p))'(0)\\
 \d_p\phi(X^A) & = & -A \lacts \phi(p)\\
 \d_p\phi(X^A) & = & -\omega(X^A) \lacts \phi(p)
 \ei
+
 for all $p\in P$ and hence, the claim holds.
 \eq
 
 \subsection{Construction of the covariant derivative}
 
-We now wish to construct a covariant derivative, i.e.\ an ``operator'' $\nabla$ such that for any local section $\sigma \cl U \subseteq M \to P_F$ and any $X\in T_mU$ with $m\in U$, we have that $\nabla_X \sigma$ is again a local section $U\to P_F$ and
+We now wish to construct a covariant derivative, i.e.\ an ``operator'' $\nabla$ such that for any local section $\sigma \cl U \subseteq M \to P_F$ and any $X\in T_mU$ with $m\in U$, we have that $\nabla_X \sigma$ is again a local section $U\to P_F$ and:
 \ben[label=\roman*)]
-\item $\nabla_{fX+Y}\sigma = f\nabla_{X}\sigma+\nabla_{Y}\sigma$
-\item $\nabla_X(\sigma+\tau) = \nabla_X\sigma+\nabla_X\tau$
-\item $\nabla_Xf\sigma = X(f)\sigma+f\nabla_X\sigma$
+\item $\nabla_{fX+Y}\sigma = f\nabla_{X}\sigma+\nabla_{Y}\sigma$.
+\item $\nabla_X(\sigma+\tau) = \nabla_X\sigma+\nabla_X\tau$.
+\item $\nabla_Xf\sigma = X(f)\sigma+f\nabla_X\sigma$.
 \een
+
 for any sections $\sigma,\tau\cl U\to P_F$, any $f\in \mathcal{C}^{\infty}(U)$, and any $X,Y\in T_mU$.
 
-These (together with $\nabla_Xf:=X(f)$) are usually presented as the defining properties of the covariant derivative in more elementary treatments.
+These (together with $\nabla_Xf:=X(f)$) are usually presented as the defining properties of the covariant derivative in more elementary treatments. \v
 
-Recall that functions are a special case of forms, namely the $0$-forms, and hence the exterior covariant derivative a function $\phi\cl P\to F$ is
+Recall that functions are a special case of forms, namely the $0$-forms, and hence the exterior covariant derivative a function $\phi\cl P\to F$ is:
 \bse
-\D\phi := \d \phi \circ \hor.
+\D\phi := \d \phi \circ \hor
 \ese
+
 We now have the following result.
 \bp
-Let $\phi\cl P\to F$ be $G$-equivariant and let $X\in T_pP$. Then
+Let $\phi\cl P\to F$ be $G$-equivariant and let $X\in T_pP$. Then:
 \bse
 \D\phi(X) = \d\phi(X)+\omega(X)\lacts \phi
 \ese
@@ -1617,46 +1720,51 @@ Let $\phi\cl P\to F$ be $G$-equivariant and let $X\in T_pP$. Then
 
 \bq
 \ben[label=(\alph*)]
-\item Suppose that $X$ is vertical, that is, $X=X^A$ for some $A\in T_eG$. Then,
+\item Suppose that $X$ is vertical, that is, $X=X^A$ for some $A\in T_eG$. Then:
 \bse
 \D\phi(X) = \d\phi(\hor(X))=0
 \ese
-and 
+
+and:
 \bse
 \d\phi(X^A)+\omega(X^A)\lacts \phi = 0
 \ese
+
 by the previous corollary.
-\item Suppose that $X$ is horizontal. Then,
+\item Suppose that $X$ is horizontal. Then:
 \bse
 \D\phi(X)=\d\phi(X)
 \ese
-and $\omega(X)=0$, so that we have 
+
+and $\omega(X)=0$, so that we have:
 \bse
-\D\phi(X) = \d\phi(X)+\omega(X)\lacts \phi.\qedhere
+\D\phi(X) = \d\phi(X)+\omega(X)\lacts \phi\qedhere
 \ese
 \een
 \eq
 
-Hence, it is clear from this proposition that $\D\phi(X)$, which we can also write as $\D_X\phi$, is $\mathcal{C}^{\infty}(P)$-linear in the $X$-slot, additive in the $\phi$-slot and satisfies property iii) above. However, it also clearly \emph{not} a covariant derivative since $X\in TP$ rather than $X\in TM$ and $\phi$ is a $G$-equivariant function $P\to F$ rather than a local section o $(P_F,\pi_F,M)$.
+Hence, it is clear from this proposition that $\D\phi(X)$, which we can also write as $\D_X\phi$, is $\mathcal{C}^{\infty}(P)$-linear in the $X$-slot, additive in the $\phi$-slot and satisfies property iii) above. However, it also clearly \emph{not} a covariant derivative since $X\in TP$ rather than $X\in TM$ and $\phi$ is a $G$-equivariant function $P\to F$ rather than a local section o $(P_F,\pi_F,M)$. \v
 
-We can obtain a covariant derivative from $\D$ by introducing a local trivialisation on the bundle $(P,\pi,M)$. Indeed, let $s\cl U\subseteq M \to P$ be a local section. Then, we can pull back the following objects
+We can obtain a covariant derivative from $\D$ by introducing a local trivialisation on the bundle $(P,\pi,M)$. Indeed, let $s\cl U\subseteq M \to P$ be a local section. Then, we can pull back the following objects:
 \bi{CCC}
 \phi\cl P\to F &\qquad \leadsto \qquad  & s^*\phi := \phi\circ s \cl U \to P_F\\
 \omega\in\Omega^1(M)\otimes T_eG & \leadsto & \omega^U:=s^*\omega\in\Omega^1(U) \otimes T_eG\\
-\D \phi\in\Omega^1(M)\otimes F &\leadsto & s^*(\D\phi)\in\Omega^1(U)\otimes F .
+\D \phi\in\Omega^1(M)\otimes F &\leadsto & s^*(\D\phi)\in\Omega^1(U)\otimes F
 \ei
 
-It is, in fact, for this last object that we will be able to define the covariant derivative. Let $X\in TU$. Then
+It is, in fact, for this last object that we will be able to define the covariant derivative. Let $X\in TU$. Then:
 \bi{rCl}
 (s^*\D\phi)(X) & = & s^*(\d\phi+\omega\lacts\phi)(X)\\
 & = & s^*(\d\phi)(X) + s^*(\omega\lacts\phi)(X)\\
 & = & \d(s^*\phi)(X)+s^*(\omega)(X)\lacts s^*\phi\\
 & = & \d \sigma (X)+\omega^U(X)\lacts \sigma
 \ei
-where we renamed $s^*\phi=:\sigma$. In summary, we can write\index{covariant derivative}
+
+where we renamed $s^*\phi=:\sigma$. In summary, we can write\index{covariant derivative}:
 \bse
 \nabla_X\sigma = \d \sigma (X)+\omega^U(X)\lacts \sigma
 \ese
+
 One can check that this satisfies all the properties that we wanted a covariant derivative to satisfy. Of course, we should note that this is a local definition.
 
 \br

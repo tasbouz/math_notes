@@ -2,7 +2,7 @@
 A set $A$ (called the underlying set, carrier set or domain), together with a collection of maps (called operations) on $A$ of finite arity (typically binary operations), and a finite set of identities, known as axioms, that these operations must satisfy, is called an \textbf{algebraic structure}. Some algebraic structures also involve another set (called the scalar set).
 \ed
 
-Examples of algebraic structures with a single underlying set include groups,fields and rings. Examples of algebraic structures with two underlying sets include vector spaces, modules, and algebras. In this section we will review the most important algebraic structures for our purposes. \v
+Examples of algebraic structures with a single underlying set include groups,  fields and rings. Examples of algebraic structures with two underlying sets include vector spaces, modules, and algebras. In this section we will review the most important algebraic structures for our purposes. \v
 
 One has to be careful with the terminology since it changes depending on the area of mathematics. For example, in the context of universal algebra, the set $A$ with this structure is called an algebra, while, in other contexts, it is (somewhat ambiguously) called an algebraic structure, the term algebra being reserved for specific algebraic structures that are vector spaces over a field or modules over a commutative ring. \v
 
@@ -190,7 +190,7 @@ Note that $\mathrm{Aut}(V)$ \textbf{cannot} be made into a vector space . It is 
 \er
 
 \bd [Dual Vector Space]
-Let $V$ be a vector space over $K$. The \textbf{dual}\index{vector space!dual}\index{dual space} vector space to $V$ is:
+Let $V$ be a vector space over $K$. The \textbf{dual vector space}\index{vector space!dual}\index{dual space} to $V$ is:
 \bse
 V^*:=\Hom(V,K)
 \ese
@@ -211,7 +211,7 @@ i.e.\ if the maps $v\mapsto f(v,w)$, for any fixed $w$, and $w\mapsto f(v,w)$, f
 \br
 Compare this with the definition of a linear map $f\cl V\times W \xrightarrow{\sim} Z$:
 \bse
-\forall \, x,y\in V \times W : \forall \, \lambda \in K : f(\lambda x+y)=\lambda f(x)+f(y).
+\forall \, x,y\in V \times W : \forall \, \lambda \in K : f(\lambda x+y)=\lambda f(x)+f(y)
 \ese
 More explicitly, if $x=(v_1,w_1)$ and $y = (v_2,w_2)$, then:
 \bse
@@ -318,7 +318,7 @@ T^1_1V\cong_\mathrm{vec}\mathrm{End}(V^*)
 Given a vector space without any additional structure, the only notion of basis that we can define is a so-called Hamel basis. In order to do so, we first need to define the notion of ``span".
 
 \bd [Span]
-Given a vector space $V$ over a field $K$, the span of a set $S$ of vectors $\{s_1,\ldots,s_N\}$ of $V$ is defined to be the set of all finite linear combinations of elements (vectors) of $S$:
+Given a vector space $V$ over a field $K$, the \textbf{span} of a set $S$ of vectors $\{s_1,\ldots,s_N\}$ of $V$ is defined to be the set of all finite linear combinations of elements (vectors) of $S$:
 \bse
 \lspan_K(\mathcal{S}) := \bigg\{\sum_{i=1}^n\lambda^is_i \ \Big| \ \lambda^i\in K, s_i\in S, n \geq 1\bigg\}
 \ese
@@ -633,7 +633,7 @@ Note that a $0$-form is a scalar, and a $1$-form is a covector. A $d$-form is al
 i.e.\ there is essentially only one top form on $V$, up to a scalar factor.
 
 \bd [Choice Of Volume]
-A choice of top form on $V$ is called a choice of \textbf{volume form}\index{volume (form)} on $V$. A vector space with a chosen volume form is then called a \emph{vector space with volume}.
+A choice of top form on $V$ is called a \textbf{choice of volume form}\index{volume (form)} on $V$. A vector space with a chosen volume form is then called a \emph{vector space with volume}.
 \ed
 This terminology is due to the next definition.
 
@@ -653,7 +653,7 @@ You may have rightfully thought that the notion of volume would require some ext
 We are finally ready to define the determinant.
 
 \bd [Determinant]
-Let $V$ be a $d$-dimensional vector space and let $\phi \in \End (V) \cong_\mathrm{vec}T^1_1V$. The \emph{determinant}\index{determinant} of $\phi$ is:
+Let $V$ be a $d$-dimensional vector space and let $\phi \in \End (V) \cong_\mathrm{vec}T^1_1V$. The \textbf{determinant}\index{determinant} of $\phi$ is:
 \bse
 \det \phi := \frac{\omega(\phi(e_1),\ldots,\phi(e_d))}{\omega(e_1,\ldots,e_d)}
 \ese
@@ -665,7 +665,7 @@ for some top form $\omega$ and some basis $\{e_1,\ldots,e_d\}$ of $V$.
 
 The first thing we need to do is to check that this is well-defined. That $\det \phi$ is independent of the choice of $\omega$ is clear, since if $\omega,\omega'$ are top forms, then there is a $c \in K$ such that $\omega = c\, \omega'$, and hence:
 \bse
- \frac{\omega(\phi(e_1),\ldots,\phi(e_d))}{\omega(e_1,\ldots,e_d)} =  \frac{\cancel{c}\,\omega'(\phi(e_1),\ldots,\phi(e_d))}{\cancel{c}\,\omega'(e_1,\ldots,e_d)}.
+ \frac{\omega(\phi(e_1),\ldots,\phi(e_d))}{\omega(e_1,\ldots,e_d)} =  \frac{\cancel{c}\,\omega'(\phi(e_1),\ldots,\phi(e_d))}{\cancel{c}\,\omega'(e_1,\ldots,e_d)}
 \ese
 The independence from the choice of basis is more cumbersome to show, but it does hold, and thus $\det \phi$ is well-defined. \v
 
@@ -782,7 +782,7 @@ Any ring $R$ is trivially a module over itself, in the sense that every field $K
 In the following, we will usually denote $\oplus$ by $+$ and suppress the $\odot$, as we did with vector spaces.
 
 \bd [Direct Sum Of Modules]
-The \textbf{direct sum} of two $R$-modules $M$ and $N$ is the $R$-module $M\oplus N$, which has $M\times N$ as its underlying set and operations (inherited from $M$ and $N$) defined component-wise. 
+The \textbf{direct sum of two $R$-modules} $M$ and $N$ is the $R$-module $M\oplus N$, which has $M\times N$ as its underlying set and operations (inherited from $M$ and $N$) defined component-wise. 
 \ed
 
 Note that while we have been using $\oplus$ to temporarily distinguish two ``plus-like'' operations in different spaces, the symbol $\oplus$ is the standard notation for the direct sum.
