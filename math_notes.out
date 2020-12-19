@@ -1,26 +1,29 @@
 \BOOKMARK [-1][-]{part.1}{I Machine Learning}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Introduction}{part.1}% 2
-\BOOKMARK [0][-]{chapter.2}{Supervised Learning}{part.1}% 3
-\BOOKMARK [1][-]{section.2.1}{Linear Regression}{chapter.2}% 4
-\BOOKMARK [1][-]{section.2.2}{Optimization Techniques}{chapter.2}% 5
-\BOOKMARK [2][-]{subsection.2.2.1}{Normal Equation}{section.2.2}% 6
-\BOOKMARK [2][-]{subsection.2.2.2}{Gradient Descent}{section.2.2}% 7
-\BOOKMARK [1][-]{section.2.3}{Logistic Regression}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.3.1}{Normal Equation}{section.2.3}% 9
-\BOOKMARK [2][-]{subsection.2.3.2}{Gradient Descent}{section.2.3}% 10
-\BOOKMARK [1][-]{section.2.4}{Generalized Linear Model}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.5}{Errors}{chapter.2}% 12
-\BOOKMARK [2][-]{subsection.2.5.1}{Point-Wise, Overall, In-Sample \046 Out-Of-Sample Error}{section.2.5}% 13
-\BOOKMARK [2][-]{subsection.2.5.2}{Bias \046 Variance}{section.2.5}% 14
-\BOOKMARK [1][-]{section.2.6}{Evaluation}{chapter.2}% 15
-\BOOKMARK [1][-]{section.2.7}{Regularization}{chapter.2}% 16
-\BOOKMARK [2][-]{subsection.2.7.1}{Ridge Regression - L2 Regularization}{section.2.7}% 17
-\BOOKMARK [2][-]{subsection.2.7.2}{Lasso Regression - L1 Regularization}{section.2.7}% 18
-\BOOKMARK [1][-]{section.2.8}{Classification Error Metrics}{chapter.2}% 19
-\BOOKMARK [1][-]{section.2.9}{Support Vector Machine}{chapter.2}% 20
-\BOOKMARK [0][-]{section*.2}{Appendices}{part.1}% 21
-\BOOKMARK [0][-]{appendix.a.A}{Constrained Optimization}{part.1}% 22
-\BOOKMARK [1][-]{section.a.A.1}{Equality Constrained Optimization}{appendix.a.A}% 23
-\BOOKMARK [1][-]{section.a.A.2}{Equality \046 Inequality Constrained Optimization}{appendix.a.A}% 24
-\BOOKMARK [0][-]{appendix.a.B}{Kernels}{part.1}% 25
-\BOOKMARK [0][-]{appendix.a.C}{Convolution}{part.1}% 26
+\BOOKMARK [0][-]{chapter.1}{Supervised Learning}{part.1}% 2
+\BOOKMARK [1][-]{section.1.1}{Linear Regression}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Optimization Techniques}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.2.1}{Normal Equation}{section.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.2.2}{Gradient Descent}{section.1.2}% 6
+\BOOKMARK [1][-]{section.1.3}{Logistic Regression}{chapter.1}% 7
+\BOOKMARK [2][-]{subsection.1.3.1}{Normal Equation}{section.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.3.2}{Gradient Descent}{section.1.3}% 9
+\BOOKMARK [2][-]{subsection.1.3.3}{Softmax Regression}{section.1.3}% 10
+\BOOKMARK [1][-]{section.1.4}{Generalized Linear Model}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.5}{Errors}{chapter.1}% 12
+\BOOKMARK [2][-]{subsection.1.5.1}{Point-Wise, Overall, In-Sample \046 Out-Of-Sample Error}{section.1.5}% 13
+\BOOKMARK [2][-]{subsection.1.5.2}{Bias \046 Variance}{section.1.5}% 14
+\BOOKMARK [1][-]{section.1.6}{Evaluation}{chapter.1}% 15
+\BOOKMARK [1][-]{section.1.7}{Regularization}{chapter.1}% 16
+\BOOKMARK [2][-]{subsection.1.7.1}{Ridge Regression \(L2 Regularization\)}{section.1.7}% 17
+\BOOKMARK [2][-]{subsection.1.7.2}{Lasso Regression \(L1 Regularization\)}{section.1.7}% 18
+\BOOKMARK [2][-]{subsection.1.7.3}{Elastic Net}{section.1.7}% 19
+\BOOKMARK [2][-]{subsection.1.7.4}{Early Stopping}{section.1.7}% 20
+\BOOKMARK [1][-]{section.1.8}{Classification Error Metrics}{chapter.1}% 21
+\BOOKMARK [1][-]{section.1.9}{Support Vector Machine}{chapter.1}% 22
+\BOOKMARK [1][-]{section.1.10}{Extra: Applied Machine Learning}{chapter.1}% 23
+\BOOKMARK [0][-]{section*.2}{Appendices}{part.1}% 24
+\BOOKMARK [0][-]{appendix.a.A}{Constrained Optimization}{part.1}% 25
+\BOOKMARK [1][-]{section.a.A.1}{Equality Constrained Optimization}{appendix.a.A}% 26
+\BOOKMARK [1][-]{section.a.A.2}{Equality \046 Inequality Constrained Optimization}{appendix.a.A}% 27
+\BOOKMARK [0][-]{appendix.a.B}{Kernels}{part.1}% 28
+\BOOKMARK [0][-]{appendix.a.C}{Convolution}{part.1}% 29

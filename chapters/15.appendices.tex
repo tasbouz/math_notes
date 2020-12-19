@@ -62,14 +62,16 @@ By following the same philosophy as for the equality constrained optimization we
 \mathcal{L}(x, \mu_{i}, \lambda_{i}) = f(x) + \sum_{i} \mu_{i} h_{i} (x) + \sum_{i} \lambda_{i} g_{i}(x)
 \ese
 
-and the necessary conditions for optimization of $ \mathcal{L}$ turns to:
+and the necessary conditions for optimization of $ \mathcal{L}$ turn to:
 \bse
 \nabla_{\boldsymbol{w}} \mathcal{L} = 0 \:\:\: \text{and} \:\:\: \frac{\partial \mathcal{L}}{\partial \mu_{i}} = 0 \:\:\: \text{and} \:\:\: \frac{\partial \mathcal{L}}{\partial \lambda_{i}} = 0
 \ese
 
+This final form of the optimization problem is usually called the \say{dual optimization problem}. \v
+
 This is the most general case of constrained optimization. If there are no equality constraints $h_{i}(x)$  then we simply have a theory for inequality constrained optimization. If there are no inequality constraints $g_{i}(x)$ then the whole theory turns to the equality constrained optimization problem we developed previously and the KKT multipliers turn to Lagrangian multipliers. Finally, if there are no equality constraints $h_{i}(x)$ neither inequality constraints $g_{i}(x)$ the theory is just a usual optimization problem where we just find the solution where the derivative of $f(x)$ is zero.
 
-\chapter{Kernels}
+\chapter{Kernels} \label{Kernels}
 
 \bd [Kernel]
 Let $\bar{x}$ and $\bar{x}^\prime$ be two vectors of space $X$ and $\Phi$ a non-linear transformation. We define $\bar{z}$ and $\bar{z}^\prime$ as the transformed vectors  $\Phi(\bar{x})$ and $\Phi(\bar{x}^\prime)$:
@@ -116,7 +118,7 @@ The question that arises is how do we know that some function $K(\bar{x}, \bar{x
 \item Sometimes we don't care if $K(\bar{x}, \bar{x}^\prime)$ is a valid kernel for some space $Z$ as long as it does the job.
 \end{enumerate}
 
-\chapter{Convolution}
+\chapter{Convolution} \label{Convolution}
 
 \bd[Convolution]
 Convolution is a mathematical operation on two functions $f$ and $g$ that produces a third function expressing how the shape of one is modified by the other. The term convolution refers to both the result function and to the process of computing it. It is defined as the integral of the product of the two functions after one is reversed and shifted.

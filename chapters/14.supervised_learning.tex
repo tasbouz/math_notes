@@ -11,14 +11,14 @@ Supervised learning is one of the four basic categories of machine learning, and
 
 Some more specific notation that we will be using throughout supervised learning:
 \bit
-\item Input variables or attributes or features: $x$
-\item The i'th feature (in case of many features): $x_{i}$
-\item The i'th training example (in case of many training examples): $x^{(i)}$
-\item The i'th feature of the  j'th training example: $x_{i}^{(j)}$
-\item Output variables or targets or classes: $y$
-\item The i'th output target: $y^{(i)}$
-\item Total number of training examples: $m$
-\item Total number of features: $n$\\
+\item Input variables, or attributes,  or features: $x$.
+\item The $i^{th}$ feature: $x_{i}$.
+\item The $j^{th}$ training example: $x^{(j)}$.
+\item The $i^{th}$ feature of the $j^{th}$ training example: $x_{i}^{(j)}$.
+\item Output variables,  or targets,  or classes, or labels: $y$.
+\item The $i^{th}$ target: $y^{(i)}$.
+\item Total number of training examples: $m$.
+\item Total number of features: $n$.
 \eit
 
 Now let's dive in the models and techniques of supervised learning, starting with one of the most basic ones called \say{linear regression}.
@@ -29,12 +29,12 @@ Now let's dive in the models and techniques of supervised learning, starting wit
 \textbf{Linear regression} is a linear approach to modelling the relationship between a dependent variable (target) and one or more independent variables (features).
 \ed
 
-\bd[Simple \& Multiple Linear Regression]
-When there is only one independent variable then the model is called \textbf{simple linear regression}. For more than one independent variable, the process is called \textbf{multiple linear regression}.
+\bd[Simple / Multiple Linear Regression]
+When there is only one independent variable (feature) then the model is called \textbf{simple linear regression}.  For more than one independent variables (features) the process is called \textbf{multiple linear regression}.
 \ed
 
-\bd[Univariate \& Multivariate Linear Regression]
-When only one dependent variable is predicted then the model is called \textbf{univariate linear regression}. For more than one correlated, dependent variables being predicted, the process is called \textbf{multivariate linear regression}.
+\bd[Univariate / Multivariate Linear Regression]
+When only one dependent variable (target) is predicted then the model is called \textbf{univariate linear regression}. For more than one correlated, dependent variables (targets) being predicted, the process is called \textbf{multivariate linear regression}.
 \ed
 
 In linear regression the hypothesis function $h$ is a linear combinations of the features:
@@ -42,38 +42,38 @@ In linear regression the hypothesis function $h$ is a linear combinations of the
 h(x) =  w_0 + w_{1} x_1 + \ldots + w_n x_n
 \ese
 
-where $w_0$ is is called \say{bias} and $w_i$'s  are called \say{weights}. We usually refer to weights and bias as the \say{parameters} of the regression and they are the ones that we try to determine through the training examples by using a learning algorithm. Once we find them then $h$ is ready to predict new inputs with unknown outcomes.
+where $w_0$ is called \say{bias} or \say{intercept} and the rest $w_i$'s are called \say{weights}. We usually refer to weights and bias as the \say{parameters} of the regression (or the model) and they are the ones that we try to determine through the training examples by using a learning algorithm. Once we find them then $h$ is ready to predict new inputs with unknown outcomes.
 
 \begin{figure}[H]
 \includegraphics[scale=0.3]{images/linearregression.png}
 \centering
 \end{figure}
 
-\vspace{5pt}
+\v
 
-It is a usual procedure to define $x_0 = 1$, so linear regression the hypothesis function can be rewritten as
+It is a usual procedure to define $x_0 = 1$, so the linear regression hypothesis function can be rewritten as:
 \bse
 h(x) = w_0 x_0 + w_1 x_1 + \ldots + w_n x_n = \sum_{i=0}^{n} w_i x_i
 \ese
 
-Moreover by defining the feature vector $\boldsymbol{x}$ and parameter vector $\boldsymbol{w}$ as
+Moreover by defining the feature vector $\boldsymbol{x}$ and parameter vector $\boldsymbol{w}$ as:
 \bse
 \boldsymbol{x} = \begin{bmatrix} x_{0} \\ x_{1} \\ \vdots \\ x_{n} \end{bmatrix}, \qquad
 \boldsymbol{w} = \begin{bmatrix} w_{0} \\ w_{1} \\ \vdots \\ w_{n} \end{bmatrix}
 \ese
 
-\vspace{3pt}
-
-then we can rewrite the linear regression the hypothesis function in a very simple form of:
+we can rewrite the linear regression the hypothesis function in the very simple form of:
 \bse
-h(x) = \boldsymbol{w}^T \boldsymbol{x}
+h(x) = \boldsymbol{w}^{\intercal} \boldsymbol{x}
 \ese
 
-Now that we have a hypothesis function, we need a rule in order to be able to find the parameters $\boldsymbol{w}$. This rule can be obtained through the probabilistic interpretation of linear regression.\\
+(Notice that linear regression does not \say{allow} any polynomial terms of second or higher degree, thus the naming.  However, what if our data is more complex than a straight line? Surprisingly,  we can use a linear model to fit nonlinear data.  The way to do this is to add powers of each feature as new features,  and then move on with linear regression. This technique is called \say{polynomial regression}).\v
+
+Now that we have a hypothesis function, we need a rule in order to be able to find the parameters $\boldsymbol{w}$. This rule can be obtained through the probabilistic interpretation of linear regression.\v
 
 More precisely, after having obtained the parameters $\boldsymbol{w}$, the hypothesis will fit the data in the best possible way but, since as we said we are dealing with probabilistic systems, we will still have some errors $\epsilon$. In other words, for each training example the following formula will apply:
 \bse
-y^{(i)} = h(x^{(i)}) + \epsilon^{(i)} = \boldsymbol{w}^T \boldsymbol{x}^{(i)} + \epsilon^{(i)}
+y^{(i)} = h(x^{(i)}) + \epsilon^{(i)} = \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + \epsilon^{(i)}
 \ese
 
 where $\boldsymbol{x}^{(i)}$ is the corresponding training example feature vector:
@@ -81,84 +81,83 @@ where $\boldsymbol{x}^{(i)}$ is the corresponding training example feature vecto
 \boldsymbol{x}^{(i)} = \begin{bmatrix} x_{0}^{(i)} \\ x_{1}^{(i)} \\ \vdots \\ x_{n}^{(i)} \end{bmatrix}
 \ese
 
-\vspace{5pt}
-
-At this point we will make one assumption which needs to be valid in order for the linear regression to be valid. Namely, we assume that the errors $ \epsilon^{(i)}$ are independent and identically distributed following a normal distribution with mean 0 and variance $\sigma^2$:
+At this point we will make one assumption which needs to be valid in order for the linear regression to be valid. Namely, we assume that \textbf{the errors $ \epsilon^{(i)}$ are independent and identically distributed following a normal distribution with mean 0 and variance $\sigma^2$}:
 \bse
 \epsilon^{(i)} \sim N(0, \sigma^2)
 \ese
 
-which means that the probability distribution of the errors is given by
+which means that the probability distribution of the errors is given by:
 \bse
 P( \epsilon^{(i)}) = \frac{1}{\sqrt{2 \pi \sigma^2}} exp \Big( - \frac{(\epsilon^{(i)})^{2}}{2 \sigma^2} \Big)
 \ese
 
-From the assumption of the errors follows
+From the assumption of the errors follows:
 \begin{align*}
-&y^{(i)} = \boldsymbol{w}^T \boldsymbol{x}^{(i)} + \epsilon^{(i)} \Rightarrow \\ &\epsilon^{(i)} = y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)} 
+&y^{(i)} = \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + \epsilon^{(i)} \Rightarrow \\ &\epsilon^{(i)} = y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} 
 \end{align*}
 
-By substituting the error back to the probability
+By substituting the error back to the probability:
 {\setlength{\jot}{10pt}
 \begin{align*}
 &P( \epsilon^{(i)}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot exp \Big( - \frac{(\epsilon^{(i)})^2}{2 \sigma^2} \Big) \Rightarrow \\
-& P(y^{(i)} | \boldsymbol{x}^{(i)} ; \boldsymbol{w}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot exp \Big( - \frac{(y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big)
+& P(y^{(i)} | \boldsymbol{x}^{(i)} ; \boldsymbol{w}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot exp \Big( - \frac{(y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big)
 \end{align*}}
 
-In other words we get that the conditional distribution of $y^{(i)}$ given $\boldsymbol{x}^{(i)}$ and $\boldsymbol{w}$ is a normal distribution with mean $\boldsymbol{w}^T \boldsymbol{x}^{(i)}$ and variance $\sigma^2$
+In other words we get that the conditional distribution of $y^{(i)}$ given $\boldsymbol{x}^{(i)}$ and $\boldsymbol{w}$ is a normal distribution with mean $\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)}$ and variance $\sigma^2$:
 \bse
-y^{(i)} \sim N(\boldsymbol{w}^T \boldsymbol{x}^{(i)}, \sigma^2)
+y^{(i)} \sim N(\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)}, \sigma^2)
 \ese
 
-\vspace{3pt}
+Given the probability distribution of $y^{(i)}$ as a function of the parameters, we can now use the principle of maximum likelihood that we developed in parametric inference chapter, in order to find the rule that will give us the best parameters $\boldsymbol{w}$. \v
 
-Given the probability distribution of $y^{(i)}$ as a function of the parameters, we can now use the principle of maximum likelihood that we developed in parametric inference chapter, in order to find the rule that will give us the best parameters $\boldsymbol{w}$. \\
-
-For the likelihood it is
+For the likelihood we get:
 \bse
 \mathcal{L} (\boldsymbol{w} |y ) = P(y^{(1)}, y^{(2)}, \ldots, y^{(m)} | \boldsymbol{x}^{(1)}, \boldsymbol{x}^{(2)}, \ldots, \boldsymbol{x}^{(m)} ; \boldsymbol{w}) = \prod_{i=1}^{m} P(y^{(i)} | \boldsymbol{x}^{(i)} ; \boldsymbol{w})
 \ese
 
-where we used the fact that $\epsilon^{(i)}$ are independent. By substituting the probability
+where we used the fact that $\epsilon^{(i)}$ are independent. By substituting the probability:
 \bse
-\mathcal{L} (\boldsymbol{w} |y )  = \prod_{i=1}^{m} \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot exp \Big( - \frac{(y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big)
+\mathcal{L} (\boldsymbol{w} |y )  = \prod_{i=1}^{m} \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot exp \Big( - \frac{(y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big)
 \ese
 
-Subsequently for the log-likelihood
+Subsequently for the log-likelihood:
 {\setlength{\jot}{10pt}
 \begin{align*}
 l (\boldsymbol{w} |y ) &= \ln \mathcal{L} (\boldsymbol{w} |y ) \\ 
-&= \ln \Big[ \prod_{i=1}^{m} \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot exp \Big( - \frac{(y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big) \Big] \\
-&= \sum_{i=1}^{m} \ln \Big[ \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot exp \Big( - \frac{(y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big) \Big] \\
-&= \sum_{i=1}^{m} \ln \Big[ \frac{1}{\sqrt{2 \pi \sigma^2}} \Big] +  \sum_{i=1}^{m} \ln \Big[ exp \Big( - \frac{(y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big] \Big) \\
-&= \sum_{i=1}^{m} \ln \Big[ \frac{1}{\sqrt{2 \pi \sigma^2}} \Big] +  \sum_{i=1}^{m} \Big[ - \frac{(y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big]
+&= \ln \Big[ \prod_{i=1}^{m} \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot exp \Big( - \frac{(y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big) \Big] \\
+&= \sum_{i=1}^{m} \ln \Big[ \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot exp \Big( - \frac{(y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big) \Big] \\
+&= \sum_{i=1}^{m} \ln \Big[ \frac{1}{\sqrt{2 \pi \sigma^2}} \Big] +  \sum_{i=1}^{m} \ln \Big[ exp \Big( - \frac{(y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big] \Big) \\
+&= \sum_{i=1}^{m} \ln \Big[ \frac{1}{\sqrt{2 \pi \sigma^2}} \Big] +  \sum_{i=1}^{m} \Big[ - \frac{(y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2}{2 \sigma^2} \Big]
 \end{align*}}
 
 According to the principle of maximum likelihood, the best parameters can be found by maximizing the log-likelihood. The first term of the log-likelihood is just a constant term so it does not contribute at all to the maximization, and the same holds for the denominator of the second term. Hence:
 {\setlength{\jot}{10pt}
 \begin{align*}
 \boldsymbol{w} &= \argmax_{\boldsymbol{w}} [ l (\boldsymbol{w} |y )] \\
-&= \argmax_{\boldsymbol{w}} \Big[ \sum_{i=1}^{m} ( - (y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2) \Big] \\
-&= \argmax_{\boldsymbol{w}} \Big[ - \sum_{i=1}^{m} (y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2) \Big]\\
-&= \argmin_{\boldsymbol{w}} \Big[ \sum_{i=1}^{m} (y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2 \Big]
+&= \argmax_{\boldsymbol{w}} \Big[ \sum_{i=1}^{m} ( - (y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2) \Big] \\
+&= \argmax_{\boldsymbol{w}} \Big[ - \sum_{i=1}^{m} (y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2) \Big]\\
+&= \argmin_{\boldsymbol{w}} \Big[ \sum_{i=1}^{m} (y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2 \Big]
 \end{align*}}
 
-At this point we can formally define the following function:
+At this point we can formally define the following function.
 
 \bd [Mean Squared Error Loss Function]
 \textbf{Mean squared error loss function} (MSE) $J(\boldsymbol{w})$ is defined as:
 \bse
-J(\boldsymbol{w}) = \frac{1}{2m} \sum_{i=1}^{m} (y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2
+J(\boldsymbol{w}) = \frac{1}{2m} \sum_{i=1}^{m} (y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2
 \ese
 \ed
 
-\vspace{5pt}
-
-Hence, the principle of maximum likelihood  translates to finding the parameters $\boldsymbol{w}$ that minimize the MSE loss function. The intuition behind the minimization of the MSE loss function is straight forward since what we are actually doing is minimizing the square of the errors between the prediction and the actual outcome (square because only the magnitude of the error is important and not the sign).  By minimizing as much as possible the errors we will eventually get the best line that fits the data.\\
+Hence, the principle of maximum likelihood  translates to finding the parameters $\boldsymbol{w}$ that minimize the MSE loss function. The intuition behind the minimization of the MSE loss function is straight forward since what we are actually doing is minimizing the square of the errors between the prediction and the actual outcome (square because only the magnitude of the error is important and not the sign).  By minimizing as much as possible the errors we will eventually get the best line that fits the data.\v
 
 As a final note, we can group together all training examples in one matrix and all training labels in one vector as follows:
 \bse
-X = \begin{bmatrix} x_{0}^{(1)} & x_{1}^{(1)} & \ldots & x_{n}^{(1)} \\ 
+X = \begin{bmatrix} \left(\boldsymbol{x}^{(1)}\right)^{\intercal} \\ 
+\left(\boldsymbol{x}^{(2)}\right)^{\intercal} \\ 
+\vdots \\
+\left(\boldsymbol{x}^{(m)}\right)^{\intercal}
+\end{bmatrix} = 
+\begin{bmatrix} x_{0}^{(1)} & x_{1}^{(1)} & \ldots & x_{n}^{(1)} \\ 
 x_{0}^{(2)} & x_{1}^{(2)} & \ldots & x_{n}^{(2)} \\ 
 \vdots & \vdots & \ddots & \ldots \\
 x_{0}^{(m)} & x_{1}^{(m)} & \ldots & x_{n}^{(m)} 
@@ -166,16 +165,60 @@ x_{0}^{(m)} & x_{1}^{(m)} & \ldots & x_{n}^{(m)}
 \boldsymbol{y} = \begin{bmatrix} y^{(1)} \\ y^{(2)} \\ \vdots \\ y^{(m)} \end{bmatrix} 
 \ese
 
-\vspace{10pt}
+\v
 
 By doing so then we can write the MSE loss function in the simple form of:
 \bse
-J(\boldsymbol{w}) = \frac{1}{2m} (X \boldsymbol{w} - \boldsymbol{y})^2 = \frac{1}{2m} (X \boldsymbol{w} - \boldsymbol{y})^T (X \boldsymbol{w} - \boldsymbol{y})
+J(\boldsymbol{w}) = \frac{1}{2m} (X \boldsymbol{w} - \boldsymbol{y})^2 = \frac{1}{2m} (X \boldsymbol{w} - \boldsymbol{y})^{\intercal} (X \boldsymbol{w} - \boldsymbol{y})
 \ese
+
+Beside the MSE loss function that is derived directly through the principal of maximum likelihood,  in machine learning is quite common to use some variations of MSE depending on the problem.  Here we will introduce the most basic of them.
+
+\bd [Root Mean Squared Error Loss Function]
+\textbf{Root mean squared error loss function} (RMSE) $J(\boldsymbol{w})$ is defined as:
+\bse
+J(\boldsymbol{w}) = \sqrt{MSE} = \sqrt{\frac{1}{2m} \sum_{i=1}^{m} (y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2}
+\ese
+\ed
+
+RMSE is a frequently used measure of the differences between values predicted by a model and the values observed,  and it is simply the square root of the average of squared errors.  The effect of each error on RMSE is proportional to the size of the squared error,  thus larger errors have a disproportionately large effect on RMSE.  Consequently,  RMSE is sensitive to outliers.  \v
+
+RMSE is always non-negative,  and a value of 0 (almost never achieved in practice) would indicate a perfect fit to the data.  In general,  a lower RMSE is better than a higher one.  However,  comparisons across different types of data would be invalid because the measure is dependent on the scale of the numbers used.\v
+
+RMSE is probably the most easily interpreted statistic,  since it has the same units as the data.  In other words RMSE is the average distance of a data point from the fitted line,  measured along a vertical line.\v
+
+The RMSE is directly interpretable in terms of measurement units, and so is a better measure of goodness of fit than a correlation coefficient. One can compare the RMSE to observed variation in measurements of a typical point. The two should be similar for a reasonable fit.
+
+\bd [Mean Bias Error]
+\textbf{Mean bias error loss function} (MBE) $J(\boldsymbol{w})$ is defined as:
+\bse
+J(\boldsymbol{w}) =  \frac{1}{2m} \sum_{i=1}^{m} (y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})
+\ese
+\ed
+
+MBE captures the average bias in the prediction and is usually not used as a measure of the model error as high individual errors in prediction can also produce a low MBE.  MBE is primarily used to estimate the average bias in the model and to decide if any steps need to be taken to correct the model bias.  MBE can convey useful information, but should be interpreted cautiously because positive and negative errors will cancel out.
+
+\bd [Mean Absolute Error]
+\textbf{Mean absolute error loss function} (MAE) $J(\boldsymbol{w})$ is defined as:
+\bse
+J(\boldsymbol{w}) =  \frac{1}{2m} \sum_{i=1}^{m} | y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} |
+\ese
+\ed
+
+MAE measures the average magnitude of the errors in a set of predictions, without considering their direction.  It's the average over the test sample of the absolute differences between prediction and actual observation where all individual differences have equal weight.  If the absolute value is not taken (the signs of the errors are not removed),  the average error becomes the MBE.
+
+\bd [Mean Absolute Percentage Error]
+\textbf{Mean absolute percentage error loss function} (MAPE) $J(\boldsymbol{w})$ is defined as:
+\bse
+J(\boldsymbol{w}) =  \frac{1}{2m} \sum_{i=1}^{m} \Big{|} \frac{y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)}}{y^{(i)}}  \Big{|}
+\ese
+\ed
+
+MAPE (also known as mean absolute percentage deviation (MAPD)) is the mean of the absolute percentage errors of forecasts. Error is defined as actual or observed value minus the forecasted value. Percentage errors are summed without regard to sign to compute MAPE. This measure is easy to understand because it provides the error in terms of percentages. Also, because absolute percentage errors are used, the problem of positive and negative errors canceling each other out is avoided. Consequently, MAPE has managerial appeal and is a measure commonly used in forecasting. The smaller the MAPE the better the forecast.
 
 \section{Optimization Techniques}
 
-Given the MSE loss function (or any other loss function that we will introduce later on), the goal of machine learning is to optimize it (usually minimize it) in order to obtain the best parameters that fit the data. Optimizing loss functions is one of the biggest parts of machine learning and we can do so with the so called \say{optimization techniques}.
+Given the MSE loss function (or any other loss function), the goal of machine learning is to optimize it (usually minimize it) in order to obtain the best parameters that fit the data. Optimizing loss functions is one of the biggest parts of machine learning and we can do so with the so called \say{optimization techniques}.
 
 \bd [Optimization Techniques]
 \textbf{Optimization techniques} are techniques used for finding the optimum solution or unconstrained maxima or minima of continuous and differentiable functions. These are analytical methods and make use of differential calculus in locating the optimal solution.
@@ -183,47 +226,47 @@ Given the MSE loss function (or any other loss function that we will introduce l
 
 \subsection{Normal Equation}
 
-Probably the most straight forward optimization technique is the so called \say{normal equation}. Since we are looking a minimum for $J(\boldsymbol{w})$ the natural thing to do, is to simply calculate the derivative with respect to the parameter vector and then set it to zero (as we did when we introduced the principle of maximum likelihood).\\
+Probably the most straight forward optimization technique is the so called \say{normal equation}. Since we are looking a minimum for $J(\boldsymbol{w})$ the natural thing to do, is to simply calculate the derivative with respect to the parameter vector and then set it to zero (as we did when we introduced the principle of maximum likelihood).\v
 
-It is more handy to use the vector form of loss function, so for the derivative we get:
+It is more handy to use the vector form of MSE loss function, so for the derivative we get:
 {\setlength{\jot}{10pt}
 \begin{align*}
-\nabla_{\boldsymbol{w}} J(\boldsymbol{w}) &= \frac{1}{2m} \nabla_{\boldsymbol{w}} \Big[ (X \boldsymbol{w} - \boldsymbol{y})^T (X \boldsymbol{w} - \boldsymbol{y}) \Big] \\
-&= \frac{1}{2m} \nabla_{\boldsymbol{w}} \Big[ \Big( (X \boldsymbol{w})^T - \boldsymbol{y}^T \Big) \Big( X \boldsymbol{w} - \boldsymbol{y} \Big) \Big] \\
-&= \frac{1}{2m} \nabla_{\boldsymbol{w}} \Big[ (X \boldsymbol{w})^T (X \boldsymbol{w}) - (X \boldsymbol{w})^T \boldsymbol{y} - \boldsymbol{y}^T (X \boldsymbol{w}) + \boldsymbol{y}^T \boldsymbol{y} \Big] \\
-&= \frac{1}{2m} \nabla_{\boldsymbol{w}} \Big[ (X \boldsymbol{w})^T (X \boldsymbol{w}) - 2 (X \boldsymbol{w})^T \boldsymbol{y} + \boldsymbol{y}^T \boldsymbol{y} \Big] \\
-&= \frac{1}{2m} \nabla_{\boldsymbol{w}} \Big[ \boldsymbol{w}^T X^T X \boldsymbol{w} - 2 \boldsymbol{w}^T X^T \boldsymbol{y} + \boldsymbol{y}^T \boldsymbol{y} \Big] \\
-&= \frac{1}{2m} \Big[ 2  X^T X \boldsymbol{w} - 2 X^T \boldsymbol{y} \Big] \\
-&= \frac{1}{m} \Big[ X^T X \boldsymbol{w} - X^T \boldsymbol{y} \Big]
+\nabla_{\boldsymbol{w}} J(\boldsymbol{w}) &= \frac{1}{2m} \nabla_{\boldsymbol{w}} \Big[ (X \boldsymbol{w} - \boldsymbol{y})^{\intercal} (X \boldsymbol{w} - \boldsymbol{y}) \Big] \\
+&= \frac{1}{2m} \nabla_{\boldsymbol{w}} \Big[ \Big( (X \boldsymbol{w})^{\intercal} - \boldsymbol{y}^{\intercal} \Big) \Big( X \boldsymbol{w} - \boldsymbol{y} \Big) \Big] \\
+&= \frac{1}{2m} \nabla_{\boldsymbol{w}} \Big[ (X \boldsymbol{w})^{\intercal} (X \boldsymbol{w}) - (X \boldsymbol{w})^{\intercal} \boldsymbol{y} - \boldsymbol{y}^{\intercal} (X \boldsymbol{w}) + \boldsymbol{y}^{\intercal} \boldsymbol{y} \Big] \\
+&= \frac{1}{2m} \nabla_{\boldsymbol{w}} \Big[ (X \boldsymbol{w})^{\intercal} (X \boldsymbol{w}) - 2 (X \boldsymbol{w})^{\intercal} \boldsymbol{y} + \boldsymbol{y}^{\intercal} \boldsymbol{y} \Big] \\
+&= \frac{1}{2m} \nabla_{\boldsymbol{w}} \Big[ \boldsymbol{w}^{\intercal} X^{\intercal} X \boldsymbol{w} - 2 \boldsymbol{w}^{\intercal} X^{\intercal} \boldsymbol{y} + \boldsymbol{y}^{\intercal} \boldsymbol{y} \Big] \\
+&= \frac{1}{2m} \Big[ 2  X^{\intercal} X \boldsymbol{w} - 2 X^{\intercal} \boldsymbol{y} \Big] \\
+&= \frac{1}{m} \Big[ X^{\intercal} X \boldsymbol{w} - X^{\intercal} \boldsymbol{y} \Big]
 \end{align*}}
 
 By setting the derivative to 0 we obtain:
 {\setlength{\jot}{10pt}
 \begin{align*}
 & \nabla_{\boldsymbol{w}} J(\boldsymbol{w})  = 0  \Rightarrow \\
-& \frac{1}{m} \Big[ X^T X \boldsymbol{w} - X^T \boldsymbol{y} \Big] = 0 \Rightarrow \\
-& X^T X \boldsymbol{w} - X^T \boldsymbol{y} = 0 \Rightarrow \\
-& X^T X \boldsymbol{w} = X^T \boldsymbol{y} \Rightarrow \\
-& \underbrace{(X^T X)^{-1} (X^T X)}_{I} \boldsymbol{w} = (X^T X)^{-1} X^T \boldsymbol{y} \Rightarrow \\
-& \boldsymbol{w} = (X^T X)^{-1} X^T \boldsymbol{y}
+& \frac{1}{m} \Big[ X^{\intercal} X \boldsymbol{w} - X^{\intercal} \boldsymbol{y} \Big] = 0 \Rightarrow \\
+& X^{\intercal} X \boldsymbol{w} - X^{\intercal} \boldsymbol{y} = 0 \Rightarrow \\
+& X^{\intercal} X \boldsymbol{w} = X^{\intercal} \boldsymbol{y} \Rightarrow \\
+& \underbrace{(X^{\intercal} X)^{-1} (X^{\intercal} X)}_{I} \boldsymbol{w} = (X^{\intercal} X)^{-1} X^{\intercal} \boldsymbol{y} \Rightarrow \\
+& \boldsymbol{w} = (X^{\intercal} X)^{-1} X^{\intercal} \boldsymbol{y}
 \end{align*}}
 
-This final expression is called \say{Normal Equation}, and it is an exact analytical solution that gives the parameter vector.\\
+This final expression is called \say{Normal Equation}, and it is an exact analytical solution that gives the parameter vector.\v
 
-Despite the fact that normal equation gives an exact analytical result, computing the seemingly harmless inverse of an $(m \times (n+1)) \times ((n+1) \times m)$ matrix is, with today's most efficient computer science algorithm, of cubic time complexity! This means that as the dimensions of $X$ increase, the amount of operations required to compute the final result increases in a cubic trend. If $X$ was rather small, then using the normal equation would be feasible.\\
+Despite the fact that normal equation gives an exact analytical result, computing the seemingly harmless inverse of an $((n+1) \times m) \times ((n+1) \times m) = (n+1) \times (n+1)$ matrix is, with today's most efficient computer science algorithm, of cubic time complexity ( in other words,  if you double the number of features, you multiply the computation time by roughly $2^3$),. This means that as the dimensions of $X$ increase (mainly the number of features),  the amount of operations required to compute the final result increases in a cubic trend.  If $X$ was rather small, then using the normal equation would be feasible.\v
 
 In practise, for the vast majority of any industrial application with large datasets, the normal equation would take extremely, sometimes nonsensically, long. This is the reason why normal equation is almost never used. Now let's move on the the most standard optimization technique used today called \say{gradient descent}.
 
 \subsection{Gradient Descent}
 
-Gradient descent, and all its improvements and alternatives, is the most used optimization technique in machine learning and deep learning. In gradient descent we begin with some random initial values for the parameters and we calculate the value the loss function based on them. Then we update them based on the following relation:
+Gradient descent, and all its improvements and alternatives, is the most used optimization technique in machine learning and deep learning. It is a generic optimization algorithm capable of finding optimal solutions to a wide range of problems.  The general idea of gradient descent is to tweak parameters iteratively in order to minimize a cost function by starting with some random initial values for the parameters and calculating the value of the loss function based on them,  and finally updating them based on the following relation:
 \bse
 \boldsymbol{w} \coloneqq \boldsymbol{w} - \alpha \nabla_{\boldsymbol{w}} J(\boldsymbol{w})
 \ese
 
 Since the derivative is positive when $J$ is upwards slopping and negative when it is downwards slopping, the minus sign makes sure that we always update the parameters towards the direction that minimizes $J$. Once the minimum is reached then $J$ is at a global optimum so the derivative is 0 and further updates are not possible. At this stage the gradient descent is over and the best parameters have been found.
 
-\vspace{-12pt}
+\vspace{-9pt}
 
 \begin{figure}[H]
 \includegraphics[scale=0.25]{images/gradientdescent.png}
@@ -232,7 +275,7 @@ Since the derivative is positive when $J$ is upwards slopping and negative when 
 
 \vspace{5pt}
 
-The hyperparameter $\alpha$ is called \say{learning rate} and defines how big or small steps we take after each iteration of gradient descent. If  $\alpha$ is too large, we might fail to find the minimum due to oscillations around it. If $\alpha$ is too small then gradient descent might take too much time to reach the minimum of $J$. Tuning learning rate in a \say{right} value is a topic by itself and it is quite have researched today!
+The hyperparameter $\alpha$ is called \say{learning rate} and defines how big or small steps we take after each iteration of gradient descent. If  $\alpha$ is too large, we might fail to find the minimum due to oscillations around it. If $\alpha$ is too small then gradient descent might take too much time to reach the minimum of $J$. Tuning learning rate in a \say{right} value is a topic by itself and it is quite have researched today.
 
 \begin{figure}[H]
 \includegraphics[scale=0.7]{images/alpha.png}
@@ -241,16 +284,18 @@ The hyperparameter $\alpha$ is called \say{learning rate} and defines how big or
 
 \vspace{5pt}
 
-Coming back to our case, let's find the update rule specifically for linear regression. The only thing missing is the derivative of $J$.  However in the previous chapter with normal equation we showed that:
+Of course,  not all cost functions look like nice,  regular bowls. There may be holes, ridges, plateaus, and all sorts of irregular terrains, making convergence to the minimum difficult.  In general gradient descent works best with convex functions,  where if you pick any two points on the curve of a convex function, the line segment joining them never crosses the curve.  This implies that there are no local minima, just one global minimum.  They are also continuous functions with slopes that never changes abruptly.  Hence in convex functions gradient descent is guaranteed to approach arbitrarily close the global minimum (if you wait long enough and if the learning rate is not too high). \v
+
+Coming back to our case,  let's find the update rule specifically for linear regression.  Fortunately,  the MSE cost function for a Linear Regression model happens to be a convex function. The only thing missing is the derivative of MSE loss function $J$.  However in the previous chapter with normal equation we showed that:
 \bse
-J(\boldsymbol{w}) = \frac{1}{m} \Big(X^T X \boldsymbol{w} - X^T \boldsymbol{y} \Big) = \frac{1}{m} X^T \Big( X \boldsymbol{w} -\boldsymbol{y} \Big)
+\nabla_{\boldsymbol{w}} J(\boldsymbol{w}) = \frac{1}{m} \Big(X^{\intercal} X \boldsymbol{w} - X^{\intercal} \boldsymbol{y} \Big) = \frac{1}{m} X^{\intercal} \Big( X \boldsymbol{w} -\boldsymbol{y} \Big)
 \ese
 
 \vspace{5pt}
 
 Hence the update rule reads:
 \bse
-\boldsymbol{w} \coloneqq \boldsymbol{w} - \frac{\alpha}{m} X^T \Big( X \boldsymbol{w} -\boldsymbol{y} \Big)
+\boldsymbol{w} \coloneqq \boldsymbol{w} - \frac{\alpha}{m} X^{\intercal} \Big( X \boldsymbol{w} -\boldsymbol{y} \Big)
 \ese
 
 \vspace{5pt}
@@ -258,30 +303,32 @@ Hence the update rule reads:
 As we already mentioned there are many improvements and modified algorithms based on gradient descent philosophy. We are going to cover a lot of them in these notes. For now, let's start with 3 basics versions of gradient descent.
 
 \bit
-\item Batch Gradient Descent:
+\item \textbf{Batch Gradient Descent}
 
 Batch gradient descent is actually the one we just saw. As we see in gradient descent, the whole training set $X$ is used in order to make just one update of the parameters. We usually refer to the whole training set as the \say{batch}. For that reason, the usual terminology for what we have seen so far is  \say{batch gradient descent}, meaning that the whole batch is used to update the parameter. 
 
-\item Mini-Batch Gradient Descent:
+\item \textbf{Mini-Batch Gradient Descent}
 
 In \say{mini-batch gradient descent} we divide the whole dataset to $b$ subsets of $\frac{m}{b}$ training examples each, called \say{mini-batches}, and we update the parameters using each of the mini-batches in each iteration.
 
-\item Stochastic Gradient Descent:
+\item \textbf{Stochastic Gradient Descent}
 
 In \say{stochastic gradient descent} we only use one training example per time to update the parameters. In every iteration we pick the training example randomly hence the naming.
 \eit
 
-One of the main problems of batch gradient descent is that as the number of training examples grows the dimensions of $X$ grows and using the whole training set for every iteration becomes computationally expensive. Both mini-batch and stochastic gradient descent deal with this problem.\\
+One of the main problems of batch gradient descent is that as the number of training examples grows the dimensions of $X$ grows and using the whole training set for every iteration becomes computationally expensive. Both mini-batch and stochastic gradient descent deal with this problem.\v
 
 In a way, mini-batch gradient descent tries to strike a balance between the goodness of batch gradient descent and speed of stochastic gradient descent. In general, batch gradient descent works just fine so we don't need the alternative techniques we just introduced. However in more complicated models, such as deep learning models, these techniques can be really useful. For this reason we will examine again these techniques in more details in the chapter of deep learning.
 
 \section{Logistic Regression}
 
 \bd[Logistic Regression]
-\textbf{Logistic regression} is a statistical model that is used to model a binary dependent variable (usually 0 or 1).
+\textbf{Logistic regression} (or classification) is a statistical model that is used for the classification of a discrete dependent variable (target).
 \ed
 
-Sometimes logistic regression is called \say{binary classification} since we try to decide if an input belongs to class 0 or class 1 of the binary output. Wecan also generalize to more than 2 discrete classes where then we have \say{multi-class classification}. For now we will focus on binary outputs.
+\bd[Binary / Multiclass Classification]
+\textbf{Binary} classification is the problem of classifying instances into one of two classes.  Classifying instances into three or more classes is called \textbf{multiclass} or (multinomial) classification.
+\ed
 
 \vspace{5pt}
 
@@ -292,12 +339,12 @@ Sometimes logistic regression is called \say{binary classification} since we try
 
 \vspace{10pt}
 
-Since the output is binary and can take only the values 0 or 1, the hypothesis function of the linear regression is not a valid approximator for logistic regression since it produces a continuous set of outputs. So our first step is to find a suitable hypothesis function $h$ for logistic regression. The hypothesis function that we actually use in logistic regression is the sigmoid function and it is given by:
+\textbf{For now we will focus on binary classification}. Since the output is binary and can take only the values 0 or 1,  the hypothesis function of the linear regression is not a valid approximator for logistic regression since it produces a continuous set of outputs. So our first step is to find a suitable hypothesis function $h$ for logistic regression. The hypothesis function that we actually use in logistic regression is the sigmoid function and it is given by:
 \bse
-h(\boldsymbol{x}) = \frac{1}{1 + exp(- \boldsymbol{w}^T \boldsymbol{x})}
+h(\boldsymbol{x}) = \frac{1}{1 + exp(- \boldsymbol{w}^{\intercal} \boldsymbol{x})}
 \ese
 
-(From now on, in order to save space, we will write $h(\boldsymbol{x})$ instead of the actual expression for the sigmoid function.)
+(From now on,  in order to save space,  we will write $h(\boldsymbol{x})$ instead of the actual expression for the sigmoid function).\v
 
 \vspace{5pt}
 
@@ -308,16 +355,14 @@ h(\boldsymbol{x}) = \frac{1}{1 + exp(- \boldsymbol{w}^T \boldsymbol{x})}
 
 \vspace{10pt}
 
-Sigmoid function produces results in the interval $[0,1]$. It is quite close to what we need, but not exactly so, since we do not need all the values between 0 and 1. For this reason we will try to give a different meaning to the hypothesis function.\\
+Hence, in logistic regression,  the hypothesis function computes a weighted sum of the input features (plus a bias term), but instead of outputting the result directly like the linear regression hypothesis function does,  it outputs the logistic (sigmoid function) of this result.  Notice that $h(\boldsymbol{x}) < 0.5$ when $\boldsymbol{w}^{\intercal} \boldsymbol{x} < 0$,  and $h(\boldsymbol{x}) \geq 0.5$ when $\boldsymbol{w}^{\intercal} \boldsymbol{x} \geq 0$,  so a logistic regression model predicts $1$ if $\boldsymbol{w}^{\intercal} \boldsymbol{x}$ is positive and 0 if it is negative. (The argument of the sigmoid function is often called \say{logit}). \v
 
-Namely the intuition is that the sigmoid function will act as a probability measure of the target to belong to class 1. The closest to 0 the sigmoid function, the more unlikely for the target to belong in class 1 (hence it belongs to class 0) and the closest to 1 the more likely to belong to the class 1. Hence, by defining a threshold (say at 0.5) the idea is that for $h(\boldsymbol{x}) <0.5$ the algorithm will predict 0 and for $h(\boldsymbol{x}) \geq 0.5$ the algorithm will predict 1. \\
+It is worth mentioning that one can alter the threshold of 0.5 to any value between 0 and 1. This is quite usual in logistic regression models when obtaining the correct class is more important than a possible misclassification.\v
 
-As we said, based on this intuition, we can interpret the hypothesis function as the probability of the input to be 1 hence:
+Now let's try to give a meaning to the hypothesis function. As we can see the sigmoid function produces results in the interval $[0,1]$. It is quite close to what we need, but not exactly so, since we do not need all the values between 0 and 1. For this reason we will interpret the hypothesis function of logistic regression as a probability measure of the target to belong to class 1. The closest to 0 the hypothesis function, the more unlikely for the target to belong in class 1 (hence it belongs to class 0) and the closest to 1 the more likely to belong to the class 1. Hence, by defining a threshold (say at 0.5) the idea is that for $h(\boldsymbol{x}) <0.5$ the algorithm will predict 0 and for $h(\boldsymbol{x}) \geq 0.5$ the algorithm will predict 1.  Based on this intuition,  we can write:
 \bse
-P(y=1 | \boldsymbol{x}; \boldsymbol{w}) = h(\boldsymbol{x})
+h(\boldsymbol{x}) = P(y=1 | \boldsymbol{x}; \boldsymbol{w})
 \ese
-
-\vspace{5pt}
 
 Of course since the output must be either 0 or 1 we get:
 \begin{align*}
@@ -331,11 +376,9 @@ We can combine these two probabilities in one in the following way:
 P(y | \boldsymbol{x}; \boldsymbol{w}) = h(\boldsymbol{x})^y \cdot (1 - h(\boldsymbol{x}))^{(1-y)}
 \ese
 
-\vspace{5pt}
+So in logistic regression the output follows a Bernoulli distribution with parameter $h(\boldsymbol{x})$. Now that we have a probability distribution, similarly to the linear regression, we can use the principle of the maximum likelihood in order to obtain the best parameters that maximize the likelihood. Thus, we will obtain the loss function for the logistic regression case. \v
 
-So in logistic regression the output follows a Bernoulli distribution with parameter $h(\boldsymbol{x})$. Now that we have a probability distribution, similarly to the linear regression, we can use the principle of the maximum likelihood in order to obtain the best parameters that maximize the likelihood. Thus, we will obtain the loss function for the logistic regression case. \\
-
-By making again the assumption that we are dealing with independent and identically distributed random variables, for the likelihood it is
+By making again the assumption that we are dealing with independent and identically distributed random variables, for the likelihood is:
 \bse
 \mathcal{L} (\boldsymbol{w} |y ) = P(y^{(1)}, y^{(2)}, \ldots, y^{(m)} | \boldsymbol{x}^{(1)}, \boldsymbol{x}^{(2)}, \ldots, \boldsymbol{x}^{(m)} ; \boldsymbol{w}) = \prod_{i=1}^{m} P(y^{(i)} | \boldsymbol{x}^{(i)} ; \boldsymbol{w})
 \ese
@@ -363,20 +406,20 @@ Once again, according to the principle of maximum likelihood, the best parameter
 &= \argmin_{\boldsymbol{w}} \Big[ - \sum_{i=1}^{m} \Big( y^{(i)} \cdot  \ln h(\boldsymbol{x}^{(i)})  + (1 - {y^{(i)}}) \cdot  \ln (1 - h(\boldsymbol{x}^{(i)})) \Big) \Big]
 \end{align*}}
 
-At this point we can formally define the following function:
+At this point we can formally define the following function.
 
 \bd [Cross Entropy Loss Function]
-\textbf{Cross entropy loss function}  is defined as:
+\textbf{Cross entropy loss function} (also called log loss)  is defined as:
 \bse
 J(\boldsymbol{w}) = - \frac{1}{m} \sum_{i=1}^{m}  \Big( y^{(i)} \cdot  \ln h(\boldsymbol{x}^{(i)})  + (1 - {y^{(i)}}) \cdot   \ln (1 - h(\boldsymbol{x}^{(i)})) \Big)
 \ese
 \ed
 
-The cross entropy is the loss function of the logistic regression in the similar way where MSE loss function is the loss function for linear regression. The name \say{cross entropy} comes from the definition of cross entropy which is the average amount of information needed to identify an event  between two probability distributions $p$ and $q$ over the same underlying set of events \\
+The cross entropy is the loss function of the logistic regression in the similar way where MSE loss function is the loss function for linear regression. The name \say{cross entropy} comes from the definition of cross entropy which is the average amount of information needed to identify an event  between two probability distributions $p$ and $q$ over the same underlying set of events \v
 
-Notice that the only possible values of $y^{(i)}$ is 0 or 1. This means that in any case, one of the terms $y^{(i)}$ or $(1-y^{(i)})$ in $J$ will vanish and the other one will be equal to 1. So in the end the only thing that is actually part of the loss is the logarithm of the hypothesis function, which given that the hypothesis function is a sigmoid function which is always between 0 and 1, the logarithm is always negative. With the overall negative sign the loss turns positive and this is what we want to minimize.\\
+Notice that the only possible values of $y^{(i)}$ is 0 or 1. This means that in any case, one of the terms $y^{(i)}$ or $(1-y^{(i)})$ in $J$ will vanish and the other one will be equal to 1. So in the end the only thing that is actually part of the loss is the logarithm of the hypothesis function, which given that the hypothesis function is a sigmoid function which is always between 0 and 1, the logarithm is always negative. With the overall negative sign the loss turns positive and this is what we want to minimize.\v
 
-We are not gonna write a vectorized form for the cross entropy loss function for two reasons. First of all, not all matrices have a logarithm and those matrices that do have a logarithm may have more than one logarithm. So one has to be careful when uses the vectorized form of logistic regression because it carries logarithms of matrices. Secondly, derivatives of logarithms of non square matrices sometimes are not defined.  Since we need to calculate the derivative of $J$ we might get problems. For this reason we will use the non vectorized form for the calculations, however we will express the final result in a vectorized form.\\
+We are not going to write a vectorized form for the cross entropy loss function for two reasons. First of all, not all matrices have a logarithm and those matrices that do have a logarithm may have more than one logarithm. So one has to be careful when uses the vectorized form of logistic regression because it carries logarithms of matrices. Secondly, derivatives of logarithms of non square matrices sometimes are not defined.  Since we need to calculate the derivative of $J$ we might get problems. For this reason we will use the non vectorized form for the calculations, however we will express the final result in a vectorized form.\v
 
 As in the linear case, the principle of maximum likelihood leads to the minimization of the cross entropy loss function in order to obtain the best parameters. We will examine the same techniques that we developed for the gradient descent in the linear case, i.e normal equation and gradient descent.
 
@@ -386,16 +429,15 @@ As we already mentioned, since we want to minimize a function the straight forwa
 
 \subsection{Gradient Descent}
 
-Gradient descent  works fine in logistic regression. First, let's calculate the derivative of $J(\boldsymbol{w})$ for logistic regression.
-
+Gradient descent  works fine in logistic regression. First, let's calculate the derivative of $J(\boldsymbol{w})$ for logistic regression:
 {\setlength{\jot}{15pt}
 \begin{align*}
 \nabla_{\boldsymbol{w}} J(\boldsymbol{w}) &= - \frac{1}{m}  \nabla_{\boldsymbol{w}} \Big[\sum_{i=1}^{m}  \Big( y^{(i)} \cdot  \ln h(\boldsymbol{x}^{(i)})  + (1 - {y^{(i)}}) \cdot   \ln (1 - h(\boldsymbol{x}^{(i)})) \Big) \Big] \\
 &= - \frac{1}{m} \sum_{i=1}^{m}  \Big( y^{(i)} \cdot  \nabla_{\boldsymbol{w}} \ln h(\boldsymbol{x}^{(i)})  + (1 - {y^{(i)}}) \cdot \nabla_{\boldsymbol{w}} \ln (1 - h(\boldsymbol{x}^{(i)})) \Big)  \\
 &= - \frac{1}{m} \sum_{i=1}^{m}  \Big( y^{(i)} \cdot  \frac{\nabla_{\boldsymbol{w}} h(\boldsymbol{x}^{(i)})}{h(\boldsymbol{x}^{(i)})}   - (1 - {y^{(i)}}) \cdot \frac{\nabla_{\boldsymbol{w}}  h(\boldsymbol{x}^{(i)})}{1 - h(\boldsymbol{x}^{(i)})}  \Big)\\
 &= - \frac{1}{m} \sum_{i=1}^{m}  \Big( \frac{y^{(i)}}{h(\boldsymbol{x}^{(i)})}  -  \frac{1 - {y^{(i)}}}{1 - h(\boldsymbol{x}^{(i)})}  \Big) \cdot \nabla_{\boldsymbol{w}} h(\boldsymbol{x}^{(i)})  \\
-&= - \frac{1}{m} \sum_{i=1}^{m}  \Big( \frac{y^{(i)} \cdot (1 - h(\boldsymbol{x}^{(i)}) - (1 - {y^{(i)}}) \cdot h(\boldsymbol{x}^{(i)})}{h(\boldsymbol{x}^{(i)}) \cdot (1 - h(\boldsymbol{x}^{(i)}))} \Big) \cdot  \nabla_{\boldsymbol{w}} \Big[  \frac{1}{1 + exp(- \boldsymbol{w}^T \boldsymbol{x}^{(i)})} \Big] \\
-&= - \frac{1}{m} \sum_{i=1}^{m}  \Big( \frac{y^{(i)} - y^{(i)} \cdot h(\boldsymbol{x}^{(i)}) - h(\boldsymbol{x}^{(i)})  + {y^{(i)}} \cdot h(\boldsymbol{x}^{(i)})}{h(\boldsymbol{x}^{(i)}) \cdot (1 - h(\boldsymbol{x}^{(i)}))} \Big) \cdot \Big( \frac{-1}{(1 + exp(- \boldsymbol{w}^T \boldsymbol{x}^{(i)}))^2} \cdot exp(- \boldsymbol{w}^T \boldsymbol{x}^{(i)}) \cdot (-\boldsymbol{x}^{(i)})  \Big) \\
+&= - \frac{1}{m} \sum_{i=1}^{m}  \Big( \frac{y^{(i)} \cdot (1 - h(\boldsymbol{x}^{(i)}) - (1 - {y^{(i)}}) \cdot h(\boldsymbol{x}^{(i)})}{h(\boldsymbol{x}^{(i)}) \cdot (1 - h(\boldsymbol{x}^{(i)}))} \Big) \cdot  \nabla_{\boldsymbol{w}} \Big[  \frac{1}{1 + exp(- \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})} \Big] \\
+&= - \frac{1}{m} \sum_{i=1}^{m}  \Big( \frac{y^{(i)} - y^{(i)} \cdot h(\boldsymbol{x}^{(i)}) - h(\boldsymbol{x}^{(i)})  + {y^{(i)}} \cdot h(\boldsymbol{x}^{(i)})}{h(\boldsymbol{x}^{(i)}) \cdot (1 - h(\boldsymbol{x}^{(i)}))} \Big) \cdot \Big( \frac{-1}{(1 + exp(- \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)}))^2} \cdot exp(- \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)}) \cdot (-\boldsymbol{x}^{(i)})  \Big) \\
 &= - \frac{1}{m} \sum_{i=1}^{m}  \Big( \frac{y^{(i)} - h(\boldsymbol{x}^{(i)})}{h(\boldsymbol{x}^{(i)}) \cdot (1 - h(\boldsymbol{x}^{(i)}))} \Big) \cdot \Big( h(\boldsymbol{x}^{(i)})^2 \cdot \frac{1 - h(\boldsymbol{x}^{(i)})}{h(\boldsymbol{x}^{(i)})} \cdot \boldsymbol{x}^{(i)} \Big) \\
 &= \frac{1}{m} \sum_{i=1}^{m} \frac{h(\boldsymbol{x}^{(i)}) - y^{(i)})}{h(\boldsymbol{x}^{(i)}) \cdot (1 - h(\boldsymbol{x}^{(i)}))} \cdot h(\boldsymbol{x}^{(i)}) \cdot (1 - h(\boldsymbol{x}^{(i)}))\cdot \boldsymbol{x}^{(i)} \\
 &= \frac{1}{m} \sum_{i=1}^{m} (h(\boldsymbol{x}^{(i)}) - y^{(i)}) \cdot \boldsymbol{x}^{(i)}
@@ -403,26 +445,28 @@ Gradient descent  works fine in logistic regression. First, let's calculate the 
 
 Hence the update rule reads:
 \bse
-\boldsymbol{w} \coloneqq \boldsymbol{w} - \frac{\alpha}{m} \sum_{i=1}^{m} \Big( \frac{1}{1 + exp(- \boldsymbol{w}^T \boldsymbol{x}^{(i)})} - y^{(i)} \Big) \cdot \boldsymbol{x}^{(i)}
+\boldsymbol{w} \coloneqq \boldsymbol{w} - \frac{\alpha}{m} \sum_{i=1}^{m} \Big( \frac{1}{1 + exp(- \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})} - y^{(i)} \Big) \cdot \boldsymbol{x}^{(i)}
 \ese
 
-\vspace{5pt}
+\v
 
 Or in vectorized form:
 \bse
-\boldsymbol{w} \coloneqq \boldsymbol{w} - \frac{\alpha}{m} X^T \Big( \frac{1}{1+exp(-X \boldsymbol{w})}-\boldsymbol{y} \Big)
+\boldsymbol{w} \coloneqq \boldsymbol{w} - \frac{\alpha}{m} X^{\intercal} \Big( \frac{1}{1+exp(-X \boldsymbol{w})}-\boldsymbol{y} \Big)
 \ese
 
-\vspace{5pt}
+\v
 
 At this point, notice that gradient descent can be generalized into one model for both linear and logistic regression since the update rule for both of them can be be written in one coherent way as:
 \bse
-\boldsymbol{w} \coloneqq \boldsymbol{w} - \frac{\alpha}{m} X^T \Big( h(X)-\boldsymbol{y} \Big)
+\boldsymbol{w} \coloneqq \boldsymbol{w} - \frac{\alpha}{m} X^{\intercal} \Big( h(X)-\boldsymbol{y} \Big)
 \ese
 
-\vspace{5pt}
+\v
 
-where one has to use either MSE loss function or cross entropy loss function depending on the regression problem!
+where one has to use either MSE loss function or cross entropy loss function depending on the regression problem.
+
+\subsection{Softmax Regression}
 
 \section{Generalized Linear Model}
 
@@ -431,7 +475,7 @@ As we showed, in linear regression the target follows a normal distribution whil
 \bd[Generalized Linear Model]
 \textbf{Generalized linear model} (GLM) is a model that allows the dependent variable to follow an exponential family of probability distributions of the form:
 \bse
-P(y | \eta) = b(y) \cdot exp(\eta^T T(y) - a(\eta))
+P(y | \eta) = b(y) \cdot exp(\eta^{\intercal} T(y) - a(\eta))
 \ese
 \ed
 
@@ -439,13 +483,11 @@ By picking specific values for $b$, $\eta$, $T$ and $a$ we end up with different
 
 \section{Errors}
 
-Since $h$ is an estimator of $f$, the theory we developed in the chapter of parametric inference for estimators also holds for $h$. In other words, for the hypothesis function, which acts as an estimator for $f$, we can define quantities such as MSE, sampling deviation, bias and variance.\\
-
-Out of all possible quantities that can be defined, MSE, bias and variance are of crucial importance in machine learning, since we use them in order to evaluate how well a mahcine learning model performs. Let us see now the definitions of these quantities adjusted for the case of machine learning where the estimator is $h$.
+Since $h$ is an estimator of $f$, the theory we developed in the chapter of parametric inference for estimators also holds for $h$. In other words, for the hypothesis function, which acts as an estimator for $f$,  we can define quantities such as MSE,  sampling deviation,  bias and variance.  We can then use these quantities in order to evaluate how well a mahcine learning model performs.  Let us see now the definitions of these quantities adjusted for the case of machine learning where the estimator is $h$.
 
 \subsection{Point-Wise, Overall, In-Sample \& Out-Of-Sample Error}
 
-Starting from the corresponding MSE in machine learning case we define the following quantities:
+Starting from the corresponding MSE,  in machine learning case we define the following quantities:
 
 \bd[Point-Wise Error]
 We define the \textbf{point-wise error} $e$ as a function of the real target function $f$ and the hypothesis function $h$ at point $x$:
@@ -468,8 +510,6 @@ E_{in} = \frac{1}{m} \sum_{i=1}^m e( f(x^{(i)}), h(x^{(i)}) )
 \ese
 \ed
 
-\vspace{5pt}
-
 In other words in-sample error shows how well the model performs on the data used to build it.
 
 \bd[Out-Of-Sample Error]
@@ -478,8 +518,6 @@ We define the \textbf{out-of-sample error} $E_{out}$ as a the expected value of 
 E_{out} = E_{x}[e( f(x), h(x) )]
 \ese
 \ed
-
-\vspace{5pt}
 
 In other word out-of-sample error show how well the model generalizes to predictions for data it has not seen before. It makes sense that in order for $h$ to work well out of sample, so it can predict, it must be $E_{out} \approx 0$.
 
@@ -496,27 +534,27 @@ B = E[h(x)] - f(x)
 
 The bias error is an error from erroneous assumptions in the learning algorithm. When we are dealing with high bias, formally we can say that the hypothesis set $H=\{h\}$ was not big enough in order to contain function that can approximate well the target function $f$. So our best approximation for $f$ is still a bad one that cannot fit the data well.
 
-\vspace{5pt}
+\vspace{-5pt}
 
 \begin{figure}[H]
-\includegraphics[scale=0.45]{images/bias.png}
+\includegraphics[scale=0.44]{images/bias.png}
 \centering
 \end{figure}
 
-\vspace{5pt}
+\vspace{-5pt}
 
-High bias can cause an algorithm to miss the relevant relations between features and target outputs and fail to capture the underlying structure of the dataset. We call this a case of underfitting, since the model fails to fit the given dataset well.
+High bias can cause an algorithm to miss the relevant relations between features and target outputs and fail to capture the underlying structure of the dataset. We call this a case of \textbf{underfitting}, since the model fails to fit the given dataset well.
 
-\vspace{5pt}
+\vspace{-10pt}
 
 \begin{figure}[H]
 \includegraphics[scale=0.9]{underfitting.png}
 \centering
 \end{figure}
 
-\vspace{5pt}
+\vspace{-10pt}
 
-Underfitting is one of the two main problems that a machine learning model can have and it leads to a high in-sample error $E_{in}$ which subsequently leads to a high out-of-sample error $E_{out}$. Hence even that the problem is coming from the in-sample error it leads to not being able to generalize for out-of-sample data.\\
+Underfitting is one of the two main problems that a machine learning model can have and it leads to a high in-sample error $E_{in}$ which subsequently leads to a high out-of-sample error $E_{out}$. Hence even that the problem is coming from the in-sample error it leads to not being able to generalize for out-of-sample data.\v
 
 In parametric inference chapter, we also defined  the variance of an estimator $\hat{\theta}_{n}$ as the expected value of the square difference of the estimator from the expected value of the estimator: $Var = E[(\hat{\theta}_{n} - E[\hat{\theta}_{n}])^2]$.  Coming back to machine learning for the variance we get:
 
@@ -529,31 +567,30 @@ Var = E_{x}[(h(x) - E_{x}[h(x)])^2]
 
 The variance is an error from sensitivity to small fluctuations in the training set.
 
-\vspace{5pt}
+\vspace{-5pt}
 
 \begin{figure}[H]
-\includegraphics[scale=0.45]{variance.png}
+\includegraphics[scale=0.44]{variance.png}
 \centering
 \end{figure}
 
-\vspace{5pt} 
+\vspace{-5pt}
 
-When we are dealing with high variance, informally we can say that the hypothesis set $H=\{h\}$ is very big so in order to compensate the spread of dataset the model finds a function that fits the particular data very well but fails to generalize to new data. We call this a case of overfitting, since the model fails to generalize to new data.
+When we are dealing with high variance, informally we can say that the hypothesis set $H=\{h\}$ is very big so in order to compensate the spread of dataset the model finds a function that fits the particular data very well but fails to generalize to new data. We call this a case of \textbf{overfitting}, since the model fails to generalize to new data.
 
-\vspace{5pt}
+\vspace{-10pt}
 
 \begin{figure}[H]
 \includegraphics[scale=0.9]{overfitting.png}
 \centering
 \end{figure}
 
-\vspace{5pt}
+\vspace{-10pt}
 
-Overfitting leads to a very low in-sample $E_{in} \approx 0$, since it does a very good job on fitting the given data. However it fails to generalize, hence to predict new data, which leads to a very high out-of-sample error $E_{out}$.\\
+Overfitting leads to a very low in-sample $E_{in} \approx 0$, since it does a very good job on fitting the given data. However it fails to generalize, hence to predict new data, which leads to a very high out-of-sample error $E_{out}$.\v
 
 Back in parametric inference we also showed that the mean squared error can be decomposed to bias and variance, and of course the same holds in our case since for the out of sample error of linear regression we can show:
-
-{\setlength{\jot}{10pt}
+{\setlength{\jot}{5pt}
 \begin{align*}
 E_{out} &= E_{x} \Big[ e(f(x),h(x)) \Big]  \\
 &=  E_{x} \Big[ \Big( f(x) - h(x) \Big)^2 \Big] \\
@@ -567,54 +604,50 @@ E_{out} &= E_{x} \Big[ e(f(x),h(x)) \Big]  \\
 &= B^2 + Var
 \end{align*}}
 
-Hence, the out-of-sample error is actually a combination of bias and variance. So in order to have a model that generalizes well, we have to keep both of them low. However, since they are of opposite nature, the more we reduce bias the more variance increases and vice versa. This is the so called \say{bias-variance trade off}. The goal in machine learning is to balance this trade off so the model fits the data well and doesn't fail to generalize.
+Hence, the out-of-sample error is actually a combination of bias and variance. So in order to have a model that generalizes well, we have to keep both of them low. However, since they are of opposite nature, the more we reduce bias the more variance increases and vice versa. This is the so called \textbf{bias-variance trade off}. The goal in machine learning is to balance this trade off so the model fits the data well and doesn't fail to generalize.
 
 \begin{figure}[H]
-\includegraphics[scale=0.7]{overunderfitting.png}
+\includegraphics[scale=0.6]{overunderfitting.png}
 \centering
 \end{figure}
 
-\vspace{5pt}
+In this graph we see that in the case of high bias (underfitting) we have restricted our model to linear predictors, however the data do not follow a linear trend, hence the hypothesis set is too small and the model cannot find a good curve to fit the data. On the other hand, in the case of high variance (overfitting) the hypothesis set is so big allowing complex predictors so the model managed to find a high degree polynomial that fit the data really good, however it will fail to generalize since it depends a lot on the initial values of the data and it is sensitive to fluctuations of them. Finally in the last graph we have a good balance of bias and variance and the model found a good curve.\v
 
-In this graph we see that in the case of high bias (underfitting) we have restricted our model to linear predictors, however the data do not follow a linear trend, hence the hypothesis set is too small and the model cannot find a good curve to fit the data. On the other hand, in the case of high variance (overfitting) the hypothesis set is so big allowing complex predictors so the model managed to find a high degree polynomial that fit the data really good, however it will fail to generalize since it depends a lot on the initial values of the data and it is sensitive to fluctuations of them. Finally in the last graph we have a good balance of bias and variance and the model found a good curve!
+One has to keep in mind that increasing a model's complexity will typically increase its variance and reduce its bias.  Conversely,  reducing a model's complexity increases its bias and reduces its variance.  This is why it is called a \say{trade-off}.
 
 \section{Evaluation}
 
-Evaluation is about how good a model generalizes to new data. After applying the learning algorithm to the data and having obtained a hypothesis $h$, the machine learning model is ready to make new predictions. However before that, we have to evaluate the model by analysing the errors that we just introduced. \\
+Evaluation is about how good a model generalizes to new data. After applying the learning algorithm to the data and having obtained a hypothesis $h$, the machine learning model is ready to make new predictions. However before that, we have to evaluate the model by analysing the errors that we just introduced. \v
 
-The starting part is the in-sample and out-of-sample errors that we defined previously as:
+The starting part is the in-sample and out-of-sample errors that we defined previously:
 \bse
 E_{in} = \frac{1}{m} \sum_{i=1}^m e( f(x^{(i)}), h(x^{(i)}) ) \qquad \text{and}  \qquad E_{out} = E_{x}[e( f(x), h(x) )]
 \ese
 
-\vspace{5pt}
-
-In general, for the error function $e$ we use the corresponding loss function $J$ that we used to train the model, since it is a function of the target and hypothesis functions as $e$, and it is a really good measure of error:
+In general, for the error function $e$ we use the corresponding loss function $J$ that we used to train the model (although some times we can use variations of it),  since it is a function of the target and hypothesis functions as $e$, and it is a really good measure of error:
 \bse
 E_{in} = \frac{1}{m} \sum_{i=1}^m J^{{(i)}}( f(x^{(i)}), h(x^{(i)}) ) \qquad \text{and}  \qquad E_{out} = E_{x}[J( f(x), h(x) )]
 \ese
 
-\vspace{5pt}
-
-where here the notation $J^{{(i)}}$ means the error coming from the i'th training example. Hence, now $E_{in}$ is calculated with the data that we trained the model, so it's a very good measure of how well the model performs in the data that it was trained on. The problem comes from $E_{out}$ since we don't know how to compute this expected value. Unsurprising we will perform the usual trick of substituting the expected value with the average so:
+where here the notation $J^{{(i)}}$ means the error coming from the $i^{th}$ training example. Hence, now $E_{in}$ is calculated with the data that we trained the model, so it's a very good measure of how well the model performs in the data that it was trained on. The problem comes from $E_{out}$ since we don't know how to compute this expected value. Unsurprising we will perform the usual trick of substituting the expected value with the average so:
 \bse
 E_{in} = \frac{1}{m} \sum_{i=1}^m J^{{(i)}}( f(x^{(i)}), h(x^{(i)}) )  \qquad \text{and}  \qquad E_{out} = \frac{1}{m} \sum_{i=1}^m J^{{(i)}}( f(x^{(i)}), h(x^{(i)}) )
 \ese
 
-\vspace{5pt}
+Of course since  we estimate the expected value with an average that brings an error to the estimation of the out-of-sample error. However for our purposes we assume that this error is neglectful, and from now on we will treat the estimated out-of-sample error as the actual out-of-sample error. In general we have to keep in mind though that out-of-sample error carries an error.\v
 
-Of course since  we estimate the expected value with an average that brings an error to the estimation of the out-of-sample error. However for our purposes we assume that this error is neglectful, and from now on we will treat the estimated out-of-sample error as the actual out-of-sample error. In general we have to keep in mind though that out-of-sample error carries an error.\\
+The question that arises is what data are we going to use for $E_{out}$. Using the same data that we trained the model is a really bad idea since, first of all, we will simply get $E_{out} = E_{in}$ and secondly the model already knows the correct answers of the data since we used them to train it, and the evaluation will be biased.\v
 
-The question that arises is what data are we going to use for $E_{out}$. Using the same data that we trained the model is a really bad idea since, first of all, we will simply get $E_{out} = E_{in}$ and secondly the model already knows the correct answers of the data since we used them to train it, and the evaluation will be biased.\\
+In order to overcome this problem, we split the dataset (before training the model) into two parts: training set and evaluation set. Then we use the first to train the model and obtain $E_{in}$  and the latter to evaluate its performance and obtain $E_{out}$. Since the model is trained with the train set, it has never seen the evaluation set so the estimation of the out-of-sample error with the evaluation set will be unbiased.\v
 
-In order to overcome this problem, we split the dataset (before training the model) into two parts: training set and evaluation set. Then we use the first to train the model and obtain $E_{in}$  and the latter to evaluate its performance and obtain $E_{out}$. Since the model is trained with the train set, it has never seen the evaluation set so the estimation of the out-of-sample error with the evaluation set will be unbiased.\\
-
-One of the things to consider is the proportions of splitting the dataset intro training set and evaluation set. This again is an area of heavy research, but in general in machine learning we usually split them either in a proportion of \say{70\% - 30\%} or \say{80\% - 20\%} depending on the amount of data. (In all cases the largest proportion goes for training the model). In  other areas of machine learning like deep learning where we usually have a very large amount of data we use splitting rules of \say{99\% - 1\%}. But we will address this issue in details in deep learning chapter. \\
+One of the things to consider is the proportions of splitting the dataset intro training set and evaluation set. This again is an area of heavy research, but in general in machine learning we usually split them either in a proportion of \say{70\% - 30\%} or more often of \say{80\% - 20\%} depending on the amount of data. (In all cases the largest proportion goes for training the model). In  other areas of machine learning like deep learning where we usually have a very large amount of data we use splitting rules of \say{99\% - 1\%}. But we will address this issue in details in deep learning chapter. \v
 
 Hence, before training we split the dataset as:
 \bit
-\item Training Dataset: $\{x_{\text{train}}^{(i)}, y_{\text{train}}^{(i)}\}, \:\:\: i = 1,2,\ldots,m_{\text{train}} \qquad$ (70\% or 80\% of initial dataset)   \\ 
-\item Test Dataset: $\{x_{\text{eval}}^{(i)}, y_{\text{eval}}^{(i)}\}, \:\:\: i = 1,2,\ldots,m_{\text{eval}} \qquad$ (30\% or 20\% of initial dataset) \\
+\item Training Dataset: $\{x_{\text{train}}^{(i)}, y_{\text{train}}^{(i)}\}, \:\:\: i = 1,2,\ldots,m_{\text{train}} \qquad$ (70\% or 80\% of initial dataset). 
+\v 
+\item Test Dataset: $\{x_{\text{eval}}^{(i)}, y_{\text{eval}}^{(i)}\}, \:\:\: i = 1,2,\ldots,m_{\text{eval}} \qquad$ (30\% or 20\% of initial dataset).
+\v
 \eit
 
 And subsequently the errors become:
@@ -622,41 +655,41 @@ And subsequently the errors become:
 E_{in} = \frac{1}{m_{\text{train}}} \sum_{i=1}^{m_{\text{train}}} J^{{(i)}}( f(x^{(i)}), h(x^{(i)}) )  \qquad \text{and}  \qquad E_{out} = \frac{1}{m_{\text{eval}}} \sum_{i=1}^{m_{\text{eval}}} J^{{(i)}}( f(x^{(i)}), h(x^{(i)}) )
 \ese
 
-\vspace{5pt}
+\v
 
-From now on we will be referring to the first expression as $J_{\text{train}} = E_{in}$ and to the second one as $J_{\text{eval}} = E_{out}$.\\
+From now on we will be referring to the first expression as $J_{\text{train}} = E_{in}$ and to the second one as $J_{\text{eval}} = E_{out}$.\v
 
 So for example for linear regression we would have:
 \bse
-J_{\text{train}} = \frac{1}{2m_{train}} \sum_{i=1}^{m_{train}} (y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2 \qquad \text{and}  \qquad J_{\text{eval}} = \frac{1}{2m_{eval}} \sum_{i=1}^{m_{eval}} (y^{(i)} - \boldsymbol{w}^T \boldsymbol{x}^{(i)})^2
+J_{\text{train}} = \frac{1}{2m_{train}} \sum_{i=1}^{m_{train}} (y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2 \qquad \text{and}  \qquad J_{\text{eval}} = \frac{1}{2m_{eval}} \sum_{i=1}^{m_{eval}} (y^{(i)} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)})^2
 \ese
 
-\vspace{5pt}
+\v
 
-While for logistic regression we would have
+While for logistic regression we would have:
 \bse
 J_{\text{train}}  = - \frac{1}{m_{train}} \sum_{i=1}^{m_{train}}  \Big( y^{(i)} \cdot  \ln h(\boldsymbol{x}^{(i)})  + (1 - {y^{(i)}}) \cdot   \ln (1 - h(\boldsymbol{x}^{(i)})) \Big)
 \ese
 
-\vspace{5pt}
+\v
 
-and
+and:
 \bse
 J_{\text{eval}}  = - \frac{1}{m_{eval}} \sum_{i=1}^{m_{eval}}  \Big( y^{(i)} \cdot  \ln h(\boldsymbol{x}^{(i)})  + (1 - {y^{(i)}}) \cdot   \ln (1 - h(\boldsymbol{x}^{(i)})) \Big)
 \ese
 
-\vspace{5pt}
+\v
 
-Now that we have $J_{\text{train}} $ and $J_{\text{eval}} $ we know how well the models performs in and out of sample. However we can also use them in order to find if the model suffers from underfitting or overfitting. There are two ways that we can do so.\\
+Now that we have $J_{\text{train}} $ and $J_{\text{eval}} $ we know how well the models performs in and out of sample. However we can also use them in order to find if the model suffers from underfitting or overfitting. There are two ways that we can do so.\v
 
 The first way, is by gradually increasing the complexity of the model (higher polynomial degrees so bigger hypothesis set), training the model for each complexity level and calculate both $J_{train}$ and $J_{eval}$ for each model. Then by plotting out the different values for different levels of complexity we usually end up with the following graph:
 
 \begin{figure}[H]
-\includegraphics[scale=0.35]{eval.png}
+\includegraphics[scale=0.3]{eval.png}
 \centering
 \end{figure}
 
-In the high bias area both $J_{train}$ and $J_{eval}$ are high. This means that the model does not fit the training data well hence it fails to generalize. This is the case of underfitting. In the high variance area, $J_{train}$ is low but $J_{eval}$ is high. This means that the model fits the training data well but fails to generalize to unseen data. This is the case of overfitting. Hence by using the graph we can diagnose both cases!\\
+In the high bias area both $J_{train}$ and $J_{eval}$ are high. This means that the model does not fit the training data well hence it fails to generalize. This is the case of underfitting. In the high variance area, $J_{train}$ is low but $J_{eval}$ is high. This means that the model fits the training data well but fails to generalize to unseen data. This is the case of overfitting. Hence by using the graph we can diagnose both cases!\v
 
 The second way to diagnose the problem of the model, is through the so called \say{learning curves}.
 
@@ -664,7 +697,7 @@ The second way to diagnose the problem of the model, is through the so called \s
 A \textbf{learning curve} is a graphical representation of how an increase in learning comes from greater experience; or how the more someone performs a task, the better they get at it. 
 \ed
 
-Informally, a learning curve is the relation between error (as expressed in loss function) and training examples $m$. By plotting this relation for both  $J_{train}$ and $J_{eval}$  we end up with  two learning curves and by their relative position we can diagnose if our model suffers from high bias or high variance.\\
+Informally, a learning curve is the relation between error (as expressed in loss function) and training examples $m$. By plotting this relation for both  $J_{train}$ and $J_{eval}$  we end up with  two learning curves and by their relative position we can diagnose if our model suffers from high bias or high variance.\v
 
 More specifically, when the learning curves of $J_{train}$ and $J_{eval}$ do not have a large gap between them as $m$ increases we are usually dealing we a case of high bias and underfitting. 
 
@@ -692,15 +725,15 @@ Once we detect the problem then we have to make some changes in order to fix the
 \bit
 \item For high bias (underfitting):
 \bit
-\item Increase model complexity (polynomial terms)
-\item Increase number of features
+\item Increase model complexity.
+\item Increase number of features.
 \eit
 \item For high variance (overfitting):
 \bit
-\item Decrease model complexity (polynomial terms)
-\item Decrease number of features
-\item Find more training examples
-\item Regularization (next section)
+\item Decrease model complexity.
+\item Decrease number of features.
+\item Find more training examples.
+\item Regularization (next section).
 \eit
 \eit
 
@@ -708,167 +741,166 @@ Once we detect the problem then we have to make some changes in order to fix the
 
 As we saw in the previous section, when we allow a very broad hypothesis set with many higher order terms the model might find a hypothesis function $h$ that gives a 0 in-sample error but fails to generalize. This is due to high variance, i.e large dependence on the very specific dataset used for training, and we call this a case of overfitting. A way to deal with overfitting is a collection of techniques that undergo with the name \say{regularization}.
 
-\vspace{10pt}
-
-\begin{figure}[H]
-\includegraphics[scale=0.07]{regularization.png}
-\centering
-\end{figure}
-
 \bd[Regularization]
-Regularization is the process of adding information in order to solve an ill-posed problem and to prevent overfitting.
+\textbf{Regularization} is the process of adding information in order to solve an ill-posed problem and to prevent overfitting.
 \ed
 
-We will see many different regularization techniques throughout the notes. For now we will start with  \say{Ridge Regression} or \say{L2 Regularization} and \say{Lasso Regression } or  \say{L1 Regularization}.
+There are many different regularization techniques.  We will begin with four main ones called \say{Ridge Regression} (or \say{L2 Regularization}),  \say{Lasso Regression } (or \say{L1 Regularization}), \say{Elastic Net}, and \say{Early Stopping}.
 
-\subsection{Ridge Regression - L2 Regularization}
+\subsection{Ridge Regression (L2 Regularization)}
 
 The reason of overfitting is that the parameters $\boldsymbol{w}$ are free to get any value. With regularization we penalize the parameters by imposing an extra constraint on $\boldsymbol{w}$ of the form:
 \bse
-\boldsymbol{w}^{T} \boldsymbol{w} \leq C
+\boldsymbol{w}^{\intercal} \boldsymbol{w} \leq C
 \ese
 
-where $C$ is a constant defined by us and it controls the effect of regularization. It is called \say{L2 regularization} because the quantity $\boldsymbol{w}^{T} \boldsymbol{w}$ is actually the squared L2 norm of the vector $\boldsymbol{w}$:
+where $C$ is a constant defined by us and it controls the effect of regularization. It is called \say{L2 regularization} because the quantity $\boldsymbol{w}^{\intercal} \boldsymbol{w}$ is actually the squared L2 norm of the vector $\boldsymbol{w}$:
 \bse
-||\boldsymbol{w}||^2_2 = \boldsymbol{w}^{T} \boldsymbol{w}
+||\boldsymbol{w}||^2_2 = \boldsymbol{w}^{\intercal} \boldsymbol{w}
 \ese
 
 Hence now the optimization problem becomes to minimize the loss function $J(\boldsymbol{w})$ subject to the above mentioned constraint. According to (Appendix \ref{Constrained Optimization}) in order to do so we define the Lagrangian:
 \bse
-\mathcal{L} (\boldsymbol{w}) = J(\boldsymbol{w}) + \frac{\lambda}{2m} \boldsymbol{w}^{T} \boldsymbol{w}
+\mathcal{L} (\boldsymbol{w}) = J(\boldsymbol{w}) + \frac{\lambda}{2m} \boldsymbol{w}^{\intercal} \boldsymbol{w}
 \ese
-
-\vspace{5pt}
 
 where $\lambda$ is the Lagrange multiplier, and then we solve the equation:
 \bse
 \nabla_{\boldsymbol{w}} \mathcal{L} (\boldsymbol{w}) = 0
 \ese
 
-For example, for linear regression where $J(\boldsymbol{w})$ is given by (\ref{eq:lrloss}) the Lagrangian reads:
+For example, for linear regression where $J(\boldsymbol{w})$ is the MSE loss function, the Lagrangian reads:
 {\setlength{\jot}{10pt}
-\begin{align*} 
-\mathcal{L} (\boldsymbol{w}) &= J(\boldsymbol{w}) + \frac{\lambda}{2m} \boldsymbol{w}^{T} \boldsymbol{w} =  \frac{1}{2m} (X \boldsymbol{w} - \boldsymbol{y})^T (X \boldsymbol{w} - \boldsymbol{y}) + \frac{\lambda}{2m} \boldsymbol{w}^{T} \boldsymbol{w} 
-\end{align*}}
+\bse
+\mathcal{L} (\boldsymbol{w}) = J(\boldsymbol{w}) + \frac{\lambda}{2m} \boldsymbol{w}^{\intercal} \boldsymbol{w} =  \frac{1}{2m} (X \boldsymbol{w} - \boldsymbol{y})^{\intercal} (X \boldsymbol{w} - \boldsymbol{y}) + \frac{\lambda}{2m} \boldsymbol{w}^{\intercal} \boldsymbol{w} 
+\ese
 
 At this point we can redefine this Lagrangian as a new loss function of the form:
 \bse
-J (\boldsymbol{w}) =  \frac{1}{2m} \Big[ (X \boldsymbol{w} - \boldsymbol{y})^T (X \boldsymbol{w} - \boldsymbol{y}) + \lambda \boldsymbol{w}^{T} \boldsymbol{w} \Big ]
+J (\boldsymbol{w}) =  \frac{1}{2m} \Big[ (X \boldsymbol{w} - \boldsymbol{y})^{\intercal} (X \boldsymbol{w} - \boldsymbol{y}) + \lambda \boldsymbol{w}^{\intercal} \boldsymbol{w} \Big ]
 \ese
 
-\vspace{5pt}
+and then the problem is to minimize this loss function which is actually a regression problem.  The corresponding regression is called \say{Ridge regression} (or \say{Tikhonov regularization}),  where the only difference with linear regression is that we have to add the extra term in the loss function to reduce overfitting.\v
 
-and then the problem is to minimize this loss function which is actually a regression problem. The corresponding regression is called \say{Ridge regression}, where the only difference with linear regression is that we have to add the extra term in the loss function to reduce overfitting.\\
-
-The coefficient $\lambda$ is the one that controls the regularization effect on the regression. In one extreme where $\lambda=0$ the regularization term vanishes, and the loss function ends up to the mean squared error loss function, hence the ridge regression turns to linear regression. In the other extreme where $\lambda \to \infty$ then the regularization term penaltizes all parameters in an extreme way, so the ridge regression, in order to minimize the loss, is forced to set all the parameters to 0. In the end we end up with $\boldsymbol{w}^{T} \boldsymbol{x} = 0$. For all intermediate values of $\lambda$ we get different levels of regularization. It is actually our job to tune the model to the right $\lambda$ that does the job.\\
+The coefficient $\lambda$ is the one that controls the regularization effect on the regression. In one extreme where $\lambda=0$ the regularization term vanishes, and the loss function ends up to the mean squared error loss function, hence the ridge regression turns to linear regression. In the other extreme where $\lambda \to \infty$ then the regularization term penaltizes all parameters in an extreme way, so the ridge regression, in order to minimize the loss, is forced to set all the parameters to 0. In the end we end up with $\boldsymbol{w}^{\intercal} \boldsymbol{x} = 0$. For all intermediate values of $\lambda$ we get different levels of regularization. It is actually our job to tune the model to the right $\lambda$ that does the job.\v
 
 Now that we have a loss function, we treat the problem in the similar way as we did before. For example, in the linear case of ridge regression we can solve the normal equation in the same way we solved it before:
 {\setlength{\jot}{10pt}
 \begin{align*}
-J(\boldsymbol{w}) &= \frac{1}{2m} \Big[ (X \boldsymbol{w} - \boldsymbol{y})^T (X \boldsymbol{w} - \boldsymbol{y}) + \lambda \boldsymbol{w}^{T} \boldsymbol{w} \Big]\\
-&= \frac{1}{2m} \Big[ \Big( (X \boldsymbol{w})^T - \boldsymbol{y}^T \Big) \Big( X \boldsymbol{w} - \boldsymbol{y} \Big) + \lambda \boldsymbol{w}^{T} \boldsymbol{w} \Big]\\
-&= \frac{1}{2m}  \Big[ (X \boldsymbol{w})^T (X \boldsymbol{w}) - (X \boldsymbol{w})^T \boldsymbol{y} - \boldsymbol{y}^T (X \boldsymbol{w}) + \boldsymbol{y}^T \boldsymbol{y} + \lambda \boldsymbol{w}^{T} \boldsymbol{w} \Big] \\
-&= \frac{1}{2m}  \Big[ (X \boldsymbol{w})^T (X \boldsymbol{w}) - 2 (X \boldsymbol{w})^T \boldsymbol{y} + \boldsymbol{y}^T \boldsymbol{y} + \lambda \boldsymbol{w}^{T} \boldsymbol{w} \Big] \\
-&= \frac{1}{2m}  \Big[ \boldsymbol{w}^T X^T X \boldsymbol{w} - 2 \boldsymbol{w}^T X^T \boldsymbol{y} + \boldsymbol{y}^T \boldsymbol{y} + \lambda \boldsymbol{w}^{T} \boldsymbol{w} \Big]
+J(\boldsymbol{w}) &= \frac{1}{2m} \Big[ (X \boldsymbol{w} - \boldsymbol{y})^{\intercal} (X \boldsymbol{w} - \boldsymbol{y}) + \lambda \boldsymbol{w}^{\intercal} \boldsymbol{w} \Big]\\
+&= \frac{1}{2m} \Big[ \Big( (X \boldsymbol{w})^{\intercal} - \boldsymbol{y}^{\intercal} \Big) \Big( X \boldsymbol{w} - \boldsymbol{y} \Big) + \lambda \boldsymbol{w}^{\intercal} \boldsymbol{w} \Big]\\
+&= \frac{1}{2m}  \Big[ (X \boldsymbol{w})^{\intercal} (X \boldsymbol{w}) - (X \boldsymbol{w})^{\intercal} \boldsymbol{y} - \boldsymbol{y}^{\intercal} (X \boldsymbol{w}) + \boldsymbol{y}^{\intercal} \boldsymbol{y} + \lambda \boldsymbol{w}^{\intercal} \boldsymbol{w} \Big] \\
+&= \frac{1}{2m}  \Big[ (X \boldsymbol{w})^{\intercal} (X \boldsymbol{w}) - 2 (X \boldsymbol{w})^{\intercal} \boldsymbol{y} + \boldsymbol{y}^{\intercal} \boldsymbol{y} + \lambda \boldsymbol{w}^{\intercal} \boldsymbol{w} \Big] \\
+&= \frac{1}{2m}  \Big[ \boldsymbol{w}^{\intercal} X^{\intercal} X \boldsymbol{w} - 2 \boldsymbol{w}^{\intercal} X^{\intercal} \boldsymbol{y} + \boldsymbol{y}^{\intercal} \boldsymbol{y} + \lambda \boldsymbol{w}^{\intercal} \boldsymbol{w} \Big]
 \end{align*}}
 
 By setting the derivative to 0 we obtain:
 {\setlength{\jot}{10pt}
 \begin{align*}
 & \nabla_{\boldsymbol{w}} J(\boldsymbol{w}) = 0 \Rightarrow \\
-& \frac{1}{2m} \nabla_{\boldsymbol{w}}  \Big[ \boldsymbol{w}^T X^T X \boldsymbol{w} - 2 \boldsymbol{w}^T X^T \boldsymbol{y} + \boldsymbol{y}^T \boldsymbol{y} + \lambda \boldsymbol{w}^{T} \boldsymbol{w} \Big] \\
-& \frac{1}{2m} \Big[ 2  X^T X \boldsymbol{w} - 2 X^T \boldsymbol{y} + 2\lambda \boldsymbol{w} \Big] = 0 \Rightarrow \\
-& \frac{1}{m} \Big[ X^T X \boldsymbol{w} - X^T \boldsymbol{y} + \lambda \boldsymbol{w}  \Big] = 0 \Rightarrow \\
-& X^T X \boldsymbol{w} - X^T \boldsymbol{y} + \lambda \boldsymbol{w} = 0 \Rightarrow \\
-& (X^T X + \lambda I) \boldsymbol{w} = X^T \boldsymbol{y} \Rightarrow \\
-& \underbrace{(X^T X + \lambda I)^{-1} (X^T X + \lambda I)}_{I} \boldsymbol{w} = (X^T X + \lambda I)^{-1} X^T \boldsymbol{y} \Rightarrow \\
-& \boldsymbol{w} = (X^T X + \lambda I)^{-1} X^T \boldsymbol{y}
+& \frac{1}{2m} \nabla_{\boldsymbol{w}}  \Big[ \boldsymbol{w}^{\intercal} X^{\intercal} X \boldsymbol{w} - 2 \boldsymbol{w}^{\intercal} X^{\intercal} \boldsymbol{y} + \boldsymbol{y}^{\intercal} \boldsymbol{y} + \lambda \boldsymbol{w}^{\intercal} \boldsymbol{w} \Big] \\
+& \frac{1}{2m} \Big[ 2  X^{\intercal} X \boldsymbol{w} - 2 X^{\intercal} \boldsymbol{y} + 2\lambda \boldsymbol{w} \Big] = 0 \Rightarrow \\
+& \frac{1}{m} \Big[ X^{\intercal} X \boldsymbol{w} - X^{\intercal} \boldsymbol{y} + \lambda \boldsymbol{w}  \Big] = 0 \Rightarrow \\
+& X^{\intercal} X \boldsymbol{w} - X^{\intercal} \boldsymbol{y} + \lambda \boldsymbol{w} = 0 \Rightarrow \\
+& (X^{\intercal} X + \lambda I) \boldsymbol{w} = X^{\intercal} \boldsymbol{y} \Rightarrow \\
+& \underbrace{(X^{\intercal} X + \lambda I)^{-1} (X^{\intercal} X + \lambda I)}_{I} \boldsymbol{w} = (X^{\intercal} X + \lambda I)^{-1} X^{\intercal} \boldsymbol{y} \Rightarrow \\
+& \boldsymbol{w} = (X^{\intercal} X + \lambda I)^{-1} X^{\intercal} \boldsymbol{y}
 \end{align*}}
 
-The only difference with the normal equation of linear regression is the extra term $\lambda I$ coming from regularization. \\
+The only difference with the normal equation of linear regression is the extra term $\lambda I$ coming from regularization. \v
 
 Gradient descent also works for ridge regression. For the derivative of $J$:
 \bse
-\nabla_{\boldsymbol{w}} J(\boldsymbol{w}) = \frac{1}{m} \Big(X^T X \boldsymbol{w} - X^T \boldsymbol{y} + \lambda \boldsymbol{w} \Big) = \frac{1}{m} X^T \Big( (X + \lambda I) \boldsymbol{w} -\boldsymbol{y} \Big)
+\nabla_{\boldsymbol{w}} J(\boldsymbol{w}) = \frac{1}{m} \Big(X^{\intercal} X \boldsymbol{w} - X^{\intercal} \boldsymbol{y} + \lambda \boldsymbol{w} \Big) = \frac{1}{m} X^{\intercal} \Big( (X + \lambda I) \boldsymbol{w} -\boldsymbol{y} \Big)
 \ese
-
-\vspace{5pt}
 
 Hence the update rule reads:
 \bse
-\boldsymbol{w} \coloneqq \boldsymbol{w} - \frac{\alpha}{m} X^T \Big( (X + \lambda I) \boldsymbol{w} -\boldsymbol{y} \Big)
+\boldsymbol{w} \coloneqq \boldsymbol{w} - \frac{\alpha}{m} X^{\intercal} \Big( (X + \lambda I) \boldsymbol{w} -\boldsymbol{y} \Big)
 \ese
 
-\vspace{5pt}
+\v
 
-Of course, L2 regularization can be applied also for the case of logistic regression. More specifically, for cross entropy loss function of logistic regression $J(\boldsymbol{w})$ the Lagrangian reads:
-{\setlength{\jot}{10pt}
+Of course, L2 regularization can be applied also for the case of logistic regression.  More specifically, for cross entropy loss function of logistic regression the Lagrangian reads:
 \bse
-\mathcal{L} (\boldsymbol{w}) = J(\boldsymbol{w}) + \frac{\lambda}{2m} \boldsymbol{w}^{T} \boldsymbol{w} =  - \frac{1}{m} \Big( \boldsymbol{y}^T \cdot  \ln h(X)  + (I - \boldsymbol{y})^T \cdot   \ln (I - h(X)) \Big) + \frac{\lambda}{2m} \boldsymbol{w}^{T} \boldsymbol{w}
+\mathcal{L} (\boldsymbol{w}) = J(\boldsymbol{w}) + \frac{\lambda}{2m} \boldsymbol{w}^{\intercal} \boldsymbol{w} =  - \frac{1}{m} \Big( \boldsymbol{y}^{\intercal} \cdot  \ln h(X)  + (I - \boldsymbol{y})^{\intercal} \cdot   \ln (I - h(X)) \Big) + \frac{\lambda}{2m} \boldsymbol{w}^{\intercal} \boldsymbol{w}
 \ese
-
-\vspace{5pt}
 
 Similarly to the linear case, we redefine this Lagrangian as a new loss function of the form:
 \bse
-J (\boldsymbol{w}) =  - \frac{1}{m} \Big[ \boldsymbol{y}^T \cdot  \ln h(X)  + (I - \boldsymbol{y})^T \cdot   \ln (I - h(X)) - \frac{\lambda}{2} \boldsymbol{w}^{T} \boldsymbol{w} \Big ]
+J (\boldsymbol{w}) =  - \frac{1}{m} \Big[ \boldsymbol{y}^{\intercal} \cdot  \ln h(X)  + (I - \boldsymbol{y})^{\intercal} \cdot   \ln (I - h(X)) - \frac{\lambda}{2} \boldsymbol{w}^{\intercal} \boldsymbol{w} \Big ]
 \ese
-
-\vspace{5pt}
 
 As we said back in logistic regression, normal equation does not apply here since there is no closed analytical solution, however gradient descent still applies where the rule simply reads:
 \bse
-\boldsymbol{w} \coloneqq \Big( 1 -  \frac{\alpha \lambda}{m} \Big)\boldsymbol{w} - \frac{\alpha}{m} X^T \Big( \frac{1}{1+exp(-X \boldsymbol{w})}-\boldsymbol{y} \Big)
+\boldsymbol{w} \coloneqq \Big( 1 -  \frac{\alpha \lambda}{m} \Big)\boldsymbol{w} - \frac{\alpha}{m} X^{\intercal} \Big( \frac{1}{1+exp(-X \boldsymbol{w})}-\boldsymbol{y} \Big)
 \ese
-
-\vspace{5pt}
 
 In both cases solving ridge regression will give us as a result a solution that slightly underfits the data, compared to linear or logistic regression. This underfitting will produce higher bias hence, due to bias-variance trade off, a reduced variance which will lead to the reduction of overfitting.
 
-\subsection{Lasso Regression - L1 Regularization}
+\subsection{Lasso Regression (L1 Regularization)}
 
-In ridge regression, or L2 regression, we used the L2 norm of the vector $\boldsymbol{w}$.  Another way of regularization is to use L1 norm which is:
+In ridge regression we used the L2 norm of the vector $\boldsymbol{w}$.  Another way of regularization is to use L1 norm which is:
 \bse
 || \boldsymbol{w} ||_1 \leq C
 \ese
 
 By repeating the same way of analysis as in ridge regression, we can define the following loss function for linear regression:
 \bse
-J (\boldsymbol{w}) =  \frac{1}{2m} \Big[ (X \boldsymbol{w} - \boldsymbol{y})^T (X \boldsymbol{w} - \boldsymbol{y}) + \lambda ||\boldsymbol{w}||_1 \Big ]
+J (\boldsymbol{w}) =  \frac{1}{2m} \Big[ (X \boldsymbol{w} - \boldsymbol{y})^{\intercal} (X \boldsymbol{w} - \boldsymbol{y}) + \lambda ||\boldsymbol{w}||_1 \Big ]
 \ese
-
-\vspace{5pt}
 
 and for logistic regression:
-
 \bse
-J (\boldsymbol{w}) =  - \frac{1}{m} \Big[ \boldsymbol{y}^T \cdot  \ln h(X)  + (I - \boldsymbol{y})^T \cdot   \ln (I - h(X)) - \frac{\lambda}{2} ||\boldsymbol{w}||_1 \Big ]
+J (\boldsymbol{w}) =  - \frac{1}{m} \Big[ \boldsymbol{y}^{\intercal} \cdot  \ln h(X)  + (I - \boldsymbol{y})^{\intercal} \cdot   \ln (I - h(X)) - \frac{\lambda}{2} ||\boldsymbol{w}||_1 \Big ]
 \ese
 
-\vspace{5pt}
+The corresponding regression is called \say{Least Absolute Shrinkage and Selection Operator Regression},  usually simply called \say{Lasso regression}.  An important characteristic of Lasso regression is that it tends to eliminate the weights of the least important features (i.e set them to zero).  In other words,  Lasso regression automatically performs feature selection and outputs a sparse model (i.e with few nonzero feature weights). \v
 
-The corresponding regression is called \say{Lasso regression}. As before, we can use normal equation and gradient descent to solve Lasso regression.
+As before, we can use normal equation and gradient descent to solve Lasso regression.
+
+\subsection{Elastic Net}
+
+Elastic net is a middle ground between Ridge Regression and Lasso Regression.  The regularization term is a simple mix of both Ridge and Lasso’s regularization terms,  and you can control the mix ratio between them with a parameter $r$.  \v
+
+The elastic net loss function for linear regression reads:
+\bse
+J (\boldsymbol{w}) =  \frac{1}{2m} \Big[ (X \boldsymbol{w} - \boldsymbol{y})^{\intercal} (X \boldsymbol{w} - \boldsymbol{y}) + r \lambda ||\boldsymbol{w}||_1 + (1-r) \lambda \boldsymbol{w}^{\intercal} \boldsymbol{w} \Big ]
+\ese
+
+and for logistic regression:
+\bse
+J (\boldsymbol{w}) =  - \frac{1}{m} \Big[ \boldsymbol{y}^{\intercal} \cdot  \ln h(X)  + (I - \boldsymbol{y})^{\intercal} \cdot   \ln (I - h(X)) - r \frac{\lambda}{2} ||\boldsymbol{w}||_1 - (1-r) \frac{\lambda}{2} \boldsymbol{w}^{\intercal} \boldsymbol{w}   \Big ]
+\ese
+
+When r = 0, Elastic Net is equivalent to Ridge Regression, and when r = 1, it is equivalent to Lasso Regression. \v
+
+Since Elastic Net summarizes both Ridge and Lasso Regression, it is a good point to analyse,  when one should use plain Linear (or Logistic) Regression (without any regularization),  Ridge,  Lasso,  or Elastic Net? It is almost always preferable to have at least a little bit of regularization, so generally plain Linear Regression. should be avoided.  Ridge is a good default,  but if one suspects that only a few features are useful, they should prefer Lasso or Elastic Net because they tend to reduce the useless features' weights down to zero,  as we have discussed.  In general,  Elastic Net is preferred over Lasso because Lasso may behave erratically when the number of features is greater than the number of training instances or when several features are strongly correlated.
+
+\subsection{Early Stopping}
+
+A very different way to regularize iterative learning algorithms such as Gradient Descent is to stop training as soon as the validation error reaches a minimum. This is called \say{early stopping}. In general as the algorithm learns,  its prediction error on the training set goes down,  along with its prediction error on the validation set.  After a while though,  the validation error stops decreasing and starts to go back up. This indicates that the model has started to overfit the training data. Early stopping just stops training as soon as the validation error reaches the minimum.  It is such a simple and efficient regularization technique that Geoffrey Hinton called it a ``beautiful free lunch".
 
 \section{Classification Error Metrics}
 
-In classification problems where both input and output can be either 0 or 1, we can follow a different approach of error evaluation based on exact matches and mismatches between prediction and actual result. The usual case, since we are dealing with a binary output, is to define either 0 or 1 as the positive class and the remaining as the negative one. Which one is which depends on the nature of the problem. For now we will stick with the case were 0 represents the negative class and 1 the positive one.\\
+In classification problems where both input and output can be either 0 or 1, we can follow a different approach of error evaluation based on exact matches and mismatches between prediction and actual result. The usual case, since we are dealing with a binary output, is to define either 0 or 1 as the positive class and the remaining as the negative one. Which one is which depends on the nature of the problem. For now we will stick with the case were 0 represents the negative class and 1 the positive one.\v
 
-Given that both the actual class and the predicted class can be either positive or negative we end up with 4 different, distinct situations. Let us define them formally:
+Given that both the actual class and the predicted class can be either positive or negative we end up with 4 different, distinct situations. Let us define them formally.
 
 \bd[True Positive]
-\textbf{True positive} (TP) also called hit, is the case where the model predicts a positive result when the actual outcome is indeed positive.
+\textbf{True positive} (TP) also called \textbf{hit}, is the case where the model predicts a positive result when the actual outcome is indeed positive.
 \ed
 
 \bd[True Negative]
-\textbf{True negative} (TN) also called correct rejection, is the case where the model predicts a negative result when the actual outcome is indeed negative.
+\textbf{True negative} (TN) also called \textbf{correct rejection}, is the case where the model predicts a negative result when the actual outcome is indeed negative.
 \ed
 
 \bd[False Positive]
-\textbf{False positive} (FP) also called false alarm or type I error, is the case where the model predicts a positive result when the actual outcome is negative.
+\textbf{False positive} (FP) also called \textbf{false alarm} or \textbf{type I error}, is the case where the model predicts a positive result when the actual outcome is negative.
 \ed
 
 \bd[False Negative]
-\textbf{False negative} (FN) also called miss or type II error, is the case where the model predicts a negative result when the actual outcome is positive.
+\textbf{False negative} (FN) also called \textbf{miss} or \textbf{type II error}, is the case where the model predicts a negative result when the actual outcome is positive.
 \ed
 
 Once the model is trained, we test it on the evaluation set and we measure the number of occurrences of each category. Then we gather them all together to the so called \say{confusion matrix}.
@@ -877,14 +909,10 @@ Once the model is trained, we test it on the evaluation set and we measure the n
 \textbf{Confusion matrix} is a table that reports the number of true positives TP, true negatives TN, false positives FP and false negatives FN of a model.
 \ed
 
-\vspace{10pt}
-
 \begin{figure}[H]
 \includegraphics[scale=0.3]{confusion}
 \centering
 \end{figure}
-
-\vspace{10pt}
 
 Once we have constructed the confusion matrix we can define the following error metrics:
 
@@ -895,73 +923,73 @@ ACC = \frac{TP + TN}{TP + TN + FP + FN}
 \ese
 \ed
 
-\vspace{5pt}
+\v
 
 \bd[Error Rate]
-\textbf{Error rate} (ERR) also called misclassification, is the rate that shows overall how often the model was incorrect:
+\textbf{Error rate} (ERR) also called \textbf{misclassification}, is the rate that shows overall how often the model was incorrect:
 \bse
 ERR = \frac{FP + FN}{TP + TN + FP + FN}
 \ese
 \ed
 
-\vspace{5pt}
+\v
 
 It is of course: $ACC + ERR = 1$
 
-\vspace{5pt}
+\v
 
 \bd[True Positive Rate]
-\textbf{True positive rate} (TPR) also called sensitivity, recall or hit rate, is the rate that shows how often the model predicts positive when the actual outcome is indeed positive:
+\textbf{True positive rate} (TPR) also called \textbf{sensitivity} or \textbf{recall} or \textbf{hit rate},  is the rate that shows how often the model predicts positive when the actual outcome is indeed positive:
 \bse
 TPR = \frac{TP}{TP + FN}
 \ese
 \ed
 
-\vspace{5pt}
+\v
 
 \bd[False Negative Rate]
-\textbf{False negative rate} (FNR) also called miss rate, is the rate that shows how often the model predicts negative when the actual outcome is positive:
+\textbf{False negative rate} (FNR) also called \textbf{miss rate}, is the rate that shows how often the model predicts negative when the actual outcome is positive:
 \bse
 FNR = \frac{FN}{TP + FN}
 \ese
 \ed
 
-\vspace{5pt}
+\v
 
 It is of course: $TPR + FNR = 1$
 
-\vspace{5pt}
+\v
 
 \bd[True Negative Rate]
-\textbf{True negative rate} (TNR) also called specificity or selectivity, is the rate that shows how often the model predicts negative when the actual outcome is indeed negative:
+\textbf{True negative rate} (TNR) also called \textbf{specificity} or \textbf{selectivity},  is the rate that shows how often the model predicts negative when the actual outcome is indeed negative:
 \bse
 TNR = \frac{TN}{TN + FP}
 \ese
 \ed
 
-\vspace{5pt}
+\v
 
 \bd[False Positive Rate]
-\textbf{False positive rate} (FPR) also called fall-out rate, is the rate that shows how often the model predicts positive when the actual outcome is negative:
+\textbf{False positive rate} (FPR) also called \textbf{fall-out rate}, is the rate that shows how often the model predicts positive when the actual outcome is negative:
 \bse
 FPR = \frac{FP}{TN + FP}
 \ese
 \ed
 
-\vspace{5pt}
+\v
 
 It is of course: $TNR + FPR = 1$
 
-\vspace{5pt}
+\v
 
 \bd[Positive Predicted Value]
-\textbf{Positive predicted value} (PPV) also called precision, is the rate that shows how often the model is correct when it predicts positive:
+\textbf{Positive predicted value} (PPV) also called \textbf{precision}, is the rate that shows how often the model is correct when it predicts positive:
 \bse
 PPV = \frac{TP}{TP + FP}
 \ese
 \ed
 
-\vspace{5pt}
+\v
 
 \bd[False Discovery Rate]
 \textbf{False discovery rate} (FDR) is the rate that shows how often the model is wrong when it predicts positive:
@@ -970,20 +998,20 @@ FDR = \frac{FP}{TP + FP}
 \ese
 \ed
 
-\vspace{5pt}
+\v
 
 It is of course: $PPV + FDR = 1$
 
-\vspace{5pt}
+\v
 
 \bd[Negative Predicted Value]
-\textbf{Negative predicted value} (NPV) also called precision, is the rate that shows how often the model is correct when it predicts negative:
+\textbf{Negative predicted value} (NPV) is the rate that shows how often the model is correct when it predicts negative:
 \bse
 NPV = \frac{TN}{TN + FN}
 \ese
 \ed
 
-\vspace{5pt}
+\v
 
 \bd[False Omission Rate]
 \textbf{False omission rate} (FOR) is the rate that shows how often the model is wrong when it predicts negative:
@@ -992,11 +1020,11 @@ FOR = \frac{FN}{TN + FN}
 \ese
 \ed
 
-\vspace{5pt}
+\v
 
 It is of course: $NPV + FOR = 1$
 
-\vspace{5pt}
+\v
 
 \bd[$F_{\beta}$ Score]
 \textbf{$F_{\beta}$ score} (FOR) is defined as the harmonic mean of positive predicted value PPV (aka precision) and true positive rate (aka recall) each weighted based on value of $\beta$:
@@ -1005,14 +1033,14 @@ F_{\beta} = \frac{(1 + \beta^2) \cdot PPV \cdot TPR}{\beta^2 \cdot PPV + TPR} = 
 \ese
 \ed
 
-\vspace{5pt}
+\v
 
 The coefficient $\beta$ is chosen such that recall is considered $\beta$ times as important as precision. The most commonly used value for $\beta$ is 1, corresponding to the $F_{1}$ where precision and recall are weighted equally:
 \bse
 F_{1} = \frac{2 \cdot PPV \cdot TPR}{ PPV + TPR} =  \frac{2 \cdot \text{precission} \cdot \text{recall}}{\text{precission} + \text{recall}} = \frac{2 \cdot TP}{2 \cdot TP + FN + FP} 
 \ese
 
-\vspace{5pt}
+\v
 
 Two other commonly used values for $\beta$ are 2 and 0.5, corresponding to the $F_{2}$ where weighs recall higher than precision (by placing more emphasis on false negatives) and the $F_{0.5}$ measure, which weighs recall lower than precision (by attenuating the influence of false negatives).
 
@@ -1026,111 +1054,463 @@ Two other commonly used values for $\beta$ are 2 and 0.5, corresponding to the $
 
 \section{Support Vector Machine}
 
-Support vector machine (SVM) is another, more advanced learning algorithm. It applies mainly in classification problems however there is also another model called support vector regression that applies the same ideas in regression problems. Here we will explore only SVM. \\
+Support vector machine (SVM) is another, more advanced supervised learning algorithm. It applies mainly in classification problems however there is also another model called support vector regression that applies the same ideas in regression problems. Here we will explore only SVM. \v
 
 To tell the SVM story, we'll need to first talk about margins and the idea of separating data with a large ``gap". Next, we'll talk about the optimal margin classifier, which will lead us into a digression on Lagrange duality. We'll also see kernels, which give
-a way to apply SVM's efficiently in very high dimensional (such as infinite dimensional) feature spaces, and finally, we'll close off the story with the SMO algorithm, which gives an efficient implementation of SVM's. \\
+a way to apply SVM's efficiently in very high dimensional (such as infinite dimensional) feature spaces, and finally, we'll close off the story with the SMO algorithm, which gives an efficient implementation of SVM's. \v
 
-Consider logistic regression, where the probability $P(y = 1| \boldsymbol{x}; \boldsymbol{w})$ is modelled by 
+Consider logistic regression, where the probability $P(y = 1| \boldsymbol{x}; \boldsymbol{w})$ is modelled by:
 \bse
-h(\boldsymbol{w}^T \boldsymbol{x}) = \frac{1}{1 + exp(- \boldsymbol{w}^T \boldsymbol{x})}
+h(\boldsymbol{w}^{\intercal} \boldsymbol{x}) = \frac{1}{1 + exp(- \boldsymbol{w}^{\intercal} \boldsymbol{x})}
 \ese
 
-We would then predict 1 on an input $\boldsymbol{x}$ if and only if $h(\boldsymbol{w}^T \boldsymbol{x}) \geq 0.5$ or equivalently, if and only if $\boldsymbol{w}^T \boldsymbol{x} \geq 0$. Consider a positive training example ($y = 1$). The larger $\boldsymbol{w}^T \boldsymbol{x}$ is, the larger also is $h(\boldsymbol{w}^T \boldsymbol{x})$ a.k.a the larger $P(y = 1| \boldsymbol{x}; \boldsymbol{w})$ is, and thus also the higher our degree of confidence that the label is 1. Thus, informally we can think of our prediction as being a very confident one that $y = 1$ if $\boldsymbol{w}^T \boldsymbol{x} \gg 0$. Similarly, we think of logistic regression as making a very confident prediction of $y = 0$, if $\boldsymbol{w}^T \boldsymbol{x} \ll 0$. Given a training set, again informally it seems that we’d have found a good fit to the training data if we can find $\boldsymbol{w}$ so that $\boldsymbol{w}^T \boldsymbol{x}^{(i)} \gg 0$ whenever $y^(i) = 1$ and $\boldsymbol{w}^T \boldsymbol{x}^{(i)} \ll 0$ whenever $y^(i) = 0$, since this would reflect a very confident (and correct) set of classifications for all the training examples. This seems to be a nice goal to aim for ,and we’ll soon formalize this idea using the notion of functional margins.\\
+We would then predict 1 on an input $\boldsymbol{x}$ if and only if $h(\boldsymbol{w}^{\intercal} \boldsymbol{x}) \geq 0.5$ or equivalently, if and only if $\boldsymbol{w}^{\intercal} \boldsymbol{x} \geq 0$. Consider a positive training example ($y = 1$). The larger $\boldsymbol{w}^{\intercal} \boldsymbol{x}$ is, the larger also is $h(\boldsymbol{w}^{\intercal} \boldsymbol{x})$ a.k.a the larger $P(y = 1| \boldsymbol{x}; \boldsymbol{w})$ is, and thus also the higher our degree of confidence that the label is 1.  Thus, informally we can think of our prediction as being a very confident one that $y = 1$ if $\boldsymbol{w}^{\intercal} \boldsymbol{x} \gg 0$.  \v
 
-For a different type of intuition, consider the following figure, in which the symbol ``X" represent positive training examples, the symbol ``O" denote negative training examples, a decision boundary (this is the line given by the equation $\boldsymbol{w}^T \boldsymbol{x} = 0$ is also called the separating hyperplane) is also shown, and three points have also been labelled ``A", ``B" and ``C".
+Similarly, we think of logistic regression as making a very confident prediction of $y = 0$, if $\boldsymbol{w}^{\intercal} \boldsymbol{x} \ll 0$. Given a training set, again informally it seems that we’d have found a good fit to the training data if we can find $\boldsymbol{w}$ so that $\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} \gg 0$ whenever $y^(i) = 1$ and $\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} \ll 0$ whenever $y^(i) = 0$, since this would reflect a very confident (and correct) set of classifications for all the training examples. This seems to be a nice goal to aim for, and we’ll soon formalize this idea using the notion of functional margins.\v
+
+For a different type of intuition, consider the following figure, in which the symbol ``X" represent positive training examples, the symbol ``O" denote negative training examples, a decision boundary (this is the line given by the equation $\boldsymbol{w}^{\intercal} \boldsymbol{x} = 0$ is also called the separating hyperplane) is also shown, and three points have also been labelled ``A", ``B" and ``C".
 
 \begin{figure}[H]
-\includegraphics[scale=0.6]{svm}
+\includegraphics[scale=0.5]{svm}
 \centering
 \end{figure}
 
-Notice that the point ``A" is very far from the decision boundary. If we are
-asked to make a prediction for the value of $y$ at ``A", it seems we should be
-quite confident that $y = 1$ there. Conversely, the point ``C" is very close to
-the decision boundary, and while it's on the side of the decision boundary
-on which we would predict $y = 1$, it seems likely that just a small change to
-the decision boundary could easily have caused out prediction to be $y = 0$.
-Hence, we're much more confident about our prediction at ``A" than at ``C". The
-point ``B" lies in-between these two cases, and more broadly, we see that if
-a point is far from the separating hyperplane, then we may be significantly
-more confident in our predictions. Again, informally we think it'd be nice if,
-given a training set, we manage to find a decision boundary that allows us
-to make all correct and confident (meaning far from the decision boundary)
-predictions on the training examples. We'll formalize this later using the
-notion of geometric margins. \\
+Notice that the point ``A" is very far from the decision boundary. If we are asked to make a prediction for the value of $y$ at ``A", it seems we should be quite confident that $y = 1$ there. Conversely, the point ``C" is very close to the decision boundary, and while it's on the side of the decision boundary on which we would predict $y = 1$, it seems likely that just a small change to the decision boundary could easily have caused out prediction to be $y = 0$.  Hence, we're much more confident about our prediction at ``A" than at ``C". The point ``B" lies in-between these two cases, and more broadly, we see that if a point is far from the separating hyperplane, then we may be significantly more confident in our predictions. Again, informally we think it'd be nice if, given a training set, we manage to find a decision boundary that allows us to make all correct and confident (meaning far from the decision boundary) predictions on the training examples. We'll formalize this later using the notion of geometric margins. \v
 
-To make our discussion of SVM's easier, we'll first need to introduce a new
-notation for talking about classification. We will be considering a linear
-classifier for a binary classification problem with labels $y$ and features $x$.
-From now, we'll use $y \in \{ -1, 1 \}$ (instead of $ \{ 0, 1 \} $) to denote the class labels. Also, we will separate the $w_0$ component from $\boldsymbol{w}$ and from now on we will be denoting it $b$, and we will write our classifier as
+To make our discussion of SVM's easier, we'll first need to introduce a new notation for talking about classification. We will be considering a linear classifier for a binary classification problem with labels $y$ and features $x$.  From now, we'll use $y \in \{ -1, 1 \}$ (instead of $ \{ 0, 1 \} $) to denote the class labels. Also, we will separate the $w_0$ component from $\boldsymbol{w}$ and from now on we will be denoting it $b$, and we will write our classifier as:
 \bse
-h_{\boldsymbol{w}, b} (\boldsymbol{x}) = g(\boldsymbol{w}^T \boldsymbol{x} + b)
+h_{\boldsymbol{w}, b} (\boldsymbol{x}) = g(\boldsymbol{w}^{\intercal} \boldsymbol{x} + b)
 \ese
 
-\vspace{3pt}
+\v
 
 This $\boldsymbol{w}$, $b$ notation allows us to explicitly treat the intercept term $b$ separately from the other parameters. (We also drop the convention we had previously of letting $x_0 = 1$ be an extra coordinate in the input feature vector.) Note also that, from our definition of $g$ above, our classifier will directly predict either 1 or -1  without first going through the intermediate step of estimating the probability of $y$ being 1 (which was what logistic regression did).
 
 \bd[Functional Margin Of A Training Example]
-Given a training example $(x^{(i)}, y^{(i)})$ we define the \textbf{functional margin} of  $(\boldsymbol{w}$, $b$) with respect to the training example as
+Given a training example $(x^{(i)}, y^{(i)})$ we define the \textbf{functional margin} of  $(\boldsymbol{w}$, $b$) with respect to the training example as:
 \bse
-{\hat{\gamma}}^{(i)} = y^{(i)} (\boldsymbol{w}^T \boldsymbol{x}^{(i)} + b)
+{\hat{\gamma}}^{(i)} = y^{(i)} (\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b)
 \ese
 \ed
 
-Note that if $y^{(i)}= 1,$ then for the functional margin to be large (i.e., for
-our prediction to be confident and correct), we need $\boldsymbol{w}^T \boldsymbol{x}^{(i)} + b$ to be a large positive number. Conversely, if $y^{(i)}= -1,$ then for the functional margin to be large (i.e., for our prediction to be confident and correct), we need $\boldsymbol{w}^T \boldsymbol{x}^{(i)} + b$ to be a large negative number. Moreover, if $\boldsymbol{w}^T \boldsymbol{x}^{(i)} + b \neq 0$, then our prediction on this example is correct. Hence, a large functional margin represents a confident and a correct prediction. \\
+Note that if $y^{(i)}= 1,$ then for the functional margin to be large (i.e., for our prediction to be confident and correct), we need $\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b$ to be a large positive number. Conversely, if $y^{(i)}= -1,$ then for the functional margin to be large (i.e., for our prediction to be confident and correct), we need $\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b$ to be a large negative number. Moreover, if $\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b \neq 0$, then our prediction on this example is correct. Hence, a large functional margin represents a confident and a correct prediction. \v
 
-For a linear classifier with the choice of $g$ given above, there's one property of the functional margin that makes it not a very good measure of confidence, however. Given our choice of $g$, we note that if we replace $\boldsymbol{w}$ with $2\boldsymbol{w}$ and $b$ with $2b$, then since $g(\boldsymbol{w}^T \boldsymbol{x} + b) = g(2\boldsymbol{w}^T \boldsymbol{x} + 2b)$ this would not change $h_{\boldsymbol{w}, b} (\boldsymbol{x})$ at all meaning that $g$, and hence also $h_{\boldsymbol{w}, b} (\boldsymbol{x})$, depends only on the sign, but not on the magnitude, of $\boldsymbol{w}^T \boldsymbol{x} + b$. However, replacing the scaling by a factor also results in multiplying our functional margin by the same factor. Thus, it seems that by exploiting our freedom to scale $\boldsymbol{w}$ and $b$, we can make the functional margin arbitrarily large without really changing anything meaningful. Intuitively, it might therefore make sense to impose some sort of normalization condition. \\
+For a linear classifier with the choice of $g$ given above, there's one property of the functional margin that makes it not a very good measure of confidence, however. Given our choice of $g$, we note that if we replace $\boldsymbol{w}$ with $2\boldsymbol{w}$ and $b$ with $2b$, then since $g(\boldsymbol{w}^{\intercal} \boldsymbol{x} + b) = g(2\boldsymbol{w}^{\intercal} \boldsymbol{x} + 2b)$ this would not change $h_{\boldsymbol{w}, b} (\boldsymbol{x})$ at all meaning that $g$, and hence also $h_{\boldsymbol{w}, b} (\boldsymbol{x})$, depends only on the sign, but not on the magnitude, of $\boldsymbol{w}^{\intercal} \boldsymbol{x} + b$. However, replacing the scaling by a factor also results in multiplying our functional margin by the same factor. Thus, it seems that by exploiting our freedom to scale $\boldsymbol{w}$ and $b$, we can make the functional margin arbitrarily large without really changing anything meaningful. Intuitively, it might therefore make sense to impose some sort of normalization condition. \v
 
-Given a training set we also define the functional margin of ($\boldsymbol{w}$, $b$) with respect to the set as
+Given a training set we also define the functional margin of ($\boldsymbol{w}$, $b$) with respect to the set as follows.
+
 \bd[Functional Margin Of A Set]
-Given a training set $\{ x^{(i)}, y^{(i)} \}$ we define the \textbf{functional margin} of  $(\boldsymbol{w}$, $b$) with respect to the training set as
+Given a training set $\{ x^{(i)}, y^{(i)} \}$ we define the \textbf{functional margin} of  $(\boldsymbol{w}$, $b$) with respect to the training set as:
 \bse
 {\hat{\gamma}} = \min {\hat{\gamma}}^{(i)}
 \ese
 \ed
 
-Next, let's talk about geometric margins. Consider the picture below
+Next, let's talk about geometric margins.  Consider the picture below:
 
 \begin{figure}[H]
-\includegraphics[scale=0.5]{svm2}
+\includegraphics[scale=0.45]{svm2}
 \centering
 \end{figure}
 
-The decision boundary corresponding to ($\boldsymbol{w}$, $b$) is shown, along with the vector $\boldsymbol{w}$. Note that $\boldsymbol{w}$ is orthogonal to the separating hyperplane. Consider the point at $A$, which represents the input $\boldsymbol{x}^{(i)}$ label $y^{(i)} = 1$. Its distance to the decision boundary, $\gamma^{(i)}$ is given by the line segment $AB$. \\
+The decision boundary corresponding to ($\boldsymbol{w}$, $b$) is shown, along with the vector $\boldsymbol{w}$. Note that $\boldsymbol{w}$ is orthogonal to the separating hyperplane. Consider the point at $A$, which represents the input $\boldsymbol{x}^{(i)}$ label $y^{(i)} = 1$. Its distance to the decision boundary, $\gamma^{(i)}$ is given by the line segment $AB$. \v
 
-How can we find the value of $y^{(i)}$? Well, $\frac{\boldsymbol{w}}{||\boldsymbol{w}||}$ is a unit-length vector pointing in the same direction as $\boldsymbol{w}$. Since $A$ represents $\boldsymbol{x}^{(i)}$ we therefore find that the point $B$ is given by $\boldsymbol{x}^{(i)} - \gamma^{(i)} \frac{\boldsymbol{w}}{||\boldsymbol{w}||}$. But this point lies on the decision boundary, and all points on the decision boundary satisfy the equation $\boldsymbol{w}^T \boldsymbol{x} + b = 0$. Hence
+How can we find the value of $y^{(i)}$? Well, $\frac{\boldsymbol{w}}{||\boldsymbol{w}||}$ is a unit-length vector pointing in the same direction as $\boldsymbol{w}$. Since $A$ represents $\boldsymbol{x}^{(i)}$ we therefore find that the point $B$ is given by $\boldsymbol{x}^{(i)} - \gamma^{(i)} \frac{\boldsymbol{w}}{||\boldsymbol{w}||}$. But this point lies on the decision boundary, and all points on the decision boundary satisfy the equation $\boldsymbol{w}^{\intercal} \boldsymbol{x} + b = 0$.  Hence:
 \bse
-\boldsymbol{w}^T \Big( \boldsymbol{x}^{(i)} - \gamma^{(i)} \frac{\boldsymbol{w}}{||\boldsymbol{w}||} \Big) + b = 0
+\boldsymbol{w}^{\intercal} \Big( \boldsymbol{x}^{(i)} - \gamma^{(i)} \frac{\boldsymbol{w}}{||\boldsymbol{w}||} \Big) + b = 0
 \ese
 
-Solving for $\gamma^{(i)}$ yields
+Solving for $\gamma^{(i)}$ yields:
 \bse
-\gamma^{(i)} = \frac{\boldsymbol{w}^T  \boldsymbol{x}^{(i)} + b }{||\boldsymbol{w}||} = \left( \frac{\boldsymbol{w}}{||\boldsymbol{w}||} \right)^T \boldsymbol{x}^{(i)} + \frac{b}{||\boldsymbol{w}||}
+\gamma^{(i)} = \frac{\boldsymbol{w}^{\intercal}  \boldsymbol{x}^{(i)} + b }{||\boldsymbol{w}||} = \left( \frac{\boldsymbol{w}}{||\boldsymbol{w}||} \right)^{\intercal} \boldsymbol{x}^{(i)} + \frac{b}{||\boldsymbol{w}||}
 \ese
 
-This was worked out for the case of a positive training example at $A$ in the
-figure, where being on the positive side of the decision boundary is good.
-More generally, we define the geometric margin of ($\boldsymbol{w}$, $b$) with respect to a training example $(x^{(i)}, y^{(i)})$ to be
-\bse
-\gamma^{(i)} =  y^{(i)} \left( \left( \frac{\boldsymbol{w}}{||\boldsymbol{w}||} \right)^T \boldsymbol{x}^{(i)} + \frac{b}{||\boldsymbol{w}||} \right)
-\ese
+\v
 
-Note that if $||\boldsymbol{w}|| = 1$, then the functional margin equals the geometric margin. This thus gives us a way of relating these two different notions of
-margin. Also, the geometric margin is invariant to rescaling of the parameters. This will in fact come in handy later. Specifically, because of this invariance to the scaling of the parameters, when trying to fit $\boldsymbol{w}$  and $b$ to training data, we can impose an arbitrary scaling constraint on $\boldsymbol{w}$  without
-changing anything important.\\
+This was worked out for the case of a positive training example at $A$ in the figure, where being on the positive side of the decision boundary is good.  \v
+
+We are now ready to properly define the geometrical margin.
+
+\bd[Geometrical Margin Of A Training Example]
+Given a training example $(x^{(i)}, y^{(i)})$ we define the \textbf{geometrical margin} of  $(\boldsymbol{w}$, $b$) with respect to the training example as:
+\bse
+\gamma^{(i)} =  y^{(i)} \left( \left( \frac{\boldsymbol{w}}{||\boldsymbol{w}||} \right)^{\intercal} \boldsymbol{x}^{(i)} + \frac{b}{||\boldsymbol{w}||} \right)
+\ese
+\ed
+
+Note that if $||\boldsymbol{w}|| = 1$, then the functional margin equals the geometric margin. This thus gives us a way of relating these two different notions of margin.  Also, the geometric margin is invariant to rescaling of the parameters. This will in fact come in handy later. Specifically, because of this invariance to the scaling of the parameters, when trying to fit $\boldsymbol{w}$  and $b$ to training data, we can impose an arbitrary scaling constraint on $\boldsymbol{w}$  without
+changing anything important.\v
 
 Finally, given a training set we also define the geometric margin of (w, b) with respect to the set to be the smallest of the geometric margins on the individual training examples:
+
+\bd[Geometrical Margin Of A Set]
+Given a training set $\{ x^{(i)}, y^{(i)} \}$ we define the \textbf{geometrical margin} of $(\boldsymbol{w}$, $b$) with respect to the training set as:
 \bse
 \gamma = \min {\gamma}^{(i)}
 \ese
+\ed
 
+Given a training set, it seems from our previous discussion that a natural desideratum is to try to find a decision boundary that maximizes the (geometric) margin, since this would reflect a very confident set of predictions on the training set and a good ``fit" to the training data.  Specifically, this will result in a classifier that separates the positive and the negative training examples with a ``gap" (geometric margin).  \v
 
+For now, we will assume that we are given a training set that is linearly
+separable, i.e that it is possible to separate the positive and negative examples using some separating hyperplane.  How we we find the one that achieves the maximum geometric margin? We can pose the following optimization problem:
+\bse
+\max_{\gamma, \boldsymbol{w}, b} \gamma
+\ese
 
+subject to:
+\bse
+y^{(i)} (\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b) \geq \gamma, \:\:\: i=1,2,\ldots , m \qquad \textit{and} \qquad || \boldsymbol{w} || = 1
+\ese
 
+\v
 
+In other words,  we want to maximize $\gamma$,  subject to each training example having functional margin at least $\gamma$.  The $|| \boldsymbol{w} || = 1$ constraint moreover ensures that the
+functional margin equals to the geometric margin, so we are also guaranteed that all the geometric margins are at least $\gamma$,. Thus, solving this problem will result in parameters with the largest possible geometric margin with respect to the training set. \v
 
+If we could solve the optimization problem above, we’d be done.  But the $|| \boldsymbol{w} || = 1$ constraint is a nasty (non-convex) one, and this problem certainly isn’t in any format that we can plug into standard optimization software to solve.  So, lets try transforming the problem into a nicer one.  Consider:
+\bse
+\max_{\gamma, \boldsymbol{w}, b} \frac{\hat{\gamma}}{|| \boldsymbol{w} ||}
+\ese
 
+subject to:
+\bse
+y^{(i)} (\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b) \geq \hat{\gamma}, \:\:\: i=1,2,\ldots , m
+\ese
 
+\v
+
+Here,  we’re going to maximize $\frac{\hat{\gamma}}{|| \boldsymbol{w} ||}$ subject to the functional margins all being at least $\hat{\gamma}$. Since the geometric and functional margins are related by
+$\gamma = \frac{\hat{\gamma}}{|| \boldsymbol{w} ||}$ this will give us the answer we want.  Moreover, we've gotten rid of the constraint $|| \boldsymbol{w} || = 1$ that we didn't like.  The downside is that we now
+have a nasty (again, non-convex) objective $\frac{\hat{\gamma}}{|| \boldsymbol{w} ||}$ function, and, we still don't have any off-the-shelf software that can solve this form of an optimization problem. \v
+
+Lets keep going. Recall our earlier discussion that we can add an arbitrary scaling constraint on $\boldsymbol{w}$ and $b$ without changing anything.  This is the key idea we'll use now.  We will introduce the scaling constraint that the functional margin of $\boldsymbol{w}$ and $b$ with respect to the training set must be 1:
+\bse
+\hat{\gamma} = 1
+\ese
+
+Since multiplying $\boldsymbol{w}$ and $b$ by some constant results in the functional margin being multiplied by that same constant, this is indeed a scaling constraint, and can be satisfied by rescaling $\boldsymbol{w}$ and $b$.  Plugging this into our problem above,
+and noting that maximizing $\frac{\hat{\gamma}}{|| \boldsymbol{w} ||} = \frac{1}{|| \boldsymbol{w} ||} $ is the same thing as minimizing
+$|| \boldsymbol{w} ||^2$ , we now have the following optimization problem:
+\bse
+\min_{\gamma, \boldsymbol{w}, b} \frac{1}{2} || \boldsymbol{w} ||^2
+\ese
+
+subject to:
+\bse
+y^{(i)} (\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b) \geq 1, \:\:\: i=1,2,\ldots , m
+\ese
+
+\v
+
+We can rewrite the constraints as:
+\bse
+g_{i}(\boldsymbol{w}) = -y^{(i)} (\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b) + 1 \leq 0, \:\:\: i=1,2,\ldots , m
+\ese
+
+According to (Appendix \ref{Constrained Optimization}) we are dealing with an inequality constrained optimization problem (with no equality part) so we will use the KKT multipliers in order to solve it. \v
+
+Notice that that all KKT conditions are satisfied, since we do not have any equality constraints (hence $\mu_{i} = 0, \:\:\: \forall i$),  and we have $\lambda_{i} > 0$ only for the training examples that have functional margin exactly equal to one,  i.e the ones corresponding to constraints that hold with equality $ g_{i}(\boldsymbol{w}) = 0$.  Consider the figure below, in which a maximum margin separating hyperplane is shown by the solid line.
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{svm3}
+\centering
+\end{figure}
+
+The points with the smallest margins are exactly the ones closest to the decision boundary.  Here these are the three points: one negative and two positive examples, that lie on the dashed lines parallel to the decision boundary. Thus, only three of the $\lambda_{i}$ (the ones corresponding to these three training examples) will be non-zero at the optimal solution to our optimization problem. These three points are called \say{support vectors}. The fact that the number of support vectors can be much smaller than the size the training set will be useful later. \v
+
+Moving on by applying what we developed in (Appendix \ref{Constrained Optimization}) the Lagrangian of the inequality constrained optimization problem reads:
+\bse
+\mathcal{L}(\boldsymbol{w}, b, \lambda_{i}) = \frac{1}{2} || \boldsymbol{w} ||^2 - \sum_{i} \lambda_{i} \left( y^{(i)} (\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b) - 1 \right)
+\ese
+
+Note that there are only $\lambda_{i}$ but no $\mu_{i}$ Lagrange multipliers, since the problem has only inequality constraints.  \v
+
+Now we move on trying to solve this optimization problem.  Once again, according to (Appendix \ref{Constrained Optimization}) the necessary conditions for optimization of $ \mathcal{L}$ turn to:
+\bse
+\nabla_{\boldsymbol{w}} \mathcal{L}(\boldsymbol{w}, b, \lambda_{i}) = 0 \:\:\: \text{and} \:\:\: \frac{\partial \mathcal{L}(\boldsymbol{w}, b, \lambda_{i})}{\partial b} = 0 \:\:\: \text{and} \:\:\: \frac{\partial \mathcal{L}(\boldsymbol{w}, b, \lambda_{i})}{\partial \lambda_{i}} = 0
+\ese
+
+Starting with the first one, quite straightforward we obtain:
+\bse
+\nabla_{\boldsymbol{w}} \mathcal{L}(\boldsymbol{w}, b, \lambda_{i}) = \boldsymbol{w} - \sum_{i} \lambda_{i} y^{(i)} \boldsymbol{x}^{(i)} = 0
+\ese
+
+which implies:
+\bse
+\boldsymbol{w} = \sum_{i} \lambda_{i} y^{(i)} \boldsymbol{x}^{(i)}
+\ese
+
+As for the derivative with respect to $b$, we obtain:
+\bse
+\frac{\partial \mathcal{L}(\boldsymbol{w}, b, \lambda_{i})}{\partial b} = \sum_{i} \lambda_{i} y^{(i)} = 0
+\ese
+
+By manipulating the initial Lagrangian and by substituting the results from the two first derivatives we end up to:
+{\setlength{\jot}{10pt}
+\begin{align*}
+\mathcal{L}(\boldsymbol{w}, b, \lambda_{i}) & = \frac{1}{2} || \boldsymbol{w} ||^2 - \sum_{i} \lambda_{i} \left( y^{(i)} (\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b) - 1 \right) \\
+& = \frac{1}{2} || \boldsymbol{w} ||^2 - \sum_{i} \lambda_{i} y^{(i)} \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} - b \sum_{i} \lambda_{i} y^{(i)}  + \sum_{i} \lambda_{i} \\
+& = \frac{1}{2} \sum_{i} \sum_{j} \lambda_{i} \lambda_{j} y^{(i)}  y^{(j)} \left( \boldsymbol{x}^{(i)} \right)^{\intercal} \boldsymbol{x}^{(j)} - \sum_{i} \lambda_{i} y^{(i)} \left( \sum_{j} \lambda_{j} y^{(j)} \left( \boldsymbol{x}^{(j)} \right)^{\intercal} \right) \boldsymbol{x}^{(i)} + \sum_{i} \lambda_{i} \\
+& =  \frac{1}{2} \sum_{i} \sum_{j} \lambda_{i} \lambda_{j} y^{(i)}  y^{(j)} \left( \boldsymbol{x}^{(i)} \right)^{\intercal} \boldsymbol{x}^{(j)}  - \sum_{i} \sum_{j} \lambda_{i} \lambda_{j} y^{(i)}  y^{(j)} \left( \boldsymbol{x}^{(i)} \right)^{\intercal} \boldsymbol{x}^{(j)} + \sum_{i} \lambda_{i} \\
+& = \sum_{i} \lambda_{i} - \frac{1}{2} \sum_{i} \sum_{j} \lambda_{i} \lambda_{j} y^{(i)}  y^{(j)} \left( \boldsymbol{x}^{(i)} \right)^{\intercal} \boldsymbol{x}^{(j)} 
+\end{align*}}
+
+Hence now the Lagrangian reads:
+\bse
+\mathcal{L}(\lambda_{i})  = \sum_{i} \lambda_{i} - \frac{1}{2} \sum_{i} \sum_{j} \lambda_{i} \lambda_{j} y^{(i)}  y^{(j)} \left( \boldsymbol{x}^{(i)} \right)^{\intercal} \boldsymbol{x}^{(j)} 
+\ese
+
+where the dependencies on the parameters $\boldsymbol{w}$ and $b $ are gone and the Lagrangian is just a function of the KKT multipliers. So we ended up with the so called \say{dual optimization problem} which is:
+\bse
+\max_{\lambda_{i}} \left( \sum_{i} \lambda_{i} - \frac{1}{2} \sum_{i} \sum_{j} \lambda_{i} \lambda_{j} y^{(i)}  y^{(j)} \left( \boldsymbol{x}^{(i)} \right)^{\intercal} \boldsymbol{x}^{(j)} \right)
+\ese
+
+subject to:
+\bse
+\lambda_{i} \geq 0, \:\:\: i=1,2,\ldots , m \qquad \textit{and} \qquad \sum_{i} \lambda_{i} y^{(i)} = 0
+\ese
+
+where as per usual we can turn the maximization to minimization by multiplying the Lagrangian with a minus sign so we end up with:
+\bse
+\min_{\lambda_{i}} \left(\frac{1}{2} \sum_{i} \sum_{j} \lambda_{i} \lambda_{j} y^{(i)}  y^{(j)} \left( \boldsymbol{x}^{(i)} \right)^{\intercal} \boldsymbol{x}^{(j)} - \sum_{i} \lambda_{i}  \right)
+\ese
+
+subject to:
+\bse
+\lambda_{i} \geq 0, \:\:\: i=1,2,\ldots , m \qquad \textit{and} \qquad \sum_{i} \lambda_{i} y^{(i)} = 0
+\ese
+
+\v
+
+As usual we can rewrite everything in form of matrices.  By introducing the matrix $Q$ and the KKT multipliers vector $\boldsymbol{\lambda}$:
+\bse
+Q = \begin{bmatrix} y^{(1)}  y^{(1)} \left( \boldsymbol{x}^{(1)} \right)^{\intercal} \boldsymbol{x}^{(1)} & \ldots & y^{(1)}  y^{(m)} \left( \boldsymbol{x}^{(1)} \right)^{\intercal} \boldsymbol{x}^{(m)} \\ 
+y^{(2)}  y^{(2)} \left( \boldsymbol{x}^{(2)} \right)^{\intercal} \boldsymbol{x}^{(2)} & \ldots & y^{(2)}  y^{(m)} \left( \boldsymbol{x}^{(2)} \right)^{\intercal} \boldsymbol{x}^{(m)} \\ 
+\vdots & \vdots & \ddots & \ldots \\
+y^{(m)}  y^{(1)} \left( \boldsymbol{x}^{(m)} \right)^{\intercal} \boldsymbol{x}^{(1)} & \ldots & y^{m)}  y^{(m)} \left( \boldsymbol{x}^{(m)} \right)^{\intercal} \boldsymbol{x}^{(m)}
+\end{bmatrix}, \qquad
+\boldsymbol{\lambda} = \begin{bmatrix} \lambda_{1} \\  \lambda_{2} \\ \vdots \\  \lambda_{m} \end{bmatrix} 
+\ese
+
+\v
+
+we can rewrite the dual optimization problem as:
+\bse
+\max_{\boldsymbol{\lambda}} \left( \frac{1}{2} \boldsymbol{\lambda}^\intercal Q \boldsymbol{\lambda} - \boldsymbol{\lambda} \right)
+\ese
+
+subject to:
+\bse
+\boldsymbol{\lambda} \geq 0  \qquad \textit{and} \qquad \boldsymbol{y}^\intercal \boldsymbol{\lambda} = 0
+\ese
+
+This final dual optimization problem is usually solved numerically through quadratic programming (as for example we use gradient descent for loss functions optimization problems).  Once we solve it we obtain the  KKT multipliers vector $\boldsymbol{\lambda}$ and subsequently all the individual KKT multipliers  $\lambda_{i}$ from its components.  We also notice that almost all $\lambda_{i}$'s are $0$ except from a few ones where  $\lambda_{i} > 0$ coming from the support vectors.  By making use of the  KKT multipliers we find the parameter $\boldsymbol{w}$ as:
+\bse
+\boldsymbol{w} = \sum_{i} \lambda_{i} y^{(i)} \boldsymbol{x}^{(i)}
+\ese
+
+We once again notice that the only terms that survive are the ones with $\lambda_{i} > 0$ coming from the support vectors.  All the other points do not contribute at all to the model. \v
+
+Once we have $\boldsymbol{w}$ we can compute $b$ from the fact that for support vectors their distance from the plane is equal to $1$, i.e:
+\bse
+y^{(i)} (\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b) = 1
+\ese
+
+hence:
+\bse
+b = \frac{1}{y^{(i)}} - \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)}
+\ese
+
+\v
+
+for any $i$ that is a support vector. This last equation should produce the same parameter $b$ for all support vectors. This is a good way to check that the models works fine.  \v
+
+By having found both $\boldsymbol{w}$ and $b$, we have found the separator $\boldsymbol{w}^{\intercal} \boldsymbol{x} + b$ and we are in the position to predict to which class a new point belongs.  Since $\boldsymbol{w}^{\intercal} \boldsymbol{x} + b$  is going to be either negative (if the point lies below the plane) or positive (if the point lies abbove the plane) we finally have for the prediction:
+\bse
+h(\boldsymbol{x}) = sign(\boldsymbol{w}^{\intercal} \boldsymbol{x} + b)
+\ese
+
+This model of classification is called \say{hard margin support vector machine}. \v
+
+Everything we have said so far assumed that the data is linearly separable.  However the generalization of SVM to non-linear separable is easy.  Without getting into details two of the ways we can achieve this are the following.
+
+\bit
+\item \textbf{Non-Linear Transformations \& Kernels}: By switching from a space $X$ where the data are not linear separable to a space $Z$ where the data are linear separable through a transformation $\Phi$:
+\bse
+(\boldsymbol{x_1},  \boldsymbol{x_2},  \ldots, \boldsymbol{x_n}) \xrightarrow{\Phi}{} (\boldsymbol{z_1},  \boldsymbol{z_2},  \ldots, \boldsymbol{z_n})
+\ese
+
+Accordingly the dual optimization problem would change to:
+\bse
+\min_{\lambda_{i}} \left(\frac{1}{2} \sum_{i} \sum_{j} \lambda_{i} \lambda_{j} y^{(i)}  y^{(j)} \left( \boldsymbol{z}^{(i)} \right)^{\intercal} \boldsymbol{z}^{(j)} - \sum_{i} \lambda_{i}  \right)
+\ese
+
+subject to:
+\bse
+\lambda_{i} \geq 0, \:\:\: i=1,2,\ldots , m \qquad \textit{and} \qquad \sum_{i} \lambda_{i} y^{(i)} = 0
+\ese
+
+and then we would follow the same procedure as before in order to obtain a solution. \v
+
+The biggest caveat of this method is the inner product $\left(\boldsymbol{z}^{(i)} \right)^{\intercal} \boldsymbol{z}^{(j)}$ that needs to be computed in $Z$ space and it's computationally expensive. One way to overcome this problem is by using the trick of kernels ((Appendix \ref{Kernels}) in which we substitute the inner product with a kernel:
+\bse
+\left(\boldsymbol{z}^{(i)} \right)^{\intercal} \boldsymbol{z}^{(j)} = K(\boldsymbol{x}^{(i)}, \boldsymbol{x}^{(j)})
+\ese
+
+Given the freedom of choosing a kernel the model turns quite flexible.
+
+\item \textbf{L1 Regularization \& Soft Margin SVM}: While mapping data to a high dimensional feature space via $\Phi$ does generally increase the likelihood that the data is separable, we can't guarantee that it always will be so.  Also, in some cases it is not clear
+that finding a separating hyperplane is exactly what we’d want to do, since that might be susceptible to outliers. \v
+
+To make the algorithm work for non-linearly separable datasets as well as be less sensitive to outliers,  we can simply impose the technique of L1 Regularization that we mentioned in the previous chapter. That way our model is more open to errors and it allows some wrongly labeled data.
+
+\v
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{svm4}
+\centering
+\end{figure}
+
+In this case the final model is called \say{soft margin support vector machine} (in contrast with the SVM we developed in the beginning called \say{hard margin support vector machine}),  due to the fact that it allows the margin to be violated by outliers.
+\eit
+
+\section{Extra: Applied Machine Learning}
+
+In this section we will cover the applied side of machine learning.
+
+This checklist can guide you through your Machine Learning projects. There are eight main steps:
+\begin{enumerate}
+\item \textbf{Frame the problem and look at the big picture:}
+	\bit
+	\item Define the objective in business terms.
+	\item How will your solution be used?
+	\item What are the current solutions/workarounds (if any)?
+	\item How should you frame this problem (supervised/unsupervised, online/offline, etc)?
+	\item How should performance be measured?
+	\item Is the performance measure aligned with the business objective?
+	\item What would be the minimum performance needed to reach the business objective?
+	\item What are comparable problems? Can you reuse experience or tools?
+	\item Is human expertise available?
+	\item How would you solve the problem manually?
+	\item List the assumptions you (or others) have made so far.
+	\item Verify assumptions if possible.
+	\eit
+	
+\item \textbf{Get the data:}
+	\bit
+	\item List the data you need and how much you need.
+	\item Find and document where you can get that data.
+	\item Check how much space it will take.
+	\item Check legal obligations, and get authorization if necessary.
+	\item Get access authorizations.
+	\item Create a workspace (with enough storage space).
+	\item Get the data.
+	\item Convert the data to a format you can easily manipulate (without changing the data itself).
+	\item Ensure sensitive information is deleted or protected (e.g anonymized).
+	\item Check the size and type of data (time series, sample, geographical, etc).
+	\item Sample a test set, put it aside, and never look at it.
+	\item Automate as much as possible so you can easily get fresh data.
+	\eit
+	
+\item \textbf{Explore the data:}
+	\bit
+	\item Make sure you data are not insufficient,  of poor quality,  or non representative.
+	\item Create a copy of the data for exploration (sampling it down to a manageable size if necessary).
+	\item Create a Jupyter notebook to keep a record of your data exploration.
+	\item Study each attribute and its characteristics: 	
+		\bit
+			\item Name.
+			\item Type (categorical, int/float, bounded/unbounded, text, structured, etc).
+			\item  Percentage of missing values.
+			\item  Noisiness and type of noise (stochastic, outliers, rounding errors, etc).
+			\item  Usefulness for the task, 
+			\item  Type of distribution (Gaussian, uniform, logarithmic, etc).
+		\eit
+	\item For supervised learning tasks, identify the target attribute(s).
+	\item Visualize the data.
+	\item Study the correlations between attributes.
+	\item Study how you would solve the problem manually.
+	\item Identify the promising transformations you may want to apply.
+	\item Identify extra data that would be useful.
+	\item Document what you have learned.
+	\item Try to get insights from a field expert for these steps.
+	\eit
+
+\item	 \textbf{Prepare the data}:
+	\bit
+	\item Work on copies of the data (keep the original dataset intact).
+	\item Write functions for all data transformations you apply,  for the following reasons:
+		\bit
+		\item So you can easily prepare the data the next time you get a fresh dataset.
+		\item So you can apply these transformations in future projects.
+		\item To clean and prepare the test set.
+		\item To clean and prepare new data instances once your solution is live.
+		\item To make it easy to treat your preparation choices as hyperparameters.
+		\eit
+	\item Clean the data:
+	\bit
+		\item Fix or remove outliers.
+		\item Fill in missing values (e.g., with zero, mean, median,etc) or drop their rows (or columns).
+	\eit
+	\item Feature selection/engineering:
+		\bit
+		\item Drop the attributes that provide no useful information for the task.
+		\item Drop variables that have a very high percentage of missing values.
+		\item Drop variables that have a very low variation (i.e not too much information).
+		\item Drop variables that have very low correlation with the target.
+		\item Find variables that are highly correlated with each other (i.e same behaviour),  and keep the ones that have higher correlation with the target (drop the other ones).
+		\item Use Principal Component Analysis if you don't care about physical meaning of variables and to eliminate multicollinearity issues. 
+		\item Select best features based on a metric (eg model accuracy).  Either start with one variable and add more (forward selection),  or start with all variables and eliminate (backward elimination or recursive feature elimination).
+		\item Discretize continuous features.
+		\item Decompose features (e.g categorical,  date/time,  etc).
+		\item Add promising transformations of features.
+		\item Aggregate features into promising new features.
+		\item Feature scaling: Standardize or normalize features.
+		\eit
+	\eit
+
+\item \textbf{Shortlist promising models:}
+	\bit
+	\item If the data is huge, you may want to sample smaller training sets so you can train many different models in a reasonable time (be aware that this penalizes complex models such as large neural nets or Random Forests).
+	\item Once again, try to automate these steps as much as possible.
+	\item Train many quick-and-dirty models from different categories using standard parameters.
+	\item Measure and compare their performance.
+	\item For each model, use K-fold cross-validation and compute the mean and standard deviation of the performance measure on the K folds.
+	\item Analyze the most significant variables for each algorithm.
+	\item Analyze the types of errors the models make. What data would a human have used to avoid these errors?
+	\item Shortlist the top three to five most promising models, preferring models that make different types of errors.
+	\eit
+	
+\item \textbf{Fine-Tune the system:}
+	\bit
+	\item You will want to use as much data as possible for this step,  especially as you move toward the end of fine-tuning.
+	\item As always, automate what you can.
+	\item Fine-tune the hyperparameters using cross-validation:
+	\item Try ensemble methods.  Combining your best models will often produce better performance than running them individually.
+	\item Once you are confident about your final model,  measure its performance on the test set to estimate the generalization error.
+	\item Don’t tweak your model after measuring the generalization error: you would just start overfitting the test set.
+	\eit
+
+\item \textbf{Present your solution:}
+	\bit
+	\item Document what you have done.
+	\item Create a nice presentation.
+	\item Make sure you highlight the big picture first.
+	\item Explain why your solution achieves the business objective.
+	\item Don't forget to present interesting points you noticed along the way.
+	\item Describe what worked and what did not.
+	\item List your assumptions and your system's limitations.
+	\item Ensure your key findings are communicated through beautiful visualizations or easy-to-remember statements.
+	\eit
+
+\item \textbf{Launch:}
+	\bit
+	\item Get your solution ready for production.
+	\item Write monitoring code to check your system's live performance at regular intervals and trigger alerts when it drops.
+	\item Beware of slow degradation: models tend to ``rot" as data evolves.
+	\item Measuring performance may require a human pipeline.
+	\item Also monitor your inputs' quality.
+	\item Retrain your models on a regular basis on fresh data (automate as much as possible).
+	\eit
+\end{enumerate}
