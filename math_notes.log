@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.15)  18 DEC 2020 22:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.15)  21 DEC 2020 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1150,140 +1150,182 @@ LaTeX Warning: No \author given.
 
 ]
 Chapter 1.
+(./chapters/13.introduction.tex
+<images/mlmodel.png, id=212, 821.0675pt x 524.96124pt>
+File: images/mlmodel.png Graphic file (type png)
+<use images/mlmodel.png>
+Package pdftex.def Info: images/mlmodel.png  used on input line 35.
+(pdftex.def)             Requested size: 328.42119pt x 209.98077pt.
+ [4
+
+] [5 <./images/mlmodel.png>]) [6]
+Chapter 2.
 (./chapters/14.supervised_learning.tex
-<images/supervisedmodel.png, id=170, 745.78625pt x 229.85875pt>
+<images/supervisedmodel.png, id=240, 745.78625pt x 229.85875pt>
 File: images/supervisedmodel.png Graphic file (type png)
 <use images/supervisedmodel.png>
 Package pdftex.def Info: images/supervisedmodel.png  used on input line 8.
 (pdftex.def)             Requested size: 372.89221pt x 114.92908pt.
- [4
+ [7
 
  <./images/supervisedmodel.png>]
-<images/linearregression.png, id=187, 702.625pt x 449.68pt>
+<images/linearregression.png, id=250, 702.625pt x 449.68pt>
 File: images/linearregression.png Graphic file (type png)
 <use images/linearregression.png>
 Package pdftex.def Info: images/linearregression.png  used on input line 48.
-(pdftex.def)             Requested size: 210.78912pt x 134.90503pt.
+(pdftex.def)             Requested size: 281.04501pt x 179.8688pt.
 
-[5 <./images/linearregression.png>] [6] [7] [8] [9]
-<images/gradientdescent.png, id=223, 1146.2825pt x 669.50125pt>
+[8 <./images/linearregression.png>] [9] [10] [11] [12]
+<images/gradientdescent.png, id=283, 1146.2825pt x 669.50125pt>
 File: images/gradientdescent.png Graphic file (type png)
 <use images/gradientdescent.png>
-Package pdftex.def Info: images/gradientdescent.png  used on input line 272.
+Package pdftex.def Info: images/gradientdescent.png  used on input line 274.
 (pdftex.def)             Requested size: 286.56992pt x 167.3749pt.
-<images/alpha.png, id=224, 311.1625pt x 169.63374pt>
+<images/alpha.png, id=284, 311.1625pt x 169.63374pt>
 File: images/alpha.png Graphic file (type png)
 <use images/alpha.png>
-Package pdftex.def Info: images/alpha.png  used on input line 281.
-(pdftex.def)             Requested size: 217.81226pt x 118.7428pt.
- [10 <./images/gradientdescent.png (PNG copy)> <./images/alpha.png>]
-<images/classification.png, id=230, 487.8225pt x 240.9pt>
+Package pdftex.def Info: images/alpha.png  used on input line 283.
+(pdftex.def)             Requested size: 233.3713pt x 127.22498pt.
+ [13 <./images/gradientdescent.png (PNG copy)> <./images/alpha.png>]
+<images/classification.png, id=291, 487.8225pt x 240.9pt>
 File: images/classification.png Graphic file (type png)
 <use images/classification.png>
-Package pdftex.def Info: images/classification.png  used on input line 336.
+Package pdftex.def Info: images/classification.png  used on input line 342.
 (pdftex.def)             Requested size: 243.91064pt x 120.44969pt.
- [11]
-<images/sigmoid.png, id=237, 1204.5pt x 803.0pt>
+ [14]
+<images/sigmoid.png, id=299, 1204.5pt x 803.0pt>
 File: images/sigmoid.png Graphic file (type png)
 <use images/sigmoid.png>
-Package pdftex.def Info: images/sigmoid.png  used on input line 352.
-(pdftex.def)             Requested size: 192.72394pt x 128.48262pt.
- [12 <./images/classification.png (PNG copy)> <./images/sigmoid.png>] [13]
-Overfull \hbox (53.4402pt too wide) detected at line 444
-[]
- []
-
-[14] [15] [16]
-<images/bias.png, id=268, 262.9825pt x 266.9975pt>
+Package pdftex.def Info: images/sigmoid.png  used on input line 362.
+(pdftex.def)             Requested size: 240.89574pt x 160.59715pt.
+ [15 <./images/classification.png (PNG copy)> <./images/sigmoid.png>] [16] [17]
+ [18] [19]
+<images/bias.png, id=328, 262.9825pt x 266.9975pt>
 File: images/bias.png Graphic file (type png)
 <use images/bias.png>
-Package pdftex.def Info: images/bias.png  used on input line 540.
-(pdftex.def)             Requested size: 115.71265pt x 117.47925pt.
-<./images/underfitting.png, id=269, 234.8775pt x 134.5025pt>
+Package pdftex.def Info: images/bias.png  used on input line 577.
+(pdftex.def)             Requested size: 131.49092pt x 133.49841pt.
+<./images/underfitting.png, id=329, 234.8775pt x 134.5025pt>
 File: ./images/underfitting.png Graphic file (type png)
 <use ./images/underfitting.png>
-Package pdftex.def Info: ./images/underfitting.png  used on input line 551.
-(pdftex.def)             Requested size: 211.38779pt x 121.0511pt.
-<./images/variance.png, id=270, 256.96pt x 255.95625pt>
+Package pdftex.def Info: ./images/underfitting.png  used on input line 588.
+(pdftex.def)             Requested size: 234.87692pt x 134.50215pt.
+ [20 <./images/bias.png> <./images/underfitting.png>]
+<./images/variance.png, id=339, 256.96pt x 255.95625pt>
 File: ./images/variance.png Graphic file (type png)
 <use ./images/variance.png>
-Package pdftex.def Info: ./images/variance.png  used on input line 573.
-(pdftex.def)             Requested size: 113.06274pt x 112.6211pt.
- [17 <./images/bias.png> <./images/underfitting.png>]
-<./images/overfitting.png, id=279, 219.82124pt x 127.47626pt>
+Package pdftex.def Info: ./images/variance.png  used on input line 610.
+(pdftex.def)             Requested size: 128.47968pt x 127.9778pt.
+<./images/overfitting.png, id=340, 219.82124pt x 127.47626pt>
 File: ./images/overfitting.png Graphic file (type png)
 <use ./images/overfitting.png>
-Package pdftex.def Info: ./images/overfitting.png  used on input line 584.
-(pdftex.def)             Requested size: 197.83728pt x 114.72755pt.
+Package pdftex.def Info: ./images/overfitting.png  used on input line 621.
+(pdftex.def)             Requested size: 219.8207pt x 127.47594pt.
 
-Overfull \hbox (6.95728pt too wide) detected at line 605
+Overfull \hbox (6.95728pt too wide) detected at line 644
 []
  []
 
-<./images/overunderfitting.png, id=280, 687.56876pt x 201.75375pt>
+[21 <./images/variance.png> <./images/overfitting.png>]
+<./images/overunderfitting.png, id=348, 687.56876pt x 201.75375pt>
 File: ./images/overunderfitting.png Graphic file (type png)
 <use ./images/overunderfitting.png>
-Package pdftex.def Info: ./images/overunderfitting.png  used on input line 610.
+Package pdftex.def Info: ./images/overunderfitting.png  used on input line 652.
 
-(pdftex.def)             Requested size: 412.54443pt x 121.05318pt.
-[18 <./images/variance.png> <./images/overfitting.png>] [19 <./images/overunder
-fitting.png>]
-<./images/eval.png, id=293, 662.475pt x 495.8525pt>
+(pdftex.def)             Requested size: 446.9144pt x 131.13837pt.
+ [22 <./images/overunderfitting.png>] [23]
+<./images/eval.png, id=358, 662.475pt x 495.8525pt>
 File: ./images/eval.png Graphic file (type png)
 <use ./images/eval.png>
-Package pdftex.def Info: ./images/eval.png  used on input line 688.
-(pdftex.def)             Requested size: 198.74403pt x 148.7569pt.
- [20]
-<./images/lchighbias.png, id=298, 496.10344pt x 237.88875pt>
+Package pdftex.def Info: ./images/eval.png  used on input line 734.
+(pdftex.def)             Requested size: 264.9853pt x 198.33748pt.
+<./images/lchighbias.png, id=359, 496.10344pt x 237.88875pt>
 File: ./images/lchighbias.png Graphic file (type png)
 <use ./images/lchighbias.png>
-Package pdftex.def Info: ./images/lchighbias.png  used on input line 707.
-(pdftex.def)             Requested size: 248.0511pt x 118.94408pt.
-<./images/lchighvariance.png, id=299, 463.7325pt x 234.8775pt>
+Package pdftex.def Info: ./images/lchighbias.png  used on input line 755.
+(pdftex.def)             Requested size: 297.66435pt x 142.73433pt.
+ [24 <./images/eval.png>]
+<./images/lchighvariance.png, id=365, 463.7325pt x 234.8775pt>
 File: ./images/lchighvariance.png Graphic file (type png)
 <use ./images/lchighvariance.png>
-Package pdftex.def Info: ./images/lchighvariance.png  used on input line 718.
-(pdftex.def)             Requested size: 245.77704pt x 124.48448pt.
- [21 <./images/eval.png> <./images/lchighbias.png> <./images/lchighvariance.png
->] [22] [23] [24]
-<./images/confusion.jpg, id=320, 670.00313pt x 347.04657pt>
+Package pdftex.def Info: ./images/lchighvariance.png  used on input line 766.
+(pdftex.def)             Requested size: 292.15302pt x 147.9736pt.
+ [25 <./images/lchighbias.png> <./images/lchighvariance.png>] [26] [27] [28]
+<./images/confusion.jpg, id=385, 670.00313pt x 347.04657pt>
 File: ./images/confusion.jpg Graphic file (type jpg)
 <use ./images/confusion.jpg>
-Package pdftex.def Info: ./images/confusion.jpg  used on input line 913.
+Package pdftex.def Info: ./images/confusion.jpg  used on input line 963.
 (pdftex.def)             Requested size: 201.00249pt x 104.11476pt.
- [25 <./images/confusion.jpg>] [26] [27]
-<./images/svm.png, id=352, 358.33875pt x 294.09875pt>
+ [29 <./images/confusion.jpg>] [30]
+<./images/roc.png, id=410, 584.1825pt x 468.75125pt>
+File: ./images/roc.png Graphic file (type png)
+<use ./images/roc.png>
+Package pdftex.def Info: ./images/roc.png  used on input line 1116.
+(pdftex.def)             Requested size: 233.66885pt x 187.49716pt.
+
+[31]
+<./images/svm.png, id=416, 358.33875pt x 294.09875pt>
 File: ./images/svm.png Graphic file (type png)
 <use ./images/svm.png>
-Package pdftex.def Info: ./images/svm.png  used on input line 1074.
-(pdftex.def)             Requested size: 179.16893pt x 147.04901pt.
-
-[28 <./images/svm.png>]
-<./images/svm2.png, id=359, 422.57875pt x 354.32375pt>
+Package pdftex.def Info: ./images/svm.png  used on input line 1141.
+(pdftex.def)             Requested size: 197.08691pt x 161.7548pt.
+ [32 <./images/roc.png>] [33 <./images/svm.png>]
+<./images/svm2.png, id=429, 422.57875pt x 354.32375pt>
 File: ./images/svm2.png Graphic file (type png)
 <use ./images/svm2.png>
-Package pdftex.def Info: ./images/svm2.png  used on input line 1112.
+Package pdftex.def Info: ./images/svm2.png  used on input line 1179.
 (pdftex.def)             Requested size: 190.15868pt x 159.4442pt.
- [29 <./images/svm2.png>] [30]
-<./images/svm3.png, id=373, 334.24875pt x 275.0275pt>
+ [34 <./images/svm2.png>]
+[35]
+<./images/svm3.png, id=442, 334.24875pt x 275.0275pt>
 File: ./images/svm3.png Graphic file (type png)
 <use ./images/svm3.png>
-Package pdftex.def Info: ./images/svm3.png  used on input line 1216.
-(pdftex.def)             Requested size: 167.12396pt x 137.51341pt.
- [31 <./images/svm3.png>]
-[32] [33]
-<./images/svm4.png, id=392, 664.4825pt x 240.9pt>
+Package pdftex.def Info: ./images/svm3.png  used on input line 1283.
+(pdftex.def)             Requested size: 150.41054pt x 123.76123pt.
+ [36 <./images/svm3.png>] [37] [38]
+<./images/svm4.png, id=462, 664.4825pt x 240.9pt>
 File: ./images/svm4.png Graphic file (type png)
 <use ./images/svm4.png>
-Package pdftex.def Info: ./images/svm4.png  used on input line 1371.
+Package pdftex.def Info: ./images/svm4.png  used on input line 1450.
 (pdftex.def)             Requested size: 332.24043pt x 120.44969pt.
- [34 <./images/svm4.png>] [35]
-Overfull \hbox (9.64406pt too wide) in paragraph at lines 1504--1505
-[]\OT1/cmr/m/n/10 Ensure your key find-ings are com-mu-ni-cated through beau-ti
--ful vi-su-al-iza-tions or easy-to-remember
- []
 
-[36]) [37] [38
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1457.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1457.
+
+<./images/knn.png, id=463, 384.43625pt x 329.23pt>
+File: ./images/knn.png Graphic file (type png)
+<use ./images/knn.png>
+Package pdftex.def Info: ./images/knn.png  used on input line 1471.
+(pdftex.def)             Requested size: 211.44058pt x 181.07706pt.
+[39 <./images/svm4.png>] [40 <./images/knn.png>]
+<./images/decisiontree.png, id=476, 614.295pt x 340.27126pt>
+File: ./images/decisiontree.png Graphic file (type png)
+<use ./images/decisiontree.png>
+Package pdftex.def Info: ./images/decisiontree.png  used on input line 1532.
+(pdftex.def)             Requested size: 368.57983pt x 204.16432pt.
+ [41 <./images/decisiontree.png>]
+<./images/purity.png, id=490, 656.4525pt x 241.90375pt>
+File: ./images/purity.png Graphic file (type png)
+<use ./images/purity.png>
+Package pdftex.def Info: ./images/purity.png  used on input line 1561.
+(pdftex.def)             Requested size: 328.22545pt x 120.95157pt.
+<./images/purity2.png, id=491, 450.68375pt x 295.1025pt>
+File: ./images/purity2.png Graphic file (type png)
+<use ./images/purity2.png>
+Package pdftex.def Info: ./images/purity2.png  used on input line 1594.
+(pdftex.def)             Requested size: 225.34131pt x 147.55087pt.
+ [42 <./images/purity.png>]
+<./images/purity3.png, id=501, 451.6875pt x 288.07625pt>
+File: ./images/purity3.png Graphic file (type png)
+<use ./images/purity3.png>
+Package pdftex.def Info: ./images/purity3.png  used on input line 1601.
+(pdftex.def)             Requested size: 225.84319pt x 144.03777pt.
+ [43 <./images/purity2.png> <./images/purity3.png>]) [44] [45
 
 
 ] (./chapters/15.appendices.tex
@@ -1293,9 +1335,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-[39
+[46
 
-] [40]
+] [47]
 Appendix B.
 
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
@@ -1307,66 +1349,66 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
-[41
-
-] [42]
-Appendix C.
-) [43
+[48
 
 ]
+Appendix C.
+[49
+
+]
+Appendix D.
+[50
+
+] [51]
+Overfull \hbox (9.64406pt too wide) in paragraph at lines 233--234
+[]\OT1/cmr/m/n/10 Ensure your key find-ings are com-mu-ni-cated through beau-ti
+-ful vi-su-al-iza-tions or easy-to-remember
+ []
+
+) [52]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./math_notes.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
-
-
-Package rerunfilecheck Warning: File `math_notes.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `math_notes.out':
-(rerunfilecheck)             Before: FE82A292EEA7B88A51D4E26010C2BE32;2026
-(rerunfilecheck)             After:  3A709EEB8A2D7F0368DAA4A48638146F;2033.
+Package rerunfilecheck Info: File `math_notes.out' has not changed.
+(rerunfilecheck)             Checksum: 9D75D8A3216DA49323105BABA940BCE3;2668.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
- )
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 773 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 35859 strings out of 480608
- 866140 string characters out of 5903629
- 1245763 words of memory out of 5000000
- 50909 multiletter control sequences out of 15000+600000
- 552294 words of font info for 98 fonts, out of 8000000 for 9000
+ 35960 strings out of 480608
+ 867793 string characters out of 5903629
+ 1245769 words of memory out of 5000000
+ 50963 multiletter control sequences out of 15000+600000
+ 554860 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,19n,100p,1093b,729s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm
--super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmbx7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbxti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib1
-0.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/c
-mmib7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.p
-fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></u
-sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
-/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
-local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></u
-sr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on math_notes.pdf (43 pages, 1537531 bytes).
+ 71i,19n,100p,1093b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></
+usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on math_notes.pdf (52 pages, 2155462 bytes).
 PDF statistics:
- 547 PDF objects out of 1000 (max. 8388607)
- 445 compressed objects within 5 object streams
- 131 named destinations out of 1000 (max. 500000)
- 340 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 668 PDF objects out of 1000 (max. 8388607)
+ 541 compressed objects within 6 object streams
+ 166 named destinations out of 1000 (max. 500000)
+ 439 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -126,3 +126,121 @@ Convolution is a mathematical operation on two functions $f$ and $g$ that produc
 (f*g)(t) = \int_{-\infty }^{\infty } f(\tau) g(t-\tau ) d\tau
 \ese
 \ed
+
+\chapter{Applied Machine Learning}
+
+In this section we will cover the applied side of machine learning.  This checklist can guide you through your machine learning projects.  There are eight main steps:
+
+\begin{enumerate}
+\item \textbf{Frame The Problem}
+	\bit
+	\item Define the objective in business terms.
+	\item How will your solution be used?
+	\item What are the current solutions/workarounds (if any)?
+	\item How should you frame this problem (supervised/unsupervised, online/offline, etc)?
+	\item How should performance be measured?
+	\item Is the performance measure aligned with the business objective?
+	\item What would be the minimum performance needed to reach the business objective?
+	\item What are comparable problems? Can you reuse experience or tools?
+	\item Is human expertise available? How would you solve the problem manually?
+	\item List the assumptions you (or others) have made so far and verify them if possible.
+	\eit
+	
+\item \textbf{Get The Data}
+	\bit
+	\item List the data you need and how much you need.
+	\item Find and document where you can get that data.
+	\item Check how much space it will take.
+	\item Check legal obligations, and get access authorization if necessary.
+	\item Create a workspace (with enough storage space).
+	\item Get the data.
+	\item Make sure you data are not of insufficient quantity,  poor quality,  or non representative of the population.  Especially validation and test set must be as representative as possible..
+	\item Convert the data to a format you can easily manipulate (without changing the data itself).
+	\item Ensure sensitive information is deleted or protected (e.g anonymized).
+	\item Make a copy of the original dataset and work with this one.
+	\item Automate as much as possible so you can easily get fresh data.
+	\eit
+	
+\item \textbf{Explore The Data}
+	\bit
+	\item Create a Jupyter notebook to keep a record of your data exploration.
+	\item Study each attribute and its characteristics: 	name, type, percentage of missing values,  noisiness and type of noise,  outliers, usefulness for the task basic statistics (mean,  standard deviation,  type of distribution, etc).
+	\item For supervised learning tasks, identify the target attribute(s).
+	\item Sample a test set,  put it aside,  and never look at it (stratify if needed).
+	\item Visualize the data.
+	\item Study the correlations between attributes.
+	\item Study how you would solve the problem manually.
+	\item Identify extra data that would be useful.
+	\item Document what you have learned.
+	\item Try to get insights from a field expert for these steps.
+	\eit
+
+\item	 \textbf{Prepare The Data}
+	\bit
+	\item Write functions for all data transformations you apply,  for the following reasons:
+		\bit
+		\item So you can easily prepare the data the next time you get a fresh dataset.
+		\item So you can apply these transformations in future projects.
+		\item To clean and prepare the test set.
+		\item To clean and prepare new data instances once your solution is live.
+		\item To make it easy to treat your preparation choices as hyperparameters.
+		\eit
+	\item Clean the data: fix or remove outliers,  fill in missing values (e.g with zero, mean, median,etc)  or drop their rows (or columns).
+	\item Feature selection/engineering:
+		\bit
+		\item Drop the attributes that provide no useful information for the task.
+		\item Drop variables that have a very high percentage of missing values.
+		\item Drop variables that have a very low variation (i.e not too much information).
+		\item Drop variables that have very low correlation with the target.
+		\item Find variables that are highly correlated with each other (i.e same behaviour),  and keep the ones that have higher correlation with the target (drop the other ones).
+		\item Identify the promising transformations you may want to apply (e.g combine existing features to produce more useful ones or add promising transformations of features).
+		\item Select best features based on a metric.  Either start with one variable and add more (forward selection),  or start with all variables and eliminate (backward elimination or recursive feature elimination).
+		\item Discretize continuous features.
+		\item Decompose features (e.g categorical,  date/time,  etc).
+		\item Standardize or normalize features (feature scaling).  Machine learning algorithms don't perform well when the input numerical attributes have very different scales.  There are two common ways to get all attributes to have the same scale: normalization and standardization.  In normalization the values are shifted and rescaled so that they end up ranging from 0 to 1.  We do this by subtracting the minimum value and dividing by the maximum minus the minimum. Standardization first subtracts the mean value (so standardized values always have a zero mean),  and then divides by the standard deviation so that the resulting distribution has unit variance.  Unlike normalization,  standardization does not bound values to a specific range,  which may be a problem for some algorithms.  However, standardization is much less affected by outliers. 
+		\eit
+	\eit
+
+\item \textbf{Shortlist Promising Models}
+	\bit
+	\item If the data is huge, you may want to sample smaller training sets so you can train many different models in a reasonable time (be aware that this penalizes complex models such as large neural nets or Random Forests). 
+	\item Train many quick-and-dirty models from different categories using standard parameters.
+	\item Measure and compare their performance.
+	\item For each model,  use K-fold cross-validation and compute the mean and standard deviation of the performance measure on the K folds.
+	\item Analyze the most significant variables for each algorithm.
+	\item Analyze the types of errors the models make. What data would a human have used to avoid these errors?
+	\item Shortlist the top three to five most promising models, preferring models that make different types of errors.
+	\eit
+	
+\item \textbf{Fine-Tune The System}
+	\bit
+	\item You will want to use as much data as possible for this step,  especially as you move toward the end of fine-tuning. 
+	\item Fine-tune the hyperparameters using cross-validation.
+	\item Try ensemble methods.  Combining your best models will often produce better performance than running them individually.
+	\item Once you are confident about your final model,  measure its performance on the test set to estimate the generalization error.
+	\item Don’t tweak your model after measuring the generalization error since you would just start overfitting the test set.
+	\eit
+
+\item \textbf{Present Your Solution}
+	\bit
+	\item Document what you have done.
+	\item Create a nice presentation.
+	\item Make sure you highlight the big picture first.
+	\item Explain why your solution achieves the business objective.
+	\item Don't forget to present interesting points you noticed along the way.
+	\item Describe what worked and what did not.
+	\item List your assumptions and your system's limitations.
+	\item Ensure your key findings are communicated through beautiful visualizations or easy-to-remember statements.
+	\eit
+
+\item \textbf{Launch}
+	\bit
+	\item Get your solution ready for production.
+	\item Write monitoring code to check your system's live performance at regular intervals and trigger alerts when it drops.
+	\item Beware of slow degradation: models tend to ``rot" as data evolves.
+	\item Measuring performance may require a human pipeline.
+	\item Also monitor your inputs' quality.
+	\item Retrain your models on a regular basis on fresh data (automate as much as possible).
+	\item Keep backups of every model.
+	\eit
+\end{enumerate}
