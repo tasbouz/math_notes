@@ -26,13 +26,13 @@
 \contentsline {section}{\numberline {2.9}Support Vector Machine}{32}{section.2.9}%
 \contentsline {section}{\numberline {2.10}$k$-Nearest Neighbors}{39}{section.2.10}%
 \contentsline {section}{\numberline {2.11}Decision Trees \& Random Forests}{40}{section.2.11}%
-\contentsline {subsection}{\numberline {2.11.1}Decision Trees}{40}{subsection.2.11.1}%
-\contentsline {subsection}{\numberline {2.11.2}Ensemble Learning}{44}{subsection.2.11.2}%
-\contentsline {subsection}{\numberline {2.11.3}Random Forests}{44}{subsection.2.11.3}%
-\contentsline {chapter}{Appendices}{45}{section*.2}%
-\contentsline {chapter}{\numberline {A}Constrained Optimization}{46}{appendix.a.A}%
-\contentsline {section}{\numberline {A.1}Equality Constrained Optimization}{46}{section.a.A.1}%
-\contentsline {section}{\numberline {A.2}Equality \& Inequality Constrained Optimization}{47}{section.a.A.2}%
-\contentsline {chapter}{\numberline {B}Kernels}{48}{appendix.a.B}%
-\contentsline {chapter}{\numberline {C}Convolution}{49}{appendix.a.C}%
-\contentsline {chapter}{\numberline {D}Applied Machine Learning}{50}{appendix.a.D}%
+\contentsline {subsection}{\numberline {2.11.1}Decision Trees}{41}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.2}Ensemble Learning}{45}{subsection.2.11.2}%
+\contentsline {subsection}{\numberline {2.11.3}Random Forests}{46}{subsection.2.11.3}%
+\contentsline {chapter}{Appendices}{47}{section*.2}%
+\contentsline {chapter}{\numberline {A}Constrained Optimization}{48}{appendix.a.A}%
+\contentsline {section}{\numberline {A.1}Equality Constrained Optimization}{48}{section.a.A.1}%
+\contentsline {section}{\numberline {A.2}Equality \& Inequality Constrained Optimization}{49}{section.a.A.2}%
+\contentsline {chapter}{\numberline {B}Kernels}{50}{appendix.a.B}%
+\contentsline {chapter}{\numberline {C}Convolution}{51}{appendix.a.C}%
+\contentsline {chapter}{\numberline {D}Applied Machine Learning}{52}{appendix.a.D}%

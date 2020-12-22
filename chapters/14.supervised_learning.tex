@@ -1456,7 +1456,9 @@ In this case the final model is called \say{soft margin support vector machine} 
 
 \section{$k$-Nearest Neighbors}
 
-In this section we will introduce yet another famous supervised learning algorithm called \say{k-nearest neighbors algorithm} ($k$-NN), which is a non-parametric method used for classification and regression.  In both cases,  the input consists of the $k$ closest training examples in the feature space, since the algorithm assumes that similar things exist in close proximity (in other words,  similar things are near to each other).  The output depends on whether $k$-NN is used for classification or regression:
+In this section we will introduce yet another famous supervised learning algorithm called \say{k-nearest neighbors algorithm} ($k$-NN), which is a non-parametric\footnote{A model is called ``nonparametric" not because it does not have any parameters (it often has a lot) but because the number of parameters is not determined prior to training,  so the model structure is free to stick closely to the data.  In contrast,  a parametric model,  such as a linear model,  has a predetermined number of parameters,  so its degree of freedom is limited,  reducing the risk of overfitting (but increasing the risk of underfitting).} method used for classification and regression.  In both cases,  the input consists of the $k$ closest training examples in the feature space, since the algorithm assumes that similar things exist in close proximity (in other words,  similar things are near to each other).  The output depends on whether $k$-NN is used for classification or regression:
+
+Excerpt From: Aurélien Géron. “Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow”. Apple Books. 
 
 \bit
 \item In $k$-NN classification, the output is a class membership. An object is classified by a plurality vote of its neighbors, with the object being assigned to the class most common among its $k$ nearest neighbors ($k$ is a positive integer, typically small).  If $k = 1$, then the object is simply assigned to the class of that single nearest neighbor.
@@ -1480,7 +1482,7 @@ One final,  general comment is in order.  Up to this point,  all the algorithms 
 
 \section{Decision Trees \& Random Forests}
 
-Like SVM and $k$-NN,  decision trees are versatile machine learning algorithms that can perform both classification and regression tasks. They go from observations about an item (represented in the branches) to conclusions about the item's target value (represented in the leaves). They are powerful algorithms,  capable of fitting complex datasets.  Decision trees are also the fundamental components of random forests (that we will see right after),  which are among the most powerful machine learning algorithms available today.
+Like SVM and $k$-NN,  decision trees are versatile,  non-parametric machine learning algorithms that can perform both classification and regression tasks. They go from observations about an item (represented in the branches) to conclusions about the item's target value (represented in the leaves). They are powerful algorithms,  capable of fitting complex datasets.  Decision trees are also the fundamental components of random forests (that we will see right after),  which are among the most powerful machine learning algorithms available today.
 
 \subsection{Decision Trees}
 
@@ -1533,7 +1535,7 @@ A \textbf{branch} , or subtree,  is a subsection of the decision tree and it rep
 \centering
 \end{figure}
 
-Decision trees classify the examples by sorting them down the tree,  from the root to some leaf node,  with the leaf node providing the classification to the example. This approach is called a \say{top-down} approach.  Each node in the tree acts as a test case for some attribute,  and each edge descending from that node corresponds to one of the possible answers to the test case.   \v
+Decision trees classify (or regress) the examples by sorting them down the tree,  from the root to some leaf node,  with the leaf node providing the classification (or regression) to the example. This approach is called a \say{top-down} approach.  Each node in the tree acts as a test case for some attribute,  and each edge descending from that node corresponds to one of the possible answers to the test case.   \v
 
 The algorithm begins by selecting the best attribute using something called \say{attribute selection measures} to split the records.  Then it makes that attribute a decision node and breaks the dataset into smaller subsets.  Is starts tree building by repeating this process recursively for each child until one of the condition will match:
 \bit
@@ -1560,6 +1562,8 @@ As an example,  in the figure below C requires less information to describe as a
 \includegraphics[scale=0.5]{purity.png}
 \centering
 \end{figure}
+
+\vspace{-10pt}
 
 As a final step we need to introduce the concept of information entropy.
 
@@ -1601,9 +1605,9 @@ Whereas,  an attribute with high information gain splits the data into groups wi
 \centering
 \end{figure}
 
-In other words we are always looking to maximize the information gain after any splitting. 
+In other words we are always looking to maximize the information gain after any splitting.  Having defined information gain we can now define Gini impurity.
 
-\bd [GIni Impurity]
+\bd [Gini Impurity]
 \textbf{Gini impurity}, or Gini index, $I_{G}$ measures the degree or probability of a particular variable being wrongly classified when it is randomly chosen.  Given a discrete random variable $X$,  with possible outcomes $\{x_{1},  x_{2}, \ldots, x_{n} \}$ which occur with probability $ P(x_{1}) , P(x_{2}),  \ldots, P(x_{n})$,  the Gini impurity of $X$ is formally defined as:
 \bse
 I_{G}(X) = 1 - \sum _{i=1}^{n} P^2(x_{i})
@@ -1616,13 +1620,76 @@ where the summation is over the variable's possible values.
 
 Gini impurity is a measure of how often a randomly chosen element from the set would be incorrectly labeled if it was randomly labeled according to the distribution of labels in the subset.  \v
 
-A good question is ``which one should I use"? In general keep in mind that it only matters in 2\% of the cases whether you use Gini impurity or information gain.  And given that information gain uses information entropy (which uses logarithms), it might be a little slower to compute. Hence most of the algorithms use Gini impurity as a selection measure.  \v
+Now that we have defined both information gain and Gini impurity, a good question is ``which one should one use"? In general keep in mind that it only matters in 2\% of the cases whether you use Gini impurity or information gain.  And given that information gain uses information entropy (which uses logarithms), it might be a little slower to compute. Hence most of the algorithms use Gini impurity as a selection measure.  \v
 
-By using either information gain or Gini impurity we can start building the tree and once all the tuples belong to the same feature value or there are no more remaining feature ore there are no more instances the tree is ready.  Once it is ready we can feed a new instance and and by asking the corresponding question in each node we will end up in one of the leafs hence to a decision. 
+In nay case,  by using either information gain or Gini impurity one can start building (training) the tree.  The building (training) is usually done through a procedure called ``Classification and Regression Tree" (CART) algorithm. The algorithm works by first splitting the training set into two subsets using a single feature $k$ and a threshold $t_k$, by searching for the pair ($k$, $t_k$) that produces the purest subsets (weighted by their size).  The loss function that the algorithm tries to minimize is the so called ``CART loss function". There is one CART loss function for classification and one for regression. Let's start with the classification one.
+
+\bd [CART Loss Function (For Classification)]
+We define the \textbf{CART loss function} for classification as:
+\bse
+J(k, t_{k}) = \frac{m_{\textit{left}}}{m} G_{\textit{left}} +  \frac{m_{\textit{right}}}{m} G_{\textit{right}}
+\ese
+
+\v
+
+where $m$ is the total number of instances in both left and right subsets, $m_{\textit{left}}$ and $m_{\textit{right}}$ are the number of instances in the left and right subset, and $G_{\textit{left}}$ and $G_{\textit{right}}$ measure the impurity of the left and the right subset ($G$ could be either information gain or Gini impurity).
+\ed
+
+For regression,  CART algorithm instead of trying to split the training set in a way that minimizes impurity,  it now tries to split the training set in a way that minimizes the MSE.  Hence the corresponding CART loss function for regression looks like the following.
+
+\bd [CART Loss Function (For Regression)]
+We define the \textbf{CART loss function} for regression as:
+\bse
+J(k, t_{k}) = \frac{m_{\textit{left}}}{m} \textit{MSE}_{\textit{left}} +  \frac{m_{\textit{right}}}{m} \textit{MSE}_{\textit{right}}
+\ese
+
+\v
+
+where $m$ is the total number of instances in both left and right subsets, $m_{\textit{left}}$ and $m_{\textit{right}}$ are the number of instances in the left and right subset, and $\textit{MSE}_{\textit{left}}$ and $\textit{MSE}_{\textit{right}}$ are the mean squared errors of the left and the right subsets given by:
+\bse
+\textit{MSE}_{\textit{node}} = \sum_{i \in \textit{node}} ({\hat{y}}_\textit{node} - y^{(i)})^2
+\ese
+
+where:
+\bse
+{\hat{y}}_\textit{node} = \frac{1}{m_{\textit{node}}} \sum_{i \in \textit{node}} y^{(i)}
+\ese
+\ed
+
+\v
+
+In both cases (classification and regression),  once the CART algorithm has successfully split the training set in two,  it splits the subsets using the same logic,  then the subsubsets,  and so on,  recursively.  As we can see,  the CART algorithm is a greedy algorithm.  It greedily searches for an optimum split at the top level,  then repeats the process at each subsequent level.  It does not check whether or not the split will lead to the lowest possible impurity several levels down.  A greedy algorithm often produces a solution that's reasonably good but not guaranteed to be optimal. Unfortunately,  finding the optimal tree requires $O(exp(m))$ time,  making the problem intractable even for small training sets.  This is why we must settle for a ``reasonably good" solution. \v
+
+Once the CART algorithm finished, the building (training) part is over and the decision tree is ready.  One can now feed a new instance to the tree and by asking the corresponding question of each node they will end up in one of the leafs,  hence to a decision.  In order to have a better understanding of the procedure (although it is really simple) we will provide two small examples (one for classification and one for regression).  \v
+
+Let's start with classification.  One starts at the root node (depth 0,  at the top).  This node asks whether the flower's petal length is smaller than 2.45 cm.  If it is,  then they move down to the root's left child node (depth 1,  left).  In this case,  it is a leaf node (i.e it does not have any child nodes),  so it does not ask any questions but simply look at the predicted class for that node,  and the decision tree predicts that the flower is a ``setosa".  Now suppose one finds another flower,  and this time the petal length is greater than 2.45 cm.  They must move down to the root's right child node (depth 1,  right),  which is not a leaf node,  so the node asks another question: ``is the petal width smaller than 1.75 cm"? If it is,  then the flower is most likely a ``versicolor" (depth 2,  left).  If not,  it is likely a ``virginica" (depth 2,  right). 
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{iris.png}
+\centering
+\end{figure}
+
+\v
+
+The regression decision tree example looks very similar to the classification one with the main difference that instead of predicting a class in each node,  it predicts a value.  Suppose you want to make a prediction for a new instance with $x_1 = 0.6$. You traverse the tree starting at the root,  and you eventually reach the leaf node that predicts $value=0.111$. This prediction is the average target value of the 110 training instances associated with this leaf node,  and it results in a mean squared error equal to 0.015 over these 110 instances.
+
+\v
+
+\begin{figure}[H]
+\includegraphics[scale=0.55]{iris2.png}
+\centering
+\end{figure}
+
+\v
+
+Decision trees are intuitive,  and their decisions are easy to interpret. Such models are often called ``white box" models.  In contrast,  as we will see,  random forests or neural networks are generally considered ``black box" models.  They make great predictions, and you can easily check the calculations that they performed to make these predictions, nevertheless, it is usually hard to explain in simple terms why the predictions were made.  Conversely,  decision trees provide nice,  simple classification rules that can even be applied manually if need be.  The main drawback of decision trees is that they are very sensitive to small variations in the training data.  Random forests can limit this instability by averaging predictions over many trees,  as we will see in a while.
 
 \subsection{Ensemble Learning}
 
-Suppose one pose a complex question to thousands of random people, then aggregate their answers.  In many cases they will find that this aggregated answer is better than an expert's answer.  This is called the \say{wisdom of the crowd}.  Similarly,  if one aggregates the predictions of a group of predictors, they  will often get better predictions than with the best individual predictor.  A group of predictors is called an ``ensemble", thus, this technique is called ``ensemble learning",  and an ensemble learning algorithm is called an ``ensemble method". \v
+Suppose one pose a complex question to thousands of random people, then aggregate their answers.  In many cases they will find that this aggregated answer is better than an expert's answer.  This is called the \say{wisdom of the crowd}.  Similarly,  if one aggregates the predictions of a group of predictors, they  will often get better predictions than with the best individual predictor.  
+
+
+A group of predictors is called an ``ensemble", thus, this technique is called ``ensemble learning",  and an ensemble learning algorithm is called an ``ensemble method". \v
 
 As an example of an ensemble method,  one can train a group of decision tree classifiers,  each on a different random subset of the training set. To make predictions, one obtain the predictions of all the individual trees, then predict the class that gets the most votes.  Such an ensemble of decision trees is called a ``random forest",  and despite its simplicity,  this is one of the most powerful machine learning algorithms available today. More on random forests in the next section. \v
 
@@ -1633,5 +1700,21 @@ Empirically,  ensembles tend to yield better results when there is a significant
 While the number of component classifiers of an ensemble has a great impact on the accuracy of prediction, there is a limited number of studies addressing this problem.  A priori determining of ensemble size and the volume and velocity of big data streams make this even more crucial for online ensemble classifiers.  Mostly statistical tests were used for determining the proper number of components.  More recently, a theoretical framework suggested that there is an ideal number of component classifiers for an ensemble such that having more or less than this number of classifiers would deteriorate the accuracy.  It is called ``the law of diminishing returns in ensemble construction".  Their theoretical framework shows that using the same number of independent component classifiers as class labels gives the highest accuracy.  \v
 
 Now we will discuss the most popular ensemble methods,  including bagging,  boosting,  and stacking.  After that we will explore random forests.
+
+\bd[Hard Voting Classifier]
+An algorithm that aggregates the predictions of a collection of trained classifiers and predicts the class that gets the most votes is called a \textbf{hard voting classifier}.
+\ed
+
+Somewhat surprisingly,  this voting classifier often achieves a higher accuracy than the best classifier in the ensemble.  In fact, even if each classifier is a weak learner (meaning it does only slightly better than random guessing),  the ensemble can still be a strong learner (achieving high accuracy),  provided there are a sufficient number of weak learners and they are sufficiently diverse.
+
+\bd[Soft Voting Classifier]
+An algorithm that aggregates the predictions,  among with their corresponding probabilities,  of a collection of trained classifiers and predicts the class with the highest class probability, averaged over all the individual classifiers is called a \textbf{soft voting classifier}.
+\ed
+
+
+Both hard and soft voting classifiers work best when the predictors are as independent from one another as possible.  One way to get diverse classifiers is to train them using very different algorithms.  This increases the chance that they will make very different types of errors, improving the ensemble's accuracy.
+
+
+
 
 \subsection{Random Forests}

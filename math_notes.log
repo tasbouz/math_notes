@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.15)  21 DEC 2020 22:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.15)  22 DEC 2020 08:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1297,47 +1297,61 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1457.
 
-<./images/knn.png, id=463, 384.43625pt x 329.23pt>
+[39 <./images/svm4.png>]
+<./images/knn.png, id=473, 384.43625pt x 329.23pt>
 File: ./images/knn.png Graphic file (type png)
 <use ./images/knn.png>
-Package pdftex.def Info: ./images/knn.png  used on input line 1471.
+Package pdftex.def Info: ./images/knn.png  used on input line 1473.
 (pdftex.def)             Requested size: 211.44058pt x 181.07706pt.
-[39 <./images/svm4.png>] [40 <./images/knn.png>]
-<./images/decisiontree.png, id=476, 614.295pt x 340.27126pt>
+ [40 <./images/knn.png>]
+<./images/decisiontree.png, id=479, 614.295pt x 314.67563pt>
 File: ./images/decisiontree.png Graphic file (type png)
 <use ./images/decisiontree.png>
-Package pdftex.def Info: ./images/decisiontree.png  used on input line 1532.
-(pdftex.def)             Requested size: 368.57983pt x 204.16432pt.
+Package pdftex.def Info: ./images/decisiontree.png  used on input line 1534.
+(pdftex.def)             Requested size: 368.57983pt x 188.80682pt.
  [41 <./images/decisiontree.png>]
-<./images/purity.png, id=490, 656.4525pt x 241.90375pt>
+<./images/purity.png, id=494, 656.4525pt x 241.90375pt>
 File: ./images/purity.png Graphic file (type png)
 <use ./images/purity.png>
-Package pdftex.def Info: ./images/purity.png  used on input line 1561.
+Package pdftex.def Info: ./images/purity.png  used on input line 1562.
 (pdftex.def)             Requested size: 328.22545pt x 120.95157pt.
-<./images/purity2.png, id=491, 450.68375pt x 295.1025pt>
+ [42 <./images/purity.png>]
+<./images/purity2.png, id=504, 450.68375pt x 295.1025pt>
 File: ./images/purity2.png Graphic file (type png)
 <use ./images/purity2.png>
-Package pdftex.def Info: ./images/purity2.png  used on input line 1594.
+Package pdftex.def Info: ./images/purity2.png  used on input line 1597.
 (pdftex.def)             Requested size: 225.34131pt x 147.55087pt.
- [42 <./images/purity.png>]
-<./images/purity3.png, id=501, 451.6875pt x 288.07625pt>
+<./images/purity3.png, id=505, 451.6875pt x 288.07625pt>
 File: ./images/purity3.png Graphic file (type png)
 <use ./images/purity3.png>
-Package pdftex.def Info: ./images/purity3.png  used on input line 1601.
+Package pdftex.def Info: ./images/purity3.png  used on input line 1604.
 (pdftex.def)             Requested size: 225.84319pt x 144.03777pt.
- [43 <./images/purity2.png> <./images/purity3.png>]) [44] [45
+ [43 <./images/purity2.png> <./images/purity3.png>]
+<./images/iris.png, id=514, 473.26813pt x 412.54124pt>
+File: ./images/iris.png Graphic file (type png)
+<use ./images/iris.png>
+Package pdftex.def Info: ./images/iris.png  used on input line 1668.
+(pdftex.def)             Requested size: 236.63348pt x 206.27011pt.
+ [44]
+<./images/iris2.png, id=522, 551.05875pt x 310.15875pt>
+File: ./images/iris2.png Graphic file (type png)
+<use ./images/iris2.png>
+Package pdftex.def Info: ./images/iris2.png  used on input line 1679.
+(pdftex.def)             Requested size: 303.08324pt x 170.58783pt.
+ [45 <./images/iris.png> <./images/iris2.png>]) [46] [47
 
 
-] (./chapters/15.appendices.tex
+]
+(./chapters/15.appendices.tex
 Appendix A.
 
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-[46
+[48
 
-] [47]
+] [49]
 Appendix B.
 
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
@@ -1349,23 +1363,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
-[48
+[50
 
 ]
 Appendix C.
-[49
+[51
 
 ]
 Appendix D.
-[50
+[52
 
-] [51]
+] [53]
 Overfull \hbox (9.64406pt too wide) in paragraph at lines 233--234
 []\OT1/cmr/m/n/10 Ensure your key find-ings are com-mu-ni-cated through beau-ti
 -ful vi-su-al-iza-tions or easy-to-remember
  []
 
-) [52]
+) [54]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./math_notes.aux)
@@ -1376,10 +1390,10 @@ Package rerunfilecheck Info: File `math_notes.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
  ) 
 Here is how much of TeX's memory you used:
- 35960 strings out of 480608
- 867793 string characters out of 5903629
+ 35979 strings out of 480608
+ 868079 string characters out of 5903629
  1245769 words of memory out of 5000000
- 50963 multiletter control sequences out of 15000+600000
+ 50975 multiletter control sequences out of 15000+600000
  554860 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,19n,100p,1093b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1398,17 +1412,20 @@ al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr
 /local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
 ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
 al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/tex
-live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
-2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on math_notes.pdf (52 pages, 2155462 bytes).
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2020
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2020/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2020/t
+exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on math_notes.pdf (54 pages, 2609788 bytes).
 PDF statistics:
- 668 PDF objects out of 1000 (max. 8388607)
- 541 compressed objects within 6 object streams
- 166 named destinations out of 1000 (max. 500000)
- 439 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 697 PDF objects out of 1000 (max. 8388607)
+ 561 compressed objects within 6 object streams
+ 171 named destinations out of 1000 (max. 500000)
+ 449 words of extra memory for PDF output out of 10000 (max. 10000000)
 
