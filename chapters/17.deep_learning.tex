@@ -1,0 +1,726 @@
+\bd [Deep Learning]
+\textbf{Deep learning} is a class of machine learning algorithms that uses multiple layers (hence the adjective ``deep")  to progressively extract higher-level features from the raw input.  It is part of a broader family of machine learning methods based on artificial neural networks with representation learning. 
+\ed
+
+Deep learning architectures such as deep neural networks,  deep belief networks,  recurrent neural networks and convolutional neural networks have been applied to fields including computer vision,  machine vision, speech recognition,  natural language processing,  audio recognition, social network filtering,  machine translation,  bioinformatics,  drug design, medical image analysis, material inspection and board game programs, where they have produced results comparable to and in some cases surpassing human expert performance. \v
+
+The most fundamental unit of a deep neural network is called an artificial neuron. The inspiration comes from the brain where the biological neurons are the neural processing units.
+
+\begin{figure}[H]
+\includegraphics[scale=0.35]{images/neuron.png}
+\centering
+\end{figure}
+
+The layers of a biological neuron are:
+\bit
+\item Dendrite: receives signals from other neurons.
+\item Synapse: point of connection to other neurons.
+\item Soma: processes the information.
+\item Axon: transmits the output of this neuron.
+\eit
+
+Basically,  a neuron takes an input signal (dendrite), processes it like the CPU (soma), passes the output through a cable like structure to other connected neurons (axon to synapse to other neuron’s dendrite). Now, this might be biologically inaccurate as there is a lot more going on out there but on a higher level, this is what is going on with a neuron in our brain. \v
+
+In our brains there is a massively parallel interconnected network of neurons (an average human brain has around $10^11$ neurons). Briefly what happens is that our sense organs interact with the outside world, they relay information to the lowest layer of neurons, some of these neurons may fire in response to this information and in turn relay information to other neurons they are connected to. These neurons may also fire and the process continues eventually resulting in a response.
+
+\section{McCulloch Pitts Neuron}
+
+The first computational model of a neuron was proposed by Warren MuCulloch (neuroscientist) and Walter Pitts (logician) in 1943. 
+
+\vspace{-5pt}
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{images/neuron3.png}
+\centering
+\end{figure}
+
+\vspace{-10pt}
+
+In McCulloch Pitts neuron (MP), the inputs are all binary (either 0 or 1),  $g$ is a function that aggregates the inputs and the function $f$ takes a decision based on this aggregation following this very simple format:
+\bse
+g(x_1, x_2, \ldots, x_n) =  \sum_{i=1}^{n} x_i
+\ese
+
+and:
+\bse
+y = f(g(x_1, x_2, \ldots, x_n)) = 
+\begin{cases}
+    1,  & \text{if }  \sum_{i=1}^{n} x_i \geq \theta \\
+    0,  & \text{if }   \sum_{i=1}^{n} x_i < \theta
+  \end{cases}
+\ese
+
+\v
+
+where $\theta$ is called the ``thresholding parameter” and represents the decision boundary.  \v
+
+The inputs of MP can either be excitatory or inhibitory.  Inhibitory inputs are those that have maximum effect on the decision making irrespective of other inputs.  In other words if an inhibitory input is on then it defines the decision. Excitatory inputs are not the ones that will make the neuron fire on their own but they might fire it when combined together.  \v
+
+So far we have seen how the MP neuron works. Now lets look at how this very neuron can be used to represent a few boolean functions. Mind you that our inputs are all boolean and the output is also boolean so essentially,  the neuron is just trying to learn a boolean function.  A lot of boolean decision problems can be represented by the MP neuron, based on appropriate input variables. \v
+
+An AND function neuron would only fire when all the inputs are on i.e: $\sum_{i=1}^{n} x_i \geq 3$ here.
+
+\begin{figure}[H]
+\includegraphics[scale=0.42]{images/and.png}
+\centering
+\end{figure}
+
+An OR function neuron would fire if any of the inputs is on i.e: $ \sum_{i=1}^{n} x_i \geq 1$ here.
+
+\begin{figure}[H]
+\includegraphics[scale=0.42]{images/or.png}
+\centering
+\end{figure}
+
+For a NOR neuron to fire,  we want all the inputs to be 0 so the thresholding parameter should also be 0.
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{images/nor.png}
+\centering
+\end{figure}
+
+For a NOT neuron,  1 outputs 0 and 0 outputs 1.  So we take the input as an inhibitory input and set the thresholding parameter to 0. 
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{images/not.png}
+\centering
+\end{figure}
+
+It is very useful to understand what MP neuron is doing geometrically.  Let's use as an example the OR case.\v
+
+We already discussed that the OR function's thresholding parameter $\theta$ is 1. The inputs are obviously boolean,  so only 4 combinations are possible: $(0,0),  (0,1),  (1,0)$ and $(1,1)$.  Now plotting them on a two dimensional graph and making use of the OR function's aggregation equation $x_1 + x_2 \geq 1$ using which we can draw the decision boundary as shown in the graph below. 
+
+\begin{figure}[H]
+\includegraphics[scale=0.42]{images/mp.png}
+\centering
+\end{figure}
+
+We just used the aggregation equation i.e $x_1 + x_2 = 1$ to graphically show that all those inputs whose output when passed through the OR function MP neuron lie either on or above that line (due to $\geq$) and all the input points that lie below that line (due to $<$) are going to output 0.  This means that the MP neuron just learnt a linear decision boundary! The MP neuron is splitting the input sets into two classes: positive and negative.  Positive ones (which output 1) are those that lie on or above the decision boundary and negative ones (which output 0) are those that lie below the decision boundary.  Let's convince ourselves that the MP unit is doing the same also for the AND boolean function. \v
+
+For an AND function the decision boundary equation is $x_1 + x_2 = 2$ Here,  all the input points that lie on or above,  just $(1,1)$, output 1 when passed through the AND function MP neuron.  It fits! The decision boundary works!
+
+\begin{figure}[H]
+\includegraphics[scale=0.42]{images/mp2.png}
+\centering
+\end{figure}
+
+Of course this generalizes to higher dimensions.  As an example let's take a look at a 3 input OR function MP unit.  In this case, the possible inputs are 8 points: $(0,0,0),  (0,0,1),  (0,1,0),  (1,0,0),  (1,0,1),  (1, 1, 0), (0,1,1)$ and $(1,1,1)$. 
+
+\begin{figure}[H]
+\includegraphics[scale=0.42]{images/mp3.png}
+\centering
+\end{figure}
+
+We can map these on a three dimensional graph and this time we draw a decision boundary in 3 dimensions which is of course a plane.
+
+\begin{figure}[H]
+\includegraphics[scale=0.42]{images/mp4.png}
+\centering
+\end{figure}
+
+With a little effort we can see that all the points that lie on or above that plane (positive half space) will result in output 1 when passed through the OR function MP unit and all the points that lie below that plane (negative half space) will result in output 0. \v
+
+Subsequently for even higher dimensions the decision boundary is a hyperplane.\v
+
+Now that we introduced the MP neuron, an inevitable question arises: ``can any boolean function be represented using the MP neuron"? The answer is no! By hand coding a thresholding parameter,  MP neuron is able to conveniently represent the boolean functions which are linearly separable, i.e when there exists a line (hyperplane) such that all inputs which produce a 1 lie on one side of the line (hyperplane) and all inputs which produce a 0 lie on other side of the line (hyperplane).  \v
+
+We will postpone for now the ``why MP fails to represent any boolean function" and we will illustrate the problem that arises with non linear separable data in the next section which is more suited.\v
+
+So given an MP the following questions remain unanswered:
+\bit
+\item What about non-boolean,  real inputs?
+\item Do we always need to hand code the threshold?
+\item Are all inputs equal? What if we want to assign more importance to some inputs?
+\item What about functions which are not linearly separable?
+\eit
+
+All of these questions will be answered gradually in the next chapters.  For now we will introduce a slight advancement of MP neuron called ``perceptron" which is a fundamental block of neural nets and deep learning.
+
+\section{Perceptron}
+
+The perceptron model,  proposed by Minsky and Papert,  is a more general computational model than the MP neuron.  It overcomes some of the limitations of the MP neuron by introducing the concept of numerical weights (a measure of importance) for inputs,  and a mechanism for learning those weights.  Inputs are no longer limited to boolean values like in the case of an MP neuron since it supports real inputs as well which makes it more useful and generalized.
+
+\begin{figure}[H]
+\includegraphics[scale=0.42]{images/perceptron.png}
+\centering
+\end{figure}
+
+\vspace{-5pt}
+
+In perceptron the function $g$ that aggregates the inputs and the function $f$ that takes a decision based on this aggregation follow this very simple format:
+\bse
+g(x_1, x_2, \ldots, x_n) = \sum_{i=1}^{n} w_i x_i
+\ese
+
+and:
+\bse
+y = f(g(x_1, x_2, \ldots, x_n)) = 
+\begin{cases}
+    1,  & \text{if }   \sum_{i=1}^{n} w_i x_i \geq \theta \\
+    0,  & \text{if }   \sum_{i=1}^{n} w_i x_i < \theta
+  \end{cases}
+\ese
+
+\v
+
+In perceptron it is quite common to set $w_0 = - \theta$ and $x_0 = 1$ (as we have already done in supervised learning).  We call $w_0$ the ``bias" term while the rest of $w_i$'s the ``weights".  We refer to the whole collection of weights and bias as the ``parameters".
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{images/perceptron2.png}
+\centering
+\end{figure}
+
+\vspace{-5pt}
+
+Using this convention, the functions $g$ and $f$ can be rewritten as:
+\bse
+g(x_0, x_1, x_2, \ldots, x_n) = \sum_{i=0}^{n} w_i x_i
+\ese
+
+and:
+{\setlength{\jot}{10pt}
+\begin{align*}
+y = f(g(x_0,  x_1, x_2, \ldots, x_n)) &= 
+\begin{cases}
+    1,  & \text{if }   \sum_{i=1}^{n} w_i x_i - \theta \geq 0 \\
+    0,  & \text{if }   \sum_{i=1}^{n} w_i x_i - \theta < 0
+  \end{cases} \\
+&= \begin{cases}
+    1,  & \text{if }   \sum_{i=0}^{n} w_i x_i \geq 0 \\
+    0,  & \text{if }   \sum_{i=0}^{n} w_i x_i < 0
+  \end{cases}
+\end{align*}}
+
+From the equations, it is clear that even a perceptron separates the input space into two halves,  positive and negative.  All the inputs that produce an output 1 lie on one side (positive half space) and all the inputs that produce an output 0 lie on the other side (negative half space).  In other words,  a single perceptron can only be used to implement linearly separable functions,  just like the MP neuron. The difference with MP is that the weights and the bias can be learned and the inputs can be real values.  \v
+
+Now we will illustrate the way to obtain the weights and the bias using again an OR example.
+
+\begin{figure}[H]
+\includegraphics[scale=0.52]{images/perceptron3.png}
+\centering
+\end{figure}
+
+\vspace{-5pt}
+
+The above ``possible solution" was obtained by solving the linear system of equations on the left.  It is clear that the solution separates the input space into two spaces, negative and positive half spaces.  Note that we can come up with a similar set of inequalities and find the value of $\theta$ for a MP neuron also. \v
+
+Note that the linear equations above,  has of course multiple solutions.  In general for different values of the parameters we obtain different lines that separate the points in different ways. Some of them work (i.e they separate the points correctly) and some of the don't (i.e they misclassify some of the points) hence they produce errors.  Different values of the parameters produce different number of errors.  \v
+
+For example, let us fix the bias $w_0 = -1$ and try some random
+values for the weights $w_1,  w_2$.
+
+\begin{figure}[H]
+\includegraphics[scale=0.6]{images/errors.png}
+\centering
+\end{figure}
+
+We observe that the specific choices we did for the weights produce different number of errors.
+
+\begin{figure}[H]
+\includegraphics[scale=0.66]{images/errors2.png}
+\centering
+\end{figure}
+
+\vspace{-5pt}
+
+In general we are interested in those values of the parameters
+which result in 0 error.  In the plot below we can see the error surface corresponding to different values of $w_1,  w_2$ by keeping $w_0 = -1$ fixed. All the combinations of $w_1,  w_2$ in the dark blue area would work for an OR function with $w_0 = -1$.
+
+\begin{figure}[H]
+\includegraphics[scale=0.8]{images/errors3.png}
+\centering
+\end{figure}
+
+Now that we introduced the perceptron,  the same inevitable question as the one we had in MP neuron arises: ``can any boolean function be represented using the perceptron"? The answer is again no! Now is the time to illustrate why not! \v
+
+As we said in the first chapter of the fundamental mathematics part ``axiomatic set theory", there are 16 boolean functions one can design from 2 inputs. Out of these 16,  only 14 are linearly separable,  and 2 of them (XOR and !XOR) are not.  Let's take as an example the XOR function and see why we cannot draw a line to separate positive inputs from the negative ones. If we try to solve the system of equation that arise from a XOR function we obtain the following.
+
+\begin{figure}[H]
+\includegraphics[scale=0.52]{images/perceptron5.png}
+\centering
+\end{figure}
+
+\vspace{-5pt}
+
+Notice that the fourth equation contradicts the second and the third equation.  Point is,  there are no perceptron solutions for non-linearly separated data.  So the key take away is that a single perceptron cannot learn to separate the data that are non-linear in nature. Hence perceptron,  similarly to an MP neuron,  is able to conveniently represent the boolean functions which are again linearly separable. \v
+
+However it is worth mentioning the following.  What does ``perceptron cannot deal with data not linearly separable" mean? It means that the final result would inevitably misclassify some of the observations. In other words the final choice of parameters would produce a number of errors different than zero.  The thing is that most real world data is not linearly separable and will always contain some outliers. In fact,  sometimes there may not be any outliers but still the data may not be linearly separable.  On top of that in most of the cases we could live with some errors.  Hence, from now on,  we will accept that it is hard to drive the error to 0 in most cases and will instead aim to reach the minimum possible error. 
+
+\begin{figure}[H]
+\includegraphics[scale=0.44]{images/errors4.png}
+\centering
+\end{figure}
+
+It is worth mentioning that there exists an algorithm able to find the values of the parameters which minimize the error, called simply ``perceptron learning algorithm``.  However since is not of use any more we will not get into details.  Just for the sake completeness here is a sketch of how perceptron learning algorithm works.
+
+\begin{figure}[H]
+\includegraphics[scale=0.65]{images/perceptronlearningalgorithm.png}
+\centering
+\end{figure}
+
+One can prove that this algorithm always converges, hence it finds the parameters that minimize the error. We will skip the proof.\v
+
+Now let's go back to the questions we posed in the previous section.
+\bit
+\item What about non-boolean,  real inputs? \textbf{Real valued inputs are allowed in perceptron!}
+\item Do we always need to hand code the threshold? \textbf{No,  we can learn both the weights and the bias (i.e the threshold)!}
+\item Are all inputs equal? What if we want to assign more importance to some inputs? \textbf{A perceptron allows weights to be assigned to inputs!}
+\item What about functions which are not linearly separable? \textbf{Not possible with a single perceptron!}
+\eit
+
+Hence we solved all the problems but the non linearly separable data! We showed that a single perceptron cannot deal with such data,   however in what follows we will show that a network of perceptrons can indeed deal with such data.  Before that, we will introduce yet another advancement on the models we developed called the ``sigmoid neuron".
+
+\section{Sigmoid Neuron}
+
+As we saw a perceptron will fire if the weighted sum of its inputs is greater than the bias $w_0$.  This thresholding logic used by a perceptron though is very harsh since it behaves like a step function.  In other words there will always be this sudden change in the
+decision (from 0 to 1) when we cross the bias $w_0$.  For most real world applications we would expect a smoother decision function which gradually changes from 0 to 1.
+
+\begin{figure}[H]
+\includegraphics[scale=0.42]{images/dpsigmoid.png}
+\centering
+\end{figure}
+
+In order to fix this problem we need to introduce the so called ``sigmoid functions" that we briefly mentioned in the logistic regression section of unsupervised learning chapter.
+
+\bd [Sigmoid Function]
+A \textbf{sigmoid function} is a bounded,  differentiable,  real function that is defined for all real input values and has a non-negative derivative at each point and exactly one inflection point. 
+\ed
+
+There are many different functions that can be characterized as sigmoid function such as the logistic function,  the hyperbolic tangent function, the arctangent function,  and many more.
+
+\begin{figure}[H]
+\includegraphics[scale=0.45]{images/sigmoids.png}
+\centering
+\end{figure}
+
+A sigmoid neurons uses as an output function a sigmoid function hence it is much smoother than a perceptron that uses the step function.  As a consequence,  we no longer see a sharp transition around the $w_0$.  Also, the output is no longer binary but a real value between 0 and 1 which can be interpreted as a probability.  So instead of yes/no decision, we get the probability of yes. The output here is smooth,  continuous and differentiable and just how any learning algorithm likes it. 
+
+\vspace{10pt}
+
+ \begin{figure}[H]
+\includegraphics[scale=0.4]{images/pervssig.png}
+\centering
+\end{figure}
+
+Observe that one could use the logistic function as the sigmoid function.  In that case the final sigmoid neuron would be exactly the same as logistic regression. Hence we see that a sigmoid logistic neuron is just another representation of logistic regression.  The advantage of this representation is that it can be generalized to a network by stacking together a lot of these neurons.  As we will see in the section that follows this idea of a network of neurons can deal with the non linear separable data problem.
+
+\section{Feedforward Neural Networks}
+
+\subsection{Motivation: XOR Function With A Network Of Perceptons}
+
+In the perceptron section we showed that a single perceptron cannot deal with non linearly separable data.  Now we will consider a network of perceptons and see what can we achieve through that.  We will work again with the XOR function (that we know is not linearly separable) and we will create the simplest possible network of perceptrons (see figure). \v
+
+Our simple network will contain 3 layers: the layer containing the inputs $x_1$ and $x_2$ called the ``input layer",  the middle layer containing the 2 perceptrons called the``hidden layer",  and the final layer containing one output neuron called the ``output layer".  The terminology is not important right now,  we will properly introduce the terms in the next section. 
+
+\begin{figure}[H]
+\includegraphics[scale=0.6]{images/xor.png}
+\centering
+\end{figure}
+
+Notice that we need 10 parameters for the middle layer (8 weights and 2 biases) and 4 parameters for the output layer (2 weights and 2 biases).  The notation of the variables of the parameters and the corresponding values are as denoted in the graph.  The outputs of the 2 perceptrons in the hidden layer are denoted by $h_1$ and $h_2$.  \v
+
+Remember that the XOR function satisfies the following results:
+
+\begin{figure}[H]
+\includegraphics[scale=0.42]{images/xor2.png}
+\centering
+\end{figure}
+
+\vspace{-5pt}
+
+Remember also that for the perceptron the aggregation function $g$ is:
+\bse
+g(x_0, x_1, x_2, \ldots, x_n) = \sum_{i=0}^{n} w_i x_i
+\ese
+
+and the decision function $y$ is the step function:
+{\setlength{\jot}{10pt}
+\begin{align*}
+y = f(g(x_0,  x_1, x_2, \ldots, x_n)) &= 
+\begin{cases}
+    1,  & \text{if }   \sum_{i=0}^{n} w_i x_i \geq 0 \\
+    0,  & \text{if }   \sum_{i=0}^{n} w_i x_i < 0
+  \end{cases}
+\end{align*}}
+
+Now let's see what this network predicts for the XOR function. Remember that $x_0$ is always equal to 1 by definition, so we will skip writing it in the calculations.
+
+\bit
+\item For $(x_1 = 0,  x_2 = 0)$:
+\begin{align*}
+&h_1 = f(g(x_1 = 0,  x_2 = 0)) = f(w^{(1)}_{11} \cdot x_1 + w^{(1)}_{21} \cdot x_2 +  w^{(1)}_{01}) = f(2 \cdot 0 + 2 \cdot 0 - 1) = f(-1) = 0 \\
+&h_2 = f(g(x_1 = 0,  x_2 = 0)) =  f(w^{(1)}_{12} \cdot x_1 + w^{(1)}_{22} \cdot x_2 +  w^{(1)}_{02})) = f(-2 \cdot 0 - 2 \cdot 0 + 3) = f(3) = 1 \\
+&y = f(g(h_1,  h_2)) = f(w^{(2)}_{1} \cdot h_1 + w^{(2)}_{2} \cdot h_2 +  w_{0}^{(2)}) = f(2 \cdot 0 + 2 \cdot 1 - 3) = f(-2) = 0 
+\end{align*}
+\item For $(x_1 = 1,  x_2 = 0)$:
+\begin{align*}
+&h_1 = f(g(x_1 = 1,  x_2 = 0)) = f(w^{(1)}_{11} \cdot x_1 + w^{(1)}_{21} \cdot x_2 +  w^{(1)}_{01}) = f(2 \cdot 1 + 2 \cdot 0 - 1) = f(1) = 1 \\
+&h_2 = f(g(x_1 = 1,  x_2 = 0)) =  f(w^{(1)}_{12} \cdot x_1 + w^{(1)}_{22} \cdot x_2 +  w^{(1)}_{02}) = f(-2 \cdot 1 - 2 \cdot 0 + 3) = f(1) = 1 \\
+&y = f(g(h_1,  h_2)) = f(w^{(2)}_{1} \cdot h_1 + w^{(2)}_{2} \cdot h_2 +  w_{0}^{(2)}) = f(2 \cdot 1 + 2 \cdot 1 - 3) = f(1) = 1 
+\end{align*}
+\item For $(x_1 = 0,  x_2 = 1)$:
+\begin{align*}
+&h_1 = f(g(x_1 = 0,  x_2 = 1) = f(w^{(1)}_{11} \cdot x_1 + w^{(1)}_{21} \cdot x_2 +  w^{(1)}_{01}) = f(2 \cdot 0 + 2 \cdot 1 - 1) = f(1) = 1 \\
+&h_2 = f(g(x_1 = 0,  x_2 = 1)) =  f(w^{(1)}_{12} \cdot x_1 + w^{(1)}_{22} \cdot x_2 + w^{(1)}_{02}) = f(-2 \cdot 0 - 2 \cdot 1 + 3) = f(1) = 1 \\
+&y = f(g(h_1,  h_2)) = f(w^{(2)}_{1} \cdot h_1 + w^{(2)}_{2} \cdot h_2 +  w_{0}^{(2)}) = f(2 \cdot 1 + 2 \cdot 1 - 3) = f(1) = 1
+\end{align*}
+\item For $(x_1 = 1,  x_2 = 1)$:
+\begin{align*}
+&h_1 = f(g(x_1 = 1,  x_2 = 1)) = f(w^{(1)}_{11} \cdot x_1 + w^{(1)}_{21} \cdot x_2 +  w^{(1)}_{01}) = f(2 \cdot 1 + 2 \cdot 1 - 1) = f(3) = 1 \\
+&h_2 = f(g(x_1 = 1,  x_2 = 1)) =  f(w^{(1)}_{12} \cdot x_1 + w^{(1)}_{22} \cdot x_2 +  w^{(1)}_{02}) = f(-2 \cdot 1 - 2 \cdot 1 + 3) = f(-1) = 0 \\
+&y = f(g(h_1,  h_2)) = f(w^{(2)}_{1} \cdot h_1 + w^{(2)}_{2} \cdot h_2 +  w_{0}^{(2)}) = f(2 \cdot 1 + 2 \cdot 0 - 3) = f(-1) = 0 
+\end{align*}
+\eit
+
+It works! The neural network has obtained the correct answer for every example in the batch.  The idea behind this network is quite simple. 
+
+\vspace{-5pt}
+
+\begin{figure}[H]
+\includegraphics[scale=0.65]{images/xor3.png}
+\centering
+\end{figure}
+
+\vspace{-8pt}
+
+What we actually did here is to solve the XOR problem by learning a representation.  The bold numbers printed on the plot indicate the value that the learned function must output at each point.  A linear model applied directly to the original input cannot implement the XOR function.  When $x_1 = 0$,  the model's output must increase as $x_2$ increases.  When $x_1 = 1$, the model's output must decrease as $x_2$ increases.  A linear model must apply a fixed coefficient $w_2$ to $x_2$.  The linear model therefore cannot use the value of $x_1$ to change the coefficient on $x_2$ and cannot solve this problem (left part of the figure).  In the transformed space represented by the features extracted by a neural network, a linear model can now solve the problem.  In our example solution,  the two points that must have output 1 have been collapsed into a single point in feature space.  In other words,  the non linear features have mapped both $(1, 0)$ and (0,1),  to a single point in feature space $(1,1)$. The linear model can now describe the function (right part of the figure). \v
+
+In the example, above  we simply specified the solution,  then showed that it obtained zero error.  In a real situation,  there might be billions of model parameters and billions of training examples, so one cannot simply guess the solution as we did here.  Instead, a gradient-based optimization algorithm can find parameters that produce very little error.  The solution we described to the XOR problem is at a global minimum of the loss function,  so gradient descent could converge to this point.  There are other equivalent solutions to the XOR problem that gradient descent could also find.  The convergence point of gradient descent depends on the initial values of the parameters. In practice, gradient descent would usually not find clean, easily understood,  integer-valued solutions like the one we presented here. \v
+
+One can prove that a multilayer network of perceptrons with
+a single hidden layer can be used to represent any boolean function precisely (i.e with no errors).   Moreover if one substitutes the perceptrons with sigmoid neurons then this multilayer network of neurons with a single hidden layer can be used to approximate any continuous function to any desired precision.   In other words, there is a guarantee that for any function $f(x) : R^n \to R^m$ we can always find a neural network (with 1 hidden layer containing enough neurons)
+whose output $g(x)$ satisfies $| g(x) - f(x)| <  \epsilon$ for some $\epsilon$. \v
+
+In the next subsection we will develop the most generic network of sigmoid neurons called the ``feedforward neural network".
+
+\subsection{Feedforward Neural Networks}
+
+Feedforward neural networks are the quintessential deep learning models.  The goal of a feedforward network is to approximate some function $f$ by defining a mapping and learning the value of the parameters that result in the best function approximation.  These models are called feedforward because information flows through the function being evaluated from $x$,  through the intermediate computations and finally to the output $y$.  There are no feedback connections in which outputs of the model are fed back into itself. Feedforward neural networks are of extreme importance to machine learning practitioners since they form the basis of many important commercial applications.  \v
+
+In this part we will give all the fundamental definitions of deep learning and feedforward neural networks and we will develop the most generic feedforward neural networks which is in the core of whatever will follow! Let's begin. 
+
+\v
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{images/nn.png}
+\centering
+\end{figure}
+
+\v
+
+The input to the network is an $(n \times 1)$ dimensional feature vector $\boldsymbol{x}$:
+\bse
+\boldsymbol{x} = 
+\begin{bmatrix} 
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix}
+\ese
+
+From now on,  as it is common in deep learning,  we will separate the bias from the weights,  hence there is no need for the extra $x_0 = 1$ feature and this is why it does not appear in $\boldsymbol{x}$.  We will keep the notation $w$ for the weights but we will notate the bias as $b$ instead of $w_0$. \v
+
+We call the first layer of the network (the one with the inputs) the ``input layer" or the ``$0^{\textit{th}}$ layer".  Each subsequent layer with neurons is called ``$1^{\textit{st}}$ hidden layer",  ``$2^{\textit{nd}}$ hidden layer" and so on up to the final ``$L$ hidden layer" which is usually called the ``output layer".  In other words the network contains one input layer,  $L-1$ hidden layers and one output layer.  \v
+
+Each layer $l$ contains a number of neurons $n^{[l]}$ (we usually use the bracket notation $[l]$ to indicate a variable for a specific layer $l$). It is obvious that for the input layer $n^{[0]} = n$, i.e the input layer has one neuron for each feature.  \v
+
+Each neuron in the hidden layers (and output layer) can be split into two parts: pre-activation and activation.  For each layer $l$ the pre-activation function $a$ aggregates the activations from the previous layer (or the features in the case of input layer) with the weights and the biases into a $(n^{[l]} \times 1)$ dimensional vector $\boldsymbol{a}^{[l]}$ as:
+\bse
+\boldsymbol{a}^{[l]} = a(\boldsymbol{h}^{[l-1]} ; W^{[l]}, \boldsymbol{b}^{[l]})  =  W^{[l]} \boldsymbol{h}^{[l-1]} + \boldsymbol{b}^{[l]}
+\ese 
+
+\v
+
+where $W^{[l]}$ is a $(n^{[l]} \times n^{[l-1]} )$ dimensional matrix that carries all the weights for the $l$ layer and $\boldsymbol{b}^{[l]}$ is a $(n^{[l]} \times 1)$ dimensional vector that carries all the biases for the $l$ layer,  defined as:
+
+\bse
+W^{[l]} =
+\begin{bmatrix} 
+w_{11}^{[l]} & w_{12}^{[l]}  & \ldots & w_{1n^{[l-1]}}^{[l]}  \\\\
+w_{21}^{[l]} & w_{22}^{[l]}  & \ldots & w_{2n^{[l-1]}}^{[l]}  \\\\
+\vdots & \vdots & \ddots & \vdots \\\\
+w_{n^{[l]}1}^{[l]} & w_{n^{[l]}2}^{[l]}  & \ldots & w_{n^{[l]}n^{[l-1]}}^{[l]}
+\end{bmatrix},  \qquad
+\boldsymbol{b}^{[l]} = 
+\begin{bmatrix} 
+b_{1}^{[l]} \\\\ b_{2}^{[l]} \\\\ \vdots \\\\ b_{n^{[l]}}^{[l]}
+\end{bmatrix}
+\ese
+
+\v
+
+Finally,  in each layer the activation function $g$ (usually some sigmoid function) acts on the pre-activations and spits the activations of each neuron i.e a $(n^{[l]} \times 1)$  dimensional vector $\boldsymbol{h}^{[l]}$ defined as:
+\bse
+\boldsymbol{h}^{[l]} = g(\boldsymbol{a}^{[l]})
+\ese 
+
+For the activation at the input layer holds: $\boldsymbol{h}^{[0]} = \boldsymbol{x}$.   \v
+
+The activation at the output layer (which is the prediction of the neural network) is given by:
+\bse
+\hat{y} = h^{[L]} = O(a^{[L]})
+\ese
+
+where $O$ is the output activation function.  The role of the output layer (and the output activation function) is to provide some additional transformation from the features to complete the task that the network must perform.  Of course the choice of the output activation function depends on the nature of the problem (e.g: linear function, logistic function,  softmax function,  etc).  Any kind of neural network unit that may be used as an output can also be used as a hidden unit.  \v
+
+The process we have described so far is usually called ``forward propagation". \v
+
+Once we have both $y$ and the predicted value $\hat{y}$ one can equip a loss function $J(y,  \hat{y})$ that will quantify the error of the neural network.  It turns out that one of the most important aspects of the design of a neural network is actually the choice of this loss function.  Fortunately,  the loss functions for neural networks are more or less the same as those for other parametric models,  such as linear models (e.g: MSE and cross entropy loss functions).  In most cases,  our parametric model defines a probability distribution and we simply use the principle of maximum likelihood as we did in supervised learning. Sometimes,  we take a simpler approach,  where rather than predicting a complete probability distribution over $y$,  we merely predict some statistic of $y$ conditioned on $x$.  Specialized loss functions allow us to train a predictor of these estimates. \v
+
+It makes sense that the choice of loss function is tightly coupled with the choice of the output activation function since the choice of how to represent the output determines the form of the loss function.  For example it's logical that a linear output activation function justifies an MSE loss functions while a sigmoid (like for example softmax) output activation function justifies a cross entropy loss function.
+
+\subsection{Backward propagation}
+
+We have introduced feedforward neural networks and its corresponding loss function that quantifies the errors the network makes.  We are now interested in finding an algorithm for learning the parameters of this model.  Normal equation is out of the picture for neural networks,  so gradient descent is the way to go.  \v
+
+Training a neural network is not much different from training any other machine learning model with gradient descent. The largest difference between the linear models we have seen so far and neural networks is that the non-linearity of a neural network causes most interesting loss functions to become non-convex. This means that neural networks are usually trained by using iterative,  gradient-based optimizers that merely drive the loss function to a very low value,  rather than the linear equation solvers used to train linear regression models or the convex optimization algorithms with global convergence guarantees used to train logistic regression or SVMs.  Convex optimization converges starting from any initial parameters (in theory - in practice it is very robust but can encounter numerical problems).  Stochastic gradient descent applied to non-convex loss functions has no such convergence guarantee,  and is sensitive to the values of the initial parameters.  For feedforward neural networks, it is important to initialize all weights to small random values. The biases may be initialized to zero or to small positive values.  \v
+
+For the moment,  it suffices to understand that the training algorithm is almost always based on using the gradient to descend the loss function in one way or another.  The specific algorithms are improvements and refinements on the ideas of gradient descent,  will be explored in the next section. \v
+
+Remember that in gradient descent the weights are updated as:
+\bse
+\boldsymbol{w} \coloneqq \boldsymbol{w} - \alpha \nabla_{\boldsymbol{w}} J(\boldsymbol{w}, b)
+\ese
+
+and similarly the bias:
+\bse
+b \coloneqq b - \alpha \frac{ \partial{J(\boldsymbol{w}, b)}}{\partial b}
+\ese
+
+\v
+
+Coming to neural networks the difference is that now we have a collection of weights $W^{[l]}$ and biases $\boldsymbol{b}^{[l]}$ hence the update rules turn to:
+\bse
+W^{[l]} \coloneqq W^{[l]} - \alpha \nabla_{W^{[l]}} J
+\ese
+
+and similarly for the bias:
+\bse
+\boldsymbol{b}^{[l]} \coloneqq \boldsymbol{b}^{[l]} - \alpha \nabla_{\boldsymbol{b}^{[l]}} J
+\ese
+
+\v
+
+where $J$ is a function of:
+\bse
+J = (y,  \hat{y} ; W^{[1]},  \boldsymbol{b}^{[1]}, W^{[2]},  \boldsymbol{b}^{[2]}, \ldots, W^{[L]},  \boldsymbol{b}^{[L]})
+\ese
+
+\v
+
+Hence the problem now is to calculate the derivative of the loss function with respect to all the parameters of the network.  The idea here is that we will start from the last parameters $W^{[L]}$ and biases $\boldsymbol{b}^{[L]}$ of the output layer,  by making use of the chain rule we will compute those and gradually we will propagate backwards and by making further use of the chain rule,  we will compute all the derivatives with respect to the parameters until we reach the beginning thus all the derivatives are found and we can perform the updates in gradient descent.  Let's see this in practice.  \v
+
+For the weights:
+{\setlength{\jot}{5pt}
+\begin{align*}
+\nabla_{W^{[L]}} J & = \frac{\partial J}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial a^{[L]}} \cdot \frac{\partial a^{[L]}}{\partial W^{[L]}} \\
+& = \frac{\partial J}{\partial \hat{y}} \cdot \frac{\partial h^{[L]}}{\partial a^{[L]}} \cdot \frac{\partial \left( W^{[L]} \boldsymbol{h}^{[L-1]} + \boldsymbol{b}^{[L]} \right)}{\partial W^{[L]}} \\
+& = \frac{\partial J}{\partial \hat{y}} \cdot \frac{\partial g(a^{[L]})}{\partial a^{[L]}} \cdot {\boldsymbol{h}^{[l-1]}}^{\intercal} \\
+& = \frac{\partial J}{\partial \hat{y}} \cdot g^\prime (a^{[L]}) \cdot {\boldsymbol{h}^{[l-1]}}^{\intercal}\\
+& = \delta^{[L]} \cdot {\boldsymbol{h}^{[l-1]}}^{\intercal}
+\end{align*}}
+
+For the biases:
+{\setlength{\jot}{5pt}
+\begin{align*}
+\nabla_{\boldsymbol{b}^{[L]}} J & = \frac{\partial J}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial a^{[L]}} \cdot \frac{\partial a^{[L]}}{\partial \boldsymbol{b}^{[L]}} \\
+& = \frac{\partial J}{\partial \hat{y}} \cdot \frac{\partial h^{[L]}}{\partial a^{[L]}} \cdot \frac{\partial \left( W^{[L]} \boldsymbol{h}^{[L-1]} + \boldsymbol{b}^{[L]} \right)}{\partial \boldsymbol{b}^{[L]}} \\
+& = \frac{\partial J}{\partial \hat{y}} \cdot \frac{\partial g(a^{[L]})}{\partial a^{[L]}} \cdot \mathbb{I} \\
+& = \frac{\partial J}{\partial \hat{y}} \cdot g^\prime (a^{[L]}) \\
+& = \delta^{[L]}
+\end{align*}}
+
+where in both cases $\boldsymbol{\delta^{[l]}}$ is a $(n^{[l]} \times 1)$ dimensional vector defined as :
+\bse
+\delta^{[L]} =  \frac{\partial J}{\partial \hat{y}} \cdot g^\prime (a^{[L]})
+\ese
+
+In the case where $l = L \Rightarrow n^{[l]} = n^{[L]} = 1$,  $\boldsymbol{\delta^{[l]}}$ has dimensions $(n^{[L]} \times 1) = (1 \times 1)$ and this is why (only in this case) $\delta^{[L]}$ is not a vector but a scalar. \v
+
+In a similar way,  by using the chain rule we can propagate back and calculate all the derivatives.  If one do that we can show that we can generalize the results as:
+\bse
+\nabla_{W^{[l]}} J  =\boldsymbol{\delta^{[l]}} \cdot {\boldsymbol{h}^{[l-1]}}^{\intercal}
+\ese
+
+and:
+\bse
+\nabla_{\boldsymbol{b}^{[l]}} J = \boldsymbol{\delta^{[l]}}
+\ese
+
+\vspace{10pt}
+
+where each $\boldsymbol{\delta^{[l]}}$ depends on the next $\boldsymbol{\delta^{[l+1]}}$ (thus the need of starting from the end) through the relation:
+\bse
+\boldsymbol{\delta^{[l]}} = \boldsymbol{\delta^{[l+1]}} \cdot W^{[l]} \cdot g^{\prime} ({\boldsymbol{a}}^{[l]})
+\ese
+
+with:
+\bse
+\delta^{[L]} =  \frac{\partial J}{\partial \hat{y}} \cdot g^\prime (a^{[L]})
+\ese
+
+\v
+
+Hence the update rules for gradient descent for the weights turn to:
+\bse
+W^{[l]} \coloneqq W^{[l]} - \alpha \cdot\boldsymbol{\delta^{[l]}} \cdot {\boldsymbol{h}^{[l-1]}}^{\intercal}
+\ese
+
+and similarly for the biases:
+\bse
+\boldsymbol{b}^{[l]} \coloneqq \boldsymbol{b}^{[l]} - \alpha \cdot \boldsymbol{\delta^{[l]}}
+\ese
+
+\v
+
+The process we have described in this section is usually called ``backward propagation" or more commonly ``backpropagation". \v
+
+The following figure summarizes everything we have developed so far on  building (forward propagation) and training (backward propagation) a feedforward neural network.
+
+\v
+
+\begin{figure}[H]
+\includegraphics[scale=0.46]{images/nlsum.png}
+\centering
+\end{figure}
+
+\subsection{Extra: Generalize To Full Dataset}
+
+We can generalize the notation a bit more for the case that someone has a lot of training examples $\{ (\boldsymbol{x}^{(1)},  y^{(1)}), (\boldsymbol{x}^{(2)},  y^{(2)}), \ldots, (\boldsymbol{x}^{(m)},  y^{(m)}), \}$ instead of just one that we had so far.  Of course nothing really changes, one must pass all the training examples through the network in order to obtain the prediction,  however notation-wise one can stack all the feature vectors $\{ \boldsymbol{x}^{(1)},  \boldsymbol{x}^{(2)}, \ldots,  \boldsymbol{x}^{(m)} \}$ next to each other in one big $(n \times m)$ dimensional matrix $X$ and all the targets $\{ y^{(1)},  y^{(2)}, \ldots,  y^{(m)} \}$ next to each other into one $(1 \times m)$ dimensional row vector $\boldsymbol{y}$ defined as:
+
+\bse
+X =
+\begin{bmatrix} 
+{\boldsymbol{x}^{(1)}} & {\boldsymbol{x}^{(2)}} & \ldots & {\boldsymbol{x}^{(m)}}
+\end{bmatrix} =
+\begin{bmatrix} 
+x_{1}^{(1)} & x_{1}^{(2)} & \ldots & x_{1}^{(m)} \\\\
+x_{2}^{(1)} & x_{2}^{(2)} & \ldots & x_{2}^{(m)} \\\\
+\vdots & \vdots & \ddots & \vdots \\\\
+x_{n}^{(1)} & x_{n}^{(2)} & \ldots & x_{n}^{(m)}
+\end{bmatrix}, \qquad
+\boldsymbol{y} = \begin{bmatrix} 
+y^{(1)} & y^{(2)} & \ldots & y^{(m)}
+\end{bmatrix}
+\ese
+
+\v
+
+Then for each layer we will have one pre-activation vector $\boldsymbol{a}^{[l](i)}$ per training example that we can further stack next to each other into one $(n^{[l]} \times m)$ dimensional matrix  $A^{[l]}$ defined as:
+
+\bse
+A^{[l]} =
+\begin{bmatrix} 
+{\boldsymbol{a}^{[l](1)}} & {\boldsymbol{a}^{[l](2)}} & \ldots & {\boldsymbol{a}^{[l](m)}}
+\end{bmatrix} =
+\begin{bmatrix} 
+a^{[l](1)}_1 & a^{[l](2)}_1 & \ldots & a^{[l](m)}_1 \\\\
+a^{[l](1)}_2 & a^{[l](2)}_2 & \ldots & a^{[l](m)}_2 \\\\
+\vdots & \vdots & \ddots & \vdots \\\\
+a^{[l](1)}_{n^{[l]}} & a^{[l](2)}_{n^{[l]}} & \ldots & a^{[l](m)}_{n^{[l]}}
+\end{bmatrix} 
+\ese
+
+\v
+
+where for $A^{[l]}$ holds:
+\bse
+A^{[l]} = a(H^{[l-1]} ; W^{[l]},  B^{[l]})  =  W^{[l]} H^{[l-1]} + B^{[l]}
+\ese 
+
+\v
+
+with $H^{[l]}$ being again one $(n^{[l]} \times m)$ matrix that stacks together all the activation vectors $\boldsymbol{h}^{[l](i)}$ for each training example as:
+
+\bse
+H^{[l]} =
+\begin{bmatrix} 
+{\boldsymbol{h}^{[l](1)}} & {\boldsymbol{h}^{[l](2)}} & \ldots & {\boldsymbol{h}^{[l](m)}}
+\end{bmatrix} =
+\begin{bmatrix} 
+h^{[l](1)}_1 & h^{[l](2)}_1 & \ldots & h^{[l](m)}_1 \\\\
+h^{[l](1)}_2 & h^{[l](2)}_2 & \ldots & h^{[l](m)}_2 \\\\
+\vdots & \vdots & \ddots & \vdots \\\\
+h^{[l](1)}_{n^{[l]}} & h^{[l](2)}_{n^{[l]}} & \ldots & h^{[l](m)}_{n^{[l]}}
+\end{bmatrix} 
+\ese
+
+\v
+
+where $W^{[l]}$ is the same $(n^{[l]} \times n^{[l-1]} )$ dimensional matrix of weights as before, and the matrix $B^{[l]}$ is simply a $(n^{[l]} \times m)$ matrix of biases which is created by stacking together $\boldsymbol{b}^{[l]}$ $m$ times in order for the dimensions to work out:
+
+\bse
+W^{[l]} =
+\begin{bmatrix} 
+w_{11}^{[l]} & w_{12}^{[l]}  & \ldots & w_{1n^{[l-1]}}^{[l]}  \\\\
+w_{21}^{[l]} & w_{22}^{[l]}  & \ldots & w_{2n^{[l-1]}}^{[l]}  \\\\
+\vdots & \vdots & \ddots & \vdots \\\\
+w_{n^{[l]}1}^{[l]} & w_{n^{[l]}2}^{[l]}  & \ldots & w_{n^{[l]}n^{[l-1]}}^{[l]} 
+\end{bmatrix},  \qquad
+B^{[l]} = 
+\underbrace{
+\begin{bmatrix} 
+\boldsymbol{b}^{[l]} & \boldsymbol{b}^{[l]} & \ldots & \boldsymbol{b}^{[l]}
+\end{bmatrix}}_{\textit{$m$ times}} = 
+\begin{bmatrix} 
+b_{1}^{[l]} & b_{1}^{[l]}  & \ldots  & b_{1}^{[l]}  \\\\ 
+b_{2}^{[l]} & b_{2}^{[l]}  & \ldots  & b_{2}^{[l]}  \\\\ 
+\vdots & \vdots & \ddots & \vdots \\\\
+b_{{n^{[l]}}}^{[l]} & b_{{n^{[l]}}}^{[l]}  & \ldots  & b_{{n^{[l]}}}^{[l]}
+\end{bmatrix}
+\ese
+
+\v
+
+Following this notation,  the activation at the output layer now is itself a $(1 \times m)$ dimensional row vector $\hat{\boldsymbol{y}}$ given by:
+\bse
+\hat{\boldsymbol{y}} = H^{[L]} = O(A^{[L]})
+\ese
+
+which gives one prediction for each entry of the $(1 \times m)$ dimensional target row vector $\boldsymbol{y}$. \v
+
+In exactly the same way one can define a loss function $J(\boldsymbol{y}, \hat{\boldsymbol{y}})$ that quantifies the error of the network which would be simply the average of all errors from all training examples:
+\bse
+J(\boldsymbol{y}, \hat{\boldsymbol{y}}) = \frac{1}{m} \sum_{i=1}^{m} J(y^{(i)}, \hat{y}^{(i)})
+\ese
+
+where $J(y^{(i)}, \hat{y}^{(i)})$ is the loss of the training example $\{ (\boldsymbol{x}^{(i)},  y^{(i)}) \}$, i.e exactly what we developed in the previous section of forward and backward propagation with one single observation. \v
+
+Finally one can use gradient descent for backward propagation in exactly the same way with the update rules being:
+\bse
+W^{[l]} \coloneqq W^{[l]} - \alpha \cdot \Delta^{[l]} \cdot {\boldsymbol{H}^{[l-1]}}^{\intercal}
+\ese
+
+and:
+\bse
+B^{[l]} \coloneqq B^{[l]} - \alpha \cdot \Delta^{[l]} 
+\ese
+
+\v
+
+where $\Delta^{[l]}$ is a $(n^{[l]} \times m)$ matrix acting as the generalization of $\boldsymbol{\delta^{[l]}}$ defined as:
+\bse
+\Delta^{[l]} = \Delta^{[l+1]} \cdot W^{[l]} \cdot g^{\prime} (A^{[l]})
+\ese
+
+with:
+\bse
+\Delta^{[L]} =  \frac{\partial J}{\partial  \hat{\boldsymbol{y}}} \cdot g^\prime (A^{[L]})
+\ese
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

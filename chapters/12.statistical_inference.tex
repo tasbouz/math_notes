@@ -98,4 +98,75 @@ The law of large numbers is a theorem that describes the result of performing th
 
 \v
 
-The law of large numbers can find an application in statistics since, the \say{random variable $X$ that follows a probability distribution $P$ with mean $\mu$} can be translated to a population, and the \say{collection of $n$ realizations of $X$ $\{ x_{1}, x_{2}, \ldots, x_{n} \}$ with an average $\bar{x}_{n}$} can be translated to a sample of size  $n$ drawn out of the population. Then the law of large numbers simply states that as the size of the sample increases the sample mean tends to the actual population mean. Going back to our example, this means that as the number of men in our sample increases their average weight tends to the actual mean weight of the whole population.
+The law of large numbers can find an application in statistics since, the \say{random variable $X$ that follows a probability distribution $P$ with mean $\mu$} can be translated to a population, and the \say{collection of $n$ realizations of $X$ $\{ x_{1}, x_{2}, \ldots, x_{n} \}$ with an average $\bar{x}_{n}$} can be translated to a sample of size  $n$ drawn out of the population. Then the law of large numbers simply states that as the size of the sample increases the sample mean tends to the actual population mean. Going back to our example, this means that as the number of men in our sample increases their average weight tends to the actual mean weight of the whole population. \v
+
+Hence when we want to study a parameter of a population,  (given that the population is huge and inaccessible in its totality) we choose a random sample out of the population, following the techniques we have already introduced,  and we study the statistics on it.  Then we generalize the statistic from the sample to the parameter of the population.  inevitably a question arises: ``how sure can we be that the statistics is close to the parameter"? \v
+
+Practically one could say that the solution in order to obtain the correct parameter of a population out of a sample is to increase the sample size as much as possible., so the law of large numbers will apply and we get the correct parameter.  However this is not true since the sample size follows the so-called ``law of diminishing returns, i.e there is a point when increasing the sample size even more does not offer any statistical significance.  \v
+
+The solution to this problem is the so called ``central limit theorem" and something called ``sampling distribution".
+
+\section{Central Limit Theorem \& Sampling Distribution}
+
+\begin{theorem}[Central Limit Theorem (CLT)]
+Let $\{X_{1},\ldots ,X_{n}\}$ be a sequence of i.i.d. r.v's with $E[X_{i}]=\mu$ and $Var[X_{i}] = \sigma^{2} < \infty$.  Then as $n$ approaches infinity,  the random variables $ \sqrt{n} ({\bar {X}}_{n} - \mu)$ converge in distribution to a normal distribution $N(0,\sigma ^{2})$.
+\end{theorem}
+
+CLT establishes that when independent random variables are added, their properly normalized sum tends toward a normal distribution (informally a bell curve) even if the original variables themselves are not normally distributed.  The theorem is a key concept in probability theory because it implies that probabilistic and statistical methods that work for normal distributions can be applicable to many problems involving other types of distributions. \v
+
+For example, suppose that a sample is obtained containing many observations,  each observation being randomly generated in a way that does not depend on the values of the other observations, and that the arithmetic mean of the observed values is computed. If this procedure is performed many times, the central limit theorem says that the probability distribution of the average will closely approximate a normal distribution. A simple example of this is that if one flips a coin many times, the probability of getting a given number of heads will approach a normal distribution, with the mean equal to half the total number of flips.  At the limit of an infinite number of flips, it will equal a normal distribution. \v
+
+Now we will make use of CLT in order to develop statistical inference. Let's begin with some needed definitions
+
+\bd [Sampling Distribution]
+A \textbf{sampling distribution} is the probability distribution of a given random sample based statistic. 
+\ed
+
+If an arbitrarily large number of samples,  each involving multiple observations,  were separately used in order to compute one value of a statistic (such as,  for example,  the sample mean or sample variance) for each sample,  then the sampling distribution is the probability distribution of the values that the statistic takes on.  In many contexts, only one sample is observed, but the sampling distribution can be found theoretically. \v
+
+Although everything can be applied for any statistics,  for now we will focus on the population mean (and subsequently to the sample mean). Hence given the sampling distribution of sample means (aka a probability distribution of sample means) we know from CLT that it will follow a normal distribution independently of the probability distribution of the population.  Moreover from the law of large numbers:
+\bse
+E[\bar{X}_{n}] = \mu, \quad \textit{as } n \to \infty
+\ese
+
+\bd [Standard Error Of The Mean]
+The \textbf{standard error of the mean}, or simply standard error,  is defined as:
+\bse
+\sigma_{\bar {x}} = \frac {\sigma }{\sqrt {n}}
+\ese
+
+where $\sigma$ is the standard deviation of the population and $n$ is the size of the sample.
+\ed
+
+Observe that for $n \to \infty \Rightarrow \sigma_{\bar {x}} \to 0$. \v
+
+Summing up according to CLT the sampling distribution of the mean of a population follows a normal distribution with mean $E[\bar{X}_{n}]$ and and variance $\sigma_{\bar {x}}$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

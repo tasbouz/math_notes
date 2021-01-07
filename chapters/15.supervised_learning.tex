@@ -347,29 +347,29 @@ In a way, mini-batch gradient descent tries to strike a balance between the good
 
 \textbf{For now we will focus on binary classification},  and later we will make a comment on multinomial classification.  \v
 
-In binary classification,  since the output is binary and can take only the values 0 or 1,  the hypothesis function of the linear regression is not a valid approximator for logistic regression since it produces a continuous set of outputs. So our first step is to find a suitable hypothesis function $h$ for logistic regression. The hypothesis function that we actually use in logistic regression is the sigmoid function and it is given by:
+In binary classification,  since the output is binary and can take only the values 0 or 1,  the hypothesis function of the linear regression is not a valid approximator for logistic regression since it produces a continuous set of outputs. So our first step is to find a suitable hypothesis function $h$ for logistic regression. The hypothesis function that we actually use in logistic regression is the logistic function (part of a broader family called sigmoid functions that we will introduce in deep learning chapter) and it is given by:
 \bse
 h(\boldsymbol{x}) = \frac{1}{1 + exp(- \boldsymbol{w}^{\intercal} \boldsymbol{x})}
 \ese
 
 \v
 
-(From now on,  in order to save space,  we will write $h(\boldsymbol{x})$ instead of the actual expression for the sigmoid function).
+(From now on,  in order to save space,  we will write $h(\boldsymbol{x})$ instead of the actual expression for the logistic function).
 
 \vspace{-5pt}
 
 \begin{figure}[H]
-\includegraphics[scale=0.2]{images/sigmoid.png}
+\includegraphics[scale=0.18]{images/sigmoid.png}
 \centering
 \end{figure}
 
 \v
 
-Hence, in logistic regression,  the hypothesis function computes a weighted sum of the input features (plus a bias term), but instead of outputting the result directly like the linear regression hypothesis function does,  it outputs the logistic (sigmoid function) of this result.  Notice that $h(\boldsymbol{x}) < 0.5$ when $\boldsymbol{w}^{\intercal} \boldsymbol{x} < 0$,  and $h(\boldsymbol{x}) \geq 0.5$ when $\boldsymbol{w}^{\intercal} \boldsymbol{x} \geq 0$,  so a logistic regression model predicts $1$ if $\boldsymbol{w}^{\intercal} \boldsymbol{x}$ is positive and 0 if it is negative. (The argument of the sigmoid function is often called \say{logit}). \v
+Hence, in logistic regression,  the hypothesis function computes a weighted sum of the input features (plus a bias term), but instead of outputting the result directly like the linear regression hypothesis function does,  it outputs the logistic of this result.  Notice that $h(\boldsymbol{x}) < 0.5$ when $\boldsymbol{w}^{\intercal} \boldsymbol{x} < 0$,  and $h(\boldsymbol{x}) \geq 0.5$ when $\boldsymbol{w}^{\intercal} \boldsymbol{x} \geq 0$,  so a logistic regression model predicts $1$ if $\boldsymbol{w}^{\intercal} \boldsymbol{x}$ is positive and 0 if it is negative. (The argument of the logistic function is often called \say{logit}). \v
 
 It is worth mentioning that one can alter the discrimination threshold of 0.5 to any value between 0 and 1. This is quite usual in logistic regression models when obtaining the correct class is more important than a possible misclassification.\v
 
-Now let's try to give a meaning to the hypothesis function. As we can see the sigmoid function produces results in the interval $[0,1]$. It is quite close to what we need, but not exactly so, since we do not need all the values between 0 and 1. For this reason we will interpret the hypothesis function of logistic regression as a probability measure of the target to belong to class 1. The closest to 0 the hypothesis function, the more unlikely for the target to belong in class 1 (hence it belongs to class 0) and the closest to 1 the more likely to belong to the class 1. Hence, by defining a threshold (say at 0.5) the idea is that for $h(\boldsymbol{x}) <0.5$ the algorithm will predict 0 and for $h(\boldsymbol{x}) \geq 0.5$ the algorithm will predict 1.  Based on this intuition,  we can write:
+Now let's try to give a meaning to the hypothesis function. As we can see the logistic function produces results in the interval $[0,1]$. It is quite close to what we need, but not exactly so, since we do not need all the values between 0 and 1. For this reason we will interpret the hypothesis function of logistic regression as a probability measure of the target to belong to class 1. The closest to 0 the hypothesis function, the more unlikely for the target to belong in class 1 (hence it belongs to class 0) and the closest to 1 the more likely to belong to the class 1. Hence, by defining a threshold (say at 0.5) the idea is that for $h(\boldsymbol{x}) <0.5$ the algorithm will predict 0 and for $h(\boldsymbol{x}) \geq 0.5$ the algorithm will predict 1.  Based on this intuition,  we can write:
 \bse
 h(\boldsymbol{x}) = P(y=1 | \boldsymbol{x}; \boldsymbol{w})
 \ese
@@ -429,7 +429,7 @@ J(\boldsymbol{w}) = - \frac{1}{m} \sum_{i=1}^{m}  \Big( y^{(i)} \cdot  \ln h(\bo
 
 The cross entropy is the loss function of the logistic regression in the similar way where MSE loss function is the loss function for linear regression. The name \say{cross entropy} comes from the definition of cross entropy which is the average amount of information needed to identify an event  between two probability distributions $p$ and $q$ over the same underlying set of events \v
 
-Notice that the only possible values of $y^{(i)}$ is 0 or 1. This means that in any case, one of the terms $y^{(i)}$ or $(1-y^{(i)})$ in $J$ will vanish and the other one will be equal to 1. So in the end the only thing that is actually part of the loss is the logarithm of the hypothesis function, which given that the hypothesis function is a sigmoid function which is always between 0 and 1, the logarithm is always negative. With the overall negative sign the loss turns positive and this is what we want to minimize.\v
+Notice that the only possible values of $y^{(i)}$ is 0 or 1. This means that in any case, one of the terms $y^{(i)}$ or $(1-y^{(i)})$ in $J$ will vanish and the other one will be equal to 1. So in the end the only thing that is actually part of the loss is the logarithm of the hypothesis function, which given that the hypothesis function is a logistic function which is always between 0 and 1, the logarithm is always negative. With the overall negative sign the loss turns positive and this is what we want to minimize.\v
 
 We are not going to write a vectorized form for the cross entropy loss function for two reasons. First of all, not all matrices have a logarithm and those matrices that do have a logarithm may have more than one logarithm. So one has to be careful when uses the vectorized form of logistic regression because it carries logarithms of matrices. Secondly, derivatives of logarithms of non square matrices sometimes are not defined.  Since we need to calculate the derivative of $J$ we might get problems. For this reason we will use the non vectorized form for the calculations, however we will express the final result in a vectorized form.\v
 
