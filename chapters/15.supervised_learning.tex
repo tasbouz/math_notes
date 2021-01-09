@@ -307,20 +307,26 @@ As we already mentioned there are many improvements and modified algorithms base
 \bit
 \item \textbf{Batch Gradient Descent}
 
-Batch gradient descent is actually the one we just saw.  As we see in gradient descent, the whole training set $X$ is used in order to make just one update of the parameters. We usually refer to the whole training set as the \say{batch}. For that reason, the usual terminology for what we have seen so far is batch gradient descent,  meaning that the whole batch is used to update the parameter. 
+Batch gradient descent is actually the one we just saw.  As we see in gradient descent, the whole training set $X$ is used in order to make just one update of the parameters. We usually refer to the whole training set as the \say{batch}. For that reason, the usual terminology for what we have seen so far is batch gradient descent,  meaning that the whole batch is used to update the parameter.  \v
+
+Notice that in batch gradient descent the algorithm goes over the entire data once before updating the parameters because this is the true gradient of the loss as derived earlier (sum of the gradients of
+the losses corresponding to each data point).  Since there are no approximations each step guarantees that the loss will decrease. However it carries a flipside.  As the number of training examples grows the dimensions of $X$ grows and using the whole training set for every iteration becomes computationally expensive.  For really large dataset with million of points in the training data,  in order to make just one update to the parameters the algorithm  needs to make million of calculations.  Obviously this is very slow.
 
 \item \textbf{Mini-Batch Gradient Descent}
 
-In mini-batch gradient descent we divide the whole dataset to $b$ subsets of $\frac{m}{b}$ training examples each,  called \say{mini-batches}, and we update the parameters using each of the mini-batches in each iteration.
+In mini-batch gradient descent we divide the whole dataset to $b$ subsets of $\frac{m}{b}$ training examples each,  called \say{mini-batches},  and we update the parameters using each of the mini-batches in each iteration.
 
 \item \textbf{Stochastic Gradient Descent}
 
-In stochastic gradient descent we only use one training example per time to update the parameters. In every iteration we pick the training example randomly hence the naming.
+In stochastic gradient descent,  which can be seen as an extreme case of mini-batch gradient descent where $b=m$,  we only use one training example per iteration to update the parameters.  In every iteration we are estimating the total gradient based on just one single data point that we pick randomly hence the name ``stochastic".   One has to keep in mind that since this is an approximation there is no guarantee that each step will decrease the loss function. \v
+
+In fact,  during stochastic gradient descent one observes many oscillations in the loss function due to the greediness of the decisions.
+Each point is trying to push the parameters in a direction most favourable to it (without being aware of how this affects other points). A parameter update which is locally favourable to one point may harm other points (its almost as if the data points are competing with each other). This fact provides no guarantee that each local greedy move reduces the global error.  However, obviously, is much much faster that batch and mini-batch gradient descent. \v
+
+In a way, mini-batch gradient descent tries to strike a balance between the goodness of batch gradient descent and speed of stochastic gradient descent. 
 \eit
 
-One of the main problems of batch gradient descent is that as the number of training examples grows the dimensions of $X$ grows and using the whole training set for every iteration becomes computationally expensive. Both mini-batch and stochastic gradient descent deal with this problem.\v
-
-In a way, mini-batch gradient descent tries to strike a balance between the goodness of batch gradient descent and speed of stochastic gradient descent. In general, batch gradient descent works just fine so we don't need the alternative techniques we just introduced. However in more complicated models, such as deep learning models, these techniques can be really useful. For this reason we will examine again these techniques in more details in the chapter of deep learning.
+In general,  in most supervised learning models batch gradient descent works just fine so we don't need the alternative techniques we just introduced.  However in more complicated models, such as deep learning models, these techniques can be really useful.  For this reason we will meet again these techniques in the chapter of deep learning.
 
 \section{Logistic Regression}
 
@@ -441,7 +447,9 @@ As we already mentioned, since we want to minimize a function the straight forwa
 
 \subsection{Gradient Descent}
 
-Gradient descent  works fine in logistic regression and, as with the MSE cost function in linear regression, it also happens to be a convex function.  First, let's calculate the derivative of $J(\boldsymbol{w})$ for logistic regression:
+Gradient descent  works fine in logistic regression and, as with the MSE cost function in linear regression, it also happens to be a convex function.  We will follows exactly the same steps as in linear regression since logistic regression is also very important and it's crucial to understand how the loss function is derived.  \v
+
+First, let's calculate the derivative of $J(\boldsymbol{w})$ for logistic regression:
 \begingroup
 \allowdisplaybreaks
 {\setlength{\jot}{15pt}
@@ -574,7 +582,7 @@ The bias error is an error from erroneous assumptions in the learning algorithm.
 \vspace{-5pt}
 
 \begin{figure}[H]
-\includegraphics[scale=0.5]{images/bias.png}
+\includegraphics[scale=0.4]{images/bias.png}
 \centering
 \end{figure}
 
@@ -585,7 +593,7 @@ High bias can cause an algorithm to miss the relevant relations between features
 \vspace{-10pt}
 
 \begin{figure}[H]
-\includegraphics[scale=1]{underfitting.png}
+\includegraphics[scale=0.8]{underfitting.png}
 \centering
 \end{figure}
 
@@ -607,7 +615,7 @@ The variance is an error from sensitivity to small fluctuations in the training 
 \vspace{-5pt}
 
 \begin{figure}[H]
-\includegraphics[scale=0.5]{variance.png}
+\includegraphics[scale=0.4]{variance.png}
 \centering
 \end{figure}
 
@@ -618,7 +626,7 @@ When we are dealing with high variance, informally we can say that the hypothesi
 \vspace{-10pt}
 
 \begin{figure}[H]
-\includegraphics[scale=1]{overfitting.png}
+\includegraphics[scale=0.8]{overfitting.png}
 \centering
 \end{figure}
 
@@ -649,7 +657,7 @@ E_{out} &= E_{x} \Big[ e(f(x),h(x)) \Big]  \\
 Hence, the out-of-sample error is actually a combination of bias and variance. So in order to have a model that generalizes well, we have to keep both of them low. However, since they are of opposite nature, the more we reduce bias the more variance increases and vice versa. This is the so called \textbf{bias-variance trade off}. The goal in machine learning is to balance this trade off so the model fits the data well and doesn't fail to generalize.
 
 \begin{figure}[H]
-\includegraphics[scale=0.65]{overunderfitting.png}
+\includegraphics[scale=0.55]{overunderfitting.png}
 \centering
 \end{figure}
 
@@ -959,8 +967,10 @@ Once the model is trained, we test it on the evaluation set and we measure the n
 \textbf{Confusion matrix} is a table that reports the number of true positives TP, true negatives TN, false positives FP and false negatives FN of a model.
 \ed
 
+\vspace{-5pt}
+
 \begin{figure}[H]
-\includegraphics[scale=0.3]{confusion}
+\includegraphics[scale=0.25]{confusion}
 \centering
 \end{figure}
 
@@ -1316,13 +1326,14 @@ As for the derivative with respect to $b$, we obtain:
 \ese
 
 By manipulating the initial Lagrangian a bit we get:
+{\setlength{\jot}{2pt}
 \begin{align*}
 \mathcal{L}(\boldsymbol{w}, b, \lambda_{i}) & = \frac{1}{2} || \boldsymbol{w} ||^2 - \sum_{i} \lambda_{i} \left( y^{(i)} (\boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} + b) - 1 \right) \\
-& = \frac{1}{2} || \boldsymbol{w} ||^2 - \sum_{i} \lambda_{i} y^{(i)} \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} - b \sum_{i} \lambda_{i} y^{(i)}  + \sum_{i} \lambda_{i} \\
+& = \frac{1}{2} || \boldsymbol{w} ||^2 - \sum_{i} \lambda_{i} y^{(i)} \boldsymbol{w}^{\intercal} \boldsymbol{x}^{(i)} - b \sum_{i} \lambda_{i} y^{(i)}  + \sum_{i} \lambda_{i}
 \end{align*}}
 
 By substituting the results from the two first derivatives in the previous expression of the Lagrangian we end up to:
-{\setlength{\jot}{10pt}
+{\setlength{\jot}{5pt}
 \begin{align*}
 \mathcal{L}(\boldsymbol{w}, b, \lambda_{i}) & = \frac{1}{2} \sum_{i} \sum_{j} \lambda_{i} \lambda_{j} y^{(i)}  y^{(j)} \left( \boldsymbol{x}^{(i)} \right)^{\intercal} \boldsymbol{x}^{(j)} - \sum_{i} \lambda_{i} y^{(i)} \left( \sum_{j} \lambda_{j} y^{(j)} \left( \boldsymbol{x}^{(j)} \right)^{\intercal} \right) \boldsymbol{x}^{(i)} + \sum_{i} \lambda_{i} \\
 & =  \frac{1}{2} \sum_{i} \sum_{j} \lambda_{i} \lambda_{j} y^{(i)}  y^{(j)} \left( \boldsymbol{x}^{(i)} \right)^{\intercal} \boldsymbol{x}^{(j)}  - \sum_{i} \sum_{j} \lambda_{i} \lambda_{j} y^{(i)}  y^{(j)} \left( \boldsymbol{x}^{(i)} \right)^{\intercal} \boldsymbol{x}^{(j)} + \sum_{i} \lambda_{i} \\
@@ -1719,7 +1730,7 @@ Another approach,  in order to get diverse classifiers,  is to use the same trai
 \vspace{7pt}
 
 \begin{figure}[H]
-\includegraphics[scale=0.55]{ensemble2.png}
+\includegraphics[scale=0.5]{ensemble2.png}
 \centering
 \end{figure}
 
@@ -1732,7 +1743,7 @@ In AdaBoost,  a new predictor corrects its predecessor by paying a bit more atte
 \vspace{7pt}
 
 \begin{figure}[H]
-\includegraphics[scale=0.5]{adaboost.png}
+\includegraphics[scale=0.45]{adaboost.png}
 \centering
 \end{figure}
 

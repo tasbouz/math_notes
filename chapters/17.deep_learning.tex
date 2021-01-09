@@ -393,7 +393,7 @@ whose output $g(x)$ satisfies $| g(x) - f(x)| <  \epsilon$ for some $\epsilon$. 
 
 In the next subsection we will develop the most generic network of sigmoid neurons called the ``feedforward neural network".
 
-\subsection{Feedforward Neural Networks}
+\subsection{Forward Propagation}
 
 Feedforward neural networks are the quintessential deep learning models.  The goal of a feedforward network is to approximate some function $f$ by defining a mapping and learning the value of the parameters that result in the best function approximation.  These models are called feedforward because information flows through the function being evaluated from $x$,  through the intermediate computations and finally to the output $y$.  There are no feedback connections in which outputs of the model are fed back into itself. Feedforward neural networks are of extreme importance to machine learning practitioners since they form the basis of many important commercial applications.  \v
 
@@ -416,9 +416,9 @@ x_1 \\ x_2 \\ \vdots \\ x_n
 \end{bmatrix}
 \ese
 
-From now on,  as it is common in deep learning,  we will separate the bias from the weights,  hence there is no need for the extra $x_0 = 1$ feature and this is why it does not appear in $\boldsymbol{x}$.  We will keep the notation $w$ for the weights but we will notate the bias as $b$ instead of $w_0$. \v
+From now on,  as it is common in deep learning,  we will separate the bias from the weights,  hence there is no need for the extra $x_0 = 1$ feature and this is why it does not appear in $\boldsymbol{x}$.  We will keep the notation $w$ for the weights but we will notate the bias as $b$ instead of $w_0$.  We usually refer to weights and bias as the ``parameters" of the model.  \v
 
-We call the first layer of the network (the one with the inputs) the ``input layer" or the ``$0^{\textit{th}}$ layer".  Each subsequent layer with neurons is called ``$1^{\textit{st}}$ hidden layer",  ``$2^{\textit{nd}}$ hidden layer" and so on up to the final ``$L$ hidden layer" which is usually called the ``output layer".  In other words the network contains one input layer,  $L-1$ hidden layers and one output layer.  \v
+We call the first layer of the network (the one with the inputs) the ``input layer" or the ``$0^{\textit{th}}$ layer".  Each subsequent layer with neurons is called ``$1^{\textit{st}}$ hidden layer",  ``$2^{\textit{nd}}$ hidden layer" and so on up to the final ``$L$ hidden layer" which is usually called the ``output layer".  In other words the network contains one input layer,  $L-1$ hidden layers and one output layer. \v
 
 Each layer $l$ contains a number of neurons $n^{[l]}$ (we usually use the bracket notation $[l]$ to indicate a variable for a specific layer $l$). It is obvious that for the input layer $n^{[0]} = n$, i.e the input layer has one neuron for each feature.  \v
 
@@ -447,6 +447,8 @@ b_{1}^{[l]} \\\\ b_{2}^{[l]} \\\\ \vdots \\\\ b_{n^{[l]}}^{[l]}
 
 \v
 
+We usually denote the all parameters of a layer $l$ as $\theta^{[l]}$ (in other words $\theta_{[l]}$ can either be $W^{[l]} $ for the weights or $\boldsymbol{b}^{[l]}$ for the biases depending on the occasion).  In that way we can write just one equation for both weights and biases and avoid repetitions when needed.  \v
+
 Finally,  in each layer the activation function $g$ (usually some sigmoid function) acts on the pre-activations and spits the activations of each neuron i.e a $(n^{[l]} \times 1)$  dimensional vector $\boldsymbol{h}^{[l]}$ defined as:
 \bse
 \boldsymbol{h}^{[l]} = g(\boldsymbol{a}^{[l]})
@@ -461,13 +463,13 @@ The activation at the output layer (which is the prediction of the neural networ
 
 where $O$ is the output activation function.  The role of the output layer (and the output activation function) is to provide some additional transformation from the features to complete the task that the network must perform.  Of course the choice of the output activation function depends on the nature of the problem (e.g: linear function, logistic function,  softmax function,  etc).  Any kind of neural network unit that may be used as an output can also be used as a hidden unit.  \v
 
-The process we have described so far is usually called ``forward propagation". \v
+The process we have described so far that builds the network is usually called ``forward propagation".  Notice that during building the network one needs to take several decision regarding the architecture (usually called ``topology") of the network as for example its number of units $L$ and its number of neurons in each unit $n^{[l]}$.  We refer to these kind of parameters as ``hyperparameters".  A hyperparameter is a parameter whose value is used to control the learning process in contrast to the values of the parameters of the model (weights and biases) that are derived via training.  Thus, hyperparameters cannot be inferred while fitting the machine to the training set because they refer to the model selection task that in principle have no influence on the performance of the model but affect the speed and quality of the learning process.  Keep in mind that $L$ and $n^{[l]}$ are not the only hyperparameters of a network. As we move on we will meet more and more hyperparameters.  \v
 
-Once we have both $y$ and the predicted value $\hat{y}$ one can equip a loss function $J(y,  \hat{y})$ that will quantify the error of the neural network.  It turns out that one of the most important aspects of the design of a neural network is actually the choice of this loss function.  Fortunately,  the loss functions for neural networks are more or less the same as those for other parametric models,  such as linear models (e.g: MSE and cross entropy loss functions).  In most cases,  our parametric model defines a probability distribution and we simply use the principle of maximum likelihood as we did in supervised learning. Sometimes,  we take a simpler approach,  where rather than predicting a complete probability distribution over $y$,  we merely predict some statistic of $y$ conditioned on $x$.  Specialized loss functions allow us to train a predictor of these estimates. \v
+Once one pass of forward propagation is over we have both $y$ and the predicted value $\hat{y}$, and one can equip a loss function $J(y,  \hat{y})$ that will quantify the error of the neural network.  It turns out that one of the most important aspects of the design of a neural network is actually the choice of this loss function.  Fortunately,  the loss functions for neural networks are more or less the same as those for other parametric models,  such as linear models (e.g: MSE and cross entropy loss functions).  In most cases,  our parametric model defines a probability distribution and we simply use the principle of maximum likelihood as we did in supervised learning. Sometimes,  we take a simpler approach,  where rather than predicting a complete probability distribution over $y$,  we merely predict some statistic of $y$ conditioned on $x$.  Specialized loss functions allow us to train a predictor of these estimates. \v
 
 It makes sense that the choice of loss function is tightly coupled with the choice of the output activation function since the choice of how to represent the output determines the form of the loss function.  For example it's logical that a linear output activation function justifies an MSE loss functions while a sigmoid (like for example softmax) output activation function justifies a cross entropy loss function.
 
-\subsection{Backward propagation}
+\subsection{Backward Propagation}
 
 We have introduced feedforward neural networks and its corresponding loss function that quantifies the errors the network makes.  We are now interested in finding an algorithm for learning the parameters of this model.  Normal equation is out of the picture for neural networks,  so gradient descent is the way to go.  \v
 
@@ -528,6 +530,8 @@ For the biases:
 & = \delta^{[L]}
 \end{align*}}
 
+\vspace{-10pt}
+
 where in both cases $\boldsymbol{\delta^{[l]}}$ is a $(n^{[l]} \times 1)$ dimensional vector defined as :
 \bse
 \delta^{[L]} =  \frac{\partial J}{\partial \hat{y}} \cdot g^\prime (a^{[L]})
@@ -564,23 +568,23 @@ Hence the update rules for gradient descent for the weights turn to:
 W^{[l]} \coloneqq W^{[l]} - \alpha \cdot\boldsymbol{\delta^{[l]}} \cdot {\boldsymbol{h}^{[l-1]}}^{\intercal}
 \ese
 
-and similarly for the biases:
-\bse
-\boldsymbol{b}^{[l]} \coloneqq \boldsymbol{b}^{[l]} - \alpha \cdot \boldsymbol{\delta^{[l]}}
-\ese
-
+c
 \v
 
 The process we have described in this section is usually called ``backward propagation" or more commonly ``backpropagation". \v
 
-The following figure summarizes everything we have developed so far on  building (forward propagation) and training (backward propagation) a feedforward neural network.
+Now let's summarize what we have so far.  In the previous section we showed that using the process of forward propagation one can pick a specific choice of hyperparameters in order to define the topology of their  feedforward neural network and build it.  Once the network is built then we use the method of backward propagation in order to train it, i.e to learn the parameters of the model that minimize the loss.  \v
 
-\v
+Notice that in the end,  a feedforward neural network is simply another supervised model as the ones we developed in the supervised learning chapter. Hence everything we developed there holds also for a feedforward neural network (i.e: error analysis,  bias variance trade-off,  solutions to undefitting / overfitting, etc).  \v
+
+The following figure summarizes all we have developed so far on forward and backward propagation.
 
 \begin{figure}[H]
 \includegraphics[scale=0.46]{images/nlsum.png}
 \centering
 \end{figure}
+
+\v
 
 \subsection{Extra: Generalize To Full Dataset}
 
@@ -706,21 +710,382 @@ with:
 \Delta^{[L]} =  \frac{\partial J}{\partial  \hat{\boldsymbol{y}}} \cdot g^\prime (A^{[L]})
 \ese
 
+\v
 
+Notice that this section introduces no new concepts, but a handy way of combining together all the training examples in matrices. The usefulness of this more practical than theoretical since once someone wants to use programming to actually train a model switching to vectors and matrices is inevitable.
 
+\section{Modified Gradient Descent Algorithms}
 
+Feedforward neural networks, and many other deep learning models that we will introduce after,  tend to be quite heavy in calculations.  Passing through the network just one single observations is not as fast as passing it from a supervised learning model. On top of that in deep learning most of the time the datasets are huge (much bigger than datasets used in supervised and unsupervised learning) with millions of observations.  As a consequence,  training a neural network can be tedious.  \v
 
+For this reasons it is always a good practice to try to make the optimization process as light as possible in order to be efficient.  As a result we will introduce some modified gradient descent algorithms heavily used in deep learning. 
 
+\subsection{Mini-Batch \& Stochastic Gradient Descent}
 
+We have already introduced the concepts of mini-match \& stochastic gradient descent in supervised learning.  Back in that chapter we mentioned that in most supervised learning models batch gradient descent works just fine so we don't need these alternative techniques. However in deep learning models both of them are heavily used in order to train neural networks. \v
 
+Let us briefly remind ourselves of the algorithms.
+\bit
+\item \textbf{Mini-Batch Gradient Descent}
 
+In mini-batch gradient descent we divide the whole dataset to $b$ subsets of $\frac{m}{b}$ training examples each,  called \say{mini-batches},  and we update the parameters using each of the mini-batches in each iteration.
 
+\item \textbf{Stochastic Gradient Descent}
 
+In stochastic gradient descent,  which can be seen as an extreme case of mini-batch gradient descent where $b=m$,  we only use one training example per iteration to update the parameters.  In every iteration we are estimating the total gradient based on just one single data point that we pick randomly hence the name ``stochastic".   One has to keep in mind that since this is an approximation there is no guarantee that each step will decrease the loss function. \v
+\eit
 
+In most of the cases stochastic gradient descent (and its modifications that we will introduce in a while) is the main optimizer used in deep learning.  A very useful and heavily ``jargon" of deep learning is the concept of the ``epoch".
 
+\bd [Epoch]
+An \textbf{epoch} is one full pass over the entire dataset.
+\ed
 
+For (batch) gradient descent 1 epoch is equal to 1 parameters' update since we use the whole dataset in order to perform the update,  while for stochastic gradient descent 1 epoch is equal to $m$ parameters' updates (where $m$ is the number of training examples / observations) since we update the parameters in every single pass of one training example.  Finally in mini-batch gradient descent in 1 epoch happen $\frac{m}{b}$ parameters' update.
 
+\subsection{Gradient Descent With Momentum}
 
+Another problem of plain gradient descent is that it takes a lot of time to navigate regions having a gentle slope due to the fact that the gradient in these regions is very small.  This again makes the optimization slow.  Gradient descent with momentum deals with this problem by making use of exponentially weighted moving averages. 
 
+\bd[Exponentially Weighted Moving Average]
+An exponentially weighted moving average (EWMA) is a first-order infinite impulse response filter that applies weighting factors which decrease exponentially.  The weighting for each older datum decreases exponentially, never reaching zero.  The EWMA $S$ for a series $Y$ may be calculated recursively as:
+\bse
+S_{t}={\begin{cases} (1-\beta) Y_{1},&t=1\\ (1-\beta ) Y_{t}+ \beta \cdot S_{t-1},&t>1\end{cases}}
+\ese
 
+where
+\bit
+\item The coefficient $\beta$ represents the degree of weighting decrease,  a constant smoothing factor between 0 and 1.  A higher $\beta$ discounts older observations faster.
+\item $Y_t$ is the value at a time period $t$.
+\item $S_t$ is the value of the EWMA at any time period t.
+\eit
+\ed
+
+By using the EWMA we define the updates $[V_{\theta^{[l]}}]_t$ we want to implement to our parameters at each step $t$ as:
+\bse
+[V_{\theta^{[l]}}]_t =
+\begin{cases} 
+(1-\beta) \nabla_{\theta^{[l]}_1} J   &t=1\\
+(1-\beta) \nabla_{\theta^{[l]}_t} J +\beta [V_{\theta^{[l]}}]_{t-1}, &t>1\end{cases}
+\ese
+
+\v
+
+Lately, in most of the cases, in gradient descent with momentum we slightly modify the above formula by discarding the $(1-\beta)$ factor:
+\bse
+[V_{\theta^{[l]}}]_t =
+\begin{cases} 
+\nabla_{\theta^{[l]}_1} J   &t=1\\
+\nabla_{\theta^{[l]}_t} J + \beta [V_{\theta^{[l]}}]_{t-1}, &t>1\end{cases}
+\ese
+
+\v
+
+For now we will use this second version since it's the most likely version one could find in literature. The update rule for gradient descent with momentum for the parameters turns to:
+\bse
+\theta^{[l]}_{t+1} = \theta^{[l]}_t - \alpha [V_{\theta^{[l]}}]_t
+\ese
+
+Notice that now in the update rule we do not use the gradient of the loss function but the update we defined earlier.  \v
+
+It would be easier to demonstrate what this algorithm does by calculating the first few steps for the parameters by making use of the equations we just wrote.  \v
+
+For the first step $t=1$, straight from the definition we get $[V_{\theta^{[l]}}]_1 = \nabla_{\theta^{[l]}_1} J$ hence the update rule:
+\bse
+\theta^{[l]}_2 = \theta^{[l]}_1 - \alpha \nabla_{\theta^{[l]}_1} J
+\ese
+
+As we see nothing really changed,  this is exactly the update rule of the  gradient descent without momentum. \v
+
+For the second step $t=2$ we obtain:
+\begin{align*}
+[V_{\theta^{[l]}}]_2 & = \nabla_{\theta^{[l]}_2} J + \beta [V_{\theta^{[l]}}]_{1} \\ 
+&=  \nabla_{\theta^{[l]}_2} J + \beta \nabla_{\theta^{[l]}_1} J
+\end{align*}
+
+Hence:
+\bse
+\theta^{[l]}_3 = \theta^{[l]}_2 - \alpha (\nabla_{\theta^{[l]}_2} J + \beta \nabla_{\theta^{[l]}_1} J )
+\ese
+
+\v
+
+Using the same calculations one can show that for the third update it is:
+\bse
+\theta^{[l]}_4 = \theta^{[l]}_3 - \alpha (\nabla_{\theta^{[l]}_3} J + \beta \nabla_{\theta^{[l]}_2} J + \beta^2 \nabla_{\theta^{[l]}_1} J)
+\ese
+
+and so on. .. \v
+
+As we see in gradient descent with momentum at every step $t$ in addition to the update $\nabla_{\theta^{[l]}_t} J$ of plain gradient descent,  we also look at the history of updates with diminishing weight factors $\beta$ (remember that $0 \leq \beta \geq 1$).  In other words the current update $\nabla_{\theta^{[l]}_t} J$ is the one with the most weight (i.e 1), $\nabla_{\theta^{[l]}_{t-1}} J$ is trusted a bit less (i.e $\beta$),  $\nabla_{\theta^{[l]}_{t-2}} J$ is trusted even lesser ($\beta^2$), and so on. \v
+
+Intuitively this means that if the descent repeatedly moves in the same direction then gradient descent with momentum ``adds" some confidence and starts taking bigger steps in that direction,  just as a ball gains momentum while rolling down a slope.  As a result even in the regions having gentle slopes,  gradient descent with momentum is able to take large steps because the momentum carries it along! \v
+
+Observe that in gradient descent with momentum (and all the other algorithms that will follow in this section) we need to keep a history of all the updates. Previously (in plain gradient descent) once we updated the parameters we forgot about the update and we moved on.  Notation wise this is the reason why in plain gradient decent we used $:=$ for denoting the update,  while now we use the steps $t$ to denote the update at each point $t$.  Nothing really changes in practice, but the notation indicates the fact that we actually need the history of the updates for future updates! \v
+
+Of course gradient descent with momentum carries its own drawbacks.  The main problem is that  towards the end (i.e when we are very close to the minimum) the algorithm has gained a lot of momentum towards the right direction and it oscillates in and out of the minima valley as the momentum carries it out of the valley.  This oscillations in the end slow down gradient descent with momentum a bit.  \v
+
+Fortunately we can deal with this issue. The final result is called ``Nesterov accelerated gradient descent".
+
+\subsection{Nesterov Accelerated Gradient Descent}
+
+Nesterov accelerated gradient descent deals with the problem of oscillations of gradient descent with momentum by ``looking before taking a leap".  Let's see what this means. \v
+
+Recall that in gradient descent with momentum we update the parameters as:
+\bse
+\theta^{[l]}_{t+1} = \theta^{[l]}_t - \alpha [V_{\theta^{[l]}}]_t 
+\ese
+
+\v
+
+By substituting $[V_{\theta^{[l]}}]_t $ and rearranging the terms we have:
+\begin{align*}
+\theta^{[l]}_{t+1} &= \theta^{[l]}_t - \alpha [V_{\theta^{[l]}}]_t \\
+&= \theta^{[l]}_t - \alpha \nabla_{\theta^{[l]}_t} J - \alpha \beta [V_{\theta^{[l]}}]_{t-1} \\
+&= ( \theta^{[l]}_t - \alpha \beta [V_{\theta^{[l]}}]_{t-1}) - \alpha \nabla_{\theta^{[l]}_t} J  \\
+&= {\theta^{\prime}}^{[l]}_{t} - \alpha \nabla_{\theta^{[l]}_t} J
+\end{align*}
+
+where we defined the so called ``look ahead" parameters prime ${\theta^{\prime}}^{[l]}_{t} $  as:
+\bse
+{\theta^{\prime}}^{[l]}_{t}  = \theta^{[l]}_t - \alpha \beta [V_{\theta^{[l]}}]_{t-1}
+\ese
+
+In Nesterov accelerated gradient descent we update the parameters by computing the derivative of the loss function with respect to those ``look ahead" parameters instead of the parameters at time $t$.  In other words the updates for the parameters turn to:
+\bse
+[V_{\theta^{[l]}}]_t =
+\begin{cases} 
+\nabla_{{\theta^{\prime}}^{[l]}_{1}} J   &t=1\\
+\nabla_{{\theta^{\prime}}^{[l]}_{t}} J + \beta [V_{\theta^{[l]}}]_{t-1}, &t>1\end{cases}
+\ese
+
+\v
+
+While the update rules stay the same:
+\bse
+\theta^{[l]}_{t+1} = \theta^{[l]}_t - \alpha [V_{\theta^{[l]}}]_t 
+\ese
+
+Looking ahead helps Nesterov accelerated gradient descent  in correcting its course quicker than momentum based gradient descent,
+hence the oscillations are smaller and the chances of escaping the minima valley also smaller!
+
+\subsection{Adaptive Gradient Descent (AdaGrad)}
+
+Another important drawback of gradient descent is the following.  As we proved, the updates of the weights in gradient descent follow:
+\bse
+W^{[l]} \coloneqq W^{[l]} - \alpha \cdot\boldsymbol{\delta^{[l]}} \cdot {\boldsymbol{h}^{[l-1]}}^{\intercal}
+\ese
+
+and for the biases:
+\bse
+\boldsymbol{b}^{[l]} \coloneqq \boldsymbol{b}^{[l]} - \alpha \cdot \boldsymbol{\delta^{[l]}}
+\ese
+
+\v
+
+Recall that both ${\boldsymbol{h}^{[l-1]}}$ and $\boldsymbol{\delta^{[l]}}$ are function of the inputs ${\boldsymbol{h}^{[0]}} = \boldsymbol{x}$ and actually it holds:
+\bse
+{\boldsymbol{h}^{[l]}}, \boldsymbol{\delta^{[l]}} \sim \boldsymbol{x}
+\ese
+
+In the case where some specific feature $x$ is very sparse (e.g if its value is 0 for most inputs) then the terms ${\boldsymbol{h}^{[l]}}$ and $\boldsymbol{\delta^{[l]}}$ will be 0 for most inputs and hence the parameters that correspond to this specific feature will not get enough updates.  On top of that if the feature $x$ happens to be sparse as well as important we would want to take the updates to the parameters more seriously.  For this reason we want to have a different learning rate for each parameter which takes care of the frequency of features. \v
+
+Adaptive gradient descent (or AdaGrad) is a modified gradient descent algorithm with per-parameter learning rate,  first published in 2011. Informally,  this increases the learning rate for sparser parameters and decreases the learning rate for ones that are less sparse.  This strategy often improves convergence performance over standard gradient descent in settings where data is sparse and sparse parameters are more informative.  The updates for AdaGrad reads:
+\bse
+[V_{\theta^{[l]}}]_t =
+\begin{cases} 
+\left(\nabla_{\theta^{[l]}_1} J \right)^2   &t=1\\
+\left(\nabla_{\theta^{[l]}_t} J \right)^2 + [V_{\theta^{[l]}}]_{t-1}, &t>1\end{cases}
+\ese
+
+\v
+
+where the square term is just for getting rid of the sign of the gradient. The important part is coming from the update rule for AdaGrad which is:
+\bse
+\theta^{[l]}_{t+1} = \theta^{[l]}_t - \frac{\alpha}{\sqrt{[V_{\theta^{[l]}}]_t}}  \nabla_{\theta^{[l]}_t} J
+\ese
+
+Notice that now in the update rule we use the gradient of the loss function and we use the update we defined for AdaGrad only in the denominator.  \v
+
+Using a parameter specific learning rate ensures that despite sparsity the parameters get a higher learning rates and hence larger updates. Further,  it also ensures that if the parameters undergo a
+lot of updates its effective learning rate decreases because of the growing denominator.  In practice, this does not work so well if we
+remove the square root from the denominator.\v
+
+As usual,  AdaGrad carries its own flipsides.  Namely,  Adagrad decays the learning rate very aggressively (as the denominator grows) having as a result for the frequent parameters to start receiving very small updates because of the decayed learning rate and over time the effective learning rate for the parameters will decay to an extent that there will be no further updates to them. \v
+
+To avoid this we have yet another modified gradient descent algorithm called ``root mean square propagation".
+
+\subsection{Root Mean Square Propagation (RMSProp)}
+
+As we already said AdaGrad decays the learning rate very aggressively (as the denominator grows) having as a result after a while the frequent parameters will start receiving very small updates because of the decayed learning rate.  To avoid this we will decay the denominator and prevent its rapid growth. \v
+
+Root mean square propagation (RMSProp) is also a method in which the learning rate is adapted for each of the parameters.  The idea is to divide the learning rate for a weight by an exponentially weighted moving average of the magnitudes of recent gradients for that weight,  hence the updates for RMSProp reads:
+\bse
+[V_{\theta^{[l]}}]_t =
+\begin{cases} 
+(1 - \beta)  \left(\nabla_{\theta^{[l]}_1} J \right)^2   &t=1\\
+(1 - \beta) \left(\nabla_{\theta^{[l]}_t} J \right)^2 + \beta [V_{\theta^{[l]}}]_{t-1}, &t>1\end{cases}
+\ese
+
+\v
+
+while the update rule for RMSProp has the same form:
+\bse
+\theta^{[l]}_{t+1} = \theta^{[l]}_t - \frac{\alpha}{\sqrt{[V_{\theta^{[l]}}]_t}}  \nabla_{\theta^{[l]}_t} J
+\ese
+
+\subsection{Adaptive Moment Estimation (Adam)}
+
+Adaptive moment estimation (Adam) is one of the most used optimization techniques in deep learning and it's actually a combination of almost every algorithm that we developed earlier, hence it deals with all the problems of gradient descent we mentioned at the same time (slow updates due to learning rate,  oscillations at minimum valley,  sparse features,  etc).  In a way Adam can be seen as RMSProp optimizer with momentum thus the updates and the update rule is simply a combination of the updates and the updates rules of RMSProp and gradient descent with momentum.  \v
+
+Hence, more specifialy,  in Adam we take the updates from gradient descent with momentum (we notate them with $m$ now to avoid confusion):
+\bse
+[m_{\theta^{[l]}}]_t =
+\begin{cases} 
+(1 - \beta_{m}) \nabla_{\theta^{[l]}_1} J   &t=1\\
+(1 - \beta_{m}) \nabla_{\theta^{[l]}_t} J + \beta_{m} [m_{\theta^{[l]}}]_{t-1}, &t>1\end{cases}
+\ese
+
+\v
+
+and we rescale them by dividing with a bias correction term as:
+\bse
+[\hat{m}_{\theta^{[l]}}]_t = \frac{[m_{\theta^{[l]}}]_t}{1-\beta_{m}^t}
+\ese
+
+\v
+
+Next we take the updates from RMSProp (we notate them with $u$ now to avoid confusion):
+\bse
+[u_{\theta^{[l]}}]_t =
+\begin{cases} 
+(1 - \beta_{u}) \left(\nabla_{\theta^{[l]}_1} J \right)^2   &t=1\\
+(1 - \beta_{u}) \left(\nabla_{\theta^{[l]}_t} J \right)^2 + \beta_{u} [u_{\theta^{[l]}}]_{t-1}, &t>1\end{cases}
+\ese
+
+\v
+
+and we rescale them  by dividing with a bias correction term as:
+\bse
+[\hat{u}_{\theta^{[l]}}]_t = \frac{[u_{\theta^{[l]}}]_t}{1-\beta_{u}^t}
+\ese
+
+\v
+
+Now that we have the updates, we equip the update rules of gradient descent with momentum:
+\bse
+\theta^{[l]}_{t+1} = \theta^{[l]}_t - \alpha [m_{\theta^{[l]}}]_t
+\ese
+
+and the update rules for RMSProp:
+\bse
+\theta^{[l]}_{t+1} = \theta^{[l]}_t - \frac{\alpha}{\sqrt{[u_{\theta^{[l]}}]_t}}  \nabla_{\theta^{[l]}_t} J
+\ese
+
+and we mix them together by making use of the rescaled updates to yield the update rule for Adam:
+\bse
+\theta^{[l]}_{t+1} = \theta^{[l]}_t - \frac{\alpha}{\sqrt{[\hat{u}_{\theta^{[l]}}]_t}}  [\hat{m}_{\theta^{[l]}}]_t
+\ese
+
+As we said this Adam's update rules treats many problems at the same time. Adam seems to be more or less the default choice now.  Having said that,  many papers report that stochastic gradient descent with momentum (both the plain one or Nesterov one) with a simple annealing learning rate schedule also works well in practice.  However,  Adam might just be the best choice overall.\v
+
+Before we close the section on Adam,  let us provide an explanation on why we need to rescale the updates by dividing with those bias correction terms.  Let's focus on the momentum part.  Note that we are taking a running average of the gradients of $[m_{\theta^{[l]}}]_t$.  The reason we are doing this is that we don't want to rely too much on the current gradient and instead rely on the overall behaviour of the gradients over many timesteps.  One way of looking at this is that we are interested in the expected value of the gradients and not on a single point estimate computed at time $t$.  However, instead of computing $E\Big[\nabla_{\theta^{[l]}_t} J \Big]$ we are computing the exponentially
+moving average $E \Big[ [m_{\theta^{[l]}}]_t \Big]$.  Ideally we would want to hold:
+\bse
+E \Big[ [m_{\theta^{[l]}}]_t \Big] = E\left[\nabla_{\theta^{[l]}_t} J \right]
+\ese
+
+\v
+
+Let us see if that is the case.  For the first step $t=1$,  straight from the definition of $[m_{\theta^{[l]}}]_t $ we get:
+\bse
+[m_{\theta^{[l]}}]_1 = (1 - \beta_m) \nabla_{\theta^{[l]}_1} J
+\ese
+
+For the second step $t=2$ we obtain:
+\begin{align*}
+[m_{\theta^{[l]}}]_2 & = (1 - \beta_m) \nabla_{\theta^{[l]}_2} J + \beta_m [m_{\theta^{[l]}}]_{1} \\ 
+&=  (1 - \beta_m) \nabla_{\theta^{[l]}_2} J + \beta_m (1 - \beta_m) \nabla_{\theta^{[l]}_1} J \\
+&=  (1 - \beta_m) \left( \nabla_{\theta^{[l]}_2} J + \beta_m \nabla_{\theta^{[l]}_1} J \right)
+\end{align*}
+
+For the third step $t=3$ we obtain:
+\begin{align*}
+[m_{\theta^{[l]}}]_3 & = (1 - \beta_m) \nabla_{\theta^{[l]}_3} J + \beta_m [m_{\theta^{[l]}}]_{2} \\ 
+&=  (1 - \beta_m) \nabla_{\theta^{[l]}_2} J + \beta_m \left( (1 - \beta_m) \nabla_{\theta^{[l]}_2} J + \beta_m (1 - \beta_m) \nabla_{\theta^{[l]}_1}  \right) \\
+&= (1 - \beta_m) \nabla_{\theta^{[l]}_2} J + \beta_m (1 - \beta_m) \nabla_{\theta^{[l]}_2} J + {\beta_m}^2 (1 - \beta_m) \nabla_{\theta^{[l]}_1} \\
+&= (1 - \beta_m) \left( \nabla_{\theta^{[l]}_2} J + \beta_m \nabla_{\theta^{[l]}_2} J + {\beta_m}^2 \nabla_{\theta^{[l]}_1} \right)
+\end{align*}
+
+Observing the pattern we can write that for any step $t$:
+\bse
+[m_{\theta^{[l]}}]_t = (1-\beta_m) \sum_{i=1}^{t} \beta_m^{t-i} \cdot \nabla_{\theta^{[l]}_i}
+\ese
+
+\v
+
+Subsequently for the expected value:
+\begin{align*}
+E \Big[ [m_{\theta^{[l]}}]_t \Big] &= E \Big[ (1-\beta_m) \sum_{i=1}^{t} \beta_m^{t-i} \cdot \nabla_{\theta^{[l]}_i} \Big] \\
+&= (1-\beta_m) E \Big[ \sum_{i=1}^{t} \beta_m^{t-i} \cdot \nabla_{\theta^{[l]}_i} \Big] \\
+&= (1-\beta_m)  \sum_{i=1}^{t} E \Big[ \beta_m^{t-i} \cdot \nabla_{\theta^{[l]}_i} \Big] \\
+&= (1-\beta_m)  \sum_{i=1}^{t} \beta_m^{t-i} \cdot E \Big[\nabla_{\theta^{[l]}_i} \Big]
+\end{align*}
+
+At this point we make the assumption that all $\nabla_{\theta^{[l]}_i}$ are coming from the same distribution hence:
+\bse
+E \Big[\nabla_{\theta^{[l]}_i} \Big] = E \Big[\nabla_{\theta^{[l]}_t} \Big], \:\:\: \forall i
+\ese
+
+Thus:
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+E \Big[ [m_{\theta^{[l]}}]_t \Big] &= (1-\beta_m)  \sum_{i=1}^{t} \beta_m^{t-i} \cdot E \Big[\nabla_{\theta^{[l]}_i} \Big] \\
+&= (1-\beta_m)  \sum_{i=1}^{t} \beta_m^{t-i} \cdot E \Big[\nabla_{\theta^{[l]}_t} \Big] \\
+&= (1-\beta_m) \cdot E \Big[\nabla_{\theta^{[l]}_t} \Big] \sum_{i=1}^{t} \beta_m^{t-i}  \\
+&= (1-\beta_m) \cdot E \Big[\nabla_{\theta^{[l]}_t} \Big] \cdot \frac{1-\beta_m^t}{1 - \beta_m}  \\
+&= E \Big[\nabla_{\theta^{[l]}_t} \Big] \cdot(1-\beta_m^t)
+\end{align*}
+\endgroup
+
+Hence we see that $E \Big[ [m_{\theta^{[l]}}]_t \Big] \neq E\left[\nabla_{\theta^{[l]}_t} J \right]$ due to this extra $(1-\beta_m^t)$ factor.  By dividing with the factor this last equation we obtain:
+{\setlength{\jot}{10pt}
+\begin{align*}
+& \frac{1}{1-\beta_m^t} E \Big[ [m_{\theta^{[l]}}]_t \Big] = E \Big[\nabla_{\theta^{[l]}_t} \Big] \Rightarrow \\
+& E \left[ \frac{[m_{\theta^{[l]}}]_t}{1-\beta_m^t}  \right] = E \Big[\nabla_{\theta^{[l]}_t} \Big] \Rightarrow \\
+& E \Big[ [{\hat{m}}_{\theta^{[l]}}]_t \Big] = E \Big[\nabla_{\theta^{[l]}_t} \Big]
+\end{align*}}
+
+Thus, while $ [m_{\theta^{[l]}}]_t$ does not satisfy the equality, the rescaled by the bias correction one $[{\hat{m}}_{\theta^{[l]}}]_t$ does.  This is the reason for the bias correction. Similarly we do the same for the update of RMSProp. 
+
+\subsection{Learning Rate Decay}
+
+As a final way to improve the optimization of a neural network we are going talk about ``learning rate decay".  As we have already discussed when the learning rate $\alpha$ is too big,  optimization algorithm fails to find the minimum due to very big oscillations around it while,  on the other hand,  if we set $\alpha$ to a really small value the steps will be so small that optimization will be very slow. \v
+
+The best of 2 worlds is if we start with a large learning rate (so we move fast towards the minimum) and then as epochs pass we gradually decrease learning rate so we are able to obtain the minimum. This is the idea of ``learning rate decay". \v
+
+There are many different learning rate schedules but the most common are the following:
+\bit
+\item \textbf{Time-based learning schedules} alter the learning rate depending on the learning rate of the previous time iteration.  Factoring in the decay the mathematical formula for the learning rate is:
+\bse
+\alpha_{t+1} = \frac{\alpha_{t}}{1 + d_t}
+\ese
+
+\item \textbf{Step-based learning schedules} changes the learning rate according to some pre defined steps. The decay application formula is here defined as:
+\bse
+\alpha_t = \alpha_{0} \cdot d^{\textit{ floor}(\frac{1+t}{r})}
+\ese
+
+\item \textbf{Exponential learning schedules} are similar to step-based but instead of steps a decreasing exponential function is used. The mathematical formula for factoring in the decay is:
+\bse
+\alpha _{t} = \alpha _{0} \cdot e^{-d \cdot t}
+\ese
+
+where $t$ is the iteration step,  $\alpha_t$ is the learning rate at iteration $t$,  $\alpha_0$ is the initial learning rate,  $d_t$ is the decay parameter at time $t$ (i.e how much the learning rate should change at each drop) and $r$ corresponds to the droprate,  or how often the rate should be dropped (i.e drop every $r$ iterations). 
+\eit
+
+Notice that decay parameter is yet another hyperparameter that needs to be fixed by us.
+
+\section{Autoencoders}
 
