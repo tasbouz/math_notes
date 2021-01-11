@@ -577,7 +577,7 @@ B = E[h(x)] - f(x)
 \ese
 \ed
 
-The bias error is an error from erroneous assumptions in the learning algorithm. When we are dealing with high bias, formally we can say that the hypothesis set $H=\{h\}$ was not big enough in order to contain function that can approximate well the target function $f$. So our best approximation for $f$ is still a bad one that cannot fit the data well.
+With the expected value we assume that we train the model many times with different data each time,  and we take the expected value of the functions that the model spits each time. The bias error is an error from erroneous assumptions in the learning algorithm. When we are dealing with high bias, formally we can say that the hypothesis set $H=\{h\}$ was not big enough in order to contain function that can approximate well the target function $f$. So our best approximation for $f$ is still a bad one that cannot fit the data well.
 
 \vspace{-5pt}
 
@@ -610,7 +610,7 @@ Var = E_{x}[(h(x) - E_{x}[h(x)])^2]
 \ese
 \ed
 
-The variance is an error from sensitivity to small fluctuations in the training set.
+Again,  with the variance we assume that we train the model many times with different data each time,  and we take the variance (i.e the spread) of the functions that the model spits each time. The variance is an error from sensitivity to small fluctuations in the training set.
 
 \vspace{-5pt}
 
@@ -694,9 +694,9 @@ One of the things to consider is the proportions of splitting the dataset into t
 
 Hence, before training we split the dataset as:
 \bit
-\item Training Dataset: $\{x_{\text{train}}^{(i)}, y_{\text{train}}^{(i)}\}, \:\:\: i = 1,2,\ldots,m_{\text{train}} \qquad$ (80\% of initial dataset). 
+\item Training Dataset: $\{x_{\text{train}}^{(i)}, y_{\text{train}}^{(i)}\}, \:\:\: i = 1,2,\ldots,m_{\text{train}} \qquad$ (usually about 80\% of initial dataset). 
 \v 
-\item Test Dataset: $\{x_{\text{test}}^{(i)}, y_{\text{test}}^{(i)}\}, \:\:\: i = 1,2,\ldots,m_{\text{test}} \qquad$ (20\% of initial dataset).
+\item Test Dataset: $\{x_{\text{test}}^{(i)}, y_{\text{test}}^{(i)}\}, \:\:\: i = 1,2,\ldots,m_{\text{test}} \qquad$ (usually about 20\% of initial dataset).
 \v
 \eit
 
