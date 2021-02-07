@@ -1,2 +1,2 @@
-# math_notes
+# math-notes
 My notes on various topics of mathematics.
