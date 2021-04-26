@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.6)  20 APR 2021 12:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.6)  26 APR 2021 09:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1142,7 +1142,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 
 LaTeX Warning: No \author given.
 
-<./images//cover.png, id=871, 1927.2pt x 1935.23pt>
+<./images//cover.png, id=899, 1927.2pt x 1935.23pt>
 File: ./images//cover.png Graphic file (type png)
 <use ./images//cover.png>
 Package pdftex.def Info: ./images//cover.png  used on input line 19.
@@ -1171,7 +1171,7 @@ bx/n/10 . []\OT1/cmr/m/it/10 An \OT1/cmr/bx/it/10 ax-iomatic sys-tem \OT1/cmr/m
  []
 
 [11] [12] [13] [14] [15] [16] [17]
-<./images//map.png, id=1235, 612.2875pt x 461.725pt>
+<./images//map.png, id=1270, 612.2875pt x 461.725pt>
 File: ./images//map.png Graphic file (type png)
 <use ./images//map.png>
 Package pdftex.def Info: ./images//map.png  used on input line 667.
@@ -1495,7 +1495,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 4
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [68] [69]
-<images/sinoneoverx.pdf, id=1760, 361.35pt x 234.8775pt>
+<images/sinoneoverx.pdf, id=1795, 361.35pt x 234.8775pt>
 File: images/sinoneoverx.pdf Graphic file (type pdf)
 <use images/sinoneoverx.pdf>
 Package pdftex.def Info: images/sinoneoverx.pdf  used on input line 619.
@@ -1543,7 +1543,7 @@ e{equation.5.4.1}) has been already used, duplicate ignored
                    \relax 
 l.399 \bi{rCl}
               
-<./images//tangent.png, id=1884, 220.825pt x 142.5325pt>
+<./images//tangent.png, id=1919, 220.825pt x 142.5325pt>
 File: ./images//tangent.png Graphic file (type png)
 <use ./images//tangent.png>
 Package pdftex.def Info: ./images//tangent.png  used on input line 410.
@@ -1684,7 +1684,7 @@ l.842 \bi{rCl}
                    \relax 
 l.875 \bi{rCl}
               
-<images/immers.pdf, id=1950, 361.35pt x 128.48pt>
+<images/immers.pdf, id=1985, 361.35pt x 128.48pt>
 File: images/immers.pdf Graphic file (type pdf)
 <use images/immers.pdf>
 Package pdftex.def Info: images/immers.pdf  used on input line 910.
@@ -2070,7 +2070,7 @@ l.288 \bi{rCl}
                    \relax 
 l.294 \bi{rCl}
                [120] [121]
-<./images//riem.png, id=2834, 377.41pt x 312.16624pt>
+<./images//riem.png, id=2869, 377.41pt x 312.16624pt>
 File: ./images//riem.png Graphic file (type png)
 <use ./images//riem.png>
 Package pdftex.def Info: ./images//riem.png  used on input line 371.
@@ -2683,7 +2683,7 @@ Chapter 9.
 ]) [185]
 Chapter 10.
 (./chapters/10.axiomatic_probability_theory.tex
-<./images//event.png, id=3371, 332.24126pt x 328.22626pt>
+<./images//event.png, id=3406, 332.24126pt x 328.22626pt>
 File: ./images//event.png Graphic file (type png)
 <use ./images//event.png>
 Package pdftex.def Info: ./images//event.png  used on input line 32.
@@ -2691,22 +2691,22 @@ Package pdftex.def Info: ./images//event.png  used on input line 32.
  [186
 
  <./images//event.png>]
-<images/complement.png, id=3381, 622.325pt x 540.0175pt>
+<images/complement.png, id=3416, 622.325pt x 540.0175pt>
 File: images/complement.png Graphic file (type png)
 <use images/complement.png>
 Package pdftex.def Info: images/complement.png  used on input line 48.
 (pdftex.def)             Requested size: 112.01366pt x 97.19894pt.
-<images/union.png, id=3382, 621.32124pt x 420.57124pt>
+<images/union.png, id=3417, 621.32124pt x 420.57124pt>
 File: images/union.png Graphic file (type png)
 <use images/union.png>
 Package pdftex.def Info: images/union.png  used on input line 61.
 (pdftex.def)             Requested size: 124.26204pt x 84.11275pt.
-<images/intersection.png, id=3383, 680.5425pt x 420.57124pt>
+<images/intersection.png, id=3418, 680.5425pt x 420.57124pt>
 File: images/intersection.png Graphic file (type png)
 <use images/intersection.png>
 Package pdftex.def Info: images/intersection.png  used on input line 76.
 (pdftex.def)             Requested size: 136.10608pt x 84.11275pt.
-<images/mutually_exclusive.png, id=3384, 214.55156pt x 119.69719pt>
+<images/mutually_exclusive.png, id=3419, 214.55156pt x 119.69719pt>
 File: images/mutually_exclusive.png Graphic file (type png)
 <use images/mutually_exclusive.png>
 Package pdftex.def Info: images/mutually_exclusive.png  used on input line 89.
@@ -2761,13 +2761,13 @@ Missing character: There is no ; in font nullfont!
  [197]
 Missing character: There is no ; in font nullfont!
  [198] [199] [200] [201] [202]
-<images/conditional2.png, id=3570, 823.075pt x 316.18124pt>
+<images/conditional2.png, id=3605, 823.075pt x 316.18124pt>
 File: images/conditional2.png Graphic file (type png)
 <use images/conditional2.png>
 Package pdftex.def Info: images/conditional2.png  used on input line 1073.
 (pdftex.def)             Requested size: 329.22417pt x 126.47025pt.
  [203 <./images/conditional2.png>]
-<images/partition.png, id=3581, 687.56876pt x 463.7325pt>
+<images/partition.png, id=3616, 687.56876pt x 463.7325pt>
 File: images/partition.png Graphic file (type png)
 <use images/partition.png>
 Package pdftex.def Info: images/partition.png  used on input line 1126.
@@ -2790,7 +2790,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 259.
 
 [210] [211] [212] [213]
-<images/uniform.png, id=3638, 1927.2pt x 1377.145pt>
+<images/uniform.png, id=3673, 1927.2pt x 1377.145pt>
 File: images/uniform.png Graphic file (type png)
 <use images/uniform.png>
 Package pdftex.def Info: images/uniform.png  used on input line 490.
@@ -2824,13 +2824,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 522.
 
-<images/normal.png, id=3643, 1445.4pt x 923.45pt>
+<images/normal.png, id=3678, 1445.4pt x 923.45pt>
 File: images/normal.png Graphic file (type png)
 <use images/normal.png>
 Package pdftex.def Info: images/normal.png  used on input line 530.
 (pdftex.def)             Requested size: 289.07487pt x 184.68672pt.
 [215 <./images/uniform.png> <./images/normal.png>] [216] [217]
-<images/standardnormal.png, id=3660, 927.465pt x 504.88625pt>
+<images/standardnormal.png, id=3696, 927.465pt x 504.88625pt>
 File: images/standardnormal.png Graphic file (type png)
 <use images/standardnormal.png>
 Package pdftex.def Info: images/standardnormal.png  used on input line 666.
@@ -2849,7 +2849,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 721.
 
 [219]
-<images/exponential.png, id=3673, 284.06125pt x 207.77625pt>
+<images/exponential.png, id=3709, 284.06125pt x 207.77625pt>
 File: images/exponential.png Graphic file (type png)
 <use images/exponential.png>
 Package pdftex.def Info: images/exponential.png  used on input line 739.
@@ -2872,7 +2872,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 758.
 
 [220 <./images/exponential.png>]
-<images/chi.png, id=3679, 1204.5pt x 803.0pt>
+<images/chi.png, id=3715, 1204.5pt x 803.0pt>
 File: images/chi.png Graphic file (type png)
 <use images/chi.png>
 Package pdftex.def Info: images/chi.png  used on input line 774.
@@ -2890,7 +2890,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 795.
 
-<images/t.png, id=3680, 1927.2pt x 1541.76pt>
+<images/t.png, id=3716, 1927.2pt x 1541.76pt>
 File: images/t.png Graphic file (type png)
 <use images/t.png>
 Package pdftex.def Info: images/t.png  used on input line 807.
@@ -2912,7 +2912,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 828.
 
-<images/beta.png, id=3686, 652.4375pt x 521.95pt>
+<images/beta.png, id=3722, 652.4375pt x 521.95pt>
 File: images/beta.png Graphic file (type png)
 <use images/beta.png>
 Package pdftex.def Info: images/beta.png  used on input line 840.
@@ -2942,7 +2942,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 863.
 
 [222 <./images/beta.png>]
-<images/gamma.png, id=3693, 1927.2pt x 1445.4pt>
+<images/gamma.png, id=3728, 1927.2pt x 1445.4pt>
 File: images/gamma.png Graphic file (type png)
 <use images/gamma.png>
 Package pdftex.def Info: images/gamma.png  used on input line 873.
@@ -2964,24 +2964,24 @@ sity func-tion $\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; [] ;
  []
 
 [224] [225] [226]
-<images/correlation.png, id=3720, 575.14874pt x 210.7875pt>
+<images/correlation.png, id=3755, 575.14874pt x 210.7875pt>
 File: images/correlation.png Graphic file (type png)
 <use images/correlation.png>
 Package pdftex.def Info: images/correlation.png  used on input line 1113.
 (pdftex.def)             Requested size: 345.0919pt x 126.47346pt.
  [227 <./images/correlation.png>] [228]
-<images/skewness.png, id=3733, 2890.8pt x 1030.85126pt>
+<images/skewness.png, id=3768, 2890.8pt x 1030.85126pt>
 File: images/skewness.png Graphic file (type png)
 <use images/skewness.png>
 Package pdftex.def Info: images/skewness.png  used on input line 1240.
 (pdftex.def)             Requested size: 346.88104pt x 123.69681pt.
-<images/kurtosis.png, id=3734, 416.55624pt x 234.8775pt>
+<images/kurtosis.png, id=3769, 416.55624pt x 234.8775pt>
 File: images/kurtosis.png Graphic file (type png)
 <use images/kurtosis.png>
 Package pdftex.def Info: images/kurtosis.png  used on input line 1256.
 (pdftex.def)             Requested size: 208.2776pt x 117.43846pt.
  [229 <./images/skewness.png>] [230 <./images/kurtosis.png>]
-<images/moments.png, id=3752, 410.53375pt x 248.93pt>
+<images/moments.png, id=3787, 410.53375pt x 248.93pt>
 File: images/moments.png Graphic file (type png)
 <use images/moments.png>
 Package pdftex.def Info: images/moments.png  used on input line 1353.
@@ -2994,7 +2994,7 @@ Overfull \hbox (27.05319pt too wide) detected at line 1459
 ) [233]
 Chapter 12.
 (./chapters/12.statistical_inference.tex
-<images/population_and_sample.png, id=3767, 903.375pt x 472.01344pt>
+<images/population_and_sample.png, id=3802, 903.375pt x 472.01344pt>
 File: images/population_and_sample.png Graphic file (type png)
 <use images/population_and_sample.png>
 Package pdftex.def Info: images/population_and_sample.png  used on input line 2
@@ -3011,7 +3011,7 @@ f $\OML/cmm/m/it/10 n$ \OT1/cmr/m/it/10 i.i.d r.v's $\OMS/cmsy/m/n/10 f\OML/cmm
  []
 
 [235]
-<images/lawoflargenumbers.png, id=3790, 1084.05pt x 722.7pt>
+<images/lawoflargenumbers.png, id=3826, 1084.05pt x 722.7pt>
 File: images/lawoflargenumbers.png Graphic file (type png)
 <use images/lawoflargenumbers.png>
 Package pdftex.def Info: images/lawoflargenumbers.png  used on input line 95.
@@ -3021,7 +3021,7 @@ Chapter 13.
 (./chapters/13.parametric_inference.tex [238
 
 ] [239]
-<images/totalvariationdistance.png, id=3823, 449.68pt x 277.035pt>
+<images/totalvariationdistance.png, id=3858, 449.68pt x 277.035pt>
 File: images/totalvariationdistance.png Graphic file (type png)
 <use images/totalvariationdistance.png>
 Package pdftex.def Info: images/totalvariationdistance.png  used on input line 
@@ -3032,7 +3032,7 @@ Package pdftex.def Info: images/totalvariationdistance.png  used on input line
 ]
 Chapter 14.
 (./chapters/14.machine_learning_introduction.tex
-<images/mlmodel.png, id=3850, 821.0675pt x 524.96124pt>
+<images/mlmodel.png, id=3885, 821.0675pt x 524.96124pt>
 File: images/mlmodel.png Graphic file (type png)
 <use images/mlmodel.png>
 Package pdftex.def Info: images/mlmodel.png  used on input line 35.
@@ -3042,7 +3042,7 @@ Package pdftex.def Info: images/mlmodel.png  used on input line 35.
 ] [246 <./images/mlmodel.png>]) [247]
 Chapter 15.
 (./chapters/15.supervised_learning.tex
-<images/supervisedmodel.png, id=3870, 745.78625pt x 229.85875pt>
+<images/supervisedmodel.png, id=3905, 745.78625pt x 229.85875pt>
 File: images/supervisedmodel.png Graphic file (type png)
 <use images/supervisedmodel.png>
 Package pdftex.def Info: images/supervisedmodel.png  used on input line 8.
@@ -3050,54 +3050,54 @@ Package pdftex.def Info: images/supervisedmodel.png  used on input line 8.
  [248
 
  <./images/supervisedmodel.png>]
-<images/linearregression.png, id=3879, 702.625pt x 449.68pt>
+<images/linearregression.png, id=3914, 702.625pt x 449.68pt>
 File: images/linearregression.png Graphic file (type png)
 <use images/linearregression.png>
 Package pdftex.def Info: images/linearregression.png  used on input line 48.
 (pdftex.def)             Requested size: 281.04501pt x 179.8688pt.
 
 [249 <./images/linearregression.png>] [250] [251] [252] [253]
-<images/gradientdescent.png, id=3910, 1146.2825pt x 669.50125pt>
+<images/gradientdescent.png, id=3945, 1146.2825pt x 669.50125pt>
 File: images/gradientdescent.png Graphic file (type png)
 <use images/gradientdescent.png>
 Package pdftex.def Info: images/gradientdescent.png  used on input line 274.
 (pdftex.def)             Requested size: 286.56992pt x 167.3749pt.
-<images/alpha.png, id=3911, 311.1625pt x 169.63374pt>
+<images/alpha.png, id=3946, 311.1625pt x 169.63374pt>
 File: images/alpha.png Graphic file (type png)
 <use images/alpha.png>
 Package pdftex.def Info: images/alpha.png  used on input line 283.
 (pdftex.def)             Requested size: 233.3713pt x 127.22498pt.
  [254 <./images/gradientdescent.png (PNG copy)> <./images/alpha.png>] [255]
-<images/classification.png, id=3921, 487.8225pt x 240.9pt>
+<images/classification.png, id=3957, 487.8225pt x 240.9pt>
 File: images/classification.png Graphic file (type png)
 <use images/classification.png>
 Package pdftex.def Info: images/classification.png  used on input line 348.
 (pdftex.def)             Requested size: 243.91064pt x 120.44969pt.
-<images/sigmoid.png, id=3922, 1204.5pt x 803.0pt>
+<images/sigmoid.png, id=3958, 1204.5pt x 803.0pt>
 File: images/sigmoid.png Graphic file (type png)
 <use images/sigmoid.png>
 Package pdftex.def Info: images/sigmoid.png  used on input line 368.
 (pdftex.def)             Requested size: 216.80064pt x 144.53375pt.
  [256 <./images/classification.png (PNG copy)> <./images/sigmoid.png>] [257] [2
 58] [259] [260]
-<images/bias.png, id=3951, 262.9825pt x 266.9975pt>
+<images/bias.png, id=3986, 262.9825pt x 266.9975pt>
 File: images/bias.png Graphic file (type png)
 <use images/bias.png>
 Package pdftex.def Info: images/bias.png  used on input line 585.
 (pdftex.def)             Requested size: 105.19113pt x 106.79709pt.
 
 [261]
-<./images//underfitting.png, id=3961, 234.8775pt x 134.5025pt>
+<./images//underfitting.png, id=3996, 234.8775pt x 134.5025pt>
 File: ./images//underfitting.png Graphic file (type png)
 <use ./images//underfitting.png>
 Package pdftex.def Info: ./images//underfitting.png  used on input line 596.
 (pdftex.def)             Requested size: 187.90225pt x 107.60213pt.
-<./images//variance.png, id=3962, 256.96pt x 255.95625pt>
+<./images//variance.png, id=3997, 256.96pt x 255.95625pt>
 File: ./images//variance.png Graphic file (type png)
 <use ./images//variance.png>
 Package pdftex.def Info: ./images//variance.png  used on input line 618.
 (pdftex.def)             Requested size: 102.78217pt x 102.38068pt.
-<./images//overfitting.png, id=3963, 219.82124pt x 127.47626pt>
+<./images//overfitting.png, id=3998, 219.82124pt x 127.47626pt>
 File: ./images//overfitting.png Graphic file (type png)
 <use ./images//overfitting.png>
 Package pdftex.def Info: ./images//overfitting.png  used on input line 629.
@@ -3108,25 +3108,25 @@ Overfull \hbox (6.95728pt too wide) detected at line 652
 []
  []
 
-<./images//overunderfitting.png, id=3973, 687.56876pt x 201.75375pt>
+<./images//overunderfitting.png, id=4008, 687.56876pt x 201.75375pt>
 File: ./images//overunderfitting.png Graphic file (type png)
 <use ./images//overunderfitting.png>
 Package pdftex.def Info: ./images//overunderfitting.png  used on input line 660
 .
 (pdftex.def)             Requested size: 378.16399pt x 110.96489pt.
 [263 <./images//overunderfitting.png>] [264]
-<./images//eval.png, id=3983, 662.475pt x 495.8525pt>
+<./images//eval.png, id=4018, 662.475pt x 495.8525pt>
 File: ./images//eval.png Graphic file (type png)
 <use ./images//eval.png>
 Package pdftex.def Info: ./images//eval.png  used on input line 742.
 (pdftex.def)             Requested size: 264.9853pt x 198.33748pt.
  [265 <./images//eval.png>]
-<./images//lchighbias.png, id=3990, 496.10344pt x 237.88875pt>
+<./images//lchighbias.png, id=4025, 496.10344pt x 237.88875pt>
 File: ./images//lchighbias.png Graphic file (type png)
 <use ./images//lchighbias.png>
 Package pdftex.def Info: ./images//lchighbias.png  used on input line 763.
 (pdftex.def)             Requested size: 297.66435pt x 142.73433pt.
-<./images//lchighvariance.png, id=3991, 463.7325pt x 234.8775pt>
+<./images//lchighvariance.png, id=4026, 463.7325pt x 234.8775pt>
 File: ./images//lchighvariance.png Graphic file (type png)
 <use ./images//lchighvariance.png>
 Package pdftex.def Info: ./images//lchighvariance.png  used on input line 774.
@@ -3134,38 +3134,38 @@ Package pdftex.def Info: ./images//lchighvariance.png  used on input line 774.
 
 [266 <./images//lchighbias.png> <./images//lchighvariance.png>] [267] [268]
 [269]
-<./images//confusion.jpg, id=4010, 670.00313pt x 347.04657pt>
+<./images//confusion.jpg, id=4045, 670.00313pt x 347.04657pt>
 File: ./images//confusion.jpg Graphic file (type jpg)
 <use ./images//confusion.jpg>
 Package pdftex.def Info: ./images//confusion.jpg  used on input line 973.
 (pdftex.def)             Requested size: 167.50037pt x 86.76143pt.
  [270 <./images//confusion.jpg>] [271] [272]
-<./images//roc.png, id=4040, 584.1825pt x 468.75125pt>
+<./images//roc.png, id=4076, 584.1825pt x 468.75125pt>
 File: ./images//roc.png Graphic file (type png)
 <use ./images//roc.png>
 Package pdftex.def Info: ./images//roc.png  used on input line 1126.
 (pdftex.def)             Requested size: 233.66885pt x 187.49716pt.
  [273 <./images//roc.png>]
-<./images//svm.png, id=4046, 358.33875pt x 294.09875pt>
+<./images//svm.png, id=4082, 358.33875pt x 294.09875pt>
 File: ./images//svm.png Graphic file (type png)
 <use ./images//svm.png>
 Package pdftex.def Info: ./images//svm.png  used on input line 1151.
 (pdftex.def)             Requested size: 197.08691pt x 161.7548pt.
 
 [274 <./images//svm.png>]
-<./images//svm2.png, id=4053, 422.57875pt x 354.32375pt>
+<./images//svm2.png, id=4089, 422.57875pt x 354.32375pt>
 File: ./images//svm2.png Graphic file (type png)
 <use ./images//svm2.png>
 Package pdftex.def Info: ./images//svm2.png  used on input line 1189.
 (pdftex.def)             Requested size: 190.15868pt x 159.4442pt.
  [275 <./images//svm2.png>] [276]
-<./images//svm3.png, id=4067, 334.24875pt x 275.0275pt>
+<./images//svm3.png, id=4103, 334.24875pt x 275.0275pt>
 File: ./images//svm3.png Graphic file (type png)
 <use ./images//svm3.png>
 Package pdftex.def Info: ./images//svm3.png  used on input line 1293.
 (pdftex.def)             Requested size: 150.41054pt x 123.76123pt.
  [277 <./images//svm3.png>] [278] [279]
-<./images//svm4.png, id=4087, 664.4825pt x 240.9pt>
+<./images//svm4.png, id=4122, 664.4825pt x 240.9pt>
 File: ./images//svm4.png Graphic file (type png)
 <use ./images//svm4.png>
 Package pdftex.def Info: ./images//svm4.png  used on input line 1461.
@@ -3180,59 +3180,59 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1468.
 
 [280 <./images//svm4.png>]
-<./images//knn.png, id=4095, 384.43625pt x 329.23pt>
+<./images//knn.png, id=4130, 384.43625pt x 329.23pt>
 File: ./images//knn.png Graphic file (type png)
 <use ./images//knn.png>
 Package pdftex.def Info: ./images//knn.png  used on input line 1481.
 (pdftex.def)             Requested size: 211.44058pt x 181.07706pt.
  [281 <./images//knn.png>]
-<./images//decisiontree.png, id=4101, 614.295pt x 314.67563pt>
+<./images//decisiontree.png, id=4136, 614.295pt x 314.67563pt>
 File: ./images//decisiontree.png Graphic file (type png)
 <use ./images//decisiontree.png>
 Package pdftex.def Info: ./images//decisiontree.png  used on input line 1542.
 (pdftex.def)             Requested size: 368.57983pt x 188.80682pt.
  [282 <./images//decisiontree.png>]
-<./images//purity.png, id=4116, 656.4525pt x 241.90375pt>
+<./images//purity.png, id=4151, 656.4525pt x 241.90375pt>
 File: ./images//purity.png Graphic file (type png)
 <use ./images//purity.png>
 Package pdftex.def Info: ./images//purity.png  used on input line 1570.
 (pdftex.def)             Requested size: 328.22545pt x 120.95157pt.
  [283 <./images//purity.png>]
-<./images//purity2.png, id=4127, 450.68375pt x 295.1025pt>
+<./images//purity2.png, id=4162, 450.68375pt x 295.1025pt>
 File: ./images//purity2.png Graphic file (type png)
 <use ./images//purity2.png>
 Package pdftex.def Info: ./images//purity2.png  used on input line 1605.
 (pdftex.def)             Requested size: 225.34131pt x 147.55087pt.
-<./images//purity3.png, id=4128, 451.6875pt x 288.07625pt>
+<./images//purity3.png, id=4163, 451.6875pt x 288.07625pt>
 File: ./images//purity3.png Graphic file (type png)
 <use ./images//purity3.png>
 Package pdftex.def Info: ./images//purity3.png  used on input line 1612.
 (pdftex.def)             Requested size: 225.84319pt x 144.03777pt.
  [284 <./images//purity2.png> <./images//purity3.png>]
-<./images//iris.png, id=4136, 473.26813pt x 409.53pt>
+<./images//iris.png, id=4171, 473.26813pt x 409.53pt>
 File: ./images//iris.png Graphic file (type png)
 <use ./images//iris.png>
 Package pdftex.def Info: ./images//iris.png  used on input line 1676.
 (pdftex.def)             Requested size: 236.63348pt x 204.7645pt.
  [285]
-<./images//iris2.png, id=4143, 551.05875pt x 309.65688pt>
+<./images//iris2.png, id=4178, 551.05875pt x 309.65688pt>
 File: ./images//iris2.png Graphic file (type png)
 <use ./images//iris2.png>
 Package pdftex.def Info: ./images//iris2.png  used on input line 1687.
 (pdftex.def)             Requested size: 303.08324pt x 170.3118pt.
  [286 <./images//iris.png> <./images//iris2.png>]
-<./images//ensemble.png, id=4150, 552.0625pt x 293.59688pt>
+<./images//ensemble.png, id=4185, 552.0625pt x 293.59688pt>
 File: ./images//ensemble.png Graphic file (type png)
 <use ./images//ensemble.png>
 Package pdftex.def Info: ./images//ensemble.png  used on input line 1720.
 (pdftex.def)             Requested size: 303.6353pt x 161.47878pt.
  [287 <./images//ensemble.png>]
-<./images//ensemble2.png, id=4158, 552.0625pt x 278.54062pt>
+<./images//ensemble2.png, id=4193, 552.0625pt x 278.54062pt>
 File: ./images//ensemble2.png Graphic file (type png)
 <use ./images//ensemble2.png>
 Package pdftex.def Info: ./images//ensemble2.png  used on input line 1733.
 (pdftex.def)             Requested size: 276.03056pt x 139.26996pt.
-<./images//adaboost.png, id=4159, 552.0625pt x 322.70563pt>
+<./images//adaboost.png, id=4194, 552.0625pt x 322.70563pt>
 File: ./images//adaboost.png Graphic file (type png)
 <use ./images//adaboost.png>
 Package pdftex.def Info: ./images//adaboost.png  used on input line 1746.
@@ -3241,7 +3241,7 @@ Package pdftex.def Info: ./images//adaboost.png  used on input line 1746.
 [289]
 Chapter 16.
 (./chapters/16.unsupervised_learning.tex
-<images/unsupervised.png, id=4171, 853.1875pt x 312.16624pt>
+<images/unsupervised.png, id=4206, 853.1875pt x 312.16624pt>
 File: images/unsupervised.png Graphic file (type png)
 <use images/unsupervised.png>
 Package pdftex.def Info: images/unsupervised.png  used on input line 8.
@@ -3249,12 +3249,12 @@ Package pdftex.def Info: images/unsupervised.png  used on input line 8.
  [290
 
  <./images/unsupervised.png>]
-<images/kmeans.png, id=4178, 1204.5pt x 501.875pt>
+<images/kmeans.png, id=4213, 1204.5pt x 501.875pt>
 File: images/kmeans.png Graphic file (type png)
 <use images/kmeans.png>
 Package pdftex.def Info: images/kmeans.png  used on input line 27.
 (pdftex.def)             Requested size: 301.12427pt x 125.46843pt.
-<images/kmeans2.png, id=4179, 101.20181pt x 113.46509pt>
+<images/kmeans2.png, id=4214, 101.20181pt x 113.46509pt>
 File: images/kmeans2.png Graphic file (type png)
 <use images/kmeans2.png>
 Package pdftex.def Info: images/kmeans2.png  used on input line 36.
@@ -3265,19 +3265,19 @@ LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
 (Font)              using `U/stmry/m/n' instead on input line 44.
 
 [291 <./images/kmeans.png (PNG copy)> <./images/kmeans2.png>]
-<images/DBSCAN.png, id=4184, 401.5pt x 289.08pt>
+<images/DBSCAN.png, id=4219, 401.5pt x 289.08pt>
 File: images/DBSCAN.png Graphic file (type png)
 <use images/DBSCAN.png>
 Package pdftex.def Info: images/DBSCAN.png  used on input line 60.
 (pdftex.def)             Requested size: 200.7495pt x 144.53964pt.
  [292 <./images/DBSCAN.png>]
-<images/pca.png, id=4190, 456.70625pt x 213.79875pt>
+<images/pca.png, id=4226, 456.70625pt x 213.79875pt>
 File: images/pca.png Graphic file (type png)
 <use images/pca.png>
 Package pdftex.def Info: images/pca.png  used on input line 91.
 (pdftex.def)             Requested size: 251.18921pt x 117.58966pt.
  [293 <./images/pca.png>]
-<images/pca2.png, id=4196, 674.52pt x 607.26875pt>
+<images/pca2.png, id=4232, 674.52pt x 607.26875pt>
 File: images/pca2.png Graphic file (type png)
 <use images/pca2.png>
 Package pdftex.def Info: images/pca2.png  used on input line 108.
@@ -3287,26 +3287,26 @@ Chapter 17.
 (./chapters/17.reinforcement_learning.tex [296
 
 ]
-<images/rl.png, id=4213, 550.055pt x 369.38pt>
+<images/rl.png, id=4249, 550.055pt x 369.38pt>
 File: images/rl.png Graphic file (type png)
 <use images/rl.png>
 Package pdftex.def Info: images/rl.png  used on input line 80.
 (pdftex.def)             Requested size: 275.02682pt x 184.68954pt.
  [297] [298 <./images/rl.png>]
 [299] [300]
-<images/rl1.png, id=4266, 592.2125pt x 494.84875pt>
+<images/rl1.png, id=4301, 592.2125pt x 494.84875pt>
 File: images/rl1.png Graphic file (type png)
 <use images/rl1.png>
 Package pdftex.def Info: images/rl1.png  used on input line 273.
 (pdftex.def)             Requested size: 266.49315pt x 222.67989pt.
  [301 <./images/rl1.png>] [302]
-<images/rl4.png, id=4283, 376.40625pt x 191.71625pt>
+<images/rl4.png, id=4318, 376.40625pt x 191.71625pt>
 File: images/rl4.png Graphic file (type png)
 <use images/rl4.png>
 Package pdftex.def Info: images/rl4.png  used on input line 404.
 (pdftex.def)             Requested size: 207.02406pt x 105.44426pt.
  [303 <./images/rl4.png>]
-<images/rl2.png, id=4290, 592.2125pt x 494.84875pt>
+<images/rl2.png, id=4325, 592.2125pt x 494.84875pt>
 File: images/rl2.png Graphic file (type png)
 <use images/rl2.png>
 Package pdftex.def Info: images/rl2.png  used on input line 442.
@@ -3318,8 +3318,8 @@ Overfull \hbox (19.0134pt too wide) detected at line 470
 
 ) [305]
 Chapter 18.
-(./chapters/18.deep_learning.tex
-<images/neuron.png, id=4301, 670.505pt x 382.42876pt>
+(./chapters/18.deep_learning_basics.tex
+<images/neuron.png, id=4336, 670.505pt x 382.42876pt>
 File: images/neuron.png Graphic file (type png)
 <use images/neuron.png>
 Package pdftex.def Info: images/neuron.png  used on input line 10.
@@ -3327,44 +3327,44 @@ Package pdftex.def Info: images/neuron.png  used on input line 10.
  [306
 
  <./images/neuron.png>]
-<images/neuron3.png, id=4308, 365.365pt x 279.0425pt>
+<images/neuron3.png, id=4343, 365.365pt x 279.0425pt>
 File: images/neuron3.png Graphic file (type png)
 <use images/neuron3.png>
 Package pdftex.def Info: images/neuron3.png  used on input line 33.
-(pdftex.def)             Requested size: 182.68205pt x 139.5209pt.
-<images/and.png, id=4309, 372.39125pt x 210.7875pt>
+(pdftex.def)             Requested size: 186.33368pt x 142.30978pt.
+<images/and.png, id=4344, 372.39125pt x 210.7875pt>
 File: images/and.png Graphic file (type png)
 <use images/and.png>
 Package pdftex.def Info: images/and.png  used on input line 64.
-(pdftex.def)             Requested size: 156.40324pt x 88.53014pt.
-<images/or.png, id=4310, 404.51125pt x 220.825pt>
+(pdftex.def)             Requested size: 167.57451pt x 94.8535pt.
+<images/or.png, id=4345, 404.51125pt x 220.825pt>
 File: images/or.png Graphic file (type png)
 <use images/or.png>
 Package pdftex.def Info: images/or.png  used on input line 71.
-(pdftex.def)             Requested size: 169.89355pt x 92.74585pt.
-<images/nor.png, id=4311, 400.49625pt x 193.72375pt>
+(pdftex.def)             Requested size: 177.98549pt x 97.16328pt.
+<images/nor.png, id=4346, 400.49625pt x 193.72375pt>
 File: images/nor.png Graphic file (type png)
 <use images/nor.png>
 Package pdftex.def Info: images/nor.png  used on input line 78.
-(pdftex.def)             Requested size: 160.19566pt x 77.48811pt.
+(pdftex.def)             Requested size: 176.21889pt x 85.23871pt.
  [307 <./images/neuron3.png> <./images/and.png> <./images/or.png>]
-<images/not.png, id=4320, 391.4625pt x 160.6pt>
+<images/not.png, id=4356, 391.4625pt x 160.6pt>
 File: images/not.png Graphic file (type png)
 <use images/not.png>
 Package pdftex.def Info: images/not.png  used on input line 85.
-(pdftex.def)             Requested size: 156.58221pt x 64.23885pt.
-<images/mp.png, id=4321, 666.49pt x 274.02374pt>
+(pdftex.def)             Requested size: 172.24402pt x 70.6642pt.
+<images/mp.png, id=4357, 666.49pt x 274.02374pt>
 File: images/mp.png Graphic file (type png)
 <use images/mp.png>
-Package pdftex.def Info: images/mp.png  used on input line 94.
-(pdftex.def)             Requested size: 279.92389pt x 115.08919pt.
-<images/mp2.png, id=4322, 676.5275pt x 292.09125pt>
+Package pdftex.def Info: images/mp.png  used on input line 92.
+(pdftex.def)             Requested size: 286.58511pt x 117.82791pt.
+<images/mp2.png, id=4358, 676.5275pt x 292.09125pt>
 File: images/mp2.png Graphic file (type png)
 <use images/mp2.png>
-Package pdftex.def Info: images/mp2.png  used on input line 103.
-(pdftex.def)             Requested size: 284.1396pt x 122.67747pt.
+Package pdftex.def Info: images/mp2.png  used on input line 100.
+(pdftex.def)             Requested size: 290.90114pt x 125.59677pt.
 
-Overfull \hbox (29.32753pt too wide) in paragraph at lines 107--108
+Overfull \hbox (29.32753pt too wide) in paragraph at lines 104--105
 \OT1/cmr/m/n/10 MP unit. In this case, the pos-si-ble in-puts are 8 points: $(0
 \OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0)\OML/c
 mm/m/it/10 ; \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/i
@@ -3380,125 +3380,171 @@ m/it/10 ; \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/1
 
 [308 <./images/nor.png> <./images/not.png> <./images/mp.png> <./images/mp2.png>
 ]
-<images/mp3.png, id=4331, 648.4225pt x 289.08pt>
+<images/mp3.png, id=4367, 648.4225pt x 289.08pt>
 File: images/mp3.png Graphic file (type png)
 <use images/mp3.png>
-Package pdftex.def Info: images/mp3.png  used on input line 110.
-(pdftex.def)             Requested size: 272.33559pt x 121.41277pt.
-<images/mp4.png, id=4332, 582.175pt x 382.42876pt>
+Package pdftex.def Info: images/mp3.png  used on input line 107.
+(pdftex.def)             Requested size: 285.30678pt x 127.19559pt.
+<images/mp4.png, id=4368, 582.175pt x 382.42876pt>
 File: images/mp4.png Graphic file (type png)
 <use images/mp4.png>
-Package pdftex.def Info: images/mp4.png  used on input line 117.
-(pdftex.def)             Requested size: 244.51183pt x 160.61897pt.
+Package pdftex.def Info: images/mp4.png  used on input line 114.
+(pdftex.def)             Requested size: 256.15779pt x 168.26917pt.
  [309 <./images/mp3.png> <./images/mp4.png>]
-<images/perceptron.png, id=4339, 274.02374pt x 280.04625pt>
+<images/perceptron.png, id=4375, 274.02374pt x 280.04625pt>
 File: images/perceptron.png Graphic file (type png)
 <use images/perceptron.png>
-Package pdftex.def Info: images/perceptron.png  used on input line 144.
+Package pdftex.def Info: images/perceptron.png  used on input line 139.
 (pdftex.def)             Requested size: 115.08919pt x 117.6186pt.
-<images/perceptron2.png, id=4340, 234.8775pt x 271.0125pt>
+<images/perceptron2.png, id=4376, 234.8775pt x 271.0125pt>
 File: images/perceptron2.png Graphic file (type png)
 <use images/perceptron2.png>
-Package pdftex.def Info: images/perceptron2.png  used on input line 169.
+Package pdftex.def Info: images/perceptron2.png  used on input line 164.
 (pdftex.def)             Requested size: 117.43846pt x 135.5059pt.
  [310 <./images/perceptron.png> <./images/perceptron2.png>]
-<images/perceptron3.png, id=4347, 669.50125pt x 336.25626pt>
+<images/perceptron3.png, id=4383, 669.50125pt x 336.25626pt>
 File: images/perceptron3.png Graphic file (type png)
 <use images/perceptron3.png>
-Package pdftex.def Info: images/perceptron3.png  used on input line 199.
+Package pdftex.def Info: images/perceptron3.png  used on input line 194.
 (pdftex.def)             Requested size: 348.14265pt x 174.85425pt.
-<images/errors.png, id=4348, 230.8625pt x 250.9375pt>
+<images/errors.png, id=4384, 230.8625pt x 250.9375pt>
 File: images/errors.png Graphic file (type png)
 <use images/errors.png>
-Package pdftex.def Info: images/errors.png  used on input line 213.
+Package pdftex.def Info: images/errors.png  used on input line 208.
 (pdftex.def)             Requested size: 138.51855pt x 150.56364pt.
-<images/errors2.png, id=4349, 156.585pt x 90.3375pt>
+<images/errors2.png, id=4385, 156.585pt x 90.3375pt>
 File: images/errors2.png Graphic file (type png)
 <use images/errors2.png>
-Package pdftex.def Info: images/errors2.png  used on input line 220.
+Package pdftex.def Info: images/errors2.png  used on input line 215.
 (pdftex.def)             Requested size: 103.3464pt x 59.62292pt.
-<images/errors3.png, id=4350, 263.98625pt x 146.5475pt>
+<images/errors3.png, id=4386, 263.98625pt x 146.5475pt>
 File: images/errors3.png Graphic file (type png)
 <use images/errors3.png>
-Package pdftex.def Info: images/errors3.png  used on input line 230.
-(pdftex.def)             Requested size: 211.18927pt x 117.23813pt.
+Package pdftex.def Info: images/errors3.png  used on input line 225.
+(pdftex.def)             Requested size: 237.58542pt x 131.89151pt.
  [311 <./images/perceptron3.png> <./images/errors.png> <./images/errors2.png>]
-<images/perceptron5.png, id=4358, 658.46pt x 289.08pt>
+<images/perceptron5.png, id=4394, 658.46pt x 289.08pt>
 File: images/perceptron5.png Graphic file (type png)
 <use images/perceptron5.png>
-Package pdftex.def Info: images/perceptron5.png  used on input line 239.
-(pdftex.def)             Requested size: 342.40117pt x 150.32245pt.
-<images/errors4.png, id=4359, 342.27875pt x 349.305pt>
+Package pdftex.def Info: images/perceptron5.png  used on input line 234.
+(pdftex.def)             Requested size: 329.2292pt x 144.53964pt.
+<images/errors4.png, id=4395, 342.27875pt x 349.305pt>
 File: images/errors4.png Graphic file (type png)
 <use images/errors4.png>
-Package pdftex.def Info: images/errors4.png  used on input line 250.
-(pdftex.def)             Requested size: 150.6031pt x 153.69467pt.
+Package pdftex.def Info: images/errors4.png  used on input line 245.
+(pdftex.def)             Requested size: 136.90906pt x 139.71951pt.
  [312 <./images/errors3.png> <./images/perceptron5.png> <./images/errors4.png>]
-<images/perceptronlearningalgorithm.png, id=4367, 300.12125pt x 289.08pt>
+<images/perceptronlearningalgorithm.png, id=4403, 300.12125pt x 289.08pt>
 File: images/perceptronlearningalgorithm.png Graphic file (type png)
 <use images/perceptronlearningalgorithm.png>
 Package pdftex.def Info: images/perceptronlearningalgorithm.png  used on input 
-line 257.
+line 252.
 (pdftex.def)             Requested size: 195.07649pt x 187.89977pt.
-<images/dpsigmoid.png, id=4368, 670.505pt x 333.245pt>
+<images/dpsigmoid.png, id=4404, 670.505pt x 333.245pt>
 File: images/dpsigmoid.png Graphic file (type png)
 <use images/dpsigmoid.png>
-Package pdftex.def Info: images/dpsigmoid.png  used on input line 279.
+Package pdftex.def Info: images/dpsigmoid.png  used on input line 274.
 (pdftex.def)             Requested size: 281.61018pt x 139.96193pt.
  [313 <./images/perceptronlearningalgorithm.png> <./images/dpsigmoid.png>]
-<images/sigmoids.png, id=4377, 714.67pt x 368.37625pt>
+<images/sigmoids.png, id=4412, 714.67pt x 368.37625pt>
 File: images/sigmoids.png Graphic file (type png)
 <use images/sigmoids.png>
-Package pdftex.def Info: images/sigmoids.png  used on input line 292.
-(pdftex.def)             Requested size: 321.59853pt x 165.76778pt.
-<images/pervssig.png, id=4378, 916.42375pt x 331.73938pt>
+Package pdftex.def Info: images/sigmoids.png  used on input line 287.
+(pdftex.def)             Requested size: 300.15935pt x 154.71696pt.
+<images/pervssig.png, id=4413, 916.42375pt x 331.73938pt>
 File: images/pervssig.png Graphic file (type png)
 <use images/pervssig.png>
-Package pdftex.def Info: images/pervssig.png  used on input line 301.
-(pdftex.def)             Requested size: 366.563pt x 132.69339pt.
- [314 <./images/sigmoids.png> <./images/pervssig.png>]
-<images/xor.png, id=4386, 479.7925pt x 249.93375pt>
+Package pdftex.def Info: images/pervssig.png  used on input line 296.
+(pdftex.def)             Requested size: 320.75311pt x 116.1105pt.
+<images/xor.png, id=4414, 479.7925pt x 249.93375pt>
 File: images/xor.png Graphic file (type png)
 <use images/xor.png>
-Package pdftex.def Info: images/xor.png  used on input line 316.
-(pdftex.def)             Requested size: 287.8777pt x 149.9614pt.
-<images/xor2.png, id=4387, 177.66376pt x 173.64874pt>
+Package pdftex.def Info: images/xor.png  used on input line 309.
+(pdftex.def)             Requested size: 215.90462pt x 112.46915pt.
+ [314 <./images/sigmoids.png> <./images/pervssig.png>]
+<images/xor2.png, id=4422, 177.66376pt x 173.64874pt>
 File: images/xor2.png Graphic file (type png)
 <use images/xor2.png>
-Package pdftex.def Info: images/xor2.png  used on input line 325.
+Package pdftex.def Info: images/xor2.png  used on input line 318.
 (pdftex.def)             Requested size: 74.61826pt x 72.93196pt.
 
 [315 <./images/xor.png> <./images/xor2.png>]
-<images/xor3.png, id=4394, 443.6575pt x 227.85126pt>
+<images/xor3.png, id=4429, 443.6575pt x 227.85126pt>
 File: images/xor3.png Graphic file (type png)
 <use images/xor3.png>
-Package pdftex.def Info: images/xor3.png  used on input line 380.
-(pdftex.def)             Requested size: 288.37395pt x 148.10155pt.
+Package pdftex.def Info: images/xor3.png  used on input line 375.
+(pdftex.def)             Requested size: 310.55812pt x 159.49478pt.
  [316 <./images/xor3.png>]
-<images/nn.png, id=4400, 1036.87375pt x 584.1825pt>
+<images/nn.png, id=4435, 1036.87375pt x 584.1825pt>
 File: images/nn.png Graphic file (type png)
 <use images/nn.png>
-Package pdftex.def Info: images/nn.png  used on input line 405.
-(pdftex.def)             Requested size: 445.84702pt x 251.19357pt.
+Package pdftex.def Info: images/nn.png  used on input line 404.
+(pdftex.def)             Requested size: 373.27426pt x 210.30553pt.
  [317 <./images/nn.png>] [318] [319] [320]
-<images/nlsum.png, id=4419, 957.5775pt x 529.98pt>
+<images/nlsum.png, id=4454, 957.5775pt x 529.98pt>
 File: images/nlsum.png Graphic file (type png)
 <use images/nlsum.png>
-Package pdftex.def Info: images/nlsum.png  used on input line 613.
-(pdftex.def)             Requested size: 363.88322pt x 201.39449pt.
+Package pdftex.def Info: images/nlsum.png  used on input line 622.
+(pdftex.def)             Requested size: 411.7503pt x 227.88695pt.
  [321 <./images/nlsum.png>] [322] [323]
 [324] [325] [326] [327] [328] [329] [330] [331] [332]
-<images/tanh.png, id=4475, 586.19pt x 522.95375pt>
+<images/tanh.png, id=4510, 586.19pt x 522.95375pt>
 File: images/tanh.png Graphic file (type png)
 <use images/tanh.png>
-Package pdftex.def Info: images/tanh.png  used on input line 1249.
-(pdftex.def)             Requested size: 134.82086pt x 120.27682pt.
-<images/relu.png, id=4476, 730.73pt x 574.145pt>
+Package pdftex.def Info: images/tanh.png  used on input line 1316.
+(pdftex.def)             Requested size: 117.23592pt x 104.5889pt.
+ [333]
+<images/relu.png, id=4516, 730.73pt x 574.145pt>
 File: images/relu.png Graphic file (type png)
 <use images/relu.png>
-Package pdftex.def Info: images/relu.png  used on input line 1272.
-(pdftex.def)             Requested size: 160.7611pt x 126.31229pt.
- [333 <./images/tanh.png> <./images/relu.png>]) [334] [335
+Package pdftex.def Info: images/relu.png  used on input line 1339.
+(pdftex.def)             Requested size: 146.1434pt x 114.82697pt.
+ [334 <./images/tanh.png> <./images/relu.png>]
+<images/weights.png, id=4526, 478.78876pt x 261.97874pt>
+File: images/weights.png Graphic file (type png)
+<use images/weights.png>
+Package pdftex.def Info: images/weights.png  used on input line 1373.
+(pdftex.def)             Requested size: 239.39378pt x 130.98904pt.
+<images/weights2.png, id=4527, 479.7925pt x 271.0125pt>
+File: images/weights2.png Graphic file (type png)
+<use images/weights2.png>
+Package pdftex.def Info: images/weights2.png  used on input line 1380.
+(pdftex.def)             Requested size: 239.89565pt x 135.5059pt.
+<images/weights3.png, id=4528, 487.8225pt x 281.05pt>
+File: images/weights3.png Graphic file (type png)
+<use images/weights3.png>
+Package pdftex.def Info: images/weights3.png  used on input line 1392.
+(pdftex.def)             Requested size: 268.30319pt x 154.57797pt.
+ [335 <./images/weights.png> <./images/weights2.png>]
+<images/weights4.png, id=4535, 514.92375pt x 302.12875pt>
+File: images/weights4.png Graphic file (type png)
+<use images/weights4.png>
+Package pdftex.def Info: images/weights4.png  used on input line 1405.
+(pdftex.def)             Requested size: 257.46124pt x 151.064pt.
+[336 <./images/weights3.png> <./images/weights4.png>]
+<images/batch.png, id=4542, 245.91875pt x 358.33875pt>
+File: images/batch.png Graphic file (type png)
+<use images/batch.png>
+Package pdftex.def Info: images/batch.png  used on input line 1418.
+(pdftex.def)             Requested size: 122.95906pt x 179.16893pt.
+) [337 <./images/batch.png>]
+Chapter 19.
+(./chapters/19.deep_learning_advanced_models.tex
+<images/onehot.png, id=4549, 401.5pt x 137.51375pt>
+File: images/onehot.png Graphic file (type png)
+<use images/onehot.png>
+Package pdftex.def Info: images/onehot.png  used on input line 28.
+(pdftex.def)             Requested size: 160.59715pt x 55.00452pt.
+ [338
+
+ <./images/onehot.png>]
+<images/cooccurance.png, id=4558, 476.78125pt x 167.62625pt>
+File: images/cooccurance.png Graphic file (type png)
+<use images/cooccurance.png>
+Package pdftex.def Info: images/cooccurance.png  used on input line 59.
+(pdftex.def)             Requested size: 309.90413pt x 108.95575pt.
+
+[339 <./images/cooccurance.png>]) [340] [341
 
 
 ] (./chapters/appendices.tex
@@ -3508,9 +3554,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-[336
+[342
 
-] [337]
+] [343]
 Appendix B.
 
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
@@ -3522,23 +3568,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
-[338
+[344
 
-] [339]
+] [345]
 Appendix C.
-[340
+[346
 
 ]
 Appendix D.
-[341
+[347
 
-] [342]
+] [348]
 Overfull \hbox (9.64406pt too wide) in paragraph at lines 233--234
 []\OT1/cmr/m/n/10 Ensure your key find-ings are com-mu-ni-cated through beau-ti
 -ful vi-su-al-iza-tions or easy-to-remember
  []
 
-) [343] (./math_notes.aux)
+) [349] (./math_notes.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 3.25pt have occurred.
@@ -3546,23 +3592,26 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `math_notes.out' has not changed.
-(rerunfilecheck)             Checksum: C386FA468740557821832946527A4841;41303.
+(rerunfilecheck)             Checksum: 6B08C1408D58486254884BDFE6DA3883;42681.
  )
 (\end occurred inside a group at level 3)
 
-### simple group (level 3) entered at line 1147 ({)
+### simple group (level 3) entered at line 1192 ({)
 ### simple group (level 2) entered at line 467 ({)
 ### simple group (level 1) entered at line 829 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 45454 strings out of 478994
- 1041411 string characters out of 5858185
- 1496490 words of memory out of 5000000
- 60397 multiletter control sequences out of 15000+600000
+ 45528 strings out of 478994
+ 1042865 string characters out of 5858185
+ 1496496 words of memory out of 5000000
+ 60440 multiletter control sequences out of 15000+600000
  437417 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,36n,106p,1197b,2670s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 107i,36n,106p,1204b,2670s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc
 }{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/u
 sr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</us
@@ -3607,10 +3656,10 @@ exlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/tex
 live/2021/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texli
 ve/2021/texmf-dist/fonts/type1/public/stmaryrd/stmary7.pfb></usr/local/texlive/
 2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on math_notes.pdf (343 pages, 15067028 bytes).
+Output written on math_notes.pdf (349 pages, 16358186 bytes).
 PDF statistics:
- 5027 PDF objects out of 5155 (max. 8388607)
- 4094 compressed objects within 41 object streams
- 1658 named destinations out of 1728 (max. 500000)
- 4413 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5111 PDF objects out of 5155 (max. 8388607)
+ 4157 compressed objects within 42 object streams
+ 1677 named destinations out of 1728 (max. 500000)
+ 4504 words of extra memory for PDF output out of 10000 (max. 10000000)
 

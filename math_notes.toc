@@ -202,30 +202,39 @@
 \contentsline {section}{\numberline {18.3}Sigmoid Neuron}{313}{section.18.3}%
 \contentsline {section}{\numberline {18.4}Feedforward Neural Networks}{314}{section.18.4}%
 \contentsline {subsection}{\numberline {18.4.1}Motivation: XOR Function With A Network Of Perceptons}{314}{subsection.18.4.1}%
-\contentsline {subsection}{\numberline {18.4.2}Forward Propagation}{317}{subsection.18.4.2}%
+\contentsline {subsection}{\numberline {18.4.2}Feedforward Neural Network (Forward Propagation)}{317}{subsection.18.4.2}%
 \contentsline {subsection}{\numberline {18.4.3}Backward Propagation}{319}{subsection.18.4.3}%
 \contentsline {subsection}{\numberline {18.4.4}Extra: Generalize To Full Dataset}{322}{subsection.18.4.4}%
 \contentsline {section}{\numberline {18.5}Modified Gradient Descent Algorithms}{323}{section.18.5}%
-\contentsline {subsection}{\numberline {18.5.1}Mini-Batch \& Stochastic Gradient Descent}{323}{subsection.18.5.1}%
+\contentsline {subsection}{\numberline {18.5.1}Mini-Batch \& Stochastic Gradient Descent}{324}{subsection.18.5.1}%
 \contentsline {subsection}{\numberline {18.5.2}Gradient Descent With Momentum}{324}{subsection.18.5.2}%
-\contentsline {subsection}{\numberline {18.5.3}Nesterov Accelerated Gradient Descent}{325}{subsection.18.5.3}%
+\contentsline {subsection}{\numberline {18.5.3}Nesterov Accelerated Gradient Descent}{326}{subsection.18.5.3}%
 \contentsline {subsection}{\numberline {18.5.4}Adaptive Gradient Descent (AdaGrad)}{326}{subsection.18.5.4}%
 \contentsline {subsection}{\numberline {18.5.5}Root Mean Square Propagation (RMSProp)}{327}{subsection.18.5.5}%
 \contentsline {subsection}{\numberline {18.5.6}Adaptive Moment Estimation (Adam)}{327}{subsection.18.5.6}%
 \contentsline {subsection}{\numberline {18.5.7}Learning Rate Decay}{330}{subsection.18.5.7}%
-\contentsline {section}{\numberline {18.6}Errors, Evaluation \& Regularization}{330}{section.18.6}%
+\contentsline {section}{\numberline {18.6}Errors, Evaluation \& Regularization}{331}{section.18.6}%
 \contentsline {subsection}{\numberline {18.6.1}L2 Regularization}{331}{subsection.18.6.1}%
-\contentsline {subsection}{\numberline {18.6.2}Dropout}{331}{subsection.18.6.2}%
-\contentsline {subsection}{\numberline {18.6.3}Dataset Augmentation}{332}{subsection.18.6.3}%
+\contentsline {subsection}{\numberline {18.6.2}Dataset Augmentation}{332}{subsection.18.6.2}%
+\contentsline {subsection}{\numberline {18.6.3}Adding Noise To The Inputs/Outputs}{332}{subsection.18.6.3}%
 \contentsline {subsection}{\numberline {18.6.4}Early Stopping}{332}{subsection.18.6.4}%
-\contentsline {section}{\numberline {18.7}Improvements On A Feedforward Neural Network}{332}{section.18.7}%
-\contentsline {subsection}{\numberline {18.7.1}Activation Functions}{332}{subsection.18.7.1}%
-\contentsline {subsection}{\numberline {18.7.2}Initialization Strategies}{334}{subsection.18.7.2}%
-\contentsline {subsection}{\numberline {18.7.3}Batch Normalization}{334}{subsection.18.7.3}%
-\contentsline {chapter}{Appendices}{335}{section*.20}%
-\contentsline {chapter}{\numberline {A}Constrained Optimization}{336}{appendix.a.A}%
-\contentsline {section}{\numberline {A.1}Equality Constrained Optimization}{336}{section.a.A.1}%
-\contentsline {section}{\numberline {A.2}Equality \& Inequality Constrained Optimization}{337}{section.a.A.2}%
-\contentsline {chapter}{\numberline {B}Kernels}{338}{appendix.a.B}%
-\contentsline {chapter}{\numberline {C}Convolution}{340}{appendix.a.C}%
-\contentsline {chapter}{\numberline {D}Applied Machine Learning}{341}{appendix.a.D}%
+\contentsline {subsection}{\numberline {18.6.5}Ensemble Methods}{332}{subsection.18.6.5}%
+\contentsline {subsection}{\numberline {18.6.6}Dropout}{332}{subsection.18.6.6}%
+\contentsline {section}{\numberline {18.7}Improvements On A Feedforward Neural Network}{333}{section.18.7}%
+\contentsline {subsection}{\numberline {18.7.1}Activation Functions}{333}{subsection.18.7.1}%
+\contentsline {subsection}{\numberline {18.7.2}Initialization Strategies}{335}{subsection.18.7.2}%
+\contentsline {subsection}{\numberline {18.7.3}Batch Normalization}{336}{subsection.18.7.3}%
+\contentsline {chapter}{\numberline {19}Deep Learning: Advanced Models}{338}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Word Embedding}{338}{section.19.1}%
+\contentsline {subsection}{\numberline {19.1.1}One-Hot Representation}{338}{subsection.19.1.1}%
+\contentsline {subsection}{\numberline {19.1.2}Distributed Representation}{339}{subsection.19.1.2}%
+\contentsline {subsection}{\numberline {19.1.3}Word2vec}{340}{subsection.19.1.3}%
+\contentsline {subsubsection}{Continuous Bag-Of-Words (CBOW)}{340}{section*.20}%
+\contentsline {subsubsection}{Continuous Skip-Gram}{340}{section*.21}%
+\contentsline {chapter}{Appendices}{341}{section*.22}%
+\contentsline {chapter}{\numberline {A}Constrained Optimization}{342}{appendix.a.A}%
+\contentsline {section}{\numberline {A.1}Equality Constrained Optimization}{342}{section.a.A.1}%
+\contentsline {section}{\numberline {A.2}Equality \& Inequality Constrained Optimization}{343}{section.a.A.2}%
+\contentsline {chapter}{\numberline {B}Kernels}{344}{appendix.a.B}%
+\contentsline {chapter}{\numberline {C}Convolution}{346}{appendix.a.C}%
+\contentsline {chapter}{\numberline {D}Applied Machine Learning}{347}{appendix.a.D}%
