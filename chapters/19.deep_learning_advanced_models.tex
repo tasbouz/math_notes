@@ -66,7 +66,7 @@ The most important problems of distributed representation though are that,  as i
 
 For many years the singular value decomposition of distributed representation was the way to go for NLP and word embedding problems.  However,  in 2006 and after,  after the discovery of deep learning,  we switched gears from the whole idea of counting word occurrences and co-occurrence matrices of count based models to direct,  prediction based models that uses statistics to predict outcomes.  In what follows we will introduce the most heavily used group of techniques of prediction based models called ``Word2vec''.
 
-\subsection{Word2vec}
+\subsection{Word2vec: Continuous Bag Of Words \& Skip-Gram}
 
 Word2vec is a technique for natural language processing that was created,  patented,  and published in 2013 by a team of researchers led by Tomas Mikolov at Google over two papers.  The word2vec algorithm uses a neural network model to learn word associations from a large corpus.  Once trained,  such a model can detect synonymous words or suggest additional words for a partial sentence.  As the name implies,  word2vec represents each distinct word with a particular list of numbers called a vector. The vectors are chosen carefully such that a simple mathematical function (the cosine similarity between the vectors) indicates the level of semantic similarity between the words represented by those vectors.  Embedding vectors created using the word2vec algorithm have some advantages compared to earlier algorithms that we described previously.\v
 
@@ -76,33 +76,123 @@ As we mentioned, word2vec can utilize either of two model architectures to produ
 
 \subsubsection{Continuous Bag-Of-Words (CBOW)}
 
-The Continuous Bag-Of-Words (CBOW) model tries to understand the context of the words and takes this as input.  It then tries to predict words that are contextually accurate.  In other words it tries to predict the current target word based on the source context words (surrounding words).  \v
+The Continuous Bag-Of-Words (CBOW) model tries to understand the context of the words and takes this as input.  It then tries to predict words that are contextually accurate.  In other words it tries to predict the current target word based on the source context words (surrounding words).  Let's see an example.  Consider the simple sentence ``the man sat on a chair". This can be seen as pairs of (context,  word) where if we consider a context window of size 1 (for simplicity) we have ([the],  man),  ([man],  sat),  ([sat],  on), ([on],  a),  ([a],  chair).  We have used a list for context just to make obvious that if one picks a window greater than 1 then we would have more context words, e.g for a window of size 2 we would examples like (the, man], sat), ([man, sat], on) and so on...  Thus the model tries to predict the target word based on the context word.  \v
 
-Let's see an example.  Consider the simple sentence ``...  the man sat on a chair",  this can be seen as pairs of (context,  word) where if we consider a context window of size 2,  we have examples like ([the],  man), ([the, brown], quick), ([the, dog], lazy) and so on.  Thus the model tries to predict the target word based on the context words.  \v
+The CBOW model solves this problem by using a feedforward neural network.  The input to the network will be a one-hot representation of the context words and the output,  will be a probability distribution over all possible words in the vocabulary (multi-class classification problem).  Let's see this in our simple example with the window of size 1.
 
-We will develop the CBOW model for this problem by using a feedforward neural network.  The input to the network will be a one-hot representation of the
-context word and the output, will be a probability distribution over all possible words in the vocabulary (multi-class classification problem). 
+\begin{figure}[H]
+\includegraphics[scale=0.61]{images/cbow.png}
+\centering
+\end{figure}
 
+In this particular example the input layer to the network is a one-hot representation of the context word ``sat" which is: 
+\bse
+\textit{``sat"} = [0,1,0,0, \ldots, 0]
+\ese
 
+\v
 
+The network is shallow since it contains only one single hidden layer.  The first set of weights $W^{[1]}$ are of course of dimensions $(k \times |V|)$ where $k$ is the number of units in the hidden layer and $|V|$ is the size of the vocabulary which is of course also the size of the one-hot representation vectors.  It is common practice to call $W^{[1]}$ simply $W_{\textit{context}}$.  Notice that we carry no biases.  The pre-activations are:
+\bse
+\textbf{a}^{[1]} =W_{\textit{context}}  \cdot \textbf{x}
+\ese
 
+and the activation function $g$ is as simple as  $g(\textbf{x}) = \textbf{x}$, hence the activation of the hidden layer $\textbf{h}^{[1]}$ is:
+\bse
+\textbf{h}^{[1]} =W_{\textit{context}}  \cdot \textbf{x}
+\ese
 
+Notice that the product $W_{\textit{context}} \cdot \textbf{x}$, given that $\textbf{x}$ is a one hot-vector,  is simply the $\textit{i}^{\textit{th}}$ column of $W_{\textit{context}}$  since everything else will be multiplied by 0.  So when the $\textit{i}^{\textit{th}}$  word is present the $\textit{i}^{\textit{th}}$ element in the one-hot vector is on and the $\textit{i}^{\textit{th}}$  column of $W_{\textit{context}}$ gets selected. In other words,  there is a one-to-one correspondence between the words and the column of $W_{\textit{context}}$. More specifically, we can treat the $\textit{i}^{\textit{th}}$  column of $W_{\textit{context}}$ as the representation of the $\textit{i}^{\textit{th}}$ context.
 
+\begin{figure}[H]
+\includegraphics[scale=0.4]{images/cbow2.png}
+\centering
+\end{figure}
 
+Moving on, the weights of the output layer $W^{[2]}$ are of course of dimensions $(|V| \times k)$,  since we need an output (aka a probability) for each possible word in the vocabulary (aka a probability distribution).  It is common practice to call $W^{[2]}$ simply $W_{\textit{word}}$.  The pre-activations now are:
+\bse
+\textbf{a}^{[2]} =W_{\textit{word}}  \cdot \textbf{h}^{[1]}
+\ese
 
+and for the output function $O$ it makes sense to use a softmax since we are dealing with a multi-class classification problem,  hence:
+\bse
+\hat{\textbf{y}} = P(\textit{word \:} | \textit{\: context}) = \frac{e^{W_{\textit{word}}  \cdot \textbf{h}^{[1]}}}{\sum_{\textit{words}} e^{W_{\textit{word}}  \cdot \textbf{h}^{[1]}}}
+\ese
 
+As we can see,  since:
+\bse
+W_{\textit{word}}  \cdot \textbf{h}^{[1]} = W_{\textit{word}}  \cdot W_{\textit{context}}  \cdot \textbf{x}
+\ese
 
+\v
 
+and since from the product $W_{\textit{context}}  \cdot \textbf{x} \:$ survives only the column of $W_{\textit{context}}$ associated with the context,  it turns out that $P(\textit{word \:} | \textit{\: context})$ is proportional to the dot product between of $W_{\textit{context}}$ and $W_{\textit{word}}$. In other words the probability for each word depends on the $\textit{i}^{\textit{th}}$ column of $W_{\textit{word}}$.  We thus treat the $\textit{i}^{\textit{th}}$ column of $W_{\textit{word}}$ as the representation of the $\textit{i}^{\textit{th}}$ word. \v
 
+Now the forward propagation is done and the network is built.  In order to train it we move to backpropagation.  First of all, we need to calculate the loss function.  Since we are dealing with a multi-class classification problem we will use the cross entropy loss function.  We have already calculated the cross-entropy loss function for logistic regression. The calculations for a softmax regression are very similar so we will skip them.  Just for completeness we will use the principle of maximum likelihood to obtain the cross entropy loss function for softmax which simply is:
+\bse
+\mathcal{L}(\theta) = - \ln P(\textit{word \:} | \textit{\: context}) = - \ln \frac{e^{W_{\textit{word}}  \cdot \textbf{h}^{[1]}}}{\sum_{\textit{words}} e^{W_{\textit{word}}  \cdot \textbf{h}^{[1]}}}
+\ese
 
-
-
-
-
-
-
-
-
-
+From here we just follow the backpropagation theory we have already developed, i.e we calculate the update rules using the chain rule,  and we simply train the model through iteration of passing data. Notice however, that the softmax function at the output is computationally very expensive since the denominator requires a summation over all words in the vocabulary.  We will revisit this issue soon.
 
 \subsubsection{Continuous Skip-Gram}
+
+The Skip-Gram model architecture tries to achieve the reverse of what the CBOW model does.  It tries to predict the context words (surrounding words) given a target word (the center word). Considering our simple sentence from earlier,  ``the man sat on a chair" in the CBOW model,  we get pairs of (context, word) where if we consider a context window of size 1,  we have examples like ([the],  man),  ([man],  sat),  ([sat],  on) and so on.  Now considering that the skip-gram model's aim is to predict the context from the word,  the model typically inverts the contexts and words,  and tries to predict each context word from its target word.  Hence the task becomes to predict the context [the] given target word ``man" and so on. Thus the model tries to predict the context window words based on the target word. \v
+
+Notice that in the case of where the context window is equal to 1, the two models are in practice identical since both of them try to predict one word based on another word.  However in the case where the window is greater than 1, then CBOW tries to predict one word based on all the context words, while skip-gram tried to predict all the context words based on one word.  This is why we said that skip-gram is actually the reverse of CBOW. 
+
+\begin{figure}[H]
+\includegraphics[scale=0.58]{images/skipgram.png}
+\centering
+\end{figure}
+
+Just like we discussed in the CBOW model,  we need to model this skip-gram architecture now as a deep learning classification model such that we take in the target word as our input and try to predict the context words.  The architecture is similar to the CBOW model with the difference that now everything is reversed.  The input is again just one word (e.g the word ``on") with one-hot representation:
+\bse
+\textit{``on"} = [0,0,1,0, \ldots, 0]
+\ese
+
+but now the name of the weights are reversed since their meaning is reversed (see figure).  So far only the naming has changed.  The mathematical difference is out the outcome, where now instead of just on word we want to predict all the context words.  We do that by having multiple predictions,  hence multiple softmax output function and subsequently the loss function is simply the sum of all individual cross-entropy loss functions:
+\bse
+\mathcal{L}(\theta) = - \sum_{\textit{words in window}} \ln P(\textit{word \:} | \textit{\: context})
+\ese
+
+From this point on everything is exactly the same. We train the model through backpropagation simply by computing the update rules and running training iterations.  Notice that the same problem as with CBOW is also present here , since the softmax function at the output is computationally very expensive since the denominator requires a summation over all words in the vocabulary.  \v
+
+There are 3 popular ways to overcome this problem.  We will just mention them for now, but we will not explain them:
+\bit
+\item Solution 1: Negative sampling.
+\item Solution 2: Contrastive estimation.
+\item Solution 3: Hierarchical softmax.
+\eit
+
+Finally it is worth mentioning the existence of a model that combines SVD and word2vec called ``GloVe''. 
+
+\section{Convolutional Neural Networks}
+
+Convolutional neural network (CNN or ConvNet) is a class of deep neural networks, most commonly applied to analyse visual imagery.   The name ``convolutional" indicates that the network employs a mathematical operation called convolution.  As any deep learning model we've seen so far,  a CNN consists of an input layer,  hidden layers and an output layer.  The hidden layers include layers that perform convolutions.  Since CNNs are used mainly to analyse images, we will develop them by keeping in mind that we want to analyse an image.  Thus,  the first step is to find out a way for an image to be represented mathematically to an input that can be provided to the input layer of a neural network.  
+
+\bd[RGB Color Model]
+The \textbf{RGB color model} is an additive color model in which red (R), green (G) and blue (B) light are added together in various ways to reproduce a broad array of colors.  The name of the model comes from the initials of the three additive primary colors,  red,  green, and blue. 
+\ed
+
+An image is a two dimensional collection of pixels where each pixel carries a specific shade of colour that can be decomposed to a specific combination of values for the RGB color model.  More precisely,  each pixel of a 2 dimensional image carries a position represented by ``row'' and ``column''.  (For example the very first pixel on the top left of an image is the pixel $(0,0)$).  We refer to the total number of rows of an image as the ``height'' of the image,  and to the total number of columns as the `width'' of the image.  Each position (pixel) then,  carries 3 values,  one for each color of RGB color model,  represented by a ``channel'',  where the combination of these values can represent the original image.  We refer to the total number of channels of an image as the ``depth'' of an image. (For the RGB color model the depth of any image is simply 3).
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{images/rgb.png}
+\centering
+\end{figure}
+
+Hence,  a two dimensional image can be represented as a $(\textit{height} \times \textit{width} \times \textit{depth})$ dimensional matrix. Subsequently a collection of $N$ such images can be stack together to a $(N \times \textit{height} \times \textit{width} \times \textit{depth})$ dimensional matrix. This matrix is the mathematical representation of collection of images and serves as the input to a CNN. \v
+
+Now that we know how to represent an image to a matrix so we can feed it to a neural network, we can move on to the first building block of a CNN which is the so called ``convolutional" layer.  Let's start by defining convolution.
+
+\bd[Convolution]
+\textbf{Convolution} is a mathematical operation on two functions $f$ and $g$ that produces a third function expressing how the shape of one is modified by the other. The term convolution refers to both the result function and to the process of computing it. It is defined as the integral of the product of the two functions after one is reversed and shifted.
+\bse
+(f*g)(t) = \int_{-\infty }^{\infty } f(\tau) g(t-\tau ) d\tau
+\ese
+\ed
+
+In simple words convolution expresses how the shape of one function is modified by another function.  Convolution as a term is very widely used in mathematics, however for now we will switch gears and examine convolution specifically for CNNs.
+
+

@@ -25,7 +25,7 @@ An agent should,  among others,  accommodate new problem solving rules increment
 have a memory-based exemplar storage and retrieval capacities and parameters to represent short and long term memory.
 
 \bd[State]
-A \textbf{state} $S$ is a representation of the current situation of an agent, or an environment.
+A \textbf{state} (at time $t$) $S_t$ is a representation of the current situation of an agent, or an environment.
 \ed
 
 In simple words a state is all the information an agent uses in order to determines what happens next.  We distinguish between the ``agent state" and ``environment state".
@@ -39,11 +39,11 @@ In simple words a state is all the information an agent uses in order to determi
 \ed
 
 \bd[Action]
-An \textbf{action} $A$ is the choice of action by an agent given a state. 
+An \textbf{action} (at time $t$) $A_t$ is the choice of action by an agent given a state. 
 \ed
 
 \bd[Reward]
-A \textbf{reward} $R$ is an abstract concept that describes a scalar feedback signal an agent receives from a given state in an environment,  given its action on the state. 
+A \textbf{reward} (at time $t$) $R_t$ is an abstract concept that describes a scalar feedback signal an agent receives from a given state in an environment,  given its action on the state. 
 \ed
 
 A reward can be positive or negative.  When the reward is positive,  it is corresponding to our normal meaning of reward.  When the reward is negative,  it is corresponding to what we usually call ``punishment".
@@ -109,7 +109,7 @@ A \textbf{deterministic policy} is a policy that assigns one action $a$ to every
 \bd[Stochastic Policy]
 A \textbf{stochastic policy} is a policy that assigns a probability distribution over actions $a$ to every state $s$:
 \bse
-\pi(a|s) = P(A=a|S=s)
+\pi(a|s) = P(A_t=a|S_t=s)
 \ese
 \ed
 
@@ -198,7 +198,7 @@ Markov decision processes (MDPs) formally describe fully observable environments
 \bd[Markov Property]
 Let $\{X_i\}$ be a stochastic process.  The stochastic process is said to carry the \textbf{Markov property} if and only if:
 \bse
-P(X_{n}=x_{n} \mid X_{n-1} = x_{n-1}, \dots , X_{1}=x_{1}) = P(X_{n}=x_{n}\mid X_{n-1}=x_{n-1})
+P(X_{n} \mid X_{n-1}, \dots , X_{1}) = P(X_{n}= \mid X_{n-1})
 \ese
 \ed
 
@@ -208,7 +208,7 @@ In order to make the connection with reinforcement learning,  we define the ``Ma
 \bd[Markov State]
 A state $S_t$ is called a \textbf{Markov state} if and only if:
 \bse
-P(S_{t+1}=s_{t+1} \mid S_{t} = s_{t}, \dots , S_{1}=s_{1}) = P(S_{t+1}=s_{t+1} \mid S_{t} = s_{t})
+P(S_{t+1} \mid S_{t}, \dots , S_{1}) = P(S_{t+1} \mid S_{t})
 \ese
 \ed
 
@@ -219,7 +219,7 @@ The Markov state captures all relevant information from the history and once the
 Given the definition of Markov states we are now in a position to start building the mathematical framework of Markov decision processes. The first step towards this direction is the so called ``Markov process". In order to define it, we will first (re)define in detail the ``state transition probability" which we have already introduced in the previous section but for the specific case of a Markov process.
 
 \bd[State Transition Probability (For Markov Process)]
-The \textbf{state transition probability} between an initial state $s$ and a successor state $s^\prime$ $\mathcal{P}_{s s^\prime}$ is defined as the probability of ending in state $s^\prime$ given the current state $s$:
+The \textbf{state transition probability} $\mathcal{P}_{s s^\prime}$ between an initial state $s$ and a successor state $s^\prime$  is defined as the probability of ending in state $s^\prime$ given the current state $s$:
 \bse
 \mathcal{P}_{s s^\prime} = P(S_{t+1}=s^\prime \mid S_{t} = s)
 \ese
@@ -244,9 +244,9 @@ The \textbf{state transition matrix} $\mathcal{P}$ defines transition probabilit
 Given the state transition probability/matrix we can now define ``Markov processes".
 
 \bd[Markov Process]
-A \textbf{Markov process} is a tuple $(S, \mathcal{P}_{s s^\prime})$ where $S$ is a (finite) set of Markov states:
+A \textbf{Markov process} is a tuple $(\mathcal{S}, \mathcal{P}_{s s^\prime})$ where $\mathcal{S}$ is a (finite) set of Markov states:
 \bse
-S = \{S_1,  S_2,  \ldots, S_n\}
+\mathcal{S} = \{s_1,  s_2,  \ldots, s_n\}
 \ese
 
 and $\mathcal{P}_{s s^\prime}$ is the state transition probability:
@@ -267,19 +267,19 @@ An \textbf{episode} is any sequence of states of a Markov process that starts fr
 
 Now let's see an example of a Markov process.
 
-\v
-
 \begin{figure}[H]
-\includegraphics[scale=0.45]{images/rl1.png}
+\includegraphics[scale=0.5]{images/rl1.png}
 \centering
 \end{figure}
 
 In this example the set of Markov states is:
 \bse
-S = \{S_1,  S_2, S_3,  S_4,  S_5,  S_6, S_7\}
+\mathcal{S} = \{s_1,  s_2, s_3,  s_4,  s_5,  s_6,  s_7\}
 \ese
 
-and the state transition probability (here we will use the state transition matrix since it's more handy) is:
+and the state transition matrix (we use the state transition matrix since it's more handy) is:
+
+\v
 
 \begingroup
 \renewcommand*{\arraystretch}{1.5}
@@ -298,14 +298,16 @@ and the state transition probability (here we will use the state transition matr
 
 \vspace{10pt}
 
-In this specific example the state $S_7$ is a terminal state,  hence a possible episode could be:
+In this specific example the state $s_7$ is a terminal state,  hence a possible episode could be:
 \bse
-S_1 \to S_2 \to S_3 \to S_4 \to S_7
+S_1=s_1,  \to S_2=s_2, \to S_3=s_3, \to S_4=s_4, \to S_5=s_7
 \ese
+
+While a Markov process is a good start,  at the same time is not adequate enough for describing reinforcement learning problems since it lacks many of the ingredients we introduced earlier for the reinforcement learning problem.  We will now add some more complexity to a Markov process to end up in the so called ``Markov reward process".  
 
 \subsection{Markov Reward Process}
 
-A Markov process is not adequate enough for describing reinforcement learning problems.  We will now add some more complexity to a Markov process to end up in the so called ``Markov reward process".  First we will (re)define in detail the ``expected reward" which we have already introduced in the previous section but for the specific case of a Markov decision process. Then we we will define the so called ``discount factor".
+A Markov Reward Process is similar to a Markov Process with some extra ingredients.  These extra ingredients are the ``expected reward" (which we have already introduced in the previous section,  but we will redefine it here adjusted for the specific case of a Markov decision process) and the so called ``discount factor''.
 
 \bd[Expected Reward (For Markov Reward Process)]
 \textbf{Expected reward} $\mathcal{R}_{s}$ of a state $s$ is the expected, immediate reward an agent will get for being in state $s$:
@@ -314,6 +316,16 @@ A Markov process is not adequate enough for describing reinforcement learning pr
 \ese
 \ed
 
+The expected reward of a state is simply the reward a state provides just for being in the state.  We can verify mathematically that the definition is actually consistent by making use of the law of conditional expected value we introduced in the probability notes:
+\begin{align*}
+\mathcal{R}_{s} &= E[R_{t+1} | S_t=s] \\
+&=  \sum_{s^\prime} E[R_{t+1} | S_t=s,  S_{t+1} = s^\prime] \cdot P(S_{t+1} = s^\prime | S_t = s) \\
+&=  \sum_{s^\prime} E[R_{t+1} | S_{t+1} = s^\prime] \cdot P_{s s^\prime} \\
+&=  \sum_{s^\prime} R_{s} \cdot P_{s s^\prime} \\
+&=  R_{s} \sum_{s^\prime} P_{s s^\prime} \\
+&=  R_{s}
+\end{align*}
+
 \bd[Discount Factor]
 \textbf{Discount factor} $\gamma$ is a scalar quantity with $\gamma \in [0,1]$ used to discount future rewards.
 \ed
@@ -321,9 +333,9 @@ A Markov process is not adequate enough for describing reinforcement learning pr
 In simple words discount factor is used to compute the present value of future rewards.  Now that we have introduced the expected reward and the discount factor we can expand the notion of a Markov process to that of a Markov reward process.
 
 \bd[Markov Reward Process]
-A \textbf{Markov reward process} is a tuple $(S,  \mathcal{P}_{s s^\prime},  \mathcal{R}_{s}, \gamma)$ where $S$ is a (finite) set of Markov states:
+A \textbf{Markov reward process} is a tuple $(\mathcal{S},  \mathcal{P}_{s s^\prime},  \mathcal{R}_{s}, \gamma)$ where $\mathcal{S}$ is a (finite) set of Markov states:
 \bse
-S = \{S_1,  S_2,  \ldots, S_n\}
+\mathcal{S} = \{s_1,  s_2,  \ldots, s_n\}
 \ese 
 
 $\mathcal{P}_{s s^\prime}$ is the state transition probability:
@@ -351,20 +363,25 @@ G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \ldots = \sum_{k=0}^{\infty}
 \ese
 \ed
 
-A few comment about the definition of return and the choice of including a discount factor in the definition are in order. Since the discount factor $\gamma \in [0,1] \Rightarrow \gamma^k \to 0$ as $k \to \infty$.  In other words the discount factor weights more the near future and less the distant future.  This is why the discount factor acts as the present value of future rewards.  In general most Markov reward (and decision) processes are discounted.  This is happening for many reasons. First of all it is mathematically convenient to discount rewards.  Secondly we avoid infinite returns in cyclic Markov processes.  Thirdly,  uncertainty about the future may not be fully represented. Finally, animal/human behaviour shows preference for immediate rewards. \v
+A few comments about the definition of return and the choice of including a discount factor in the definition are in order.  Notice that for the discount factor holds:
+\bse
+\gamma \in [0,1] \Rightarrow \gamma^k \to 0 \textit{\:\: as \:\:} k \to \infty
+\ese
+
+In other words the discount factor weights more the near future and less the distant future.  This is why the discount factor acts as the present value of future rewards.  In general most Markov reward (and decision) processes are discounted.  This is happening for many reasons. First of all it is mathematically convenient to discount rewards.  Secondly we avoid infinite returns in cyclic Markov processes.  Thirdly,  uncertainty about the future may not be fully represented. Finally, animal/human behaviour shows preference for immediate rewards. \v
 
 In one extreme case where only the immediate reward is important we can set $\gamma = 0$ and then we simply obtain $G_t = R_{t+1}$.  This is called  ``myopic" evaluation.  It is also possible to use undiscounted Markov reward processes $\gamma = 1$ where all future rewards contribute equally. This is called ``far-sighted" evaluation.  In most of the cases we pick a value for $\gamma$ between those extreme cases.  \v
 
 Given the return $G_t$ we can now  (re)define the ``state value function" which we have already introduced in the previous section but for the specific case of a Markov decision process. 
 
 \bd[State Value Function (For Markov Reward Process)]
-The \textbf{state value function } $V(s)$ of a Markov reward process is the expected return starting from state $s$:
+The \textbf{state value function } $V(s)$ of a Markov reward process is the total expected return an agent will receive starting from state $s$:
 \bse
 V(s) = E [G_t | S_t = s]
 \ese
 \ed
 
-In simple words,  state value function informs us about the expected return an agent will obtain by starting from a state $s$ by taking an expected value over all possible episodes that start from state $s$.  Notice that in the case of myopic evaluation ($\gamma=0$) the value state function is equal to the expected reward since this is the only state that counts in any episode (for $\gamma=0$):
+In simple words,  state value function informs us about the expected return an agent will obtain by starting from a state $s$,  by taking the expected value over all possible episodes that start from state $s$.  Notice that in the case of myopic evaluation ($\gamma=0$) the value state function is equal to the expected reward since this is the only state that counts in any episode (for $\gamma=0$):
 \bse
 V(s) = E [G_t | S_t = s] = E [R_{t+1} | S_t = s] = \mathcal{R}_{s} 
 \ese
@@ -392,30 +409,28 @@ V(s) = \mathcal{R}_{s}   + \gamma \sum_{s^\prime} E[G_{t+1}  | S_t = s,  S_{t+1}
 Finally by using the Markov property and the definition of state transition probability:
 {\setlength{\jot}{10pt}
 \begin{align*}
-V(s) &= \mathcal{R}_{s}   + \gamma \sum_{s^\prime} E[G_{t+1} | S_{t+1} = s^\prime)   \cdot \mathcal{P}_{ss^\prime}   \\
-&= \mathcal{R}_{s}   + \gamma \sum_{s^\prime} \mathcal{P}_{ss^\prime} V(s^\prime) 
+V(s) &= \mathcal{R}_{s}   + \gamma \sum_{s^\prime} E[G_{t+1} | S_{t+1} = s^\prime]   \cdot \mathcal{P}_{ss^\prime}   \\
+&= \mathcal{R}_{s}   + \gamma \sum_{s^\prime} \mathcal{P}_{ss^\prime} V(s^\prime)
 \end{align*}}
 
 \vspace{-10pt}
 
-This final expression is called ``Bellman's equations" and it is used in order to derive the state value function for all states of a Markov reward process.  It simply states that the expected return for a state $s$ (aka the state value function) is equal to the expected reward an agent will get just for being in state $s$ plus the expected rewards of all possible successive states weighted by the probability of reaching them and discounted by the discount factor $\gamma$. 
+This final expression is called ``Bellman expectation equations" and it is used to derive the state value function for all states of a Markov reward process.  It states that the expected return for a state $s$ (aka the state value function) is equal to the expected immediate reward of state $s$ plus the expected rewards of all successive states weighted by the probability of reaching them and discounted by $\gamma$. 
 
 \begin{figure}[H]
-\includegraphics[scale=0.55]{images/rl4.png}
+\includegraphics[scale=0.5]{images/rl4.png}
 \centering
 \end{figure}
 
-\v
-
 By defining the following vectors:
 \bse
-\boldsymbol{V} = \begin{bmatrix} V(S_1) \\[1ex] V(S_2) \\[1ex] \vdots \\[1ex] V(S_n) \end{bmatrix}, \qquad
-\boldsymbol{\mathcal{R}} = \begin{bmatrix} \mathcal{R}_{S_1} \\[1ex] \mathcal{R}_{S_2} \\[1ex] \vdots \\[1ex] \mathcal{R}_{S_n} \end{bmatrix}
+\boldsymbol{V} = \begin{bmatrix} V(s_1) \\[1ex] V(s_2) \\[1ex] \vdots \\[1ex] V(s_n) \end{bmatrix}, \qquad
+\boldsymbol{\mathcal{R}} = \begin{bmatrix} \mathcal{R}_{s_1} \\[1ex] \mathcal{R}_{s_2} \\[1ex] \vdots \\[1ex] \mathcal{R}_{s_n} \end{bmatrix}
 \ese
 
-\v
+\vspace{2pt}
 
-we can write Bellman's equations in a matrix form as:
+we can write Bellman expectation equations in a matrix form as:
 \bse
 \boldsymbol{V} = \boldsymbol{\mathcal{R}} + \gamma \mathcal{P} \boldsymbol{V} 
 \ese
@@ -434,67 +449,715 @@ Since the equation is linear we can solve it directly (as we did in the case of 
 
 \vspace{-12pt}
 
-As in supervised learning with normal equation, when the number of states $n$ is large the matrix $\mathcal{P}$ gets large and computing the inverse of it, is computationally very expensive (and in some cases even impossible).  One of the main goals of reinforcement learning is to come up with algorithms of solving Bellman's equations indirectly. We will come back to this once we have developed the full framework needed for reinforcement learning problems. \v
+As in supervised learning with normal equation, when the number of states $n$ is large the matrix $\mathcal{P}$ gets large and computing the inverse of it, is computationally very expensive (and in some cases even impossible).  One of the main goals of reinforcement learning is to come up with algorithms of solving Bellman expectation equations indirectly. We will come back to this once we have developed the full framework needed for reinforcement learning problems. \v
 
 Now let's see an example of a Markov reward process.
 
 \begin{figure}[H]
-\includegraphics[scale=0.45]{images/rl2.png}
+\includegraphics[scale=0.43]{images/rl2.png}
 \centering
 \end{figure}
 
-As we can see,  the only difference with the Markov process example is that now in Markov decision process each state carries a reward $R$.  In order to practise let's calculate the state value function for each state through the Bellman's equations.   \v
+As we can see,  the only difference with the Markov process example is that now in Markov decision process each state carries a reward $R$.  \v
 
-For the first state:
+As a practice on the concept of the return one could compute the return of the episode we mentioned in the previous example:
+\bse
+S_1=s_1,  \to S_2=s_2, \to S_3=s_3, \to S_4=s_4, \to S_5=s_7
+\ese
+
+By choosing $\gamma=0.5$ we have:
 \begin{align*}
-V(S_1) &= \mathcal{R}_{s_1}   +  \gamma \sum_{s^\prime} \mathcal{P}_{s_1 s^\prime} V(s^\prime) \\
-&=  \mathcal{R}_{s_1}   + 0.5 \cdot \mathcal{P}_{s_1 s^\prime}  \cdot \sum_{s^\prime} V(s^\prime) \\
+G_1 &= \sum_{k=0}^{\infty} 0.5^k R_{1+k+1} \\
+&= (0.5)^0 R_{2} +(0.5)^1 R_{3}  + (0.5)^2 R_{4}  + (0.5)^3 R_{5} \\
+&= (1) (-2) + (0.5) (-2)  + (0.25) (-2) + (0.125) (10)  \\
+& = -2.25
 \end{align*}
 
-For the expected reward  $\mathcal{R}_{s_1}$ we have:
+In order to practise more,  let's calculate the state value functions for the states using the the Bellman expectation equations. \v
+
+In the extreme case where $\gamma=0$ we already showed that:
+\bse
+V(s) = \mathcal{R}_{s}   + (0) \sum_{s^\prime} \mathcal{P}_{s s^\prime} V(s^\prime) = \mathcal{R}_{s}
+\ese
+
+Hence in the myopic evaluation,  the state value functions are equal to the immediate expected rewards of each state, no matter what the agent will do after that.
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{images/rl3.png}
+\centering
+\end{figure}
+
+In the case where $\gamma$ is different than zero,  one has to take into account future expected rewards on top of the immediate expected reward. For example for the first state $s_1$, for $\gamma=0.9$ it is:
 {\setlength{\jot}{5pt}
 \begin{align*}
-\mathcal{R}_{s_1} &= E[R_{t+1} | S_t=s_1] \\
-&=  \sum_{s^\prime} E[R_{t+1} | S_t=s_1,  S_{t+1} = s^\prime] \cdot P(S_{t+1} = s^\prime | S_t = s_1) \\
-&=  \sum_{s^\prime} E[R_{t+1} | S_{t+1} = s^\prime] \cdot P_{s_1 s^\prime} \\
-&=  \sum_{s^\prime} R_{s^\prime} \cdot P_{s_1 s^\prime} \\
-&= R_{s_1} \cdot P_{s_1 s_1} +  R_{s_2} \cdot P_{s_1 s_2} +  R_{s_3} \cdot P_{s_1 s_3} +  R_{s_4} \cdot P_{s_1 s_4} +  R_{s_5} \cdot P_{s_1 s_5} +  R_{s_6} \cdot P_{s_1 s_6} +  R_{s_7} \cdot P_{s_1 s_7}  \\
-&= (-2) \cdot 0 +  (-2) \cdot 0.5 +  (-2) \cdot 0 +  (10) \cdot 0 + (1) \cdot 0 +  (-1) \cdot 0.5 +  (0) \cdot 0 \\
-&= -1.5
+V(s_1) &= \mathcal{R}_{s_1}   +  0.5 \sum_{s^\prime} \mathcal{P}_{s_1 s^\prime} V(s^\prime) \\
+&= -2 + 0.9 (\mathcal{P}_{s_1 s_1} V(s_1) + \mathcal{P}_{s_1 s_2} V(s_2) + \mathcal{P}_{s_1 s_3} V(s_3) + \mathcal{P}_{s_1 s_4} V(s_4) + \mathcal{P}_{s_1 s_5} V(s_5) + \mathcal{P}_{s_1 s_6} V(s_6) + \mathcal{P}_{s_1 s_7} V(s_7) \\
+&= -2 + 0.9 ((0) V(s_1) +(0.5) V(s_2) +(0)V(s_3) + (0) V(s_4) + (0) V(s_5) + (0.5) V(s_6) + (0) V(s_7) \\
+&= -2 + 0.45 V(s_2) +0.45 V(s_6)
 \end{align*}}
 
-For the state value function part we have:
-{\setlength{\jot}{5pt}
-\begin{align*}
-\gamma \sum_{s^\prime} \mathcal{P}_{s_1 s^\prime} V(s^\prime) &= R_{s_1} \cdot P_{s_1 s_1} +  R_{s_2} \cdot P_{s_1 s_2} +  R_{s_3} \cdot P_{s_1 s_3} +  R_{s_4} \cdot P_{s_1 s_4} +  R_{s_5} \cdot P_{s_1 s_5} +  R_{s_6} \cdot P_{s_1 s_6} +  R_{s_7} \cdot P_{s_1 s_7}  \\
-\end{align*}
+\vspace{-10pt}
 
-As an an example one could compute the return of the episode we mentioned earlier:
-\bse
-S_1 \to S_2 \to S_3 \to S_4 \to S_7
-\ese 
+Similarly we calculate the corresponding equations for all states and then we solve the system of equations to obtain the actual values of the state value functions. The final results are summarized below.
 
-By choosing $\gamma=\frac{1}{2}$ we have:
-\bse
-G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1} 
-\ese
+\begin{figure}[H]
+\includegraphics[scale=0.55]{images/rl5.png}
+\centering
+\end{figure}
+
+Once again a Markov reward process is not adequate enough for describing reinforcement learning problems since there is no notion of actions that an agent can take.  We will now add a final piece of complexity to a Markov reward process by introducing ``action" to end up in the so called ``Markov decision process". 
 
 \subsection{Markov Decision Process}
 
-Once again a Markov reward process is not adequate enough for describing reinforcement learning problems since there is no notion of actions that an agent can take.  We will now add a final piece of complexity to a Markov reward process by introducing ``action" to end up in the so called ``Markov decision process". \v
 
-The starting point is the concept of an ``action" as it was introduced earlier, i.e  is an action $A$ is an action taken by an agent at each state $S$.  In reinforcement learning we always make the assumption that at each state the agent has a finite amount of possible actions it can perform.  Once we have defined the actions we can now define a ``Markov decision process".
+Markov decision processes (MDPs) can be used to mathematically describe the vast majority of reinforcement learning problems and this is why they are so useful. The starting point is the concept of an ``action" as it was introduced earlier, i.e an action $A_t$ is an action taken by an agent at a state $S_t$ at time $t$.  In reinforcement learning we always make the assumption that at each state the agent has a finite amount of possible actions it can perform.  Once we have defined the actions we can now alter a bit the definitions of state transition probability and expected reward in order to incorporate actions.
+
+\bd[State Transition Probability (For Markov Decision Process)]
+The \textbf{state transition probability} $\mathcal{P}_{s s^\prime}^{a}$ between an initial state $s$ and a successor state $s^\prime$ given an action $a$ is defined as the probability of ending in state $s^\prime$ given the current state $s$ and action $a$:
+\bse
+\mathcal{P}_{s s^\prime}^{a} = P(S_{t+1}=s^\prime \mid S_{t} = s, A_t=a)
+\ese
+\ed
+
+\bd[Expected Reward (For Markov Decision Process)]
+\textbf{Expected reward} $\mathcal{R}_{s}^{a}$ of a state $s$ and action $a$ is the expected, immediate reward an agent will get for being in state $s$ and taking the action $a$:
+\bse
+\mathcal{R}_{s}^{a} = E[R_{t+1} | S_t=s]
+\ese
+\ed
+
+Having these definitions we can now define a ``Markov decision process".
 
 \bd[Markov Decision Process]
-Given a memoryless discrete stochastic process of random Markov states $\{S_0, S_1, S_2, \ldots,S_n\}$,  a \textbf{Markov decision process} is a tuple $(S,A,\mathcal{P}, \mathcal{R}, \gamma)$ where $S$ is a (finite) set of states, $A$ is finite set of actions,  $\mathcal{P}$ is a state transition probability matrix with:
+A \textbf{Markov decision process} is a tuple $(\mathcal{S},  \mathcal{A},\mathcal{P}_{s s^\prime}^{a},  \mathcal{R}_{s}^{a},  \gamma)$ where $\mathcal{S}$ is a (finite) set of Markov states:
 \bse
-\mathcal{P}^{a}_{s s^\prime} = P(S_{t+1} = s^\prime | S_t=s, A_t = a)
-\ese  
+\mathcal{S} = \{s_1,  s_2,  \ldots, s_n\}
+\ese 
 
-$\mathcal{R}$ is a reward function with:
+$\mathcal{A}$ is a (finite) set of actions:
 \bse
-\mathcal{R}^{a}_{s} = E[R_{t+1} | S_t=s, A_t = a]
+\mathcal{A} = \{a_1,  a_2,  \ldots, a_n\}
+\ese 
+
+$\mathcal{P}_{s s^\prime}^{a}$ is the state transition probability:
+\bse
+\mathcal{P}_{s s^\prime}^{a}= P(S_{t+1}=s^\prime \mid S_{t} = s,  A_t=a)
 \ese
 
-and $\gamma$ is a discount factor.
+$\mathcal{R}_{s}^{a} $ is the expected reward:
+\bse
+\mathcal{R}_{s}^{a} = E[R_{t+1} | S_t=s, A_t=a]
+\ese
+
+and $\gamma$ is the discount factor with:
+\bse
+\gamma \in [0,1]
+\ese
 \ed
+
+At this point it is clear what a (stochastic) policy really is.  Recall the definition of a (stochastic) policy:
+\bse
+\pi(a|s) = P(A_t=a|S_t=s)
+\ese
+
+Thus a policy is really a distribution over actions given states and it fully defines the behaviour of an agent.  In other words it is in our control and not in environment's control.  In MDPs policies depend on the current state and not the history due to the Markov property.  In other words policies are stationary (time-independent). \v
+
+Now that we have a policy in hand, it is the agent who decides which action it will take and not the environment (although in real life problems it can be a combination of both). Hence now we will update the concept of the state value function by substituting the expected value over state transition probability to the expected value over policy.
+
+\bd[State Value Function (For Markov Decision Process)]
+The \textbf{state value function } $V_{\pi}(s)$ of a Markov decision process is the total expected return an agent will receive starting from state $s$ and then following policy $\pi$:
+\bse
+V_{\pi}(s) = E_{\pi} [G_t | S_t = s]
+\ese
+\ed
+
+On top of that,  in the case of MDPs we can also define a quantity similar to state value function called ``action value function" that incorporates the concept of action as follows.
+
+\bd[Action Value Function]
+The \textbf{action value function } $Q_{\pi}(s, a)$ of a Markov decision process is the total expected return an agent will receive starting from state $s$, taking action $a$ and then following policy $\pi$:
+\bse
+Q_{\pi}(s, a)= E_{\pi} [G_t | S_t = s, A_t=a]
+\ese
+\ed
+
+The two quantities,  state and action value function are inner-related and we can derive the one from the other by making use of the law of conditional expected value and the Markov property.  Namely:
+\begin{align*}
+V_{\pi}(s) &= E_{\pi} [G_t | S_t = s] \\
+&= \sum_{a} E_{\pi} [G_t | S_t = s, A_t=a] \cdot P(A_t=a \mid S_t=s) \\
+&=  \sum_{a} \pi(a \mid s) \cdot  Q_{\pi}(s, a) 
+\end{align*}
+
+What this equation really tells us is that being at state $s$ we will perform some action a with probability given by the policy $\pi(a \mid s)$.  For each action $a$,  there is an action value function $Q_{\pi}(s, a)$ that says how good the action $a$ is.  Looking one step ahead,  by averaging all the actions $V_{\pi}(s)$ tells us how good is it being at state $s$,  given the actions we can perform. 
+
+\vspace{-5pt}
+
+\begin{figure}[H]
+\includegraphics[scale=0.45]{images/rl6.png}
+\centering
+\end{figure}
+
+Similarly for the action value function:
+\begingroup
+\allowdisplaybreaks
+{\setlength{\jot}{10pt}
+\begin{align*}
+Q_{\pi}(s, a) &= E_{\pi} [G_t | S_t = s, A_t=a] \\
+&= E_{\pi}  [R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \ldots | S_t = s, A_t=a] \\
+&= E_{\pi}  [R_{t+1} + \gamma (R_{t+2} + \gamma R_{t+3} + \ldots) | S_t = s, A_t=a] \\
+&= E_{\pi}  [R_{t+1} + \gamma G_{t+1}  | S_t = s, A_t=a] \\
+&= E_{\pi}  [R_{t+1}| S_t = s, A_t=a]  + E_{\pi}  [\gamma G_{t+1}  | S_t = s, A_t=a] \\
+&=  \mathcal{R}_{s}^{a}   + \gamma \sum_{s^\prime}  E_{\pi} [G_{t+1}  | S_t = s,  A_t=a, S_{t+1} = s^\prime] \cdot P(S_{t+1} = s^\prime | S_t = s,  A_t=a) \\
+&=  \mathcal{R}_{s}^{a}   + \gamma \sum_{s^\prime}  E_{\pi} [G_{t+1}  | S_{t+1} = s^\prime] \cdot P(S_{t+1} = s^\prime | S_t = s,  A_t=a) \\
+&= \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{\pi}(s^\prime)
+\end{align*}}
+\endgroup
+
+where in the second last from the end line we used the Markov property to discard both $S_t = s,$ and $A_t=a$.  What this equation really tells us is that being at state $s$ we take action $a$,  and the environment will return us some immediate reward  $\mathcal{R}_{s}^{a}$ and a state $s$ with probability given by $\mathcal{P}_{s s^\prime}^{a}$.  For each of these states there is a function $V_{\pi}(s^\prime)$ that says how good is the state we ended up.  Looking one step ahead by averaging all the states,  $Q_{\pi}(s, a)$ tells us how good is it being at state $s$ to take action $a$.
+
+\vspace{-5pt}
+
+\begin{figure}[H]
+\includegraphics[scale=0.45]{images/rl7.png}
+\centering
+\end{figure}
+
+\vspace{-10pt}
+
+So we showed that indeed the two quantities are related.  The first one shows the expected return of starting at state $s$ and follow policy $\pi$ why do the latter shows the expected return of starting at state $s$, take action $a$ and then follow policy $\pi$.   \v
+
+Given an MDP our goal is to determine either the state value function or the action value function for all states and actions.  As in the case of an MRP this can be done through Bellman expectation equations that we will now derive for both quantities.  Starting with the state value function:
+\begingroup
+\allowdisplaybreaks
+{\setlength{\jot}{10pt}
+\begin{align*}
+V_{\pi}(s) &= E_{\pi} [G_t | S_t = s] \\
+&= E_{\pi}  [R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \ldots | S_t = s] \\
+&= E_{\pi}  [R_{t+1} + \gamma (R_{t+2} + \gamma R_{t+3} + \ldots) | S_t = s] \\
+&= E_{\pi}  [R_{t+1} + \gamma G_{t+1}  | S_t = s] \\
+&= E_{\pi}  [R_{t+1}| S_t = s]  + E_{\pi} [\gamma G_{t+1}  | S_t = s] \\
+&= \sum_{a} E_{\pi} [R_{t+1}| S_t = s, A_t=a] \cdot P(S_{t+1} = s^\prime | S_t = s,  A_t=a) + \\
+& \qquad \qquad \qquad \qquad \qquad \qquad \qquad + \sum_{a} \gamma E_{\pi} [G_{t+1}  | S_t = s, A_t=a] \cdot P(S_{t+1} = s^\prime | S_t = s,  A_t=a) \\
+&=\sum_{a} \mathcal{R}_{s}^{a} \cdot \pi(a \mid s) + \gamma \sum_{a} E_{\pi} [G_{t+1}  | S_t = s, A_t=a] \cdot \pi(a \mid s) \\
+&= \sum_{a} \mathcal{R}_{s}^{a} \cdot \pi(a \mid s) + \gamma \sum_{a} \pi(a \mid s) \sum_{s^\prime} E_{\pi} [G_{t+1}  | S_t = s, A_t=a,  S_{t+1} = s^\prime ] \cdot P(S_{t+1} = s^\prime | S_t = s, A_t=a) \\
+&=\sum_{a}  \mathcal{R}_{s}^{a} \cdot \pi(a \mid s) + \gamma \sum_{a} \pi(a \mid s) \sum_{s^\prime} E_{\pi} [G_{t+1}  | S_{t+1} = s^\prime ] \cdot P(S_{t+1} = s^\prime | S_t = s, A_t=a) \\
+&=\sum_{a}  \mathcal{R}_{s}^{a} \cdot \pi(a \mid s) + \gamma \sum_{a} \pi(a \mid s) \sum_{s^\prime} \mathcal{P}_{ss^\prime}^{a} \cdot V_{\pi}(s^\prime) \\
+&=\sum_{a} \pi(a \mid s) \Big[\mathcal{R}_{s}^{a}  + \gamma \sum_{s^\prime} \mathcal{P}_{ss^\prime}^{a} \cdot V_{\pi}(s^\prime) \Big]
+\end{align*}}
+\endgroup
+
+\vspace{-5pt}
+
+What this equation tells us is how good is it being in a state $s$,  to take an action $a$ based on a policy $\pi$ which,  based on the state transition probability of the environment,  will lead to a successor state $s^\prime$.  We do that by taking the immediate reward and then averaging out over all possible actions and all possible successor states.
+
+\vspace{-5pt}
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{images/rl8.png}
+\centering
+\end{figure}
+
+\vspace{-5pt}
+ 
+Notice that the same equation can be derived by using the relations of the connection between the state and action value functions. Namely, by substituting:
+\bse
+Q_{\pi}(s, a) = \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{\pi}(s^\prime)
+\ese
+
+to:
+\bse
+V_{\pi}(s) =  \sum_{a} \pi(a \mid s) \cdot  Q_{\pi}(s, a) 
+\ese
+
+we straight forwardly get:
+\begin{align*}
+V_{\pi}(s) &=  \sum_{a} \pi(a \mid s) \cdot  Q_{\pi}(s, a) \\
+&=\sum_{a} \pi(a \mid s) \Big[\mathcal{R}_{s}^{a}  + \gamma \sum_{s^\prime} \mathcal{P}_{ss^\prime}^{a} \cdot V_{\pi}(s^\prime) \Big]
+\end{align*}
+
+Finally for the Bellman expectation equations of the action value function we can again start from the definition and derive them,  however we can derive them much simpler by following the same trick as above,  a.k.a by substituting:
+\bse
+V_{\pi}(s) =  \sum_{a} \pi(a \mid s) \cdot  Q_{\pi}(s, a) 
+\ese
+
+to:
+\bse
+Q_{\pi}(s, a) = \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{\pi}(s^\prime)
+\ese
+
+By doing so we end up with:
+\begin{align*}
+Q_{\pi}(s, a) &= \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{\pi}(s^\prime) \\
+&= \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} \sum_{a^\prime} \pi(a^\prime \mid s^\prime) \cdot  Q_{\pi}(s^\prime, a^\prime)
+\end{align*}
+
+which is the Bellman expectation equation for the action value function. \v
+
+What this equation tells us is how good is it being in a state $s$ and take an action $a$ to move to a successor state $s^\prime$, based on the state transition probability of the environment,  and then take action $a^\prime$ based on a policy $\pi$ .  We do that by taking the immediate reward and then averaging out over all possible successor states and successor actions.
+
+\vspace{-5pt}
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{images/rl9.png}
+\centering
+\end{figure}
+
+\section{Optimal Policies}
+
+As we have seen so far and MDP is all we need in order to formulate a reinforcement learning problem.  Then, by having a policy $\pi$ we can evaluate how good it is by using the Bellman expectation equations and compute either the state or the action value functions. However in reinforcement learning we are not interested in finding the state or the action value function for a random policy $\pi$,  rather than finding an optimal policy $\pi$ whatever that means.  \v
+
+So,  it is clear that we need to find a way to define and compute an optimal policy.  In order to do so we will start with some more definitions about optimal value functions which specify the best possible performance of an MDP over all possible policies.  
+
+\bd[Optimal State Value Function]
+The \textbf{optimal state value function} $V_{*}(s)$ is the maximum state value function over all policies:
+\bse
+V_{*}(s) =  \max_{\pi} V_{\pi}(s),  \: \forall s
+\ese
+\ed
+
+\bd[Optimal Action Value Function]
+The \textbf{optimal action value function} $Q_{*}(s,a)$ is the maximum action state value function over all policies:
+\bse
+Q_{*}(s,a) =  \max_{\pi} Q_{\pi}(s,a),  \: \forall s,a
+\ese
+\ed
+
+Once an optimal action value function $Q_{*}(s,a)$ is known, the MDP is actually solved since given any state $s$ we know which action is the best.
+
+\bd[Optimal Policy]
+The \textbf{optimal policy} $\pi_{*}$ is the policy that generates both the optimal state value function $V_{*}(s)$ and the optimal action value function $Q_{*}(s,a)$.
+\ed
+
+Hence for the optimal policy holds:
+\bse
+\pi_{*}(a \mid s) = \Big\{ \begin{array}{lr}
+        1, \:\: \textit{ if } a =\argmax_{a} Q_{*}(s,a) \\
+        0, \:\: \text{ otherwise}
+        \end{array}
+\ese
+
+One can prove a theorem that states:
+\bit
+\item There exists a policy that is better than or equal to all other policies:
+\bse
+\exists \pi_{*} : \pi_{*} \geq \pi \:\:\:  (\textit{a.k.a: \:} V_{\pi_{*}}(s) \geq V_{\pi}(s),  \forall s \: \textit{\:\: and \:\:} \: Q_{\pi_{*}}(s,a) \geq Q_{\pi}(s,a), \forall s,a)
+\ese
+
+\item All optimal policies achieve the same optimal value functions:
+\bse
+V_{\pi_{*}}(s) = V_{*}(s),  \forall \pi_{*}  \textit{\:\: and \:\:} Q_{\pi_{*}}(s,a) = Q_{*}(s,a), \forall \pi_{*}
+\ese
+
+\item There is always a deterministic optimal policy for any MDP.
+\eit
+
+The optimal value functions are, of course,  related to each other in the same way the value functions were related to each other.  Recall that for the state value function we had:
+\bse
+V_{\pi}(s) = \sum_{a} \pi(a \mid s) \cdot  Q_{\pi}(s, a) 
+\ese
+
+For the optimal state value function holds:
+\bse
+V_{*}(s) = \max_{a} Q_{*}(s, a) 
+\ese
+
+For the action value function we showed that:
+\bse
+Q_{\pi}(s, a) = \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{\pi}(s^\prime)
+\ese
+
+For the optimal action value function holds:
+\bse
+Q_{*}(s, a) = \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{*}(s^\prime)
+\ese
+
+Finally,  the optimal value functions are recursively related by the Bellman optimality equations in contrast to Bellman expectation equations that we used for the value functions.  We can derive them very simply by doing the trick of substituting the one to each other in the above relations.  By doing so for the optimal state value the Bellman optimality equations are:
+\bse
+V_{*}(s) = \max_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{*}(s^\prime) \right]
+\ese
+
+while for the action value function:
+\bse
+Q_{*}(s, a) = \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a}  \max_{a^\prime} Q_{*}(s^\prime, a^\prime) 
+\ese
+
+\vspace{-5pt}
+
+Notice that Bellman optimality equations,  in contrast with Bellman expectation equations, are non-linear and most importantly they have no closed form solutions.  For this reason we need to develop some iterative solution methods able to solve the maximization problem. This is the goal of the next chapter.
+
+\section{Solving Markov Decision Processes}
+
+In reality,  reinforcement learning is all about developing iterative algorithms able to solve the non linear Bellman optimality equations. In this chapter we will focus on ways to solve the Bellman expectation and optimality equations.  Recall from the introduction that we are distinguishing between ``model-based" scenarios where the agent has access to a model of the environment hence it performs computations with it in order to improve its policy (planning), and ``model-free" scenarios where the agent has not access to a model of the environment.  Recall also that we distinguished between ``prediction" where the agent tries to evaluate a given policy and ``control" where the agent tries to find an optimal policy.  \v
+
+In this chapter,  eventually,  we will explore all these areas! We will begin with model-based prediction and model-based control cases in order to gain some intuition on how things work and then we will move on to the real world full reinforcement learning problems of model free prediction and model free control cases. Let's start.
+
+\subsection{Model-Based Prediction}
+
+In the model-based cases (both for prediction and control) we will focus on dynamical programming. The term dynamical programming refers to a collection of algorithms that can be used to compute optimal policies given a perfect model of the environment as an MDP.  The term ``dynamical" refers to a sequential or temporal component of the problem.  Dynamical programming is a method for solving complex problems by breaking them into sub-problems,  solving them,  and then combining them back to obtain the total solution.  Given the recursive nature of Bellman equations, dynamical programming uses the recursion as a way to divide the problem to smaller problems. 
+
+\subsubsection{Policy Evaluation}
+
+Focusing on model-based prediction we will develop only one model called ``policy evaluation".  The way it works is through iterative applications of Bellman expectation equation (recall that we are on the prediction case that we want to evaluate a given policy and not to derive an optimal policy, so we don't need Bellman optimality equation).  
+We will use the Bellman expectation equation in the matrix form:
+\bse
+\boldsymbol{V} = \boldsymbol{\mathcal{R}} + \gamma \mathcal{P} \boldsymbol{V} 
+\ese
+
+We will create a temporal series of of state value vectors: $\boldsymbol{V}_0, \boldsymbol{V}_1, \ldots$.  By randomly initializing $\boldsymbol{V}_0$ (e.g by setting 0 to all entries):
+\bse
+\boldsymbol{V}_0 = \begin{bmatrix} V_0(s_1)=0 \\[1ex] V_0(s_2)=0 \\[1ex] \vdots \\[1ex] V_0(s_n)=0 \end{bmatrix}
+\ese
+
+\v
+
+we will then use Bellman expectation equation as an update rule to obtain $\boldsymbol{V}_1$ as:
+\bse
+\boldsymbol{V}_1 \gets \boldsymbol{\mathcal{R}} + \gamma \mathcal{P} \boldsymbol{V}_0 
+\ese
+
+Similarly we will get $\boldsymbol{V}_2$ by using Bellman expectation equation as an update rule:
+\bse
+\boldsymbol{V}_2 \gets \boldsymbol{\mathcal{R}} + \gamma \mathcal{P} \boldsymbol{V}_1 
+\ese
+
+The general update rule is of course:
+\bse
+\boldsymbol{V}_{k+1} \gets \boldsymbol{\mathcal{R}} + \gamma \mathcal{P} \boldsymbol{V}_k, \qquad k=0,1,2,\ldots 
+\ese
+
+One can show, although we will skip the proog for now,  that after many iterations the final state value function will be the state value function of the policy:
+\bse
+\boldsymbol{V}_k \to \boldsymbol{V}_\pi \:\: \textit{as} \:\: k \to \infty
+\ese
+
+Let us give an example with the following small gridworld.  We assume an undiscounted MDP ($\gamma = 1$).  We have 14 non-terminal states $1,  \ldots,  14$ and two terminal states shown as shaded squares.  The reward is $-1$ for every state until a terminal state is reached.  The agent follows a uniform random policy:
+\bse
+\pi(\textit{north}|\textit{any state}) = \pi(\textit{west}|\textit{any state}) = \pi(\textit{south}|\textit{any state}) = \pi(\textit{east}|\textit{any state}) = 0.25
+\ese
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{images/rl10.png}
+\centering
+\end{figure}
+
+Let's see the state value function for all states after $k$ iterations. The final step $k=\infty$ is the actual values of the evaluation of the policy ($\boldsymbol{V}_\infty = \boldsymbol{V}_\pi$)
+
+\vspace{-10pt}
+
+\begin{figure}[H]
+\centering
+\subfloat{{\includegraphics[width=5cm]{rl11.png}}}
+\qquad \qquad
+\subfloat{{\includegraphics[width=5.25cm]{rl12.png}}}
+\end{figure}
+
+\subsection{Model-Based Control}
+
+Moving on to model-based control, the task in hand now is given an MDP to find an optimal policy $\pi_{*}$.  In model-based control,  we will develop two algorithms called ``policy iteration" and ``value iteration". 
+
+\subsubsection{Policy Iteration}
+
+In policy evaluation we saw that given a policy $\pi$, we can initialize a set of initial state value functions $\boldsymbol{V}_0 $ and by making use of the Bellman expectation equation as an update rule,  through an iterative process of updates to finally evaluate the policy $\pi$.  Now we can get one step further.  The idea is that once we have evaluated the policy and we have obtained the state value function $\boldsymbol{V}_\pi$,  we can now update our policy $\pi$ to a new one $\pi^\prime$ by simply picking that action that maximizes the action state value function:
+\bse
+\pi^\prime(s) = \argmax_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{\pi}(s^\prime) \right] = \argmax_{a} Q_\pi(s,a)
+\ese
+
+Then we can start evaluating this new policy $\pi^\prime$ from the beginning.  Once it is evaluated we then repeat the same process of policy evaluation and once we have evaluated the new policy $\pi^\prime$ and we know the state value function $\boldsymbol{V}_{\pi^\prime}$ we again update our policy $\pi^{\prime}$ to $\pi^{\prime\prime}$ as:
+\bse
+\pi^{\prime\prime}(s) = \argmax_{a} \left[\mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{\pi^\prime}(s^\prime) \right] = \argmax_{a} Q_{\pi^\prime}(s,a)
+\ese
+
+We repeat this cycle until we reach a point of no further improvement. 
+
+\vspace{3pt}
+
+\begin{figure}[H]
+\includegraphics[scale=0.32]{images/rl18.png}
+\centering
+\end{figure}
+
+One can prove that after a number of such pairs of ``evaluation-improvement" iterations one will end up in an optimal policy $\pi_*$.
+
+\begin{figure}[H]
+\includegraphics[scale=0.28]{images/rl17.png}
+\centering
+\end{figure}
+
+Notice that in policy iteration we actually have two sets of iterations:
+\bit
+\item We iterate over the cycle of evaluation - improvement of policy iteration.
+\item We iterate over $k$ cycles of updates through Bellman expectation equation for each evaluation of policy evaluation.
+\eit
+
+And this is actually the major drawback of policy iteration.  Every time we switch to a new policy we need to start the evaluation straight from the beginning which is computationally expensive.  This is something that we address with the so called ``value iteration" algorithm.
+
+\subsubsection{Value Iteration}
+
+Let's start by getting some intuition from the small grid world example we developed in policy evaluation.  Recall that we started with all initial state values,  set by us,  to 0 and a uniform random policy with chance 0.25 moving anywhere.
+
+\begin{figure}[H]
+\includegraphics[scale=0.45]{images/rl13.png}
+\centering
+\end{figure}
+
+After just one single iteration of the evaluation process,  we ended up in $\boldsymbol{V}_1 $.  
+
+\begin{figure}[H]
+\includegraphics[scale=0.45]{images/rl14.png}
+\centering
+\end{figure}
+
+The state value function $\boldsymbol{V}_1 $ is certainly not the $\boldsymbol{V}_\pi$,  however recall that in control we want to find the optimal policy and not to evaluate one.  Hence, nothing is stopping us from doing an update of the policy right now,  after just one step instead of waiting until the very end of the evaluation.   (More generally,  one can pick any number of $k$ evaluation iterations before doing the update.  This is usually called ``modified policy iteration" or ``generalized policy iteration".  In the extreme case where  $k=1$ and we do the update immediately after just one step of evaluation iteration,  the algorithm is called ``value iteration").  \v
+
+Hence,  in value iteration instead of moving on to the second iteration of the evaluation process of the same initial policy $\pi$ we instead update the policy,  right after the very first step of the  evaluation,  to a new policy $\pi^\prime$.  This update is actually happening to the state value function by making use of the Bellman optimality equation. (Notice that this is exactly the same to the the update we do in policy iteration once the evaluation is over):
+\bse
+\boldsymbol{V}_{k+1} (s) \gets \max_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} \boldsymbol{V}_k (s^\prime) \right]
+\ese
+
+One can prove that after many iterations this process will lead us to an optimal state value function.  Of course for the optimal state value function the Bellman optimality equation is true:
+\bse
+\boldsymbol{V}_{*} (s) = \max_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} \boldsymbol{V}_* (s^\prime) \right]
+\ese
+
+Notice that for the optimal state value function we do not update ($\gets$) but verify ($=$).  Once the optimal state value function $\boldsymbol{V}_{*}$ is know, we can compute the optimal action value function:
+\bse
+Q_{*}(s, a) = \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{*}(s^\prime)
+\ese
+
+and then the optimal policy is simply:
+\bse
+\pi_*(s) = \argmax_{a} Q_*(s,a)
+\ese
+
+Notice that in value iteration we now have only one set of iteration since we do not run $k$ cycles of updates through Bellman expectation equation for each evaluation of policy evaluation but instead we update the state value function directly after each iteration using the Bellman optimality equation.  \v
+
+Since value iteration is very important in what follows we will examine in detail an application of an MDP solved via value iteration.  
+
+\subsubsection{Value Iteration: Application}
+
+Consider the following MDP: $(\mathcal{S},  \mathcal{A},\mathcal{P}_{s s^\prime}^{a},  \mathcal{R}_{s}^{a},  \gamma)$.
+
+\vspace{-10pt}
+
+\begin{figure}[H]
+\includegraphics[scale=0.4]{images/rl19.png}
+\centering
+\end{figure}
+
+\vspace{-10pt}
+
+The MDP consists of 2 states $(\mathcal{S} = \{s_1, s_2\})$ and in each state the agent can perform two actions $(\mathcal{A} = \{a_1, a_2\})$. The environment emits the following state transition probabilities:
+\bse
+\mathcal{P}^{a_1}_{s_1 s_1} = 0.5, \qquad \mathcal{P}^{a_1}_{s_1 s_2} = 0.5, \qquad \mathcal{P}^{a_1}_{s_2 s_1} = 0,  \qquad \mathcal{P}^{a_1}_{s_2 s_2} = 1
+\ese
+\bse
+\mathcal{P}^{a_2}_{s_1 s_1} = 0, \qquad \mathcal{P}^{a_2}_{s_1 s_2} = 1, \qquad \mathcal{P}^{a_2}_{s_2 s_1} = 1,  \qquad \mathcal{P}^{a_2}_{s_2 s_2} = 0
+\ese
+
+\v
+
+and the following expected rewards:
+\bse
+\mathcal{R}^{a_1}_{s_1} = 3,  \qquad \mathcal{R}^{a_1}_{s_2} = -1, \qquad \mathcal{R}^{a_2}_{s_1} = 3,  \qquad \mathcal{R}^{a_2}_{s_2} = -1
+\ese
+
+Finally the MDP carries a discount factor of $\gamma = 0.5$.\v
+
+We want to find what the optimal way for an agent to behave in this MDP.  We will use value iteration to find the optimal policy.  We begin by initializing $\boldsymbol{V}_0 (s)$ to 0 $\forall s$,  a.k.a:
+\bse
+\boldsymbol{V}_0 (s_1) = 0  \qquad \boldsymbol{V}_0 (s_2) = 0
+\ese
+
+Now we use the Bellman optimality equation for updating the state value function:
+\bse
+\boldsymbol{V}_1 (s) \gets \max_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} \boldsymbol{V}_0 (s^\prime) \right]
+\ese
+
+Namely for $s_1$:
+\bse
+\boldsymbol{V}_1 (s_1) \gets \max_{a} \left[ \mathcal{R}_{s_1}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_1 s^\prime}^{a} \boldsymbol{V}_0 (s^\prime) \right]
+\ese
+
+Using $\boldsymbol{V}_0 (s) = 0, \:\: \forall s$:
+\bse
+\boldsymbol{V}_1 (s_1) \gets \max_{a} \left[ \mathcal{R}_{s_1}^{a} \right] = \max \left[ \mathcal{R}_{s_1}^{a_1},  \mathcal{R}_{s_1}^{a_2} \right] = \max \left[ 3,  3 \right] = 3
+\ese
+
+Similarly for $s_2$:
+\vspace{-10pt}
+{\setlength{\jot}{5pt}
+\begin{align*}
+\boldsymbol{V}_1 (s_2) &\gets \max_{a} \left[ \mathcal{R}_{s_2}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s_2 s^\prime}^{a} \boldsymbol{V}_0 (s^\prime) \right] \\
+& = \max_{a} \left[ \mathcal{R}_{s_2}^{a} \right] \\
+& = \max \left[ \mathcal{R}_{s_2}^{a_1},  \mathcal{R}_{s_2}^{a_2} \right] \\
+& = \max \left[ -1,  -1 \right] \\
+& = -1
+\end{align*}}
+
+\vspace{-10pt}
+
+Hence after the first iteration of value iteration:
+\bse
+\boldsymbol{V}_1 (s_1) = -3  \qquad \boldsymbol{V}_1 (s_2) = -1
+\ese
+
+Moving on to the second iteration:
+{\setlength{\jot}{10pt}
+\begin{align*}
+\boldsymbol{V}_2 (s_1) & \gets \max_{a} \left[ \mathcal{R}_{s_1}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_1 s^\prime}^{a} \boldsymbol{V}_1 (s^\prime) \right] \\
+& =  \max \left[ \mathcal{R}_{s_1}^{a_1} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_1} \boldsymbol{V}_1 (s_1) + \mathcal{P}_{s_1 s_2}^{a_1} \boldsymbol{V}_1 (s_2) \right),  \mathcal{R}_{s_1}^{a_2} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_2} \boldsymbol{V}_1 (s_1) + \mathcal{P}_{s_1 s_2}^{a_2} \boldsymbol{V}_1 (s_2) \right) \right] \\
+& =  \max \left[ 3 + 0.5 \left( (0.5) (3) + (0.5) (-1) \right),  3 + 0.5 \left( (0) (3) + (1) (-1) \right) \right] \\
+& =  \max \left[ 3.5,  2.5 \right] \\
+& =  3.5
+\end{align*}}
+
+\vspace{-30pt}
+
+{\setlength{\jot}{10pt}
+\begin{align*}
+\boldsymbol{V}_2 (s_2) & \gets \max_{a} \left[ \mathcal{R}_{s_2}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_2 s^\prime}^{a} \boldsymbol{V}_1 (s^\prime) \right] \\
+& =  \max \left[ \mathcal{R}_{s_2}^{a_1} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_1} \boldsymbol{V}_1 (s_1) + \mathcal{P}_{s_2 s_2}^{a_1} \boldsymbol{V}_1 (s_2) \right),  \mathcal{R}_{s_2}^{a_2} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_2} \boldsymbol{V}_1 (s_1) + \mathcal{P}_{s_2 s_2}^{a_2} \boldsymbol{V}_1 (s_2) \right) \right] \\
+& =  \max \left[ -1 + 0.5 \left( (0) (3) + (1) (-1) \right),  -1 + 0.5 \left( (1) (3) + (0) (-1) \right) \right] \\
+& =  \max \left[ -1.5,  0.5 \right] \\
+& = 0.5
+\end{align*}}
+
+\vspace{-10pt}
+
+Hence after the second iteration of value iteration:
+\bse
+\boldsymbol{V}_2 (s_1) = 3.5  \qquad \boldsymbol{V}_2 (s_2) = 0.5
+\ese
+
+Similarly we move on to further iterations.  Here are the values we obtain:
+\bse
+\boldsymbol{V}_0 = (0,0), \qquad \boldsymbol{V}_1 = (3, -1), \qquad \boldsymbol{V}_2 = (3.5, 0.5), \qquad \boldsymbol{V}_3 = (4, 0.75)
+\ese
+\bse
+\boldsymbol{V}_4 = (4.2, 1), \qquad \boldsymbol{V}_5 = (4.3, 1.1), \qquad \boldsymbol{V}_6 = (4.4, 1.2), \qquad \boldsymbol{V}_7 = (4.4, 1.2)
+\ese
+
+\v
+
+As we can see $\boldsymbol{V}_6 = \boldsymbol{V}_7$ which means that the value iteration provides no further improvement, hence $\boldsymbol{V}_6$ is the optimal policy.  One can verify this by using now the Bellman optimality equation not as an update rule, but as an equation the optimal state value function must satisfy. Indeed:
+{\setlength{\jot}{10pt}
+\begin{align*}
+\boldsymbol{V}_6 (s_1) & = \max_{a} \left[ \mathcal{R}_{s_1}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_1 s^\prime}^{a} \boldsymbol{V}_6 (s^\prime) \right] \\
+& =  \max \left[ \mathcal{R}_{s_1}^{a_1} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_1} \boldsymbol{V}_6 (s_1) + \mathcal{P}_{s_1 s_2}^{a_1} \boldsymbol{V}_6 (s_2) \right),  \mathcal{R}_{s_1}^{a_2} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_2} \boldsymbol{V}_6 (s_1) + \mathcal{P}_{s_1 s_2}^{a_2} \boldsymbol{V}_6 (s_2) \right) \right] \\
+& =  \max \left[ 3 + 0.5 \left( (0.5) (4.4) + (0.5) (1.2) \right),  3 + 0.5 \left( (0) (4.4) + (1) (1.2) \right) \right] \\
+& =  \max \left[ 4.4,  3.6 \right] \\
+& =  4.4
+\end{align*}}
+
+\vspace{-30pt}
+
+{\setlength{\jot}{10pt}
+\begin{align*}
+\boldsymbol{V}_6 (s_2) & = \max_{a} \left[ \mathcal{R}_{s_2}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_2 s^\prime}^{a} \boldsymbol{V}_6 (s^\prime) \right] \\
+& =  \max \left[ \mathcal{R}_{s_2}^{a_1} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_1} \boldsymbol{V}_6 (s_1) + \mathcal{P}_{s_2 s_2}^{a_1} \boldsymbol{V}_6 (s_2) \right),  \mathcal{R}_{s_2}^{a_2} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_2} \boldsymbol{V}_6 (s_1) + \mathcal{P}_{s_2 s_2}^{a_2} \boldsymbol{V}_6 (s_2) \right) \right] \\
+& =  \max \left[ 3 + 0.5 \left( (0) (4.4) + (1) (1.2) \right),  3 + 0.5 \left( (1) (4.4) + (0) (1.2) \right) \right] \\
+& =  \max \left[ -0.4,  1.2 \right] \\
+& =  1.2
+\end{align*}}
+
+Hence through value iteration we found the optimal state value function:
+\bse
+\boldsymbol{V}_* = (4.4, 1.2)
+\ese
+
+Moving on,  for the optimal action value function holds:
+\bse
+Q_{*}(s, a) = \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{*}(s^\prime)
+\ese
+
+Hence for $s_1$:
+\begin{align*}
+Q_{*}(s_1, a_1) & = \mathcal{R}_{s_1}^{a_1} + 0.5 \left(\mathcal{P}_{s_1 s_1}^{a_1} V_{*}(s_1) + \mathcal{P}_{s_1 s_2}^{a_1} V_{*}(s_2) \right)  \\
+& =3 + 0.5 \left((0.5) (4.4) + (0.5) (1.2) \right) \\
+& = 4.4
+\end{align*}
+
+\vspace{-15pt}
+
+\begin{align*}
+Q_{*}(s_1, a_2) & = \mathcal{R}_{s_1}^{a_2} + 0.5 \left(\mathcal{P}_{s_1 s_1}^{a_2} V_{*}(s_1) + \mathcal{P}_{s_1 s_2}^{a_2} V_{*}(s_2) \right)  \\
+& = 3 + 0.5 \left((0) (4.4) + (1) (1.2) \right) \\
+& = 3.6
+\end{align*}
+
+Similarly for $s_2$:
+\begin{align*}
+Q_{*}(s_2, a_1) & = \mathcal{R}_{s_2}^{a_1} + 0.5 \left(\mathcal{P}_{s_2 s_1}^{a_1} V_{*}(s_1) + \mathcal{P}_{s_2 s_2}^{a_1} V_{*}(s_2) \right)  \\
+& = -1 + 0.5 \left((0) (4.4) + (0.5) (1) \right) \\
+& = -0.75
+\end{align*}
+
+\vspace{-15pt}
+
+\begin{align*}
+Q_{*}(s_2, a_2) & = \mathcal{R}_{s_2}^{a_2} + 0.5 \left(\mathcal{P}_{s_2 s_1}^{a_2} V_{*}(s_1) + \mathcal{P}_{s_2 s_2}^{a_2} V_{*}(s_2) \right)  \\
+& = -1 + 0.5 \left((1) (4.4) + (0.5) (0) \right) \\
+& = 1.2
+\end{align*}
+
+And now we know the action value function. Recall that we said that once we know the action value function the MDP is solved since we know how to behave.  Indeed, by following:
+\bse
+\pi_*(s) = \argmax_{a} Q_*(s,a)
+\ese
+
+we have:
+\begin{align*}
+\pi_*(s_1) &= \argmax_{a} Q_*(s_1,a) \\
+&= \argmax_{a} [Q_*(s_1,a_1),  Q_*(s_1,a_2)] \\
+&= \argmax_{a} [4.4,  3.6] \\
+&= a_1
+\end{align*}
+
+\vspace{-15pt}
+
+\begin{align*}
+\pi_*(s_2) &= \argmax_{a} Q_*(s_2,a) \\
+&= \argmax_{a} [Q_*(s_2,a_1),  Q_*(s_2,a_2)] \\
+&= \argmax_{a} [-0.75, 1.2] \\
+&= a_2
+\end{align*}
+
+Hence the optimal way for the agent to behave is to take action $a_1$ when in state $s_1$ and action $a_2$ when in state $s_2$.
+
+\subsection{Model-Free Prediction}
+
+In this chapter we will be dealing with the real reinforcement learning problem.  Up to this point the MDP was fully given.  In real world problems however this is really unrealistic,  since some of the entities of an MDP might be unknown to us (mostly state transition probabilities since they are the ones controlled by the environment). \v
+
+Hence our goals in model-free problems are:
+\bit
+\item To estimate the value functions of an unknown MDP given a policy $\pi$ (model-free prediction) without knowing how the environment might behave. 
+\item To optimize the value functions of an unknown MDP,  and subsequently find the optimal policy $\pi_*$ (model-free control) without knowing how the environment might behave.
+\eit
+
+We will follow the same procedure as before.  We will begin with evaluating a given policy $\pi$ within an unknown MDP (prediction) and by gaining some intuition of the problem we will move on finding optimal policies for unknown MDPs (control). \v
+
+In this chapter we will deal with model-free prediction and we will analyze three algorithms: ``Monte Carlo", ``Temporal Difference" and ``TD($\lambda$).
+
+\subsubsection{Monte Carlo}
+ 
+Monte Carlo is a model-free algorithm that learns directly from episodes of experience without bootstrapping, i.e from complete episodes.  This makes Monte Carlo able to be applied only to episodic MDPs a.k.a all episodes must terminate.  Monte Carlo uses the simple idea of value being equal to the mean return.  \v
+
+Our goal is to learn $\boldsymbol{V}_\pi$ from episodes of experience under the policy $\pi$.  Recall that in model-based prediction where the MDP was fully know we started from the definition of $\boldsymbol{V}_\pi$:
+\bse
+V_{\pi}(s) = E_{\pi} [G_t | S_t = s]
+\ese
+
+and at some point we made use of the law of conditional expected value so we substituted the expected value by making use of the state transition probabilities. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
