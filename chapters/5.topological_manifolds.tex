@@ -1549,7 +1549,7 @@ Therefore, we can think of tensor fields on $M$ either as sections of some tenso
 
 To summarize, fields are the generalization of the definitions of vectors, covectors and tensors at a specific point $p$ of $M$, to every possible point $p$ of manifold $M$, hence to the whole manifold $M$. In a similar way we can generalize the concept of the gradient of $f$ at $p\in M$ in the gradient of $f$ at $M$.
 
-\subsubsection{Generalize (Gradient At A Point) To (Gradient Of The Manifold)}
+\subsubsection*{Generalize (Gradient At A Point) To (Gradient Of The Manifold)}
 
 Recall the definition of the gradient operator at a point $p\in M$. We can extend that definition to define the ($\R$-linear) operator:
 \bi{rrCl}
@@ -1588,7 +1588,7 @@ Note that the operator $\d$ satisfies the Leibniz rule:
 \d (fg) = g\, \d f + f\, \d g
 \ese
 
-\subsubsection{Generalize (Push-Forward \& Pull-Back At A Point) To (Push-Forward \& Pull-Back Of A Manifold)}
+\subsubsection*{Generalize (Push-Forward \& Pull-Back At A Point) To (Push-Forward \& Pull-Back Of A Manifold)}
 
 Finally, we want to generalize the concepts of push-forward and pull-back from a point to the whole manifold (a.k.a from a vector/covector to a vector/covector field). For a good reason we will first start with the pull-back. \v
 
@@ -2168,7 +2168,7 @@ for any simply connected $M\se\R^d$.
 
 In this chapter we will go through an application containing (almost) everything we have mentioned so far. More specifically, we we will examine in detail the special linear group of degree $2$ over $\C$, also known as the relativistic spin group.
 
-\subsubsection{$\SL(2,\C)$ As A Set}
+\subsubsection*{$\SL(2,\C)$ As A Set}
 We define the following subset of $\C^4:=\C\times\C\times\C\times\C$:
 \bse
 \SL(2,\C) := \biggl\{ \biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr) \in \C^4 \ \Big|\ ad-bc = 1 \biggr\} \se \C^4
@@ -2207,7 +2207,7 @@ hence, we have $\biggl(\begin{matrix} a & b \\ c & d\end{matrix}\biggr)^{-1}= \b
 
 Therefore, the pair $(\SL(2,\C),\bullet)$ is a (non-commutative) group.
 
-\subsubsection{$\SL(2,\C)$ As A Topological Space}
+\subsubsection*{$\SL(2,\C)$ As A Topological Space}
 
 Recall that if $N$ is a subset of $M$ and $\mathcal{O}$ is a topology on $M$, then we can equip $N$ with the subset topology inherited from $M$:
 \bse
@@ -2257,7 +2257,7 @@ We can then equip $\C^4$ with the product topology so that we can finally define
 \ese
 so that the pair $(\SL(2,\C),\mathcal{O})$ is a topological space. In fact, it is a connected topological space, and we will need this property later on.
 
-\subsubsection{$\SL(2,\C)$ As A Topological Manifold}
+\subsubsection*{$\SL(2,\C)$ As A Topological Manifold}
 
 Recall that a topological space $(M,\mathcal{O})$ is a complex topological manifold if each point $p\in M$ has an open neighbourhood $U(p)$ which is homeomorphic to an open subset of $\C^d$. Equivalently, there must exist a $\mathcal{C}^0$-atlas, i.e.\ a collection $\mathscr{A}$ of charts $(U_\alpha,x_\alpha)$, where the $U_\alpha$ are open and cover $M$ and each $x$ is a homeomorphism onto a subset of $\C^d$. In our case of $\SL(2,\C)$ we will map it locally to $\C^3$ because as we said in the beginning of this section, $\SL(2,\C)$ (as a set) is a subset of $\C^4:=\C\times\C\times\C\times\C$ due to the constraint $ad-bc = 1$ that removes one degree of freedom. This is why $\C^3$ suffices and we do not use $\C^4$. \v
 
@@ -2308,7 +2308,7 @@ y^{-1} \cl & x(V) & \to & V\\[5pt]
 
 An element of $\SL(2,\C)$ cannot have both $a$ and $b$ equal to zero, for otherwise $ad-bc=0\neq 1$. Hence $\mathscr{A}_{\mathrm{top}}:=\{(U,x),(V,y)\}$ is an atlas, and we showed that $x$ and $y$ are homeomorphisms hence continuous and invertible. Since every atlas is automatically a $\mathcal{C}^0$-atlas, the triple $(\SL(2,\C),\mathcal{O},\mathscr{A}_{\mathrm{top}})$ is a 3-dimensional, complex, topological manifold.
 
-\subsubsection{$\SL(2,\C)$ As A Complex Differentiable Manifold}
+\subsubsection*{$\SL(2,\C)$ As A Complex Differentiable Manifold}
 
 Recall that to obtain a $\mathcal{C}^1$-differentiable manifold from a topological manifold with atlas $\mathscr{A}$, we have to check that every transition map between charts in $\mathscr{A}$ is differentiable in the usual sense. Remember this picture:
 

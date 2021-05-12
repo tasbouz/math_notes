@@ -796,37 +796,41 @@ In the model-based cases (both for prediction and control) we will focus on dyna
 
 \subsubsection{Policy Evaluation}
 
-Focusing on model-based prediction we will develop only one model called ``policy evaluation".  The way it works is through iterative applications of Bellman expectation equation (recall that we are on the prediction case that we want to evaluate a given policy and not to derive an optimal policy, so we don't need Bellman optimality equation).  
-We will use the Bellman expectation equation in the matrix form:
+Focusing on model-based prediction we will develop only one model called ``policy evaluation".  The way it works is through iterative applications of Bellman expectation equation:
 \bse
-\boldsymbol{V} = \boldsymbol{\mathcal{R}} + \gamma \mathcal{P} \boldsymbol{V} 
+V_{\pi}(s) = \sum_{a} \pi(a \mid s) \Big[\mathcal{R}_{s}^{a}  + \gamma \sum_{s^\prime} \mathcal{P}_{ss^\prime}^{a} \cdot V_{\pi}(s^\prime) \Big]
 \ese
 
-We will create a temporal series of of state value vectors: $\boldsymbol{V}_0, \boldsymbol{V}_1, \ldots$.  By randomly initializing $\boldsymbol{V}_0$ (e.g by setting 0 to all entries):
+(Recall that we are on the prediction case that we want to evaluate a given policy and not to derive an optimal policy, so we don't need Bellman optimality equation) \v
+
+As a first step , we will create a temporal series of of state value vectors: 
 \bse
-\boldsymbol{V}_0 = \begin{bmatrix} V_0(s_1)=0 \\[1ex] V_0(s_2)=0 \\[1ex] \vdots \\[1ex] V_0(s_n)=0 \end{bmatrix}
+V_0(s),  V_1(s),  \ldots
 \ese
 
-\v
-
-we will then use Bellman expectation equation as an update rule to obtain $\boldsymbol{V}_1$ as:
+and by randomly initializing $V_0(s)$ to some initial values (e.g by setting 0 to all entries):
 \bse
-\boldsymbol{V}_1 \gets \boldsymbol{\mathcal{R}} + \gamma \mathcal{P} \boldsymbol{V}_0 
+V_0(s_1) = V_0(s_2) = \ldots = V_0(s_n)=0 
 \ese
 
-Similarly we will get $\boldsymbol{V}_2$ by using Bellman expectation equation as an update rule:
+we will then use Bellman expectation equation as an update rule to obtain $V_1(s)$ as:
 \bse
-\boldsymbol{V}_2 \gets \boldsymbol{\mathcal{R}} + \gamma \mathcal{P} \boldsymbol{V}_1 
+V_{1}(s) = \sum_{a} \pi(a \mid s) \Big[\mathcal{R}_{s}^{a}  + \gamma \sum_{s^\prime} \mathcal{P}_{ss^\prime}^{a} \cdot V_{0}(s^\prime) \Big]
+\ese
+
+Similarly we will get $V_2(s)$ by using Bellman expectation equation as an update rule:
+\bse
+V_{2}(s) = \sum_{a} \pi(a \mid s) \Big[\mathcal{R}_{s}^{a}  + \gamma \sum_{s^\prime} \mathcal{P}_{ss^\prime}^{a} \cdot V_{1}(s^\prime) \Big]
 \ese
 
 The general update rule is of course:
 \bse
-\boldsymbol{V}_{k+1} \gets \boldsymbol{\mathcal{R}} + \gamma \mathcal{P} \boldsymbol{V}_k, \qquad k=0,1,2,\ldots 
+V_{k+1}(s) = \sum_{a} \pi(a \mid s) \Big[\mathcal{R}_{s}^{a}  + \gamma \sum_{s^\prime} \mathcal{P}_{ss^\prime}^{a} \cdot V_{k}(s^\prime) \Big]
 \ese
 
-One can show, although we will skip the proog for now,  that after many iterations the final state value function will be the state value function of the policy:
+One can show, although we will skip the proof for now,  that after many iterations the final state value function will be the state value function of the policy:
 \bse
-\boldsymbol{V}_k \to \boldsymbol{V}_\pi \:\: \textit{as} \:\: k \to \infty
+V_k(s) \to V_{\pi}(s) \:\: \textit{as} \:\: k \to \infty
 \ese
 
 Let us give an example with the following small gridworld.  We assume an undiscounted MDP ($\gamma = 1$).  We have 14 non-terminal states $1,  \ldots,  14$ and two terminal states shown as shaded squares.  The reward is $-1$ for every state until a terminal state is reached.  The agent follows a uniform random policy:
@@ -839,7 +843,7 @@ Let us give an example with the following small gridworld.  We assume an undisco
 \centering
 \end{figure}
 
-Let's see the state value function for all states after $k$ iterations. The final step $k=\infty$ is the actual values of the evaluation of the policy ($\boldsymbol{V}_\infty = \boldsymbol{V}_\pi$)
+Let's see the state value function for all states after $k$ iterations. The final step $k=\infty$ is the actual values of the evaluation of the policy ($V_\infty = V_\pi$)
 
 \vspace{-10pt}
 
@@ -856,7 +860,7 @@ Moving on to model-based control, the task in hand now is given an MDP to find a
 
 \subsubsection{Policy Iteration}
 
-In policy evaluation we saw that given a policy $\pi$, we can initialize a set of initial state value functions $\boldsymbol{V}_0 $ and by making use of the Bellman expectation equation as an update rule,  through an iterative process of updates to finally evaluate the policy $\pi$.  Now we can get one step further.  The idea is that once we have evaluated the policy and we have obtained the state value function $\boldsymbol{V}_\pi$,  we can now update our policy $\pi$ to a new one $\pi^\prime$ by simply picking that action that maximizes the action state value function:
+In policy evaluation we saw that given a policy $\pi$, we can initialize a set of initial state value functions $V_0(s),$ and by making use of the Bellman expectation equation as an update rule,  through an iterative process of updates to finally evaluate the policy $\pi$.  Now we can get one step further.  The idea is that once we have evaluated the policy and we have obtained the state value function $V_{\pi}(s)$,  we can now update our policy $\pi$ to a new one $\pi^\prime$ by simply picking that action that maximizes the action state value function:
 \bse
 \pi^\prime(s) = \argmax_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{\pi}(s^\prime) \right] = \argmax_{a} Q_\pi(s,a)
 \ese
@@ -899,26 +903,26 @@ Let's start by getting some intuition from the small grid world example we devel
 \centering
 \end{figure}
 
-After just one single iteration of the evaluation process,  we ended up in $\boldsymbol{V}_1 $.  
+After just one single iteration of the evaluation process,  we ended up in $V_1 $.  
 
 \begin{figure}[H]
 \includegraphics[scale=0.45]{images/rl14.png}
 \centering
 \end{figure}
 
-The state value function $\boldsymbol{V}_1 $ is certainly not the $\boldsymbol{V}_\pi$,  however recall that in control we want to find the optimal policy and not to evaluate one.  Hence, nothing is stopping us from doing an update of the policy right now,  after just one step instead of waiting until the very end of the evaluation.   (More generally,  one can pick any number of $k$ evaluation iterations before doing the update.  This is usually called ``modified policy iteration" or ``generalized policy iteration".  In the extreme case where  $k=1$ and we do the update immediately after just one step of evaluation iteration,  the algorithm is called ``value iteration").  \v
+The state value function $V_1(s)$ is certainly not the $V_{\pi}(s)$,  however recall that in control we want to find the optimal policy and not to evaluate one.  Hence, nothing is stopping us from doing an update of the policy right now,  after just one step instead of waiting until the very end of the evaluation.   (More generally,  one can pick any number of $k$ evaluation iterations before doing the update.  This is usually called ``modified policy iteration" or ``generalized policy iteration".  In the extreme case where  $k=1$ and we do the update immediately after just one step of evaluation iteration,  the algorithm is called ``value iteration").  \v
 
 Hence,  in value iteration instead of moving on to the second iteration of the evaluation process of the same initial policy $\pi$ we instead update the policy,  right after the very first step of the  evaluation,  to a new policy $\pi^\prime$.  This update is actually happening to the state value function by making use of the Bellman optimality equation. (Notice that this is exactly the same to the the update we do in policy iteration once the evaluation is over):
 \bse
-\boldsymbol{V}_{k+1} (s) \gets \max_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} \boldsymbol{V}_k (s^\prime) \right]
+V_{k+1} (s) \gets \max_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_k (s^\prime) \right]
 \ese
 
 One can prove that after many iterations this process will lead us to an optimal state value function.  Of course for the optimal state value function the Bellman optimality equation is true:
 \bse
-\boldsymbol{V}_{*} (s) = \max_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} \boldsymbol{V}_* (s^\prime) \right]
+V_{*} (s) = \max_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_* (s^\prime) \right]
 \ese
 
-Notice that for the optimal state value function we do not update ($\gets$) but verify ($=$).  Once the optimal state value function $\boldsymbol{V}_{*}$ is know, we can compute the optimal action value function:
+Notice that for the optimal state value function we do not update ($\gets$) but verify ($=$).  Once the optimal state value function $V_*(s)$ is know, we can compute the optimal action value function:
 \bse
 Q_{*}(s, a) = \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_{*}(s^\prime)
 \ese
@@ -928,18 +932,16 @@ and then the optimal policy is simply:
 \pi_*(s) = \argmax_{a} Q_*(s,a)
 \ese
 
-Notice that in value iteration we now have only one set of iteration since we do not run $k$ cycles of updates through Bellman expectation equation for each evaluation of policy evaluation but instead we update the state value function directly after each iteration using the Bellman optimality equation.  \v
+Notice that in value iteration we now have only one set of iterations since we do not run $k$ cycles of updates through Bellman expectation equation for each evaluation of policy evaluation but instead we update the state value function directly after each iteration using the Bellman optimality equation. 
 
-Since value iteration is very important in what follows we will examine in detail an application of an MDP solved via value iteration.  
+\subsubsection*{Value Iteration: Application}
 
-\subsubsection{Value Iteration: Application}
-
-Consider the following MDP: $(\mathcal{S},  \mathcal{A},\mathcal{P}_{s s^\prime}^{a},  \mathcal{R}_{s}^{a},  \gamma)$.
+Since value iteration is very important in what follows we will examine in detail an application of an MDP solved via value iteration.  Consider the following MDP: $(\mathcal{S},  \mathcal{A},\mathcal{P}_{s s^\prime}^{a},  \mathcal{R}_{s}^{a},  \gamma)$.
 
 \vspace{-10pt}
 
 \begin{figure}[H]
-\includegraphics[scale=0.4]{images/rl19.png}
+\includegraphics[scale=0.38]{images/rl19.png}
 \centering
 \end{figure}
 
@@ -962,31 +964,31 @@ and the following expected rewards:
 
 Finally the MDP carries a discount factor of $\gamma = 0.5$.\v
 
-We want to find what the optimal way for an agent to behave in this MDP.  We will use value iteration to find the optimal policy.  We begin by initializing $\boldsymbol{V}_0 (s)$ to 0 $\forall s$,  a.k.a:
+We want to find what the optimal way for an agent to behave in this MDP.  We will use value iteration to find the optimal policy.  We begin by initializing $V_0 (s)$ to 0 $\forall s$,  a.k.a:
 \bse
-\boldsymbol{V}_0 (s_1) = 0  \qquad \boldsymbol{V}_0 (s_2) = 0
+V_0 (s_1) = 0  \qquad V_0 (s_2) = 0
 \ese
 
 Now we use the Bellman optimality equation for updating the state value function:
 \bse
-\boldsymbol{V}_1 (s) \gets \max_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} \boldsymbol{V}_0 (s^\prime) \right]
+V_1 (s) \gets \max_{a} \left[ \mathcal{R}_{s}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s s^\prime}^{a} V_0 (s^\prime) \right]
 \ese
 
 Namely for $s_1$:
 \bse
-\boldsymbol{V}_1 (s_1) \gets \max_{a} \left[ \mathcal{R}_{s_1}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_1 s^\prime}^{a} \boldsymbol{V}_0 (s^\prime) \right]
+V_1 (s_1) \gets \max_{a} \left[ \mathcal{R}_{s_1}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_1 s^\prime}^{a} V_0 (s^\prime) \right]
 \ese
 
-Using $\boldsymbol{V}_0 (s) = 0, \:\: \forall s$:
+Using $V_0 (s) = 0, \:\: \forall s$:
 \bse
-\boldsymbol{V}_1 (s_1) \gets \max_{a} \left[ \mathcal{R}_{s_1}^{a} \right] = \max \left[ \mathcal{R}_{s_1}^{a_1},  \mathcal{R}_{s_1}^{a_2} \right] = \max \left[ 3,  3 \right] = 3
+V_1 (s_1) \gets \max_{a} \left[ \mathcal{R}_{s_1}^{a} \right] = \max \left[ \mathcal{R}_{s_1}^{a_1},  \mathcal{R}_{s_1}^{a_2} \right] = \max \left[ 3,  3 \right] = 3
 \ese
 
 Similarly for $s_2$:
 \vspace{-10pt}
 {\setlength{\jot}{5pt}
 \begin{align*}
-\boldsymbol{V}_1 (s_2) &\gets \max_{a} \left[ \mathcal{R}_{s_2}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s_2 s^\prime}^{a} \boldsymbol{V}_0 (s^\prime) \right] \\
+V_1 (s_2) &\gets \max_{a} \left[ \mathcal{R}_{s_2}^{a} + \gamma \sum_{s^{\prime}} \mathcal{P}_{s_2 s^\prime}^{a} V_0 (s^\prime) \right] \\
 & = \max_{a} \left[ \mathcal{R}_{s_2}^{a} \right] \\
 & = \max \left[ \mathcal{R}_{s_2}^{a_1},  \mathcal{R}_{s_2}^{a_2} \right] \\
 & = \max \left[ -1,  -1 \right] \\
@@ -997,14 +999,14 @@ Similarly for $s_2$:
 
 Hence after the first iteration of value iteration:
 \bse
-\boldsymbol{V}_1 (s_1) = -3  \qquad \boldsymbol{V}_1 (s_2) = -1
+V_1 (s_1) = -3  \qquad V_1 (s_2) = -1
 \ese
 
 Moving on to the second iteration:
 {\setlength{\jot}{10pt}
 \begin{align*}
-\boldsymbol{V}_2 (s_1) & \gets \max_{a} \left[ \mathcal{R}_{s_1}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_1 s^\prime}^{a} \boldsymbol{V}_1 (s^\prime) \right] \\
-& =  \max \left[ \mathcal{R}_{s_1}^{a_1} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_1} \boldsymbol{V}_1 (s_1) + \mathcal{P}_{s_1 s_2}^{a_1} \boldsymbol{V}_1 (s_2) \right),  \mathcal{R}_{s_1}^{a_2} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_2} \boldsymbol{V}_1 (s_1) + \mathcal{P}_{s_1 s_2}^{a_2} \boldsymbol{V}_1 (s_2) \right) \right] \\
+V_2 (s_1) & \gets \max_{a} \left[ \mathcal{R}_{s_1}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_1 s^\prime}^{a} V_1 (s^\prime) \right] \\
+& =  \max \left[ \mathcal{R}_{s_1}^{a_1} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_1} V_1 (s_1) + \mathcal{P}_{s_1 s_2}^{a_1} V_1 (s_2) \right),  \mathcal{R}_{s_1}^{a_2} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_2} V_1 (s_1) + \mathcal{P}_{s_1 s_2}^{a_2} V_1 (s_2) \right) \right] \\
 & =  \max \left[ 3 + 0.5 \left( (0.5) (3) + (0.5) (-1) \right),  3 + 0.5 \left( (0) (3) + (1) (-1) \right) \right] \\
 & =  \max \left[ 3.5,  2.5 \right] \\
 & =  3.5
@@ -1014,8 +1016,8 @@ Moving on to the second iteration:
 
 {\setlength{\jot}{10pt}
 \begin{align*}
-\boldsymbol{V}_2 (s_2) & \gets \max_{a} \left[ \mathcal{R}_{s_2}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_2 s^\prime}^{a} \boldsymbol{V}_1 (s^\prime) \right] \\
-& =  \max \left[ \mathcal{R}_{s_2}^{a_1} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_1} \boldsymbol{V}_1 (s_1) + \mathcal{P}_{s_2 s_2}^{a_1} \boldsymbol{V}_1 (s_2) \right),  \mathcal{R}_{s_2}^{a_2} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_2} \boldsymbol{V}_1 (s_1) + \mathcal{P}_{s_2 s_2}^{a_2} \boldsymbol{V}_1 (s_2) \right) \right] \\
+V_2 (s_2) & \gets \max_{a} \left[ \mathcal{R}_{s_2}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_2 s^\prime}^{a} V_1 (s^\prime) \right] \\
+& =  \max \left[ \mathcal{R}_{s_2}^{a_1} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_1} V_1 (s_1) + \mathcal{P}_{s_2 s_2}^{a_1} V_1 (s_2) \right),  \mathcal{R}_{s_2}^{a_2} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_2} V_1 (s_1) + \mathcal{P}_{s_2 s_2}^{a_2} V_1 (s_2) \right) \right] \\
 & =  \max \left[ -1 + 0.5 \left( (0) (3) + (1) (-1) \right),  -1 + 0.5 \left( (1) (3) + (0) (-1) \right) \right] \\
 & =  \max \left[ -1.5,  0.5 \right] \\
 & = 0.5
@@ -1025,7 +1027,7 @@ Moving on to the second iteration:
 
 Hence after the second iteration of value iteration:
 \bse
-\boldsymbol{V}_2 (s_1) = 3.5  \qquad \boldsymbol{V}_2 (s_2) = 0.5
+V_2 (s_1) = 3.5  \qquad V_2 (s_2) = 0.5
 \ese
 
 Similarly we move on to further iterations.  Here are the values we obtain:
@@ -1041,8 +1043,8 @@ Similarly we move on to further iterations.  Here are the values we obtain:
 As we can see $\boldsymbol{V}_6 = \boldsymbol{V}_7$ which means that the value iteration provides no further improvement, hence $\boldsymbol{V}_6$ is the optimal policy.  One can verify this by using now the Bellman optimality equation not as an update rule, but as an equation the optimal state value function must satisfy. Indeed:
 {\setlength{\jot}{10pt}
 \begin{align*}
-\boldsymbol{V}_6 (s_1) & = \max_{a} \left[ \mathcal{R}_{s_1}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_1 s^\prime}^{a} \boldsymbol{V}_6 (s^\prime) \right] \\
-& =  \max \left[ \mathcal{R}_{s_1}^{a_1} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_1} \boldsymbol{V}_6 (s_1) + \mathcal{P}_{s_1 s_2}^{a_1} \boldsymbol{V}_6 (s_2) \right),  \mathcal{R}_{s_1}^{a_2} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_2} \boldsymbol{V}_6 (s_1) + \mathcal{P}_{s_1 s_2}^{a_2} \boldsymbol{V}_6 (s_2) \right) \right] \\
+V_6 (s_1) & = \max_{a} \left[ \mathcal{R}_{s_1}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_1 s^\prime}^{a} V_6 (s^\prime) \right] \\
+& =  \max \left[ \mathcal{R}_{s_1}^{a_1} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_1} V_6 (s_1) + \mathcal{P}_{s_1 s_2}^{a_1} V_6 (s_2) \right),  \mathcal{R}_{s_1}^{a_2} + 0.5 \left( \mathcal{P}_{s_1 s_1}^{a_2} V_6 (s_1) + \mathcal{P}_{s_1 s_2}^{a_2} V_6 (s_2) \right) \right] \\
 & =  \max \left[ 3 + 0.5 \left( (0.5) (4.4) + (0.5) (1.2) \right),  3 + 0.5 \left( (0) (4.4) + (1) (1.2) \right) \right] \\
 & =  \max \left[ 4.4,  3.6 \right] \\
 & =  4.4
@@ -1052,8 +1054,8 @@ As we can see $\boldsymbol{V}_6 = \boldsymbol{V}_7$ which means that the value i
 
 {\setlength{\jot}{10pt}
 \begin{align*}
-\boldsymbol{V}_6 (s_2) & = \max_{a} \left[ \mathcal{R}_{s_2}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_2 s^\prime}^{a} \boldsymbol{V}_6 (s^\prime) \right] \\
-& =  \max \left[ \mathcal{R}_{s_2}^{a_1} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_1} \boldsymbol{V}_6 (s_1) + \mathcal{P}_{s_2 s_2}^{a_1} \boldsymbol{V}_6 (s_2) \right),  \mathcal{R}_{s_2}^{a_2} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_2} \boldsymbol{V}_6 (s_1) + \mathcal{P}_{s_2 s_2}^{a_2} \boldsymbol{V}_6 (s_2) \right) \right] \\
+V_6 (s_2) & = \max_{a} \left[ \mathcal{R}_{s_2}^{a} + 0.5 \sum_{s^{\prime}} \mathcal{P}_{s_2 s^\prime}^{a} V_6 (s^\prime) \right] \\
+& =  \max \left[ \mathcal{R}_{s_2}^{a_1} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_1} V_6 (s_1) + \mathcal{P}_{s_2 s_2}^{a_1} V_6 (s_2) \right),  \mathcal{R}_{s_2}^{a_2} + 0.5 \left( \mathcal{P}_{s_2 s_1}^{a_2} V_6 (s_1) + \mathcal{P}_{s_2 s_2}^{a_2} V_6 (s_2) \right) \right] \\
 & =  \max \left[ 3 + 0.5 \left( (0) (4.4) + (1) (1.2) \right),  3 + 0.5 \left( (1) (4.4) + (0) (1.2) \right) \right] \\
 & =  \max \left[ -0.4,  1.2 \right] \\
 & =  1.2
@@ -1133,31 +1135,207 @@ Hence our goals in model-free problems are:
 \item To optimize the value functions of an unknown MDP,  and subsequently find the optimal policy $\pi_*$ (model-free control) without knowing how the environment might behave.
 \eit
 
-We will follow the same procedure as before.  We will begin with evaluating a given policy $\pi$ within an unknown MDP (prediction) and by gaining some intuition of the problem we will move on finding optimal policies for unknown MDPs (control). \v
-
-In this chapter we will deal with model-free prediction and we will analyze three algorithms: ``Monte Carlo", ``Temporal Difference" and ``TD($\lambda$).
+We will follow the same procedure as before.  We will begin with evaluating a given policy $\pi$ within an unknown MDP (prediction) and by gaining some intuition of the problem we will move on finding optimal policies for unknown MDPs (control).  In this chapter we will deal with model-free prediction and we will analyse three algorithms: ``Monte Carlo", ``Temporal Difference" and ``TD($\lambda$)".
 
 \subsubsection{Monte Carlo}
  
-Monte Carlo is a model-free algorithm that learns directly from episodes of experience without bootstrapping, i.e from complete episodes.  This makes Monte Carlo able to be applied only to episodic MDPs a.k.a all episodes must terminate.  Monte Carlo uses the simple idea of value being equal to the mean return.  \v
+Monte Carlo is a model-free algorithm that learns directly from episodes of experience without bootstrapping, i.e from complete episodes.  This makes Monte Carlo able to be applied only to episodic MDPs a.k.a all episodes must terminate.  Monte Carlo uses the simple idea of using the average as an estimator of the expected value.  \v
 
-Our goal is to learn $\boldsymbol{V}_\pi$ from episodes of experience under the policy $\pi$.  Recall that in model-based prediction where the MDP was fully know we started from the definition of $\boldsymbol{V}_\pi$:
+Our goal is to learn $V_\pi(s)$ from episodes of experience under the policy $\pi$.  Recall that in model-based prediction where the MDP was fully know we started from the definition of $V_\pi(s)$:
 \bse
 V_{\pi}(s) = E_{\pi} [G_t | S_t = s]
 \ese
 
-and at some point we made use of the law of conditional expected value so we substituted the expected value by making use of the state transition probabilities. 
+and at some point we made use of the law of conditional expected value so we substituted the expected value by making use of the state transition probabilities.  The problem in model-free reinforcement learning is that the MDP is unknown to us.  That means that while we can  steal define actions,  policies,  reward functions and discount factors we are not in a position to know what are the state transition probabilities.  Hence Bellman equations (both expectation and optimality) cannot be used.  \v
 
+Monte Carlo's idea is simply to approximate expected values with averages.  Of course in order to do so we need data.  In Monte Carlo we let the agent to move around in the environment (or if this is not possible we simulate the environment and we let the agent to run the simulation) and by completing episodes we collect a sample of returns and then we use it in order to estimate the expected return by averaging them.  \v
 
+Hence the idea is that the first time $t$ a state $s$ is visited by the agent,  is the beginning of an episode with starting state $s$.  When a terminal state is reached the episode is finished and the agent collects the reward.  Since we will average the rewards we need both the total reward $S(s)$ from all episodes of each state $s$ and the number of episodes $N(s)$ for each state $s$.  So initially we set:
+\bse
+S(s) = N(s) = 0, \:\: \forall s
+\ese
 
+and after each episode we update them as:
+\bse
+N(s) \gets N(s) + 1 \qquad \textit{and} \qquad S(s) \gets S(s) + G_t
+\ese
 
+When we are done with the data collection,  we estimate the state value function as:
+\bse
+V(s) = \frac{S(s)}{N(s)}
+\ese
 
+According to the law of large numbers, as we increase the number of episodes for each state our estimation becomes more accurate and finally we obtain:
+\bse
+V(s) \to V_{\pi}(s) \:\: \textit{as} \:\: N(s) \to \infty
+\ese
 
+That's the idea behind Monte Carlo.  Now that we introduced the basic model, there are two improvements that we can do so the algorithm can be faster and not that computationally expensive. \v
 
+First,  instead of counting episodes as the ``first time a state is visited",  we can count them as ``every time a state is visited". For example let's assume an MDP with 4 states $\mathcal{S} = \{s_1, s_2, s_3,s_4\}$ and $s_4$ being a terminal state.  A possible $s_1$ episode could be:
+\bse
+s_1 \to s_3 \to s_2 \to s_1 \to s_3 \to s_2 \to s_4
+\ese
 
+However since during this episode we visited $s_1$ again,  once can also assume as a separate episode the last 4 states:
+\bse
+s_1 \to s_3 \to s_2 \to s_4
+\ese
 
+\v
 
+In that case we end up with two episodes instead of just one and that way we collect data faster.  We call this method of Monte Carlo ``Every-Visit Monte Carlo" opposite to the initial model which is usually called ``First-Visit Monte Carlo". \v
 
+Second,  in order to compute the average we need to wait until all episodes are finished,  so both $S(s)$ and $N(s)$ are known. Computationally speaking this carries two drawbacks:
+\bit
+\item We need to keep in memory all episodes up to the end in order to compute the average. 
+\item We need to keep in memory number of episodes.
+\eit
 
+We can solve the first problem by incrementally update $V(s)$ after each episode.  For the average in general holds:
+
+\vspace{-20pt}
+
+{\setlength{\jot}{10pt}
+\begin{align*}
+\bar{x}_N &= \frac{1}{N} \sum_{i=1}^{N} x_i \\
+&= \frac{1}{N} \left[ x_N + \sum_{i=1}^{N-1} x_i \right] \\
+&= \frac{1}{N} \left[ x_N + \frac{N-1}{N-1} \cdot \sum_{i=1}^{N-1} x_i \right] \\
+&= \frac{1}{N} \left[ x_N + (N-1) \cdot \bar{x}_{N-1} \right] \\
+&=  \frac{1}{N}  \cdot x_N + \frac{1}{N}  \cdot N  \cdot \bar{x}_{N-1} - \frac{1}{N}  \cdot \bar{x}_{N-1} \\
+&=  \frac{1}{N}  \cdot x_N + \bar{x}_{N-1} - \frac{1}{N}  \cdot \bar{x}_{N-1} \\
+&=  \bar{x}_{N-1} + \frac{1}{N}  \cdot (x_N - \bar{x}_{N-1})
+\end{align*}}
+
+\vspace{-5pt}
+
+So by using this last expression we can update the average due to the extra additional observations by setting it to the previous once plus a correction term which is the difference of the new observations from the average.  In our case of Monte Carlo this translates to:
+\bse
+V(s_t) \gets V(s_t) + \frac{1}{N(s_t)} \left(G_t - V(s_t) \right)
+\ese
+
+That way we solved the fist problem of keeping in memory $S(s)$ for all states,  since we only need the new observation $G_t$ and the number of episodes that the observation is coming from in order to update the state value functions.  Coming to the second problem we will deal with it by using the trick of a running average, i.e we will simply substitute $N(s)$ with a constant number $\alpha$ that we can define it as we want (we can even make it dynamic to change over time).  That way we can completely forget about number of episodes since the state value functions update rule simply gets:
+\bse
+V(s_t) \gets V(s_t) + \alpha \left(G_t - V(s_t) \right)
+\ese
+
+Hence, we introduced Monte Carlo and we also introduced two major improvements on it. Let us close this section by mentioning some of the key characteristics of Monte Carlo. 
+\bit
+\item  Monte Carlo converges to the solution with minimum mean squared error. 
+\item Monte Carlo does not use the Markov property.
+\item Monte Carlo samples but does not bootstrap.  In other words it must wait until the end of an episode before $G_t$ is known in order to update $V$ (i.e to learn).  This is why it works only in episodic environments. 
+\item By the law of large numbers Monte Carlo converges to the real $V_\pi$ as experience gets to infinity. 
+\item $G_t$ is an unbiased estimator of $V_\pi$ hence Monte Carlo has zero bias.  However is quite noisy (as the sum of random variables) since it carries variance.  Hence,  Monte Carlo has high variance.
+\item Due to it's zero bias / high variance,  Monte Carlo has very good convergence properties and it is not very sensitive to initial conditions (initial values).
+\eit
+
+\subsubsection{Temporal Difference}
+
+``Temporal Difference" is another model-free prediction algorithm that is of central importance in reinforcement learning.  Temporal difference combines ideas from Monte Carlo and dynamical programming, since like Monte Carlo it learns directly from episodes of experience, and like dynamical programming it updates estimates based on other estimates without waiting for the final outcome (bootstrapping).  The latter makes temporal difference really powerful since it works in non-terminating environment and with incomplete episodes.  \v
+
+Let's see how it works.  Both Monte Carlo and temporal difference use experience to solve the prediction problem.  While Monte Carlo needs to wait up to the end of an episode in order to learn and to make the update:
+\bse
+V(s_t) \gets V(s_t) + \alpha \left(G_t - V(s_t) \right)
+\ese
+
+\v
+
+temporal difference waits only until next step $t+1$ and then updates the state value function using the observed immediate reward and an estimate of the state value function:
+\bse
+V(s_t) \gets V(s_t) + \alpha \left(R_{t+1} + \gamma V(s_{t+1}) - V(s_t) \right)
+\ese
+
+\bd[Target]
+We call the correction of the update rule the \textbf{target} of the model.
+\ed
+
+In other words the target of Monte Carlo is $G_t$ while the target of temporal difference is $R_{t+1} + \gamma V(s_{t+1})$. 
+
+\bd[Error]
+We call the difference between the target and the previous estimate the \textbf{error} of the model.
+\ed
+
+In other words the error of Monte Carlo is $G_t - V(s_t)$ while the error of temporal difference is $R_{t+1} + \gamma V(s_{t+1}) - V(s_t)$.  \v
+
+As we showed, in Monte Carlo the only estimation was the substitution of the expected value with the average. In temporal difference however,  on top of substituting the  expected value with the average,  we also include in the update rule an estimation of the state value function of the next step (bootstrapping) as we did in dynamical programming. This is the reason we said that temporal difference  combines ideas from Monte Carlo and dynamical programming and gets the bests of two worlds. \v
+
+Hence, we introduced temporal difference.  Let us close this section by mentioning some of the key characteristics of temporal difference. 
+\bit
+\item Temporal difference converges to the solution with maximum likelihood. 
+\item  Temporal difference tries to find an MDP that best fits the data.
+\item  Temporal difference uses both sampling and bootstrapping.  Due to that it does not need to wait until the end of an episode in order to update $V$ (i.e to learn).  This is why it works in continuing (non-terminal) environments and with incomplete sequences. 
+\item Temporal difference converges to the real $V_\pi$ as experience gets to infinity. 
+\item  Temporal difference 's target is a biased estimator of $V_\pi$ but it is less nosier hence it carries less variance.
+\item Due to it's high bias / low variance,  temporal difference is much more efficient than Monte Carlo but it is also very sensitive to initial conditions (initial values).
+\eit
+
+Before we move on to a detailed application of temporal difference,  let us give a small example that indicates the differences between Monte Carlo and temporal difference.  Assume that each day that you drive home you try to predict how long will it take to get there.  When you leave the office you notice the time, the day, the weather, and anything else that might be relevant. Say now that you leave at 6:00 and you estimate that it will take 30 minutes to get home. As you reach your car is 6:05 and you notice it starts raining.  Traffic is often slower when it's raining so you re-estimate that it will take 35 minutes from them or 40 minutes in total.  15 minutes later you have completed the highway portion of your journey in good time.  As you exit into a secondary road you cut your estimate of total time to 35 minutes.  At this point you get stuck behind a slow truck and the road is too narrow to pass. You end up following the track until outside your house at 6:40. Three minutes later you are at home.  The sequence of states, times and predictions is as follows:
+
+\begin{figure}[H]
+\includegraphics[scale=0.35]{images/rl21.png}
+\centering
+\end{figure}
+
+The rewards in this example are the elapsed times on each leg of the journey (if this were control problem with the objective of minimizing time travel then we would make the rewards the negative of the elapsed times).  We are not discounting ($\gamma=1$) hence the return from each state is the actual time to go to that state.  The value of each state is the expected remaining time to reach home. \v
+
+Now let's see how Monte Carlo and temporal difference treat this problem.
+
+\begin{figure}[H]
+\includegraphics[scale=0.52]{images/rl22.png}
+\centering
+\end{figure}
+
+As we see while Monte Carlo waits until the end of the episode in order to update everything,  temporal difference makes the update after each step.
+
+\subsubsection*{Temporal Difference: Application}
+
+Due to the importance of temporal difference we will give one detailed example to see temporal difference in action.  Consider the following grid world where the numbers in each state represent the reward of the state. The goal is to start from the ``START" and end up in the terminal state ``C4" with reward $+1$.  Let's assume that we have a deterministic policy $\pi(s)$ which is the one indicated by the arrows and let's also assume for the temporal difference model that $\alpha = 0.5$ and $\gamma = 1$.
+
+\begin{figure}[H]
+\includegraphics[scale=0.55]{images/rl20.png}
+\centering
+\end{figure}
+
+We want to compute the state value function of this policy using the temporal difference algorithm.  As a first step we initialize all state value functions for all states to zero:
+\bse
+V (s) = 0, \forall s
+\ese
+
+Then we let the agent to follow the policy.  In the first step the agent will begin from the ``START" (i.e ``A1") and will find itself in the state ``B1".  It will observe the initialized state value functions $V(B1) = 0$ and it will receive a reward $R_{B1} = 0$. Hence the temporal difference update rule will read:
+\bse
+V(A1) \gets V(A1) + \alpha \left(R_{B1} + \gamma V(B1) - V(A1) \right) = 0 + 0.5 \cdot \left(0 + 1 \cdot 0 - 0 \right) = 0
+\ese
+
+Hence,  even after just one step of the episode, we already updated the state value function $V(A1)$. Similarly:
+\bse
+V(B1) \gets V(B1) + \alpha \left(R_{C1} + \gamma V(C1) - V(B1) \right) = 0 + 0.5 \cdot \left(0 + 1 \cdot 0 - 0 \right) = 0
+\ese
+
+\bse
+V(C1) \gets V(C1) + \alpha \left(R_{C2} + \gamma V(C2) - V(C1) \right) = 0 + 0.5 \cdot \left(0 + 1 \cdot 0 - 0 \right) = 0
+\ese
+
+\bse
+V(C2) \gets V(C2) + \alpha \left(R_{C3} + \gamma V(C3) - V(C2) \right) = 0 + 0.5 \cdot \left(0 + 1 \cdot 0 - 0 \right) = 0
+\ese
+
+And finally:
+\bse
+V(C3) \gets V(C3) + \alpha \left(R_{C4} + \gamma V(C4) - V(C3) \right) = 0 + 0.5 \cdot \left(1 + 1 \cdot 0 - 0 \right) = 0.5
+\ese
+
+Hence after the end of the first episode we had 5 updates and we end up with:
+\bse
+\boldsymbol{V} = (0,0,0,0,0,0) \to (0,0,0,0,0.5,0)
+\ese
+
+Now another episode begins and we do exactly the same procedure with the new, updated values $\boldsymbol{V} = (0,0,0,0,0.5,0)$. After the end of the episode we obtain:
+\bse
+\boldsymbol{V} = (0,0,0,0,0.5,0) \to (0,0,0,0.25,0.75,0)
+\ese
+
+And by keep sampling episodes eventually we will reach the final $\boldsymbol{V}$ which will be the optimal $\boldsymbol{V}_{\pi}$. The most important thing to notice is that the updates are happening after each step and not at the end of the episodes.  
+
+\subsubsection{TD($\lambda$)}
 
 
