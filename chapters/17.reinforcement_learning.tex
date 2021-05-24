@@ -1338,4 +1338,127 @@ And by keep sampling episodes eventually we will reach the final $\boldsymbol{V}
 
 \subsubsection{TD($\lambda$)}
 
+Up to here we have introduced temporal difference which takes one step and then updates the state value functions,  and Monte Carlo that takes all the steps up to termination before the updates.  We can generalize both models to one unique model that takes any number of steps $n$ and and then updates the state value functions.  This model is formally called ``$n$-step temporal difference".  In this model when $n=1$ we end up having the temporal difference model and when $n=\infty$ we end up having the Monte Carlo model (in this case $\infty$ really means a terminal state).  Let's see this graphically:
 
+\begin{figure}[H]
+\includegraphics[scale=0.4]{images/rl23.png}
+\centering
+\end{figure}
+
+\vspace{-15pt}
+
+For each model there is a corresponding target:
+
+\bit
+\item For $n=1$ we have the temporal difference target:
+\bse
+R_{t+1} + \gamma V(s_{t+1})
+\ese
+
+\item For $n=2$ we have the 2-step temporal difference target:
+\bse
+R_{t+1} + \gamma R_{t+2} + \gamma^2 V(s_{t+1})
+\ese
+
+\item For $n=\infty$ we have the Monte Carlo target:
+\bse
+R_{t+1} + \gamma R_{t+2} + \ldots + \gamma^{T+1} R_T
+\ese
+\eit
+
+One can group together all these targets to one parametrized quantity that we call ``$n$-step return".
+
+\bd[$n$-step Return]
+The \textbf{$n$-step return} $G_t^{(n)}$ is defined as:
+\bse
+G_t^{(n)} = R_{t+1} + \gamma R_{t+2} + \ldots + \gamma^{n-1} R_{t+n} + \gamma^{n} V(s_{t+n})
+\ese
+\ed
+
+Subsequently we can define the ``$n$-step temporal difference" update rule as:
+\bse
+V(s_t) \gets V(s_t) + \alpha \left(G_t^{(n)} - V(s_t) \right)
+\ese
+
+Notice how both $G_t^{(n)}$ and the update rule collapse to Monte Carlo and temporal difference for $n=\infty$ and $n=1$ respectively.  So $n$-step temporal difference indeed combines Monte Carlo and temporal difference and generalizes to any number of steps in between. \v
+
+Moving one step further,  instead of having different models with different number of steps, we can have just one model that takes into account all number of steps by simply averaging out over all different $n$-step returns.  That way we also don't need to pick the number of steps ourselves and wondering which $n$ would be better.  \v
+
+In order to combine all number of steps together at once, so we have the best out of all models, we will define a number $\lambda \in [0,1]$ that we will use as a weight factor order to average out among all $n$-step returns.  Namely, the average will contain all the $n$-step returns weighted proportionally by $\lambda^{n-1}$ and normalized by a factor of $(1-\lambda)$ in order for the weights to add up to 1. \v
+
+In other words, since we use a geometric series to weight the $n$-step returns the final outcome, called ``$\lambda$ return" will be the geometrically weighted average of all $n$-step returns:
+\bd[$\lambda$ Return]
+The \textbf{$\lambda$ return} $G_t^\lambda$ is defined as:
+\bse
+G_t^\lambda = (1-\lambda) \sum_{n=1}^{\infty} \lambda^{n-1} G_t^{(n)}
+\ese
+\ed
+
+Since $\lambda \in [0,1]$,  it follows that each subsequent $n$-step return contributes less and less as the number of steps increases since the term $\lambda^{n-1}$ gest smaller and smaller. Graphically it is:
+
+\begin{figure}[H]
+\includegraphics[scale=0.38]{images/rl24.png}
+\centering
+\end{figure}
+
+while for the decay of $\lambda$:
+
+\begin{figure}[H]
+\includegraphics[scale=0.45]{images/rl25.png}
+\centering
+\end{figure}
+
+We call this final model ``TD($\lambda$)". The update rule of TD($\lambda$) simply is:
+\bse
+V(s_t) \gets V(s_t) + \alpha \left(G_t^{\lambda} - V(s_t) \right)
+\ese
+
+By using TD($\lambda$) learning we update the state value functions towards the $\lambda$ return.  However, what we do here, is actually looking into the future in order to compute $G_t^\lambda$.  Since we need all and $n$-step returns to make the update, TD($\lambda$) behaves like Monte Carlo, i.e we need to wait up to the end of an episode in order to do the update.  So TD($\lambda$) can only be computed from completed episodes. We call this version of TD($\lambda$) the ``Forward-View TD($\lambda$)".\v 
+
+\begin{figure}[H]
+\includegraphics[scale=0.32]{images/rl26.png}
+\centering
+\end{figure}
+
+However there exists another equivalent mechanistic view that seems to achieve the same results as Forward-View TD($\lambda$) but without the need to wait until the end of an episode to update the state value functions. This way is called ``Backward-View TD($\lambda$)".  While Forward-View TD($\lambda$) provides the theoretical framework of TD($\lambda$),  Backward-View TD($\lambda$) provides a mechanism to apply TD($\lambda$) online, at every step,  from incomplete sequences without the need to wait until termination of am episode. \v
+
+In order to develop the Backward-View TD($\lambda$) we first need to introduce the concept of an eligibility trace.
+
+\bd[Eligibility Trace]
+The \textbf{eligibility trace} of a state $s$ at time $t$ is a temporary record of the occurrence of visiting the state $s$, decaying by a factor ask we don't visit the state.:
+\bse
+E_t(s) = \gamma \lambda E_{t-1}(s) + \mathcal{I}(s)
+\ese
+
+with $E_0(s) = 0$ and $\mathcal{I}(s)$ meaning ``1 if the state is $s$, 0 otherwise".
+\ed
+
+Putting it simply eligibility trace counts the visits of a state $s$.  In other words it measures the frequency of visiting the state $s$ by taking into account also the recency of visiting the state (i.e the concept of ``not visiting the state") by decaying as the state is not visited in subsequent time steps. That way we have a way to measure both frequency and recency of a state at once.   Graphically, an eligibility trace would look like the following figure.
+
+\begin{figure}[H]
+\includegraphics[scale=0.45]{images/rl28.png}
+\centering
+\end{figure}
+
+In the graph we see that each time a state $s$ is visited the eligibility trace increases and as the state is not visited as time passes it decays until the next time it is visited again. \v
+
+So Backward-View TD($\lambda$) keeps an eligibility trace record for every state $s$ and it updates the state value functions for every state $s$ in proportion to the eligibility trace,  by using the update rule:
+\bse
+V(s_t) \gets V(s_t) + \alpha \left(G_t^{\lambda} - V(s_t) \right) E_t(s)
+\ese
+
+Hence now the TD($\lambda$) error $\delta_t = G_t^{\lambda} - V(s_t) $ is broadcasted backwards  to all states (hence the naming). 
+
+\vspace{10pt}
+
+\begin{figure}[H]
+\includegraphics[scale=0.32]{images/rl27.png}
+\centering
+\end{figure}
+
+Finally notice that TD($\lambda$) is actually a generalized model of what we have described so far, since based on the value of $\lambda$ we end up with different models. The following table summarizes the model based on the value of $\lambda$.
+
+\begin{figure}[H]
+\includegraphics[scale=0.3]{images/rl29.png}
+\centering
+\end{figure}
