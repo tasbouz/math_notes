@@ -587,21 +587,190 @@ Finally for $\nabla_U J(y_i,  \hat{y}_i ; \theta)$ we have exactly the same situ
 \end{align*}}
 \endgroup
 
+\vspace{-10pt}
+
 Backpropagation through time carries two major drawbacks. The first one is that due to its recursive nature it is computationally very expensive.  However the second one,  and most important, is the one that ti makes it also a bit useless.  Notice that the gradients of both $W$ and $U$ include the weights $W$ themselves multiple times.  If we expand the formulas and we do the calculation we will find out that the formulas actually contain a lot of increasing powers of $W$,  i.e: $W, W^2, W^3, \ldots, W^n$.  This has as a result the following:
 \bit
-\item If $W < 1$ then $W^i \to 0, \textit{as } i \to n$.  In other words we are dealing with the problem of ``vanishing gradients" which has as a result the terms due to further back time steps to have smaller and smaller gradients hence to contribute less and less.  This adds  bias parameter to the model since it captures only short term dependencies.
-\item If $W > 1$ then $W^i \to \infty,  \textit{as } i \to n$.  In other words we are dealing with the problem of ``exploding gradients" which has as a result for the backpropagation through time to have bigger and bigger steps as time passes having as a result non-convergence to the optimal point.
+\item \textbf{Exploding Gradients} If $W > 1$ then $W^i \to \infty,  \textit{as } i \to n$ which has as a result for the backpropagation through time to have bigger and bigger steps as time passes having as a result non-convergence to the optimal point.  In general exploding gradients it is not such a big problem since we have the following solution.
+\bit
+\item \textbf{Gradient Clipping}: In gradient descent we are mainly interested in the direction of the gradient and not the magnitude of it.  Hence just by keeping the direction the same,  we can manipulate the magnitude if it explodes.  With gradient clipping, a predetermined gradient threshold is introduced,  and then gradients norms that exceed this threshold are scaled down to match the norm.  This prevents any gradient to have norm greater than the threshold and thus the gradients are clipped.  There is an introduced bias in the resulting values from the gradient,  but gradient clipping can keep things stable. 
 \eit
 
-There are a couple of ways to deal with these problems. 
+\item \textbf{Vanishing Gradients}:  If $W < 1$ then $W^i \to 0, \textit{as } i \to n$ which has as a result the terms due to further back time steps to have smaller and smaller gradients hence to contribute less and less.  This adds  bias parameter to the model since it captures only short term dependencies.  For vanishing gradients we have the following solutions.
 \bit
 \item \textbf{ReLU Activation Function}: By using ReLU as activation function we force the gradients to be 1 since the derivative of ReLU is 1 when $x>0$.
-\item \textbf{Gradient Clipping}: With gradient clipping, a predetermined gradient threshold is introduced,  and then gradients norms that exceed this threshold are scaled down to match the norm.  This prevents any gradient to have norm greater than the threshold and thus the gradients are clipped.  There is an introduced bias in the resulting values from the gradient,  but gradient clipping can keep things stable. 
-\item \textbf{Truncated Backpropagation Through Time:} In truncated backpropagation through time we truncate the sum after a predetermined number of steps $\tau$.  This leads to an approximation of the true gradient,  simply by ignoring higher terms of $W$.  In practice this works quite well however it focuses primarily on short-term influence rather than long-term consequences. 
+
+\item \textbf{Truncated Backpropagation Through Time}: In truncated backpropagation through time we truncate the sum after a predetermined number of steps $\tau$.  This leads to an approximation of the true gradient,  simply by ignoring higher terms of $W$. 
 \item \textbf{Parameter Initialization}: It is shown that by initializing weights to 1 and biases to 0 helps from preventing the parameters to shrink to 0.
+\item \textbf{Alternative Architectures}: However the best, and most used,  way of dealing with this problem is to build more complex RNNs that are able to control what information is passed through.  In what follows we will explore some of the most famous of them.
+\eit
 \eit
 
-However the best, and most used,  way of dealing with this problem is to build more complex RNNs that are able to control what information is passed through.  By far,  the most heavily used model is one called ``Long Short Term Memory" or more simply LSTM.
+\subsection{Long Short Term Memory}
 
-\subsection{Long Short Term Memory (LSTM)}
+As we saw in the previous chapter,  one of the problems of RNNs is that while sometimes we only need to look at recent information to perform the present task,  there are also cases where we need context back from the past.  Due to vanishing gradients RNNs become unable to learn to connect the information. \v
+
+Long Short Term Memory networks - usually just called ``LSTMs" - are a special kind of RNN,  capable of learning long-term dependencies. They were introduced by Hochreiter and Schmidhuber in 1997 and were refined and popularized by many people lately. They work tremendously well on a large variety of problems, and are now widely used.  LSTMs are explicitly designed to avoid the long-term dependency problem.  Remembering information for long periods of time is practically their default behaviour, not something they struggle to learn!
+
+\bd[Cell / Gate] 
+A \textbf{cell} or \textbf{gate} unit is a structure that gives an RNN the capability of longer memory of past events.  This long term memory capability is enabled by the storage of useful beliefs from new inputs and the loading of beliefs into the working memory that are immediately useful.
+\ed
+
+Now let's try to build and LSTM step by step by making use of the gates! As a reminder,  up to this point,  we have computed a state $\boldsymbol{s}_{i-1}$ at time-step $i - 1$ and now we want to overload it with new information $\boldsymbol{x}_{i}$ and compute a new state $\boldsymbol{s}_{i}$.  We did this by using:
+\bse
+\boldsymbol{s}_{i} = g(U \boldsymbol{x}_{i} + W \boldsymbol{s}_{i-1})
+\ese
+
+Graphically it looks like the following figure.
+
+\begin{figure}[H]
+\includegraphics[scale=0.65]{images/rnn6.png}
+\centering
+\end{figure}
+
+Focusing on the beginning of the process at time-step $i-1$,  instead of passing $\boldsymbol{s}_{i-1}$ as it is,  we want to pass (write) only some portions of it to the next state. In the strictest case our decisions could be binary (for example,  retain 1st and 3rd entries and delete the rest of the entries). But a more sensible way of doing this would be to assign a value between 0 and 1 which determines what fraction of the current state to pass on to the next state. Hence,  we introduce a vector $\boldsymbol{o}_{i-1}$ which decides what fraction of each element of $\boldsymbol{s}_{i-1}$ should be passed to the next state.  Each element of $\boldsymbol{o}_{i-1}$ (which is restricted to be between 0 and 1) gets multiplied element-wise with the corresponding element of $\boldsymbol{s}_{i-1}$ to produce the ``new",  modified input state:
+\bse
+\boldsymbol{h}_{i-1} = \boldsymbol{s}_{i-1} \odot  \boldsymbol{o}_{i-1}
+\ese
+
+\v
+
+The vector $\boldsymbol{o}_{i} $ is called the ``output gate" as it
+decides how much to  pass (write) to the next time step.  Graphically it looks like the following figure.
+
+\begin{figure}[H]
+\includegraphics[scale=0.7]{images/rnn7.png}
+\centering
+\end{figure}
+
+Now a good questions is how do we compute $\boldsymbol{o}_{i-1}$? The answer is of course, we don't. We let the network to learn what the appropriate $\boldsymbol{o}_{i-1}$ should be by parametrizing it.  At this point we should mention that there are many different variations of the parametrized formula of $\boldsymbol{o}_{i-1}$, ending up in different variations of LSTMs.  Here we will use the most used one which is:
+\bse
+\boldsymbol{o}_{i-1} = \sigma(U_{\textit{o}} \boldsymbol{x}_{i-1} + W_{\textit{o}} \boldsymbol{h}_{i-2})
+\ese
+
+The new parameters $U_{\textit{o}}, W_{\textit{o}}$ need to
+be learned along with the existing parameters $W, U, V$.  \v
+
+Moving on, the input $\boldsymbol{x}_{i}$ enters the picture.  Recall that in plain RNN we had:
+\bse
+\boldsymbol{s_i} = g(U \boldsymbol{x}_i + W \boldsymbol{s}_{i-1})
+\ese
+
+In LSTM,  we will simply use $\boldsymbol{h}_{i-1}$ instead of $\boldsymbol{s}_{i-1}$ to compute the new state at the next time step, i.e:
+\bse
+\boldsymbol{\tilde{s}}_i = g(U \boldsymbol{x}_i + W \boldsymbol{h}_{i-1})
+\ese
+
+Note that $W$ and $U$ are similar to the parameters that we used in RNN.  Graphically it looks like the following figure.
+
+\begin{figure}[H]
+\includegraphics[scale=0.65]{images/rnn8.png}
+\centering
+\end{figure}
+
+Hence,  $\boldsymbol{\tilde{s}}_i$ captures all the information from the previous state $\boldsymbol{h}_{i-1}$ and the current input $\boldsymbol{x}_i $. However,  we may not want to use all this new information and only selectively read from it before constructing the new cell state $\boldsymbol{s}_i$.  To do this we introduce another gate called the ``input gate":
+\bse
+\boldsymbol{i}_{i} = \sigma(U_{\textit{i}} \boldsymbol{x}_{i} + W_{\textit{i}} \boldsymbol{h}_{i-1})
+\ese
+
+which again decides what fraction of each element of $\boldsymbol{\tilde{s}}_i$ should be passed to the next state.  As before with the input gate,  each element of the output gate $\boldsymbol{i}_{i} $ (which is again restricted to be between 0 and 1) gets multiplied element-wise with the corresponding element of $\boldsymbol{\tilde{s}}_i$ to produce the ``new",  modified input state:
+\bse
+\boldsymbol{\tilde{s}}_i \odot \boldsymbol{i}_{i} 
+\ese
+
+Graphically it looks like the following figure.
+
+\begin{figure}[H]
+\includegraphics[scale=0.65]{images/rnn9.png}
+\centering
+\end{figure}
+
+Coming to the final step we want to find a way to combine $\boldsymbol{s}_{i-1}$and $\boldsymbol{\tilde{s}}_i$ to get
+the new state $\boldsymbol{s}_{i}$.  In order to do so,  we introduce one final gate called the ``forget gate" that we use in order to forget some parts of $\boldsymbol{s}_{i-1}$.  The forget gate follows the same structure as the input and output gates:
+\bse
+\boldsymbol{f}_{i} = \sigma(U_{\textit{f}} \boldsymbol{x}_{i} + W_{\textit{f}} \boldsymbol{h}_{i-1})
+\ese
+
+and of course decides what fraction of each element of $\boldsymbol{s}_{i-1}$ should be passed to the next state.  As with the other two gates each element of the forget gate $\boldsymbol{f}_{i} $ (which is once again restricted to be between 0 and 1) gets multiplied element-wise with the corresponding element of $\boldsymbol{s}_{i-1}$ to produce the final next state:
+\bse
+\boldsymbol{s}_{i} =\boldsymbol{\tilde{s}}_i \odot \boldsymbol{i}_{i}  +  \boldsymbol{s}_{i-1}  \odot \boldsymbol{f}_{i}
+\ese
+
+\v
+
+Graphically it looks like the following figure.
+
+\begin{figure}[H]
+\includegraphics[scale=0.65]{images/rnn11.png}
+\centering
+\end{figure}
+
+After we have $\boldsymbol{s}_{i} $ we can start the process again for the next time step.  
+
+\begin{figure}[H]
+\includegraphics[scale=0.65]{images/rnn12.png}
+\centering
+\end{figure}
+
+This is the structure of LSTM.  Let's summarise it here.
+
+\begin{enumerate}
+\item Being at time-step $i$,  from previous time-step get $\boldsymbol{h}_{i-1}$ and $\boldsymbol{s}_{i-1}$.  From current time-step get the input $\boldsymbol{x}_{i}$.
+\item By using $\boldsymbol{h}_{i-1}$ and the input $\boldsymbol{x}_{i}$ compute $\boldsymbol{\tilde{s}}_i = g(U \boldsymbol{x}_i + W \boldsymbol{h}_{i-1})$.
+\item By defining the input gate $\boldsymbol{i}_{i} = \sigma(U_{\textit{i}} \boldsymbol{x}_{i} + W_{\textit{i}} \boldsymbol{h}_{i-1})$ and the forget gate $\boldsymbol{f}_{i} = \sigma(U_{\textit{f}} \boldsymbol{x}_{i} + W_{\textit{f}} \boldsymbol{h}_{i-1})$ and by using $\boldsymbol{s}_{i-1}$ and $\boldsymbol{\tilde{s}}_i$ compute $\boldsymbol{s}_{i} =\boldsymbol{\tilde{s}}_i\odot \boldsymbol{i}_{i}  +  \boldsymbol{s}_{i-1}  \odot \boldsymbol{f}_{i}$.
+\item By defining the output gate $\boldsymbol{o}_{i} = \sigma(U_{\textit{o}} \boldsymbol{x}_{i} + W_{\textit{o}} \boldsymbol{h}_{i-1})$ and by using $\boldsymbol{s}_{i}$ compute $\boldsymbol{h}_{i} = \boldsymbol{s}_{i} \odot  \boldsymbol{o}_{i}$.
+\item Pass $\boldsymbol{h}_{i}$ and $\boldsymbol{s}_{i}$  to the next time step.
+\item Repeat!
+\end{enumerate}
+
+We usually represent each cycle (steps 1 to 5) graphically as follows.
+
+\begin{figure}[H]
+\includegraphics[scale=0.45]{images/rnn14.png}
+\centering
+\end{figure}
+
+And of course the final step 6 is the one that adds the recursivity.  We represent each the whole LSTM graphically as follows.
+
+\begin{figure}[H]
+\includegraphics[scale=0.6]{images/rnn15.png}
+\centering
+\end{figure}
+
+Now let's try to give an intuition of what LSTM does exactly! During forward propagation the gates control the flow of information. They prevent any irrelevant information from being written to the state. Similarly during backward
+propagation they control the flow of gradients. It is easy to see that during backward pass the gradients will get multiplied by the gate.  For example,  if the state at time $i - 1$ did not contribute much to the state at time $i$ (either because $\boldsymbol{o}_{i-1} \to 0$ or $\boldsymbol{f}_{i} \to 0$) then during backpropagation the gradients flowing into $\boldsymbol{s}_{i-1}$ will vanish.  But this kind of a vanishing gradient is fine (since $\boldsymbol{s}_{i-1}$  did not contribute to $\boldsymbol{s}_{i}$ it makes sense that we don't want to hold it responsible for the crimes of $\boldsymbol{s}_{i}$). The key difference from RNNs is that the flow of information and gradients is controlled by the gates which ensure that the gradients vanish only when they should (i.e when $\boldsymbol{s}_{i-1}$ didn't contribute much to $\boldsymbol{s}_{i}$). \v
+
+Coming to how LSTMs solve the problem of vanishing gradients (when they shouldn't vanish) the most important think to notice from the diagrams is that the newly introduced gates introduced themselves extra ``hidden" states $\boldsymbol{\tilde{s}}$ and $\boldsymbol{h}_{i}$ which they also depend in $\boldsymbol{s}_{i}$.  In other words there is a plethora of ways that each state $\boldsymbol{s}_{i}$ ``reaches" the loss function $J$ in the end of the network.  It suffices to find just one that does not vanish, since that way we make sure that the information will remain in the network through backpropagation.  We can show that for any given state $\boldsymbol{s}_{i}$,  by following the path shown in the figure below,  we can ensure that the gradient will not vanish (unless the state vanishes during forward propagation which,  as we argued,  then it's fine).  The calculation are quite straight-forward (simply start from the loss and by making use of the chain rule stat propagating back) and very similar to the ones we did before for simple RNNs, so we will skip them!
+
+\begin{figure}[H]
+\includegraphics[scale=0.58]{images/rnn16.png}
+\centering
+\end{figure}
+
+Hence, this is LSTM architecture and that is the way it deals with the problem of vanishing gradients.  As we already mentioned,  LSTM has many variants which include different number of gates and also different arrangement of gates. The one which we just saw is one of the most popular variants of LSTM.  Another equally popular variant of LSTM is the Gated Recurrent Unit which we will see next. 
+
+\subsection{Gated Recurrent Unit}
+
+Gated recurrent units (GRUs) are a gating mechanism in recurrent neural networks, introduced in 2014 by Kyunghyun Cho.  The GRU is like a long short-term memory (LSTM) with an output and an input gate, but has less parameters than LSTM,  as it lacks a forget gate (the forget and input gates are tied).  \v
+
+Since the structure of GRU is very similar to LSTM,  let's give a summary of the model instead of going through it step by step.
+
+\begin{enumerate}
+\item Being at time-step $i$,  from previous time-step get $\boldsymbol{s}_{i-1}$.  From current time-step get the input $\boldsymbol{x}_{i}$.
+\item By using $\boldsymbol{s}_{i-1}$ and the input $\boldsymbol{x}_{i}$ define the gate $\boldsymbol{o}_{i} = \sigma(U_{\textit{o}} \boldsymbol{x}_{i} + W_{\textit{o}} \boldsymbol{s}_{i-1})$.
+\item By using the output gate $\boldsymbol{o}_{i}$ and $\boldsymbol{s}_{i-1}$ compute $\boldsymbol{\tilde{s}}_i = g(U\boldsymbol{x}_{i} + W (\boldsymbol{s}_{i-1} \odot \boldsymbol{o}_{i}))$.
+\item By defining the input gate $\boldsymbol{i}_{i} = \sigma(U_{\textit{i}} \boldsymbol{x}_{i} + W_{\textit{i}} \boldsymbol{s}_{i-1})$ and by using both $\boldsymbol{s}_{i-1}$ and $\boldsymbol{\tilde{s}}_i $ compute the next state $\boldsymbol{s}_{i} = \boldsymbol{s}_{i-1} \odot (1 - \boldsymbol{i}_{i}) + \boldsymbol{\tilde{s}}_i  \odot \boldsymbol{i}_{i} $.
+\item Pass $\boldsymbol{s}_{i}$  to the next time step.
+\item Repeat!
+\end{enumerate}
+
+Graphically it looks like the following figure.
+
+\begin{figure}[H]
+\includegraphics[scale=0.63]{images/rnn13.png}
+\centering
+\end{figure}
+
+
+
 
